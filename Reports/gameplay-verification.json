@@ -5,6 +5,77 @@
       "part": "screw_a"
     },
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 0,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "screw_a"
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "screw_a"
+        }
+      ],
       "revision": 1,
       "moves": 0,
       "phase": "playing",
@@ -41,6 +112,77 @@
     "operation": "get_state",
     "arguments": {},
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 0,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "screw_a"
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "screw_a"
+        }
+      ],
       "revision": 1,
       "moves": 0,
       "phase": "playing",
@@ -82,6 +224,77 @@
       "toY": 0.3
     },
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 0,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "screw_a"
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "screw_a"
+        }
+      ],
       "revision": 2,
       "moves": 0,
       "phase": "playing",
@@ -123,6 +336,77 @@
       "toY": 0
     },
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 0,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "screw_a"
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "screw_a"
+        }
+      ],
       "revision": 3,
       "moves": 0,
       "phase": "playing",
@@ -161,6 +445,77 @@
       "delta": 360
     },
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 0,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "screw_a"
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "screw_a"
+        }
+      ],
       "revision": 4,
       "moves": 0,
       "phase": "playing",
@@ -200,6 +555,77 @@
       "tilt": 360
     },
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 0,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "screw_a"
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "screw_a"
+        }
+      ],
       "revision": 5,
       "moves": 0,
       "phase": "playing",
@@ -239,6 +665,77 @@
       "roll": 360
     },
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 0,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "screw_a"
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "screw_a"
+        }
+      ],
       "revision": 6,
       "moves": 0,
       "phase": "playing",
@@ -278,6 +775,77 @@
       "tilt": 137
     },
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 0,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "screw_a"
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "screw_a"
+        }
+      ],
       "revision": 7,
       "moves": 0,
       "phase": "playing",
@@ -337,6 +905,16 @@
           "part": "cover",
           "ready": false,
           "blocker": "screw_a"
+        },
+        {
+          "action": "select",
+          "part": "chassis"
+        },
+        {
+          "action": "disassemble",
+          "part": "chassis",
+          "ready": false,
+          "blocker": "screw_a"
         }
       ]
     }
@@ -348,6 +926,77 @@
       "tilt": -137
     },
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 0,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "screw_a"
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "screw_a"
+        }
+      ],
       "revision": 8,
       "moves": 0,
       "phase": "playing",
@@ -388,6 +1037,77 @@
       "roll": 29
     },
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 0,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "screw_a"
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "screw_a"
+        }
+      ],
       "revision": 9,
       "moves": 0,
       "phase": "playing",
@@ -428,6 +1148,77 @@
       "roll": 29
     },
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 0,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "screw_a"
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "screw_a"
+        }
+      ],
       "revision": 10,
       "moves": 0,
       "phase": "playing",
@@ -487,6 +1278,16 @@
           "part": "cover",
           "ready": false,
           "blocker": "screw_a"
+        },
+        {
+          "action": "select",
+          "part": "chassis"
+        },
+        {
+          "action": "disassemble",
+          "part": "chassis",
+          "ready": false,
+          "blocker": "screw_a"
         }
       ]
     }
@@ -499,6 +1300,77 @@
       "roll": 29
     },
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 0,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "screw_a"
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "screw_a"
+        }
+      ],
       "revision": 11,
       "moves": 0,
       "phase": "playing",
@@ -558,6 +1430,16 @@
           "part": "cover",
           "ready": false,
           "blocker": "screw_a"
+        },
+        {
+          "action": "select",
+          "part": "chassis"
+        },
+        {
+          "action": "disassemble",
+          "part": "chassis",
+          "ready": false,
+          "blocker": "screw_a"
         }
       ]
     }
@@ -570,6 +1452,77 @@
       "roll": 29
     },
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 0,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "screw_a"
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "screw_a"
+        }
+      ],
       "revision": 12,
       "moves": 0,
       "phase": "playing",
@@ -610,6 +1563,77 @@
       "roll": 29
     },
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 0,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "screw_a"
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "screw_a"
+        }
+      ],
       "revision": 13,
       "moves": 0,
       "phase": "playing",
@@ -650,6 +1674,77 @@
       "roll": 29
     },
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 0,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "screw_a"
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "screw_a"
+        }
+      ],
       "revision": 14,
       "moves": 0,
       "phase": "playing",
@@ -690,6 +1785,77 @@
       "roll": 29
     },
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 0,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "screw_a"
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "screw_a"
+        }
+      ],
       "revision": 15,
       "moves": 0,
       "phase": "playing",
@@ -749,6 +1915,16 @@
           "part": "cover",
           "ready": false,
           "blocker": "screw_a"
+        },
+        {
+          "action": "select",
+          "part": "chassis"
+        },
+        {
+          "action": "disassemble",
+          "part": "chassis",
+          "ready": false,
+          "blocker": "screw_a"
         }
       ]
     }
@@ -761,6 +1937,77 @@
       "roll": 29
     },
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 0,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "screw_a"
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "screw_a"
+        }
+      ],
       "revision": 16,
       "moves": 0,
       "phase": "playing",
@@ -820,6 +2067,16 @@
           "part": "cover",
           "ready": false,
           "blocker": "screw_a"
+        },
+        {
+          "action": "select",
+          "part": "chassis"
+        },
+        {
+          "action": "disassemble",
+          "part": "chassis",
+          "ready": false,
+          "blocker": "screw_a"
         }
       ]
     }
@@ -832,6 +2089,77 @@
       "roll": 29
     },
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 0,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "screw_a"
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "screw_a"
+        }
+      ],
       "revision": 17,
       "moves": 0,
       "phase": "playing",
@@ -872,6 +2200,77 @@
       "roll": 29
     },
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 0,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "screw_a"
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "screw_a"
+        }
+      ],
       "revision": 18,
       "moves": 0,
       "phase": "playing",
@@ -912,6 +2311,77 @@
       "roll": 29
     },
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 0,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "screw_a"
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "screw_a"
+        }
+      ],
       "revision": 19,
       "moves": 0,
       "phase": "playing",
@@ -971,6 +2441,16 @@
           "part": "cover",
           "ready": false,
           "blocker": "screw_a"
+        },
+        {
+          "action": "select",
+          "part": "chassis"
+        },
+        {
+          "action": "disassemble",
+          "part": "chassis",
+          "ready": false,
+          "blocker": "screw_a"
         }
       ]
     }
@@ -983,6 +2463,77 @@
       "roll": 29
     },
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 0,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "screw_a"
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "screw_a"
+        }
+      ],
       "revision": 20,
       "moves": 0,
       "phase": "playing",
@@ -1042,6 +2593,16 @@
           "part": "cover",
           "ready": false,
           "blocker": "screw_a"
+        },
+        {
+          "action": "select",
+          "part": "chassis"
+        },
+        {
+          "action": "disassemble",
+          "part": "chassis",
+          "ready": false,
+          "blocker": "screw_a"
         }
       ]
     }
@@ -1050,6 +2611,77 @@
     "operation": "restart",
     "arguments": {},
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 0,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "screw_a"
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "screw_a"
+        }
+      ],
       "revision": 21,
       "moves": 0,
       "phase": "playing",
@@ -1086,6 +2718,77 @@
     "operation": "flip",
     "arguments": {},
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 0,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "screw_a"
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "screw_a"
+        }
+      ],
       "revision": 22,
       "moves": 0,
       "phase": "playing",
@@ -1145,6 +2848,16 @@
           "part": "cover",
           "ready": false,
           "blocker": "screw_a"
+        },
+        {
+          "action": "select",
+          "part": "chassis"
+        },
+        {
+          "action": "disassemble",
+          "part": "chassis",
+          "ready": false,
+          "blocker": "screw_a"
         }
       ]
     }
@@ -1155,6 +2868,77 @@
       "part": "cable"
     },
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 0,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "screw_a"
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "screw_a"
+        }
+      ],
       "revision": 23,
       "moves": 0,
       "phase": "playing",
@@ -1214,6 +2998,16 @@
           "part": "cover",
           "ready": false,
           "blocker": "screw_a"
+        },
+        {
+          "action": "select",
+          "part": "chassis"
+        },
+        {
+          "action": "disassemble",
+          "part": "chassis",
+          "ready": false,
+          "blocker": "screw_a"
         }
       ]
     }
@@ -1224,6 +3018,77 @@
       "part": "cover"
     },
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 0,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "screw_a"
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "screw_a"
+        }
+      ],
       "revision": 24,
       "moves": 0,
       "phase": "playing",
@@ -1247,7 +3112,7 @@
       "batteryAttached": true,
       "boardScrewAttached": true,
       "accepted": false,
-      "message": "后盖还被螺丝固定着",
+      "message": "先拆下左侧外壳螺丝，再回收后盖",
       "blocker": "screw_a",
       "failureSequence": 2,
       "failedPart": "cover",
@@ -1283,6 +3148,16 @@
           "part": "cover",
           "ready": false,
           "blocker": "screw_a"
+        },
+        {
+          "action": "select",
+          "part": "chassis"
+        },
+        {
+          "action": "disassemble",
+          "part": "chassis",
+          "ready": false,
+          "blocker": "screw_a"
         }
       ]
     }
@@ -1293,6 +3168,77 @@
       "part": "screw_a"
     },
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 0,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "screw_a"
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "screw_a"
+        }
+      ],
       "revision": 25,
       "moves": 0,
       "phase": "playing",
@@ -1352,6 +3298,16 @@
           "part": "cover",
           "ready": false,
           "blocker": "screw_a"
+        },
+        {
+          "action": "select",
+          "part": "chassis"
+        },
+        {
+          "action": "disassemble",
+          "part": "chassis",
+          "ready": false,
+          "blocker": "screw_a"
         }
       ]
     }
@@ -1362,6 +3318,77 @@
       "part": "screw_a"
     },
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 0,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": true,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "screw_b"
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "screw_b"
+        }
+      ],
       "revision": 26,
       "moves": 1,
       "phase": "animating",
@@ -1385,7 +3412,7 @@
       "batteryAttached": true,
       "boardScrewAttached": true,
       "accepted": true,
-      "message": "左侧螺丝已回收",
+      "message": "左侧外壳螺丝已拆下，正在回收",
       "blocker": "",
       "failureSequence": 2,
       "failedPart": "cover",
@@ -1400,13 +3427,84 @@
       "part": "screw_b"
     },
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 0,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": true,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "screw_b"
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "screw_b"
+        }
+      ],
       "revision": 27,
       "moves": 1,
       "phase": "animating",
       "stage": "animating",
       "animating": true,
       "animationPart": "screw_a",
-      "animationProgress": 0.0233877562,
+      "animationProgress": 0.0131541248,
       "orientation": {
         "x": 0.0,
         "y": 0.0,
@@ -1438,6 +3536,77 @@
       "part": "screw_a"
     },
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 1,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "screw_b"
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "screw_b"
+        }
+      ],
       "revision": 29,
       "moves": 1,
       "phase": "playing",
@@ -1487,6 +3656,16 @@
           "part": "cover",
           "ready": false,
           "blocker": "screw_b"
+        },
+        {
+          "action": "select",
+          "part": "chassis"
+        },
+        {
+          "action": "disassemble",
+          "part": "chassis",
+          "ready": false,
+          "blocker": "screw_b"
         }
       ]
     }
@@ -1497,6 +3676,77 @@
       "part": "cover"
     },
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 1,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "screw_b"
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "screw_b"
+        }
+      ],
       "revision": 30,
       "moves": 1,
       "phase": "playing",
@@ -1520,7 +3770,7 @@
       "batteryAttached": true,
       "boardScrewAttached": true,
       "accepted": false,
-      "message": "后盖还被螺丝固定着",
+      "message": "先拆下右侧外壳螺丝，再回收后盖",
       "blocker": "screw_b",
       "failureSequence": 5,
       "failedPart": "cover",
@@ -1546,6 +3796,16 @@
           "part": "cover",
           "ready": false,
           "blocker": "screw_b"
+        },
+        {
+          "action": "select",
+          "part": "chassis"
+        },
+        {
+          "action": "disassemble",
+          "part": "chassis",
+          "ready": false,
+          "blocker": "screw_b"
         }
       ]
     }
@@ -1556,6 +3816,77 @@
       "part": "screw_b"
     },
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 1,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": true,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        }
+      ],
       "revision": 31,
       "moves": 2,
       "phase": "animating",
@@ -1579,7 +3910,7 @@
       "batteryAttached": true,
       "boardScrewAttached": true,
       "accepted": true,
-      "message": "右侧螺丝已回收",
+      "message": "右侧外壳螺丝已拆下，正在回收",
       "blocker": "",
       "failureSequence": 5,
       "failedPart": "cover",
@@ -1594,6 +3925,77 @@
       "part": "cover"
     },
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 2,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": true,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cable"
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cable"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cable"
+        }
+      ],
       "revision": 33,
       "moves": 3,
       "phase": "animating",
@@ -1617,7 +4019,7 @@
       "batteryAttached": true,
       "boardScrewAttached": true,
       "accepted": true,
-      "message": "后盖打开，露出了电池和主板",
+      "message": "后盖已拆下，正在回收",
       "blocker": "",
       "failureSequence": 5,
       "failedPart": "cover",
@@ -1632,6 +4034,77 @@
       "part": "battery"
     },
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 3,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": ""
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "cable"
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": ""
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "cable"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "cable"
+        }
+      ],
       "revision": 35,
       "moves": 3,
       "phase": "playing",
@@ -1655,7 +4128,7 @@
       "batteryAttached": true,
       "boardScrewAttached": true,
       "accepted": false,
-      "message": "先断开电池排线接头",
+      "message": "先拆下电池排线接头，再回收电池",
       "blocker": "cable",
       "failureSequence": 6,
       "failedPart": "battery",
@@ -1701,6 +4174,16 @@
           "part": "board",
           "ready": false,
           "blocker": "cable"
+        },
+        {
+          "action": "select",
+          "part": "chassis"
+        },
+        {
+          "action": "disassemble",
+          "part": "chassis",
+          "ready": false,
+          "blocker": "cable"
         }
       ]
     }
@@ -1711,6 +4194,77 @@
       "part": "board"
     },
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 3,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": ""
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "cable"
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": ""
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "cable"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "cable"
+        }
+      ],
       "revision": 36,
       "moves": 3,
       "phase": "playing",
@@ -1734,7 +4288,7 @@
       "batteryAttached": true,
       "boardScrewAttached": true,
       "accepted": false,
-      "message": "电池排线仍连接着主板",
+      "message": "先拆下电池排线接头，再回收主板",
       "blocker": "cable",
       "failureSequence": 7,
       "failedPart": "board",
@@ -1780,6 +4334,16 @@
           "part": "board",
           "ready": false,
           "blocker": "cable"
+        },
+        {
+          "action": "select",
+          "part": "chassis"
+        },
+        {
+          "action": "disassemble",
+          "part": "chassis",
+          "ready": false,
+          "blocker": "cable"
         }
       ]
     }
@@ -1790,6 +4354,77 @@
       "part": "cable"
     },
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 3,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": true,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "battery"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "battery"
+        }
+      ],
       "revision": 37,
       "moves": 4,
       "phase": "animating",
@@ -1813,7 +4448,7 @@
       "batteryAttached": true,
       "boardScrewAttached": true,
       "accepted": true,
-      "message": "排线接头已断开回收",
+      "message": "电池排线接头已拆下，正在回收",
       "blocker": "",
       "failureSequence": 7,
       "failedPart": "board",
@@ -1828,6 +4463,77 @@
       "part": "board"
     },
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 4,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": ""
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": ""
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "battery"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "battery"
+        }
+      ],
       "revision": 39,
       "moves": 4,
       "phase": "playing",
@@ -1851,7 +4557,7 @@
       "batteryAttached": true,
       "boardScrewAttached": true,
       "accepted": false,
-      "message": "电池压片挡着主板，先取出电池",
+      "message": "先拆下电池，再回收主板",
       "blocker": "battery",
       "failureSequence": 8,
       "failedPart": "board",
@@ -1887,6 +4593,16 @@
           "part": "board",
           "ready": false,
           "blocker": "battery"
+        },
+        {
+          "action": "select",
+          "part": "chassis"
+        },
+        {
+          "action": "disassemble",
+          "part": "chassis",
+          "ready": false,
+          "blocker": "battery"
         }
       ]
     }
@@ -1897,6 +4613,77 @@
       "part": "battery"
     },
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 4,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": true,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "board_screw"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "board_screw"
+        }
+      ],
       "revision": 40,
       "moves": 5,
       "phase": "animating",
@@ -1920,7 +4707,7 @@
       "batteryAttached": false,
       "boardScrewAttached": true,
       "accepted": true,
-      "message": "电池已取出，主板压片已腾空",
+      "message": "电池已拆下，正在回收",
       "blocker": "",
       "failureSequence": 8,
       "failedPart": "board",
@@ -1935,6 +4722,77 @@
       "part": "board"
     },
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 5,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": ""
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "board_screw"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "board_screw"
+        }
+      ],
       "revision": 42,
       "moves": 5,
       "phase": "playing",
@@ -1958,7 +4816,7 @@
       "batteryAttached": false,
       "boardScrewAttached": true,
       "accepted": false,
-      "message": "主板还有一颗固定螺丝",
+      "message": "先拆下主板固定螺丝，再回收主板",
       "blocker": "board_screw",
       "failureSequence": 9,
       "failedPart": "board",
@@ -1984,6 +4842,16 @@
           "part": "board",
           "ready": false,
           "blocker": "board_screw"
+        },
+        {
+          "action": "select",
+          "part": "chassis"
+        },
+        {
+          "action": "disassemble",
+          "part": "chassis",
+          "ready": false,
+          "blocker": "board_screw"
         }
       ]
     }
@@ -1992,6 +4860,77 @@
     "operation": "get_state",
     "arguments": {},
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 5,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": ""
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "board_screw"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "board_screw"
+        }
+      ],
       "revision": 42,
       "moves": 5,
       "phase": "playing",
@@ -2015,7 +4954,7 @@
       "batteryAttached": false,
       "boardScrewAttached": true,
       "accepted": false,
-      "message": "主板还有一颗固定螺丝",
+      "message": "先拆下主板固定螺丝，再回收主板",
       "blocker": "board_screw",
       "failureSequence": 9,
       "failedPart": "board",
@@ -2039,6 +4978,16 @@
         {
           "action": "disassemble",
           "part": "board",
+          "ready": false,
+          "blocker": "board_screw"
+        },
+        {
+          "action": "select",
+          "part": "chassis"
+        },
+        {
+          "action": "disassemble",
+          "part": "chassis",
           "ready": false,
           "blocker": "board_screw"
         }
@@ -2052,6 +5001,77 @@
       "roll": 123
     },
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 5,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": ""
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "board_screw"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "board_screw"
+        }
+      ],
       "revision": 43,
       "moves": 5,
       "phase": "playing",
@@ -2101,6 +5121,16 @@
           "part": "board",
           "ready": false,
           "blocker": "board_screw"
+        },
+        {
+          "action": "select",
+          "part": "chassis"
+        },
+        {
+          "action": "disassemble",
+          "part": "chassis",
+          "ready": false,
+          "blocker": "board_screw"
         }
       ]
     }
@@ -2112,6 +5142,77 @@
       "roll": -123
     },
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 5,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": ""
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "board_screw"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "board_screw"
+        }
+      ],
       "revision": 44,
       "moves": 5,
       "phase": "playing",
@@ -2161,6 +5262,16 @@
           "part": "board",
           "ready": false,
           "blocker": "board_screw"
+        },
+        {
+          "action": "select",
+          "part": "chassis"
+        },
+        {
+          "action": "disassemble",
+          "part": "chassis",
+          "ready": false,
+          "blocker": "board_screw"
         }
       ]
     }
@@ -2169,6 +5280,77 @@
     "operation": "flip",
     "arguments": {},
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 5,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "board_screw"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "board_screw"
+        }
+      ],
       "revision": 45,
       "moves": 5,
       "phase": "playing",
@@ -2205,6 +5387,77 @@
     "operation": "get_state",
     "arguments": {},
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 5,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "board_screw"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "board_screw"
+        }
+      ],
       "revision": 45,
       "moves": 5,
       "phase": "playing",
@@ -2243,6 +5496,77 @@
       "part": "board_screw"
     },
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 5,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "board_screw"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "board_screw"
+        }
+      ],
       "revision": 46,
       "moves": 5,
       "phase": "playing",
@@ -2279,6 +5603,77 @@
     "operation": "flip",
     "arguments": {},
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 5,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": ""
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "board_screw"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": true,
+          "blocker": "board_screw"
+        }
+      ],
       "revision": 47,
       "moves": 5,
       "phase": "playing",
@@ -2328,6 +5723,16 @@
           "part": "board",
           "ready": false,
           "blocker": "board_screw"
+        },
+        {
+          "action": "select",
+          "part": "chassis"
+        },
+        {
+          "action": "disassemble",
+          "part": "chassis",
+          "ready": false,
+          "blocker": "board_screw"
         }
       ]
     }
@@ -2338,6 +5743,77 @@
       "part": "board_screw"
     },
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 5,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": true,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "board"
+        }
+      ],
       "revision": 48,
       "moves": 6,
       "phase": "animating",
@@ -2361,7 +5837,7 @@
       "batteryAttached": false,
       "boardScrewAttached": false,
       "accepted": true,
-      "message": "主板固定螺丝已回收",
+      "message": "主板固定螺丝已拆下，正在回收",
       "blocker": "",
       "failureSequence": 10,
       "failedPart": "board_screw",
@@ -2376,6 +5852,77 @@
       "part": "board"
     },
     "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 6,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": true,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        }
+      ],
       "revision": 50,
       "moves": 7,
       "phase": "animating",
@@ -2399,7 +5946,7 @@
       "batteryAttached": false,
       "boardScrewAttached": false,
       "accepted": true,
-      "message": "整机拆解完成 · 全部零件已回收",
+      "message": "主板已拆下，正在回收",
       "blocker": "",
       "failureSequence": 10,
       "failedPart": "board_screw",
@@ -2411,15 +5958,195 @@
   {
     "operation": "disassemble",
     "arguments": {
+      "part": "chassis"
+    },
+    "state": {
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 7,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": true,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        }
+      ],
+      "revision": 52,
+      "moves": 8,
+      "phase": "animating",
+      "stage": "animating",
+      "animating": true,
+      "animationPart": "chassis",
+      "animationProgress": 0.0,
+      "orientation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      },
+      "backFacing": 0.8571673,
+      "backVisible": true,
+      "selected": "",
+      "screwAAttached": false,
+      "screwBAttached": false,
+      "coverAttached": false,
+      "cableAttached": false,
+      "batteryAttached": false,
+      "boardScrewAttached": false,
+      "accepted": true,
+      "message": "掌机机壳已拆下，正在回收",
+      "blocker": "",
+      "failureSequence": 10,
+      "failedPart": "board_screw",
+      "lastAction": "disassemble",
+      "lastTarget": "chassis",
+      "availableActions": []
+    }
+  },
+  {
+    "operation": "disassemble",
+    "arguments": {
       "part": "board"
     },
     "state": {
-      "revision": 52,
-      "moves": 7,
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 8,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": true,
+          "collected": true,
+          "accessible": false,
+          "blocker": ""
+        }
+      ],
+      "revision": 54,
+      "moves": 8,
       "phase": "won",
       "stage": "complete",
       "animating": false,
-      "animationPart": "board",
+      "animationPart": "chassis",
       "animationProgress": 1.0,
       "orientation": {
         "x": 0.0,
@@ -2450,7 +6177,78 @@
     "operation": "restart",
     "arguments": {},
     "state": {
-      "revision": 53,
+      "level": 1,
+      "levelCount": 2,
+      "device": "旧掌机",
+      "totalParts": 8,
+      "recoveredCount": 0,
+      "parts": [
+        {
+          "id": "screw_a",
+          "name": "左侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "screw_b",
+          "name": "右侧外壳螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": ""
+        },
+        {
+          "id": "cover",
+          "name": "后盖",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "screw_a"
+        },
+        {
+          "id": "cable",
+          "name": "电池排线接头",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "battery",
+          "name": "电池",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board_screw",
+          "name": "主板固定螺丝",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "board",
+          "name": "主板",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "cover"
+        },
+        {
+          "id": "chassis",
+          "name": "掌机机壳",
+          "detached": false,
+          "collected": false,
+          "accessible": false,
+          "blocker": "screw_a"
+        }
+      ],
+      "revision": 55,
       "moves": 0,
       "phase": "playing",
       "stage": "open_case",
