@@ -7,6 +7,8 @@ namespace LittleGame
     {
         private readonly Transform part,assembly;
         private readonly Collider[] colliders;
+        private readonly Renderer[] renderers;
+        private readonly UnityEngine.Rendering.ShadowCastingMode[] shadows;
         private readonly Vector3 origin,scale,destination,visualCenter;
         private readonly Bounds assemblyBounds;
         private readonly float parkedScale,deviceRadius,minLocalY,partRadius;
@@ -25,7 +27,9 @@ namespace LittleGame
         {
             this.part=part;assembly=part.parent;this.destination=destination;this.parkedScale=parkedScale;
             this.parkingRotation=parkingRotation;this.assemblyBounds=assemblyBounds;this.deviceRadius=deviceRadius;this.camera=camera;
-            origin=part.localPosition;scale=part.localScale;colliders=part.GetComponentsInChildren<Collider>();screw=part.name.Contains("screw");
+            origin=part.localPosition;scale=part.localScale;colliders=part.GetComponentsInChildren<Collider>();renderers=part.GetComponentsInChildren<Renderer>();
+            shadows=new UnityEngine.Rendering.ShadowCastingMode[renderers.Length];for(int i=0;i<renderers.Length;i++)shadows[i]=renderers[i].shadowCastingMode;
+            screw=part.name.Contains("screw");
             bool first=true;Bounds bounds=new Bounds();
             foreach(var r in part.GetComponentsInChildren<Renderer>()) if(r.enabled) {if(first){bounds=r.bounds;first=false;}else bounds.Encapsulate(r.bounds);}
             visualCenter=part.InverseTransformPoint(bounds.center);
@@ -75,7 +79,8 @@ namespace LittleGame
                 FrontClearance=Vector3.Dot(part.position-center,outward)-deviceRadius-partRadius;
                 OutwardClearance=Vector3.Dot(part.position-start,assembly.up)-(assemblyBounds.max.y-minLocalY)*assembly.lossyScale.y;
             }
-            foreach(var collider in colliders)if(collider!=null)collider.enabled=!removed;initialized=true;wasRemoved=removed;previousProgress=t;
+            foreach(var collider in colliders)if(collider!=null)collider.enabled=!removed;
+            if(!initialized || removed!=wasRemoved)for(int i=0;i<renderers.Length;i++)if(renderers[i]!=null)renderers[i].shadowCastingMode=removed?UnityEngine.Rendering.ShadowCastingMode.Off:shadows[i];initialized=true;wasRemoved=removed;previousProgress=t;
         }
     }
 }

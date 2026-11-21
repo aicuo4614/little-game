@@ -33,7 +33,7 @@ def main():
         assert abs(p['visualCenter']['y']-slot['center']['y'])<.0002,(p,slot)
     try:
         assert '最近编译成功' in m.tool('unity_get_compilation_status')
-        m.tool('unity_enter_play_mode');call('load_level',level=1);call('flip')
+        m.tool('unity_enter_play_mode');call('load_level',level=1);call('flip');assert call('rotate',delta=28,tilt=-18,roll=37)['backVisible']
         assert not call('next_level')['accepted']
         for id in ('screw_a','screw_b','cover','cable','battery','board_screw','board','chassis'):
             s=call('disassemble',part=id);assert s['accepted']
