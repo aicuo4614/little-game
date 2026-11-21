@@ -1,0 +1,216 @@
+--------- beginning of system
+11-20 18:04:50.469 14244 14244 I AndroidRuntime: RuntimeInit: Starting application from zygote
+11-20 18:04:50.470 14244 14244 D AndroidRuntime: Entered RuntimeInit!
+11-20 18:04:50.474 14244 14244 I AndroidRuntime: MethodAndArgsCaller run()
+11-20 18:04:50.480 14244 14244 D ActivityThread: Attach thread to application
+11-20 18:04:50.508 14244 21313 I LoadedApk: createSharedLibrariesLoaders::sharedLibraries is null
+11-20 18:04:50.539 14244 21313 I ActivityThread: Init compatible state: true
+11-20 18:04:50.572 14244 14244 I ActivityThread: finishPreloaded preloadStatus 0
+11-20 18:04:50.573 14244 14244 I LaunchActivityItem: execute start, token = android.os.BinderProxy@2c5a224
+11-20 18:04:50.596 14244 14244 V ActivityThread: callActivityOnCreate
+11-20 18:04:50.681 14244 14244 I ActivityThread: add activity client record, r= ActivityRecord{e6cb0c1 token=android.os.BinderProxy@2c5a224 {com.littlegame.teardown.dev/com.unity3d.player.UnityPlayerActivity}} token= android.os.BinderProxy@2c5a224
+11-20 18:04:50.748 14244 14244 I TopResumedActivityChangeItem: execute start, ActivityClientRecord = ActivityRecord{e6cb0c1 token=android.os.BinderProxy@2c5a224 {com.littlegame.teardown.dev/com.unity3d.player.UnityPlayerActivity}}
+--------- beginning of main
+11-20 18:04:51.021 14244 21393 D Unity   : [EGL] Attaching window :0x73478a5810
+11-20 18:04:51.021 14244 21393 D Unity   : InitializeScriptEngine OK (0x732f00dfc0)
+11-20 18:04:51.023 14244 21393 D Unity   : Found 1 interfaces on host :
+11-20 18:04:51.023 14244 21393 D Unity   :  0) 10.200.47.203
+11-20 18:04:51.023 14244 21393 D Unity   : 
+11-20 18:04:51.024 14244 21393 D Unity   : Player connection [493159804080]  Target information:
+11-20 18:04:51.024 14244 21393 D Unity   : 
+11-20 18:04:51.024 14244 21393 D Unity   : Player connection [493159804080]  * "[IP] 10.200.47.203 [Port] 55000 [Flags] 2 [Guid] 1956009991 [EditorId] 3687446758 [Version] 1048832 [Id] AndroidPlayer(11,HUAWEI_BRA-AL00@10.200.47.203) [Debug] 0 [PackageName] AndroidPlayer [ProjectName] 拆机救主板" 
+11-20 18:04:51.024 14244 21393 D Unity   : 
+11-20 18:04:51.024 14244 21393 D Unity   : Player connection [493159804080] Started UDP target info broadcast (1) on [225.0.0.222:54997].
+11-20 18:04:51.024 14244 21393 D Unity   : 
+11-20 18:04:51.038 14244 21393 D Unity   : [PhysX] Initialized MultithreadedTaskDispatcher with 5 workers.
+11-20 18:04:51.041 14244 21393 D Unity   : PlayerInitEngineNoGraphics OK
+11-20 18:04:51.041 14244 21393 I Unity   : Company Name: DefaultCompany
+11-20 18:04:51.041 14244 21393 I Unity   : Product Name: 拆机救主板
+11-20 18:04:51.041 14244 21393 D Unity   : AndroidGraphics::Startup window =  0x73478a5810
+11-20 18:04:51.041 14244 21393 D Unity   : [EGL] Attaching window :0x73478a5810
+11-20 18:04:51.052 14244 21393 I DATAN   : <GPU> #  In so constructor, Datan Hello
+11-20 18:04:51.053 14244 21393 D vulkan  : searching for layers in '/data/app/~~Zs55w4fp6rL0D6qJKMIw5A==/com.littlegame.teardown.dev-g2kEM5DxtXP0K7q-lzZ8Ag==/lib/arm64'
+11-20 18:04:51.053 14244 21393 D vulkan  : searching for layers in '/data/app/~~Zs55w4fp6rL0D6qJKMIw5A==/com.littlegame.teardown.dev-g2kEM5DxtXP0K7q-lzZ8Ag==/base.apk!/lib/arm64-v8a'
+11-20 18:04:51.054 14244 21393 E linker  : library "/system/lib64/libiGraphicsCore.huawei.so" ("/system/lib64/libiGraphicsCore.huawei.so") needed or dlopened by "/apex/com.android.art/lib64/libnativeloader.so" is not accessible for the namespace: [name="classloader-namespace", ld_library_paths="", default_library_paths="/data/app/~~Zs55w4fp6rL0D6qJKMIw5A==/com.littlegame.teardown.dev-g2kEM5DxtXP0K7q-lzZ8Ag==/lib/arm64:/data/app/~~Zs55w4fp6rL0D6qJKMIw5A==/com.littlegame.teardown.dev-g2kEM5DxtXP0K7q-lzZ8Ag==/base.apk!/lib/arm64-v8a", permitted_paths="/data:/mnt/expand:/data/data/com.littlegame.teardown.dev"]
+11-20 18:04:51.054 14244 21393 E vulkan  : failed to load layer library '/system/lib64/libiGraphicsCore.huawei.so': dlopen failed: library "/system/lib64/libiGraphicsCore.huawei.so" needed or dlopened by "/apex/com.android.art/lib64/libnativeloader.so" is not accessible for the namespace "classloader-namespace"
+11-20 18:04:51.054 14244 21393 D Unity   : [Vulkan init] extensions: count=10
+11-20 18:04:51.054 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_EXT_debug_report [enabled=1, external=0]
+11-20 18:04:51.054 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_EXT_swapchain_colorspace [enabled=1, external=0]
+11-20 18:04:51.054 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_android_surface [enabled=1, external=0]
+11-20 18:04:51.054 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_device_group_creation [enabled=0, external=0]
+11-20 18:04:51.054 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_external_fence_capabilities [enabled=1, external=0]
+11-20 18:04:51.054 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_external_memory_capabilities [enabled=1, external=0]
+11-20 18:04:51.054 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_external_semaphore_capabilities [enabled=1, external=0]
+11-20 18:04:51.054 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_get_physical_device_properties2 [enabled=1, external=0]
+11-20 18:04:51.054 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_get_surface_capabilities2 [enabled=0, external=0]
+11-20 18:04:51.054 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_surface [enabled=1, external=0]
+11-20 18:04:51.061 14244 21393 D Unity   : [Vulkan init] SelectPhysicalDevice requestedDeviceIndex=-1 xrDevice=0x0
+11-20 18:04:51.061 14244 21393 D Unity   : [Vulkan init] Physical Device 0x73f93350a8 [0]: "Maleoon 910" deviceType=1 vendorID=19e5 deviceID=10001000
+11-20 18:04:51.061 14244 21393 D Unity   : Vulkan detection: 2
+11-20 18:04:51.061 14244 21393 D Unity   : GfxDevice: creating device client; threaded=1; jobified=0
+11-20 18:04:51.061 14244 21393 D Unity   : [Vulkan init] extensions: count=10
+11-20 18:04:51.061 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_EXT_debug_report [enabled=1, external=0]
+11-20 18:04:51.061 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_EXT_swapchain_colorspace [enabled=1, external=0]
+11-20 18:04:51.061 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_android_surface [enabled=1, external=0]
+11-20 18:04:51.061 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_device_group_creation [enabled=0, external=0]
+11-20 18:04:51.061 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_external_fence_capabilities [enabled=1, external=0]
+11-20 18:04:51.061 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_external_memory_capabilities [enabled=1, external=0]
+11-20 18:04:51.061 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_external_semaphore_capabilities [enabled=1, external=0]
+11-20 18:04:51.061 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_get_physical_device_properties2 [enabled=1, external=0]
+11-20 18:04:51.061 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_get_surface_capabilities2 [enabled=0, external=0]
+11-20 18:04:51.061 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_surface [enabled=1, external=0]
+11-20 18:04:51.071 14244 21393 D Unity   : [Vulkan init] SelectPhysicalDevice requestedDeviceIndex=-1 xrDevice=0x0
+11-20 18:04:51.071 14244 21393 D Unity   : [Vulkan init] Physical Device 0x73f93351b8 [0]: "Maleoon 910" deviceType=1 vendorID=19e5 deviceID=10001000
+11-20 18:04:51.071 14244 21393 D Unity   : [Vulkan init] Selected physical device 0x73f93351b8
+11-20 18:04:51.071 14244 21393 D Unity   : [Vulkan init] Graphics queue count=1
+11-20 18:04:51.075 14244 21393 D Unity   : [Vulkan init] extensions: count=66
+11-20 18:04:51.075 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_AMD_draw_indirect_count [enabled=0, external=0]
+11-20 18:04:51.075 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_ANDROID_external_memory_android_hardware_buffer [enabled=1, external=0]
+11-20 18:04:51.075 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_EXT_astc_decode_mode [enabled=1, external=0]
+11-20 18:04:51.075 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_EXT_conditional_rendering [enabled=0, external=0]
+11-20 18:04:51.075 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_EXT_depth_clip_enable [enabled=0, external=0]
+11-20 18:04:51.075 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_EXT_descriptor_indexing [enabled=0, external=0]
+11-20 18:04:51.075 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_EXT_global_priority [enabled=0, external=0]
+11-20 18:04:51.075 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_EXT_global_priority_query [enabled=0, external=0]
+11-20 18:04:51.075 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_EXT_hdr_metadata [enabled=1, external=0]
+11-20 18:04:51.075 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_EXT_host_query_reset [enabled=0, external=0]
+11-20 18:04:51.075 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_EXT_index_type_uint8 [enabled=0, external=0]
+11-20 18:04:51.075 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_EXT_inline_uniform_block [enabled=0, external=0]
+11-20 18:04:51.075 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_EXT_queue_family_foreign [enabled=1, external=0]
+11-20 18:04:51.075 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_EXT_sample_locations [enabled=0, external=0]
+11-20 18:04:51.075 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_EXT_sampler_filter_minmax [enabled=0, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_EXT_scalar_block_layout [enabled=1, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_EXT_separate_stencil_usage [enabled=0, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_EXT_shader_subgroup_ballot [enabled=0, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_EXT_shader_subgroup_vote [enabled=0, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_EXT_texture_compression_astc_hdr [enabled=1, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_GOOGLE_display_timing [enabled=1, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_HUAWEI_partial_update [enabled=0, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_HUAWEI_subpass_shading [enabled=0, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_16bit_storage [enabled=1, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_8bit_storage [enabled=0, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_bind_memory2 [enabled=1, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_buffer_device_address [enabled=0, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_create_renderpass2 [enabled=1, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_dedicated_allocation [enabled=1, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_depth_stencil_resolve [enabled=1, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_descriptor_update_template [enabled=1, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_device_group [enabled=0, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_draw_indirect_count [enabled=0, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_driver_properties [enabled=1, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_external_fence [enabled=1, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_external_fence_fd [enabled=1, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_external_memory [enabled=1, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_external_semaphore [enabled=1, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_external_semaphore_fd [enabled=1, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_fragment_shading_rate [enabled=1, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_get_memory_requirements2 [enabled=1, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_image_format_list [enabled=1, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_imageless_framebuffer [enabled=0, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_incremental_present [enabled=0, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_maintenance1 [enabled=1, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_maintenance2 [enabled=1, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_maintenance3 [enabled=0, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_multiview [enabled=1, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_relaxed_block_layout [enabled=0, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_sampler_mirror_clamp_to_edge [enabled=1, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_sampler_ycbcr_conversion [enabled=1, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_separate_depth_stencil_layouts [enabled=0, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_shader_clock [enabled=0, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_shader_draw_parameters [enabled=0, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_shader_float16_int8 [enabled=1, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_shader_float_controls [enabled=0, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_shader_subgroup_extended_types [enabled=0, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_shared_presentable_image [enabled=0, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_spirv_1_4 [enabled=0, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_storage_buffer_storage_class [enabled=1, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_swapchain [enabled=1, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_synchronization2 [enabled=0, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_timeline_semaphore [enabled=0, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_uniform_buffer_standard_layout [enabled=0, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_variable_pointers [enabled=0, external=0]
+11-20 18:04:51.076 14244 21393 D Unity   : [Vulkan init] extensions: name=VK_KHR_vulkan_memory_model [enabled=0, external=0]
+11-20 18:04:51.080 14244 21393 W BASE    : <GPU> #  SW CTX's size 144
+11-20 18:04:51.081 14244 21393 D Unity   : Vulkan API version 1.1.0 (1.2.231 supported by driver, 1.1.0 requested)
+11-20 18:04:51.082 14244 21393 D Unity   : Vulkan vendor=[Unknown (ID=19e5)] id=[19e5]
+11-20 18:04:51.082 14244 21393 D Unity   : Vulkan renderer=[Maleoon 910] id=[10001000]
+11-20 18:04:51.082 14244 21393 D Unity   : Vulkan device type 1
+11-20 18:04:51.082 14244 21393 D Unity   : Vulkan driverversion=[0x761b408f] uint=[1981497487]
+11-20 18:04:51.082 14244 21393 D Unity   : VK use pretransform: 0
+11-20 18:04:51.088 14244 21393 I HwApiCacheMangerEx: apicache path=/storage/emulated/0 state=mounted key=com.littlegame.teardown.dev#10433#0
+11-20 18:04:51.088 14244 21393 I HwApiCacheMangerEx: need clear apicache,because volumes changed,oldCnt=1 newCnt=1
+11-20 18:04:51.091 14244 21393 D Unity   : Vulkan PSO: Cache data successfully loaded [size=34724,path=/storage/emulated/0/Android/data/com.littlegame.teardown.dev/cache/vulkan_pso_cache.bin]
+11-20 18:04:51.097 14244 21393 D Unity   : [EGL] Attaching window :0x0
+11-20 18:04:51.097 14244 21393 D Unity   : AndroidDisplayManagerVulkan::AttachWindow(0x73478a5810, 0)
+11-20 18:04:51.101 14244 21393 D Unity   : InitializeOrResetSwapChain 1216x2688 hdr=0 samples=0
+11-20 18:04:51.117 14244 21532 D Choreographer: Attaching thread to JVM for AChoreographer
+11-20 18:04:51.119 14244 21393 V SwappyVk: SwappyVk initialized for VkDevice 0x73f3979060 using VK_GOOGLE_display_timing on Android
+11-20 18:04:51.119 14244 21393 I SwappyVk: Returning refresh duration of 8333333 nsec (approx 120.000005 Hz)
+11-20 18:04:51.141 14244 21393 V MediaRouter: Selecting route: RouteInfo{ name=手机, description=null, status=null, category=RouteCategory{ name=系统 types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+11-20 18:04:51.141 14244 21393 I MediaRouter: Skip setBluetoothA2dpOn(): types=8388615, isPlaybackActive()=false, BT route=null
+11-20 18:04:51.141 14244 21393 D Unity   : AndroidDisplayManagerVulkan::AttachWindow(0x73478a5810, 0)
+11-20 18:04:51.141 14244 21393 D Unity   : Initialize engine version: 2022.3.62f3c1 (1623fc0bbb97)
+11-20 18:04:51.163 14244 21393 I libOpenSLES: IEngine_CreateAudioPlayer g_pcmSrcLen is 65
+11-20 18:04:51.164 14244 21393 D me.teardown.de: PlayerBase::PlayerBase()
+11-20 18:04:51.164 14244 21393 D me.teardown.de: TrackPlayerBase::TrackPlayerBase()
+11-20 18:04:51.164 14244 21393 I libOpenSLES: Emulating old channel mask behavior (ignoring positional mask 0x3, using default mask 0x3 based on channel count of 2)
+11-20 18:04:51.164 14244 21393 E AudioSystem: invalid stream type AUDIO_STREAM_DEFAULT when converting to attributes
+11-20 18:04:51.177 14244 21393 I AudioTrack: createTrack_l(0): AUDIO_OUTPUT_FLAG_FAST successful; frameCount 0 -> 1920
+11-20 18:04:51.177 14244 21393 I AudioTrack: setVolumeLR : 1.000000
+11-20 18:04:51.196 14244 21393 I AudioTrack: start(17150): prior state:STATE_STOPPED
+11-20 18:04:51.196 14244 21393 W AudioTrack: SendPlayerType(17150): send caller name to Track failed.
+11-20 18:04:51.201 14244 14244 D MediaRouter: onRestoreRoute() : route=RouteInfo{ name=手机, description=null, status=null, category=RouteCategory{ name=系统 types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+11-20 18:04:51.202 14244 14244 V MediaRouter: Selecting route: RouteInfo{ name=手机, description=null, status=null, category=RouteCategory{ name=系统 types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+11-20 18:04:51.294 14244 21329 I AudioSystem: reportHalLatency latency 30 lightLatency 0 sessionId 89153
+11-20 18:04:51.294 14244 21329 E AudioSystem: reportHalLatency fail, no callback found for sessionId 89153
+11-20 18:04:51.307 14244 21393 D Unity   : PlayerInitEngineGraphics OK
+11-20 18:04:51.313 14244 21393 D Unity   : Found 26 native sensors
+11-20 18:04:51.317 14244 21393 D Unity   : Sensor :        Accelerometer ( 1) ; 0.000010 / 0.00s ; acc_s002_006 / 002 
+11-20 18:04:51.319 14244 21393 D Unity   : Sensor :        Accelerometer ( 1) ; 0.000010 / 0.00s ; acc_s002_006 / 002 
+11-20 18:04:51.319 14244 21393 D Unity   : enabled Accelerometer sensor
+11-20 18:04:51.323 14244 21393 I InputManager: registerInputDeviceListener <native proxy object>
+11-20 18:04:51.323 14244 21393 I AudioManager: getStreamVolume streamType: 3
+11-20 18:04:51.331 14244 21393 D Unity   : SetWindow 0 0x73478a5810
+11-20 18:04:51.331 14244 21393 D Unity   : AndroidDisplayManagerVulkan::AttachWindow(0x73478a5810, 0)
+11-20 18:04:51.333 14244 21393 D Unity   : InitializeOrResetSwapChain 1216x2688 hdr=0 samples=0
+11-20 18:04:51.351 14244 21393 V SwappyVk: SwappyVk initialized for VkDevice 0x73f3979060 using VK_GOOGLE_display_timing on Android
+11-20 18:04:51.351 14244 21393 I SwappyVk: Returning refresh duration of 8333333 nsec (approx 120.000005 Hz)
+11-20 18:04:51.579 14244 21529 I me.teardown.de: xdraw: Third-Thread UnityGfxDeviceW(21529) uid 10433 (1216x2688) detected success with miss default
+11-20 18:04:52.290 14244 21410 D HwViewRootImpl: [DetectViewsLocationRunner] start to get views' rect, type = SCENE_WINDOW_FOCUS_CHANGE
+11-20 18:04:52.291 14244 21410 D HwViewRootImpl: [DetectViewsLocationRunner] windowModeType: 1
+11-20 18:04:52.291 14244 21410 D HwViewRootImpl: [DetectViewsLocationRunner] displayPoint: Point(1216, 2688)
+11-20 18:04:52.291 14244 21410 D HwViewRootImpl: [DetectViewsLocationRunner] windowModeType: 1
+11-20 18:04:52.293 14244 21410 D HwViewRootImpl: [DetectViewsLocationRunner] lazyMode:
+11-20 18:04:52.294 14244 21410 D HwViewRootImpl: [DetectViewsLocationRunner] current mode is full screen
+11-20 18:04:52.294 14244 14244 D HwViewRootImpl: [DetectViewsLocationRunner] start to getViewHierarchy
+11-20 18:04:52.296 14244 21410 D HwViewRootImpl: [DetectViewsLocationRunner] deviceOrientation: 0
+11-20 18:04:52.296 14244 21410 D HwViewRootImpl: [DetectViewsLocationRunner-ScreenDirection] ROTATION_0
+11-20 18:04:52.297 14244 21410 D HwViewRootImpl: [DetectViewsLocationRunner] get views' rect = 0, SCENE_WINDOW_FOCUS_CHANGE
+11-20 18:04:53.409 14244 21393 D Unity   : [PhysX] Initialized MultithreadedTaskDispatcher with 5 workers.
+11-20 18:04:53.410 14244 21393 D Unity   : UnloadTime: 1.145313 ms
+11-20 18:04:53.442 14244 21393 I AudioManager: getStreamVolume streamType: 3
+11-20 18:04:53.446 14244 21393 D Unity   : Sensor :        Accelerometer ( 1) ; 0.000010 / 0.00s ; acc_s002_006 / 002 
+11-20 18:04:53.446 14244 21393 D Unity   : Choreographer available: Enabling VSYNC timing
+11-20 18:04:53.448 14244 21393 I AudioManager: getStreamVolume streamType: 3
+11-20 18:04:53.595 14244 21393 I IL2CPP  : Locale zh-Hans-CN
+11-20 18:04:53.747 14244 21393 D Unity   : InitializeOrResetSwapChain 1216x2688 hdr=0 samples=2
+11-20 18:04:53.775 14244 21393 V SwappyVk: SwappyVk initialized for VkDevice 0x73f3979060 using VK_GOOGLE_display_timing on Android
+11-20 18:04:53.776 14244 21393 I SwappyVk: Returning refresh duration of 16666666 nsec (approx 60.000002 Hz)
+11-20 18:04:55.440 14244 14244 D stylus  : init stylus touchlistener.
+11-20 18:04:55.443 14244 14244 I Hwaps   : APS: EventAnalyzed: initAPS: version is 11.0.0.4
+11-20 18:04:55.443 14244 14244 D Hwaps   : Fpsrequest create,type:EXACTLY_IDENTIFY
+11-20 18:04:55.444 14244 14244 D Hwaps   : Fpsrequest create,type:EXACTLY_IDENTIFY
+11-20 18:04:55.444 14244 14244 D Hwaps   : Fpsrequest create,type:OPENGL_SETTING
+11-20 18:04:55.444 14244 14244 D Hwaps   : FpsController create
+11-20 18:04:55.447 14244 14244 D Hwaps   : APS: EventAnalyzed: reInitFpsPara :mBaseFps = 120; mMaxFps = 120
+11-20 18:04:55.452 14244 14244 I HwViewRootImpl: Add sceneId 11 topId: 10
+11-20 18:04:55.452 14244 14244 W Settings: Setting device_provisioned has moved from android.provider.Settings.Secure to android.provider.Settings.Global.
+11-20 18:04:55.453 14244 14244 V HiTouch_HiTouchSensor: User setup is finished.
+11-20 18:04:55.459 14244 14244 D HwDragEnhancementImpl: handleTimerDrag: false
+11-20 18:04:55.459 14244 14244 D HwDragEnhancementImpl: handleTimerDrag: false
+11-20 18:04:55.459 14244 14244 D HwDragEnhancementImpl: handleTimerDrag: false
+11-20 18:04:55.463 14244 14244 D HwDragEnhancementImpl: Start long press for hw drag enhancement.
+11-20 18:04:55.513 14244 14244 I HwViewRootImpl: Add sceneId 13 topId: 11
+11-20 18:04:55.514 14244 14244 D HwDragEnhancementImpl: Touch move more than touch range.
+11-20 18:04:55.537 14244 14244 W HiTouch_PressGestureDetector: Touch pointer move a lot. The moving distance of X is:3.5, limit is:65The moving distance of Y is:67.84253, limit is:65
+11-20 18:04:55.584 14244 14244 I AwareBitmapCacher: init lrucache size: 4194304 pid=14244

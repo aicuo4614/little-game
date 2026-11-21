@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "kabu-unity-mcp": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "applicationUrl": "http://127.0.0.1:3827",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "UNITY_MCP_ASPPORT": "3827"
+      }
+    }
+  }
+}

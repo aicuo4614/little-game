@@ -1,0 +1,19 @@
+{
+    "name": "kabu-unity-mcp.Editor",
+    "rootNamespace": "KabuUnityMcp.Editor",
+    "references": [
+        "kabu-unity-mcp",
+        "UnityEditor.TestRunner"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

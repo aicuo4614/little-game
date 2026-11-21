@@ -1,0 +1,2485 @@
+[
+  {
+    "operation": "disassemble",
+    "arguments": {
+      "part": "screw_a"
+    },
+    "state": {
+      "revision": 1,
+      "moves": 0,
+      "phase": "playing",
+      "stage": "open_case",
+      "animating": false,
+      "animationPart": "",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": -0.04530681,
+        "y": -0.06959342,
+        "z": 0.9925674,
+        "w": 0.08896065
+      },
+      "backFacing": -0.7599917,
+      "backVisible": false,
+      "selected": "",
+      "screwAAttached": true,
+      "screwBAttached": true,
+      "coverAttached": true,
+      "cableAttached": true,
+      "batteryAttached": true,
+      "boardScrewAttached": true,
+      "accepted": false,
+      "message": "这个零件当前不可操作，先转到背面并拆开遮挡",
+      "blocker": "cover",
+      "failureSequence": 1,
+      "failedPart": "screw_a",
+      "lastAction": "disassemble",
+      "lastTarget": "screw_a",
+      "availableActions": []
+    }
+  },
+  {
+    "operation": "get_state",
+    "arguments": {},
+    "state": {
+      "revision": 1,
+      "moves": 0,
+      "phase": "playing",
+      "stage": "open_case",
+      "animating": false,
+      "animationPart": "",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": -0.04530681,
+        "y": -0.06959342,
+        "z": 0.9925674,
+        "w": 0.08896065
+      },
+      "backFacing": -0.7599917,
+      "backVisible": false,
+      "selected": "",
+      "screwAAttached": true,
+      "screwBAttached": true,
+      "coverAttached": true,
+      "cableAttached": true,
+      "batteryAttached": true,
+      "boardScrewAttached": true,
+      "accepted": false,
+      "message": "这个零件当前不可操作，先转到背面并拆开遮挡",
+      "blocker": "cover",
+      "failureSequence": 1,
+      "failedPart": "screw_a",
+      "lastAction": "disassemble",
+      "lastTarget": "screw_a",
+      "availableActions": []
+    }
+  },
+  {
+    "operation": "orbit",
+    "arguments": {
+      "fromX": 0,
+      "fromY": 0,
+      "toX": 0.5,
+      "toY": 0.3
+    },
+    "state": {
+      "revision": 2,
+      "moves": 0,
+      "phase": "playing",
+      "stage": "open_case",
+      "animating": false,
+      "animationPart": "",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": -0.274194241,
+        "y": -0.333517879,
+        "z": 0.7764003,
+        "w": 0.459114224
+      },
+      "backFacing": 0.09128689,
+      "backVisible": false,
+      "selected": "",
+      "screwAAttached": true,
+      "screwBAttached": true,
+      "coverAttached": true,
+      "cableAttached": true,
+      "batteryAttached": true,
+      "boardScrewAttached": true,
+      "accepted": true,
+      "message": "转到掌机背面，寻找外壳螺丝",
+      "blocker": "",
+      "failureSequence": 1,
+      "failedPart": "screw_a",
+      "lastAction": "disassemble",
+      "lastTarget": "screw_a",
+      "availableActions": []
+    }
+  },
+  {
+    "operation": "orbit",
+    "arguments": {
+      "fromX": 0.5,
+      "fromY": 0.3,
+      "toX": 0,
+      "toY": 0
+    },
+    "state": {
+      "revision": 3,
+      "moves": 0,
+      "phase": "playing",
+      "stage": "open_case",
+      "animating": false,
+      "animationPart": "",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": -0.045306813,
+        "y": -0.06959343,
+        "z": 0.9925675,
+        "w": 0.08896068
+      },
+      "backFacing": -0.7599919,
+      "backVisible": false,
+      "selected": "",
+      "screwAAttached": true,
+      "screwBAttached": true,
+      "coverAttached": true,
+      "cableAttached": true,
+      "batteryAttached": true,
+      "boardScrewAttached": true,
+      "accepted": true,
+      "message": "转到掌机背面，寻找外壳螺丝",
+      "blocker": "",
+      "failureSequence": 1,
+      "failedPart": "screw_a",
+      "lastAction": "disassemble",
+      "lastTarget": "screw_a",
+      "availableActions": []
+    }
+  },
+  {
+    "operation": "rotate",
+    "arguments": {
+      "delta": 360
+    },
+    "state": {
+      "revision": 4,
+      "moves": 0,
+      "phase": "playing",
+      "stage": "open_case",
+      "animating": false,
+      "animationPart": "",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": -0.045306813,
+        "y": -0.06959343,
+        "z": 0.9925675,
+        "w": 0.08896068
+      },
+      "backFacing": -0.7599919,
+      "backVisible": false,
+      "selected": "",
+      "screwAAttached": true,
+      "screwBAttached": true,
+      "coverAttached": true,
+      "cableAttached": true,
+      "batteryAttached": true,
+      "boardScrewAttached": true,
+      "accepted": true,
+      "message": "拖动掌机，寻找背面的螺丝",
+      "blocker": "",
+      "failureSequence": 1,
+      "failedPart": "screw_a",
+      "lastAction": "disassemble",
+      "lastTarget": "screw_a",
+      "availableActions": []
+    }
+  },
+  {
+    "operation": "rotate",
+    "arguments": {
+      "delta": 0,
+      "tilt": 360
+    },
+    "state": {
+      "revision": 5,
+      "moves": 0,
+      "phase": "playing",
+      "stage": "open_case",
+      "animating": false,
+      "animationPart": "",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": -0.045306813,
+        "y": -0.06959343,
+        "z": 0.9925675,
+        "w": 0.08896068
+      },
+      "backFacing": -0.7599919,
+      "backVisible": false,
+      "selected": "",
+      "screwAAttached": true,
+      "screwBAttached": true,
+      "coverAttached": true,
+      "cableAttached": true,
+      "batteryAttached": true,
+      "boardScrewAttached": true,
+      "accepted": true,
+      "message": "拖动掌机，寻找背面的螺丝",
+      "blocker": "",
+      "failureSequence": 1,
+      "failedPart": "screw_a",
+      "lastAction": "disassemble",
+      "lastTarget": "screw_a",
+      "availableActions": []
+    }
+  },
+  {
+    "operation": "rotate",
+    "arguments": {
+      "delta": 0,
+      "roll": 360
+    },
+    "state": {
+      "revision": 6,
+      "moves": 0,
+      "phase": "playing",
+      "stage": "open_case",
+      "animating": false,
+      "animationPart": "",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": -0.045306813,
+        "y": -0.06959343,
+        "z": 0.9925675,
+        "w": 0.08896068
+      },
+      "backFacing": -0.7599919,
+      "backVisible": false,
+      "selected": "",
+      "screwAAttached": true,
+      "screwBAttached": true,
+      "coverAttached": true,
+      "cableAttached": true,
+      "batteryAttached": true,
+      "boardScrewAttached": true,
+      "accepted": true,
+      "message": "拖动掌机，寻找背面的螺丝",
+      "blocker": "",
+      "failureSequence": 1,
+      "failedPart": "screw_a",
+      "lastAction": "disassemble",
+      "lastTarget": "screw_a",
+      "availableActions": []
+    }
+  },
+  {
+    "operation": "rotate",
+    "arguments": {
+      "delta": 0,
+      "tilt": 137
+    },
+    "state": {
+      "revision": 7,
+      "moves": 0,
+      "phase": "playing",
+      "stage": "open_case",
+      "animating": false,
+      "animationPart": "",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": 0.0661655739,
+        "y": -0.9490082,
+        "z": 0.2990262,
+        "w": 0.07475845
+      },
+      "backFacing": 0.9835901,
+      "backVisible": true,
+      "selected": "",
+      "screwAAttached": true,
+      "screwBAttached": true,
+      "coverAttached": true,
+      "cableAttached": true,
+      "batteryAttached": true,
+      "boardScrewAttached": true,
+      "accepted": true,
+      "message": "双击部件拆卸，拖动机器可旋转",
+      "blocker": "",
+      "failureSequence": 1,
+      "failedPart": "screw_a",
+      "lastAction": "disassemble",
+      "lastTarget": "screw_a",
+      "availableActions": [
+        {
+          "action": "select",
+          "part": "screw_a"
+        },
+        {
+          "action": "disassemble",
+          "part": "screw_a",
+          "ready": true,
+          "blocker": ""
+        },
+        {
+          "action": "select",
+          "part": "screw_b"
+        },
+        {
+          "action": "disassemble",
+          "part": "screw_b",
+          "ready": true,
+          "blocker": ""
+        },
+        {
+          "action": "select",
+          "part": "cover"
+        },
+        {
+          "action": "disassemble",
+          "part": "cover",
+          "ready": false,
+          "blocker": "screw_a"
+        }
+      ]
+    }
+  },
+  {
+    "operation": "rotate",
+    "arguments": {
+      "delta": 0,
+      "tilt": -137
+    },
+    "state": {
+      "revision": 8,
+      "moves": 0,
+      "phase": "playing",
+      "stage": "open_case",
+      "animating": false,
+      "animationPart": "",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": -0.045306813,
+        "y": -0.0695934445,
+        "z": 0.9925674,
+        "w": 0.08896068
+      },
+      "backFacing": -0.7599917,
+      "backVisible": false,
+      "selected": "",
+      "screwAAttached": true,
+      "screwBAttached": true,
+      "coverAttached": true,
+      "cableAttached": true,
+      "batteryAttached": true,
+      "boardScrewAttached": true,
+      "accepted": true,
+      "message": "拖动掌机，寻找背面的螺丝",
+      "blocker": "",
+      "failureSequence": 1,
+      "failedPart": "screw_a",
+      "lastAction": "disassemble",
+      "lastTarget": "screw_a",
+      "availableActions": []
+    }
+  },
+  {
+    "operation": "rotate",
+    "arguments": {
+      "delta": 71,
+      "tilt": -53,
+      "roll": 29
+    },
+    "state": {
+      "revision": 9,
+      "moves": 0,
+      "phase": "playing",
+      "stage": "open_case",
+      "animating": false,
+      "animationPart": "",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": 0.213312134,
+        "y": 0.434314251,
+        "z": 0.8386254,
+        "w": -0.250153
+      },
+      "backFacing": -0.746733069,
+      "backVisible": false,
+      "selected": "",
+      "screwAAttached": true,
+      "screwBAttached": true,
+      "coverAttached": true,
+      "cableAttached": true,
+      "batteryAttached": true,
+      "boardScrewAttached": true,
+      "accepted": true,
+      "message": "拖动掌机，寻找背面的螺丝",
+      "blocker": "",
+      "failureSequence": 1,
+      "failedPart": "screw_a",
+      "lastAction": "disassemble",
+      "lastTarget": "screw_a",
+      "availableActions": []
+    }
+  },
+  {
+    "operation": "rotate",
+    "arguments": {
+      "delta": 71,
+      "tilt": -53,
+      "roll": 29
+    },
+    "state": {
+      "revision": 10,
+      "moves": 0,
+      "phase": "playing",
+      "stage": "open_case",
+      "animating": false,
+      "animationPart": "",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": 0.373913527,
+        "y": 0.7386533,
+        "z": 0.2993325,
+        "w": -0.47432068
+      },
+      "backFacing": 0.418815821,
+      "backVisible": true,
+      "selected": "",
+      "screwAAttached": true,
+      "screwBAttached": true,
+      "coverAttached": true,
+      "cableAttached": true,
+      "batteryAttached": true,
+      "boardScrewAttached": true,
+      "accepted": true,
+      "message": "双击部件拆卸，拖动机器可旋转",
+      "blocker": "",
+      "failureSequence": 1,
+      "failedPart": "screw_a",
+      "lastAction": "disassemble",
+      "lastTarget": "screw_a",
+      "availableActions": [
+        {
+          "action": "select",
+          "part": "screw_a"
+        },
+        {
+          "action": "disassemble",
+          "part": "screw_a",
+          "ready": true,
+          "blocker": ""
+        },
+        {
+          "action": "select",
+          "part": "screw_b"
+        },
+        {
+          "action": "disassemble",
+          "part": "screw_b",
+          "ready": true,
+          "blocker": ""
+        },
+        {
+          "action": "select",
+          "part": "cover"
+        },
+        {
+          "action": "disassemble",
+          "part": "cover",
+          "ready": false,
+          "blocker": "screw_a"
+        }
+      ]
+    }
+  },
+  {
+    "operation": "rotate",
+    "arguments": {
+      "delta": 71,
+      "tilt": -53,
+      "roll": 29
+    },
+    "state": {
+      "revision": 11,
+      "moves": 0,
+      "phase": "playing",
+      "stage": "open_case",
+      "animating": false,
+      "animationPart": "",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": 0.362700522,
+        "y": 0.7035789,
+        "z": -0.377504557,
+        "w": -0.48053655
+      },
+      "backFacing": 0.8404599,
+      "backVisible": true,
+      "selected": "",
+      "screwAAttached": true,
+      "screwBAttached": true,
+      "coverAttached": true,
+      "cableAttached": true,
+      "batteryAttached": true,
+      "boardScrewAttached": true,
+      "accepted": true,
+      "message": "双击部件拆卸，拖动机器可旋转",
+      "blocker": "",
+      "failureSequence": 1,
+      "failedPart": "screw_a",
+      "lastAction": "disassemble",
+      "lastTarget": "screw_a",
+      "availableActions": [
+        {
+          "action": "select",
+          "part": "screw_a"
+        },
+        {
+          "action": "disassemble",
+          "part": "screw_a",
+          "ready": true,
+          "blocker": ""
+        },
+        {
+          "action": "select",
+          "part": "screw_b"
+        },
+        {
+          "action": "disassemble",
+          "part": "screw_b",
+          "ready": true,
+          "blocker": ""
+        },
+        {
+          "action": "select",
+          "part": "cover"
+        },
+        {
+          "action": "disassemble",
+          "part": "cover",
+          "ready": false,
+          "blocker": "screw_a"
+        }
+      ]
+    }
+  },
+  {
+    "operation": "rotate",
+    "arguments": {
+      "delta": 71,
+      "tilt": -53,
+      "roll": 29
+    },
+    "state": {
+      "revision": 12,
+      "moves": 0,
+      "phase": "playing",
+      "stage": "open_case",
+      "animating": false,
+      "animationPart": "",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": 0.184825569,
+        "y": 0.34520793,
+        "z": -0.8808772,
+        "w": -0.265944481
+      },
+      "backFacing": -0.167760789,
+      "backVisible": false,
+      "selected": "",
+      "screwAAttached": true,
+      "screwBAttached": true,
+      "coverAttached": true,
+      "cableAttached": true,
+      "batteryAttached": true,
+      "boardScrewAttached": true,
+      "accepted": true,
+      "message": "拖动掌机，寻找背面的螺丝",
+      "blocker": "",
+      "failureSequence": 1,
+      "failedPart": "screw_a",
+      "lastAction": "disassemble",
+      "lastTarget": "screw_a",
+      "availableActions": []
+    }
+  },
+  {
+    "operation": "rotate",
+    "arguments": {
+      "delta": 71,
+      "tilt": -53,
+      "roll": 29
+    },
+    "state": {
+      "revision": 13,
+      "moves": 0,
+      "phase": "playing",
+      "stage": "open_case",
+      "animating": false,
+      "animationPart": "",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": -0.07797731,
+        "y": -0.171787128,
+        "z": -0.9794841,
+        "w": 0.07084988
+      },
+      "backFacing": -0.9656032,
+      "backVisible": false,
+      "selected": "",
+      "screwAAttached": true,
+      "screwBAttached": true,
+      "coverAttached": true,
+      "cableAttached": true,
+      "batteryAttached": true,
+      "boardScrewAttached": true,
+      "accepted": true,
+      "message": "拖动掌机，寻找背面的螺丝",
+      "blocker": "",
+      "failureSequence": 1,
+      "failedPart": "screw_a",
+      "lastAction": "disassemble",
+      "lastTarget": "screw_a",
+      "availableActions": []
+    }
+  },
+  {
+    "operation": "rotate",
+    "arguments": {
+      "delta": 71,
+      "tilt": -53,
+      "roll": 29
+    },
+    "state": {
+      "revision": 14,
+      "moves": 0,
+      "phase": "playing",
+      "stage": "open_case",
+      "animating": false,
+      "animationPart": "",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": -0.304949373,
+        "y": -0.6098455,
+        "z": -0.628015161,
+        "w": 0.375088543
+      },
+      "backFacing": -0.2550825,
+      "backVisible": false,
+      "selected": "",
+      "screwAAttached": true,
+      "screwBAttached": true,
+      "coverAttached": true,
+      "cableAttached": true,
+      "batteryAttached": true,
+      "boardScrewAttached": true,
+      "accepted": true,
+      "message": "拖动掌机，寻找背面的螺丝",
+      "blocker": "",
+      "failureSequence": 1,
+      "failedPart": "screw_a",
+      "lastAction": "disassemble",
+      "lastTarget": "screw_a",
+      "availableActions": []
+    }
+  },
+  {
+    "operation": "rotate",
+    "arguments": {
+      "delta": 71,
+      "tilt": -53,
+      "roll": 29
+    },
+    "state": {
+      "revision": 15,
+      "moves": 0,
+      "phase": "playing",
+      "stage": "open_case",
+      "animating": false,
+      "animationPart": "",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": -0.3917963,
+        "y": -0.767678,
+        "z": 0.0120286392,
+        "w": 0.506972849
+      },
+      "backFacing": 0.8078774,
+      "backVisible": true,
+      "selected": "",
+      "screwAAttached": true,
+      "screwBAttached": true,
+      "coverAttached": true,
+      "cableAttached": true,
+      "batteryAttached": true,
+      "boardScrewAttached": true,
+      "accepted": true,
+      "message": "双击部件拆卸，拖动机器可旋转",
+      "blocker": "",
+      "failureSequence": 1,
+      "failedPart": "screw_a",
+      "lastAction": "disassemble",
+      "lastTarget": "screw_a",
+      "availableActions": [
+        {
+          "action": "select",
+          "part": "screw_a"
+        },
+        {
+          "action": "disassemble",
+          "part": "screw_a",
+          "ready": true,
+          "blocker": ""
+        },
+        {
+          "action": "select",
+          "part": "screw_b"
+        },
+        {
+          "action": "disassemble",
+          "part": "screw_b",
+          "ready": true,
+          "blocker": ""
+        },
+        {
+          "action": "select",
+          "part": "cover"
+        },
+        {
+          "action": "disassemble",
+          "part": "cover",
+          "ready": false,
+          "blocker": "screw_a"
+        }
+      ]
+    }
+  },
+  {
+    "operation": "rotate",
+    "arguments": {
+      "delta": 71,
+      "tilt": -53,
+      "roll": 29
+    },
+    "state": {
+      "revision": 16,
+      "moves": 0,
+      "phase": "playing",
+      "stage": "open_case",
+      "animating": false,
+      "animationPart": "",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": -0.298611671,
+        "y": -0.5727602,
+        "z": 0.646545231,
+        "w": 0.40590167
+      },
+      "backFacing": 0.49398,
+      "backVisible": true,
+      "selected": "",
+      "screwAAttached": true,
+      "screwBAttached": true,
+      "coverAttached": true,
+      "cableAttached": true,
+      "batteryAttached": true,
+      "boardScrewAttached": true,
+      "accepted": true,
+      "message": "双击部件拆卸，拖动机器可旋转",
+      "blocker": "",
+      "failureSequence": 1,
+      "failedPart": "screw_a",
+      "lastAction": "disassemble",
+      "lastTarget": "screw_a",
+      "availableActions": [
+        {
+          "action": "select",
+          "part": "screw_a"
+        },
+        {
+          "action": "disassemble",
+          "part": "screw_a",
+          "ready": true,
+          "blocker": ""
+        },
+        {
+          "action": "select",
+          "part": "screw_b"
+        },
+        {
+          "action": "disassemble",
+          "part": "screw_b",
+          "ready": true,
+          "blocker": ""
+        },
+        {
+          "action": "select",
+          "part": "cover"
+        },
+        {
+          "action": "disassemble",
+          "part": "cover",
+          "ready": false,
+          "blocker": "screw_a"
+        }
+      ]
+    }
+  },
+  {
+    "operation": "rotate",
+    "arguments": {
+      "delta": 71,
+      "tilt": -53,
+      "roll": 29
+    },
+    "state": {
+      "revision": 17,
+      "moves": 0,
+      "phase": "playing",
+      "stage": "open_case",
+      "animating": false,
+      "animationPart": "",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": -0.0682140738,
+        "y": -0.114657372,
+        "z": 0.9839723,
+        "w": 0.118317433
+      },
+      "backFacing": -0.6861046,
+      "backVisible": false,
+      "selected": "",
+      "screwAAttached": true,
+      "screwBAttached": true,
+      "coverAttached": true,
+      "cableAttached": true,
+      "batteryAttached": true,
+      "boardScrewAttached": true,
+      "accepted": true,
+      "message": "拖动掌机，寻找背面的螺丝",
+      "blocker": "",
+      "failureSequence": 1,
+      "failedPart": "screw_a",
+      "lastAction": "disassemble",
+      "lastTarget": "screw_a",
+      "availableActions": []
+    }
+  },
+  {
+    "operation": "rotate",
+    "arguments": {
+      "delta": 71,
+      "tilt": -53,
+      "roll": 29
+    },
+    "state": {
+      "revision": 18,
+      "moves": 0,
+      "phase": "playing",
+      "stage": "open_case",
+      "animating": false,
+      "animationPart": "",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": 0.193528071,
+        "y": 0.3961309,
+        "z": 0.869261265,
+        "w": -0.223634019
+      },
+      "backFacing": -0.8125337,
+      "backVisible": false,
+      "selected": "",
+      "screwAAttached": true,
+      "screwBAttached": true,
+      "coverAttached": true,
+      "cableAttached": true,
+      "batteryAttached": true,
+      "boardScrewAttached": true,
+      "accepted": true,
+      "message": "拖动掌机，寻找背面的螺丝",
+      "blocker": "",
+      "failureSequence": 1,
+      "failedPart": "screw_a",
+      "lastAction": "disassemble",
+      "lastTarget": "screw_a",
+      "availableActions": []
+    }
+  },
+  {
+    "operation": "rotate",
+    "arguments": {
+      "delta": 71,
+      "tilt": -53,
+      "roll": 29
+    },
+    "state": {
+      "revision": 19,
+      "moves": 0,
+      "phase": "playing",
+      "stage": "open_case",
+      "animating": false,
+      "animationPart": "",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": 0.366343468,
+        "y": 0.7248958,
+        "z": 0.355122,
+        "w": -0.462824941
+      },
+      "backFacing": 0.3203767,
+      "backVisible": true,
+      "selected": "",
+      "screwAAttached": true,
+      "screwBAttached": true,
+      "coverAttached": true,
+      "cableAttached": true,
+      "batteryAttached": true,
+      "boardScrewAttached": true,
+      "accepted": true,
+      "message": "双击部件拆卸，拖动机器可旋转",
+      "blocker": "",
+      "failureSequence": 1,
+      "failedPart": "screw_a",
+      "lastAction": "disassemble",
+      "lastTarget": "screw_a",
+      "availableActions": [
+        {
+          "action": "select",
+          "part": "screw_a"
+        },
+        {
+          "action": "disassemble",
+          "part": "screw_a",
+          "ready": true,
+          "blocker": ""
+        },
+        {
+          "action": "select",
+          "part": "screw_b"
+        },
+        {
+          "action": "disassemble",
+          "part": "screw_b",
+          "ready": true,
+          "blocker": ""
+        },
+        {
+          "action": "select",
+          "part": "cover"
+        },
+        {
+          "action": "disassemble",
+          "part": "cover",
+          "ready": false,
+          "blocker": "screw_a"
+        }
+      ]
+    }
+  },
+  {
+    "operation": "rotate",
+    "arguments": {
+      "delta": 71,
+      "tilt": -53,
+      "roll": 29
+    },
+    "state": {
+      "revision": 20,
+      "moves": 0,
+      "phase": "playing",
+      "stage": "open_case",
+      "animating": false,
+      "animationPart": "",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": 0.370822966,
+        "y": 0.720568955,
+        "z": -0.322196841,
+        "w": -0.489346474
+      },
+      "backFacing": 0.8695295,
+      "backVisible": true,
+      "selected": "",
+      "screwAAttached": true,
+      "screwBAttached": true,
+      "coverAttached": true,
+      "cableAttached": true,
+      "batteryAttached": true,
+      "boardScrewAttached": true,
+      "accepted": true,
+      "message": "双击部件拆卸，拖动机器可旋转",
+      "blocker": "",
+      "failureSequence": 1,
+      "failedPart": "screw_a",
+      "lastAction": "disassemble",
+      "lastTarget": "screw_a",
+      "availableActions": [
+        {
+          "action": "select",
+          "part": "screw_a"
+        },
+        {
+          "action": "disassemble",
+          "part": "screw_a",
+          "ready": true,
+          "blocker": ""
+        },
+        {
+          "action": "select",
+          "part": "screw_b"
+        },
+        {
+          "action": "disassemble",
+          "part": "screw_b",
+          "ready": true,
+          "blocker": ""
+        },
+        {
+          "action": "select",
+          "part": "cover"
+        },
+        {
+          "action": "disassemble",
+          "part": "cover",
+          "ready": false,
+          "blocker": "screw_a"
+        }
+      ]
+    }
+  },
+  {
+    "operation": "restart",
+    "arguments": {},
+    "state": {
+      "revision": 21,
+      "moves": 0,
+      "phase": "playing",
+      "stage": "open_case",
+      "animating": false,
+      "animationPart": "",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": -0.04530681,
+        "y": -0.06959342,
+        "z": 0.9925674,
+        "w": 0.08896065
+      },
+      "backFacing": -0.7599917,
+      "backVisible": false,
+      "selected": "",
+      "screwAAttached": true,
+      "screwBAttached": true,
+      "coverAttached": true,
+      "cableAttached": true,
+      "batteryAttached": true,
+      "boardScrewAttached": true,
+      "accepted": true,
+      "message": "翻到背面，从外壳螺丝开始",
+      "blocker": "",
+      "failureSequence": 0,
+      "failedPart": "",
+      "lastAction": "restart",
+      "lastTarget": "",
+      "availableActions": []
+    }
+  },
+  {
+    "operation": "flip",
+    "arguments": {},
+    "state": {
+      "revision": 22,
+      "moves": 0,
+      "phase": "playing",
+      "stage": "open_case",
+      "animating": false,
+      "animationPart": "",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      },
+      "backFacing": 0.8571673,
+      "backVisible": true,
+      "selected": "",
+      "screwAAttached": true,
+      "screwBAttached": true,
+      "coverAttached": true,
+      "cableAttached": true,
+      "batteryAttached": true,
+      "boardScrewAttached": true,
+      "accepted": true,
+      "message": "已翻到背面",
+      "blocker": "",
+      "failureSequence": 0,
+      "failedPart": "",
+      "lastAction": "restart",
+      "lastTarget": "",
+      "availableActions": [
+        {
+          "action": "select",
+          "part": "screw_a"
+        },
+        {
+          "action": "disassemble",
+          "part": "screw_a",
+          "ready": true,
+          "blocker": ""
+        },
+        {
+          "action": "select",
+          "part": "screw_b"
+        },
+        {
+          "action": "disassemble",
+          "part": "screw_b",
+          "ready": true,
+          "blocker": ""
+        },
+        {
+          "action": "select",
+          "part": "cover"
+        },
+        {
+          "action": "disassemble",
+          "part": "cover",
+          "ready": false,
+          "blocker": "screw_a"
+        }
+      ]
+    }
+  },
+  {
+    "operation": "disassemble",
+    "arguments": {
+      "part": "cable"
+    },
+    "state": {
+      "revision": 23,
+      "moves": 0,
+      "phase": "playing",
+      "stage": "open_case",
+      "animating": false,
+      "animationPart": "",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      },
+      "backFacing": 0.8571673,
+      "backVisible": true,
+      "selected": "",
+      "screwAAttached": true,
+      "screwBAttached": true,
+      "coverAttached": true,
+      "cableAttached": true,
+      "batteryAttached": true,
+      "boardScrewAttached": true,
+      "accepted": false,
+      "message": "这个零件当前不可操作，先转到背面并拆开遮挡",
+      "blocker": "cover",
+      "failureSequence": 1,
+      "failedPart": "cable",
+      "lastAction": "disassemble",
+      "lastTarget": "cable",
+      "availableActions": [
+        {
+          "action": "select",
+          "part": "screw_a"
+        },
+        {
+          "action": "disassemble",
+          "part": "screw_a",
+          "ready": true,
+          "blocker": ""
+        },
+        {
+          "action": "select",
+          "part": "screw_b"
+        },
+        {
+          "action": "disassemble",
+          "part": "screw_b",
+          "ready": true,
+          "blocker": ""
+        },
+        {
+          "action": "select",
+          "part": "cover"
+        },
+        {
+          "action": "disassemble",
+          "part": "cover",
+          "ready": false,
+          "blocker": "screw_a"
+        }
+      ]
+    }
+  },
+  {
+    "operation": "disassemble",
+    "arguments": {
+      "part": "cover"
+    },
+    "state": {
+      "revision": 24,
+      "moves": 0,
+      "phase": "playing",
+      "stage": "open_case",
+      "animating": false,
+      "animationPart": "",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      },
+      "backFacing": 0.8571673,
+      "backVisible": true,
+      "selected": "",
+      "screwAAttached": true,
+      "screwBAttached": true,
+      "coverAttached": true,
+      "cableAttached": true,
+      "batteryAttached": true,
+      "boardScrewAttached": true,
+      "accepted": false,
+      "message": "后盖还被螺丝固定着",
+      "blocker": "screw_a",
+      "failureSequence": 2,
+      "failedPart": "cover",
+      "lastAction": "disassemble",
+      "lastTarget": "cover",
+      "availableActions": [
+        {
+          "action": "select",
+          "part": "screw_a"
+        },
+        {
+          "action": "disassemble",
+          "part": "screw_a",
+          "ready": true,
+          "blocker": ""
+        },
+        {
+          "action": "select",
+          "part": "screw_b"
+        },
+        {
+          "action": "disassemble",
+          "part": "screw_b",
+          "ready": true,
+          "blocker": ""
+        },
+        {
+          "action": "select",
+          "part": "cover"
+        },
+        {
+          "action": "disassemble",
+          "part": "cover",
+          "ready": false,
+          "blocker": "screw_a"
+        }
+      ]
+    }
+  },
+  {
+    "operation": "select",
+    "arguments": {
+      "part": "screw_a"
+    },
+    "state": {
+      "revision": 25,
+      "moves": 0,
+      "phase": "playing",
+      "stage": "open_case",
+      "animating": false,
+      "animationPart": "",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      },
+      "backFacing": 0.8571673,
+      "backVisible": true,
+      "selected": "screw_a",
+      "screwAAttached": true,
+      "screwBAttached": true,
+      "coverAttached": true,
+      "cableAttached": true,
+      "batteryAttached": true,
+      "boardScrewAttached": true,
+      "accepted": true,
+      "message": "已选中左侧外壳螺丝",
+      "blocker": "",
+      "failureSequence": 2,
+      "failedPart": "cover",
+      "lastAction": "select",
+      "lastTarget": "screw_a",
+      "availableActions": [
+        {
+          "action": "select",
+          "part": "screw_a"
+        },
+        {
+          "action": "disassemble",
+          "part": "screw_a",
+          "ready": true,
+          "blocker": ""
+        },
+        {
+          "action": "select",
+          "part": "screw_b"
+        },
+        {
+          "action": "disassemble",
+          "part": "screw_b",
+          "ready": true,
+          "blocker": ""
+        },
+        {
+          "action": "select",
+          "part": "cover"
+        },
+        {
+          "action": "disassemble",
+          "part": "cover",
+          "ready": false,
+          "blocker": "screw_a"
+        }
+      ]
+    }
+  },
+  {
+    "operation": "disassemble",
+    "arguments": {
+      "part": "screw_a"
+    },
+    "state": {
+      "revision": 26,
+      "moves": 1,
+      "phase": "animating",
+      "stage": "animating",
+      "animating": true,
+      "animationPart": "screw_a",
+      "animationProgress": 0.0,
+      "orientation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      },
+      "backFacing": 0.8571673,
+      "backVisible": true,
+      "selected": "",
+      "screwAAttached": false,
+      "screwBAttached": true,
+      "coverAttached": true,
+      "cableAttached": true,
+      "batteryAttached": true,
+      "boardScrewAttached": true,
+      "accepted": true,
+      "message": "左侧螺丝已回收",
+      "blocker": "",
+      "failureSequence": 2,
+      "failedPart": "cover",
+      "lastAction": "disassemble",
+      "lastTarget": "screw_a",
+      "availableActions": []
+    }
+  },
+  {
+    "operation": "disassemble",
+    "arguments": {
+      "part": "screw_b"
+    },
+    "state": {
+      "revision": 27,
+      "moves": 1,
+      "phase": "animating",
+      "stage": "animating",
+      "animating": true,
+      "animationPart": "screw_a",
+      "animationProgress": 0.0233877562,
+      "orientation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      },
+      "backFacing": 0.8571673,
+      "backVisible": true,
+      "selected": "",
+      "screwAAttached": false,
+      "screwBAttached": true,
+      "coverAttached": true,
+      "cableAttached": true,
+      "batteryAttached": true,
+      "boardScrewAttached": true,
+      "accepted": false,
+      "message": "正在拆卸，请等待动作完成",
+      "blocker": "screw_a",
+      "failureSequence": 3,
+      "failedPart": "screw_b",
+      "lastAction": "disassemble",
+      "lastTarget": "screw_b",
+      "availableActions": []
+    }
+  },
+  {
+    "operation": "disassemble",
+    "arguments": {
+      "part": "screw_a"
+    },
+    "state": {
+      "revision": 29,
+      "moves": 1,
+      "phase": "playing",
+      "stage": "open_case",
+      "animating": false,
+      "animationPart": "screw_a",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      },
+      "backFacing": 0.8571673,
+      "backVisible": true,
+      "selected": "",
+      "screwAAttached": false,
+      "screwBAttached": true,
+      "coverAttached": true,
+      "cableAttached": true,
+      "batteryAttached": true,
+      "boardScrewAttached": true,
+      "accepted": false,
+      "message": "这个零件当前不可操作，先转到背面并拆开遮挡",
+      "blocker": "cover",
+      "failureSequence": 4,
+      "failedPart": "screw_a",
+      "lastAction": "disassemble",
+      "lastTarget": "screw_a",
+      "availableActions": [
+        {
+          "action": "select",
+          "part": "screw_b"
+        },
+        {
+          "action": "disassemble",
+          "part": "screw_b",
+          "ready": true,
+          "blocker": ""
+        },
+        {
+          "action": "select",
+          "part": "cover"
+        },
+        {
+          "action": "disassemble",
+          "part": "cover",
+          "ready": false,
+          "blocker": "screw_b"
+        }
+      ]
+    }
+  },
+  {
+    "operation": "disassemble",
+    "arguments": {
+      "part": "cover"
+    },
+    "state": {
+      "revision": 30,
+      "moves": 1,
+      "phase": "playing",
+      "stage": "open_case",
+      "animating": false,
+      "animationPart": "screw_a",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      },
+      "backFacing": 0.8571673,
+      "backVisible": true,
+      "selected": "",
+      "screwAAttached": false,
+      "screwBAttached": true,
+      "coverAttached": true,
+      "cableAttached": true,
+      "batteryAttached": true,
+      "boardScrewAttached": true,
+      "accepted": false,
+      "message": "后盖还被螺丝固定着",
+      "blocker": "screw_b",
+      "failureSequence": 5,
+      "failedPart": "cover",
+      "lastAction": "disassemble",
+      "lastTarget": "cover",
+      "availableActions": [
+        {
+          "action": "select",
+          "part": "screw_b"
+        },
+        {
+          "action": "disassemble",
+          "part": "screw_b",
+          "ready": true,
+          "blocker": ""
+        },
+        {
+          "action": "select",
+          "part": "cover"
+        },
+        {
+          "action": "disassemble",
+          "part": "cover",
+          "ready": false,
+          "blocker": "screw_b"
+        }
+      ]
+    }
+  },
+  {
+    "operation": "disassemble",
+    "arguments": {
+      "part": "screw_b"
+    },
+    "state": {
+      "revision": 31,
+      "moves": 2,
+      "phase": "animating",
+      "stage": "animating",
+      "animating": true,
+      "animationPart": "screw_b",
+      "animationProgress": 0.0,
+      "orientation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      },
+      "backFacing": 0.8571673,
+      "backVisible": true,
+      "selected": "",
+      "screwAAttached": false,
+      "screwBAttached": false,
+      "coverAttached": true,
+      "cableAttached": true,
+      "batteryAttached": true,
+      "boardScrewAttached": true,
+      "accepted": true,
+      "message": "右侧螺丝已回收",
+      "blocker": "",
+      "failureSequence": 5,
+      "failedPart": "cover",
+      "lastAction": "disassemble",
+      "lastTarget": "screw_b",
+      "availableActions": []
+    }
+  },
+  {
+    "operation": "disassemble",
+    "arguments": {
+      "part": "cover"
+    },
+    "state": {
+      "revision": 33,
+      "moves": 3,
+      "phase": "animating",
+      "stage": "animating",
+      "animating": true,
+      "animationPart": "cover",
+      "animationProgress": 0.0,
+      "orientation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      },
+      "backFacing": 0.8571673,
+      "backVisible": true,
+      "selected": "",
+      "screwAAttached": false,
+      "screwBAttached": false,
+      "coverAttached": false,
+      "cableAttached": true,
+      "batteryAttached": true,
+      "boardScrewAttached": true,
+      "accepted": true,
+      "message": "后盖打开，露出了电池和主板",
+      "blocker": "",
+      "failureSequence": 5,
+      "failedPart": "cover",
+      "lastAction": "disassemble",
+      "lastTarget": "cover",
+      "availableActions": []
+    }
+  },
+  {
+    "operation": "disassemble",
+    "arguments": {
+      "part": "battery"
+    },
+    "state": {
+      "revision": 35,
+      "moves": 3,
+      "phase": "playing",
+      "stage": "disconnect_battery",
+      "animating": false,
+      "animationPart": "cover",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      },
+      "backFacing": 0.8571673,
+      "backVisible": true,
+      "selected": "",
+      "screwAAttached": false,
+      "screwBAttached": false,
+      "coverAttached": false,
+      "cableAttached": true,
+      "batteryAttached": true,
+      "boardScrewAttached": true,
+      "accepted": false,
+      "message": "先断开电池排线接头",
+      "blocker": "cable",
+      "failureSequence": 6,
+      "failedPart": "battery",
+      "lastAction": "disassemble",
+      "lastTarget": "battery",
+      "availableActions": [
+        {
+          "action": "select",
+          "part": "cable"
+        },
+        {
+          "action": "disassemble",
+          "part": "cable",
+          "ready": true,
+          "blocker": ""
+        },
+        {
+          "action": "select",
+          "part": "battery"
+        },
+        {
+          "action": "disassemble",
+          "part": "battery",
+          "ready": false,
+          "blocker": "cable"
+        },
+        {
+          "action": "select",
+          "part": "board_screw"
+        },
+        {
+          "action": "disassemble",
+          "part": "board_screw",
+          "ready": true,
+          "blocker": ""
+        },
+        {
+          "action": "select",
+          "part": "board"
+        },
+        {
+          "action": "disassemble",
+          "part": "board",
+          "ready": false,
+          "blocker": "cable"
+        }
+      ]
+    }
+  },
+  {
+    "operation": "disassemble",
+    "arguments": {
+      "part": "board"
+    },
+    "state": {
+      "revision": 36,
+      "moves": 3,
+      "phase": "playing",
+      "stage": "disconnect_battery",
+      "animating": false,
+      "animationPart": "cover",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      },
+      "backFacing": 0.8571673,
+      "backVisible": true,
+      "selected": "",
+      "screwAAttached": false,
+      "screwBAttached": false,
+      "coverAttached": false,
+      "cableAttached": true,
+      "batteryAttached": true,
+      "boardScrewAttached": true,
+      "accepted": false,
+      "message": "电池排线仍连接着主板",
+      "blocker": "cable",
+      "failureSequence": 7,
+      "failedPart": "board",
+      "lastAction": "disassemble",
+      "lastTarget": "board",
+      "availableActions": [
+        {
+          "action": "select",
+          "part": "cable"
+        },
+        {
+          "action": "disassemble",
+          "part": "cable",
+          "ready": true,
+          "blocker": ""
+        },
+        {
+          "action": "select",
+          "part": "battery"
+        },
+        {
+          "action": "disassemble",
+          "part": "battery",
+          "ready": false,
+          "blocker": "cable"
+        },
+        {
+          "action": "select",
+          "part": "board_screw"
+        },
+        {
+          "action": "disassemble",
+          "part": "board_screw",
+          "ready": true,
+          "blocker": ""
+        },
+        {
+          "action": "select",
+          "part": "board"
+        },
+        {
+          "action": "disassemble",
+          "part": "board",
+          "ready": false,
+          "blocker": "cable"
+        }
+      ]
+    }
+  },
+  {
+    "operation": "disassemble",
+    "arguments": {
+      "part": "cable"
+    },
+    "state": {
+      "revision": 37,
+      "moves": 4,
+      "phase": "animating",
+      "stage": "animating",
+      "animating": true,
+      "animationPart": "cable",
+      "animationProgress": 0.0,
+      "orientation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      },
+      "backFacing": 0.8571673,
+      "backVisible": true,
+      "selected": "",
+      "screwAAttached": false,
+      "screwBAttached": false,
+      "coverAttached": false,
+      "cableAttached": false,
+      "batteryAttached": true,
+      "boardScrewAttached": true,
+      "accepted": true,
+      "message": "排线接头已断开回收",
+      "blocker": "",
+      "failureSequence": 7,
+      "failedPart": "board",
+      "lastAction": "disassemble",
+      "lastTarget": "cable",
+      "availableActions": []
+    }
+  },
+  {
+    "operation": "disassemble",
+    "arguments": {
+      "part": "board"
+    },
+    "state": {
+      "revision": 39,
+      "moves": 4,
+      "phase": "playing",
+      "stage": "disconnect_battery",
+      "animating": false,
+      "animationPart": "cable",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      },
+      "backFacing": 0.8571673,
+      "backVisible": true,
+      "selected": "",
+      "screwAAttached": false,
+      "screwBAttached": false,
+      "coverAttached": false,
+      "cableAttached": false,
+      "batteryAttached": true,
+      "boardScrewAttached": true,
+      "accepted": false,
+      "message": "电池压片挡着主板，先取出电池",
+      "blocker": "battery",
+      "failureSequence": 8,
+      "failedPart": "board",
+      "lastAction": "disassemble",
+      "lastTarget": "board",
+      "availableActions": [
+        {
+          "action": "select",
+          "part": "battery"
+        },
+        {
+          "action": "disassemble",
+          "part": "battery",
+          "ready": true,
+          "blocker": ""
+        },
+        {
+          "action": "select",
+          "part": "board_screw"
+        },
+        {
+          "action": "disassemble",
+          "part": "board_screw",
+          "ready": true,
+          "blocker": ""
+        },
+        {
+          "action": "select",
+          "part": "board"
+        },
+        {
+          "action": "disassemble",
+          "part": "board",
+          "ready": false,
+          "blocker": "battery"
+        }
+      ]
+    }
+  },
+  {
+    "operation": "disassemble",
+    "arguments": {
+      "part": "battery"
+    },
+    "state": {
+      "revision": 40,
+      "moves": 5,
+      "phase": "animating",
+      "stage": "animating",
+      "animating": true,
+      "animationPart": "battery",
+      "animationProgress": 0.0,
+      "orientation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      },
+      "backFacing": 0.8571673,
+      "backVisible": true,
+      "selected": "",
+      "screwAAttached": false,
+      "screwBAttached": false,
+      "coverAttached": false,
+      "cableAttached": false,
+      "batteryAttached": false,
+      "boardScrewAttached": true,
+      "accepted": true,
+      "message": "电池已取出，主板压片已腾空",
+      "blocker": "",
+      "failureSequence": 8,
+      "failedPart": "board",
+      "lastAction": "disassemble",
+      "lastTarget": "battery",
+      "availableActions": []
+    }
+  },
+  {
+    "operation": "disassemble",
+    "arguments": {
+      "part": "board"
+    },
+    "state": {
+      "revision": 42,
+      "moves": 5,
+      "phase": "playing",
+      "stage": "extract_board",
+      "animating": false,
+      "animationPart": "battery",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      },
+      "backFacing": 0.8571673,
+      "backVisible": true,
+      "selected": "",
+      "screwAAttached": false,
+      "screwBAttached": false,
+      "coverAttached": false,
+      "cableAttached": false,
+      "batteryAttached": false,
+      "boardScrewAttached": true,
+      "accepted": false,
+      "message": "主板还有一颗固定螺丝",
+      "blocker": "board_screw",
+      "failureSequence": 9,
+      "failedPart": "board",
+      "lastAction": "disassemble",
+      "lastTarget": "board",
+      "availableActions": [
+        {
+          "action": "select",
+          "part": "board_screw"
+        },
+        {
+          "action": "disassemble",
+          "part": "board_screw",
+          "ready": true,
+          "blocker": ""
+        },
+        {
+          "action": "select",
+          "part": "board"
+        },
+        {
+          "action": "disassemble",
+          "part": "board",
+          "ready": false,
+          "blocker": "board_screw"
+        }
+      ]
+    }
+  },
+  {
+    "operation": "get_state",
+    "arguments": {},
+    "state": {
+      "revision": 42,
+      "moves": 5,
+      "phase": "playing",
+      "stage": "extract_board",
+      "animating": false,
+      "animationPart": "battery",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      },
+      "backFacing": 0.8571673,
+      "backVisible": true,
+      "selected": "",
+      "screwAAttached": false,
+      "screwBAttached": false,
+      "coverAttached": false,
+      "cableAttached": false,
+      "batteryAttached": false,
+      "boardScrewAttached": true,
+      "accepted": false,
+      "message": "主板还有一颗固定螺丝",
+      "blocker": "board_screw",
+      "failureSequence": 9,
+      "failedPart": "board",
+      "lastAction": "disassemble",
+      "lastTarget": "board",
+      "availableActions": [
+        {
+          "action": "select",
+          "part": "board_screw"
+        },
+        {
+          "action": "disassemble",
+          "part": "board_screw",
+          "ready": true,
+          "blocker": ""
+        },
+        {
+          "action": "select",
+          "part": "board"
+        },
+        {
+          "action": "disassemble",
+          "part": "board",
+          "ready": false,
+          "blocker": "board_screw"
+        }
+      ]
+    }
+  },
+  {
+    "operation": "rotate",
+    "arguments": {
+      "delta": 0,
+      "roll": 123
+    },
+    "state": {
+      "revision": 43,
+      "moves": 5,
+      "phase": "playing",
+      "stage": "extract_board",
+      "animating": false,
+      "animationPart": "battery",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": 0.0,
+        "y": -0.753293335,
+        "z": 0.4526243,
+        "w": 0.477158755
+      },
+      "backFacing": 0.857167363,
+      "backVisible": true,
+      "selected": "",
+      "screwAAttached": false,
+      "screwBAttached": false,
+      "coverAttached": false,
+      "cableAttached": false,
+      "batteryAttached": false,
+      "boardScrewAttached": true,
+      "accepted": true,
+      "message": "双击部件拆卸，拖动机器可旋转",
+      "blocker": "",
+      "failureSequence": 9,
+      "failedPart": "board",
+      "lastAction": "disassemble",
+      "lastTarget": "board",
+      "availableActions": [
+        {
+          "action": "select",
+          "part": "board_screw"
+        },
+        {
+          "action": "disassemble",
+          "part": "board_screw",
+          "ready": true,
+          "blocker": ""
+        },
+        {
+          "action": "select",
+          "part": "board"
+        },
+        {
+          "action": "disassemble",
+          "part": "board",
+          "ready": false,
+          "blocker": "board_screw"
+        }
+      ]
+    }
+  },
+  {
+    "operation": "rotate",
+    "arguments": {
+      "delta": 0,
+      "roll": -123
+    },
+    "state": {
+      "revision": 44,
+      "moves": 5,
+      "phase": "playing",
+      "stage": "extract_board",
+      "animating": false,
+      "animationPart": "battery",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      },
+      "backFacing": 0.8571673,
+      "backVisible": true,
+      "selected": "",
+      "screwAAttached": false,
+      "screwBAttached": false,
+      "coverAttached": false,
+      "cableAttached": false,
+      "batteryAttached": false,
+      "boardScrewAttached": true,
+      "accepted": true,
+      "message": "双击部件拆卸，拖动机器可旋转",
+      "blocker": "",
+      "failureSequence": 9,
+      "failedPart": "board",
+      "lastAction": "disassemble",
+      "lastTarget": "board",
+      "availableActions": [
+        {
+          "action": "select",
+          "part": "board_screw"
+        },
+        {
+          "action": "disassemble",
+          "part": "board_screw",
+          "ready": true,
+          "blocker": ""
+        },
+        {
+          "action": "select",
+          "part": "board"
+        },
+        {
+          "action": "disassemble",
+          "part": "board",
+          "ready": false,
+          "blocker": "board_screw"
+        }
+      ]
+    }
+  },
+  {
+    "operation": "flip",
+    "arguments": {},
+    "state": {
+      "revision": 45,
+      "moves": 5,
+      "phase": "playing",
+      "stage": "extract_board",
+      "animating": false,
+      "animationPart": "battery",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": -0.04530681,
+        "y": -0.06959342,
+        "z": 0.9925674,
+        "w": 0.08896065
+      },
+      "backFacing": -0.7599917,
+      "backVisible": false,
+      "selected": "",
+      "screwAAttached": false,
+      "screwBAttached": false,
+      "coverAttached": false,
+      "cableAttached": false,
+      "batteryAttached": false,
+      "boardScrewAttached": true,
+      "accepted": true,
+      "message": "已翻到正面",
+      "blocker": "",
+      "failureSequence": 9,
+      "failedPart": "board",
+      "lastAction": "disassemble",
+      "lastTarget": "board",
+      "availableActions": []
+    }
+  },
+  {
+    "operation": "get_state",
+    "arguments": {},
+    "state": {
+      "revision": 45,
+      "moves": 5,
+      "phase": "playing",
+      "stage": "extract_board",
+      "animating": false,
+      "animationPart": "battery",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": -0.04530681,
+        "y": -0.06959342,
+        "z": 0.9925674,
+        "w": 0.08896065
+      },
+      "backFacing": -0.7599917,
+      "backVisible": false,
+      "selected": "",
+      "screwAAttached": false,
+      "screwBAttached": false,
+      "coverAttached": false,
+      "cableAttached": false,
+      "batteryAttached": false,
+      "boardScrewAttached": true,
+      "accepted": true,
+      "message": "已翻到正面",
+      "blocker": "",
+      "failureSequence": 9,
+      "failedPart": "board",
+      "lastAction": "disassemble",
+      "lastTarget": "board",
+      "availableActions": []
+    }
+  },
+  {
+    "operation": "disassemble",
+    "arguments": {
+      "part": "board_screw"
+    },
+    "state": {
+      "revision": 46,
+      "moves": 5,
+      "phase": "playing",
+      "stage": "extract_board",
+      "animating": false,
+      "animationPart": "battery",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": -0.04530681,
+        "y": -0.06959342,
+        "z": 0.9925674,
+        "w": 0.08896065
+      },
+      "backFacing": -0.7599917,
+      "backVisible": false,
+      "selected": "",
+      "screwAAttached": false,
+      "screwBAttached": false,
+      "coverAttached": false,
+      "cableAttached": false,
+      "batteryAttached": false,
+      "boardScrewAttached": true,
+      "accepted": false,
+      "message": "这个零件当前不可操作，先转到背面并拆开遮挡",
+      "blocker": "board_screw",
+      "failureSequence": 10,
+      "failedPart": "board_screw",
+      "lastAction": "disassemble",
+      "lastTarget": "board_screw",
+      "availableActions": []
+    }
+  },
+  {
+    "operation": "flip",
+    "arguments": {},
+    "state": {
+      "revision": 47,
+      "moves": 5,
+      "phase": "playing",
+      "stage": "extract_board",
+      "animating": false,
+      "animationPart": "battery",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      },
+      "backFacing": 0.8571673,
+      "backVisible": true,
+      "selected": "",
+      "screwAAttached": false,
+      "screwBAttached": false,
+      "coverAttached": false,
+      "cableAttached": false,
+      "batteryAttached": false,
+      "boardScrewAttached": true,
+      "accepted": true,
+      "message": "已翻到背面",
+      "blocker": "",
+      "failureSequence": 10,
+      "failedPart": "board_screw",
+      "lastAction": "disassemble",
+      "lastTarget": "board_screw",
+      "availableActions": [
+        {
+          "action": "select",
+          "part": "board_screw"
+        },
+        {
+          "action": "disassemble",
+          "part": "board_screw",
+          "ready": true,
+          "blocker": ""
+        },
+        {
+          "action": "select",
+          "part": "board"
+        },
+        {
+          "action": "disassemble",
+          "part": "board",
+          "ready": false,
+          "blocker": "board_screw"
+        }
+      ]
+    }
+  },
+  {
+    "operation": "disassemble",
+    "arguments": {
+      "part": "board_screw"
+    },
+    "state": {
+      "revision": 48,
+      "moves": 6,
+      "phase": "animating",
+      "stage": "animating",
+      "animating": true,
+      "animationPart": "board_screw",
+      "animationProgress": 0.0,
+      "orientation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      },
+      "backFacing": 0.8571673,
+      "backVisible": true,
+      "selected": "",
+      "screwAAttached": false,
+      "screwBAttached": false,
+      "coverAttached": false,
+      "cableAttached": false,
+      "batteryAttached": false,
+      "boardScrewAttached": false,
+      "accepted": true,
+      "message": "主板固定螺丝已回收",
+      "blocker": "",
+      "failureSequence": 10,
+      "failedPart": "board_screw",
+      "lastAction": "disassemble",
+      "lastTarget": "board_screw",
+      "availableActions": []
+    }
+  },
+  {
+    "operation": "disassemble",
+    "arguments": {
+      "part": "board"
+    },
+    "state": {
+      "revision": 50,
+      "moves": 7,
+      "phase": "animating",
+      "stage": "animating",
+      "animating": true,
+      "animationPart": "board",
+      "animationProgress": 0.0,
+      "orientation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      },
+      "backFacing": 0.8571673,
+      "backVisible": true,
+      "selected": "",
+      "screwAAttached": false,
+      "screwBAttached": false,
+      "coverAttached": false,
+      "cableAttached": false,
+      "batteryAttached": false,
+      "boardScrewAttached": false,
+      "accepted": true,
+      "message": "整机拆解完成 · 全部零件已回收",
+      "blocker": "",
+      "failureSequence": 10,
+      "failedPart": "board_screw",
+      "lastAction": "disassemble",
+      "lastTarget": "board",
+      "availableActions": []
+    }
+  },
+  {
+    "operation": "disassemble",
+    "arguments": {
+      "part": "board"
+    },
+    "state": {
+      "revision": 52,
+      "moves": 7,
+      "phase": "won",
+      "stage": "complete",
+      "animating": false,
+      "animationPart": "board",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      },
+      "backFacing": 0.8571673,
+      "backVisible": true,
+      "selected": "",
+      "screwAAttached": false,
+      "screwBAttached": false,
+      "coverAttached": false,
+      "cableAttached": false,
+      "batteryAttached": false,
+      "boardScrewAttached": false,
+      "accepted": false,
+      "message": "这个零件当前不可操作，先转到背面并拆开遮挡",
+      "blocker": "board",
+      "failureSequence": 11,
+      "failedPart": "board",
+      "lastAction": "disassemble",
+      "lastTarget": "board",
+      "availableActions": []
+    }
+  },
+  {
+    "operation": "restart",
+    "arguments": {},
+    "state": {
+      "revision": 53,
+      "moves": 0,
+      "phase": "playing",
+      "stage": "open_case",
+      "animating": false,
+      "animationPart": "",
+      "animationProgress": 1.0,
+      "orientation": {
+        "x": -0.04530681,
+        "y": -0.06959342,
+        "z": 0.9925674,
+        "w": 0.08896065
+      },
+      "backFacing": -0.7599917,
+      "backVisible": false,
+      "selected": "",
+      "screwAAttached": true,
+      "screwBAttached": true,
+      "coverAttached": true,
+      "cableAttached": true,
+      "batteryAttached": true,
+      "boardScrewAttached": true,
+      "accepted": true,
+      "message": "翻到背面，从外壳螺丝开始",
+      "blocker": "",
+      "failureSequence": 0,
+      "failedPart": "",
+      "lastAction": "restart",
+      "lastTarget": "",
+      "availableActions": []
+    }
+  }
+]

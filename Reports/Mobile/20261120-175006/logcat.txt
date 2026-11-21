@@ -1,0 +1,34 @@
+--------- beginning of system
+11-20 17:50:10.727  4522  4522 I AndroidRuntime: RuntimeInit: Starting application from zygote
+11-20 17:50:10.727  4522  4522 D AndroidRuntime: Entered RuntimeInit!
+11-20 17:50:10.732  4522  4522 I AndroidRuntime: MethodAndArgsCaller run()
+11-20 17:50:10.737  4522  4522 D ActivityThread: Attach thread to application
+11-20 17:50:10.774  4522 11621 I LoadedApk: createSharedLibrariesLoaders::sharedLibraries is null
+11-20 17:50:10.792  4522 11621 I ActivityThread: Init compatible state: true
+11-20 17:50:10.800  4522  4522 I ActivityThread: finishPreloaded preloadStatus 0
+11-20 17:50:10.801  4522  4522 I LaunchActivityItem: execute start, token = android.os.BinderProxy@44baab7
+11-20 17:50:10.826  4522  4522 V ActivityThread: callActivityOnCreate
+11-20 17:50:10.875  4522  4522 I ActivityThread: add activity client record, r= ActivityRecord{e6cb0c1 token=android.os.BinderProxy@44baab7 {com.littlegame.teardown.dev/com.unity3d.player.UnityPlayerActivity}} token= android.os.BinderProxy@44baab7
+11-20 17:50:10.917  4522  4522 I TopResumedActivityChangeItem: execute start, ActivityClientRecord = ActivityRecord{e6cb0c1 token=android.os.BinderProxy@44baab7 {com.littlegame.teardown.dev/com.unity3d.player.UnityPlayerActivity}}
+--------- beginning of main
+11-20 17:50:13.960  4522 11681 D Unity   : [PhysX] Initialized MultithreadedTaskDispatcher with 5 workers.
+11-20 17:50:13.960  4522 11681 D Unity   : UnloadTime: 2.308333 ms
+11-20 17:50:13.991  4522 11681 I AudioManager: getStreamVolume streamType: 3
+11-20 17:50:13.998  4522 11681 D Unity   : Sensor :        Accelerometer ( 1) ; 0.000010 / 0.00s ; acc_s002_006 / 002 
+11-20 17:50:13.999  4522 11681 D Unity   : Choreographer available: Enabling VSYNC timing
+11-20 17:50:14.005  4522 11681 I AudioManager: getStreamVolume streamType: 3
+11-20 17:50:14.051  4522 11681 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:50:14.051  4522 11681 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:50:14.051  4522 11681 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:50:14.051  4522 11681 E Unity   : LittleGame.MachineView:Start()
+11-20 17:50:14.051  4522 11681 E Unity   : 
+11-20 17:50:14.051  4522 11681 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -778451464]
+11-20 17:50:14.051  4522 11681 E Unity   : 
+11-20 17:50:14.075  4522 11681 I IL2CPP  : Locale zh-Hans-CN
+11-20 17:50:14.076  4522 11681 E Unity   : ArgumentNullException: Value cannot be null.
+11-20 17:50:14.076  4522 11681 E Unity   : Parameter name: shader
+11-20 17:50:14.076  4522 11681 E Unity   :   at LittleGame.MachineModel.Part (System.String id, UnityEngine.Vector3 position, UnityEngine.Vector3 scale, System.String color, System.Boolean interactive, UnityEngine.PrimitiveType type) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:50:14.076  4522 11681 E Unity   :   at LittleGame.MachineModel.Build () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:50:14.076  4522 11681 E Unity   :   at LittleGame.MachineView.Start () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:50:14.076  4522 11681 E Unity   : 
+11-20 17:50:15.812  4522  4522 I AwareBitmapCacher: init lrucache size: 4194304 pid=4522

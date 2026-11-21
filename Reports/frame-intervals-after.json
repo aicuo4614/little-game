@@ -1,0 +1,13 @@
+{
+  "available": true,
+  "samples": 240,
+  "meanFrameMs": 16.668711972236633,
+  "estimatedFps": 59.99263780342462,
+  "p95FrameMs": 17.0351,
+  "worstFrameMs": 17.2442,
+  "targetFrameRate": 60,
+  "width": 1280,
+  "height": 720,
+  "platform": "WindowsEditor",
+  "note": "实际帧间隔，包含编辑器、同步和外部工具开销。不能替代手机 GPU 测量。"
+}

@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-21",
+  "status": "ready-for-user-phone-test",
+  "title": "电器回收站",
+  "version": "1.1.0",
+  "versionCode": 2,
+  "buildId": "c2329977be474b54a15e44685def2787",
+  "apk": "E:\\Project\\little-game\\Builds\\Android\\electronics-recycling-1.1.0.apk",
+  "canonicalApk": "E:\\Project\\little-game\\Builds\\Android\\little-game.apk",
+  "bytes": 29388785,
+  "sha256": "8ef64da33da58bf2663cb52fa3ff4c75210282cd89540fe570527037d41ef419",
+  "apkZipIntegrity": "passed",
+  "backend": "IL2CPP",
+  "abi": "arm64-v8a",
+  "mcpVersion": "3.0.0",
+  "editor": {
+    "compile": "passed",
+    "inputReplayRequests": 190,
+    "normalGameplayOperations": 49,
+    "consoleErrors": 0,
+    "consoleExceptions": 0,
+    "consoleWarnings": 0
+  },
+  "mobile": {
+    "installedByAgent": false,
+    "touchVerifiedByAgent": false,
+    "reason": "用户要求仅打包，自行安装验证"
+  },
+  "previews": [
+    "Reports/workbench-front.png",
+    "Reports/workbench-selected.png",
+    "Reports/workbench-blocked.png",
+    "Reports/workbench-flight.png",
+    "Reports/workbench-open.png",
+    "Reports/workbench-complete.png"
+  ]
+}

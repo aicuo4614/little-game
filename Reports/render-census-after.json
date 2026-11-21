@@ -1,0 +1,33 @@
+{
+  "schema": "kabu.perf.render-census/v1",
+  "ok": true,
+  "status": "ok",
+  "capturedAt": "2026-11-20T18:25:17.3782668\u002B08:00",
+  "scene": {
+    "name": "Game",
+    "path": "Assets/Scenes/Game.unity"
+  },
+  "data": {
+    "lights": {
+      "total": 1,
+      "realtime": 1,
+      "mixed": 0,
+      "baked": 0,
+      "shadowCastingEnabled": 1,
+      "byType": [
+        {
+          "type": "Directional",
+          "count": 1
+        }
+      ]
+    },
+    "renderers": {
+      "total": 63,
+      "enabledActive": 30,
+      "meshRenderer": 62,
+      "skinnedMeshRenderer": 0,
+      "other": 1,
+      "uniqueMaterials": 29
+    }
+  }
+}

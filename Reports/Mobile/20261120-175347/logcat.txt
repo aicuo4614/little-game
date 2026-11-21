@@ -1,0 +1,741 @@
+--------- beginning of system
+11-20 17:53:52.821 14241 14241 I AndroidRuntime: RuntimeInit: Starting application from zygote
+11-20 17:53:52.821 14241 14241 D AndroidRuntime: Entered RuntimeInit!
+11-20 17:53:52.825 14241 14241 I AndroidRuntime: MethodAndArgsCaller run()
+11-20 17:53:52.830 14241 14241 D ActivityThread: Attach thread to application
+11-20 17:53:52.849 14241 14196 I LoadedApk: createSharedLibrariesLoaders::sharedLibraries is null
+11-20 17:53:52.903 14241 14196 I ActivityThread: Init compatible state: true
+11-20 17:53:52.920 14241 14241 I ActivityThread: finishPreloaded preloadStatus 0
+11-20 17:53:52.920 14241 14241 I LaunchActivityItem: execute start, token = android.os.BinderProxy@446fdb6
+11-20 17:53:52.953 14241 14241 V ActivityThread: callActivityOnCreate
+11-20 17:53:53.026 14241 14241 I ActivityThread: add activity client record, r= ActivityRecord{e6cb0c1 token=android.os.BinderProxy@446fdb6 {com.littlegame.teardown.dev/com.unity3d.player.UnityPlayerActivity}} token= android.os.BinderProxy@446fdb6
+11-20 17:53:53.062 14241 14241 I TopResumedActivityChangeItem: execute start, ActivityClientRecord = ActivityRecord{e6cb0c1 token=android.os.BinderProxy@446fdb6 {com.littlegame.teardown.dev/com.unity3d.player.UnityPlayerActivity}}
+--------- beginning of main
+11-20 17:53:53.591 14241 14235 I SwappyVk: Returning refresh duration of 8333333 nsec (approx 120.000005 Hz)
+11-20 17:53:53.803 14241 14401 I me.teardown.de: xdraw: Third-Thread UnityGfxDeviceW(14401) uid 10433 (1216x2688) detected success with miss default
+11-20 17:53:54.602 14241 14239 D HwViewRootImpl: [DetectViewsLocationRunner] start to get views' rect, type = SCENE_WINDOW_FOCUS_CHANGE
+11-20 17:53:54.603 14241 14239 D HwViewRootImpl: [DetectViewsLocationRunner] windowModeType: 1
+11-20 17:53:54.603 14241 14239 D HwViewRootImpl: [DetectViewsLocationRunner] displayPoint: Point(1216, 2688)
+11-20 17:53:54.603 14241 14239 D HwViewRootImpl: [DetectViewsLocationRunner] windowModeType: 1
+11-20 17:53:54.608 14241 14239 D HwViewRootImpl: [DetectViewsLocationRunner] lazyMode:
+11-20 17:53:54.608 14241 14239 D HwViewRootImpl: [DetectViewsLocationRunner] current mode is full screen
+11-20 17:53:54.609 14241 14241 D HwViewRootImpl: [DetectViewsLocationRunner] start to getViewHierarchy
+11-20 17:53:54.612 14241 14239 D HwViewRootImpl: [DetectViewsLocationRunner] deviceOrientation: 0
+11-20 17:53:54.612 14241 14239 D HwViewRootImpl: [DetectViewsLocationRunner-ScreenDirection] ROTATION_0
+11-20 17:53:54.612 14241 14239 D HwViewRootImpl: [DetectViewsLocationRunner] get views' rect = 0, SCENE_WINDOW_FOCUS_CHANGE
+11-20 17:53:55.670 14241 14235 D Unity   : [PhysX] Initialized MultithreadedTaskDispatcher with 5 workers.
+11-20 17:53:55.670 14241 14235 D Unity   : UnloadTime: 1.437500 ms
+11-20 17:53:55.703 14241 14235 I AudioManager: getStreamVolume streamType: 3
+11-20 17:53:55.707 14241 14235 D Unity   : Sensor :        Accelerometer ( 1) ; 0.000010 / 0.00s ; acc_s002_006 / 002 
+11-20 17:53:55.707 14241 14235 D Unity   : Choreographer available: Enabling VSYNC timing
+11-20 17:53:55.709 14241 14235 I AudioManager: getStreamVolume streamType: 3
+11-20 17:53:55.744 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.744 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.744 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.744 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.744 14241 14235 E Unity   : 
+11-20 17:53:55.744 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264840]
+11-20 17:53:55.744 14241 14235 E Unity   : 
+11-20 17:53:55.750 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.750 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.750 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.750 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.750 14241 14235 E Unity   : 
+11-20 17:53:55.750 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264840]
+11-20 17:53:55.750 14241 14235 E Unity   : 
+11-20 17:53:55.751 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.751 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.751 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.751 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.751 14241 14235 E Unity   : 
+11-20 17:53:55.751 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264840]
+11-20 17:53:55.751 14241 14235 E Unity   : 
+11-20 17:53:55.752 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.752 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.752 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.752 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.752 14241 14235 E Unity   : 
+11-20 17:53:55.752 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264840]
+11-20 17:53:55.752 14241 14235 E Unity   : 
+11-20 17:53:55.755 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.755 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.755 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.755 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.755 14241 14235 E Unity   : 
+11-20 17:53:55.755 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264840]
+11-20 17:53:55.755 14241 14235 E Unity   : 
+11-20 17:53:55.756 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.756 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.756 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.756 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.756 14241 14235 E Unity   : 
+11-20 17:53:55.756 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264840]
+11-20 17:53:55.756 14241 14235 E Unity   : 
+11-20 17:53:55.756 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.756 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.756 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.756 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.756 14241 14235 E Unity   : 
+11-20 17:53:55.756 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264840]
+11-20 17:53:55.756 14241 14235 E Unity   : 
+11-20 17:53:55.757 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.757 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.757 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.757 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.757 14241 14235 E Unity   : 
+11-20 17:53:55.757 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264840]
+11-20 17:53:55.757 14241 14235 E Unity   : 
+11-20 17:53:55.758 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.758 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.758 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.758 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.758 14241 14235 E Unity   : 
+11-20 17:53:55.758 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264840]
+11-20 17:53:55.758 14241 14235 E Unity   : 
+11-20 17:53:55.759 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.759 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.759 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.759 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.759 14241 14235 E Unity   : 
+11-20 17:53:55.759 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264840]
+11-20 17:53:55.759 14241 14235 E Unity   : 
+11-20 17:53:55.759 14241 14235 E Unity   : Can't add component because class 'CapsuleCollider' doesn't exist!
+11-20 17:53:55.759 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.759 14241 14235 E Unity   : LittleGame.MachineModel:Screw(String, Vector3)
+11-20 17:53:55.759 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.759 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.759 14241 14235 E Unity   : 
+11-20 17:53:55.759 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264920]
+11-20 17:53:55.759 14241 14235 E Unity   : 
+11-20 17:53:55.760 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.760 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.760 14241 14235 E Unity   : LittleGame.MachineModel:Screw(String, Vector3)
+11-20 17:53:55.760 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.760 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.760 14241 14235 E Unity   : 
+11-20 17:53:55.760 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264920]
+11-20 17:53:55.760 14241 14235 E Unity   : 
+11-20 17:53:55.761 14241 14235 E Unity   : Can't add component because class 'CapsuleCollider' doesn't exist!
+11-20 17:53:55.761 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.761 14241 14235 E Unity   : LittleGame.MachineModel:Screw(String, Vector3)
+11-20 17:53:55.761 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.761 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.761 14241 14235 E Unity   : 
+11-20 17:53:55.761 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264920]
+11-20 17:53:55.761 14241 14235 E Unity   : 
+11-20 17:53:55.762 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.762 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.762 14241 14235 E Unity   : LittleGame.MachineModel:Screw(String, Vector3)
+11-20 17:53:55.762 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.762 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.762 14241 14235 E Unity   : 
+11-20 17:53:55.762 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264920]
+11-20 17:53:55.762 14241 14235 E Unity   : 
+11-20 17:53:55.763 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.763 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.763 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.763 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.763 14241 14235 E Unity   : 
+11-20 17:53:55.763 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264840]
+11-20 17:53:55.763 14241 14235 E Unity   : 
+11-20 17:53:55.764 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.764 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.764 14241 14235 E Unity   : LittleGame.MachineModel:Attach(String, String, Vector3, Vector3, String)
+11-20 17:53:55.764 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.764 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.764 14241 14235 E Unity   : 
+11-20 17:53:55.764 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264936]
+11-20 17:53:55.764 14241 14235 E Unity   : 
+11-20 17:53:55.765 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.765 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.765 14241 14235 E Unity   : LittleGame.MachineModel:Attach(String, String, Vector3, Vector3, String)
+11-20 17:53:55.765 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.765 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.765 14241 14235 E Unity   : 
+11-20 17:53:55.765 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264936]
+11-20 17:53:55.765 14241 14235 E Unity   : 
+11-20 17:53:55.766 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.766 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.766 14241 14235 E Unity   : LittleGame.MachineModel:Attach(String, String, Vector3, Vector3, String)
+11-20 17:53:55.766 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.766 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.766 14241 14235 E Unity   : 
+11-20 17:53:55.766 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264936]
+11-20 17:53:55.766 14241 14235 E Unity   : 
+11-20 17:53:55.768 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.768 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.768 14241 14235 E Unity   : LittleGame.MachineModel:Attach(String, String, Vector3, Vector3, String)
+11-20 17:53:55.768 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.768 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.768 14241 14235 E Unity   : 
+11-20 17:53:55.768 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264936]
+11-20 17:53:55.768 14241 14235 E Unity   : 
+11-20 17:53:55.769 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.769 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.769 14241 14235 E Unity   : LittleGame.MachineModel:Attach(String, String, Vector3, Vector3, String)
+11-20 17:53:55.769 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.769 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.769 14241 14235 E Unity   : 
+11-20 17:53:55.769 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264936]
+11-20 17:53:55.769 14241 14235 E Unity   : 
+11-20 17:53:55.769 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.769 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.769 14241 14235 E Unity   : LittleGame.MachineModel:Attach(String, String, Vector3, Vector3, String)
+11-20 17:53:55.769 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.769 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.769 14241 14235 E Unity   : 
+11-20 17:53:55.769 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264936]
+11-20 17:53:55.769 14241 14235 E Unity   : 
+11-20 17:53:55.771 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.771 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.771 14241 14235 E Unity   : LittleGame.MachineModel:Attach(String, String, Vector3, Vector3, String)
+11-20 17:53:55.771 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.771 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.771 14241 14235 E Unity   : 
+11-20 17:53:55.771 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264936]
+11-20 17:53:55.771 14241 14235 E Unity   : 
+11-20 17:53:55.771 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.771 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.771 14241 14235 E Unity   : LittleGame.MachineModel:Attach(String, String, Vector3, Vector3, String)
+11-20 17:53:55.771 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.771 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.771 14241 14235 E Unity   : 
+11-20 17:53:55.771 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264936]
+11-20 17:53:55.771 14241 14235 E Unity   : 
+11-20 17:53:55.772 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.772 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.772 14241 14235 E Unity   : LittleGame.MachineModel:Attach(String, String, Vector3, Vector3, String)
+11-20 17:53:55.772 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.772 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.772 14241 14235 E Unity   : 
+11-20 17:53:55.772 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264936]
+11-20 17:53:55.772 14241 14235 E Unity   : 
+11-20 17:53:55.773 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.773 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.773 14241 14235 E Unity   : LittleGame.MachineModel:Attach(String, String, Vector3, Vector3, String)
+11-20 17:53:55.773 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.773 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.773 14241 14235 E Unity   : 
+11-20 17:53:55.773 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264936]
+11-20 17:53:55.773 14241 14235 E Unity   : 
+11-20 17:53:55.773 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.773 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.773 14241 14235 E Unity   : LittleGame.MachineModel:Attach(String, String, Vector3, Vector3, String)
+11-20 17:53:55.773 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.773 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.773 14241 14235 E Unity   : 
+11-20 17:53:55.773 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264936]
+11-20 17:53:55.773 14241 14235 E Unity   : 
+11-20 17:53:55.774 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.774 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.774 14241 14235 E Unity   : LittleGame.MachineModel:Attach(String, String, Vector3, Vector3, String)
+11-20 17:53:55.774 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.774 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.774 14241 14235 E Unity   : 
+11-20 17:53:55.774 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264936]
+11-20 17:53:55.774 14241 14235 E Unity   : 
+11-20 17:53:55.775 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.775 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.775 14241 14235 E Unity   : LittleGame.MachineModel:Attach(String, String, Vector3, Vector3, String)
+11-20 17:53:55.775 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.775 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.775 14241 14235 E Unity   : 
+11-20 17:53:55.775 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264936]
+11-20 17:53:55.775 14241 14235 E Unity   : 
+11-20 17:53:55.776 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.776 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.776 14241 14235 E Unity   : LittleGame.MachineModel:Attach(String, String, Vector3, Vector3, String)
+11-20 17:53:55.776 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.776 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.776 14241 14235 E Unity   : 
+11-20 17:53:55.776 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264936]
+11-20 17:53:55.776 14241 14235 E Unity   : 
+11-20 17:53:55.776 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.776 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.776 14241 14235 E Unity   : LittleGame.MachineModel:Attach(String, String, Vector3, Vector3, String)
+11-20 17:53:55.776 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.776 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.776 14241 14235 E Unity   : 
+11-20 17:53:55.776 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264936]
+11-20 17:53:55.776 14241 14235 E Unity   : 
+11-20 17:53:55.777 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.777 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.777 14241 14235 E Unity   : LittleGame.MachineModel:Attach(String, String, Vector3, Vector3, String)
+11-20 17:53:55.777 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.777 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.777 14241 14235 E Unity   : 
+11-20 17:53:55.777 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264936]
+11-20 17:53:55.777 14241 14235 E Unity   : 
+11-20 17:53:55.778 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.778 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.778 14241 14235 E Unity   : LittleGame.MachineModel:Attach(String, String, Vector3, Vector3, String)
+11-20 17:53:55.778 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.778 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.778 14241 14235 E Unity   : 
+11-20 17:53:55.778 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264936]
+11-20 17:53:55.778 14241 14235 E Unity   : 
+11-20 17:53:55.779 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.779 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.779 14241 14235 E Unity   : LittleGame.MachineModel:Attach(String, String, Vector3, Vector3, String)
+11-20 17:53:55.779 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.779 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.779 14241 14235 E Unity   : 
+11-20 17:53:55.779 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264936]
+11-20 17:53:55.779 14241 14235 E Unity   : 
+11-20 17:53:55.780 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.780 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.780 14241 14235 E Unity   : LittleGame.MachineModel:Attach(String, String, Vector3, Vector3, String)
+11-20 17:53:55.780 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.780 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.780 14241 14235 E Unity   : 
+11-20 17:53:55.780 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264936]
+11-20 17:53:55.780 14241 14235 E Unity   : 
+11-20 17:53:55.781 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.781 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.781 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.781 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.781 14241 14235 E Unity   : 
+11-20 17:53:55.781 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264840]
+11-20 17:53:55.781 14241 14235 E Unity   : 
+11-20 17:53:55.781 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.781 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.781 14241 14235 E Unity   : LittleGame.MachineModel:Attach(String, String, Vector3, Vector3, String)
+11-20 17:53:55.781 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.781 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.781 14241 14235 E Unity   : 
+11-20 17:53:55.781 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264936]
+11-20 17:53:55.781 14241 14235 E Unity   : 
+11-20 17:53:55.783 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.783 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.783 14241 14235 E Unity   : LittleGame.MachineModel:Attach(String, String, Vector3, Vector3, String)
+11-20 17:53:55.783 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.783 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.783 14241 14235 E Unity   : 
+11-20 17:53:55.783 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264936]
+11-20 17:53:55.783 14241 14235 E Unity   : 
+11-20 17:53:55.783 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.783 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.783 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.783 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.783 14241 14235 E Unity   : 
+11-20 17:53:55.783 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264840]
+11-20 17:53:55.783 14241 14235 E Unity   : 
+11-20 17:53:55.784 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.784 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.784 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.784 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.784 14241 14235 E Unity   : 
+11-20 17:53:55.784 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264840]
+11-20 17:53:55.784 14241 14235 E Unity   : 
+11-20 17:53:55.784 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.784 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.784 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.784 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.784 14241 14235 E Unity   : 
+11-20 17:53:55.784 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264840]
+11-20 17:53:55.784 14241 14235 E Unity   : 
+11-20 17:53:55.785 14241 14235 E Unity   : Can't add component because class 'CapsuleCollider' doesn't exist!
+11-20 17:53:55.785 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.785 14241 14235 E Unity   : LittleGame.MachineModel:Screw(String, Vector3)
+11-20 17:53:55.785 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.785 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.785 14241 14235 E Unity   : 
+11-20 17:53:55.785 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264920]
+11-20 17:53:55.785 14241 14235 E Unity   : 
+11-20 17:53:55.785 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.785 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.785 14241 14235 E Unity   : LittleGame.MachineModel:Screw(String, Vector3)
+11-20 17:53:55.785 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.785 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.785 14241 14235 E Unity   : 
+11-20 17:53:55.785 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264920]
+11-20 17:53:55.785 14241 14235 E Unity   : 
+11-20 17:53:55.786 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.786 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.786 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.786 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.786 14241 14235 E Unity   : 
+11-20 17:53:55.786 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264840]
+11-20 17:53:55.786 14241 14235 E Unity   : 
+11-20 17:53:55.787 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.787 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.787 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.787 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.787 14241 14235 E Unity   : 
+11-20 17:53:55.787 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264840]
+11-20 17:53:55.787 14241 14235 E Unity   : 
+11-20 17:53:55.787 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.787 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.787 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.787 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.787 14241 14235 E Unity   : 
+11-20 17:53:55.787 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264840]
+11-20 17:53:55.787 14241 14235 E Unity   : 
+11-20 17:53:55.788 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.788 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.788 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.788 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.788 14241 14235 E Unity   : 
+11-20 17:53:55.788 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264840]
+11-20 17:53:55.788 14241 14235 E Unity   : 
+11-20 17:53:55.789 14241 14235 E Unity   : Can't add component because class 'CapsuleCollider' doesn't exist!
+11-20 17:53:55.789 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.789 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.789 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.789 14241 14235 E Unity   : 
+11-20 17:53:55.789 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264840]
+11-20 17:53:55.789 14241 14235 E Unity   : 
+11-20 17:53:55.789 14241 14235 E Unity   : Can't add component because class 'CapsuleCollider' doesn't exist!
+11-20 17:53:55.789 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.789 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.789 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.789 14241 14235 E Unity   : 
+11-20 17:53:55.789 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264840]
+11-20 17:53:55.789 14241 14235 E Unity   : 
+11-20 17:53:55.789 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.789 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.789 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.789 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.789 14241 14235 E Unity   : 
+11-20 17:53:55.789 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264840]
+11-20 17:53:55.789 14241 14235 E Unity   : 
+11-20 17:53:55.789 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.789 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.789 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.789 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.789 14241 14235 E Unity   : 
+11-20 17:53:55.789 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264840]
+11-20 17:53:55.789 14241 14235 E Unity   : 
+11-20 17:53:55.790 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.790 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.790 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.790 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.790 14241 14235 E Unity   : 
+11-20 17:53:55.790 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264840]
+11-20 17:53:55.790 14241 14235 E Unity   : 
+11-20 17:53:55.791 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.791 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.791 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.791 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.791 14241 14235 E Unity   : 
+11-20 17:53:55.791 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264840]
+11-20 17:53:55.791 14241 14235 E Unity   : 
+11-20 17:53:55.791 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.791 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.791 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.791 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.791 14241 14235 E Unity   : 
+11-20 17:53:55.791 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264840]
+11-20 17:53:55.791 14241 14235 E Unity   : 
+11-20 17:53:55.792 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.792 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.792 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.792 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.792 14241 14235 E Unity   : 
+11-20 17:53:55.792 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264840]
+11-20 17:53:55.792 14241 14235 E Unity   : 
+11-20 17:53:55.792 14241 14235 E Unity   : Can't add component because class 'BoxCollider' doesn't exist!
+11-20 17:53:55.792 14241 14235 E Unity   : LittleGame.MachineModel:Part(String, Vector3, Vector3, String, Boolean, PrimitiveType)
+11-20 17:53:55.792 14241 14235 E Unity   : LittleGame.MachineModel:Build()
+11-20 17:53:55.792 14241 14235 E Unity   : LittleGame.MachineView:Start()
+11-20 17:53:55.792 14241 14235 E Unity   : 
+11-20 17:53:55.792 14241 14235 E Unity   : [./Runtime/Misc/GameObjectUtility.cpp line -782264840]
+11-20 17:53:55.792 14241 14235 E Unity   : 
+11-20 17:53:55.825 14241 14235 I IL2CPP  : Locale zh-Hans-CN
+11-20 17:53:55.826 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:55.826 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:55.826 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:55.826 14241 14235 E Unity   : 
+11-20 17:53:55.918 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:55.918 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:55.918 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:55.918 14241 14235 E Unity   : 
+11-20 17:53:55.949 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:55.949 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:55.949 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:55.949 14241 14235 E Unity   : 
+11-20 17:53:55.984 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:55.984 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:55.984 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:55.984 14241 14235 E Unity   : 
+11-20 17:53:56.060 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:56.060 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.060 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.060 14241 14235 E Unity   : 
+11-20 17:53:56.096 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:56.096 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.096 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.096 14241 14235 E Unity   : 
+11-20 17:53:56.128 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:56.128 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.128 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.128 14241 14235 E Unity   : 
+11-20 17:53:56.162 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:56.162 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.162 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.162 14241 14235 E Unity   : 
+11-20 17:53:56.192 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:56.192 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.192 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.192 14241 14235 E Unity   : 
+11-20 17:53:56.227 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:56.227 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.227 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.227 14241 14235 E Unity   : 
+11-20 17:53:56.259 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:56.259 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.259 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.259 14241 14235 E Unity   : 
+11-20 17:53:56.292 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:56.292 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.292 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.292 14241 14235 E Unity   : 
+11-20 17:53:56.325 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:56.325 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.325 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.325 14241 14235 E Unity   : 
+11-20 17:53:56.359 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:56.359 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.359 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.359 14241 14235 E Unity   : 
+11-20 17:53:56.392 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:56.392 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.392 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.392 14241 14235 E Unity   : 
+11-20 17:53:56.426 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:56.426 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.426 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.426 14241 14235 E Unity   : 
+11-20 17:53:56.459 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:56.459 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.459 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.459 14241 14235 E Unity   : 
+11-20 17:53:56.491 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:56.491 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.491 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.491 14241 14235 E Unity   : 
+11-20 17:53:56.525 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:56.525 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.525 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.525 14241 14235 E Unity   : 
+11-20 17:53:56.561 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:56.561 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.561 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.561 14241 14235 E Unity   : 
+11-20 17:53:56.594 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:56.594 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.594 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.594 14241 14235 E Unity   : 
+11-20 17:53:56.632 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:56.632 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.632 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.632 14241 14235 E Unity   : 
+11-20 17:53:56.661 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:56.661 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.661 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.661 14241 14235 E Unity   : 
+11-20 17:53:56.695 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:56.695 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.695 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.695 14241 14235 E Unity   : 
+11-20 17:53:56.726 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:56.726 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.726 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.726 14241 14235 E Unity   : 
+11-20 17:53:56.762 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:56.762 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.762 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.762 14241 14235 E Unity   : 
+11-20 17:53:56.792 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:56.792 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.792 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.792 14241 14235 E Unity   : 
+11-20 17:53:56.824 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:56.824 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.824 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.824 14241 14235 E Unity   : 
+11-20 17:53:56.858 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:56.858 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.858 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.858 14241 14235 E Unity   : 
+11-20 17:53:56.891 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:56.891 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.891 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.891 14241 14235 E Unity   : 
+11-20 17:53:56.927 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:56.927 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.927 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.927 14241 14235 E Unity   : 
+11-20 17:53:56.961 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:56.961 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.961 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:56.961 14241 14235 E Unity   : 
+11-20 17:53:57.000 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:57.000 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.000 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.000 14241 14235 E Unity   : 
+11-20 17:53:57.026 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:57.026 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.026 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.026 14241 14235 E Unity   : 
+11-20 17:53:57.061 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:57.061 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.061 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.061 14241 14235 E Unity   : 
+11-20 17:53:57.095 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:57.095 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.095 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.095 14241 14235 E Unity   : 
+11-20 17:53:57.127 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:57.127 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.127 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.127 14241 14235 E Unity   : 
+11-20 17:53:57.161 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:57.161 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.161 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.161 14241 14235 E Unity   : 
+11-20 17:53:57.194 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:57.194 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.194 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.194 14241 14235 E Unity   : 
+11-20 17:53:57.227 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:57.227 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.227 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.227 14241 14235 E Unity   : 
+11-20 17:53:57.261 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:57.261 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.261 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.261 14241 14235 E Unity   : 
+11-20 17:53:57.294 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:57.294 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.294 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.294 14241 14235 E Unity   : 
+11-20 17:53:57.324 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:57.324 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.324 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.324 14241 14235 E Unity   : 
+11-20 17:53:57.360 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:57.360 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.360 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.360 14241 14235 E Unity   : 
+11-20 17:53:57.394 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:57.394 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.394 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.394 14241 14235 E Unity   : 
+11-20 17:53:57.428 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:57.428 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.428 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.428 14241 14235 E Unity   : 
+11-20 17:53:57.457 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:57.457 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.457 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.457 14241 14235 E Unity   : 
+11-20 17:53:57.491 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:57.491 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.491 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.491 14241 14235 E Unity   : 
+11-20 17:53:57.524 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:57.524 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.524 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.524 14241 14235 E Unity   : 
+11-20 17:53:57.557 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:57.557 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.557 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.557 14241 14235 E Unity   : 
+11-20 17:53:57.590 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:57.590 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.590 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.590 14241 14235 E Unity   : 
+11-20 17:53:57.624 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:57.624 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.624 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.624 14241 14235 E Unity   : 
+11-20 17:53:57.659 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:57.659 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.659 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.659 14241 14235 E Unity   : 
+11-20 17:53:57.694 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:57.694 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.694 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.694 14241 14235 E Unity   : 
+11-20 17:53:57.724 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:57.724 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.724 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.724 14241 14235 E Unity   : 
+11-20 17:53:57.757 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:57.757 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.757 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.757 14241 14235 E Unity   : 
+11-20 17:53:57.793 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:57.793 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.793 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.793 14241 14235 E Unity   : 
+11-20 17:53:57.826 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:57.826 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.826 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.826 14241 14235 E Unity   : 
+11-20 17:53:57.857 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:57.857 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.857 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.857 14241 14235 E Unity   : 
+11-20 17:53:57.892 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:57.892 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.892 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.892 14241 14235 E Unity   : 
+11-20 17:53:57.923 14241 14241 I AwareBitmapCacher: init lrucache size: 4194304 pid=14241
+11-20 17:53:57.928 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:57.928 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.928 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.928 14241 14235 E Unity   : 
+11-20 17:53:57.959 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:57.959 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.959 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.959 14241 14235 E Unity   : 
+11-20 17:53:57.993 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:57.993 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.993 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:57.993 14241 14235 E Unity   : 
+11-20 17:53:58.023 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:58.023 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:58.023 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:58.023 14241 14235 E Unity   : 
+11-20 17:53:58.056 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:58.056 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:58.056 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:58.056 14241 14235 E Unity   : 
+11-20 17:53:58.089 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:58.089 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:58.089 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:58.089 14241 14235 E Unity   : 
+11-20 17:53:58.123 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:58.123 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:58.123 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:58.123 14241 14235 E Unity   : 
+11-20 17:53:58.156 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:58.156 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:58.156 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:58.156 14241 14235 E Unity   : 
+11-20 17:53:58.189 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:58.189 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:58.189 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:58.189 14241 14235 E Unity   : 
+11-20 17:53:58.222 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:58.222 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:58.222 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:58.222 14241 14235 E Unity   : 
+11-20 17:53:58.256 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:58.256 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:58.256 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:58.256 14241 14235 E Unity   : 
+11-20 17:53:58.290 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:58.290 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:58.290 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:58.290 14241 14235 E Unity   : 
+11-20 17:53:58.322 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:58.322 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:58.322 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:58.322 14241 14235 E Unity   : 
+11-20 17:53:58.356 14241 14235 E Unity   : NullReferenceException: Object reference not set to an instance of an object.
+11-20 17:53:58.356 14241 14235 E Unity   :   at LittleGame.MachineView.SetRemoved (System.String id, System.Boolean removed, UnityEngine.Vector3 destination) [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:58.356 14241 14235 E Unity   :   at LittleGame.MachineView.Update () [0x00000] in <00000000000000000000000000000000>:0 
+11-20 17:53:58.356 14241 14235 E Unity   : 
