@@ -1,0 +1,22 @@
+{
+  "requests": 1122,
+  "platform": "WindowsEditor",
+  "sampling": "通过正常玩法及玩家pointer入口，按动画进度读取实际表现",
+  "clearBodySamples": 100,
+  "minOutwardClearanceWorld": 0.1727735,
+  "transferSamples": 179,
+  "minFrontClearanceWorld": 0.299999267,
+  "maxSlotCenterErrorViewport": 9.999999994736442e-08,
+  "minDeviceCollectionGapViewport": 0.05063814,
+  "levels": [
+    {
+      "level": 1,
+      "parts": 8
+    },
+    {
+      "level": 2,
+      "parts": 15
+    }
+  ],
+  "lastPartCompletion": "机壳飞行中保持animating与7/8或14/15；落位后才won"
+}

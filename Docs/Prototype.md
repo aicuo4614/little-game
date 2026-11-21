@@ -64,3 +64,6 @@ capture_workbench.py采集两关外观、开盖、失败、回收和完成画面
 用户明确自行安装验证。本轮只执行python -X utf8 Tools/Mobile/mobile_test.py --build-only；不检测或安装手机。构建状态Library/MobileTesting/build-status.json，默认成功包Builds/Android/little-game.apk，明确版本交付副本与校验记录以Reports/workbench-delivery.json为准。
 
 手机工具verify_touch.py已同步关卡数据、双击、已落位状态，可用--level 1/2选择验证关卡；本轮未在真机执行。开发包MobileDiagnostics每0.5秒只读落盘观测，手机性能采样需注明该开销。APK不等于抖音运行环境验证。
+
+
+2026-11-21最终编辑器验证：双击回归285条请求，正常规则50次操作，两关专项1122条请求通过。两关专项包含第一关斜向混合旋转后的全流程、第二关15件实际pointer双击、最后机壳落位完成、框架回收、回收中心对齐和动画安全间距采样；统计摘要Reports/levels-verification-summary.json。最终截图已复核主机外观、内部布局、回收栏、最后飞行14/15及空工作台15/15，回收后的零件不再向桌面投射浮空阴影。

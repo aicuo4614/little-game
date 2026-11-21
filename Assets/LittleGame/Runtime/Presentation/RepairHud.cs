@@ -88,6 +88,7 @@ namespace LittleGame
             progress.text=s.RecoveredCount+" / "+s.Level.Parts.Length;fill.rectTransform.sizeDelta=new Vector2(444*Mathf.Clamp01((float)s.RecoveredCount/s.Level.Parts.Length),5);
             tip.gameObject.SetActive(!s.Won);
             tip.text=s.IsAnimating?"正在回收 · "+s.Name(s.AnimationPart):!string.IsNullOrEmpty(s.Blocker)?s.Message:
+                s.Collected("board") && !s.Collected("chassis")?"双击剩余机壳，完成整机回收":
                 string.IsNullOrEmpty(s.Selected)?!s.BackVisible?"拖动设备翻到背面，找到外壳螺丝":"单击选中 · 双击拆卸":
                 s.Name(s.Selected)+"已选中 · 双击拆卸";
             levelButton.interactable=flipButton.interactable=!s.IsAnimating;
