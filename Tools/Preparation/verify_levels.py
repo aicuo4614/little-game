@@ -1,4 +1,5 @@
 """两关正常输入、依赖、回收动画安全平面和格子中心对齐验证。"""
+import argparse
 import json
 import sys
 import time
@@ -8,6 +9,10 @@ sys.path.insert(0,str(ROOT/'Tools'/'Mobile'))
 import mobile_test as mobile
 
 def main():
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--output-dir',type=Path,default=ROOT/'Reports')
+    output=parser.parse_args().output_dir
+    output.mkdir(parents=True,exist_ok=True)
     mobile.connect_editor();m=mobile.mcp;events=[];stages=set()
     def call(op,**args):
         result=json.loads(m.tool('unity_extension_call',extensionId='little-game.puzzle',operation=op,arguments=args,allowWrite=True))
@@ -48,16 +53,16 @@ def main():
             assert len(slots)==(8 if row==0 else 7)
             assert max(s['center']['y'] for s in slots)-min(s['center']['y'] for s in slots)<.00001
             assert all(slots[i]['center']['x']<slots[i+1]['center']['x'] for i in range(len(slots)-1))
-        assert not call('load_level',level=3)['accepted'];assert call('get_state')['level']==2
         call('flip');s=double('cover');assert not s['accepted'] and s['blocker']=='screw_a'
         time.sleep(.7)
         for id in ('screw_b','screw_a','case_screw_c','cover'):
             s=double(id);assert s['accepted'] and s['animating'],s
             if id=='cover':
-                before=s['orientation'];r=call('rotate',delta=90);assert not r['accepted'] and r['orientation']==before
-                assert not call('load_level',level=1)['accepted']
+                before=s['orientation'];r=call('rotate',delta=20);assert r['accepted'] and r['animating'] and r['orientation']!=before
+                assert call('rotate',delta=-20)['accepted']
+                assert not call('load_level',level=3)['accepted']
             wait(id)
-        print('第二关双击开箱、动画中锁定旋转与关卡选择通过。',flush=True)
+        print('第二关双击开箱、动画中可旋转且暂缓切关通过。',flush=True)
         for id,blocker in [('power_unit','cable'),('gpu','cable'),('ram','ram_clip'),('cooler','cable'),('board','power_unit')]:
             s=call('disassemble',part=id);assert not s['accepted'] and s['blocker']==blocker,(id,s)
         time.sleep(.7)
@@ -68,7 +73,6 @@ def main():
                 v=view();slot=next(p for p in v['collection'] if p['part']=='chassis');assert not slot['filled']
             wait(id)
         s=call('get_state');assert s['phase']=='won' and s['moves']==15 and s['recoveredCount']==15
-        assert not call('next_level')['accepted']
         call('restart');v=view();assert call('get_state')['level']==2 and not any(s['filled'] for s in v['collection'])
         call('load_level',level=1);assert len(view()['collection'])==8
         assert {'release','clear_body','transfer','settle','parked'}<=stages,stages
@@ -76,6 +80,6 @@ def main():
             assert m.tool('unity_get_console_logs',logType=category).startswith('Console 日志 0 条'),category
         print(f'两关、15件依赖、玩家双击入口、分段安全路径、中心对齐和重开通过，共{len(events)}条请求。',flush=True)
     finally:
-        (ROOT/'Reports/levels-verification.json').write_text(json.dumps(events,ensure_ascii=False,indent=2),encoding='utf-8')
+        (output/'levels-verification.json').write_text(json.dumps(events,ensure_ascii=False,indent=2),encoding='utf-8')
         print(m.tool('unity_exit_play_mode'))
 if __name__=='__main__':main()

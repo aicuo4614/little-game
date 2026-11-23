@@ -2,36 +2,53 @@
   "date": "2026-11-21",
   "status": "ready-for-user-phone-test",
   "title": "电器回收站",
-  "version": "1.1.0",
-  "versionCode": 2,
-  "buildId": "c2329977be474b54a15e44685def2787",
-  "apk": "E:\\Project\\little-game\\Builds\\Android\\electronics-recycling-1.1.0.apk",
+  "version": "1.2.0",
+  "versionCode": 3,
+  "buildId": "228285da4db14994a8daf6b95084e778",
+  "apk": "E:\\Project\\little-game\\Builds\\Android\\electronics-recycling-1.2.0.apk",
   "canonicalApk": "E:\\Project\\little-game\\Builds\\Android\\little-game.apk",
-  "bytes": 29388785,
-  "sha256": "8ef64da33da58bf2663cb52fa3ff4c75210282cd89540fe570527037d41ef419",
+  "bytes": 29426435,
+  "sha256": "d8de7b9948939a8024713b789d3ef91eedce2ca01c24a1bc4d0eec2c07be103f",
   "apkZipIntegrity": "passed",
   "backend": "IL2CPP",
   "abi": "arm64-v8a",
-  "mcpVersion": "3.0.0",
+  "mcpVersion": "3.1.0",
+  "levels": [
+    {
+      "level": 1,
+      "device": "旧掌机",
+      "parts": 8
+    },
+    {
+      "level": 2,
+      "device": "电脑机箱",
+      "parts": 15
+    }
+  ],
   "editor": {
     "compile": "passed",
-    "inputReplayRequests": 190,
-    "normalGameplayOperations": 49,
+    "inputReplayRequests": 285,
+    "normalGameplayOperations": 50,
+    "levelsRequests": 1122,
     "consoleErrors": 0,
     "consoleExceptions": 0,
     "consoleWarnings": 0
   },
+  "changes": [
+    "向外脱离、安全平面绕行、落格",
+    "回收位/轮廓/零件几何中心对齐",
+    "方正机箱与前置双风扇外观",
+    "两关均回收最后机壳，落位才成功"
+  ],
   "mobile": {
     "installedByAgent": false,
     "touchVerifiedByAgent": false,
-    "reason": "用户要求仅打包，自行安装验证"
+    "reason": "用户自行安装验证"
   },
   "previews": [
-    "Reports/workbench-front.png",
-    "Reports/workbench-selected.png",
-    "Reports/workbench-blocked.png",
-    "Reports/workbench-flight.png",
-    "Reports/workbench-open.png",
-    "Reports/workbench-complete.png"
+    "Reports/workbench-computer-front.png",
+    "Reports/workbench-computer-open.png",
+    "Reports/workbench-computer-last-flight.png",
+    "Reports/workbench-computer-complete.png"
   ]
 }

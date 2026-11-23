@@ -10,6 +10,10 @@ namespace LittleGame
     {
         public int Revision { get; private set; }
         public int Moves { get; private set; }
+        public float Zoom { get; private set; }=1;
+        public float PanX { get; private set; }
+        public float PanY { get; private set; }
+        public const float MinZoom=1,MaxZoom=2.4f;
         public int FailureSequence { get; private set; }
         public string FailedPart { get; private set; } = "";
         public string LastAction { get; private set; } = "";
@@ -24,7 +28,9 @@ namespace LittleGame
             Rotation.CreateFromAxisAngle(Direction.UnitX, .14f)
             * Rotation.CreateFromAxisAngle(CameraUp, -.2f)
             * Rotation.CreateFromAxisAngle(Direction.UnitZ, (float)Math.PI));
-        private Rotation FrontOrientation => LevelIndex==1?HomeOrientation:Rotation.Normalize(Rotation.CreateFromAxisAngle(CameraUp,-.6f)*HomeOrientation);
+        public bool IsSuitcase => LevelIndex==DeviceLevels.SuitcaseIndex;
+        private Rotation FrontOrientation => IsSuitcase ? Rotation.CreateFromAxisAngle(CameraUp,.18f) :
+            LevelIndex==1?HomeOrientation:Rotation.Normalize(Rotation.CreateFromAxisAngle(CameraUp,-.6f)*HomeOrientation);
         public float BackFacing => Direction.Dot(Direction.Transform(Direction.UnitY, Orientation), -CameraForward);
         public int LevelIndex { get; private set; } = 1;
         public DeviceLevel Level => DeviceLevels.All[LevelIndex-1];
@@ -48,14 +54,14 @@ namespace LittleGame
         {
             if (!IsAnimating || !Finite(seconds) || seconds < 0) return;
             animationRemaining = Math.Max(0, animationRemaining - seconds);
-            if (!IsAnimating) { Revision++;if(Won)Message="整机拆解完成 · 全部零件已回收"; }
+            if (!IsAnimating) { Revision++;if(Won)Message=IsSuitcase?"照片已留给箱主 · 回收完成":"拆解完成 · 全部零件已回收"; }
         }
         public bool Accepted { get; private set; }
         public string Selected { get; private set; } = "";
         public string Message { get; private set; } = "这是一台旧掌机，翻到背面开始拆卸";
         public string Blocker { get; private set; } = "";
         public bool BackVisible => BackFacing > .1f;
-        public string Stage => IsAnimating ? "animating" : Won ? "complete" : Collected("board") ? "recycle_chassis" : Cover ? "open_case" : LevelIndex==2 ? "recycle_modules" : Battery ? "disconnect_battery" : "extract_board";
+        public string Stage => IsAnimating ? "animating" : Won ? "complete" : IsSuitcase ? Cover ? "open_case" : Collected("photo") ? "recycle_chassis" : "sort_luggage" : Collected("board") ? "recycle_chassis" : Cover ? "open_case" : LevelIndex==2 ? "recycle_modules" : Battery ? "disconnect_battery" : "extract_board";
 
         public bool Accessible(string part)
         {
@@ -72,9 +78,20 @@ namespace LittleGame
         }
         private void ResetRound()
         {
-            Orientation=FrontOrientation;Moves=0;collected.Clear();Selected=FailedPart=Blocker=AnimationPart="";
+            Orientation=FrontOrientation;Moves=0;Zoom=1;PanX=PanY=0;collected.Clear();Selected=FailedPart=Blocker=AnimationPart="";
             FailureSequence=0;animationRemaining=animationDuration=0;
-            Accept("翻到背面，从外壳螺丝开始",false);
+            Accept(IsSuitcase?"箱主委托回收，请留下夹层里的照片":"翻到背面，从外壳螺丝开始",false);
+        }
+
+        public void Inspect(float factor,float offsetX,float offsetY,float deltaX,float deltaY)
+        {
+            Revision++;Accepted=false;LastAction="pinch";LastTarget="";
+            if(!Finite(factor)||factor<=0||!Finite(offsetX)||!Finite(offsetY)||!Finite(deltaX)||!Finite(deltaY)) {Message="缩放参数无效";return;}
+            float zoom=Math.Max(MinZoom,Math.Min(MaxZoom,Zoom*factor)),ratio=zoom/Zoom;
+            float limit=.3f*(zoom-1);
+            PanX=Math.Max(-limit,Math.Min(limit,PanX+deltaX+offsetX*(1-ratio)));
+            PanY=Math.Max(-limit,Math.Min(limit,PanY+deltaY+offsetY*(1-ratio)));
+            Zoom=zoom;Selected=Blocker="";Accept("双指缩放和移动观察，松手后可双击拆卸",false);
         }
 
         // 增量绕屏幕坐标轴累积为单位四元数，允许连续越过两极并绕任意方向翻转。
@@ -83,7 +100,6 @@ namespace LittleGame
             Revision++;
             Accepted = false;
             Blocker = "";
-            if(IsAnimating) { Message="正在回收，请稍候旋转";return; }
             if (!Finite(delta) || !Finite(tilt) || !Finite(roll))
             {
                 Message = "视角参数必须为有限数值";
@@ -95,7 +111,7 @@ namespace LittleGame
             Orientation = Rotation.Normalize(twist * vertical * horizontal * Orientation);
             Selected = "";
             Accepted = true;
-            Message = BackVisible ? "双击部件拆卸，拖动机器可旋转" : "拖动掌机，寻找背面的螺丝";
+            Message = BackVisible ? "双击部件拆卸，拖动机器可旋转" : "拖动，观察另一面";
         }
 
         public void Orbit(float fromX, float fromY, float toX, float toY)
@@ -103,7 +119,6 @@ namespace LittleGame
             Revision++;
             Accepted = false;
             Blocker = "";
-            if(IsAnimating) { Message="正在回收，请稍候旋转";return; }
             if (!Finite(fromX) || !Finite(fromY) || !Finite(toX) || !Finite(toY))
             {
                 Message = "视角参数必须为有限数值";
@@ -128,7 +143,7 @@ namespace LittleGame
             }
             Orientation = Rotation.Normalize(delta * Orientation);
             Selected = "";
-            Accept(BackVisible ? "双击零件拆卸，单击选中查看" : "转到掌机背面，寻找外壳螺丝", false);
+            Accept(BackVisible ? "双击零件拆卸，单击选中查看" : "拖动，观察另一面", false);
         }
 
         private static Direction Trackball(float x, float y)
@@ -141,10 +156,9 @@ namespace LittleGame
 
         public void Flip()
         {
-            if(IsAnimating) { Revision++;Accepted=false;Message="正在回收，请稍候翻面";return; }
             Orientation = BackVisible
-                ? FrontOrientation
-                : Rotation.Identity;
+                ? IsSuitcase ? HomeOrientation : FrontOrientation
+                : IsSuitcase ? FrontOrientation : Rotation.Identity;
             Selected = "";
             Blocker = "";
             Revision++;
@@ -223,7 +237,7 @@ namespace LittleGame
             }
             var parts=new List<object>();
             foreach(var p in Level.Parts) parts.Add(new {id=p.Id,name=p.Name,detached=Collected(p.Id),collected=Recovered(p.Id),accessible=Accessible(p.Id),blocker=RemovalBlocker(p.Id)});
-            return new { level=LevelIndex,levelCount=DeviceLevels.All.Length,device=Level.Title,totalParts=Level.Parts.Length,recoveredCount=RecoveredCount,parts,revision = Revision, moves = Moves, phase = IsAnimating ? "animating" : Won ? "won" : "playing",
+            return new { zoom=Zoom,minZoom=MinZoom,maxZoom=MaxZoom,pan=new {x=PanX,y=PanY},level=LevelIndex,levelCount=DeviceLevels.All.Length,device=Level.Title,totalParts=Level.Parts.Length,recoveredCount=RecoveredCount,parts,revision = Revision, moves = Moves, phase = IsAnimating ? "animating" : Won ? "won" : "playing",
                 stage = Stage, animating = IsAnimating, animationPart = AnimationPart, animationProgress = AnimationProgress,
                 orientation = new { x = Orientation.X, y = Orientation.Y, z = Orientation.Z, w = Orientation.W },
                 backFacing = BackFacing, backVisible = BackVisible,

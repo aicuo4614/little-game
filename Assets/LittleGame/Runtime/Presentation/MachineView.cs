@@ -9,6 +9,10 @@ namespace LittleGame
         private MachineModel model;
         private WorkbenchView workbench;
         private CollectionBar collection;
+        public InspectionViewport Inspection {get;private set;}
+        private InteractionTargets targets;
+        public string Pick(Vector2 point,out bool onMachine){return targets.Pick(point,out onMachine);}
+        public Vector2 ScreenCenter => Inspection.Project(Machine.position);
         private GameObject deviceRoot;
         private int builtLevel;
         private float failureTime=-10;
@@ -27,6 +31,7 @@ namespace LittleGame
             viewCamera.backgroundColor=new Color(.105f,.125f,.15f);viewCamera.clearFlags=CameraClearFlags.SolidColor;
             var desk=new GameObject("Workbench");desk.transform.SetParent(transform,false);
             workbench=desk.AddComponent<WorkbenchView>();workbench.Build();
+            Inspection=gameObject.AddComponent<InspectionViewport>();Inspection.Build(viewCamera);
             BuildDevice();
             ConfigureLighting();
             gameObject.AddComponent<RepairHud>().Build();
@@ -38,47 +43,56 @@ namespace LittleGame
             motions.Clear();builtLevel=GameBootstrap.Session.LevelIndex;
             failureTime=-10;failureSequence=0;failurePart="";
             deviceRoot=new GameObject("DevicePresentation");deviceRoot.transform.SetParent(transform,false);
-            var machine=new GameObject(builtLevel==1?"Handheld":"Computer");machine.transform.SetParent(deviceRoot.transform,false);
+            var machine=new GameObject(GameBootstrap.Session.Level.Title);machine.transform.SetParent(deviceRoot.transform,false);
             model=machine.AddComponent<MachineModel>();model.Build(builtLevel);fitRadius=model.BoundingRadius;
             float aspect=Mathf.Min(viewCamera.aspect,9f/16);viewCamera.orthographicSize=Mathf.Max(5.7f,fitRadius/aspect+.35f);
             var bar=new GameObject("CollectionBar");bar.transform.SetParent(deviceRoot.transform,false);
             collection=bar.AddComponent<CollectionBar>();collection.Build(model,GameBootstrap.Session.Level,viewCamera);
-            machine.transform.localScale=Vector3.one*(builtLevel==1?.78f:.69f);FitDeviceInView();
+            targets=new InteractionTargets(model,GameBootstrap.Session.Level,Inspection);
+            InspectionViewport.SetLayer(machine.transform,InspectionViewport.DeviceLayer);
+            machine.transform.localScale=Vector3.one*(builtLevel==1?.78f:.69f);
             foreach(var definition in GameBootstrap.Session.Level.Parts)
             {
                 string id=definition.Id;
-                motions.Add(id,new PartMotion(model.Parts[id],collection.Parking(id),collection.Scale(id),
-                    collection.ParkingRotation,model.AssemblyBounds,fitRadius*machine.transform.lossyScale.x,viewCamera));
+                motions.Add(id,new PartMotion(model.Parts[id],collection,model.AssemblyBounds,fitRadius*machine.transform.lossyScale.x,Inspection,viewCamera));
             }
+            FitDeviceInView(GameBootstrap.Session);
         }
 
         public object InteractionSnapshot()
         {
             if(builtLevel!=GameBootstrap.Session.LevelIndex) BuildDevice();
+            Physics.SyncTransforms();
             var positions=new List<object>();
             foreach(var item in motions)
             {
                 var part=model.Parts[item.Key];
-                var point=viewCamera.WorldToViewportPoint(part.position);
+                var point=ProjectPart(item.Key,part.position);
                 Color tint=model.Materials[item.Key].GetColor(EmissionColor);
-                var visual=viewCamera.WorldToViewportPoint(item.Value.VisualCenter);
+                var visual=ProjectPart(item.Key,item.Value.VisualCenter);
                 positions.Add(new { id=item.Key,x=point.x,y=point.y,
                     localPosition=new { x=part.localPosition.x,y=part.localPosition.y,z=part.localPosition.z },
                     worldPosition=new { x=part.position.x,y=part.position.y,z=part.position.z },
                     worldScale=new { x=part.lossyScale.x,y=part.lossyScale.y,z=part.lossyScale.z },
-                    visualCenter=new {x=visual.x,y=visual.y},motion=new {stage=item.Value.Stage,frontClearance=item.Value.FrontClearance,outwardClearance=item.Value.OutwardClearance},
+                    target=targets.Snapshot(item.Key),visualCenter=new {x=visual.x,y=visual.y},motion=new {stage=item.Value.Stage,frontClearance=item.Value.FrontClearance,outwardClearance=item.Value.OutwardClearance},
                     emission=new { r=tint.r,g=tint.g,b=tint.b },
                     detached=GameBootstrap.Session.Collected(item.Key),parked=GameBootstrap.Session.Recovered(item.Key),
                     accessible=GameBootstrap.Session.Accessible(item.Key) });
             }
-            var center=viewCamera.WorldToViewportPoint(Machine.position);
-            float radius=fitRadius*Machine.lossyScale.x/(2*viewCamera.orthographicSize);
+            var center=Inspection.Project(Machine.position);
+            float radius=fitRadius*Machine.lossyScale.x*GameBootstrap.Session.Zoom/(2*viewCamera.orthographicSize);
             float trayBottom=collection.Bottom;
             float trayTop=collection.Top;
-            return new { frame=Time.frameCount,width=Screen.width,height=Screen.height,
+            var region=Inspection.Region;
+            return new { zoom=GameBootstrap.Session.Zoom,
+                rotationTarget="item_root",
+                rootRotation=new {x=Machine.rotation.x,y=Machine.rotation.y,z=Machine.rotation.z,w=Machine.rotation.w},
+                inspectionCameraRotation=Inspection.CameraRotation,
+                tray=new { bottom=collection.Bottom,top=collection.Top,headerBottom=RepairHud.HeaderBottom,footerTop=RepairHud.FooterTop },workspace=new {xMin=region.xMin,yMin=region.yMin,xMax=region.xMax,yMax=region.yMax},
+                hit=new {part=targets.LastPart,method=targets.LastMethod},frame=Time.frameCount,width=Screen.width,height=Screen.height,
                 safeArea=new { x=Screen.safeArea.x,y=Screen.safeArea.y,width=Screen.safeArea.width,height=Screen.safeArea.height },
                 workspaceBounds=new { machineBottom=center.y-radius,machineTop=center.y+radius,trayBottom,trayTop,
-                    clearance=trayBottom-center.y-radius },
+                    clearance=trayBottom-center.y-radius,visibleClearance=trayBottom-Mathf.Min(center.y+radius,region.yMax) },
                 center=new { x=center.x,y=center.y },
                 gesture=GameBootstrap.Input.Gesture, interactionVersion="double-click-disassemble",
                 doubleClickSeconds=PuzzleInput.DoubleClickSeconds,collection=collection.Snapshot(),hud=RepairHud.Current.Snapshot(),
@@ -92,9 +106,7 @@ namespace LittleGame
             if(builtLevel!=GameBootstrap.Session.LevelIndex) BuildDevice();
             if(model==null) return;
             var state=GameBootstrap.Session;
-            var orientation = state.Orientation;
-            model.transform.rotation = new Quaternion(orientation.X, orientation.Y, orientation.Z, orientation.W);
-            FitDeviceInView();
+            FitDeviceInView(state);
             if(failureSequence!=state.FailureSequence)
             {
                 failureSequence=state.FailureSequence;
@@ -117,13 +129,13 @@ namespace LittleGame
                     emission=new Color(1,.015f,.005f)*(.3f+.7f*Mathf.Abs(Mathf.Sin(age*23)));
                         // PartMotion每帧复原失败前的位置，抖动不会累计或污染规则。
                         item.Value.RestoreAttachedPose();
-                        model.Parts[item.Key].position+=viewCamera.transform.right*(Mathf.Sin(age*66)*.085f*(1-age/.65f));
+                        model.Parts[item.Key].position+=Inspection.Right*(Mathf.Sin(age*66)*.085f*(1-age/.65f));
                     }
                 }
                 else if(!removed) item.Value.RestoreAttachedPose();
                 material.SetColor(EmissionColor,emission);
             }
-            model.Parts["ribbon"].gameObject.SetActive(state.Cable);
+            if(model.Parts.TryGetValue("ribbon",out var ribbon))ribbon.gameObject.SetActive(state.Cable);
             collection.Refresh(state);
         }
 
@@ -146,12 +158,24 @@ namespace LittleGame
             }
         }
 
-        private void FitDeviceInView()
+        private Vector3 ProjectPart(string id, Vector3 point)
         {
-            float aspect = Mathf.Min(viewCamera.aspect, 9f / 16);
-            viewCamera.orthographicSize = Mathf.Max(5.7f, fitRadius / aspect + .35f);
-            Machine.position=viewCamera.transform.up*(-viewCamera.orthographicSize*(builtLevel==1?.14f:.22f));
+            return GameBootstrap.Session.Collected(id) ? viewCamera.WorldToViewportPoint(point) : Inspection.Project(point);
         }
 
+        private void FitDeviceInView(PuzzleSession state)
+        {
+            float aspect=Mathf.Min(viewCamera.aspect,9f/16);
+            viewCamera.orthographicSize=Mathf.Max(5.7f,fitRadius/aspect+.35f);
+            var safe=Screen.safeArea;
+            collection.Layout(safe,RepairHud.HeaderBottom);
+            var region=Rect.MinMaxRect(safe.xMin/Screen.width,RepairHud.FooterTop+.012f,
+                safe.xMax/Screen.width,collection.Bottom-.012f);
+            var center=new Vector2(safe.center.x/Screen.width,region.center.y);
+            center+=new Vector2(state.PanX,state.PanY);
+            var o=state.Orientation;
+            Machine.rotation=new Quaternion(o.X,o.Y,o.Z,o.W);
+            Inspection.Refresh(region,Machine.position,center,state.Zoom,state.IsAnimating,state.AnimationProgress);
+        }
     }
 }

@@ -28,7 +28,7 @@ def main():
         camera=int(re.search(r'instanceId\s*[:：]\s*(-?\d+)',m.tool('unity_find_game_object',name='Main Camera')).group(1))
         def capture(name):
             time.sleep(.2)
-            result=json.loads(m.tool('unity_capture_camera',cameraInstanceId=camera,width=1080,height=1920))
+            result=call('capture_view',width=1080,height=1920)
             shutil.copyfile(result['path'],ROOT/'Reports'/('workbench-'+name+'.png'))
         def midflight(name):
             deadline=time.monotonic()+5

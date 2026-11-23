@@ -51,11 +51,13 @@ namespace LittleGame.Editor
                     throw new InvalidOperationException("当前 Unity 缺少 Android Build Support");
 
                 PlayerSettings.SetApplicationIdentifier(BuildTargetGroup.Android, PackageId);
+                PlayerSettings.bundleVersion = "1.4.0";
+                PlayerSettings.Android.bundleVersionCode = 5;
                 PlayerSettings.SetScriptingBackend(BuildTargetGroup.Android, ScriptingImplementation.IL2CPP);
                 PlayerSettings.Android.targetArchitectures = AndroidArchitecture.ARM64;
                 PlayerSettings.Android.targetSdkVersion = AndroidSdkVersions.AndroidApiLevel33;
                 PlayerSettings.defaultInterfaceOrientation = UIOrientation.Portrait;
-                PlayerSettings.productName = "电器回收站";
+                PlayerSettings.productName = "废品回收箱";
                 EditorUserBuildSettings.buildAppBundle = false;
                 EditorUserBuildSettings.exportAsGoogleAndroidProject = false;
 
@@ -70,7 +72,7 @@ namespace LittleGame.Editor
                 var staging = Path.Combine(directory, status.id + ".apk");
                 var report = BuildPipeline.BuildPlayer(new BuildPlayerOptions
                 {
-                    scenes = new[] { "Assets/Scenes/Game.unity" },
+                    scenes = new[] { "Assets/Scenes/Structure.unity", "Assets/Scenes/Game.unity" },
                     target = BuildTarget.Android,
                     targetGroup = BuildTargetGroup.Android,
                     locationPathName = staging,

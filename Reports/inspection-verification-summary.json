@@ -1,0 +1,18 @@
+{
+  "platform": "WindowsEditor",
+  "viewports": [
+    [
+      720,
+      1280
+    ]
+  ],
+  "requests": 479,
+  "minimumColliderModelSideObserved": 0.699999869,
+  "originalScrewDiameter": 0.35,
+  "minimumReferenceSide": 0.7,
+  "minimumScreenFraction": 0.07,
+  "maximumZoomObserved": 2.4,
+  "minimumVisibleRecoveryGap": 0.0159999728,
+  "phoneMultiTouchVerified": false,
+  "notes": "通过玩家共用pinch/pointer入口；透明合成画面已检查，不能替代Android多指触摸和性能实测。"
+}

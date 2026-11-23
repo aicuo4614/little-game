@@ -15,7 +15,8 @@ namespace LittleGame
         public Bounds AssemblyBounds { get;private set; }
         public void Build(int level=1)
         {
-            if(level==2) BuildComputer();else BuildHandheld();
+            if(level==DeviceLevels.SuitcaseIndex) BuildSuitcase();
+            else if(level==2) BuildComputer();else BuildHandheld();
             GroupChassis();FinishBuild();
         }
         private void BuildHandheld()
@@ -137,9 +138,58 @@ namespace LittleGame
 
         }
 
-        private void BuildCaseRim()
+        private void BuildSuitcase()
         {
-            var rim = Part("bodyRim",new Vector3(0,.33f,0),new Vector3(4.4f,.48f,5.6f),"#CAD1D2");
+            const string red="#A81532", bright="#CD2846", trim="#43222E", brass="#D9B483";
+            Part("body",new Vector3(0,-.53f,0),new Vector3(4.28f,.40f,5.8f),red);
+            BuildCaseRim(new Vector3(0,-.16f,0),new Vector3(4.28f,.69f,5.8f),red);
+            BuildCaseRim(new Vector3(0,.15f,0),new Vector3(4.32f,.11f,5.84f),trim,"zipSeam");
+            Materials["body"].SetFloat("_Smoothness",.46f);
+            Part("lining",new Vector3(0,-.30f,0),new Vector3(3.54f,.12f,4.95f),"#A67F72");
+            Part("partition",new Vector3(0,-.02f,.38f),new Vector3(3.65f,.52f,.16f),trim);
+            Part("cover",new Vector3(0,.49f,0),new Vector3(4.28f,.61f,5.8f),red,true);
+            Materials["cover"].SetFloat("_Smoothness",.52f);
+            for(int i=-3;i<=3;i++)
+                Attach("shellRib"+i,"cover",new Vector3(i*.46f,.81f,-.04f),new Vector3(.095f,.075f,4.7f),bright);
+            Attach("badge","cover",new Vector3(0,.87f,1.74f),new Vector3(.72f,.06f,.24f),brass);
+
+            foreach(float x in new[]{-1.60f,1.60f})
+            {
+                var wheel=Part("wheel"+x,new Vector3(x,-.51f,-3.01f),new Vector3(.64f,.19f,.64f),trim,false,PrimitiveType.Cylinder);
+                wheel.rotation=Quaternion.Euler(0,0,90);
+                Part("handleMount"+x,new Vector3(x,-.19f,2.96f),new Vector3(.27f,.34f,.37f),brass);
+            }
+            Part("handle",new Vector3(0,-.19f,3.16f),new Vector3(3.04f,.23f,.24f),trim);
+            Part("latch",new Vector3(2.06f,.68f,-.62f),new Vector3(.6f,.47f,.70f),brass,true);
+            Attach("latchInset","latch",new Vector3(2.22f,.93f,-.62f),new Vector3(.18f,.05f,.35f),trim);
+
+            Part("pouch",new Vector3(-.88f,-.01f,-1.12f),new Vector3(1.46f,.49f,1.75f),"#B77A63",true);
+            Attach("pouchZip","pouch",new Vector3(-.88f,.248f,-1.12f),new Vector3(.11f,.05f,1.6f),trim);
+            Attach("pouchPull","pouch",new Vector3(-.88f,.28f,-.62f),new Vector3(.18f,.05f,.38f),brass);
+            Part("divider",new Vector3(0,-.09f,1.46f),new Vector3(3.44f,.16f,1.88f),"#84616B",true);
+            Attach("dividerPull","divider",new Vector3(1.22f,.02f,1.42f),new Vector3(.30f,.07f,.56f),brass);
+            Part("bra",new Vector3(-.3f,.025f,1.41f),new Vector3(2.15f,.055f,.65f),"#C68C95",true);
+            foreach(float x in new[]{-.82f,.22f})
+            {
+                var cup=Part("braCup"+x,new Vector3(x,.055f,1.45f),new Vector3(.93f,.30f,.83f),"#D5A2AA",false,PrimitiveType.Sphere);
+                cup.SetParent(Parts["bra"],true);
+                Attach("braSeam"+x,"bra",new Vector3(x,.072f,1.04f),new Vector3(.80f,.055f,.09f),"#A96778");
+                Attach("braStrap"+x,"bra",new Vector3(x,.045f,1.99f),new Vector3(.085f,.055f,.56f),"#B97D8A");
+            }
+            Attach("braBow","bra",new Vector3(-.3f,.095f,1.43f),new Vector3(.21f,.10f,.16f),"#EDD1CB");
+            Part("scarf",new Vector3(-.3f,.39f,1.41f),new Vector3(2.17f,.20f,1.55f),"#719D92",true);
+            for(int i=0;i<3;i++)
+                Attach("scarfFold"+i,"scarf",new Vector3(-.3f,.495f,.94f+i*.39f),new Vector3(2.04f,.085f,.26f),"#88B5A9");
+            Part("photo",new Vector3(.4f,-.21f,1.52f),new Vector3(1.16f,.055f,.84f),"#EEDDC0",true);
+            Attach("photoPrint","photo",new Vector3(.4f,-.175f,1.52f),new Vector3(.95f,.015f,.65f),"#86A4A7");
+            Attach("photoHill","photo",new Vector3(.4f,-.164f,1.66f),new Vector3(.95f,.013f,.28f),"#647D72");
+        }
+
+        private void BuildCaseRim() => BuildCaseRim(new Vector3(0,.33f,0),new Vector3(4.4f,.48f,5.6f),"#CAD1D2");
+
+        private void BuildCaseRim(Vector3 position,Vector3 size,string color,string id="bodyRim")
+        {
+            var rim = Part(id,position,size,color);
             var mesh = DeviceMesh.RoundedFrame();
             meshes.Add(mesh);
             rim.GetComponent<MeshFilter>().sharedMesh = mesh;

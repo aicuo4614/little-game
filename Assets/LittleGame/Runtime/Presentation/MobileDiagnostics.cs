@@ -12,9 +12,11 @@ namespace LittleGame
         private float next;
         private void LateUpdate()
         {
-            if(Time.unscaledTime<next || GameBootstrap.View==null) return;
+            if(Time.unscaledTime<next) return;
+            bool structure=Structure.StructureBootstrap.View!=null;
+            if(!structure&&GameBootstrap.View==null)return;
             next=Time.unscaledTime+.5f;
-            var data=new { state=GameBootstrap.Session.Snapshot(),view=GameBootstrap.View.InteractionSnapshot(),performance=FrameMetrics.Current.Snapshot() };
+            var data=new { sample=structure?"structure":"legacy",state=structure?Structure.StructureBootstrap.Session.Snapshot():GameBootstrap.Session.Snapshot(),view=structure?Structure.StructureBootstrap.View.Snapshot():GameBootstrap.View.InteractionSnapshot(),performance=FrameMetrics.Current.Snapshot() };
             string path=Path.Combine(Application.persistentDataPath,"observation.json");
             File.WriteAllText(path+".tmp",JsonConvert.SerializeObject(data));
             if(File.Exists(path)) File.Delete(path);

@@ -15,17 +15,18 @@ namespace LittleGame
         private readonly List<Material> materials=new List<Material>();
         private readonly List<Mesh> meshes=new List<Mesh>();
         public Quaternion ParkingRotation { get;private set; }
+        private const int Columns=8;
+        private int rows;
+        private Camera camera;
         public float Bottom { get;private set; }
         public float Top { get;private set; }
         public void Build(MachineModel model,DeviceLevel level,Camera camera)
         {
             ParkingRotation=Quaternion.LookRotation(camera.transform.up,-camera.transform.forward);
-            int columns=8;int rows=level.Parts.Length>8?2:1;
-            float height=rows==1?.14f:.108f;
-            float cellWidth=2*camera.orthographicSize*Mathf.Min(camera.aspect,9f/16)*.94f/columns;
-            float cellHeight=2*camera.orthographicSize*height;
-            Bottom=rows==1?.78f-height*.5f:.68f-height*.5f;
-            Top=(rows==1?.78f:.80f)+height*.5f;
+            this.camera=camera;
+            rows=Mathf.CeilToInt(level.Parts.Length/(float)Columns);
+            const int columns=Columns;
+            const float cellWidth=1,cellHeight=.84f;
             for(int index=0;index<level.Parts.Length;index++)
             {
                 string id=level.Parts[index].Id;var part=model.Parts[id];
@@ -38,14 +39,13 @@ namespace LittleGame
                 float display=Mathf.Min((cellWidth-.25f)/b.size.x,(cellHeight-.25f)/b.size.z);
                 display=Mathf.Min(display,id.Contains("screw")?.95f:.65f);
                 int row=index/columns,column=index%columns;
-                float viewportY=rows==1?.78f:row==0?.80f:.68f;
-                Vector3 center=camera.transform.position+camera.transform.forward*8
-                    +camera.transform.up*((viewportY-.5f)*2*camera.orthographicSize)
-                    +camera.transform.right*((column-(columns-1)*.5f)*cellWidth);
+                int rowCount=Mathf.Min(columns,level.Parts.Length-row*columns);
+                Vector3 center=camera.transform.up*(-(row+.5f)*cellHeight)
+                    +camera.transform.right*((column-(rowCount-1)*.5f)*cellWidth);
                 Vector3 outward=-camera.transform.forward;
                 var slot=new Slot{Id=id,Row=row,Column=column,Center=center,Scale=display,
                     Size=new Vector2(b.size.x*display+.14f,b.size.z*display+.14f)};
-                Shape("AlignedCell",center,new Vector3(cellWidth-.055f,.025f,cellHeight),false,"#DBD4C2");
+                Shape("AlignedCell",center,new Vector3(cellWidth-.055f,.025f,cellHeight-.035f),false,"#DBD4C2");
                 bool round=id.Contains("screw");
                 Shape("SlotRim",center+outward*.025f,new Vector3(slot.Size.x,.02f,slot.Size.y),round,"#ECE7D6");
                 var liner=Shape("SlotLiner",center+outward*.04f,new Vector3(slot.Size.x-.055f,.012f,slot.Size.y-.055f),round,"#78948A");
@@ -63,8 +63,17 @@ namespace LittleGame
                 slot.Ghost=ghost;slots.Add(slot);
             }
         }
-        public Vector3 Parking(string id) { return slots.Find(s=>s.Id==id).Position; }
-        public float Scale(string id) { return slots.Find(s=>s.Id==id).Scale; }
+        public void Layout(Rect safe, float headerBottom)
+        {
+            float cellPixels=Mathf.Min(safe.width*.88f/Columns,safe.height*.058f);
+            float height=rows*.84f*cellPixels/Screen.height;
+            Top=headerBottom-8f*RepairHud.Scale/Screen.height;
+            Bottom=Top-height;
+            transform.position=camera.ViewportToWorldPoint(new Vector3(safe.center.x/Screen.width,Top,8));
+            transform.localScale=Vector3.one*(cellPixels*2*camera.orthographicSize/Screen.height);
+        }
+        public Vector3 Parking(string id) { return transform.TransformPoint(slots.Find(s=>s.Id==id).Position); }
+        public float Scale(string id) { return slots.Find(s=>s.Id==id).Scale*transform.lossyScale.x; }
         public void Refresh(PuzzleSession session)
         {
             foreach(var slot in slots)
@@ -79,10 +88,10 @@ namespace LittleGame
             var result=new List<object>();
             foreach(var slot in slots)
             {
-                var p=Camera.main.WorldToViewportPoint(slot.Position);var center=Camera.main.WorldToViewportPoint(slot.Center);
+                var world=Parking(slot.Id);var p=camera.WorldToViewportPoint(world);var center=camera.WorldToViewportPoint(transform.TransformPoint(slot.Center));
                 result.Add(new {part=slot.Id,index=result.Count,row=slot.Row,column=slot.Column,x=p.x,y=p.y,
-                    center=new {x=center.x,y=center.y},width=slot.Size.x,length=slot.Size.y,displayScale=slot.Scale,filled=slot.Filled,
-                    worldPosition=new {x=slot.Position.x,y=slot.Position.y,z=slot.Position.z}});
+                    center=new {x=center.x,y=center.y},width=slot.Size.x*transform.lossyScale.x,length=slot.Size.y*transform.lossyScale.x,displayScale=Scale(slot.Id),filled=slot.Filled,
+                    worldPosition=new { x=world.x,y=world.y,z=world.z }});
             }
             return result;
         }

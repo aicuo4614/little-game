@@ -21,6 +21,7 @@ namespace LittleGame
     // 数据只描述拆卸依赖，不引用模型、平台或MCP。
     public static class DeviceLevels
     {
+        public const int SuitcaseIndex=3;
         public static readonly DeviceLevel[] All={
             new DeviceLevel("旧掌机",
                 new PartDefinition("screw_a","左侧外壳螺丝",false),new PartDefinition("screw_b","右侧外壳螺丝",false),
@@ -36,7 +37,16 @@ namespace LittleGame
                 new PartDefinition("ram_clip","内存卡扣",true),new PartDefinition("ram","内存条",true,"ram_clip"),
                 new PartDefinition("cooler_screw","散热器固定螺丝",true),new PartDefinition("cooler","处理器散热器",true,"cable","cooler_screw"),
                 new PartDefinition("board_screw","主板固定螺丝",true),new PartDefinition("board","电脑主板",true,"power_unit","gpu","ram","cooler","board_screw"),
-                new PartDefinition("chassis","机箱框架",false,"screw_a","screw_b","case_screw_c","cover","cable","power_unit","gpu_screw","gpu","ram_clip","ram","cooler_screw","cooler","board_screw","board"))
+                new PartDefinition("chassis","机箱框架",false,"screw_a","screw_b","case_screw_c","cover","cable","power_unit","gpu_screw","gpu","ram_clip","ram","cooler_screw","cooler","board_screw","board")),
+            new DeviceLevel("红色行李箱",
+                new PartDefinition("latch","金属锁扣",false),
+                new PartDefinition("cover","行李箱盖",false,"latch"),
+                new PartDefinition("pouch","洗漱包",true),
+                new PartDefinition("scarf","折叠围巾",true),
+                new PartDefinition("bra","内衣",true,"scarf"),
+                new PartDefinition("divider","内衬隔板",true,"bra"),
+                new PartDefinition("photo","旧照片",true,"divider"),
+                new PartDefinition("chassis","行李箱底壳",false,"cover","pouch","photo"))
         };
     }
 }
