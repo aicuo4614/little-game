@@ -1,0 +1,11 @@
+{
+  "name": "little-game",
+  "displayName": "Little Game (符阵军团)",
+  "version": "1.0.0",
+  "description": "little-game Unity 3D 军团手游工作区插件：接入 3833 端口 Unity MCP、kabu-unity-mcp 维护规则与玩法/手机验证 Skills。",
+  "suggestedPrompts": [
+    "检查 Unity 编译状态并运行完整的战斗规则与 MCP 回归验证",
+    "读取当前战斗状态和 GameView 截图，检查 UI 布局与 Console 日志",
+    "核查可复用的美术资源目录并更新 Art-Resource-Catalog.md"
+  ]
+}

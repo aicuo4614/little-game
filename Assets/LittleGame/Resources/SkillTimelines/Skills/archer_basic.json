@@ -1,0 +1,65 @@
+{
+  "SchemaVersion": 1,
+  "TimelineId": "archer_basic",
+  "DisplayName": "风弓手普攻",
+  "DurationBindClipKey": "",
+  "Clips": [
+    {
+      "ClipKey": "c_anim",
+      "PreKey": "",
+      "Type": "PlayAnimation",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.3,
+      "ActionName": "Attack",
+      "Speed": 1.15,
+      "TargetAnchor": "Caster",
+      "EventConfigs": [
+        {
+          "EventKey": "ev_shot",
+          "Time": 0.08,
+          "EventName": "shot"
+        }
+      ]
+    },
+    {
+      "ClipKey": "c_arrow",
+      "PreKey": "ev_shot",
+      "Type": "PlayBullet",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.14,
+      "EffectId": "fx_arrow_basic",
+      "FromAnchor": "Caster",
+      "ToAnchor": "Target",
+      "StartHeight": 0.72,
+      "EndHeight": 0.65,
+      "ArcHeight": 0.18,
+      "Width": 0.07,
+      "Scale": 1.0,
+      "ColorHex": "#A8F07A",
+      "EventConfigs": []
+    },
+    {
+      "ClipKey": "c_hit",
+      "PreKey": "c_arrow",
+      "Type": "PlayHit",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.14,
+      "TargetAnchor": "Target",
+      "HitActionName": "Hit",
+      "FlashColorHex": "#D7FFB8",
+      "FlashDuration": 0.12,
+      "EffectId": "fx_hit_arrow",
+      "Offset": {
+        "x": 0.0,
+        "y": 0.65,
+        "z": 0.0
+      },
+      "Scale": 0.35,
+      "ColorHex": "#D7FFB8",
+      "EventConfigs": []
+    }
+  ]
+}

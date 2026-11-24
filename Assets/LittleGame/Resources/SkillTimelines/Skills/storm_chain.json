@@ -1,0 +1,117 @@
+{
+  "SchemaVersion": 1,
+  "TimelineId": "storm_chain",
+  "DisplayName": "雷法师·连锁闪电",
+  "DurationBindClipKey": "",
+  "Clips": [
+    {
+      "ClipKey": "c_anim",
+      "PreKey": "",
+      "Type": "PlayAnimation",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.38,
+      "ActionName": "Attack",
+      "Speed": 1.05,
+      "TargetAnchor": "Caster",
+      "EventConfigs": [
+        {
+          "EventKey": "ev_cast",
+          "Time": 0.1,
+          "EventName": "cast"
+        }
+      ]
+    },
+    {
+      "ClipKey": "c_darken",
+      "PreKey": "ev_cast",
+      "Type": "SceneDarken",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.38,
+      "StartStrength": 0.44,
+      "EndStrength": 0.0,
+      "EventConfigs": []
+    },
+    {
+      "ClipKey": "c_arc",
+      "PreKey": "ev_cast",
+      "Type": "PlayBullet",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.12,
+      "EffectId": "fx_chain_lightning",
+      "FromAnchor": "Caster",
+      "ToAnchor": "Target",
+      "StartHeight": 0.72,
+      "EndHeight": 0.65,
+      "ArcHeight": 0.35,
+      "Width": 0.14,
+      "Scale": 1.0,
+      "ColorHex": "#7CE8FF",
+      "EventConfigs": []
+    },
+    {
+      "ClipKey": "c_bolt",
+      "PreKey": "c_arc",
+      "Type": "PlayEffect",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.24,
+      "EffectId": "fx_lightning_strike",
+      "ToAnchor": "TargetGround",
+      "Shape": "Beam",
+      "Offset": {
+        "x": 0.0,
+        "y": 0.15,
+        "z": 0.0
+      },
+      "Scale": 0.52,
+      "FollowAnchor": false,
+      "ColorHex": "#9CEEFF",
+      "EventConfigs": []
+    },
+    {
+      "ClipKey": "c_hit",
+      "PreKey": "c_arc",
+      "Type": "PlayHit",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.14,
+      "TargetAnchor": "Target",
+      "HitActionName": "Hit",
+      "FlashColorHex": "#D4F7FF",
+      "FlashDuration": 0.12,
+      "EffectId": "fx_hit_lightning",
+      "Offset": {
+        "x": 0.0,
+        "y": 0.65,
+        "z": 0.0
+      },
+      "Scale": 0.58,
+      "ColorHex": "#D4F7FF",
+      "EventConfigs": []
+    },
+    {
+      "ClipKey": "c_stop",
+      "PreKey": "c_arc",
+      "Type": "HitStop",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.06,
+      "TargetAnchor": "Target",
+      "EventConfigs": []
+    },
+    {
+      "ClipKey": "c_shake",
+      "PreKey": "c_arc",
+      "Type": "CameraShake",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.16,
+      "Amplitude": 0.1,
+      "Frequency": 34.0,
+      "EventConfigs": []
+    }
+  ]
+}

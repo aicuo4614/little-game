@@ -1,0 +1,50 @@
+{
+  "SchemaVersion": 1,
+  "TimelineId": "unit_upgrade",
+  "DisplayName": "军团升星·分支觉醒",
+  "DurationBindClipKey": "",
+  "Clips": [
+    {
+      "ClipKey": "c_darken",
+      "PreKey": "",
+      "Type": "SceneDarken",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.42,
+      "StartStrength": 0.3,
+      "EndStrength": 0.0,
+      "EventConfigs": []
+    },
+    {
+      "ClipKey": "c_lvlup",
+      "PreKey": "",
+      "Type": "PlayEffect",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.62,
+      "EffectId": "fx_level_up",
+      "ToAnchor": "Caster",
+      "Shape": "Aura",
+      "Offset": {
+        "x": 0.0,
+        "y": 0.16,
+        "z": 0.0
+      },
+      "Scale": 1.15,
+      "FollowAnchor": true,
+      "ColorHex": "#FFD85C",
+      "EventConfigs": []
+    },
+    {
+      "ClipKey": "c_shake",
+      "PreKey": "",
+      "Type": "CameraShake",
+      "StartTime": 0.04,
+      "DelayTime": 0.0,
+      "Duration": 0.12,
+      "Amplitude": 0.06,
+      "Frequency": 24.0,
+      "EventConfigs": []
+    }
+  ]
+}

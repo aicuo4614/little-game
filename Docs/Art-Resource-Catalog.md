@@ -17,6 +17,7 @@
 | AutoClash | `E:\Project\AutoClash_20210125\AutoClash1` | 2026-11-24 用户确认资源可用，不再反复核对商用授权；仍需技术验证 |
 | PELibDemo | `E:\Project\PELibDemo` | 2026-11-24 用户明确其中多组模型可以使用；不扩张为任意代码、SDK或网络服务授权 |
 | 架构与工具参考 | `F:\Git\kabu_mobile\demo`；历史路径 `E:\Git\demo` | 已授权技术参考，路径/版本使用前确认；不自动视为所有第三方美术均获授权 |
+| 玩法与镜头参考 | `E:\Project\bump` | 2026-11-24 用户新增为玩法/横向推进与战斗体验参考工程（只读检查）；未获美术资源或代码使用授权，不搬入素材 |
 | Unity Asset Store | https://assetstore.unity.com | 可自主筛选；付费由用户决定并提供，不代付款；优先查本地是否已有同包 |
 | 作者网站与其他网络来源 | Kay Lousberg、Quaternius、Synty、itch.io 等 | 保留原始作者链接，区分免费、EXTRA、SOURCE，按具体来源核对许可；不从不明转载站获取付费包 |
 
@@ -108,3 +109,9 @@
 - 角色脚下的实心色盘已改成细阵营环，状态环独立显示；两者不加碰撞、不参与规则。
 - 提取清单保留源文件与提取后哈希；四份源材质经Unity2022自动升级序列化，另记postUnityImportSha256，不误报为源工程被修改。21张UI原图文件哈希一致。
 - 无提交、无推送。用户取消手机验收后未继续手机构建或安装；此前APK已过时，不用于交付最新UI。
+
+## 2026-11-24 3D 技能时间轴、Demo 轨道编辑器与 Hovl Studio 实战特效接入
+
+- 从 `F:/Git/kabu_mobile/demo/client-demo-assets/Assets/Scripts/Editor/TimelineEditor/TimeLineWindow` 直接迁入原版 `DMTimeArea.SimpleTimeArea` 轨道渲染引擎与 `EditorResources` 图标至 `Assets/LittleGame/Client/Editor/TimeLineWindow`，改造 `SkillTimelineEditorWindow`（`Little Game/Combat/Skill Timeline Editor`）支持缩放时间标尺、播放头/截止游标、多轨道彩色片段条、拖拽调时/缩放时长、关键帧菱形标记与前置连线、右侧属性编辑及 JSON 校验保存热重载。
+- 单位战斗表现参考 Demo 客户端分层，拆分为 `CombatUnitActor`（标准挂点/动作/血条/状态环）、`CombatUnitRegistry`、`BattleActionRouter`、`BattleFloatingText` 与 `SkillTimelineDirector`；`UnitSkillBindings.json`（23 条规则）与 21 个技能 JSON 位于 `Assets/LittleGame/Resources/SkillTimelines/`。
+- 从已授权 `E:/Project/PELibDemo/Assets/Art/3D/Hovl Studio` 按最小 GUID 依赖提取 18 个精选特效（共 199 文件，不含源演示脚本）至 `Assets/LittleGame/Art/SkillEffectsSources/HovlStudio`，哈希清单见 `Reports/Art/skill-effects-migration.json`；经 `SkillEffectAssetBuilder`（`Little Game/Combat/Build Skill Effects`）剥离碰撞体/刚体/灯光/音频并自动适配 73 份 URP 14 `Particles/Unlit` 材质，输出 39 个 `EffectId` 预制体至 `Assets/LittleGame/Resources/SkillEffects/`（构建日志 `Reports/Art/skill-effects-build.txt`）。

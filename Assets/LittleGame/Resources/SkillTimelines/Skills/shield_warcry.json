@@ -1,0 +1,78 @@
+{
+  "SchemaVersion": 1,
+  "TimelineId": "shield_warcry",
+  "DisplayName": "盾卫·战吼激励",
+  "DurationBindClipKey": "",
+  "Clips": [
+    {
+      "ClipKey": "c_anim",
+      "PreKey": "",
+      "Type": "PlayAnimation",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.42,
+      "ActionName": "Attack",
+      "Speed": 1.0,
+      "TargetAnchor": "Caster",
+      "EventConfigs": [
+        {
+          "EventKey": "ev_cry",
+          "Time": 0.1,
+          "EventName": "cry"
+        }
+      ]
+    },
+    {
+      "ClipKey": "c_wave",
+      "PreKey": "ev_cry",
+      "Type": "PlayEffect",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.55,
+      "EffectId": "fx_warcry_wave",
+      "ToAnchor": "LaneCenter",
+      "Shape": "Ring",
+      "Offset": {
+        "x": 0.0,
+        "y": 0.18,
+        "z": 0.0
+      },
+      "Scale": 1.65,
+      "FollowAnchor": false,
+      "ColorHex": "#FFB84D",
+      "EventConfigs": []
+    },
+    {
+      "ClipKey": "c_hit",
+      "PreKey": "ev_cry",
+      "Type": "PlayHit",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.14,
+      "TargetAnchor": "Target",
+      "HitActionName": "Hit",
+      "FlashColorHex": "#FFD27A",
+      "FlashDuration": 0.12,
+      "EffectId": "fx_hit_heavy",
+      "Offset": {
+        "x": 0.0,
+        "y": 0.65,
+        "z": 0.0
+      },
+      "Scale": 0.55,
+      "ColorHex": "#FFD27A",
+      "EventConfigs": []
+    },
+    {
+      "ClipKey": "c_shake",
+      "PreKey": "ev_cry",
+      "Type": "CameraShake",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.14,
+      "Amplitude": 0.09,
+      "Frequency": 26.0,
+      "EventConfigs": []
+    }
+  ]
+}

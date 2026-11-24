@@ -30,15 +30,20 @@ namespace LittleGame.Editor
                 pipeline = UniversalRenderPipelineAsset.Create(renderer);
                 AssetDatabase.CreateAsset(pipeline, pipelinePath);
             }
-            pipeline.supportsHDR = false;
-            pipeline.msaaSampleCount = 2;
-            pipeline.renderScale = 1;
+            // 参考 Demo 最高画质 URP 配置：HDR 开启（支撑特效专属 Bloom）、MSAA 4x、2048 柔化阴影、全分辨率 RenderScale=1
+            pipeline.supportsHDR = true;
+            pipeline.msaaSampleCount = 4;
+            pipeline.renderScale = 1f;
             pipeline.supportsCameraDepthTexture = false;
             pipeline.supportsCameraOpaqueTexture = false;
-            pipeline.shadowDistance = 30;
+            pipeline.shadowDistance = 35f;
             pipeline.shadowCascadeCount = 1;
             var pipelineSettings = new SerializedObject(pipeline);
             pipelineSettings.FindProperty("m_SoftShadowsSupported").boolValue = true;
+            var shadowRes = pipelineSettings.FindProperty("m_MainLightShadowmapResolution");
+            if (shadowRes != null) shadowRes.intValue = 2048;
+            var dynBatch = pipelineSettings.FindProperty("m_SupportsDynamicBatching");
+            if (dynBatch != null) dynBatch.boolValue = true;
             pipelineSettings.ApplyModifiedPropertiesWithoutUndo();
             pipeline.useSRPBatcher = true;
             GraphicsSettings.defaultRenderPipeline = pipeline;

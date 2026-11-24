@@ -62,6 +62,10 @@ namespace LittleGame.Editor
                 EditorUserBuildSettings.exportAsGoogleAndroidProject = false;
 
                 RenderSetup.Configure();
+                EnsureMaterial("KeepUrpUnlit", "Universal Render Pipeline/Unlit");
+                EnsureMaterial("KeepUrpLit", "Universal Render Pipeline/Lit");
+                EnsureMaterial("KeepUrpParticlesUnlit", "Universal Render Pipeline/Particles/Unlit");
+                EnsureMaterial("KeepUiSlotShine", "LittleGame/UI/SlotShine");
                 AssetDatabase.SaveAssets();
                 var directory = Path.GetFullPath("Builds/Android");
                 Directory.CreateDirectory(directory);

@@ -1,0 +1,49 @@
+{
+  "SchemaVersion": 1,
+  "TimelineId": "storm_tick",
+  "DisplayName": "雷区持续电击",
+  "DurationBindClipKey": "",
+  "Clips": [
+    {
+      "ClipKey": "c_spark",
+      "PreKey": "",
+      "Type": "PlayEffect",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.16,
+      "EffectId": "fx_storm_tick",
+      "ToAnchor": "Target",
+      "Shape": "Burst",
+      "Offset": {
+        "x": 0.0,
+        "y": 0.65,
+        "z": 0.0
+      },
+      "Scale": 0.42,
+      "FollowAnchor": false,
+      "ColorHex": "#A994FF",
+      "EventConfigs": []
+    },
+    {
+      "ClipKey": "c_hit",
+      "PreKey": "",
+      "Type": "PlayHit",
+      "StartTime": 0.02,
+      "DelayTime": 0.0,
+      "Duration": 0.14,
+      "TargetAnchor": "Target",
+      "HitActionName": "",
+      "FlashColorHex": "#DCD1FF",
+      "FlashDuration": 0.12,
+      "EffectId": "",
+      "Offset": {
+        "x": 0.0,
+        "y": 0.65,
+        "z": 0.0
+      },
+      "Scale": 0.32,
+      "ColorHex": "#DCD1FF",
+      "EventConfigs": []
+    }
+  ]
+}

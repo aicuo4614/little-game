@@ -1,0 +1,117 @@
+{
+  "SchemaVersion": 1,
+  "TimelineId": "archer_pierce",
+  "DisplayName": "风弓手·穿透箭",
+  "DurationBindClipKey": "",
+  "Clips": [
+    {
+      "ClipKey": "c_anim",
+      "PreKey": "",
+      "Type": "PlayAnimation",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.34,
+      "ActionName": "Attack",
+      "Speed": 1.15,
+      "TargetAnchor": "Caster",
+      "EventConfigs": [
+        {
+          "EventKey": "ev_shot",
+          "Time": 0.08,
+          "EventName": "shot"
+        }
+      ]
+    },
+    {
+      "ClipKey": "c_darken",
+      "PreKey": "",
+      "Type": "SceneDarken",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.34,
+      "StartStrength": 0.32,
+      "EndStrength": 0.0,
+      "EventConfigs": []
+    },
+    {
+      "ClipKey": "c_arrow",
+      "PreKey": "ev_shot",
+      "Type": "PlayBullet",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.14,
+      "EffectId": "fx_arrow_pierce",
+      "FromAnchor": "Caster",
+      "ToAnchor": "Target",
+      "StartHeight": 0.72,
+      "EndHeight": 0.65,
+      "ArcHeight": 0.06,
+      "Width": 0.15,
+      "Scale": 1.0,
+      "ColorHex": "#FFE066",
+      "EventConfigs": []
+    },
+    {
+      "ClipKey": "c_trail",
+      "PreKey": "c_arrow",
+      "Type": "PlayEffect",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.25,
+      "EffectId": "fx_pierce_flash",
+      "ToAnchor": "Target",
+      "Shape": "Burst",
+      "Offset": {
+        "x": 0.0,
+        "y": 0.65,
+        "z": 0.0
+      },
+      "Scale": 0.85,
+      "FollowAnchor": false,
+      "ColorHex": "#FFF099",
+      "EventConfigs": []
+    },
+    {
+      "ClipKey": "c_hit",
+      "PreKey": "c_arrow",
+      "Type": "PlayHit",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.14,
+      "TargetAnchor": "Target",
+      "HitActionName": "Hit",
+      "FlashColorHex": "#FFF5B8",
+      "FlashDuration": 0.12,
+      "EffectId": "fx_hit_pierce",
+      "Offset": {
+        "x": 0.0,
+        "y": 0.65,
+        "z": 0.0
+      },
+      "Scale": 0.58,
+      "ColorHex": "#FFF5B8",
+      "EventConfigs": []
+    },
+    {
+      "ClipKey": "c_stop",
+      "PreKey": "c_arrow",
+      "Type": "HitStop",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.06,
+      "TargetAnchor": "Target",
+      "EventConfigs": []
+    },
+    {
+      "ClipKey": "c_shake",
+      "PreKey": "c_arrow",
+      "Type": "CameraShake",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.14,
+      "Amplitude": 0.09,
+      "Frequency": 30.0,
+      "EventConfigs": []
+    }
+  ]
+}

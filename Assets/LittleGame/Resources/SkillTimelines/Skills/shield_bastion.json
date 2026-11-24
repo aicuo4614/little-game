@@ -1,0 +1,98 @@
+{
+  "SchemaVersion": 1,
+  "TimelineId": "shield_bastion",
+  "DisplayName": "盾卫·堡垒壁垒",
+  "DurationBindClipKey": "",
+  "Clips": [
+    {
+      "ClipKey": "c_anim",
+      "PreKey": "",
+      "Type": "PlayAnimation",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.42,
+      "ActionName": "Attack",
+      "Speed": 0.9,
+      "TargetAnchor": "Caster",
+      "EventConfigs": [
+        {
+          "EventKey": "ev_impact",
+          "Time": 0.14,
+          "EventName": "impact"
+        }
+      ]
+    },
+    {
+      "ClipKey": "c_wall",
+      "PreKey": "",
+      "Type": "PlayEffect",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.65,
+      "EffectId": "fx_shield_bastion",
+      "ToAnchor": "Caster",
+      "Shape": "Ring",
+      "Offset": {
+        "x": 0.0,
+        "y": 0.18,
+        "z": 0.0
+      },
+      "Scale": 1.35,
+      "FollowAnchor": true,
+      "ColorHex": "#45B8FF",
+      "EventConfigs": []
+    },
+    {
+      "ClipKey": "c_aura",
+      "PreKey": "",
+      "Type": "PlayEffect",
+      "StartTime": 0.05,
+      "DelayTime": 0.0,
+      "Duration": 0.5,
+      "EffectId": "fx_shield_dome",
+      "ToAnchor": "Caster",
+      "Shape": "Aura",
+      "Offset": {
+        "x": 0.0,
+        "y": 0.6,
+        "z": 0.0
+      },
+      "Scale": 0.9,
+      "FollowAnchor": true,
+      "ColorHex": "#8CE0FF",
+      "EventConfigs": []
+    },
+    {
+      "ClipKey": "c_hit",
+      "PreKey": "ev_impact",
+      "Type": "PlayHit",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.14,
+      "TargetAnchor": "Target",
+      "HitActionName": "Hit",
+      "FlashColorHex": "#FFE49E",
+      "FlashDuration": 0.12,
+      "EffectId": "fx_hit_heavy",
+      "Offset": {
+        "x": 0.0,
+        "y": 0.65,
+        "z": 0.0
+      },
+      "Scale": 0.6,
+      "ColorHex": "#FFE49E",
+      "EventConfigs": []
+    },
+    {
+      "ClipKey": "c_shake",
+      "PreKey": "ev_impact",
+      "Type": "CameraShake",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.16,
+      "Amplitude": 0.1,
+      "Frequency": 24.0,
+      "EventConfigs": []
+    }
+  ]
+}

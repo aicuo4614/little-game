@@ -1,0 +1,41 @@
+SkillEffectAssetBuilder: built=40, missing=0, convertedMaterials=73
+OK fx_shield_slash scale=0.55 urpConverted=14 <- AOE Magic spells Vol.1/Prefabs/Flower slash.prefab
+OK fx_shield_bash scale=0.72 urpConverted=14 <- AOE Magic spells Vol.1/Prefabs/Flower slash.prefab
+OK fx_shield_guard scale=0.42 urpConverted=13 <- Magic circles/Prefabs/Loop version/Magic shield 1 loop.prefab
+OK fx_shield_bastion scale=0.55 urpConverted=13 <- Magic circles/Prefabs/Loop version/Magic shield 1 loop.prefab
+OK fx_shield_dome scale=0.55 urpConverted=12 <- RPG VFX Bundle/Prefabs/Magic buffs and hits/Soft blue buff.prefab
+OK fx_warcry_wave scale=0.78 urpConverted=9 <- RPG VFX Bundle/Prefabs/Magic buffs and hits/Buff 1.prefab
+OK fx_arrow_basic scale=0.48 urpConverted=4 <- AAA Projectiles Vol 1/Prefabs/Projectiles(transform)/Projectile 1.prefab
+OK fx_arrow_wind scale=0.65 urpConverted=4 <- AAA Projectiles Vol 1/Prefabs/Projectiles(transform)/Projectile 1.prefab
+OK fx_arrow_pierce scale=0.68 urpConverted=2 <- AAA Projectiles Vol 1/Prefabs/Projectiles(transform)/Projectile 4.prefab
+OK fx_arrow_gale scale=0.72 urpConverted=4 <- AAA Projectiles Vol 1/Prefabs/Projectiles(transform)/Projectile 1.prefab
+OK fx_wind_burst scale=0.6 urpConverted=10 <- AOE Magic spells Vol.1/Prefabs/Leaves buff.prefab
+OK fx_pierce_flash scale=0.65 urpConverted=6 <- AAA Projectiles Vol 1/Prefabs/Hit 4.prefab
+OK fx_gale_ring scale=0.78 urpConverted=10 <- AOE Magic spells Vol.1/Prefabs/Leaves buff.prefab
+OK fx_lightning_orb scale=0.52 urpConverted=2 <- AAA Projectiles Vol 1/Prefabs/Projectiles(transform)/Projectile 4.prefab
+OK fx_chain_lightning scale=0.62 urpConverted=4 <- AAA Projectiles Vol 1/Prefabs/Projectiles(transform)/Projectile 7.prefab
+OK fx_lightning_strike scale=0.58 urpConverted=12 <- AOE Magic spells Vol.1/Prefabs/Lightning strike.prefab
+OK fx_storm_zone scale=0.62 urpConverted=10 <- Magic circles/Prefabs/Loop version/Magic circle 1 loop.prefab
+OK fx_storm_tick scale=0.42 urpConverted=1 <- AOE Magic spells Vol.1/Prefabs/Lightning hit.prefab
+OK fx_ice_shard scale=0.48 urpConverted=4 <- AAA Projectiles Vol 1/Prefabs/Projectiles(transform)/Projectile 7.prefab
+OK fx_ice_lance scale=0.64 urpConverted=4 <- AAA Projectiles Vol 1/Prefabs/Projectiles(transform)/Projectile 7.prefab
+OK fx_freeze_ring scale=0.52 urpConverted=8 <- AOE Magic spells Vol.1/Prefabs/Ise attack.prefab
+OK fx_freeze_aura scale=0.52 urpConverted=12 <- RPG VFX Bundle/Prefabs/Magic buffs and hits/Soft blue buff.prefab
+OK fx_ice_armor scale=0.75 urpConverted=12 <- RPG VFX Bundle/Prefabs/Magic buffs and hits/Soft blue buff.prefab
+OK fx_hit_physical scale=0.45 urpConverted=2 <- RPG VFX Bundle/Prefabs/Magic buffs and hits/Punch Hit.prefab
+OK fx_hit_heavy scale=0.62 urpConverted=2 <- RPG VFX Bundle/Prefabs/Magic buffs and hits/Punch Hit.prefab
+OK fx_hit_arrow scale=0.48 urpConverted=5 <- AAA Projectiles Vol 1/Prefabs/Hit 1.prefab
+OK fx_hit_wind scale=0.62 urpConverted=5 <- AAA Projectiles Vol 1/Prefabs/Hit 1.prefab
+OK fx_hit_pierce scale=0.65 urpConverted=6 <- AAA Projectiles Vol 1/Prefabs/Hit 4.prefab
+OK fx_hit_lightning scale=0.55 urpConverted=1 <- AOE Magic spells Vol.1/Prefabs/Lightning hit.prefab
+OK fx_hit_ice scale=0.56 urpConverted=9 <- AAA Projectiles Vol 1/Prefabs/Hit 7.prefab
+OK fx_enemy_hit scale=0.42 urpConverted=6 <- AAA Projectiles Vol 1/Prefabs/Hit 4.prefab
+OK fx_hit_enemy scale=0.45 urpConverted=6 <- AAA Projectiles Vol 1/Prefabs/Hit 4.prefab
+OK fx_heal_orb scale=0.48 urpConverted=4 <- AAA Projectiles Vol 1/Prefabs/Projectiles(transform)/Projectile 1.prefab
+OK fx_heal_ring scale=0.58 urpConverted=7 <- RPG VFX Bundle/Prefabs/Magic buffs and hits/Heal.prefab
+OK fx_boss_charge scale=0.92 urpConverted=10 <- Magic circles/Prefabs/Loop version/Magic circle 1 loop.prefab
+OK fx_boss_slam_wave scale=0.85 urpConverted=12 <- AOE Magic spells Vol.1/Prefabs/Energy explosion.prefab
+OK fx_boss_slam_burst scale=0.62 urpConverted=12 <- AOE Magic spells Vol.1/Prefabs/Energy explosion.prefab
+OK fx_tactic_protect scale=0.72 urpConverted=13 <- Magic circles/Prefabs/Loop version/Magic shield 1 loop.prefab
+OK fx_tactic_focus scale=0.5 urpConverted=10 <- Magic circles/Prefabs/Loop version/Magic circle 1 loop.prefab
+OK fx_level_up scale=0.68 urpConverted=9 <- RPG VFX Bundle/Prefabs/Magic buffs and hits/Buff 1.prefab

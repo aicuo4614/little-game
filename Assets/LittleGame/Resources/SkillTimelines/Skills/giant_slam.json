@@ -1,0 +1,109 @@
+{
+  "SchemaVersion": 1,
+  "TimelineId": "giant_slam",
+  "DisplayName": "石甲巨像·裂地重击",
+  "DurationBindClipKey": "",
+  "Clips": [
+    {
+      "ClipKey": "c_anim",
+      "PreKey": "",
+      "Type": "PlayAnimation",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.62,
+      "ActionName": "Slam",
+      "Speed": 1.0,
+      "TargetAnchor": "Caster",
+      "EventConfigs": [
+        {
+          "EventKey": "ev_slam",
+          "Time": 0.18,
+          "EventName": "slam"
+        }
+      ]
+    },
+    {
+      "ClipKey": "c_darken_in",
+      "PreKey": "",
+      "Type": "SceneDarken",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.18,
+      "StartStrength": 0.2,
+      "EndStrength": 0.62,
+      "EventConfigs": []
+    },
+    {
+      "ClipKey": "c_darken_out",
+      "PreKey": "ev_slam",
+      "Type": "SceneDarken",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.48,
+      "StartStrength": 0.62,
+      "EndStrength": 0.0,
+      "EventConfigs": []
+    },
+    {
+      "ClipKey": "c_wave",
+      "PreKey": "ev_slam",
+      "Type": "PlayEffect",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.58,
+      "EffectId": "fx_boss_slam_wave",
+      "ToAnchor": "LaneCenter",
+      "Shape": "SlamWave",
+      "Offset": {
+        "x": 0.0,
+        "y": 0.2,
+        "z": 0.0
+      },
+      "Scale": 1.85,
+      "FollowAnchor": false,
+      "ColorHex": "#FF5E3A",
+      "EventConfigs": []
+    },
+    {
+      "ClipKey": "c_pillar",
+      "PreKey": "ev_slam",
+      "Type": "PlayEffect",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.38,
+      "EffectId": "fx_boss_slam_burst",
+      "ToAnchor": "LaneCenter",
+      "Shape": "Burst",
+      "Offset": {
+        "x": 0.0,
+        "y": 0.45,
+        "z": 0.0
+      },
+      "Scale": 1.2,
+      "FollowAnchor": false,
+      "ColorHex": "#FFA05C",
+      "EventConfigs": []
+    },
+    {
+      "ClipKey": "c_stop",
+      "PreKey": "ev_slam",
+      "Type": "HitStop",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.09,
+      "TargetAnchor": "Caster",
+      "EventConfigs": []
+    },
+    {
+      "ClipKey": "c_shake",
+      "PreKey": "ev_slam",
+      "Type": "CameraShake",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.36,
+      "Amplitude": 0.26,
+      "Frequency": 26.0,
+      "EventConfigs": []
+    }
+  ]
+}

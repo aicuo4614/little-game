@@ -1,0 +1,1003 @@
+{
+  "sourceRoot": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\Hovl Studio",
+  "destRoot": "E:\\Project\\little-game\\Assets\\LittleGame\\Art\\SkillEffectsSources\\HovlStudio",
+  "selectedPrefabCount": 18,
+  "extractedFileCount": 199,
+  "files": [
+    {
+      "relativePath": "AAA Projectiles Vol 1/Prefabs/Flash 1.prefab",
+      "sourceSha256": "5908cb7b0a468fe2db5d264a18f560ffa6beadc8fadf74d4f63772b1f7a67848",
+      "size": 353787
+    },
+    {
+      "relativePath": "AAA Projectiles Vol 1/Prefabs/Flash 4.prefab",
+      "sourceSha256": "db18046fdd3f3f332d2b0c6b58286506827e9bddd31c2611614ca8d12f4947a3",
+      "size": 353804
+    },
+    {
+      "relativePath": "AAA Projectiles Vol 1/Prefabs/Flash 7.prefab",
+      "sourceSha256": "2d25c2ea34cc479bcd2c65dfdec268564370e6f9dee06429fcb046c8212809fa",
+      "size": 353804
+    },
+    {
+      "relativePath": "AAA Projectiles Vol 1/Prefabs/Hit 1.prefab",
+      "sourceSha256": "abc78ccf9df4284de567d1b5922ef6cd93f19f40556a1297dd6342bfed79ad73",
+      "size": 588632
+    },
+    {
+      "relativePath": "AAA Projectiles Vol 1/Prefabs/Hit 4.prefab",
+      "sourceSha256": "c74d0a02dae6e75f266a1ef4f978bc8edf0537f45c536c65ef445ac105e95d12",
+      "size": 707195
+    },
+    {
+      "relativePath": "AAA Projectiles Vol 1/Prefabs/Hit 7.prefab",
+      "sourceSha256": "9b3b545d02a6979cb94eadd03292e8c0942ce9c2ecb80a141b086eff656a455d",
+      "size": 1060455
+    },
+    {
+      "relativePath": "AAA Projectiles Vol 1/Prefabs/Projectiles(transform)/Projectile 1.prefab",
+      "sourceSha256": "689aefa12fa02886d1ea264d4f5e2860d4a8ed736fdb1d8c67ce81a02efe202c",
+      "size": 489913
+    },
+    {
+      "relativePath": "AAA Projectiles Vol 1/Prefabs/Projectiles(transform)/Projectile 4.prefab",
+      "sourceSha256": "951d607aae1ee65dc28a26f2a33216a04460bb80423b11c12928c465c257714d",
+      "size": 119637
+    },
+    {
+      "relativePath": "AAA Projectiles Vol 1/Prefabs/Projectiles(transform)/Projectile 7.prefab",
+      "sourceSha256": "4e42edf8c246b32ff19dfc03ca8548e3dae67e3da2f969621bc6e0bb96d52e56",
+      "size": 495943
+    },
+    {
+      "relativePath": "AOE Magic spells Vol.1/Prefabs/Energy explosion.prefab",
+      "sourceSha256": "4753a77b8b1fc45550c59c0c5e9633d905aefa74da460709b07b390792cc553e",
+      "size": 1414267
+    },
+    {
+      "relativePath": "AOE Magic spells Vol.1/Prefabs/Flower slash.prefab",
+      "sourceSha256": "fa5ed2524ac8d0506226964603bdc0d9995c0c638c0e4ff4a9fb886cf4531ae5",
+      "size": 1770996
+    },
+    {
+      "relativePath": "AOE Magic spells Vol.1/Prefabs/Ise attack.prefab",
+      "sourceSha256": "b1178ac99768cef5841295cd8d812cfaea37a0dce251bb7b84f0b56174a61a8b",
+      "size": 1056761
+    },
+    {
+      "relativePath": "AOE Magic spells Vol.1/Prefabs/Leaves buff.prefab",
+      "sourceSha256": "634646f82a8f6fcfa9d474e0378ba6f54af1c7d4820234f9e62f7d2b416d124f",
+      "size": 1180624
+    },
+    {
+      "relativePath": "AOE Magic spells Vol.1/Prefabs/Lightning hit.prefab",
+      "sourceSha256": "4e443b6474554587a16f298d14612dd64c23d474fd0b0ddc37d8545880688c8b",
+      "size": 118547
+    },
+    {
+      "relativePath": "AOE Magic spells Vol.1/Prefabs/Lightning strike.prefab",
+      "sourceSha256": "092cddd1ffaa2b17da97e19c378d890d45a185a0324028e8c49efb66beaecfee",
+      "size": 1489714
+    },
+    {
+      "relativePath": "Magic circles/Prefabs/Loop version/Magic circle 1 loop.prefab",
+      "sourceSha256": "2607313146457172cddfd3ce08b05c29b6d6ca967348c9b1bd2c979f37cc86ed",
+      "size": 1293713
+    },
+    {
+      "relativePath": "Magic circles/Prefabs/Loop version/Magic shield 1 loop.prefab",
+      "sourceSha256": "8088c77fc9ca3c485f72187e4d5537a0bd256c56ba1436c30027e200c0fc3756",
+      "size": 1655183
+    },
+    {
+      "relativePath": "Resources/Materials/Arrow3bcg.mat",
+      "sourceSha256": "dcb25d1f8fcd4d24dbfcd397375c037d4044e07c81cb102fdb46773432235b82",
+      "size": 3626
+    },
+    {
+      "relativePath": "Resources/Materials/Circle17cg.mat",
+      "sourceSha256": "7921382ae7677f5eb3d6f4610c630e2a6ca98873363fab2e6086533abde0ec07",
+      "size": 3651
+    },
+    {
+      "relativePath": "Resources/Materials/Circle18cg.mat",
+      "sourceSha256": "741861d7fb46fd2e9398fab56bf1814883832828ea59befcc3913ef0ea68eac3",
+      "size": 3655
+    },
+    {
+      "relativePath": "Resources/Materials/Circle38cg.mat",
+      "sourceSha256": "82f5150dd86232ebd6fcf017d2d5b8834a210359c105f0bcb559db1f12c9a02e",
+      "size": 3820
+    },
+    {
+      "relativePath": "Resources/Materials/Circle41cg.mat",
+      "sourceSha256": "d488dd4c05c9e1ebed249c45e8ef6b683f34026b34e128fd1392085d2204acb2",
+      "size": 3733
+    },
+    {
+      "relativePath": "Resources/Materials/Circle8cg.mat",
+      "sourceSha256": "4064c619c87cb058b0095454d0b457114b907f4bd3f5f4687fd3da6cf4b52465",
+      "size": 3714
+    },
+    {
+      "relativePath": "Resources/Materials/Circle93bcg.mat",
+      "sourceSha256": "ef5aa2098d01a02797c5930692c89ded07751de3ba56fb74a09c034b5656703e",
+      "size": 3648
+    },
+    {
+      "relativePath": "Resources/Materials/Crater14bcg.mat",
+      "sourceSha256": "687d48a872c195b29ea6e68748e84f1ccd8d4f65bc67eb52341fad6abc8fe28c",
+      "size": 3611
+    },
+    {
+      "relativePath": "Resources/Materials/Crater18cg.mat",
+      "sourceSha256": "323c113402535a3268d5f3bb7cddef94e8212148679d33cccdebe822760f2862",
+      "size": 3789
+    },
+    {
+      "relativePath": "Resources/Materials/Debris2bcg.mat",
+      "sourceSha256": "07fb2a4b5e9b1badec0174affe9053ddd536d9f701c21c3fb0372feefb1a8d28",
+      "size": 3683
+    },
+    {
+      "relativePath": "Resources/Materials/Distortion.mat",
+      "sourceSha256": "d1c7a107e86bdff6c36af937524a82afa635959135ad25a2733e2cd9aecf915f",
+      "size": 1813
+    },
+    {
+      "relativePath": "Resources/Materials/EGACrystal.mat",
+      "sourceSha256": "9d9bc93beee5bd4c48ecb86349534d6deae67c432db75ba5e21824dcfe247d97",
+      "size": 4058
+    },
+    {
+      "relativePath": "Resources/Materials/Feather3bcg.mat",
+      "sourceSha256": "4c27c3182e7653086961fcdb8858d178acc72d8e7c2fcdd1716c6e888cd3d684",
+      "size": 3632
+    },
+    {
+      "relativePath": "Resources/Materials/Fire1cg.mat",
+      "sourceSha256": "3069f32caf61eb172af95746cbd300f33e453b7dd2f0a3cb98b393fa98fcb97a",
+      "size": 3707
+    },
+    {
+      "relativePath": "Resources/Materials/Fire3bcg.mat",
+      "sourceSha256": "696724734fddc80598cee1d86fb2a9a841a132cc052990f0bbfacea7463c0150",
+      "size": 3834
+    },
+    {
+      "relativePath": "Resources/Materials/Flare10cg.mat",
+      "sourceSha256": "81b8ab44783f67ffcc396e3a9f929e74c34ad70d260fd399bf4e60641b232ba9",
+      "size": 3652
+    },
+    {
+      "relativePath": "Resources/Materials/Flare3cg.mat",
+      "sourceSha256": "da9d807ed1867a13d2f0dbab2616bbce5ff5ad9be902eba698d32a91cb55f9c3",
+      "size": 3671
+    },
+    {
+      "relativePath": "Resources/Materials/Flare4cg.mat",
+      "sourceSha256": "29fcf0b85178341c1f67eaa12f662f2b7a6e8134a4a6e50a1c3fb16316ed81e5",
+      "size": 3671
+    },
+    {
+      "relativePath": "Resources/Materials/Flare6cg.mat",
+      "sourceSha256": "2e688dd8b9c7d010ecfc1613af4007c04f6bf393741d4c46b28a4ccfcb0e29b8",
+      "size": 3670
+    },
+    {
+      "relativePath": "Resources/Materials/Flash18cg.mat",
+      "sourceSha256": "ebcebde78cb8bde3bebb1fb2006aace041b366943a504ee0f7e6d11d3aa77cda",
+      "size": 3652
+    },
+    {
+      "relativePath": "Resources/Materials/Flash1cg.mat",
+      "sourceSha256": "0078ff8d77c10856096260e93f77d739d60c23f22eb770496f323b9471a0b5f5",
+      "size": 3671
+    },
+    {
+      "relativePath": "Resources/Materials/Flash33cg.mat",
+      "sourceSha256": "ba54305fb4c040e09b6eb4c5bc609fa057f459f52195b484f9cfe31cf79a59b4",
+      "size": 3535
+    },
+    {
+      "relativePath": "Resources/Materials/Flash3cg.mat",
+      "sourceSha256": "8972a45a18793e057fac248a3dab10be7c3a704b81ae87b7d675b91d2a657d9e",
+      "size": 3671
+    },
+    {
+      "relativePath": "Resources/Materials/FlashGroundCG.mat",
+      "sourceSha256": "a3b89f11a5a18a97ff631884ededdb0bb1b25071c0484a6dcd7cd4748f6a6ad1",
+      "size": 3869
+    },
+    {
+      "relativePath": "Resources/Materials/Flower2bcg.mat",
+      "sourceSha256": "1ad955df098a73d6eec125c13c539081f0353829b0283c1ad9aeade25a09441f",
+      "size": 3572
+    },
+    {
+      "relativePath": "Resources/Materials/Glow1cg.mat",
+      "sourceSha256": "2edcb6d7481d8034982af6487f0778c8c59f0fac5aee9afb16369dee1a003bb0",
+      "size": 3570
+    },
+    {
+      "relativePath": "Resources/Materials/Gradient17bd.mat",
+      "sourceSha256": "46ef94fe4aa3f27d8d568cd337707f473604cae76cdcc112a90ba409c002f6fe",
+      "size": 4445
+    },
+    {
+      "relativePath": "Resources/Materials/Gradient8bcg.mat",
+      "sourceSha256": "7a1816f9748eb7b78137d0aa47cb2cfe13ea6eb7bf9c0b04f496c6ec9ff2c931",
+      "size": 3615
+    },
+    {
+      "relativePath": "Resources/Materials/HPL2cg.mat",
+      "sourceSha256": "9ae5ae6c34b7332d5434803022c75b48ddd6e0a88c6d07bdde279eef67866a3b",
+      "size": 3746
+    },
+    {
+      "relativePath": "Resources/Materials/Leaf2bcg.mat",
+      "sourceSha256": "6e0115529f7f52921df7964134e86e7d64fe18751fa207ba2f3817868d7819a4",
+      "size": 3570
+    },
+    {
+      "relativePath": "Resources/Materials/Leave9bcg.mat",
+      "sourceSha256": "1995d2f3b8e2c6c15b1b26ef52bcac947c03b4eecbc037ea7f0c91af849cfc3b",
+      "size": 3626
+    },
+    {
+      "relativePath": "Resources/Materials/LineDistort1cg.mat",
+      "sourceSha256": "5e837e8232c5b30e1db0b24b10edf9c3920cac9ffb965dc0da969cbe81e6735c",
+      "size": 3653
+    },
+    {
+      "relativePath": "Resources/Materials/MagicCircle29bcg.mat",
+      "sourceSha256": "819fcfb2a4758fcad434f754c2e3028aaf1e0f5b629b9df2cc05b8b0e227cb37",
+      "size": 3888
+    },
+    {
+      "relativePath": "Resources/Materials/MagicCircle33cg.mat",
+      "sourceSha256": "f288058bab410b0fb834cd6e62bb481732095ca8a55877c5b08cf4655d606d93",
+      "size": 3857
+    },
+    {
+      "relativePath": "Resources/Materials/MagicCircle34cg.mat",
+      "sourceSha256": "9fc16d2eba6dfee25270ac8bc8f346a36c4f77d5ea7c03677c8e946a5d5b5100",
+      "size": 3859
+    },
+    {
+      "relativePath": "Resources/Materials/MagicText5cg.mat",
+      "sourceSha256": "771fc5be06acf8c77d1278a2cc5f62bb56b41068c874548d811ac3522d737f30",
+      "size": 3692
+    },
+    {
+      "relativePath": "Resources/Materials/Mask23bcg.mat",
+      "sourceSha256": "c54b8c3b669a94f2b4cf2a711afd2afb7ba31955729ac8d4a5e6e39405bdddc3",
+      "size": 3823
+    },
+    {
+      "relativePath": "Resources/Materials/Mask23bcg2.mat",
+      "sourceSha256": "b2ec1946e847bf4ed352b6e82aab38fa599b9f0ed1e103c9015c90a1f909f4eb",
+      "size": 3809
+    },
+    {
+      "relativePath": "Resources/Materials/Mask23cg.mat",
+      "sourceSha256": "98c6636724a1c67f6be191035cbfefcf3f598f1f08c8472670288acdf1ad8ff2",
+      "size": 3853
+    },
+    {
+      "relativePath": "Resources/Materials/Mask29cg.mat",
+      "sourceSha256": "1c06aa6df53f4af188aa612afcd5337ad720750e70ef70cee7c894c44d9b888e",
+      "size": 2427
+    },
+    {
+      "relativePath": "Resources/Materials/Mask30cg.mat",
+      "sourceSha256": "570576147b5c0662ecdf29544a9ed78eb00603efe20ab2e453bb040a35d392b0",
+      "size": 2428
+    },
+    {
+      "relativePath": "Resources/Materials/Mask31cg.mat",
+      "sourceSha256": "f1fd05de86a5fb9873627218eb71374b24cfc9dff361fbb3916a75ec58c829d3",
+      "size": 2425
+    },
+    {
+      "relativePath": "Resources/Materials/MuzzleFlash2cg.mat",
+      "sourceSha256": "c6f0cef63d0a0b7a3801499cb6cc1c8c1aa564977f44e05005ed975f4d378f9d",
+      "size": 3657
+    },
+    {
+      "relativePath": "Resources/Materials/Noise43cg2.mat",
+      "sourceSha256": "36e38b22e3b52ebe7824011e1f7b6cb49e7dd474762f28f8aea0c7c1bd8f1bdf",
+      "size": 3640
+    },
+    {
+      "relativePath": "Resources/Materials/Plus1bcg.mat",
+      "sourceSha256": "ae64bbd2e2b92643f81125f90be78045408837e35ce67efb0de081b3ce1d69d4",
+      "size": 3569
+    },
+    {
+      "relativePath": "Resources/Materials/Point12cg.mat",
+      "sourceSha256": "e38ccbfdf8d54946ff583851a8951deec792b12ba43378c84c0e0c9f12a91361",
+      "size": 4103
+    },
+    {
+      "relativePath": "Resources/Materials/Point19bcg.mat",
+      "sourceSha256": "503174fbfe1a71668d666c834390de0608569eeb5b910057ea246d6c69307c0f",
+      "size": 3752
+    },
+    {
+      "relativePath": "Resources/Materials/Point5cg.mat",
+      "sourceSha256": "a1b3b4877d879984acd430e9b2aee022d10554351bded9f14804abe4fc4ae90c",
+      "size": 3671
+    },
+    {
+      "relativePath": "Resources/Materials/Romb3cg.mat",
+      "sourceSha256": "0af86de73431928c01b9c080e59b4f056d9711553d8e429a28518168fbdf3878",
+      "size": 3670
+    },
+    {
+      "relativePath": "Resources/Materials/Semicircle7bcg.mat",
+      "sourceSha256": "9faca9af56185a47ac522d950499a74324277451746a18d5c12493e47f970c4e",
+      "size": 3648
+    },
+    {
+      "relativePath": "Resources/Materials/Smoke16lg.mat",
+      "sourceSha256": "fe7d745e604a6f85acad33e56699e52a034fc5baf7b81347ff405a746d662507",
+      "size": 3496
+    },
+    {
+      "relativePath": "Resources/Materials/Smoke17cg.mat",
+      "sourceSha256": "e69bd16f0eabc32a9ce6780e52054bee16eef2060b568585691e73e78fe6c9a7",
+      "size": 3617
+    },
+    {
+      "relativePath": "Resources/Materials/Smoke27bcg.mat",
+      "sourceSha256": "9c1edfaf3c3943cdf3aaef8d26a435ffb690d1eb0c4904c10a7f8873307f2598",
+      "size": 3527
+    },
+    {
+      "relativePath": "Resources/Materials/Smoke3bcg.mat",
+      "sourceSha256": "53017991238dcca5093abeba065473b88d834d6ec7e226acf4acbdb03761017a",
+      "size": 3646
+    },
+    {
+      "relativePath": "Resources/Materials/Smoke3cg.mat",
+      "sourceSha256": "6e572e0c89a62a736bf9f0bbb0405b073f663b82b4338769edfcd026beb0dd05",
+      "size": 3733
+    },
+    {
+      "relativePath": "Resources/Materials/SmokeBCG.mat",
+      "sourceSha256": "2f5e848118677a65beefa2ffbd803323d0ac691e0b806cb55c5c45dc4509776a",
+      "size": 3644
+    },
+    {
+      "relativePath": "Resources/Materials/Snow4cg.mat",
+      "sourceSha256": "b81609fe45a771a890540e1a2c252be3c6b02214524a8f9a7231a43a46f425e2",
+      "size": 3670
+    },
+    {
+      "relativePath": "Resources/Materials/Spark5bcg.mat",
+      "sourceSha256": "d506b92aee8a7c165c82a16fed3de88e30713f19e3c77f2213fa493b6985df2d",
+      "size": 3627
+    },
+    {
+      "relativePath": "Resources/Materials/SparkExolosion1bcg.mat",
+      "sourceSha256": "20ca235f8e2000619d9fa704df800f67ece2b5e05c92782267364e6adae52565",
+      "size": 3636
+    },
+    {
+      "relativePath": "Resources/Materials/Stone1bcg.mat",
+      "sourceSha256": "776c577b14b47dfb322b6dcd7973920e4b5d3b837ad36c69628ddbbeb17e591f",
+      "size": 3570
+    },
+    {
+      "relativePath": "Resources/Materials/Trail21cg2.mat",
+      "sourceSha256": "8ab5ed38ff17fd0f4db8ff1780871919a127e374c6445eabe2e082f588335479",
+      "size": 3882
+    },
+    {
+      "relativePath": "Resources/Materials/Trail26bcg.mat",
+      "sourceSha256": "93822c3413adb269f9af3502abe1f38f3a4301424d3c3aba68c6c4ed5ef7f855",
+      "size": 3938
+    },
+    {
+      "relativePath": "Resources/Materials/Trail29.2cg.mat",
+      "sourceSha256": "720db91955b70d78c2d1982005635d7f3a2e3919c09140af4ed6b46d1c43b3e7",
+      "size": 3876
+    },
+    {
+      "relativePath": "Resources/Materials/Trail29cg.mat",
+      "sourceSha256": "8ca08ad18ba840b2c9ca99e2fc85336726cad025f6485b2638a3eaddafc2e1ea",
+      "size": 3872
+    },
+    {
+      "relativePath": "Resources/Materials/Trail29cg3.mat",
+      "sourceSha256": "780c7e80f11b89ab4724004ab16a889edcea618d196a0447e91a28eeac5a9edd",
+      "size": 3941
+    },
+    {
+      "relativePath": "Resources/Materials/Trail36bcg.mat",
+      "sourceSha256": "e45f906edfa717528646548c8f8fe9eff0818fabc2c917e15eab2a9b0ea39b28",
+      "size": 3807
+    },
+    {
+      "relativePath": "Resources/Materials/Trail36cg.mat",
+      "sourceSha256": "d411557007acbfc0d950a4aa1485a9ba0fc8190be99a5350126b9dbf2e229b3a",
+      "size": 3872
+    },
+    {
+      "relativePath": "Resources/Materials/Trail39bcg.mat",
+      "sourceSha256": "0d7b57bfd142b5bfac4768797fb4e39f9ba7f314fc8af3a8202b24d55a9b7e65",
+      "size": 3628
+    },
+    {
+      "relativePath": "Resources/Materials/Trail48cg.mat",
+      "sourceSha256": "eabff75e96ce848ae04bc41b5188b1ac23c867daa8656c87eb1c12a58eab2bb0",
+      "size": 3731
+    },
+    {
+      "relativePath": "Resources/Materials/Trail55bcg.mat",
+      "sourceSha256": "77aaee0eef310cf874cfa042f19408b147f863bf4c8afeef497b8476a6a52318",
+      "size": 3571
+    },
+    {
+      "relativePath": "Resources/Materials/TrailPart4cg.mat",
+      "sourceSha256": "0bc9796ba3e2293df9214d333ff3959e05690f09300b0d44457603e973147be5",
+      "size": 3653
+    },
+    {
+      "relativePath": "Resources/Materials/Trails73cg3.mat",
+      "sourceSha256": "af9190d306be15c482ae6686af3e8f6c34927aff2f26e534e1b1977833001b05",
+      "size": 4291
+    },
+    {
+      "relativePath": "Resources/Materials/Waves17cg.mat",
+      "sourceSha256": "71a67409608bbd7130df6511d9b72c8cf5d2ba502d61286febe81c77f76db662",
+      "size": 3872
+    },
+    {
+      "relativePath": "Resources/Materials/Waves23bcg.mat",
+      "sourceSha256": "84a4a07a15ac1acf15a467b9a1b5e2eca8e3e703c320a4ad11ec2cdb4f7990ed",
+      "size": 4177
+    },
+    {
+      "relativePath": "Resources/Materials/Waves23bcg2.mat",
+      "sourceSha256": "3045a0350acfcb268494a1178a6b0703b3c005001d326c00506edda11aab42e1",
+      "size": 4114
+    },
+    {
+      "relativePath": "Resources/Models/BeamMesh.fbx",
+      "sourceSha256": "6d0cd0d948b345885d9790970ff9c0dabe27e5b16d9b81c285d9509f409c8cd0",
+      "size": 11468
+    },
+    {
+      "relativePath": "Resources/Models/Bullet.fbx",
+      "sourceSha256": "37877d255f692f01c1ba26ee22c42771c2d4f771956f3926c2246774afd7f402",
+      "size": 11788
+    },
+    {
+      "relativePath": "Resources/Models/CenterPlate.fbx",
+      "sourceSha256": "18b31af7b60c83116a8c488a5c2816b4649498f3d5bde04f55e277d11fe5dca9",
+      "size": 23132
+    },
+    {
+      "relativePath": "Resources/Models/Conus.fbx",
+      "sourceSha256": "984f14ca38fc4d5919c5a089016fe7b7fb71d416b71a86976a0f5f025ba297eb",
+      "size": 11948
+    },
+    {
+      "relativePath": "Resources/Models/CylinderFromGround.fbx",
+      "sourceSha256": "7ca59cfa1f274828fe130dac53ebbf9fa7984e1b056fdc28dbc036c648de0254",
+      "size": 13612
+    },
+    {
+      "relativePath": "Resources/Models/CylindricalCone.fbx",
+      "sourceSha256": "70bf4ed0d5a0cc36253086aee7de243a08f07da2041b816f2a078231aca942e4",
+      "size": 14972
+    },
+    {
+      "relativePath": "Resources/Models/CylindricalCone2.fbx",
+      "sourceSha256": "d8af6218b5213478f7f89a6c1a523088a17356109c9f041a1c7c82321a0e09a4",
+      "size": 15340
+    },
+    {
+      "relativePath": "Resources/Models/Flower.fbx",
+      "sourceSha256": "cb9044c2cb2575ac4e6af6bb2c9ebf2051f37966681f4777adb5d0456beb9e6a",
+      "size": 20700
+    },
+    {
+      "relativePath": "Resources/Models/HalfSphereCut.fbx",
+      "sourceSha256": "6143d648f757f064895bf1a3da2829186ec278b7d971df8399762ede0558591d",
+      "size": 31388
+    },
+    {
+      "relativePath": "Resources/Models/HOVLCrystal.fbx",
+      "sourceSha256": "702c2f1a85f8064a73f011db87f9e5da43e9fe4c8c52761d5a07368d426024a8",
+      "size": 16556
+    },
+    {
+      "relativePath": "Resources/Models/HOVLCrystalPiese.fbx",
+      "sourceSha256": "197444dd57646ca1434d2ccf8a21ef73d0bb4cba3073c39dc6fb08e94c129a81",
+      "size": 11964
+    },
+    {
+      "relativePath": "Resources/Models/Petal.fbx",
+      "sourceSha256": "742b36cf259bd78702f582b6b4468da130f85a8853fb9ac304b8cd080bb94e59",
+      "size": 15420
+    },
+    {
+      "relativePath": "Resources/Models/QuadToCircle.fbx",
+      "sourceSha256": "1c776cae844a6916168c7a8f475d1ee024fa9a1617c4c18225f8bafaadca8e7a",
+      "size": 18700
+    },
+    {
+      "relativePath": "Resources/Models/ShellCircle.fbx",
+      "sourceSha256": "e43c12bf694ef14c18d83e514ace37571832f7bc32d0ec95c8e5fdcccf32d202",
+      "size": 24076
+    },
+    {
+      "relativePath": "Resources/Models/ShellQuad.fbx",
+      "sourceSha256": "b5ab25f6255f632b92ac6b825c2098d3659a21e67cba663a2c1f6bf2e9be28b0",
+      "size": 23340
+    },
+    {
+      "relativePath": "Resources/Sounds/Skill 2.wav",
+      "sourceSha256": "f0bb8e3298f13d670837601386304d1a6fe959ec0c6ff5b781f11361cb5286ef",
+      "size": 775002
+    },
+    {
+      "relativePath": "Resources/Sounds/Skill 3.wav",
+      "sourceSha256": "5b73e89fe85fe44dd0fbed1c8d8c57e76cbd11d38ccba9e42e93671853308cba",
+      "size": 282318
+    },
+    {
+      "relativePath": "Resources/Sounds/Skill 5.wav",
+      "sourceSha256": "ebe5c8a33b0a4508bf939e20bca2889be78b56e16cc176221a30c327113db271",
+      "size": 529278
+    },
+    {
+      "relativePath": "Resources/Sounds/Skill 7.wav",
+      "sourceSha256": "13dc501485706740da90be6f792639b0867ac01dfbcb98abfa0f055f2ee3eb77",
+      "size": 388158
+    },
+    {
+      "relativePath": "Resources/Sounds/Skill 8.wav",
+      "sourceSha256": "1d70ef1be8e4bb89072a7a1253c79d8b78702c145b1fae7a7328404dd0dab967",
+      "size": 529278
+    },
+    {
+      "relativePath": "Resources/Textures/Arrow2.png",
+      "sourceSha256": "42d393a434ea6f67cd507135c2dfd1b288b2eb6b806ba53eb6bfc77cae799be2",
+      "size": 80645
+    },
+    {
+      "relativePath": "Resources/Textures/Circle17.png",
+      "sourceSha256": "06b9e211954ef1171f408a0e5d47cc3c7766162d533c8ac5796b0d13982f59db",
+      "size": 65238
+    },
+    {
+      "relativePath": "Resources/Textures/Circle18.png",
+      "sourceSha256": "9bda948f02a19cdd6e8091c3811c4feb7d9719908e0ecea99cd15df9aed92266",
+      "size": 68039
+    },
+    {
+      "relativePath": "Resources/Textures/Circle38.png",
+      "sourceSha256": "c11d570a3154a6e5d31f79585b6a7b4267f4d3e625f0c0162abb852925b2730f",
+      "size": 54621
+    },
+    {
+      "relativePath": "Resources/Textures/Circle41.png",
+      "sourceSha256": "456139b33c5b104e6a7b43e64541a43fe3353934844a40a8140432e5b9b60d1a",
+      "size": 62143
+    },
+    {
+      "relativePath": "Resources/Textures/Circle8.png",
+      "sourceSha256": "a5d918fdb364b707d8887aaca913c237aa76a5a21b9dd914624170e4f0432de0",
+      "size": 201251
+    },
+    {
+      "relativePath": "Resources/Textures/Circle93.png",
+      "sourceSha256": "c34b59eab0bb54244198286ab75c5d5ae273f556b4b9ffee125b4d62e19d4b35",
+      "size": 57625
+    },
+    {
+      "relativePath": "Resources/Textures/CircleBigMask.png",
+      "sourceSha256": "4c9295171a5bbec120e52e8aa19f9033a1d10b5c081fb7d969d56ecb02df14da",
+      "size": 48612
+    },
+    {
+      "relativePath": "Resources/Textures/Crater14.png",
+      "sourceSha256": "d17f9e51cad2e0ecdbe6f96d6ec7b731797e2904c31ead88281d5be142ff430d",
+      "size": 235135
+    },
+    {
+      "relativePath": "Resources/Textures/Crater18.png",
+      "sourceSha256": "8df940191deead5f41a487379d262633e6a87d1c45b8386d0f3e292f919cf74d",
+      "size": 1184072
+    },
+    {
+      "relativePath": "Resources/Textures/Debris2.png",
+      "sourceSha256": "48afa127fc1ad4e3e86c8af4e6ebd83f327e986e71867c2dba13567f246bd0dc",
+      "size": 107210
+    },
+    {
+      "relativePath": "Resources/Textures/EGACrystal.png",
+      "sourceSha256": "ce35811ea7486eceadf5b2cc5766fa5f1ea41e5db918b2dabb6d061ffd5a48e5",
+      "size": 66095
+    },
+    {
+      "relativePath": "Resources/Textures/Feather3.png",
+      "sourceSha256": "c00ed7f9f58117cc07ba79f682305606dacf2bb8e5f2cfa6fb5326e9b7a7b207",
+      "size": 117407
+    },
+    {
+      "relativePath": "Resources/Textures/Fire1.png",
+      "sourceSha256": "9a9f8d50149f303b11b6822875d24011fe2ef8625c2378284020bcf9aca18772",
+      "size": 1712727
+    },
+    {
+      "relativePath": "Resources/Textures/Fire3.png",
+      "sourceSha256": "0e3a07a3babc4d61777d49c4b16a8f442a85666e185477908ce91f48bf0999fd",
+      "size": 230033
+    },
+    {
+      "relativePath": "Resources/Textures/Flare10.png",
+      "sourceSha256": "38648eb9eec12e0f0492f6b0479c5ad5cbfc584c46f18783363f3b4c504fcaa0",
+      "size": 76387
+    },
+    {
+      "relativePath": "Resources/Textures/Flare3.png",
+      "sourceSha256": "4000ea66dac14e75c93424f9eb2fa52c653d5d9d92cd5e5d1e59f4b8f1cce165",
+      "size": 69697
+    },
+    {
+      "relativePath": "Resources/Textures/Flare4.png",
+      "sourceSha256": "3738e8b213699dee01d79dc4d7d5d836e58e31c8c227ad5e9ca04c7ee17f20f1",
+      "size": 26391
+    },
+    {
+      "relativePath": "Resources/Textures/Flare6.png",
+      "sourceSha256": "e78a7327bc90e118a5b53ecd32433e86a434f0d5c6a701123ab273028ad85905",
+      "size": 42371
+    },
+    {
+      "relativePath": "Resources/Textures/Flash1.png",
+      "sourceSha256": "8c7254a6193f6d64ced06201c14502230bb8a8d63c11583951786f4f8fc52ad9",
+      "size": 83139
+    },
+    {
+      "relativePath": "Resources/Textures/Flash18.png",
+      "sourceSha256": "23a55f1ce69316b7b90d466a633c23964d9c5f0e10066bf2dd15f629775b989b",
+      "size": 154739
+    },
+    {
+      "relativePath": "Resources/Textures/Flash3.png",
+      "sourceSha256": "3650bd240f4c913664e104556bde5f86269498b236bf829aabb453e0a56176bc",
+      "size": 61255
+    },
+    {
+      "relativePath": "Resources/Textures/Flash33.png",
+      "sourceSha256": "8d49c8e9e55150872177a326bc3cffd487871facc7279e4ff59efab714f5baca",
+      "size": 189428
+    },
+    {
+      "relativePath": "Resources/Textures/Flower2.png",
+      "sourceSha256": "5ed5b16910922f0cee3de55e808c9e380a5adc2fdc90657ff86d4c5e00cf5aa7",
+      "size": 141293
+    },
+    {
+      "relativePath": "Resources/Textures/Glow1.png",
+      "sourceSha256": "2687c2b0aa3ec835f4a8d4ace9879b544be6b2887a865dd977bc6405b6e4ead5",
+      "size": 43916
+    },
+    {
+      "relativePath": "Resources/Textures/Gradient11.png",
+      "sourceSha256": "d4036854c3c3b8b712e5d8dca855d10955cbe8d5d69b18d86352371924ed8335",
+      "size": 1735
+    },
+    {
+      "relativePath": "Resources/Textures/Gradient17.png",
+      "sourceSha256": "fbf7f22518fdd35f06f7e8f742fe42775bfadbf38f7689f9c85860ebb721bc04",
+      "size": 17870
+    },
+    {
+      "relativePath": "Resources/Textures/Gradient3.png",
+      "sourceSha256": "882df64895753f90632a0598aff3a26d7427cf8b461c5e438cb3378f7fc5d326",
+      "size": 1515
+    },
+    {
+      "relativePath": "Resources/Textures/Gradient3r.png",
+      "sourceSha256": "da017c2eb00fdc01a93ecbdb525caa0b358dafe9607b9db7617af07a5a1ccce4",
+      "size": 1453
+    },
+    {
+      "relativePath": "Resources/Textures/Gradient3Repeat.png",
+      "sourceSha256": "305c107674296a70e8b63ade55d43d66f0b96674fe1c9ad52c7ce608d8dd27cd",
+      "size": 2730
+    },
+    {
+      "relativePath": "Resources/Textures/Gradient4.3.png",
+      "sourceSha256": "0f6080ebadcffe6ddcd47ee72ecc303c41e130b74fad46ed75e63dbf41f9a2e9",
+      "size": 1793
+    },
+    {
+      "relativePath": "Resources/Textures/Gradient7.png",
+      "sourceSha256": "6ad2c0343c3d955e547107342084f6b7c2a019c23585ee93dda5cc905d6a6adc",
+      "size": 1281
+    },
+    {
+      "relativePath": "Resources/Textures/Gradient8.png",
+      "sourceSha256": "10b924e9ea9e40af273118f841dada3165396f1e842b4009038292af0ce43a5c",
+      "size": 2002
+    },
+    {
+      "relativePath": "Resources/Textures/HandPaintedLightning2.png",
+      "sourceSha256": "198eb364673dd910f34236610ac4dc64af12b20d24412b4258127fa58ebc2cb5",
+      "size": 39828
+    },
+    {
+      "relativePath": "Resources/Textures/Leaf2.png",
+      "sourceSha256": "e495c30d4339237f99593a2fe1b24dc37d300ba5d7a663bc7c018a9e9b987fcb",
+      "size": 46087
+    },
+    {
+      "relativePath": "Resources/Textures/Leave9.png",
+      "sourceSha256": "3bebc66306128d635ae086765fe94a66aaf3abe76be8154c652ac053cdf9c635",
+      "size": 92076
+    },
+    {
+      "relativePath": "Resources/Textures/MagicCircle29.png",
+      "sourceSha256": "04413732a749280b5f8f8090e584b5622fa064f64de0eadb33d664864137c6a3",
+      "size": 788325
+    },
+    {
+      "relativePath": "Resources/Textures/MagicCircle33.png",
+      "sourceSha256": "11843601411029940bd44a6e4c80b7dc0206fffbf8e45ff9df2cd38d8e6e3212",
+      "size": 409474
+    },
+    {
+      "relativePath": "Resources/Textures/MagicCircle34.png",
+      "sourceSha256": "4b49ddf9e929dd980c53e864b5541025b67c89f13e92d64f8f026b9712c7d2fe",
+      "size": 391413
+    },
+    {
+      "relativePath": "Resources/Textures/MagicText5.png",
+      "sourceSha256": "0db2bf35aba8abfe5a5d81588f240db1b5309e028b54fb57ede2bc73a9d3742f",
+      "size": 168472
+    },
+    {
+      "relativePath": "Resources/Textures/Mask23.png",
+      "sourceSha256": "f4fbca9da4de33f1b031e473242d29350b5b662da7537f2d9c0b26a9b7b16549",
+      "size": 226077
+    },
+    {
+      "relativePath": "Resources/Textures/Mask29.png",
+      "sourceSha256": "97f0630b9d3bc048bf94f218728cb03c5c7fee607c5729824c8e4883700f064e",
+      "size": 70913
+    },
+    {
+      "relativePath": "Resources/Textures/Mask30.png",
+      "sourceSha256": "dc6add2d35d5cf975d1bbd74f13fc03737d32adb2f833af0a2040d5442757320",
+      "size": 87444
+    },
+    {
+      "relativePath": "Resources/Textures/Mask31.png",
+      "sourceSha256": "1b0654526c282b15900406fac795a762935d84d475047d27161f43206dc99bc7",
+      "size": 59478
+    },
+    {
+      "relativePath": "Resources/Textures/MaskForShader.png",
+      "sourceSha256": "a619a98e00eef09b77de94f15bba24304c201e9a8b549c48dc6123e5e73ac387",
+      "size": 50534
+    },
+    {
+      "relativePath": "Resources/Textures/MuzzleFlash3.png",
+      "sourceSha256": "8c472934d32ff155fd0ba22c71451fbabb67c3650f10416c6fd839fa963b52e6",
+      "size": 150846
+    },
+    {
+      "relativePath": "Resources/Textures/Noise1.png",
+      "sourceSha256": "c5333d4e9992cd0c414f6fa0a03fefb721bb17d9134fcd3b0b16c847a02441b9",
+      "size": 218507
+    },
+    {
+      "relativePath": "Resources/Textures/Noise34.png",
+      "sourceSha256": "83ca803e505092c265ca059b363cde587ca2748fea130b2d846657532073d63b",
+      "size": 289770
+    },
+    {
+      "relativePath": "Resources/Textures/Noise35n.png",
+      "sourceSha256": "83ca803e505092c265ca059b363cde587ca2748fea130b2d846657532073d63b",
+      "size": 289770
+    },
+    {
+      "relativePath": "Resources/Textures/Noise35t.png",
+      "sourceSha256": "591a7cd9058c4fb9c9135746e7eb744447f75007dbefdb33bc31ddfab56baddc",
+      "size": 241407
+    },
+    {
+      "relativePath": "Resources/Textures/Noise41.png",
+      "sourceSha256": "66cfdf17ce1d2b5701cdf7b50af32a3704b4282dcb9a16bf89873ab3799269e8",
+      "size": 553952
+    },
+    {
+      "relativePath": "Resources/Textures/Noise43.png",
+      "sourceSha256": "b478bf17c3627527bba8d08e6cb97e7a88d2f454a43a980fc6920ac3f5401c32",
+      "size": 575262
+    },
+    {
+      "relativePath": "Resources/Textures/Noise43b.png",
+      "sourceSha256": "984950a64fbc2a0f0a8677da9d0a4ce0b4837de4a3b60429ef82ba8740fd18aa",
+      "size": 482618
+    },
+    {
+      "relativePath": "Resources/Textures/NormalMap8.png",
+      "sourceSha256": "593f59fde1e09e8561f554dd76e6ba674a86b5d709e623fcd1088fe85f2690f9",
+      "size": 135768
+    },
+    {
+      "relativePath": "Resources/Textures/Plus1.png",
+      "sourceSha256": "21cbc717c7ee9b62a5a5ccddd7ce2f698551211751786407dafa89e6ec8eeeca",
+      "size": 38120
+    },
+    {
+      "relativePath": "Resources/Textures/Point12.png",
+      "sourceSha256": "5ffffb99d813533b70ceb3c5d8240d6b1fc841757ef36b6e011bee9587529a86",
+      "size": 78500
+    },
+    {
+      "relativePath": "Resources/Textures/Point19.png",
+      "sourceSha256": "e5c5c1805325315bf0fd0ab4ac402fba52efc228bc40a7ab6c1276df354debca",
+      "size": 48590
+    },
+    {
+      "relativePath": "Resources/Textures/Point5.png",
+      "sourceSha256": "ccdb7deed94e96b9a600b0c733688b261a19cdf12988030e1766f3fc1e65e4ac",
+      "size": 25488
+    },
+    {
+      "relativePath": "Resources/Textures/Romb3.png",
+      "sourceSha256": "33d13d3db1b7bf827b8452cd80336586cd276f841456b3d4261cfb1771ef18bb",
+      "size": 18366
+    },
+    {
+      "relativePath": "Resources/Textures/Semicircle7.png",
+      "sourceSha256": "76da096a9a8d7648975de29fd9538d75a5d66cd079649b5656617a88f1707715",
+      "size": 169349
+    },
+    {
+      "relativePath": "Resources/Textures/Smoke.png",
+      "sourceSha256": "da4f71eceb2d14a82aa0ab5cc816d906fc6783bd0ccb48827cb06ab3523d227f",
+      "size": 67286
+    },
+    {
+      "relativePath": "Resources/Textures/Smoke16.png",
+      "sourceSha256": "0cf34f35c883347d45d19322cadc9c09fb06844332436c740a0fdfc173e24854",
+      "size": 208202
+    },
+    {
+      "relativePath": "Resources/Textures/Smoke17.png",
+      "sourceSha256": "0c87c5d9935cbeb9e547125d144b33742db98d0bcc020171f4278dba82853a0c",
+      "size": 3069117
+    },
+    {
+      "relativePath": "Resources/Textures/Smoke27.png",
+      "sourceSha256": "c53dc5e618db22da4bbb896f24449da02dd50f33585bb9b85d9351a271dd2db5",
+      "size": 361932
+    },
+    {
+      "relativePath": "Resources/Textures/Smoke3.png",
+      "sourceSha256": "01e25d1b2f49646b7f6fd70e3053897c85a3266b071f5fca40189a040864262f",
+      "size": 74210
+    },
+    {
+      "relativePath": "Resources/Textures/Snow4.png",
+      "sourceSha256": "1abd7c67869635f998d9d82c21345912a244e4d065fa77b4fdf0cbbeb9014fa4",
+      "size": 45121
+    },
+    {
+      "relativePath": "Resources/Textures/Spark5.png",
+      "sourceSha256": "a8e22279829f1fee7a60e01da48fc87041e4c057aa0f4fe057320d30bdef00f0",
+      "size": 5517
+    },
+    {
+      "relativePath": "Resources/Textures/SparkExolosion2.png",
+      "sourceSha256": "d9c17bdc8f2b6ffdf4c6436b17a1eda8f6a07c392b169b4062b88ca6165614ee",
+      "size": 183759
+    },
+    {
+      "relativePath": "Resources/Textures/Stone1.png",
+      "sourceSha256": "b7ec6ffae8107e3f347c6ba0f083918054bb1d0f14d21709bff1e69ce3b3a176",
+      "size": 950330
+    },
+    {
+      "relativePath": "Resources/Textures/Trail21.png",
+      "sourceSha256": "458a35d2c70d1d1c0535e6a690cb4f82a8d161bed77a09e4f0b040ec57ed1fd4",
+      "size": 57763
+    },
+    {
+      "relativePath": "Resources/Textures/Trail25.png",
+      "sourceSha256": "ac32145122aec0c8192263722c89dc1a33319663a5d80ae11348f13a4301fc10",
+      "size": 15655
+    },
+    {
+      "relativePath": "Resources/Textures/Trail29.png",
+      "sourceSha256": "024e28d9e7e5ab3d95d066c30ac4646b3b0ddebc1c54b8fdbb1cdbf97c5fc19c",
+      "size": 390765
+    },
+    {
+      "relativePath": "Resources/Textures/Trail36.png",
+      "sourceSha256": "795005ea98502328c4b7a4e614f3201f11b310854c00b3e12b9c1280aec6e43a",
+      "size": 251217
+    },
+    {
+      "relativePath": "Resources/Textures/Trail39.png",
+      "sourceSha256": "8eed66c5a2b622c8f7b80fae52dd3e82442987c09867ccaf4f53829700fc8a27",
+      "size": 39975
+    },
+    {
+      "relativePath": "Resources/Textures/Trail48.png",
+      "sourceSha256": "08546f2d5285843189594d1034073380b0deef1d1caa6fea3d67ca8eeee8769e",
+      "size": 68215
+    },
+    {
+      "relativePath": "Resources/Textures/Trail55.png",
+      "sourceSha256": "dc19cb83b1c087a14467c161ea830eff1296bd005a7ce1974e54144a288482b3",
+      "size": 20544
+    },
+    {
+      "relativePath": "Resources/Textures/Trail58.png",
+      "sourceSha256": "8779cf0c4858362eb7c904e649663b0368633eb98d6a37e7117abce39d437c4b",
+      "size": 236899
+    },
+    {
+      "relativePath": "Resources/Textures/Trail6.png",
+      "sourceSha256": "4f59fdcf3f1e0ec492bbb725bcbe0f1f730f97b0493bcf0e90e8cf31deba4c34",
+      "size": 80824
+    },
+    {
+      "relativePath": "Resources/Textures/Trail73.png",
+      "sourceSha256": "ca153d4e94542da24c96fe7f03c771acafc524affe1e4a1f8ded5fbf01e3e1ef",
+      "size": 78238
+    },
+    {
+      "relativePath": "Resources/Textures/TrailGradient21.png",
+      "sourceSha256": "451ae83502c880f9874b75d710cf0533ec7b90ba368b56db877d0fa4a2ba12b4",
+      "size": 57103
+    },
+    {
+      "relativePath": "Resources/Textures/TrailPart4.png",
+      "sourceSha256": "207b18ee0538e08426890ec678056346458f544a57f9ed0c6b896b852ddc479a",
+      "size": 62792
+    },
+    {
+      "relativePath": "Resources/Textures/Waves17.png",
+      "sourceSha256": "502c5e1ffc3d1e0d3006f672d3a26cde88714a292a27cbdde71596244d6a3e03",
+      "size": 278199
+    },
+    {
+      "relativePath": "Resources/Textures/Waves23.png",
+      "sourceSha256": "c72a80ef093d2daab486de38ef9868546eaf3f32d583cf3953d1f3fb9654bb10",
+      "size": 161248
+    },
+    {
+      "relativePath": "RPG VFX Bundle/Prefabs/Magic buffs and hits/Buff 1.prefab",
+      "sourceSha256": "ef61187a88a7ce7833734bbc59e234c38262702cd377287b2473bc71d4e154ab",
+      "size": 1062424
+    },
+    {
+      "relativePath": "RPG VFX Bundle/Prefabs/Magic buffs and hits/Heal.prefab",
+      "sourceSha256": "42b10f37158843662e8ecd3b91a35d1fef7755f1535d3f10711bcb650010a75b",
+      "size": 945286
+    },
+    {
+      "relativePath": "RPG VFX Bundle/Prefabs/Magic buffs and hits/Punch Hit.prefab",
+      "sourceSha256": "5f8df98231f6df92f46be6672928bfd8b337fe6b70e9449ed3bb772fa297c9a4",
+      "size": 235742
+    },
+    {
+      "relativePath": "RPG VFX Bundle/Prefabs/Magic buffs and hits/Soft blue buff.prefab",
+      "sourceSha256": "0d9be3d737c441ee688422124362e191e608ea212eb4fe0b0b7d22c3cab435ea",
+      "size": 1535297
+    }
+  ]
+}

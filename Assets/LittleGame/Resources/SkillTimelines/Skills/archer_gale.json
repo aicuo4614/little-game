@@ -1,0 +1,106 @@
+{
+  "SchemaVersion": 1,
+  "TimelineId": "archer_gale",
+  "DisplayName": "风弓手·飓风击退",
+  "DurationBindClipKey": "",
+  "Clips": [
+    {
+      "ClipKey": "c_anim",
+      "PreKey": "",
+      "Type": "PlayAnimation",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.34,
+      "ActionName": "Attack",
+      "Speed": 1.15,
+      "TargetAnchor": "Caster",
+      "EventConfigs": [
+        {
+          "EventKey": "ev_shot",
+          "Time": 0.08,
+          "EventName": "shot"
+        }
+      ]
+    },
+    {
+      "ClipKey": "c_arrow",
+      "PreKey": "ev_shot",
+      "Type": "PlayBullet",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.15,
+      "EffectId": "fx_arrow_gale",
+      "FromAnchor": "Caster",
+      "ToAnchor": "Target",
+      "StartHeight": 0.72,
+      "EndHeight": 0.65,
+      "ArcHeight": 0.22,
+      "Width": 0.16,
+      "Scale": 1.0,
+      "ColorHex": "#4FFFD0",
+      "EventConfigs": []
+    },
+    {
+      "ClipKey": "c_gale",
+      "PreKey": "c_arrow",
+      "Type": "PlayEffect",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.38,
+      "EffectId": "fx_gale_ring",
+      "ToAnchor": "TargetGround",
+      "Shape": "SlamWave",
+      "Offset": {
+        "x": 0.0,
+        "y": 0.18,
+        "z": 0.0
+      },
+      "Scale": 1.35,
+      "FollowAnchor": false,
+      "ColorHex": "#66FFE0",
+      "EventConfigs": []
+    },
+    {
+      "ClipKey": "c_hit",
+      "PreKey": "c_arrow",
+      "Type": "PlayHit",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.14,
+      "TargetAnchor": "Target",
+      "HitActionName": "Hit",
+      "FlashColorHex": "#B8FFF0",
+      "FlashDuration": 0.12,
+      "EffectId": "fx_hit_wind",
+      "Offset": {
+        "x": 0.0,
+        "y": 0.65,
+        "z": 0.0
+      },
+      "Scale": 0.56,
+      "ColorHex": "#B8FFF0",
+      "EventConfigs": []
+    },
+    {
+      "ClipKey": "c_stop",
+      "PreKey": "c_arrow",
+      "Type": "HitStop",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.05,
+      "TargetAnchor": "Target",
+      "EventConfigs": []
+    },
+    {
+      "ClipKey": "c_shake",
+      "PreKey": "c_arrow",
+      "Type": "CameraShake",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.12,
+      "Amplitude": 0.08,
+      "Frequency": 28.0,
+      "EventConfigs": []
+    }
+  ]
+}

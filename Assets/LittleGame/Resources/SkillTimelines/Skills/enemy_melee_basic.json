@@ -1,0 +1,67 @@
+{
+  "SchemaVersion": 1,
+  "TimelineId": "enemy_melee_basic",
+  "DisplayName": "敌方近战攻击",
+  "DurationBindClipKey": "",
+  "Clips": [
+    {
+      "ClipKey": "c_anim",
+      "PreKey": "",
+      "Type": "PlayAnimation",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.34,
+      "ActionName": "Attack",
+      "Speed": 1.0,
+      "TargetAnchor": "Caster",
+      "EventConfigs": [
+        {
+          "EventKey": "ev_hit",
+          "Time": 0.12,
+          "EventName": "hit"
+        }
+      ]
+    },
+    {
+      "ClipKey": "c_claw",
+      "PreKey": "ev_hit",
+      "Type": "PlayEffect",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.16,
+      "EffectId": "fx_enemy_hit",
+      "ToAnchor": "Target",
+      "Shape": "Burst",
+      "Offset": {
+        "x": 0.0,
+        "y": 0.65,
+        "z": 0.0
+      },
+      "Scale": 0.42,
+      "FollowAnchor": false,
+      "ColorHex": "#FF6B57",
+      "EventConfigs": []
+    },
+    {
+      "ClipKey": "c_hit",
+      "PreKey": "ev_hit",
+      "Type": "PlayHit",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.14,
+      "TargetAnchor": "Target",
+      "HitActionName": "Hit",
+      "FlashColorHex": "#FFA396",
+      "FlashDuration": 0.12,
+      "EffectId": "fx_hit_enemy",
+      "Offset": {
+        "x": 0.0,
+        "y": 0.65,
+        "z": 0.0
+      },
+      "Scale": 0.38,
+      "ColorHex": "#FFA396",
+      "EventConfigs": []
+    }
+  ]
+}

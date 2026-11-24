@@ -1,0 +1,39 @@
+{
+  "SchemaVersion": 1,
+  "TimelineId": "giant_telegraph",
+  "DisplayName": "石甲巨像·蓄力预警",
+  "DurationBindClipKey": "",
+  "Clips": [
+    {
+      "ClipKey": "c_charge",
+      "PreKey": "",
+      "Type": "PlayEffect",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.85,
+      "EffectId": "fx_boss_charge",
+      "ToAnchor": "Caster",
+      "Shape": "Ring",
+      "Offset": {
+        "x": 0.0,
+        "y": 0.2,
+        "z": 0.0
+      },
+      "Scale": 2.2,
+      "FollowAnchor": true,
+      "ColorHex": "#FF4A3D",
+      "EventConfigs": []
+    },
+    {
+      "ClipKey": "c_rumble",
+      "PreKey": "",
+      "Type": "CameraShake",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.3,
+      "Amplitude": 0.06,
+      "Frequency": 18.0,
+      "EventConfigs": []
+    }
+  ]
+}

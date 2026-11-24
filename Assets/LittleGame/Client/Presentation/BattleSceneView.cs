@@ -1,198 +1,305 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using LittleGame.Client.Battle;
+using LittleGame.Client.SkillTimeline;
+using LittleGame.Client.Units;
 using LittleGame.Combat;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 namespace LittleGame.Client
 {
-    /// <summary>三维表现只读取状态和事件，不计算伤害或胜负。</summary>
-    public sealed class BattleSceneView : MonoBehaviour
+    /// <summary>
+    /// 战斗三维场景视图协调器（横向左→右 39° 斜侧俯视 + 三层全屏 URP Camera Stack）：
+    /// 镜头运动参考 E:\Project\bump 的 MainCameraMgr / CameraMgr / MapControl 设计：
+    /// 战中平滑跟随前锋交战中心（带边界限幅与阻尼），战后缓动回正并按队伍实际平均移速匹配大道滚动与远景视差。
+    /// </summary>
+    public sealed class BattleSceneView : MonoBehaviour, ISkillTimelineActorHost
     {
+        private const float BaseCamX = 0.25f;
+        private const float CamBoundMinX = -0.15f;
+        private const float CamBoundMaxX = 2.05f;
+
         private BattleApplication app;
-        private readonly Dictionary<int, UnitVisual> visuals = new Dictionary<int, UnitVisual>();
         private CourtyardEnvironment environment;
-        private readonly List<GameObject> effects = new List<GameObject>();
+        private CombatUnitRegistry unitRegistry;
+        private SkillTimelineDirector timelineDirector;
+        private BattleFieldOverlayView fieldOverlay;
+        private BattleFloatingText floatingText;
+        private BattleActionRouter actionRouter;
+        private BattleDragOverlay dragOverlay;
         private readonly Dictionary<string, Material> materials = new Dictionary<string, Material>();
-        private long sequence;
         private Mesh ringMesh;
-        private Transform world, telegraph;
+        private Transform world;
+        private Light combatSun;
+
+        private readonly Vector3 cameraBasePosition = new Vector3(BaseCamX, 14.0f, -17.6f);
+        private readonly Vector3 cameraLookTarget = new Vector3(BaseCamX, 0.0f, -0.25f);
+        private float camCurrentX = BaseCamX;
+        private RunPhase lastPhase = RunPhase.Preparation;
+
         public Camera Camera { get; private set; }
+        public Camera HudCamera { get; private set; }
+        public BattleDragOverlay DragOverlay => dragOverlay;
         public BattleApplication App => app;
+        public SkillTimelineDirector TimelineDirector => timelineDirector;
+
         public void Build(BattleApplication application)
         {
-            app = application; world = new GameObject("BattleWorld").transform; world.SetParent(transform);
+            app = application;
+            world = new GameObject("BattleWorld").transform;
+            world.SetParent(transform);
+
             foreach (var old in FindObjectsOfType<Camera>()) old.enabled = false;
-            Camera = new GameObject("CombatCamera").AddComponent<Camera>(); Camera.tag = "MainCamera"; Camera.transform.SetParent(world);
-            Camera.orthographic = true; Camera.orthographicSize = 5.55f; Camera.rect = new Rect(0, .32f, 1, .49f); Camera.cullingMask = ~(1 << 5);
-            Camera.transform.position = new Vector3(0, 11.5f, -8.8f); Camera.transform.LookAt(new Vector3(0, 0, .2f));
-            Camera.clearFlags = CameraClearFlags.SolidColor; Camera.backgroundColor = new Color(.09f, .085f, .14f); Camera.nearClipPlane = .1f; Camera.farClipPlane = 60;
+            Camera = new GameObject("CombatCamera").AddComponent<Camera>();
+            Camera.tag = "MainCamera";
+            Camera.transform.SetParent(world);
+            Camera.orthographic = true;
+            Camera.orthographicSize = 11.25f;
+            Camera.rect = new Rect(0, 0, 1, 1);
+            Camera.cullingMask = ~(1 << 5) & ~(1 << BattleDragOverlay.DragLayer);
+            Camera.transform.position = cameraBasePosition;
+            Camera.transform.LookAt(cameraLookTarget);
+            Camera.clearFlags = CameraClearFlags.SolidColor;
+            Camera.backgroundColor = new Color(.095f, .095f, .155f);
+            Camera.nearClipPlane = .1f;
+            Camera.farClipPlane = 80f;
+            Camera.allowHDR = true;
+
+            var urpCam = Camera.GetUniversalAdditionalCameraData();
+            urpCam.renderPostProcessing = true;
+            SetupSelectiveEffectBloom(world);
+
+            HudCamera = new GameObject("HudCamera").AddComponent<Camera>();
+            HudCamera.transform.SetParent(world, false);
+            HudCamera.orthographic = true;
+            HudCamera.orthographicSize = 5f;
+            HudCamera.rect = new Rect(0, 0, 1, 1);
+            HudCamera.cullingMask = 1 << 5;
+            HudCamera.nearClipPlane = 0.1f;
+            HudCamera.farClipPlane = 50f;
+            HudCamera.transform.position = new Vector3(0, 0, -10f);
+            var urpHud = HudCamera.GetUniversalAdditionalCameraData();
+            urpHud.renderType = CameraRenderType.Overlay;
+            urpHud.renderPostProcessing = false;
+
+            dragOverlay = new GameObject("BattleDragOverlay").AddComponent<BattleDragOverlay>();
+            dragOverlay.transform.SetParent(world, false);
+            dragOverlay.Initialize(Camera, HudCamera);
+
             foreach (var old in FindObjectsOfType<Light>()) old.enabled = false;
-            var light = new GameObject("CombatSun").AddComponent<Light>(); light.transform.SetParent(world); light.type = LightType.Directional; light.intensity = 1.25f; light.transform.rotation = Quaternion.Euler(50, -35, 0); light.shadows = LightShadows.Soft;
+            combatSun = new GameObject("CombatSun").AddComponent<Light>();
+            combatSun.transform.SetParent(world);
+            combatSun.type = LightType.Directional;
+            combatSun.transform.rotation = Quaternion.Euler(46, -28, 0);
+            combatSun.shadows = LightShadows.Soft;
+            combatSun.color = new Color(1f, .96f, .88f);
+            combatSun.intensity = 1.18f;
             RenderSettings.ambientMode = AmbientMode.Trilight;
-            RenderSettings.ambientSkyColor = new Color(.64f,.70f,.80f);
-            RenderSettings.ambientEquatorColor = new Color(.56f,.58f,.61f);
-            RenderSettings.ambientGroundColor = new Color(.31f,.34f,.39f);
-            light.color = new Color(1f,.96f,.88f); light.intensity = 1.15f;
-            environment = new GameObject("RuinedCourtyard").AddComponent<CourtyardEnvironment>();
-            environment.transform.SetParent(world,false); environment.Build();
-            telegraph = Box("BossWarning", new Vector3(0, -.1f, 0), new Vector3(2.35f, .025f, 7.5f), new Color(.8f, .22f, .15f)).transform;
-            telegraph.gameObject.SetActive(false);
+            RenderSettings.ambientSkyColor = new Color(.65f, .71f, .82f);
+            RenderSettings.ambientEquatorColor = new Color(.57f, .59f, .62f);
+            RenderSettings.ambientGroundColor = new Color(.32f, .35f, .40f);
+
+            environment = new GameObject("InfiniteRuinsRoad").AddComponent<CourtyardEnvironment>();
+            environment.transform.SetParent(world, false);
+            environment.Build();
+
+            BuildRingMesh();
+            unitRegistry = new CombatUnitRegistry(world, Camera, ringMesh, Mat, ColorFor);
+
+            fieldOverlay = new GameObject("BattleFieldOverlay").AddComponent<BattleFieldOverlayView>();
+            fieldOverlay.transform.SetParent(world, false);
+            fieldOverlay.Initialize(combatSun, Camera, ringMesh);
+
+            timelineDirector = new GameObject("SkillTimelineDirector").AddComponent<SkillTimelineDirector>();
+            timelineDirector.transform.SetParent(world, false);
+            timelineDirector.Initialize(this);
+
+            floatingText = new GameObject("BattleFloatingText").AddComponent<BattleFloatingText>();
+            floatingText.transform.SetParent(world, false);
+            floatingText.Initialize(Camera);
+
+            actionRouter = new BattleActionRouter(unitRegistry, timelineDirector, floatingText, GetLaneCenter);
         }
+
+        public static Volume SetupSelectiveEffectBloom(Transform parent)
+        {
+            var go = new GameObject("SelectiveEffectBloomVolume");
+            go.transform.SetParent(parent, false);
+            var vol = go.AddComponent<Volume>();
+            vol.isGlobal = true;
+            vol.priority = 10f;
+            var profile = ScriptableObject.CreateInstance<VolumeProfile>();
+            var bloom = profile.Add<Bloom>(true);
+            bloom.threshold.Override(1.08f);
+            bloom.intensity.Override(0.55f);
+            bloom.scatter.Override(0.62f);
+            bloom.clamp.Override(4.0f);
+            bloom.highQualityFiltering.Override(false);
+            vol.sharedProfile = profile;
+            return vol;
+        }
+
         private void LateUpdate()
         {
             if (app == null) return;
             var s = app.Session;
-            environment.Apply(s.FencesUp, Time.unscaledDeltaTime);
-            telegraph.gameObject.SetActive(s.Phase == RunPhase.Fighting && s.SlamLane >= 0);
-            if (s.SlamLane >= 0) telegraph.position = new Vector3(BattleDefinitions.LaneX(s.SlamLane), .135f, -.9f);
-            var ids = new HashSet<int>();
-            foreach (var t in s.Troops.Where(t => t.Deployed))
+            if (lastPhase == RunPhase.Fighting && s.Phase != RunPhase.Fighting)
             {
-                ids.Add(t.Id); var v = Get(t.Id, (int)t.Kind, false, false);
-                var motion = v.Model.GetComponent<CharacterMotion>();
-                motion?.SetAlive(t.Alive || s.Phase != RunPhase.Fighting);
-                v.Root.gameObject.SetActive(t.Alive || s.Phase != RunPhase.Fighting || motion != null && !motion.DeathFinished);
-                v.Root.position = new Vector3(t.X, .11f, t.Z); v.Root.rotation = Quaternion.Euler(0, 0, 0);
-                v.Name.text = new string('★', t.Star); v.Health.localScale = new Vector3(Mathf.Clamp01(t.Hp / t.MaxHp), 1, 1);
-                v.Aura.SetActive(t.Shield > 0); v.Root.localScale = Vector3.one * (t.Star == 3 ? 1.18f : t.Star == 2 ? 1.08f : 1);
-                v.Animate(s.Phase == RunPhase.Fighting, Time.unscaledTime); v.Model.GetComponent<CharacterMotion>()?.Apply(s.Paused || s.Aim != AimKind.None);
+                timelineDirector?.ClearAll();
+                floatingText?.ClearAll();
+                fieldOverlay?.ResetDarkenImmediate();
             }
-            foreach (var e in s.Enemies)
+            lastPhase = s.Phase;
+
+            float dt = Time.unscaledDeltaTime;
+            bool paused = s.Paused || s.Aim != AimKind.None;
+
+            // 参考 bump MainCameraMgr / CameraMgr：战中平滑跟随前锋与交战焦点，战后缓动回正到 BaseCamX
+            float prevCamX = camCurrentX;
+            if (!paused)
             {
-                ids.Add(e.Id); var v = Get(e.Id, (int)e.Kind, true, e.Boss);
-                var motion = v.Model.GetComponent<CharacterMotion>(); motion?.SetAlive(e.Alive);
-                v.Root.gameObject.SetActive(e.Alive || motion != null && !motion.DeathFinished); v.Root.position = new Vector3(e.X, .11f, e.Z); v.Root.rotation = Quaternion.Euler(0, 180, 0);
-                v.Name.text = e.Boss ? BattleDefinitions.Name(e.Kind) : ""; v.Health.localScale = new Vector3(Mathf.Clamp01(e.Hp / e.MaxHp), 1, 1);
-                v.Aura.SetActive(e.Alive && e.FrozenUntil > s.BattleTime); v.Animate(e.Alive && s.Phase == RunPhase.Fighting && e.FrozenUntil <= s.BattleTime, Time.unscaledTime); v.Model.GetComponent<CharacterMotion>()?.Apply(s.Paused || s.Aim != AimKind.None || e.Alive && e.FrozenUntil > s.BattleTime);
-            }
-            foreach (var id in visuals.Keys.Where(id => !ids.Contains(id)).ToArray()) { Destroy(visuals[id].Root.gameObject); visuals.Remove(id); }
-            foreach (var ev in s.EventsAfter(sequence))
-            {
-                sequence = Math.Max(sequence, ev.Sequence);
-                if (ev.Type == "skill" || ev.Type == "hit" || ev.Type == "freeze") Feedback(ev);
-                if ((ev.Type == "skill" || ev.Type == "hit" || ev.Type == "troop_hit") && visuals.TryGetValue(ev.Source, out var actor)) actor.Model.GetComponent<CharacterMotion>()?.Attack();
-                if ((ev.Type == "hit" || ev.Type == "troop_hit") && visuals.TryGetValue(ev.Target, out var injured)) injured.Model.GetComponent<CharacterMotion>()?.Hit();
-                if (ev.Type == "heal" && visuals.TryGetValue(ev.Source, out var healer)) healer.Model.GetComponent<CharacterMotion>()?.Attack();
-                if (ev.Type == "boss_slam" && visuals.TryGetValue(ev.Source, out var giant)) giant.Model.GetComponent<CharacterMotion>()?.Slam();
-            }
-            effects.RemoveAll(e => e == null);
-        }
-        private UnitVisual Get(int id, int kind, bool enemy, bool boss)
-        {
-            string visualKey = kind + "/" + enemy + "/" + boss;
-            if (visuals.TryGetValue(id, out var found))
-            {
-                if (found.Key == visualKey) return found;
-                found.Root.gameObject.SetActive(false); Destroy(found.Root.gameObject); visuals.Remove(id);
-            }
-            var root = new GameObject((enemy ? "Enemy_" : "Troop_") + id).transform; root.SetParent(world);
-            var name = enemy ? (kind == 2 ? "Mage" : "Barbarian") : kind == 0 ? "Knight" : kind == 1 ? "Ranger" : "Mage";
-            string role = enemy ? new[] { "Grunt", "Runner", "Armored", "Healer", "Giant" }[kind] : new[] { "Shield", "Archer", "Storm", "Frost" }[kind];
-            var appearance = Resources.Load<UnitAppearance>("UnitAppearances/" + role);
-            var prefab = appearance != null ? appearance.Model : Resources.Load<GameObject>("CombatCharacters/" + name);
-            GameObject model;
-            if (prefab != null)
-            {
-                model = Instantiate(prefab, root); model.name = appearance != null ? "Unit_" + role : "KayKit_" + name;
-                var renderers = model.GetComponentsInChildren<Renderer>();
-                if (appearance == null)
+                float targetCamX = BaseCamX;
+                if (s.Phase == RunPhase.Fighting)
                 {
-                    var texture = Resources.Load<Texture2D>("CombatCharacters/" + name.ToLowerInvariant() + "_texture");
-                    var material = Mat("KayKit_" + name, Color.white); material.mainTexture = texture;
-                    foreach (var r in renderers) r.sharedMaterial = material;
+                    var aliveTroops = s.Troops.Where(t => t.Deployed && t.Alive).ToArray();
+                    var aliveEnemies = s.Enemies.Where(e => e.Alive).ToArray();
+                    if (aliveTroops.Length > 0)
+                    {
+                        float vanguardX = aliveTroops.Max(t => t.X);
+                        float focusX = aliveEnemies.Length > 0
+                            ? Mathf.Lerp(vanguardX, aliveEnemies.Min(e => e.X), 0.38f)
+                            : vanguardX;
+                        // 偏移量 disX 保持我方阵型偏左、交战区偏中右，并做左右边界限幅
+                        targetCamX = Mathf.Clamp(BaseCamX + (focusX + 1.15f) * 0.42f, CamBoundMinX, CamBoundMaxX);
+                    }
                 }
-                // 骨架FBX以脚底和渲染包围盒归一化，避免不同导出单位导致大小失控。
-                Bounds bounds = renderers.Length > 0 ? renderers[0].bounds : new Bounds(Vector3.zero, Vector3.one);
-                foreach (var r in renderers) bounds.Encapsulate(r.bounds);
-                float scale = (appearance != null ? appearance.Height : boss ? 2.5f : .92f) / Mathf.Max(.01f, bounds.size.y); model.transform.localScale *= scale;
-                model.transform.localPosition = new Vector3(0, -bounds.min.y * scale, 0);
-                var motion = model.AddComponent<CharacterMotion>();
-                if (appearance != null) motion.Configure(appearance); else motion.Configure(kind);
+                float smoothRate = s.Phase == RunPhase.Fighting ? 3.2f : 4.5f;
+                camCurrentX = Mathf.Lerp(camCurrentX, targetCamX, 1f - Mathf.Exp(-smoothRate * dt));
+                Camera.transform.position = new Vector3(camCurrentX, cameraBasePosition.y, cameraBasePosition.z);
+                dragOverlay?.SyncCamera();
             }
-            else model = Primitive(PrimitiveType.Capsule, root, Vector3.up * .45f, new Vector3(.48f, .48f, .48f), enemy ? new Color(.65f, .27f, .23f) : ColorFor(kind));
-            GroundRing(root, "FactionRing", boss ? 2.6f : .75f, boss ? 1.6f : .75f, enemy ? new Color(.65f, .24f, .19f) : ColorFor(kind));
-            var aura = GroundRing(root, "StatusRing", .98f, .98f, new Color(.27f, .7f, .92f)); aura.SetActive(false);
-            var label = Label(root, "", boss ? 2.82f : 1.35f);
-            var healthRoot = new GameObject("Health").transform; healthRoot.SetParent(root); healthRoot.localPosition = new Vector3(0, boss ? 2.65f : 1.2f, 0); healthRoot.rotation = Camera.transform.rotation;
-            Primitive(PrimitiveType.Cube, healthRoot, Vector3.zero, new Vector3(.7f, .065f, .03f), new Color(.2f, .24f, .24f));
-            var health = new GameObject("Fill").transform; health.SetParent(healthRoot, false);
-            Primitive(PrimitiveType.Cube, health, new Vector3(0, 0, -.02f), new Vector3(.68f, .05f, .03f), enemy ? new Color(.85f, .4f, .32f) : new Color(.39f, .8f, .59f));
-            var visual = new UnitVisual { Key = visualKey, Root = root, Model = model.transform, Name = label, Health = health, Aura = aura, BaseY = model.transform.localPosition.y };
-            visuals.Add(id, visual); return visual;
+            float deltaCamX = camCurrentX - prevCamX;
+
+            // 行军速度自动匹配我方当前上阵军团的平均 MoveSpeed（确保脚底步频与大道滚动一致）
+            float avgMoveSpeed = s.Troops.Any(t => t.Deployed)
+                ? s.Troops.Where(t => t.Deployed).Average(t => t.MoveSpeed)
+                : 2.5f;
+            float scrollSpeed = paused || s.Phase == RunPhase.Lost || s.Phase == RunPhase.Won
+                ? 0f
+                : s.Phase == RunPhase.Preparation
+                    ? (s.IsRegrouping ? avgMoveSpeed * 0.45f : avgMoveSpeed * 0.72f)
+                    : (s.Phase == RunPhase.WaveResult || s.Phase == RunPhase.Reward)
+                        ? (s.IsRegrouping ? avgMoveSpeed * 0.65f : avgMoveSpeed * 1.45f)
+                        : 0f;
+
+            environment.Apply(scrollSpeed, deltaCamX, camCurrentX, dt);
+            bool marching = scrollSpeed > 0.1f;
+            unitRegistry.Sync(s, marching);
+            actionRouter.ProcessEvents(s);
+
+            float scaledDt = dt * Math.Max(1, s.Speed);
+            timelineDirector?.Step(scaledDt, paused);
+            floatingText?.Step(scaledDt, paused);
+            fieldOverlay?.Sync(s, unitRegistry, dt);
         }
-        private void Feedback(CombatEvent e)
+
+        public void SetSelectedUnit(int unitId, bool visible) => fieldOverlay?.SyncSelectionCursor(unitId, visible, unitRegistry);
+        public void SetDragZoneVisual(bool dragging, Vector3 groundPos, bool insideBox, bool canPlace) =>
+            fieldOverlay?.SetDragZoneVisual(dragging, groundPos, insideBox, canPlace);
+
+        public bool TryGetUnitPosition(int unitId, out Vector3 position)
         {
-            if (!visuals.TryGetValue(e.Source, out var source) || !visuals.TryGetValue(e.Target, out var target)) return;
-            Color color = e.Type == "freeze" ? new Color(.35f, .8f, 1) : e.Type == "skill" ? new Color(.95f, .76f, .3f) : new Color(.9f, .86f, .65f);
-            var go = new GameObject("SkillFeedback"); go.transform.SetParent(world); var line = go.AddComponent<LineRenderer>();
-            line.sharedMaterial = Mat("Line" + color, color, true); line.positionCount = 2; line.SetPosition(0, source.Root.position + Vector3.up * .65f); line.SetPosition(1, target.Root.position + Vector3.up * .65f); line.startWidth = line.endWidth = e.Type == "skill" ? .09f : .035f;
-            effects.Add(go); Destroy(go, .15f);
+            if (unitRegistry != null && unitRegistry.TryGet(unitId, out var actor) && actor != null)
+            {
+                position = actor.transform.position;
+                return true;
+            }
+            position = Vector3.zero;
+            return false;
         }
-        public Vector2 UnitScreen(int id) => visuals.TryGetValue(id, out var v) ? (Vector2)Camera.WorldToScreenPoint(v.Root.position + Vector3.up * .4f) : new Vector2(-1000, -1000);
-        public Vector2 CellScreen(int lane, int row) => Camera.WorldToScreenPoint(new Vector3(BattleDefinitions.LaneX(lane), 0, BattleDefinitions.RowZ(row)));
-        public int HitUnit(Vector2 screen, bool enemy)
+
+        public CharacterMotion GetUnitMotion(int unitId) =>
+            unitRegistry != null && unitRegistry.TryGet(unitId, out var actor) ? actor.Motion : null;
+
+        public Vector3 GetLaneCenter(int lane) => new Vector3(-2.4f, 0.14f, BattleDefinitions.CellZ(Mathf.Clamp(lane, 0, 2)));
+        public Camera GetCamera() => Camera;
+        public Vector3 GetCameraBasePosition() => new Vector3(camCurrentX, cameraBasePosition.y, cameraBasePosition.z);
+        public void SetSceneDarken(float strength) => fieldOverlay?.SetTargetSceneDarken(strength);
+
+        public Vector2 UnitScreen(int id) => unitRegistry != null ? unitRegistry.UnitScreen(id) : new Vector2(-1000, -1000);
+        public Vector2 WorldToScreen(float x, float z) => Camera.WorldToScreenPoint(new Vector3(x, 0.12f, z));
+        public Vector2 CellScreen(int lane, int row) => WorldToScreen(BattleDefinitions.CellX(row), BattleDefinitions.CellZ(lane));
+        public int HitUnit(Vector2 screen, bool enemy) => unitRegistry != null ? unitRegistry.HitUnit(app.Session, screen, enemy) : 0;
+
+        public static bool IsInBattleViewport(Vector2 screen) =>
+            screen.x >= 0f && screen.x <= Screen.width && screen.y >= Screen.height * 0.32f && screen.y <= Screen.height * 0.81f;
+
+        /// <summary>将屏幕坐标投射到战场地面平面 (Y=0.12)，用于自由拖拽判断与白框边界校验。</summary>
+        public bool ScreenToGround(Vector2 screen, out Vector3 worldPos, bool requireViewport = true)
         {
-            var s = app.Session;
-            var ids = enemy ? s.Enemies.Where(e => e.Alive).Select(e => e.Id) : s.Troops.Where(t => t.Deployed).Select(t => t.Id);
-            return ids.Select(id => new { id, d = Vector2.Distance(screen, UnitScreen(id)) }).Where(x => x.d < Mathf.Max(23, Screen.width * .065f)).OrderBy(x => x.d).Select(x => x.id).FirstOrDefault();
+            worldPos = Vector3.zero;
+            if (requireViewport && !IsInBattleViewport(screen)) return false;
+            var ray = Camera.ScreenPointToRay(screen);
+            var plane = new Plane(Vector3.up, new Vector3(0f, 0.12f, 0f));
+            if (!plane.Raycast(ray, out float enter)) return false;
+            worldPos = ray.GetPoint(enter);
+            return true;
         }
-        public bool HitCell(Vector2 screen, out int lane, out int row)
-        {
-            float best = float.MaxValue; lane = row = -1;
-            for (int l = 0; l < 3; l++) for (int r = 0; r < 3; r++) { float d = Vector2.Distance(screen, CellScreen(l, r)); if (d < best) { best = d; lane = l; row = r; } }
-            return best < Screen.width * .14f && Camera.pixelRect.Contains(screen);
-        }
+
         public int HitLane(Vector2 screen)
         {
-            var ray = Camera.ScreenPointToRay(screen); var plane = new Plane(Vector3.up, Vector3.zero);
-            if (!Camera.pixelRect.Contains(screen) || !plane.Raycast(ray, out float enter)) return -1;
-            float x = ray.GetPoint(enter).x; return Mathf.Abs(x) > 3.7f ? -1 : Mathf.Clamp(Mathf.RoundToInt(x / 2.5f) + 1, 0, 2);
+            if (!ScreenToGround(screen, out var pt, requireViewport: true)) return -1;
+            if (Mathf.Abs(pt.z) > 3.6f) return -1;
+            return BattleDefinitions.NearestLane(pt.z);
         }
+
+        public static Color ColorFor(int kind) => kind == 0 ? new Color(.25f, .59f, .76f) : kind == 1 ? new Color(.28f, .64f, .4f) : kind == 2 ? new Color(.58f, .35f, .82f) : new Color(.32f, .77f, .87f);
+
+        public object Snapshot() => new
+        {
+            cameraX = Math.Round(camCurrentX, 2),
+            environment = environment.Snapshot(),
+            skillTimeline = timelineDirector != null ? timelineDirector.Snapshot() : null,
+            actors = unitRegistry != null ? unitRegistry.SnapshotActors() : Array.Empty<object>()
+        };
+
         private Material Mat(string key, Color color, bool unlit = false)
         {
             if (materials.TryGetValue(key, out var m)) return m;
-            m = new Material(Shader.Find(unlit ? "Universal Render Pipeline/Unlit" : "Universal Render Pipeline/Lit")); m.color = color; materials.Add(key, m); return m;
+            m = new Material(Shader.Find(unlit ? "Universal Render Pipeline/Unlit" : "Universal Render Pipeline/Lit"));
+            m.color = color;
+            materials.Add(key, m);
+            return m;
         }
-        private GameObject Box(string name, Vector3 position, Vector3 scale, Color color) { var go = Primitive(PrimitiveType.Cube, world, position, scale, color); go.name = name; return go; }
-        private GameObject Primitive(PrimitiveType type, Transform parent, Vector3 position, Vector3 scale, Color color)
-        { var go = GameObject.CreatePrimitive(type); go.transform.SetParent(parent, false); go.transform.localPosition = position; go.transform.localScale = scale; go.GetComponent<Renderer>().sharedMaterial = Mat(color.ToString(), color); var collider = go.GetComponent<Collider>(); if (collider != null) Destroy(collider); return go; }
-        private GameObject GroundRing(Transform parent, string name, float width, float depth, Color color)
+
+        private void BuildRingMesh()
         {
-            if (ringMesh == null)
+            const int segments = 40;
+            var vertices = new Vector3[segments * 2];
+            var triangles = new int[segments * 6];
+            for (int i = 0; i < segments; i++)
             {
-                const int segments = 40;
-                var vertices = new Vector3[segments * 2]; var triangles = new int[segments * 6];
-                for (int i = 0; i < segments; i++)
-                {
-                    float angle = i * Mathf.PI * 2 / segments; var direction = new Vector3(Mathf.Cos(angle), 0, Mathf.Sin(angle));
-                    vertices[i * 2] = direction * .5f; vertices[i * 2 + 1] = direction * .44f;
-                    int next = (i + 1) % segments; int t = i * 6;
-                    triangles[t] = i * 2; triangles[t + 1] = i * 2 + 1; triangles[t + 2] = next * 2;
-                    triangles[t + 3] = next * 2; triangles[t + 4] = i * 2 + 1; triangles[t + 5] = next * 2 + 1;
-                }
-                ringMesh = new Mesh { name = "Unit ground ring", vertices = vertices, triangles = triangles }; ringMesh.RecalculateNormals(); ringMesh.RecalculateBounds();
+                float a = i / (float)segments * Mathf.PI * 2;
+                var dir = new Vector3(Mathf.Cos(a), 0, Mathf.Sin(a));
+                vertices[i * 2] = dir * .5f;
+                vertices[i * 2 + 1] = dir * .44f;
+                int next = (i + 1) % segments;
+                int t = i * 6;
+                triangles[t] = i * 2; triangles[t + 1] = i * 2 + 1; triangles[t + 2] = next * 2;
+                triangles[t + 3] = next * 2; triangles[t + 4] = i * 2 + 1; triangles[t + 5] = next * 2 + 1;
             }
-            var go = new GameObject(name, typeof(MeshFilter), typeof(MeshRenderer)); go.transform.SetParent(parent, false);
-            go.transform.localPosition = new Vector3(0, .025f, 0); go.transform.localScale = new Vector3(width, 1, depth);
-            go.GetComponent<MeshFilter>().sharedMesh = ringMesh;
-            var renderer = go.GetComponent<MeshRenderer>(); renderer.sharedMaterial = Mat("Ring" + color, color, true); renderer.shadowCastingMode = ShadowCastingMode.Off; renderer.receiveShadows = false;
-            return go;
+            ringMesh = new Mesh { name = "Unit ground ring", vertices = vertices, triangles = triangles };
+            ringMesh.RecalculateNormals();
+            ringMesh.RecalculateBounds();
         }
-        private TextMesh Label(Transform parent, string text, float y)
+
+        private void OnDestroy()
         {
-            var go = new GameObject("Label"); go.transform.SetParent(parent, false); go.transform.localPosition = new Vector3(0, y, 0); go.transform.rotation = Camera.transform.rotation;
-            var tm = go.AddComponent<TextMesh>(); tm.text = text; tm.fontSize = 32; tm.characterSize = .035f; tm.anchor = TextAnchor.MiddleCenter; tm.color = new Color(.96f, .97f, .9f);
-            tm.font = Resources.Load<Font>("GameFont"); if (tm.font != null) go.GetComponent<MeshRenderer>().sharedMaterial = tm.font.material; return tm;
-        }
-        public static Color ColorFor(int kind) => kind == 0 ? new Color(.25f, .59f, .76f) : kind == 1 ? new Color(.28f, .64f, .4f) : kind == 2 ? new Color(.58f, .35f, .82f) : new Color(.32f, .77f, .87f);
-        public object Snapshot() => new { environment = environment.Snapshot(), actors = visuals.Select(pair => new { id = pair.Key, model = pair.Value.Model.name, active = pair.Value.Root.gameObject.activeSelf, action = pair.Value.Model.GetComponent<CharacterMotion>()?.CurrentAction, actionTime = pair.Value.Model.GetComponent<CharacterMotion>()?.ActionTime, animationPlaying = pair.Value.Model.GetComponent<Animation>() != null && pair.Value.Model.GetComponent<Animation>().isPlaying, renderers = pair.Value.Model.GetComponentsInChildren<Renderer>().Select(r => new { type = r.GetType().Name, visible = r.isVisible, shaders = r.sharedMaterials.Select(m => m != null && m.shader != null ? m.shader.name : "missing"), supported = r.sharedMaterials.All(m => m != null && m.shader != null && m.shader.isSupported) }), upperArm = pair.Value.Model.GetComponentsInChildren<Transform>().Where(t => t.name == "upperarm.l" || t.name == "upperarm_l" || t.name == "Body").Select(t => new { x = t.localEulerAngles.x, y = t.localEulerAngles.y, z = t.localEulerAngles.z }) }) };
-        private void OnDestroy() { foreach (var m in materials.Values) Destroy(m); if (ringMesh != null) Destroy(ringMesh); }
-        private sealed class UnitVisual
-        {
-            public string Key; public Transform Root, Model, Health; public TextMesh Name; public GameObject Aura; public float BaseY;
-            public void Animate(bool fighting, float time) { var p = Model.localPosition; p.y = BaseY + (fighting ? Mathf.Sin(time * 5 + Root.GetInstanceID()) * .025f : 0); Model.localPosition = p; }
+            foreach (var m in materials.Values) Destroy(m);
+            if (ringMesh != null) Destroy(ringMesh);
         }
     }
 }

@@ -1,0 +1,105 @@
+{
+  "SchemaVersion": 1,
+  "TimelineId": "frost_freeze",
+  "DisplayName": "冰法师·寒霜冻结",
+  "DurationBindClipKey": "",
+  "Clips": [
+    {
+      "ClipKey": "c_anim",
+      "PreKey": "",
+      "Type": "PlayAnimation",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.4,
+      "ActionName": "Attack",
+      "Speed": 1.0,
+      "TargetAnchor": "Caster",
+      "EventConfigs": [
+        {
+          "EventKey": "ev_cast",
+          "Time": 0.12,
+          "EventName": "cast"
+        }
+      ]
+    },
+    {
+      "ClipKey": "c_lance",
+      "PreKey": "ev_cast",
+      "Type": "PlayBullet",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.16,
+      "EffectId": "fx_ice_lance",
+      "FromAnchor": "Caster",
+      "ToAnchor": "Target",
+      "StartHeight": 0.72,
+      "EndHeight": 0.65,
+      "ArcHeight": 0.18,
+      "Width": 0.13,
+      "Scale": 1.0,
+      "ColorHex": "#4CCBFF",
+      "EventConfigs": []
+    },
+    {
+      "ClipKey": "c_ring",
+      "PreKey": "c_lance",
+      "Type": "PlayEffect",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.55,
+      "EffectId": "fx_freeze_ring",
+      "ToAnchor": "TargetGround",
+      "Shape": "Ring",
+      "Offset": {
+        "x": 0.0,
+        "y": 0.17,
+        "z": 0.0
+      },
+      "Scale": 1.25,
+      "FollowAnchor": false,
+      "ColorHex": "#7AE8FF",
+      "EventConfigs": []
+    },
+    {
+      "ClipKey": "c_crystal",
+      "PreKey": "c_lance",
+      "Type": "PlayEffect",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.65,
+      "EffectId": "fx_freeze_aura",
+      "ToAnchor": "Target",
+      "Shape": "Aura",
+      "Offset": {
+        "x": 0.0,
+        "y": 0.55,
+        "z": 0.0
+      },
+      "Scale": 0.78,
+      "FollowAnchor": true,
+      "ColorHex": "#B3F4FF",
+      "EventConfigs": []
+    },
+    {
+      "ClipKey": "c_hit",
+      "PreKey": "c_lance",
+      "Type": "PlayHit",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.14,
+      "TargetAnchor": "Target",
+      "HitActionName": "Hit",
+      "FlashColorHex": "#CCF7FF",
+      "FlashDuration": 0.12,
+      "EffectId": "fx_hit_ice",
+      "Offset": {
+        "x": 0.0,
+        "y": 0.65,
+        "z": 0.0
+      },
+      "Scale": 0.55,
+      "ColorHex": "#CCF7FF",
+      "EventConfigs": []
+    }
+  ]
+}

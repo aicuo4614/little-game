@@ -39,7 +39,9 @@ namespace LittleGame.Client
         }
         public void Update(float dt)
         {
-            var phase = Session.Phase; Session.Advance(dt);
+            var phase = Session.Phase;
+            if (phase == RunPhase.Fighting) Session.Advance(dt);
+            else Session.StepRegroup(dt);
             if (Session.Phase != phase) { SaveCheckpoint(); facade.SendNotification(Changed); }
         }
         public void SaveCheckpoint()

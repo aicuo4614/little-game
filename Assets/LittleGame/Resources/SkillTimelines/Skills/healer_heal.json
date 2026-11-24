@@ -1,0 +1,64 @@
+{
+  "SchemaVersion": 1,
+  "TimelineId": "healer_heal",
+  "DisplayName": "治疗师回血",
+  "DurationBindClipKey": "",
+  "Clips": [
+    {
+      "ClipKey": "c_anim",
+      "PreKey": "",
+      "Type": "PlayAnimation",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.4,
+      "ActionName": "Attack",
+      "Speed": 1.0,
+      "TargetAnchor": "Caster",
+      "EventConfigs": [
+        {
+          "EventKey": "ev_heal",
+          "Time": 0.14,
+          "EventName": "heal"
+        }
+      ]
+    },
+    {
+      "ClipKey": "c_orb",
+      "PreKey": "ev_heal",
+      "Type": "PlayBullet",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.18,
+      "EffectId": "fx_heal_orb",
+      "FromAnchor": "Caster",
+      "ToAnchor": "Target",
+      "StartHeight": 0.72,
+      "EndHeight": 0.65,
+      "ArcHeight": 0.45,
+      "Width": 0.11,
+      "Scale": 1.0,
+      "ColorHex": "#6DFF9B",
+      "EventConfigs": []
+    },
+    {
+      "ClipKey": "c_aura",
+      "PreKey": "c_orb",
+      "Type": "PlayEffect",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.5,
+      "EffectId": "fx_heal_ring",
+      "ToAnchor": "TargetGround",
+      "Shape": "Ring",
+      "Offset": {
+        "x": 0.0,
+        "y": 0.17,
+        "z": 0.0
+      },
+      "Scale": 1.05,
+      "FollowAnchor": true,
+      "ColorHex": "#5CFF8D",
+      "EventConfigs": []
+    }
+  ]
+}

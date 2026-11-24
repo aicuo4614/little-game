@@ -14,8 +14,8 @@
 | 操作 | 输入 | 条件与结果 |
 | --- | --- | --- |
 | `unity_combat_restart` | seed，可省略为173 | 正常重开，不保留本局军团与奖励；相同种子复现 |
-| `unity_combat_spin` | 无 | 准备阶段、有次数、无暂存；横线三同出兵。两次空转后的下一次保底 |
-| `unity_combat_deploy` | unitId、lane、row | lane/row均0到2；候补可上阵，已占格交换 |
+| `unity_combat_spin` | 无 | 准备阶段、有次数、无暂存；十字中线（中横/中竖）三同出兵。两次空转后的下一次保底 |
+| `unity_combat_deploy` | unitId、lane、row | lane/row均0到2；未满人口时候补可上空格，满人口仅允许与已占格替换或调整已上阵位置 |
 | `unity_combat_merge` | unitId、otherId、thirdId | 三个同职业同星不同单位；保留宿主位置、分支，消耗另外两名 |
 | `unity_combat_choose_branch` | unitId、branch | 二星必须选合法分支，选择后锁定 |
 | `unity_combat_start_wave` | 无 | 暂存清空、分支已选、至少一个上阵；自动战斗，剩余转动放弃 |
@@ -74,3 +74,21 @@
 单位表现不改变正常操作参数或战斗规则；原16项原生工具仍可使用。`Tools/Preparation/verify_unit_presentation.py` 只读观察正常回放，`verify_unit_samples.py` 使用正常招募布阵到第六波并核查动作暂停/恢复。菜单 Build Unit Assets 仅用于资源加工，不属于正常玩法验收。
 
 扩展1.0.3补充 `get_view.skin`（主题、已加载/缺失sprite）与按钮width/height（同样归一化到屏幕尺寸）。换肤仍使用原按钮ID与共用pointer；验证应覆盖准备、选兵、确认、战斗瞄准、奖励、胜负各阶段，检查按钮范围和重叠，不能沿用旧截图坐标。
+
+## 3D 技能时间轴与单位 JSON 绑定（扩展 1.0.4 / `little-game.skill-timeline` 1.0.0）
+
+- `little-game.combat` 1.0.4 在 `get_view.presentation.skillTimeline` 中新增运行时观测字段：`loadedBindings`、`loadedTimelines`、`valid`、`validationErrors`、`activeCount`、`totalTriggered` 与 `recentTriggered`。
+- 新增专用扩展 `little-game.skill-timeline`（版本 `1.0.0`），用于读取、编排、校验、预览及热重载 `Assets/LittleGame/Resources/SkillTimelines/` 下的 `UnitSkillBindings.json` 与技能 JSON：
+  - `list_timelines`：列出全部技能 JSON（含总时长、片段数）、单位绑定表与校验结果。
+  - `get_timeline(timelineId)`：读取指定技能 JSON 及解析后的片段起止调度表。
+  - `save_timeline(timeline)`（写操作）：经 `SkillTimelineSchedule` 校验无循环依赖与非法时间后落盘，并自动热重载到当前 Play 战斗。
+  - `get_bindings` / `save_bindings(bindings)`（写操作）：读取或更新单位技能挂钩规则并校验所有 `TimelineId` 存在。
+  - `validate_all`：一键校验全部绑定与技能 JSON。
+  - `preview_timeline(timelineId, time, triggerInPlay)`：按指定时间点试算活跃片段；Play 模式下可选触发一次战场预览，不改写规则结算。
+- 技能时间轴只负责 3D 动作、弹道、特效、受击反馈与轻震屏演出，严格保持单向读取，不参与或修改规则层伤害与胜负判定。
+
+## 自由白框布阵、差异化移速、波后跑回归队与跟镜（扩展 1.3.0 / 快照 schemaVersion 4）
+
+- `get_state` 升级至 `schemaVersion = 4`（`layout = "horizontal-free-deploy"`），新增 `deployBox`、`regrouping`，以及单位级 `homeX`、`homeZ`、`moveSpeed`、`facingYaw`、`turnSpeed`、`canMerge`。
+- `deploy` 兼容原 `lane/row` 并新增自由世界坐标参数 `x/z`；超出整体白色布阵框范围返回规则拒绝并弹出红色悬浮 Tip。
+- `get_view` 新增 `presentation.cameraX` 与全局悬浮 `tip`（`text`、`isError`、`active`）；`get_definitions` 返回各职业 `moveSpeed`、`turnSpeed` 及 `deployBox`。

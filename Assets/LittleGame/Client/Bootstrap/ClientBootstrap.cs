@@ -28,7 +28,11 @@ namespace LittleGame.Client
         }
         private void Awake()
         {
-            Current = this; Application.targetFrameRate = 60; QualitySettings.vSyncCount = Application.isMobilePlatform ? 0 : 1;
+            Current = this;
+            if (QualitySettings.names != null && QualitySettings.names.Length > 0)
+                QualitySettings.SetQualityLevel(QualitySettings.names.Length - 1, true);
+            QualitySettings.vSyncCount = 0;
+            Application.targetFrameRate = 60;
             Screen.orientation = ScreenOrientation.Portrait;
             var store = new LocalRunStore(Path.Combine(Application.persistentDataPath, "combat-run-v1.json"));
             App = new BattleApplication(store); App.PersistenceError += message => GameDebug.LogWarning("CombatSave", message);

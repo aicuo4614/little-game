@@ -1,0 +1,28 @@
+{
+  "SchemaVersion": 1,
+  "TimelineId": "tactic_focus",
+  "DisplayName": "战术·集火标记",
+  "DurationBindClipKey": "",
+  "Clips": [
+    {
+      "ClipKey": "c_mark",
+      "PreKey": "",
+      "Type": "PlayEffect",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.55,
+      "EffectId": "fx_tactic_focus",
+      "ToAnchor": "TargetGround",
+      "Shape": "Ring",
+      "Offset": {
+        "x": 0.0,
+        "y": 0.19,
+        "z": 0.0
+      },
+      "Scale": 1.15,
+      "FollowAnchor": true,
+      "ColorHex": "#FF5252",
+      "EventConfigs": []
+    }
+  ]
+}

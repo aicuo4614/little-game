@@ -1,0 +1,28 @@
+{
+  "SchemaVersion": 1,
+  "TimelineId": "tactic_protect",
+  "DisplayName": "战术·一路护盾",
+  "DurationBindClipKey": "",
+  "Clips": [
+    {
+      "ClipKey": "c_ring",
+      "PreKey": "",
+      "Type": "PlayEffect",
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.65,
+      "EffectId": "fx_tactic_protect",
+      "ToAnchor": "LaneCenter",
+      "Shape": "Ring",
+      "Offset": {
+        "x": 0.0,
+        "y": 0.19,
+        "z": 0.0
+      },
+      "Scale": 1.45,
+      "FollowAnchor": false,
+      "ColorHex": "#4DD2FF",
+      "EventConfigs": []
+    }
+  ]
+}
