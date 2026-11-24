@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="62" result="Passed" total="62" passed="61" failed="0" inconclusive="1" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-09-21 03:20:36Z" end-time="2026-09-21 03:20:44Z" duration="8.2144749">
+  <test-suite type="TestSuite" id="1089" name="TestProject~" fullname="TestProject~" runstate="Runnable" testcasecount="62" result="Passed" start-time="2026-09-21 03:20:36Z" end-time="2026-09-21 03:20:44Z" duration="8.214475" total="62" passed="61" failed="0" inconclusive="1" skipped="0" asserts="0">
+    <properties />
+    <test-suite type="Assembly" id="1164" name="MyUnityMcp.Editor.Tests.dll" fullname="E:/Project/AIProject/MyUnityMcp/TestProject~/Library/ScriptAssemblies/MyUnityMcp.Editor.Tests.dll" runstate="Runnable" testcasecount="62" result="Passed" start-time="2026-09-21 03:20:36Z" end-time="2026-09-21 03:20:44Z" duration="8.200122" total="62" passed="61" failed="0" inconclusive="1" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="38192" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+      </properties>
+      <test-suite type="TestSuite" id="1165" name="MyUnityMcp" fullname="MyUnityMcp" runstate="Runnable" testcasecount="62" result="Passed" start-time="2026-09-21 03:20:36Z" end-time="2026-09-21 03:20:44Z" duration="8.199073" total="62" passed="61" failed="0" inconclusive="1" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1166" name="Editor" fullname="MyUnityMcp.Editor" runstate="Runnable" testcasecount="62" result="Passed" start-time="2026-09-21 03:20:36Z" end-time="2026-09-21 03:20:44Z" duration="8.195687" total="62" passed="61" failed="0" inconclusive="1" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestSuite" id="1167" name="Tests" fullname="MyUnityMcp.Editor.Tests" runstate="Runnable" testcasecount="62" result="Passed" start-time="2026-09-21 03:20:36Z" end-time="2026-09-21 03:20:44Z" duration="8.192486" total="62" passed="61" failed="0" inconclusive="1" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="TestSuite" id="1174" name="Assets" fullname="MyUnityMcp.Editor.Tests.Assets" runstate="Runnable" testcasecount="10" result="Passed" start-time="2026-09-21 03:20:36Z" end-time="2026-09-21 03:20:41Z" duration="4.992880" total="10" passed="10" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-suite type="TestFixture" id="1153" name="AssetOpsTests" fullname="MyUnityMcp.Editor.Tests.Assets.AssetOpsTests" classname="MyUnityMcp.Editor.Tests.Assets.AssetOpsTests" runstate="Runnable" testcasecount="10" result="Passed" start-time="2026-09-21 03:20:36Z" end-time="2026-09-21 03:20:41Z" duration="4.987992" total="10" passed="10" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1161" name="CreateAsset_EmptyType_Fails" fullname="MyUnityMcp.Editor.Tests.Assets.AssetOpsTests.CreateAsset_EmptyType_Fails" methodname="CreateAsset_EmptyType_Fails" classname="MyUnityMcp.Editor.Tests.Assets.AssetOpsTests" runstate="Runnable" seed="1681460540" result="Passed" start-time="2026-09-21 03:20:36Z" end-time="2026-09-21 03:20:36Z" duration="0.322014" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1163" name="CreateAsset_Material_RoundTrip" fullname="MyUnityMcp.Editor.Tests.Assets.AssetOpsTests.CreateAsset_Material_RoundTrip" methodname="CreateAsset_Material_RoundTrip" classname="MyUnityMcp.Editor.Tests.Assets.AssetOpsTests" runstate="Runnable" seed="2115610456" result="Passed" start-time="2026-09-21 03:20:36Z" end-time="2026-09-21 03:20:37Z" duration="0.830099" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1162" name="CreateAsset_WrongExtension_Fails" fullname="MyUnityMcp.Editor.Tests.Assets.AssetOpsTests.CreateAsset_WrongExtension_Fails" methodname="CreateAsset_WrongExtension_Fails" classname="MyUnityMcp.Editor.Tests.Assets.AssetOpsTests" runstate="Runnable" seed="1952161568" result="Passed" start-time="2026-09-21 03:20:37Z" end-time="2026-09-21 03:20:37Z" duration="0.369933" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1157" name="CreateFolder_Copy_Move_Delete_RoundTrip" fullname="MyUnityMcp.Editor.Tests.Assets.AssetOpsTests.CreateFolder_Copy_Move_Delete_RoundTrip" methodname="CreateFolder_Copy_Move_Delete_RoundTrip" classname="MyUnityMcp.Editor.Tests.Assets.AssetOpsTests" runstate="Runnable" seed="1150691605" result="Passed" start-time="2026-09-21 03:20:37Z" end-time="2026-09-21 03:20:39Z" duration="2.003570" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1159" name="CreateScript_EmptyPath_Fails" fullname="MyUnityMcp.Editor.Tests.Assets.AssetOpsTests.CreateScript_EmptyPath_Fails" methodname="CreateScript_EmptyPath_Fails" classname="MyUnityMcp.Editor.Tests.Assets.AssetOpsTests" runstate="Runnable" seed="54398863" result="Passed" start-time="2026-09-21 03:20:39Z" end-time="2026-09-21 03:20:39Z" duration="0.236414" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1160" name="CreateScript_NotCs_Fails" fullname="MyUnityMcp.Editor.Tests.Assets.AssetOpsTests.CreateScript_NotCs_Fails" methodname="CreateScript_NotCs_Fails" classname="MyUnityMcp.Editor.Tests.Assets.AssetOpsTests" runstate="Runnable" seed="2108419287" result="Passed" start-time="2026-09-21 03:20:39Z" end-time="2026-09-21 03:20:40Z" duration="0.236091" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1154" name="Find_MaxResultsZero_Fails" fullname="MyUnityMcp.Editor.Tests.Assets.AssetOpsTests.Find_MaxResultsZero_Fails" methodname="Find_MaxResultsZero_Fails" classname="MyUnityMcp.Editor.Tests.Assets.AssetOpsTests" runstate="Runnable" seed="1436551643" result="Passed" start-time="2026-09-21 03:20:40Z" end-time="2026-09-21 03:20:40Z" duration="0.296448" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1155" name="Find_Scripts_ReturnsSome" fullname="MyUnityMcp.Editor.Tests.Assets.AssetOpsTests.Find_Scripts_ReturnsSome" methodname="Find_Scripts_ReturnsSome" classname="MyUnityMcp.Editor.Tests.Assets.AssetOpsTests" runstate="Runnable" seed="460418877" result="Passed" start-time="2026-09-21 03:20:40Z" end-time="2026-09-21 03:20:40Z" duration="0.238157" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1156" name="IsValidFolderName_RejectsSlash" fullname="MyUnityMcp.Editor.Tests.Assets.AssetOpsTests.IsValidFolderName_RejectsSlash" methodname="IsValidFolderName_RejectsSlash" classname="MyUnityMcp.Editor.Tests.Assets.AssetOpsTests" runstate="Runnable" seed="276583178" result="Passed" start-time="2026-09-21 03:20:40Z" end-time="2026-09-21 03:20:40Z" duration="0.203673" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1158" name="NormalizeAssetPath_TrimsAndSlashes" fullname="MyUnityMcp.Editor.Tests.Assets.AssetOpsTests.NormalizeAssetPath_TrimsAndSlashes" methodname="NormalizeAssetPath_TrimsAndSlashes" classname="MyUnityMcp.Editor.Tests.Assets.AssetOpsTests" runstate="Runnable" seed="1418286942" result="Passed" start-time="2026-09-21 03:20:40Z" end-time="2026-09-21 03:20:41Z" duration="0.227122" asserts="0">
+                  <properties />
+                </test-case>
+              </test-suite>
+            </test-suite>
+            <test-suite type="TestSuite" id="1173" name="Components" fullname="MyUnityMcp.Editor.Tests.Components" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-09-21 03:20:41Z" end-time="2026-09-21 03:20:41Z" duration="0.125461" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-suite type="TestFixture" id="1146" name="ComponentOpsTests" fullname="MyUnityMcp.Editor.Tests.Components.ComponentOpsTests" classname="MyUnityMcp.Editor.Tests.Components.ComponentOpsTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-09-21 03:20:41Z" end-time="2026-09-21 03:20:41Z" duration="0.122589" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1149" name="Add_ThenRemove_Rigidbody" fullname="MyUnityMcp.Editor.Tests.Components.ComponentOpsTests.Add_ThenRemove_Rigidbody" methodname="Add_ThenRemove_Rigidbody" classname="MyUnityMcp.Editor.Tests.Components.ComponentOpsTests" runstate="Runnable" seed="338442442" result="Passed" start-time="2026-09-21 03:20:41Z" end-time="2026-09-21 03:20:41Z" duration="0.013432" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1152" name="ConvertValue_Vector3" fullname="MyUnityMcp.Editor.Tests.Components.ComponentOpsTests.ConvertValue_Vector3" methodname="ConvertValue_Vector3" classname="MyUnityMcp.Editor.Tests.Components.ComponentOpsTests" runstate="Runnable" seed="1450521662" result="Passed" start-time="2026-09-21 03:20:41Z" end-time="2026-09-21 03:20:41Z" duration="0.003111" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1150" name="Remove_Transform_Fails" fullname="MyUnityMcp.Editor.Tests.Components.ComponentOpsTests.Remove_Transform_Fails" methodname="Remove_Transform_Fails" classname="MyUnityMcp.Editor.Tests.Components.ComponentOpsTests" runstate="Runnable" seed="1140045988" result="Passed" start-time="2026-09-21 03:20:41Z" end-time="2026-09-21 03:20:41Z" duration="0.000469" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1147" name="Resolve_Rigidbody_Succeeds" fullname="MyUnityMcp.Editor.Tests.Components.ComponentOpsTests.Resolve_Rigidbody_Succeeds" methodname="Resolve_Rigidbody_Succeeds" classname="MyUnityMcp.Editor.Tests.Components.ComponentOpsTests" runstate="Runnable" seed="977315920" result="Passed" start-time="2026-09-21 03:20:41Z" end-time="2026-09-21 03:20:41Z" duration="0.000179" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1148" name="Resolve_Unknown_Fails" fullname="MyUnityMcp.Editor.Tests.Components.ComponentOpsTests.Resolve_Unknown_Fails" methodname="Resolve_Unknown_Fails" classname="MyUnityMcp.Editor.Tests.Components.ComponentOpsTests" runstate="Runnable" seed="141244553" result="Passed" start-time="2026-09-21 03:20:41Z" end-time="2026-09-21 03:20:41Z" duration="0.100451" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1151" name="SetField_RigidbodyMass" fullname="MyUnityMcp.Editor.Tests.Components.ComponentOpsTests.SetField_RigidbodyMass" methodname="SetField_RigidbodyMass" classname="MyUnityMcp.Editor.Tests.Components.ComponentOpsTests" runstate="Runnable" seed="1713495458" result="Passed" start-time="2026-09-21 03:20:41Z" end-time="2026-09-21 03:20:41Z" duration="0.002845" asserts="0">
+                  <properties />
+                </test-case>
+              </test-suite>
+            </test-suite>
+            <test-suite type="TestSuite" id="1172" name="Console" fullname="MyUnityMcp.Editor.Tests.Console" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-21 03:20:41Z" end-time="2026-09-21 03:20:41Z" duration="0.018143" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-suite type="TestFixture" id="1142" name="McpLogCollectorTests" fullname="MyUnityMcp.Editor.Tests.Console.McpLogCollectorTests" classname="MyUnityMcp.Editor.Tests.Console.McpLogCollectorTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-21 03:20:41Z" end-time="2026-09-21 03:20:41Z" duration="0.012269" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1145" name="Clear_EmptiesBuffer" fullname="MyUnityMcp.Editor.Tests.Console.McpLogCollectorTests.Clear_EmptiesBuffer" methodname="Clear_EmptiesBuffer" classname="MyUnityMcp.Editor.Tests.Console.McpLogCollectorTests" runstate="Runnable" seed="248487347" result="Passed" start-time="2026-09-21 03:20:41Z" end-time="2026-09-21 03:20:41Z" duration="0.005659" asserts="0">
+                  <properties />
+                  <output><![CDATA[McpLogCollector_ToClear
+]]></output>
+                </test-case>
+                <test-case id="1143" name="Query_AfterLog_ReturnsEntry" fullname="MyUnityMcp.Editor.Tests.Console.McpLogCollectorTests.Query_AfterLog_ReturnsEntry" methodname="Query_AfterLog_ReturnsEntry" classname="MyUnityMcp.Editor.Tests.Console.McpLogCollectorTests" runstate="Runnable" seed="403153766" result="Passed" start-time="2026-09-21 03:20:41Z" end-time="2026-09-21 03:20:41Z" duration="0.003454" asserts="0">
+                  <properties />
+                  <output><![CDATA[McpLogCollector_Test_Message
+]]></output>
+                </test-case>
+                <test-case id="1144" name="Query_FilterWarning_ExcludesLog" fullname="MyUnityMcp.Editor.Tests.Console.McpLogCollectorTests.Query_FilterWarning_ExcludesLog" methodname="Query_FilterWarning_ExcludesLog" classname="MyUnityMcp.Editor.Tests.Console.McpLogCollectorTests" runstate="Runnable" seed="44899326" result="Passed" start-time="2026-09-21 03:20:41Z" end-time="2026-09-21 03:20:41Z" duration="0.001617" asserts="0">
+                  <properties />
+                  <output><![CDATA[McpLogCollector_OnlyLog
+]]></output>
+                </test-case>
+              </test-suite>
+            </test-suite>
+            <test-suite type="TestSuite" id="1171" name="GameObjects" fullname="MyUnityMcp.Editor.Tests.GameObjects" runstate="Runnable" testcasecount="20" result="Passed" start-time="2026-09-21 03:20:41Z" end-time="2026-09-21 03:20:42Z" duration="1.361415" total="20" passed="20" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-suite type="TestFixture" id="1119" name="GameObjectLookupTests" fullname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectLookupTests" classname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectLookupTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-09-21 03:20:41Z" end-time="2026-09-21 03:20:41Z" duration="0.009599" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1120" name="Find_ByInstanceId_ReturnsObject" fullname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectLookupTests.Find_ByInstanceId_ReturnsObject" methodname="Find_ByInstanceId_ReturnsObject" classname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectLookupTests" runstate="Runnable" seed="1015885542" result="Passed" start-time="2026-09-21 03:20:41Z" end-time="2026-09-21 03:20:41Z" duration="0.003154" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1123" name="Find_ByName_WhenAmbiguous_ReturnsError" fullname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectLookupTests.Find_ByName_WhenAmbiguous_ReturnsError" methodname="Find_ByName_WhenAmbiguous_ReturnsError" classname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectLookupTests" runstate="Runnable" seed="935844515" result="Passed" start-time="2026-09-21 03:20:41Z" end-time="2026-09-21 03:20:41Z" duration="0.002844" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1122" name="Find_ByName_WhenUnique_ReturnsObject" fullname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectLookupTests.Find_ByName_WhenUnique_ReturnsObject" methodname="Find_ByName_WhenUnique_ReturnsObject" classname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectLookupTests" runstate="Runnable" seed="1155065308" result="Passed" start-time="2026-09-21 03:20:41Z" end-time="2026-09-21 03:20:41Z" duration="0.000365" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1121" name="Find_ByPath_ReturnsNestedObject" fullname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectLookupTests.Find_ByPath_ReturnsNestedObject" methodname="Find_ByPath_ReturnsNestedObject" classname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectLookupTests" runstate="Runnable" seed="150576674" result="Passed" start-time="2026-09-21 03:20:41Z" end-time="2026-09-21 03:20:41Z" duration="0.001002" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1124" name="Find_Missing_ReturnsError" fullname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectLookupTests.Find_Missing_ReturnsError" methodname="Find_Missing_ReturnsError" classname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectLookupTests" runstate="Runnable" seed="1156814149" result="Passed" start-time="2026-09-21 03:20:41Z" end-time="2026-09-21 03:20:41Z" duration="0.000380" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1125" name="Find_NoArgs_ReturnsError" fullname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectLookupTests.Find_NoArgs_ReturnsError" methodname="Find_NoArgs_ReturnsError" classname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectLookupTests" runstate="Runnable" seed="254294778" result="Passed" start-time="2026-09-21 03:20:41Z" end-time="2026-09-21 03:20:41Z" duration="0.000185" asserts="0">
+                  <properties />
+                </test-case>
+              </test-suite>
+              <test-suite type="TestFixture" id="1126" name="GameObjectOpsBatch2Tests" fullname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectOpsBatch2Tests" classname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectOpsBatch2Tests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-09-21 03:20:41Z" end-time="2026-09-21 03:20:42Z" duration="1.335763" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1127" name="BatchCreate_Empty_Fails" fullname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectOpsBatch2Tests.BatchCreate_Empty_Fails" methodname="BatchCreate_Empty_Fails" classname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectOpsBatch2Tests" runstate="Runnable" seed="1776379366" result="Passed" start-time="2026-09-21 03:20:41Z" end-time="2026-09-21 03:20:41Z" duration="0.278883" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1129" name="BatchCreate_PartialFailure_ReportsErrors" fullname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectOpsBatch2Tests.BatchCreate_PartialFailure_ReportsErrors" methodname="BatchCreate_PartialFailure_ReportsErrors" classname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectOpsBatch2Tests" runstate="Runnable" seed="197425574" result="Passed" start-time="2026-09-21 03:20:41Z" end-time="2026-09-21 03:20:41Z" duration="0.208042" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1128" name="BatchCreate_TwoItems_Succeeds" fullname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectOpsBatch2Tests.BatchCreate_TwoItems_Succeeds" methodname="BatchCreate_TwoItems_Succeeds" classname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectOpsBatch2Tests" runstate="Runnable" seed="1319762146" result="Passed" start-time="2026-09-21 03:20:41Z" end-time="2026-09-21 03:20:42Z" duration="0.214794" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1132" name="CreateInScene_ClosedWithoutOpen_Fails" fullname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectOpsBatch2Tests.CreateInScene_ClosedWithoutOpen_Fails" methodname="CreateInScene_ClosedWithoutOpen_Fails" classname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectOpsBatch2Tests" runstate="Runnable" seed="1294355459" result="Passed" start-time="2026-09-21 03:20:42Z" end-time="2026-09-21 03:20:42Z" duration="0.200999" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1130" name="CreateInScene_EmptyPath_Fails" fullname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectOpsBatch2Tests.CreateInScene_EmptyPath_Fails" methodname="CreateInScene_EmptyPath_Fails" classname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectOpsBatch2Tests" runstate="Runnable" seed="1445830115" result="Passed" start-time="2026-09-21 03:20:42Z" end-time="2026-09-21 03:20:42Z" duration="0.217295" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1131" name="CreateInScene_OpensAdditiveAndCreates" fullname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectOpsBatch2Tests.CreateInScene_OpensAdditiveAndCreates" methodname="CreateInScene_OpensAdditiveAndCreates" classname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectOpsBatch2Tests" runstate="Runnable" seed="837658745" result="Passed" start-time="2026-09-21 03:20:42Z" end-time="2026-09-21 03:20:42Z" duration="0.213040" asserts="0">
+                  <properties />
+                </test-case>
+              </test-suite>
+              <test-suite type="TestFixture" id="1133" name="GameObjectOpsTests" fullname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectOpsTests" classname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectOpsTests" runstate="Runnable" testcasecount="8" result="Passed" start-time="2026-09-21 03:20:42Z" end-time="2026-09-21 03:20:42Z" duration="0.014914" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <output><![CDATA[GfxDevice renderer is null. Unity cannot update the Ambient Probe and Reflection Probes that the SkyManager generates. Run the Editor without the -nographics argument or generate lighting for your scene.
+]]></output>
+                <test-case id="1134" name="Create_EmptyName_Fails" fullname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectOpsTests.Create_EmptyName_Fails" methodname="Create_EmptyName_Fails" classname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectOpsTests" runstate="Runnable" seed="220783010" result="Passed" start-time="2026-09-21 03:20:42Z" end-time="2026-09-21 03:20:42Z" duration="0.000537" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1136" name="Create_PrimitiveCube_HasMeshFilter" fullname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectOpsTests.Create_PrimitiveCube_HasMeshFilter" methodname="Create_PrimitiveCube_HasMeshFilter" classname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectOpsTests" runstate="Runnable" seed="2036582415" result="Passed" start-time="2026-09-21 03:20:42Z" end-time="2026-09-21 03:20:42Z" duration="0.000884" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1135" name="Create_ThenFind_Succeeds" fullname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectOpsTests.Create_ThenFind_Succeeds" methodname="Create_ThenFind_Succeeds" classname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectOpsTests" runstate="Runnable" seed="1114586264" result="Passed" start-time="2026-09-21 03:20:42Z" end-time="2026-09-21 03:20:42Z" duration="0.000609" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1137" name="Destroy_RemovesObject" fullname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectOpsTests.Destroy_RemovesObject" methodname="Destroy_RemovesObject" classname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectOpsTests" runstate="Runnable" seed="270120925" result="Passed" start-time="2026-09-21 03:20:42Z" end-time="2026-09-21 03:20:42Z" duration="0.000984" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1138" name="Duplicate_CreatesSibling" fullname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectOpsTests.Duplicate_CreatesSibling" methodname="Duplicate_CreatesSibling" classname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectOpsTests" runstate="Runnable" seed="700078439" result="Passed" start-time="2026-09-21 03:20:42Z" end-time="2026-09-21 03:20:42Z" duration="0.003863" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1141" name="ListScene_IncludesCreatedObject" fullname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectOpsTests.ListScene_IncludesCreatedObject" methodname="ListScene_IncludesCreatedObject" classname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectOpsTests" runstate="Runnable" seed="816319222" result="Passed" start-time="2026-09-21 03:20:42Z" end-time="2026-09-21 03:20:42Z" duration="0.000939" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1140" name="Modify_RenamesAndFailsWhenNoFields" fullname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectOpsTests.Modify_RenamesAndFailsWhenNoFields" methodname="Modify_RenamesAndFailsWhenNoFields" classname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectOpsTests" runstate="Runnable" seed="210521604" result="Passed" start-time="2026-09-21 03:20:42Z" end-time="2026-09-21 03:20:42Z" duration="0.001335" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1139" name="SetParent_AndUnparent" fullname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectOpsTests.SetParent_AndUnparent" methodname="SetParent_AndUnparent" classname="MyUnityMcp.Editor.Tests.GameObjects.GameObjectOpsTests" runstate="Runnable" seed="1486528023" result="Passed" start-time="2026-09-21 03:20:42Z" end-time="2026-09-21 03:20:42Z" duration="0.002492" asserts="0">
+                  <properties />
+                </test-case>
+              </test-suite>
+            </test-suite>
+            <test-suite type="TestSuite" id="1170" name="Prefabs" fullname="MyUnityMcp.Editor.Tests.Prefabs" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-09-21 03:20:42Z" end-time="2026-09-21 03:20:43Z" duration="0.862363" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-suite type="TestFixture" id="1114" name="PrefabOpsTests" fullname="MyUnityMcp.Editor.Tests.Prefabs.PrefabOpsTests" classname="MyUnityMcp.Editor.Tests.Prefabs.PrefabOpsTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-09-21 03:20:42Z" end-time="2026-09-21 03:20:43Z" duration="0.861408" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1115" name="Create_MissingPath_Fails" fullname="MyUnityMcp.Editor.Tests.Prefabs.PrefabOpsTests.Create_MissingPath_Fails" methodname="Create_MissingPath_Fails" classname="MyUnityMcp.Editor.Tests.Prefabs.PrefabOpsTests" runstate="Runnable" seed="1825120224" result="Passed" start-time="2026-09-21 03:20:42Z" end-time="2026-09-21 03:20:42Z" duration="0.039402" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1116" name="Create_ThenInstantiate_ThenGetInfo" fullname="MyUnityMcp.Editor.Tests.Prefabs.PrefabOpsTests.Create_ThenInstantiate_ThenGetInfo" methodname="Create_ThenInstantiate_ThenGetInfo" classname="MyUnityMcp.Editor.Tests.Prefabs.PrefabOpsTests" runstate="Runnable" seed="1361340630" result="Passed" start-time="2026-09-21 03:20:42Z" end-time="2026-09-21 03:20:43Z" duration="0.421945" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1118" name="OpenStage_Missing_Fails" fullname="MyUnityMcp.Editor.Tests.Prefabs.PrefabOpsTests.OpenStage_Missing_Fails" methodname="OpenStage_Missing_Fails" classname="MyUnityMcp.Editor.Tests.Prefabs.PrefabOpsTests" runstate="Runnable" seed="1697139408" result="Passed" start-time="2026-09-21 03:20:43Z" end-time="2026-09-21 03:20:43Z" duration="0.001896" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1117" name="OpenStage_Save_Close_RoundTrip" fullname="MyUnityMcp.Editor.Tests.Prefabs.PrefabOpsTests.OpenStage_Save_Close_RoundTrip" methodname="OpenStage_Save_Close_RoundTrip" classname="MyUnityMcp.Editor.Tests.Prefabs.PrefabOpsTests" runstate="Runnable" seed="966658839" result="Passed" start-time="2026-09-21 03:20:43Z" end-time="2026-09-21 03:20:43Z" duration="0.396765" asserts="0">
+                  <properties />
+                </test-case>
+              </test-suite>
+            </test-suite>
+            <test-suite type="TestSuite" id="1169" name="Scenes" fullname="MyUnityMcp.Editor.Tests.Scenes" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-09-21 03:20:43Z" end-time="2026-09-21 03:20:44Z" duration="0.811244" total="12" passed="11" failed="0" inconclusive="1" skipped="0" asserts="0">
+              <properties />
+              <test-suite type="TestFixture" id="1100" name="SceneOpsBatch1Tests" fullname="MyUnityMcp.Editor.Tests.Scenes.SceneOpsBatch1Tests" classname="MyUnityMcp.Editor.Tests.Scenes.SceneOpsBatch1Tests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-09-21 03:20:43Z" end-time="2026-09-21 03:20:44Z" duration="0.805465" total="6" passed="5" failed="0" inconclusive="1" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1105" name="Close_Additive_Succeeds" fullname="MyUnityMcp.Editor.Tests.Scenes.SceneOpsBatch1Tests.Close_Additive_Succeeds" methodname="Close_Additive_Succeeds" classname="MyUnityMcp.Editor.Tests.Scenes.SceneOpsBatch1Tests" runstate="Runnable" seed="248821436" result="Passed" start-time="2026-09-21 03:20:43Z" end-time="2026-09-21 03:20:43Z" duration="0.240288" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1104" name="Close_OnlyScene_Fails" fullname="MyUnityMcp.Editor.Tests.Scenes.SceneOpsBatch1Tests.Close_OnlyScene_Fails" methodname="Close_OnlyScene_Fails" classname="MyUnityMcp.Editor.Tests.Scenes.SceneOpsBatch1Tests" runstate="Runnable" seed="1121562982" result="Passed" start-time="2026-09-21 03:20:43Z" end-time="2026-09-21 03:20:43Z" duration="0.104509" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1101" name="GetActive_Succeeds" fullname="MyUnityMcp.Editor.Tests.Scenes.SceneOpsBatch1Tests.GetActive_Succeeds" methodname="GetActive_Succeeds" classname="MyUnityMcp.Editor.Tests.Scenes.SceneOpsBatch1Tests" runstate="Runnable" seed="1442854988" result="Passed" start-time="2026-09-21 03:20:43Z" end-time="2026-09-21 03:20:43Z" duration="0.103474" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1102" name="ListProjectScenes_Succeeds" fullname="MyUnityMcp.Editor.Tests.Scenes.SceneOpsBatch1Tests.ListProjectScenes_Succeeds" methodname="ListProjectScenes_Succeeds" classname="MyUnityMcp.Editor.Tests.Scenes.SceneOpsBatch1Tests" runstate="Runnable" seed="462038103" result="Passed" start-time="2026-09-21 03:20:43Z" end-time="2026-09-21 03:20:44Z" duration="0.105648" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1106" name="SetActive_Additive_Succeeds" fullname="MyUnityMcp.Editor.Tests.Scenes.SceneOpsBatch1Tests.SetActive_Additive_Succeeds" methodname="SetActive_Additive_Succeeds" classname="MyUnityMcp.Editor.Tests.Scenes.SceneOpsBatch1Tests" runstate="Runnable" seed="1068224092" result="Inconclusive" start-time="2026-09-21 03:20:44Z" end-time="2026-09-21 03:20:44Z" duration="0.145734" asserts="0">
+                  <properties />
+                  <reason>
+                    <message><![CDATA[  预置激活 additive 失败则跳过
+  Expected: True
+  But was:  False
+]]></message>
+                  </reason>
+                </test-case>
+                <test-case id="1103" name="SetActive_Unknown_Fails" fullname="MyUnityMcp.Editor.Tests.Scenes.SceneOpsBatch1Tests.SetActive_Unknown_Fails" methodname="SetActive_Unknown_Fails" classname="MyUnityMcp.Editor.Tests.Scenes.SceneOpsBatch1Tests" runstate="Runnable" seed="1275753524" result="Passed" start-time="2026-09-21 03:20:44Z" end-time="2026-09-21 03:20:44Z" duration="0.102249" asserts="0">
+                  <properties />
+                </test-case>
+              </test-suite>
+              <test-suite type="TestFixture" id="1107" name="SceneOpsTests" fullname="MyUnityMcp.Editor.Tests.Scenes.SceneOpsTests" classname="MyUnityMcp.Editor.Tests.Scenes.SceneOpsTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-09-21 03:20:44Z" end-time="2026-09-21 03:20:44Z" duration="0.003496" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <output><![CDATA[GfxDevice renderer is null. Unity cannot update the Ambient Probe and Reflection Probes that the SkyManager generates. Run the Editor without the -nographics argument or generate lighting for your scene.
+]]></output>
+                <test-case id="1112" name="GetData_ActiveScene_Succeeds" fullname="MyUnityMcp.Editor.Tests.Scenes.SceneOpsTests.GetData_ActiveScene_Succeeds" methodname="GetData_ActiveScene_Succeeds" classname="MyUnityMcp.Editor.Tests.Scenes.SceneOpsTests" runstate="Runnable" seed="456546688" result="Passed" start-time="2026-09-21 03:20:44Z" end-time="2026-09-21 03:20:44Z" duration="0.000664" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1113" name="GetData_UnknownScene_Fails" fullname="MyUnityMcp.Editor.Tests.Scenes.SceneOpsTests.GetData_UnknownScene_Fails" methodname="GetData_UnknownScene_Fails" classname="MyUnityMcp.Editor.Tests.Scenes.SceneOpsTests" runstate="Runnable" seed="164028748" result="Passed" start-time="2026-09-21 03:20:44Z" end-time="2026-09-21 03:20:44Z" duration="0.000173" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1111" name="ListOpened_Succeeds" fullname="MyUnityMcp.Editor.Tests.Scenes.SceneOpsTests.ListOpened_Succeeds" methodname="ListOpened_Succeeds" classname="MyUnityMcp.Editor.Tests.Scenes.SceneOpsTests" runstate="Runnable" seed="460029542" result="Passed" start-time="2026-09-21 03:20:44Z" end-time="2026-09-21 03:20:44Z" duration="0.000271" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1108" name="ValidateSceneAssetPath_Empty_Fails" fullname="MyUnityMcp.Editor.Tests.Scenes.SceneOpsTests.ValidateSceneAssetPath_Empty_Fails" methodname="ValidateSceneAssetPath_Empty_Fails" classname="MyUnityMcp.Editor.Tests.Scenes.SceneOpsTests" runstate="Runnable" seed="1153517359" result="Passed" start-time="2026-09-21 03:20:44Z" end-time="2026-09-21 03:20:44Z" duration="0.000125" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1110" name="ValidateSceneAssetPath_Missing_Fails" fullname="MyUnityMcp.Editor.Tests.Scenes.SceneOpsTests.ValidateSceneAssetPath_Missing_Fails" methodname="ValidateSceneAssetPath_Missing_Fails" classname="MyUnityMcp.Editor.Tests.Scenes.SceneOpsTests" runstate="Runnable" seed="230883911" result="Passed" start-time="2026-09-21 03:20:44Z" end-time="2026-09-21 03:20:44Z" duration="0.000111" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1109" name="ValidateSceneAssetPath_NotUnity_Fails" fullname="MyUnityMcp.Editor.Tests.Scenes.SceneOpsTests.ValidateSceneAssetPath_NotUnity_Fails" methodname="ValidateSceneAssetPath_NotUnity_Fails" classname="MyUnityMcp.Editor.Tests.Scenes.SceneOpsTests" runstate="Runnable" seed="2142160523" result="Passed" start-time="2026-09-21 03:20:44Z" end-time="2026-09-21 03:20:44Z" duration="0.000088" asserts="0">
+                  <properties />
+                </test-case>
+              </test-suite>
+            </test-suite>
+            <test-suite type="TestSuite" id="1168" name="SystemTools" fullname="MyUnityMcp.Editor.Tests.SystemTools" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-09-21 03:20:44Z" end-time="2026-09-21 03:20:44Z" duration="0.017123" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-suite type="TestFixture" id="1092" name="SystemOpsTests" fullname="MyUnityMcp.Editor.Tests.SystemTools.SystemOpsTests" classname="MyUnityMcp.Editor.Tests.SystemTools.SystemOpsTests" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-09-21 03:20:44Z" end-time="2026-09-21 03:20:44Z" duration="0.016806" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1099" name="BringToForeground_Succeeds" fullname="MyUnityMcp.Editor.Tests.SystemTools.SystemOpsTests.BringToForeground_Succeeds" methodname="BringToForeground_Succeeds" classname="MyUnityMcp.Editor.Tests.SystemTools.SystemOpsTests" runstate="Runnable" seed="1089359246" result="Passed" start-time="2026-09-21 03:20:44Z" end-time="2026-09-21 03:20:44Z" duration="0.001075" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1095" name="ExitPlayMode_WhenStopped_Succeeds" fullname="MyUnityMcp.Editor.Tests.SystemTools.SystemOpsTests.ExitPlayMode_WhenStopped_Succeeds" methodname="ExitPlayMode_WhenStopped_Succeeds" classname="MyUnityMcp.Editor.Tests.SystemTools.SystemOpsTests" runstate="Runnable" seed="1957860805" result="Passed" start-time="2026-09-21 03:20:44Z" end-time="2026-09-21 03:20:44Z" duration="0.000294" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1096" name="GetCompilationStatus_Succeeds" fullname="MyUnityMcp.Editor.Tests.SystemTools.SystemOpsTests.GetCompilationStatus_Succeeds" methodname="GetCompilationStatus_Succeeds" classname="MyUnityMcp.Editor.Tests.SystemTools.SystemOpsTests" runstate="Runnable" seed="546965650" result="Passed" start-time="2026-09-21 03:20:44Z" end-time="2026-09-21 03:20:44Z" duration="0.000235" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1094" name="GetPlayModeState_InEditMode_IsStopped" fullname="MyUnityMcp.Editor.Tests.SystemTools.SystemOpsTests.GetPlayModeState_InEditMode_IsStopped" methodname="GetPlayModeState_InEditMode_IsStopped" classname="MyUnityMcp.Editor.Tests.SystemTools.SystemOpsTests" runstate="Runnable" seed="101809733" result="Passed" start-time="2026-09-21 03:20:44Z" end-time="2026-09-21 03:20:44Z" duration="0.000457" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1093" name="GetProjectInfo_Succeeds" fullname="MyUnityMcp.Editor.Tests.SystemTools.SystemOpsTests.GetProjectInfo_Succeeds" methodname="GetProjectInfo_Succeeds" classname="MyUnityMcp.Editor.Tests.SystemTools.SystemOpsTests" runstate="Runnable" seed="607321940" result="Passed" start-time="2026-09-21 03:20:44Z" end-time="2026-09-21 03:20:44Z" duration="0.001308" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1097" name="RunMenuItem_Empty_Fails" fullname="MyUnityMcp.Editor.Tests.SystemTools.SystemOpsTests.RunMenuItem_Empty_Fails" methodname="RunMenuItem_Empty_Fails" classname="MyUnityMcp.Editor.Tests.SystemTools.SystemOpsTests" runstate="Runnable" seed="1531308366" result="Passed" start-time="2026-09-21 03:20:44Z" end-time="2026-09-21 03:20:44Z" duration="0.000229" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1098" name="RunMenuItem_Invalid_Fails" fullname="MyUnityMcp.Editor.Tests.SystemTools.SystemOpsTests.RunMenuItem_Invalid_Fails" methodname="RunMenuItem_Invalid_Fails" classname="MyUnityMcp.Editor.Tests.SystemTools.SystemOpsTests" runstate="Runnable" seed="1205205788" result="Passed" start-time="2026-09-21 03:20:44Z" end-time="2026-09-21 03:20:44Z" duration="0.009130" asserts="0">
+                  <properties />
+                  <output><![CDATA[
+IgnoreFailingMessages:true
+ExecuteMenuItem failed because there is no menu named 'No/Such/Menu/Item_McpZZZ'
+
+IgnoreFailingMessages:false
+]]></output>
+                </test-case>
+              </test-suite>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

@@ -1,0 +1,23 @@
+---
+description: 开发 kabu-unity-mcp 时必须抬 package 版本号并写修改日志。改这个包时读取。
+alwaysApply: true
+---
+
+# kabu-unity-mcp 版本与修改日志
+
+Package Manager 显示的版本号来自仓库根目录 `package.json` 的 `version`，不是 git 提交号。不抬这个号，Update 成功后界面仍是旧版本。
+
+用户能感知的改动（新工具、行为变化、修复）必须在同一次提交里完成：
+
+1. 提升 `package.json` 的 `version`。修复加补丁号（`0.1.0` → `0.1.1`），新功能加次版本号（`0.1.0` → `0.2.0`），不兼容改动加主版本号。
+2. 在 `CHANGELOG.md` 顶部为该版本新增一节，用 `- ` 写清改了什么、为什么改。
+3. `version` 与 `CHANGELOG.md` 的标题必须一致。
+
+新增进包的文件（`.cs`、`.md` 等）必须一起提交对应 `.meta`。Git 包装进 `PackageCache` 后是 immutable 目录，缺 meta 的资源会被忽略，脚本还会导致 CS0103。
+
+## 禁止
+
+- 只改代码，不抬 `package.json` 的 `version`
+- 抬了版本号但不写 `CHANGELOG.md`
+- 用 git 提交号代替 Package Manager 上的版本号
+- 新增包内文件却不提交 `.meta`

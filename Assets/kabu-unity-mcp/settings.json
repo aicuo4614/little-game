@@ -103,6 +103,22 @@
     "unity_skill_editor_stop": true,
     "unity_skill_editor_seek": true,
     "unity_skill_editor_snapshot": true,
-    "unity_skill_editor_record": true
+    "unity_skill_editor_record": true,
+    "unity_combat_get_state": true,
+    "unity_combat_get_view": true,
+    "unity_combat_get_events": true,
+    "unity_combat_restart": true,
+    "unity_combat_spin": true,
+    "unity_combat_deploy": true,
+    "unity_combat_merge": true,
+    "unity_combat_choose_branch": true,
+    "unity_combat_start_wave": true,
+    "unity_combat_next_wave": true,
+    "unity_combat_choose_reward": true,
+    "unity_combat_aim": true,
+    "unity_combat_focus": true,
+    "unity_combat_protect": true,
+    "unity_combat_pointer": true,
+    "unity_combat_wait_for_event": true
   }
 }

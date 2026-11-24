@@ -1,0 +1,297 @@
+{
+  "restartCancelPreservesSeed": true,
+  "restartConfirmationCreatesFreshSeed": true,
+  "rigAnimationAdvances": true,
+  "presentation": {
+    "actors": [
+      {
+        "id": 1,
+        "model": "KayKit_Knight",
+        "animationPlaying": true,
+        "renderers": [
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          }
+        ],
+        "upperArm": [
+          {
+            "x": 328.219269,
+            "y": 298.2243,
+            "z": 153.3562
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "model": "KayKit_Ranger",
+        "animationPlaying": true,
+        "renderers": [
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          }
+        ],
+        "upperArm": [
+          {
+            "x": 328.219269,
+            "y": 298.2243,
+            "z": 153.3562
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "model": "KayKit_Knight",
+        "animationPlaying": true,
+        "renderers": [
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          }
+        ],
+        "upperArm": [
+          {
+            "x": 328.219269,
+            "y": 298.2243,
+            "z": 153.3562
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "model": "KayKit_Mage",
+        "animationPlaying": true,
+        "renderers": [
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          }
+        ],
+        "upperArm": [
+          {
+            "x": 328.219269,
+            "y": 298.2243,
+            "z": 153.3562
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "model": "KayKit_Knight",
+        "animationPlaying": true,
+        "renderers": [
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          }
+        ],
+        "upperArm": [
+          {
+            "x": 328.219269,
+            "y": 298.2243,
+            "z": 153.3562
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "model": "KayKit_Ranger",
+        "animationPlaying": true,
+        "renderers": [
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          },
+          {
+            "type": "SkinnedMeshRenderer",
+            "visible": true
+          }
+        ],
+        "upperArm": [
+          {
+            "x": 328.219269,
+            "y": 298.2243,
+            "z": 153.3562
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "checkedAt": "2026-11-23T21:06:03.898461+08:00",
+  "command": "python -X utf8 Tools/Mobile/mobile_test.py",
+  "deviceConnected": false,
+  "installedLatest": false,
+  "deviceTouchVerified": false,
+  "reason": "ADB devices -l没有设备；工具返回没有可用手机，未安装旧包或卸载应用"
+}

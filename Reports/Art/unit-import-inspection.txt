@@ -1,0 +1,51 @@
+Assets/LittleGame/Art/UnitSources/TinyHero/Prefab/ModularCharacters/MC01.prefab active=Body05,Cloak02,Shield15,OHS09_Sword,AC05_Horn04,Eye01,Mouth01,Hair01,Head01_Male
+Assets/LittleGame/Art/UnitSources/TinyHero/Prefab/ModularCharacters/MC02.prefab active=Body01,Shield01,OHS01_Stick,Eye05,Mouth09,Head01_Male,Eyebrow01
+Assets/LittleGame/Art/UnitSources/TinyHero/Prefab/ModularCharacters/MC03.prefab active=Body03,Spear01,AC01_Heart,AC02_Leaf,AC11_Mustache02,Eye03,Mouth03,Hair02,Head01_Male
+Assets/LittleGame/Art/UnitSources/TinyHero/Prefab/ModularCharacters/MC04.prefab active=Body06,BackPack01,AC04_AngelEars,AC07_PiratePatch,Eye04,Mouth02,Hair03,Head01_Male
+Assets/LittleGame/Art/UnitSources/TinyHero/Prefab/ModularCharacters/MC05.prefab active=Body07,Cloak01,THS04_Sword,AC04_BunnyEars,AC10_Mustache04,Eye03,Hair04,Head01_Male
+Assets/LittleGame/Art/UnitSources/TinyHero/Prefab/ModularCharacters/MC06.prefab active=Body08,BackPack02,Spear02,AC04_AnthenaEars,Eye06,Mouth05,Hair05,Head03_Purple
+Assets/LittleGame/Art/UnitSources/TinyHero/Prefab/ModularCharacters/MC07.prefab active=Body09,BackPack03,Wand01,AC03_NerdGlass,Eye09,Head05_Santa,Hat08,Eyebrow01
+Assets/LittleGame/Art/UnitSources/TinyHero/Prefab/ModularCharacters/MC08.prefab active=Body20,Cloak03,OHS06_Sword,OHS04_Sword,Eye12,Mouth06,Head03_Yellow,Hat02,Eyebrow01
+Assets/LittleGame/Art/UnitSources/TinyHero/Prefab/ModularCharacters/MC09.prefab active=Body18,Cloak03,OHS10_Axe,OHS13_Axe,HeadArmor04
+Assets/LittleGame/Art/UnitSources/TinyHero/Prefab/ModularCharacters/MC10.prefab active=Body17,Cloak01,OHS07_Sword,HeadArmor05
+Assets/LittleGame/Art/UnitSources/TinyHero/Prefab/ModularCharacters/MC11.prefab active=Body02,Bow01,Arrow01,AC07_PiratePatch,AC09_Ribbon,Eye07,Mouth02,Hair08,Head02_Female
+Assets/LittleGame/Art/UnitSources/TinyHero/Prefab/ModularCharacters/MC12.prefab active=Body04,Cloak01,Shield03,OHS02_Niddle,AC04_ShortEars,AC08_NinjaMask01,Eye08,Mouth08,Hair07,Head02_Female
+Assets/LittleGame/Art/UnitSources/TinyHero/Prefab/ModularCharacters/MC13.prefab active=Body10,Cloak03,Shield05,OHS08_Sword,Eye02,Mouth02,Hair06,Head02_Female
+Assets/LittleGame/Art/UnitSources/TinyHero/Prefab/ModularCharacters/MC14.prefab active=Body11,BackPack02,Wand07,AC05_Horn03,Eye10,Mouth06,Hair09,Head02_Female
+Assets/LittleGame/Art/UnitSources/TinyHero/Prefab/ModularCharacters/MC15.prefab active=Body12,BackPack02,THS06_Sword,AC03_NightVision,Eye11,Mouth11,Head02_Female,Hat05,Eyebrow01
+Assets/LittleGame/Art/UnitSources/TinyHero/Prefab/ModularCharacters/MC16.prefab active=Body13,Cloak01,Spear03,Eye05,Mouth07,Head02_Female,Hat14,Eyebrow02
+Assets/LittleGame/Art/UnitSources/TinyHero/Prefab/ModularCharacters/MC17.prefab active=Body14,Shield07,OHS16_Sword,AC03_BlackGlass,AC04_AnthenaEars,AC05_Horn02,Eye04,Mouth02,Hair10,Head02_Female,Eyebrow02
+Assets/LittleGame/Art/UnitSources/TinyHero/Prefab/ModularCharacters/MC18.prefab active=Body15,BackPack02,Shield11,OHS14_Hammer,HeadArmor02
+Assets/LittleGame/Art/UnitSources/TinyHero/Prefab/ModularCharacters/MC19.prefab active=Body16,Cloak03,Shield20,OHS12_Sword,HeadArmor01
+Assets/LittleGame/Art/UnitSources/TinyHero/Prefab/ModularCharacters/MC20.prefab active=Body19,Cloak02,Shield19,OHS15_Sword,HeadArmor03
+Assets/LittleGame/Art/UnitSources/TinyHero/Prefab/ModularCharacters/MC21.prefab active=Body11,Bow05,Arrow05,Eye11,Mouth12,Head02_Female,Hat07,Eyebrow02
+Assets/LittleGame/Art/UnitSources/TinyHero/Prefab/ModularCharacters/MC22.prefab active=Body18,Cloak03,THS05_Sword,Eye01,Mouth08,Head01_Male,Hat13,Eyebrow01
+Assets/LittleGame/Art/UnitSources/TinyHero/Prefab/ModularCharacters/MC23.prefab active=Body13,Shield12,OHS06_Sword,OHS14_Hammer,OHS11_Hammer,AC11_Mustache01,Eye03,Mouth09,Head03_Yellow,Hat11,Eyebrow01
+Assets/LittleGame/Art/UnitSources/TinyHero/Prefab/ModularCharacters/MC24.prefab active=Body03,Cloak02,AC03_HeavyMetalGlass,Eye04,Mouth10,Head01_Male,Hat06
+Assets/LittleGame/Art/UnitSources\Golem\Attack01_Golem_Anim.fbx clip=Attack01 length=0.9333334 bindings=Body,Body,Body
+Assets/LittleGame/Art/UnitSources\Golem\Attack02_Golem_Anim.fbx clip=Attack02 length=0.8333334 bindings=Body,Body,Body
+Assets/LittleGame/Art/UnitSources\Golem\Die_Golem_Anim.fbx clip=Die length=1 bindings=Body,Body,Body
+Assets/LittleGame/Art/UnitSources\Golem\GetHit_Golem_Anim.fbx clip=GetHit length=1 bindings=Body,Body,Body
+Assets/LittleGame/Art/UnitSources\Golem\GolemMesh.fbx clip=Take 001 length=1.666667 bindings=Golem,Golem,Golem
+Assets/LittleGame/Art/UnitSources\Golem\IdleBattle_Golem_Anim.fbx clip=IdleBattle length=0.8000001 bindings=Body,Body,Body
+Assets/LittleGame/Art/UnitSources\Golem\Walk_Golem_Anim.fbx clip=WalkFWD length=1 bindings=Body,Body,Body
+Assets/LittleGame/Art/UnitSources\Wolf\Wolf@Bite Attack.FBX clip=Bite Attack length=0.6666667 bindings=Wolf,Wolf,Wolf
+Assets/LittleGame/Art/UnitSources\Wolf\Wolf@Die.FBX clip=Die length=1.666667 bindings=Wolf,Wolf,Wolf
+Assets/LittleGame/Art/UnitSources\Wolf\Wolf@Idle.FBX clip=Idle length=1 bindings=Wolf,Wolf,Wolf
+Assets/LittleGame/Art/UnitSources\Wolf\Wolf@Run Forward In Place.FBX clip=Run Forward In Place length=0.4 bindings=Wolf,Wolf,Wolf
+Assets/LittleGame/Art/UnitSources\Wolf\Wolf@Take Damage.FBX clip=Take Damage length=0.6666667 bindings=Wolf,Wolf,Wolf
+Assets/LittleGame/Art/UnitSources\TinyHero\Animation\BowAndArrow\Attack01_BowAndArrow.fbx clip=Attack01_BowAndArrow length=0.6666667 bindings=root,root,root
+Assets/LittleGame/Art/UnitSources\TinyHero\Animation\BowAndArrow\Die01_BowAndArrow.fbx clip=Die01_BowAndArrow length=0.5 bindings=root,root,root
+Assets/LittleGame/Art/UnitSources\TinyHero\Animation\BowAndArrow\GetHit01_BowAndArrow.fbx clip=GetHit01_BowAndArrow length=0.4666667 bindings=root,root,root
+Assets/LittleGame/Art/UnitSources\TinyHero\Animation\BowAndArrow\Idle_Battle_BowAndArrow.fbx clip=Idle_Battle_BowAndArrow length=0.6666667 bindings=root,root,root
+Assets/LittleGame/Art/UnitSources\TinyHero\Animation\MagicWand\Attack01_MagicWand.fbx clip=Attack01_MagicWand length=0.5333334 bindings=root,root,root
+Assets/LittleGame/Art/UnitSources\TinyHero\Animation\MagicWand\Die01_MagicWand.fbx clip=Die01_MagicWand length=0.5 bindings=root,root,root
+Assets/LittleGame/Art/UnitSources\TinyHero\Animation\MagicWand\GetHit01_MagicWand.fbx clip=GetHit01_MagicWand length=0.4666667 bindings=root,root,root
+Assets/LittleGame/Art/UnitSources\TinyHero\Animation\MagicWand\Idle_Battle_MagicWand.fbx clip=Idle_Battle_MagicWand length=0.6666667 bindings=root,root,root
+Assets/LittleGame/Art/UnitSources\TinyHero\Animation\SwordAndShield\Attack01_SwordAndShiled.fbx clip=Attack01_SwordAndShiled length=0.5333334 bindings=root,root,root
+Assets/LittleGame/Art/UnitSources\TinyHero\Animation\SwordAndShield\Die01_SwordAndShield.fbx clip=Die01_SwordAndShield length=0.5 bindings=root,root,root
+Assets/LittleGame/Art/UnitSources\TinyHero\Animation\SwordAndShield\GetHit01_SwordAndShield.fbx clip=GetHit01_SwordAndShield length=0.4666667 bindings=root,root,root
+Assets/LittleGame/Art/UnitSources\TinyHero\Animation\SwordAndShield\Idle_Battle_SwordAndShiled.fbx clip=Idle_Battle_SwordAndShield length=0.6666667 bindings=root,root,root
+Assets/LittleGame/Art/UnitSources\TinyHero\Animation\BowAndArrow\InPlace\MoveFWD_Battle_InPlace_BowAndArrow.fbx clip=MoveFWD_Battle_InPlace_BowAndArrow length=0.5333334 bindings=root,root,root
+Assets/LittleGame/Art/UnitSources\TinyHero\Animation\MagicWand\InPlace\MoveFWD_Battle_InPlace_MagicWand.fbx clip=MoveFWD_Battle_InPlace_MagicWand length=0.5333334 bindings=root,root,root
+Assets/LittleGame/Art/UnitSources\TinyHero\Animation\SwordAndShield\InPlace\MoveFWD_Battle_InPlace_SwordAndShield.fbx clip=MoveFWD_Battle_InPlace_SwordAndShield length=0.5333334 bindings=root,root,root

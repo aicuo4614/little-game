@@ -1,0 +1,1 @@
+Run from the package root: `dotnet run --project Tests~/Reliability/Reliability.csproj`. Uses an ephemeral loopback port and a Unity Debug stub; does not control an installed Unity editor. Heartbeat tests age private timestamps to verify the real watchdogs without a 60-second wait.

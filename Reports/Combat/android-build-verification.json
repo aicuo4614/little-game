@@ -1,0 +1,13 @@
+{
+  "jobId": "a180b4ffe5554a27be6f9eb26957ff72",
+  "packageId": "com.littlegame.teardown.dev",
+  "bytes": 35028623,
+  "sha256": "c62c3315d5ef888d8287a44522c8480fffcc8dabd4715c09ccbaba3204c8a8bc",
+  "abis": [
+    "arm64-v8a"
+  ],
+  "hasIl2Cpp": true,
+  "latestSourceBuilt": true,
+  "deviceInstalled": false,
+  "deviceReason": "没有连接手机"
+}

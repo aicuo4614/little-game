@@ -1,0 +1,264 @@
+{
+  "accepted": true,
+  "reason": "已集火",
+  "state": {
+    "schemaVersion": 1,
+    "phase": "Fighting",
+    "seed": 173,
+    "wave": 1,
+    "totalWaves": 12,
+    "gateHp": 10,
+    "spins": 3,
+    "spinsPerWave": 3,
+    "consecutiveMisses": 0,
+    "teaching": true,
+    "fencesUp": true,
+    "tactics": 0,
+    "aim": "None",
+    "paused": false,
+    "speed": 1,
+    "battleTime": 0.1,
+    "forecast": [
+      {
+        "kind": "Grunt",
+        "name": "步兵",
+        "lane": 0,
+        "at": 0.0
+      },
+      {
+        "kind": "Grunt",
+        "name": "步兵",
+        "lane": 1,
+        "at": 0.0
+      },
+      {
+        "kind": "Grunt",
+        "name": "步兵",
+        "lane": 2,
+        "at": 0.0
+      }
+    ],
+    "units": [
+      {
+        "id": 1,
+        "kind": "Shield",
+        "name": "盾卫",
+        "star": 1,
+        "branch": "None",
+        "lane": 0,
+        "row": 0,
+        "x": -2.5,
+        "z": -1.06999993,
+        "hp": 245.0,
+        "maxHp": 245.0,
+        "shield": 0.0,
+        "cooldown": 0.15,
+        "skillCooldown": 0.7
+      },
+      {
+        "id": 2,
+        "kind": "Archer",
+        "name": "风弓手",
+        "star": 1,
+        "branch": "None",
+        "lane": 0,
+        "row": 1,
+        "x": -2.5,
+        "z": -2.3,
+        "hp": 125.0,
+        "maxHp": 125.0,
+        "shield": 0.0,
+        "cooldown": 0.15,
+        "skillCooldown": 0.82
+      },
+      {
+        "id": 3,
+        "kind": "Shield",
+        "name": "盾卫",
+        "star": 1,
+        "branch": "None",
+        "lane": 1,
+        "row": 0,
+        "x": 0.0,
+        "z": -1.06999993,
+        "hp": 245.0,
+        "maxHp": 245.0,
+        "shield": 0.0,
+        "cooldown": 0.15,
+        "skillCooldown": 0.7
+      },
+      {
+        "id": 4,
+        "kind": "Storm",
+        "name": "雷法师",
+        "star": 1,
+        "branch": "None",
+        "lane": 1,
+        "row": 1,
+        "x": 0.0,
+        "z": -2.3,
+        "hp": 125.0,
+        "maxHp": 125.0,
+        "shield": 0.0,
+        "cooldown": 0.15,
+        "skillCooldown": 0.939999938
+      },
+      {
+        "id": 5,
+        "kind": "Shield",
+        "name": "盾卫",
+        "star": 1,
+        "branch": "None",
+        "lane": 2,
+        "row": 0,
+        "x": 2.5,
+        "z": -1.06999993,
+        "hp": 245.0,
+        "maxHp": 245.0,
+        "shield": 0.0,
+        "cooldown": 0.15,
+        "skillCooldown": 0.7
+      },
+      {
+        "id": 6,
+        "kind": "Archer",
+        "name": "风弓手",
+        "star": 1,
+        "branch": "None",
+        "lane": 2,
+        "row": 1,
+        "x": 2.5,
+        "z": -2.3,
+        "hp": 125.0,
+        "maxHp": 125.0,
+        "shield": 0.0,
+        "cooldown": 0.15,
+        "skillCooldown": 0.82
+      }
+    ],
+    "enemies": [
+      {
+        "id": 7,
+        "kind": "Grunt",
+        "lane": 0,
+        "x": -2.5,
+        "z": 4.33500051,
+        "hp": 65.0,
+        "maxHp": 65.0,
+        "alive": true,
+        "escaped": false,
+        "frozenUntil": 0.0
+      },
+      {
+        "id": 8,
+        "kind": "Grunt",
+        "lane": 1,
+        "x": 0.0,
+        "z": 4.33500051,
+        "hp": 65.0,
+        "maxHp": 65.0,
+        "alive": true,
+        "escaped": false,
+        "frozenUntil": 0.0
+      },
+      {
+        "id": 9,
+        "kind": "Grunt",
+        "lane": 2,
+        "x": 2.5,
+        "z": 4.33500051,
+        "hp": 65.0,
+        "maxHp": 65.0,
+        "alive": true,
+        "escaped": false,
+        "frozenUntil": 0.0
+      }
+    ],
+    "pending": [],
+    "rewards": [],
+    "reels": [
+      "Shield",
+      "Archer",
+      "Storm",
+      "Archer",
+      "Storm",
+      "Frost",
+      "Storm",
+      "Frost",
+      "Shield"
+    ],
+    "rewardOptions": [],
+    "bossTelegraph": {
+      "lane": -1,
+      "impactAt": -1.0
+    },
+    "lastEventSequence": 28,
+    "events": [
+      {
+        "Sequence": 23,
+        "Type": "run_started",
+        "Message": "远征开始：先看敌情，再招募布阵",
+        "Source": 0,
+        "Target": 0,
+        "Lane": -1,
+        "Amount": 0.0,
+        "Time": 0.0
+      },
+      {
+        "Sequence": 24,
+        "Type": "wave_started",
+        "Message": "普通波：近战本路，远程支援相邻路",
+        "Source": 0,
+        "Target": 0,
+        "Lane": -1,
+        "Amount": 0.0,
+        "Time": 0.0
+      },
+      {
+        "Sequence": 25,
+        "Type": "enemy_spawned",
+        "Message": "步兵",
+        "Source": 0,
+        "Target": 7,
+        "Lane": 0,
+        "Amount": 0.0,
+        "Time": 0.05
+      },
+      {
+        "Sequence": 26,
+        "Type": "enemy_spawned",
+        "Message": "步兵",
+        "Source": 0,
+        "Target": 8,
+        "Lane": 1,
+        "Amount": 0.0,
+        "Time": 0.05
+      },
+      {
+        "Sequence": 27,
+        "Type": "enemy_spawned",
+        "Message": "步兵",
+        "Source": 0,
+        "Target": 9,
+        "Lane": 2,
+        "Amount": 0.0,
+        "Time": 0.05
+      },
+      {
+        "Sequence": 28,
+        "Type": "focus",
+        "Message": "集火目标，仍受射程与隔栏支援范围限制",
+        "Source": 0,
+        "Target": 7,
+        "Lane": -1,
+        "Amount": 0.0,
+        "Time": 0.1
+      }
+    ],
+    "availableActions": [
+      "pause",
+      "set_speed",
+      "restart"
+    ]
+  }
+}

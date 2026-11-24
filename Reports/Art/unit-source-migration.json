@@ -1,0 +1,2525 @@
+{
+  "date": "2026-11-24",
+  "authorization": "用户授权PELibDemo模型及AutoClash资源用于本项目",
+  "assets": [
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\AllBodiesCloaks.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\AllBodiesCloaks.fbx",
+      "sourceSha256": "7d87945d95ab909641908c5742110133c5f7299064cafa5b17901e1d7db84ba5",
+      "destinationSha256": "7d87945d95ab909641908c5742110133c5f7299064cafa5b17901e1d7db84ba5"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Stage.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Stage.fbx",
+      "sourceSha256": "e5efb04956a5054ad0b3badd5f4d87a9d701a5a367014a39409b25f6e738513f",
+      "destinationSha256": "e5efb04956a5054ad0b3badd5f4d87a9d701a5a367014a39409b25f6e738513f"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\AC01_Heart.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\AC01_Heart.fbx",
+      "sourceSha256": "8a5093c6c64bb99a70e44d64d86bf85e8c6d69726c5729d97d31c5be8f8d48b3",
+      "destinationSha256": "8a5093c6c64bb99a70e44d64d86bf85e8c6d69726c5729d97d31c5be8f8d48b3"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\AC02_Leaf.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\AC02_Leaf.fbx",
+      "sourceSha256": "e8a329001e817dbd85da1bae3b90da0028cd814e5331ada13350a096939f582e",
+      "destinationSha256": "e8a329001e817dbd85da1bae3b90da0028cd814e5331ada13350a096939f582e"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\AC03_BlackGlass.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\AC03_BlackGlass.fbx",
+      "sourceSha256": "266287b980be561efcd21a7b05ee22eb12d49c70bacad61aea4792fb378abceb",
+      "destinationSha256": "266287b980be561efcd21a7b05ee22eb12d49c70bacad61aea4792fb378abceb"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\AC03_HeavyMetalGlass.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\AC03_HeavyMetalGlass.fbx",
+      "sourceSha256": "b1f2b9d98f70659f638c3a366b12c31682fc8d4983367a733a5ed34dc099aff3",
+      "destinationSha256": "b1f2b9d98f70659f638c3a366b12c31682fc8d4983367a733a5ed34dc099aff3"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\AC03_NerdGlass.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\AC03_NerdGlass.fbx",
+      "sourceSha256": "432ddf7c33bb408142a4b18e08fcbb5fd37971f577823559654f8d776c6c920f",
+      "destinationSha256": "432ddf7c33bb408142a4b18e08fcbb5fd37971f577823559654f8d776c6c920f"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\AC03_NightVision.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\AC03_NightVision.fbx",
+      "sourceSha256": "32ecccda28b70af40e510394825725b6fbd36c6417f0e234eaa332c51514d86e",
+      "destinationSha256": "32ecccda28b70af40e510394825725b6fbd36c6417f0e234eaa332c51514d86e"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\AC04_AngelEars.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\AC04_AngelEars.fbx",
+      "sourceSha256": "5042d177f265ffa20164b3d25388c21e4ba6454a34801a3edaac60890ac7429f",
+      "destinationSha256": "5042d177f265ffa20164b3d25388c21e4ba6454a34801a3edaac60890ac7429f"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\AC04_AnthenaEars.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\AC04_AnthenaEars.fbx",
+      "sourceSha256": "6f73d798054dd6f50b9aae5d828f47eaf64fc44b8430b8498fcc616989b718f9",
+      "destinationSha256": "6f73d798054dd6f50b9aae5d828f47eaf64fc44b8430b8498fcc616989b718f9"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\AC04_BunnyEars.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\AC04_BunnyEars.fbx",
+      "sourceSha256": "c7268ea7a99a3c0a6ee1d16e8bf1a74d34e832a43d53bcfcf4c489e9a31ca2a4",
+      "destinationSha256": "c7268ea7a99a3c0a6ee1d16e8bf1a74d34e832a43d53bcfcf4c489e9a31ca2a4"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\AC04_ShortEars.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\AC04_ShortEars.fbx",
+      "sourceSha256": "e7264ca7c3e5336e7d2e4c603da68db495f10e5468ae29d908936e11addad69c",
+      "destinationSha256": "e7264ca7c3e5336e7d2e4c603da68db495f10e5468ae29d908936e11addad69c"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\AC05_Horn01.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\AC05_Horn01.fbx",
+      "sourceSha256": "1e7c8f6ed0743e8a7df1da304ed9bcb9c203f8489b9404e843aeeebe9472bbbd",
+      "destinationSha256": "1e7c8f6ed0743e8a7df1da304ed9bcb9c203f8489b9404e843aeeebe9472bbbd"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\AC05_Horn02.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\AC05_Horn02.fbx",
+      "sourceSha256": "8f0ec1acecc998a62cab4f122648acd4f4412bae9ef7639f9998758b7b127931",
+      "destinationSha256": "8f0ec1acecc998a62cab4f122648acd4f4412bae9ef7639f9998758b7b127931"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\AC05_Horn03.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\AC05_Horn03.fbx",
+      "sourceSha256": "370cccde960347553a5535bd7f186aa3508d3ffb0f53487a8b02cf54963e8ac5",
+      "destinationSha256": "370cccde960347553a5535bd7f186aa3508d3ffb0f53487a8b02cf54963e8ac5"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\AC05_Horn04.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\AC05_Horn04.fbx",
+      "sourceSha256": "691e1d2a3f064cb689c6f854ad5716caec2abce79ff1da14a97e52d467de3e7d",
+      "destinationSha256": "691e1d2a3f064cb689c6f854ad5716caec2abce79ff1da14a97e52d467de3e7d"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\AC06_Crown01.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\AC06_Crown01.fbx",
+      "sourceSha256": "dcc472108fe4fa303b63547c1b37a350f8c40f65596c9517513a7acd48fe4100",
+      "destinationSha256": "dcc472108fe4fa303b63547c1b37a350f8c40f65596c9517513a7acd48fe4100"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\AC06_Crown02.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\AC06_Crown02.fbx",
+      "sourceSha256": "6f5e3e6c004cee15e7b285d7d854a0d0f5e80558e1a571a5fe197828f3f69a12",
+      "destinationSha256": "6f5e3e6c004cee15e7b285d7d854a0d0f5e80558e1a571a5fe197828f3f69a12"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\AC06_Crown03.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\AC06_Crown03.fbx",
+      "sourceSha256": "f0eec7bcd662981d45fa3a2811fcdf4fcf299360181959e2002add065cc38669",
+      "destinationSha256": "f0eec7bcd662981d45fa3a2811fcdf4fcf299360181959e2002add065cc38669"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\AC07_PiratePatch.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\AC07_PiratePatch.fbx",
+      "sourceSha256": "a0304bb3997a00f9e478ea5dfa314ded63500ededfe7899b7af41cdf6e534842",
+      "destinationSha256": "a0304bb3997a00f9e478ea5dfa314ded63500ededfe7899b7af41cdf6e534842"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\AC08_NinjaMask01.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\AC08_NinjaMask01.fbx",
+      "sourceSha256": "50aebc71fee9bb57e276d5c3b32a2c5fcf4c61bde6a8c56814739df87022a08f",
+      "destinationSha256": "50aebc71fee9bb57e276d5c3b32a2c5fcf4c61bde6a8c56814739df87022a08f"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\AC08_NinjaMask02.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\AC08_NinjaMask02.fbx",
+      "sourceSha256": "2888434ca545bb85938d11ab6ebaaff6b6775ae2e6aa86eac3f8e1917c8d8ac8",
+      "destinationSha256": "2888434ca545bb85938d11ab6ebaaff6b6775ae2e6aa86eac3f8e1917c8d8ac8"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\AC08_NinjaMask03.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\AC08_NinjaMask03.fbx",
+      "sourceSha256": "111cf0b5ab79ddda7c7775bbc5ade699a3777befa0c09c3209eeb989dd7e7aa8",
+      "destinationSha256": "111cf0b5ab79ddda7c7775bbc5ade699a3777befa0c09c3209eeb989dd7e7aa8"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\AC08_NinjaMask04.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\AC08_NinjaMask04.fbx",
+      "sourceSha256": "c7a23259444468cefebdd21bff36bc5963b09c3c2cb9a0bc09101f6d32543fde",
+      "destinationSha256": "c7a23259444468cefebdd21bff36bc5963b09c3c2cb9a0bc09101f6d32543fde"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\AC08_NinjaMask05.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\AC08_NinjaMask05.fbx",
+      "sourceSha256": "41ded9eae8738626ddc57ec7c314b608e4b5ecfdf9a67c486692a5812603fee0",
+      "destinationSha256": "41ded9eae8738626ddc57ec7c314b608e4b5ecfdf9a67c486692a5812603fee0"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\AC08_NinjaMask06.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\AC08_NinjaMask06.fbx",
+      "sourceSha256": "ecd140057b70fc378148fb967c6e01ff4d48cce172f63cf21043caa86411cf59",
+      "destinationSha256": "ecd140057b70fc378148fb967c6e01ff4d48cce172f63cf21043caa86411cf59"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\AC08_NinjaMask07.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\AC08_NinjaMask07.fbx",
+      "sourceSha256": "9116d4db41bd490689dc2537f5462ef55a84e6f0a720f7d32156b31e39727e98",
+      "destinationSha256": "9116d4db41bd490689dc2537f5462ef55a84e6f0a720f7d32156b31e39727e98"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\AC08_NinjaMask08.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\AC08_NinjaMask08.fbx",
+      "sourceSha256": "017623fa1e3646aff66ae285668b00bf3ada9925f731e75ce6dc71efd84f2dbb",
+      "destinationSha256": "017623fa1e3646aff66ae285668b00bf3ada9925f731e75ce6dc71efd84f2dbb"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\AC09_Ribbon.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\AC09_Ribbon.fbx",
+      "sourceSha256": "c504023b8961932e98a284e024cd0b8a5d7d1b7a2652007d4eab3a5917365ea3",
+      "destinationSha256": "c504023b8961932e98a284e024cd0b8a5d7d1b7a2652007d4eab3a5917365ea3"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\AC10_Mustache01.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\AC10_Mustache01.fbx",
+      "sourceSha256": "623fd1e3eaa9764d2578b72a2ab69d0958aa4198f8ed12301994b0ce6185b0a2",
+      "destinationSha256": "623fd1e3eaa9764d2578b72a2ab69d0958aa4198f8ed12301994b0ce6185b0a2"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\AC10_Mustache02.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\AC10_Mustache02.fbx",
+      "sourceSha256": "296ab96a7ee81cd3312387c1110edd0b53011b03fdf70a1a2135eb444e9ad6f7",
+      "destinationSha256": "296ab96a7ee81cd3312387c1110edd0b53011b03fdf70a1a2135eb444e9ad6f7"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\AC10_Mustache03.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\AC10_Mustache03.fbx",
+      "sourceSha256": "eb7aae09e5232ce14581757c6638775795195b989395e0eb0116682b0c38a27c",
+      "destinationSha256": "eb7aae09e5232ce14581757c6638775795195b989395e0eb0116682b0c38a27c"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\AC10_Mustache04.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\AC10_Mustache04.fbx",
+      "sourceSha256": "b02dbc3eb9f770480cb1e3163692aaf194a6325eb8aae2dcd16e533379605e5e",
+      "destinationSha256": "b02dbc3eb9f770480cb1e3163692aaf194a6325eb8aae2dcd16e533379605e5e"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\AC10_Mustache05.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\AC10_Mustache05.fbx",
+      "sourceSha256": "f7d3d80a405fa3153922b920eb04919e17e1e58af57e47ba94ff3af9dba26ea7",
+      "destinationSha256": "f7d3d80a405fa3153922b920eb04919e17e1e58af57e47ba94ff3af9dba26ea7"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\AC10_Mustache06.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\AC10_Mustache06.fbx",
+      "sourceSha256": "fc9c07d29f60f0c07c1b5651c7726ad6f9eca5cfab86555a0197d7f89ac0ae90",
+      "destinationSha256": "fc9c07d29f60f0c07c1b5651c7726ad6f9eca5cfab86555a0197d7f89ac0ae90"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\AC11_Mustache01.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\AC11_Mustache01.fbx",
+      "sourceSha256": "ab1c85f58498ced12995731ef6eb8ad9b9cad63e14344a73d6d6053284bd7591",
+      "destinationSha256": "ab1c85f58498ced12995731ef6eb8ad9b9cad63e14344a73d6d6053284bd7591"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\AC11_Mustache02.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\AC11_Mustache02.fbx",
+      "sourceSha256": "8599950252950c7561c3b53961554efd0a06ecf67d782807debb852cf1da5d24",
+      "destinationSha256": "8599950252950c7561c3b53961554efd0a06ecf67d782807debb852cf1da5d24"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\AC11_Mustache03.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\AC11_Mustache03.fbx",
+      "sourceSha256": "3c2aaac4973b3aa83df4294dd87cd530b83a33a627a4ba36ee50074425242348",
+      "destinationSha256": "3c2aaac4973b3aa83df4294dd87cd530b83a33a627a4ba36ee50074425242348"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\AC11_Mustache04.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\AC11_Mustache04.fbx",
+      "sourceSha256": "170406a95f8beeedde7a07cd5e4ff708c13ca5a502f48d3a348c12a0adf1f8b6",
+      "destinationSha256": "170406a95f8beeedde7a07cd5e4ff708c13ca5a502f48d3a348c12a0adf1f8b6"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\AC11_Mustache05.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\AC11_Mustache05.fbx",
+      "sourceSha256": "787b31f2ed0bb9a3cf7adffc36f655c0015d89081f5e63613a3641a11150cd48",
+      "destinationSha256": "787b31f2ed0bb9a3cf7adffc36f655c0015d89081f5e63613a3641a11150cd48"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\AC11_Mustache06.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\AC11_Mustache06.fbx",
+      "sourceSha256": "df926f06332591a06070c2ce6713c18f90b8e9c404c6ac9a7493fe5288bbd306",
+      "destinationSha256": "df926f06332591a06070c2ce6713c18f90b8e9c404c6ac9a7493fe5288bbd306"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\BackPack01.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\BackPack01.fbx",
+      "sourceSha256": "755563df197eb9280f504d52833133bd629d962a17e0bb2b179c7a1d0157974f",
+      "destinationSha256": "755563df197eb9280f504d52833133bd629d962a17e0bb2b179c7a1d0157974f"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\BackPack02.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\BackPack02.fbx",
+      "sourceSha256": "076aa550fa72166743d45d6db7c1158545603c06c074b2aea8feb83a5127ec85",
+      "destinationSha256": "076aa550fa72166743d45d6db7c1158545603c06c074b2aea8feb83a5127ec85"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\BackPack03.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\BackPack03.fbx",
+      "sourceSha256": "80dbe76249a3305092ed3ce8b60f5aa6b52466a84fa20771c49f9d1565e36b1a",
+      "destinationSha256": "80dbe76249a3305092ed3ce8b60f5aa6b52466a84fa20771c49f9d1565e36b1a"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Eye01.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Eye01.fbx",
+      "sourceSha256": "32d2d63e98a443836d21efd72f6f5be7acf3c140296d3da88a958aa8c97eddee",
+      "destinationSha256": "32d2d63e98a443836d21efd72f6f5be7acf3c140296d3da88a958aa8c97eddee"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Eye02.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Eye02.fbx",
+      "sourceSha256": "06cee7454c52b975c520212e5355618a0747a18becc4a6fe308d02e89485a33c",
+      "destinationSha256": "06cee7454c52b975c520212e5355618a0747a18becc4a6fe308d02e89485a33c"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Eye03.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Eye03.fbx",
+      "sourceSha256": "54780e73a70cc493f09d2e609b5802decd046ec3e4a4600116a2de31f9560824",
+      "destinationSha256": "54780e73a70cc493f09d2e609b5802decd046ec3e4a4600116a2de31f9560824"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Eye04.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Eye04.fbx",
+      "sourceSha256": "b37838578163cd1993936814b681bafb572a234c4b9f49ed3720e3fca2e41568",
+      "destinationSha256": "b37838578163cd1993936814b681bafb572a234c4b9f49ed3720e3fca2e41568"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Eye05.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Eye05.fbx",
+      "sourceSha256": "97f8cd61b87a8224065512d964d84c3fa45fcfafc0de687f43201a07947e8388",
+      "destinationSha256": "97f8cd61b87a8224065512d964d84c3fa45fcfafc0de687f43201a07947e8388"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Eye06.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Eye06.fbx",
+      "sourceSha256": "d0fa61e1216c8e79c9497a8a52918694ccd9152bb262f08f8277aa5bf8ecf286",
+      "destinationSha256": "d0fa61e1216c8e79c9497a8a52918694ccd9152bb262f08f8277aa5bf8ecf286"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Eye07.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Eye07.fbx",
+      "sourceSha256": "695dbb851e68ce870ff7c67ce6b2c5ae1fa952d5d6d14120b801d86c1f7436ad",
+      "destinationSha256": "695dbb851e68ce870ff7c67ce6b2c5ae1fa952d5d6d14120b801d86c1f7436ad"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Eye08.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Eye08.fbx",
+      "sourceSha256": "5d723e0b2ad651ff6ca4e2862fd2199bfac0e90ae954a85a7159a44a24538966",
+      "destinationSha256": "5d723e0b2ad651ff6ca4e2862fd2199bfac0e90ae954a85a7159a44a24538966"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Eye09.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Eye09.fbx",
+      "sourceSha256": "f517da0b5deddfbe0a295944a34baf328111b5e48c5ca72e47e7519dbeb28701",
+      "destinationSha256": "f517da0b5deddfbe0a295944a34baf328111b5e48c5ca72e47e7519dbeb28701"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Eye10.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Eye10.fbx",
+      "sourceSha256": "ffee05440c2c9124c8a3cb69956d6741ca2114e84d2fb2cbcb841717c5f6ac2f",
+      "destinationSha256": "ffee05440c2c9124c8a3cb69956d6741ca2114e84d2fb2cbcb841717c5f6ac2f"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Eye11.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Eye11.fbx",
+      "sourceSha256": "67228a46d8cf063f7913191b1208349fc8cc0d033c8e6e573220f897421c3bcc",
+      "destinationSha256": "67228a46d8cf063f7913191b1208349fc8cc0d033c8e6e573220f897421c3bcc"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Eye12.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Eye12.fbx",
+      "sourceSha256": "27acfa354ee4a3c945e7a62bd6ab1830a7e693a144da4613a8938ac46c9b4e52",
+      "destinationSha256": "27acfa354ee4a3c945e7a62bd6ab1830a7e693a144da4613a8938ac46c9b4e52"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Eyebrow01.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Eyebrow01.fbx",
+      "sourceSha256": "4dc6cedb81fe004776f9bd7e195f6cda3b1c6fca8509c4febfbc08b94d6a8853",
+      "destinationSha256": "4dc6cedb81fe004776f9bd7e195f6cda3b1c6fca8509c4febfbc08b94d6a8853"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Eyebrow02.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Eyebrow02.fbx",
+      "sourceSha256": "5e009a8c79b9fdc21ea61618643989abc25b5e061fcf6d49a678db1b03b004e4",
+      "destinationSha256": "5e009a8c79b9fdc21ea61618643989abc25b5e061fcf6d49a678db1b03b004e4"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Hair01.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Hair01.fbx",
+      "sourceSha256": "ef3683451c7f4863ef48c586628b0d1de2f030207302bf369c90802ed9273324",
+      "destinationSha256": "ef3683451c7f4863ef48c586628b0d1de2f030207302bf369c90802ed9273324"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Hair02.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Hair02.fbx",
+      "sourceSha256": "0fbd1d58baf485152785df33ad89245baef68611d33177f0f16172b6c1ebd538",
+      "destinationSha256": "0fbd1d58baf485152785df33ad89245baef68611d33177f0f16172b6c1ebd538"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Hair03.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Hair03.fbx",
+      "sourceSha256": "6c5b5dd7aa81080d3635939375e952423bc394fc518624fb1e48899f6a7da826",
+      "destinationSha256": "6c5b5dd7aa81080d3635939375e952423bc394fc518624fb1e48899f6a7da826"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Hair04.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Hair04.fbx",
+      "sourceSha256": "fb4b2694e96c09cd63910cdaaf2c0acffc627f6157edfb1c2bc73052671ddcdd",
+      "destinationSha256": "fb4b2694e96c09cd63910cdaaf2c0acffc627f6157edfb1c2bc73052671ddcdd"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Hair05.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Hair05.fbx",
+      "sourceSha256": "30fdd2d2e610c1a42da49823c14ed0b06e214dfeba46b097300b6edb50820ed7",
+      "destinationSha256": "30fdd2d2e610c1a42da49823c14ed0b06e214dfeba46b097300b6edb50820ed7"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Hair06.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Hair06.fbx",
+      "sourceSha256": "8388ebbb3dbc774971b1fe75d8bbef093372580dcd58c923b50ba6626538054a",
+      "destinationSha256": "8388ebbb3dbc774971b1fe75d8bbef093372580dcd58c923b50ba6626538054a"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Hair07.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Hair07.fbx",
+      "sourceSha256": "71df9bf1bb037e4dd8a24b38650c1a46e1b10e5d70ac2eb41f9e947e7172f7cf",
+      "destinationSha256": "71df9bf1bb037e4dd8a24b38650c1a46e1b10e5d70ac2eb41f9e947e7172f7cf"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Hair08.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Hair08.fbx",
+      "sourceSha256": "a06b72fb97e305bcab50be7cd1460e0f91aa3de184371fabde0c56b3d7c1992e",
+      "destinationSha256": "a06b72fb97e305bcab50be7cd1460e0f91aa3de184371fabde0c56b3d7c1992e"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Hair09.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Hair09.fbx",
+      "sourceSha256": "c00b90413275254f7aaa06e1e7b6ec4fc50f077daa54612fef1a5bc9fe8819de",
+      "destinationSha256": "c00b90413275254f7aaa06e1e7b6ec4fc50f077daa54612fef1a5bc9fe8819de"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Hair10.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Hair10.fbx",
+      "sourceSha256": "86d4ca476fa6f522613d1203040037921cf14ab85124b37ed046188e1607fec6",
+      "destinationSha256": "86d4ca476fa6f522613d1203040037921cf14ab85124b37ed046188e1607fec6"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Hair11.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Hair11.fbx",
+      "sourceSha256": "9805e9c5e4a117451dd8bd55ad10df2168122f4d6bf969eccbd12e322cca8b03",
+      "destinationSha256": "9805e9c5e4a117451dd8bd55ad10df2168122f4d6bf969eccbd12e322cca8b03"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Hair12.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Hair12.fbx",
+      "sourceSha256": "81062810bf12d3f61a6b503953d0f6d98dae914d32fc1f2baeeaf50dcf109e28",
+      "destinationSha256": "81062810bf12d3f61a6b503953d0f6d98dae914d32fc1f2baeeaf50dcf109e28"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Hair13.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Hair13.fbx",
+      "sourceSha256": "ee533f569ce4f502350c63756221ac132f410c22975a4d1981b4eab5617657e8",
+      "destinationSha256": "ee533f569ce4f502350c63756221ac132f410c22975a4d1981b4eab5617657e8"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Hat01.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Hat01.fbx",
+      "sourceSha256": "b839f6be11df82980eef580dee91af782adbd508a5c0ca8692c36d86107a709c",
+      "destinationSha256": "b839f6be11df82980eef580dee91af782adbd508a5c0ca8692c36d86107a709c"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Hat02.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Hat02.fbx",
+      "sourceSha256": "284d2bcdfdcd54d05e3e712ef3fb5c83d3ec87b81fbc049438068ad27c43e44a",
+      "destinationSha256": "284d2bcdfdcd54d05e3e712ef3fb5c83d3ec87b81fbc049438068ad27c43e44a"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Hat03.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Hat03.fbx",
+      "sourceSha256": "08bca0149c4bd5bf79e27c3c422e7cf669bbb20b7a121a0440ef48eee58caa58",
+      "destinationSha256": "08bca0149c4bd5bf79e27c3c422e7cf669bbb20b7a121a0440ef48eee58caa58"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Hat04.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Hat04.fbx",
+      "sourceSha256": "c1d70f7b2ad06dc6b68e4ca8f8f7e61d4377b0127ca0af6fea16d3cbd179ca21",
+      "destinationSha256": "c1d70f7b2ad06dc6b68e4ca8f8f7e61d4377b0127ca0af6fea16d3cbd179ca21"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Hat05.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Hat05.fbx",
+      "sourceSha256": "6435d603ecfa07d38367361fbdb7ba73b8b8e476d563f85eb9e0fb40af3f5fbf",
+      "destinationSha256": "6435d603ecfa07d38367361fbdb7ba73b8b8e476d563f85eb9e0fb40af3f5fbf"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Hat06.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Hat06.fbx",
+      "sourceSha256": "be1b7a36d9fc4664ef11d40732baf7d05dff3f59fac92475e599527c24b2073e",
+      "destinationSha256": "be1b7a36d9fc4664ef11d40732baf7d05dff3f59fac92475e599527c24b2073e"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Hat07.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Hat07.fbx",
+      "sourceSha256": "f385c5e1e525064cacbce3370c1ba63f8ea8a03768b49b36671c05e10693aa50",
+      "destinationSha256": "f385c5e1e525064cacbce3370c1ba63f8ea8a03768b49b36671c05e10693aa50"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Hat08.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Hat08.fbx",
+      "sourceSha256": "ef323da4718fcde20656c290dda11125a10926b66b2c5c74bf4e6253dca5778b",
+      "destinationSha256": "ef323da4718fcde20656c290dda11125a10926b66b2c5c74bf4e6253dca5778b"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Hat09.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Hat09.fbx",
+      "sourceSha256": "911adb8331673854ad798c89960709856dd61b0fdfee2eecaa63b914649b8eb2",
+      "destinationSha256": "911adb8331673854ad798c89960709856dd61b0fdfee2eecaa63b914649b8eb2"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Hat10.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Hat10.fbx",
+      "sourceSha256": "0bdaef0b05a5405fd59d526674ec8f652693e3812175f7528340a8aa3ceca1bc",
+      "destinationSha256": "0bdaef0b05a5405fd59d526674ec8f652693e3812175f7528340a8aa3ceca1bc"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Hat11.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Hat11.fbx",
+      "sourceSha256": "f220b8904efdefa764b9ddf594899ad905167181c1383a4837eb080db4540e95",
+      "destinationSha256": "f220b8904efdefa764b9ddf594899ad905167181c1383a4837eb080db4540e95"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Hat12.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Hat12.fbx",
+      "sourceSha256": "cd711ea6d4fa68d9dfb060c3a5be4e5206547cfa0928dd8e6841bdbe23a396cb",
+      "destinationSha256": "cd711ea6d4fa68d9dfb060c3a5be4e5206547cfa0928dd8e6841bdbe23a396cb"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Hat13.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Hat13.fbx",
+      "sourceSha256": "aec946669826d7166f2723e189f3de375962eda96ffedf8e7a171eeb1fc022eb",
+      "destinationSha256": "aec946669826d7166f2723e189f3de375962eda96ffedf8e7a171eeb1fc022eb"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Hat14.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Hat14.fbx",
+      "sourceSha256": "24f106e439121467eae9b58a562eaf413ff11a308de9315c5aaf417593c203d3",
+      "destinationSha256": "24f106e439121467eae9b58a562eaf413ff11a308de9315c5aaf417593c203d3"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Head01_Male.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Head01_Male.fbx",
+      "sourceSha256": "e23ffe7a981ec3b1caf1649cad27dec64d79750761fad20f497a64d3713151e7",
+      "destinationSha256": "e23ffe7a981ec3b1caf1649cad27dec64d79750761fad20f497a64d3713151e7"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Head02_Female.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Head02_Female.fbx",
+      "sourceSha256": "aa6ad34bd159155aa54730dbb3b104b2a4fc0cf9a78ca2791952c4a4512c8a56",
+      "destinationSha256": "aa6ad34bd159155aa54730dbb3b104b2a4fc0cf9a78ca2791952c4a4512c8a56"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Head03_Blue.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Head03_Blue.fbx",
+      "sourceSha256": "5676a945df110a2e76e57c8d1ffd5050f34ca109a54dfa2cd1d48cd380ba3917",
+      "destinationSha256": "5676a945df110a2e76e57c8d1ffd5050f34ca109a54dfa2cd1d48cd380ba3917"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Head03_Brown.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Head03_Brown.fbx",
+      "sourceSha256": "7f17743c8fd9b10a5dbfdbd96307c0a75bdccf0923dbf5caadde75f7b38f40af",
+      "destinationSha256": "7f17743c8fd9b10a5dbfdbd96307c0a75bdccf0923dbf5caadde75f7b38f40af"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Head03_Grey.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Head03_Grey.fbx",
+      "sourceSha256": "885db542e70d58959d82200fbf05b9cfbbf440b30a93d75ad5cecd7845a2fed0",
+      "destinationSha256": "885db542e70d58959d82200fbf05b9cfbbf440b30a93d75ad5cecd7845a2fed0"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Head03_Purple.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Head03_Purple.fbx",
+      "sourceSha256": "7a948008e1d876a1aa23e4e068ded409b4770ec2a6a249f33e39136b860d02e1",
+      "destinationSha256": "7a948008e1d876a1aa23e4e068ded409b4770ec2a6a249f33e39136b860d02e1"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Head03_Red.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Head03_Red.fbx",
+      "sourceSha256": "faa36f11129601cc8ee6bb2d4ad606aabca36a15d2568743dcda7dc2cce5a25a",
+      "destinationSha256": "faa36f11129601cc8ee6bb2d4ad606aabca36a15d2568743dcda7dc2cce5a25a"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Head03_Yellow.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Head03_Yellow.fbx",
+      "sourceSha256": "93bb6d014fa1a153be49c879529e35e09df1797d89be16a9a0ef9ce23bc34db7",
+      "destinationSha256": "93bb6d014fa1a153be49c879529e35e09df1797d89be16a9a0ef9ce23bc34db7"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Head04_Blue.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Head04_Blue.fbx",
+      "sourceSha256": "921ff55ac6acd767359b2e208240b2fe4431905f0fe7fbb7b70c67d92fe16c69",
+      "destinationSha256": "921ff55ac6acd767359b2e208240b2fe4431905f0fe7fbb7b70c67d92fe16c69"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Head04_Brown.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Head04_Brown.fbx",
+      "sourceSha256": "a685b932c35437b8b7a69b6b546986c1e43354735ce4875004192d98ee56f4f7",
+      "destinationSha256": "a685b932c35437b8b7a69b6b546986c1e43354735ce4875004192d98ee56f4f7"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Head04_Grey.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Head04_Grey.fbx",
+      "sourceSha256": "ee70d985b818790a5fded5fdc1f60286b5d3cbc1082d6b23d79bb27b3d0d2b41",
+      "destinationSha256": "ee70d985b818790a5fded5fdc1f60286b5d3cbc1082d6b23d79bb27b3d0d2b41"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Head04_Purple.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Head04_Purple.fbx",
+      "sourceSha256": "e46bb3a9138c9603b64e9693d4465bf67c7250919e0031add3cdbc14c73625b9",
+      "destinationSha256": "e46bb3a9138c9603b64e9693d4465bf67c7250919e0031add3cdbc14c73625b9"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Head04_Red.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Head04_Red.fbx",
+      "sourceSha256": "91dc865f0c615e03b1390ad0be5059ceed605c219d46b7732789eaac61e2fc08",
+      "destinationSha256": "91dc865f0c615e03b1390ad0be5059ceed605c219d46b7732789eaac61e2fc08"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Head04_Yellow.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Head04_Yellow.fbx",
+      "sourceSha256": "45cf86614f94ae498e687c02f2122cfd93e8930cc8df7c15cf66c4420e4702ce",
+      "destinationSha256": "45cf86614f94ae498e687c02f2122cfd93e8930cc8df7c15cf66c4420e4702ce"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Head05_Santa.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Head05_Santa.fbx",
+      "sourceSha256": "722643e9a8a4c4f641a58f16e284161bf31b36a5c8da128640fce954cfb48aa5",
+      "destinationSha256": "722643e9a8a4c4f641a58f16e284161bf31b36a5c8da128640fce954cfb48aa5"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\HeadArmor01.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\HeadArmor01.fbx",
+      "sourceSha256": "3ae9e1ea4d62347eb175b556719d3e4b08eb287ab394f482ae0dd4abfd3b96b2",
+      "destinationSha256": "3ae9e1ea4d62347eb175b556719d3e4b08eb287ab394f482ae0dd4abfd3b96b2"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\HeadArmor02.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\HeadArmor02.fbx",
+      "sourceSha256": "b3a13974845ed028365742d20bcbaf46fec2a06c5ca252cda2bd26ff26ab4274",
+      "destinationSha256": "b3a13974845ed028365742d20bcbaf46fec2a06c5ca252cda2bd26ff26ab4274"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\HeadArmor03.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\HeadArmor03.fbx",
+      "sourceSha256": "d6243deed5d4b0e8319c76a91ecc42562246c6a33785077d513ed392fa25840e",
+      "destinationSha256": "d6243deed5d4b0e8319c76a91ecc42562246c6a33785077d513ed392fa25840e"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\HeadArmor04.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\HeadArmor04.fbx",
+      "sourceSha256": "3473dfdb94226e743441e3d1edb2875a62c1260430ac8008af0251f91dbffaa1",
+      "destinationSha256": "3473dfdb94226e743441e3d1edb2875a62c1260430ac8008af0251f91dbffaa1"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\HeadArmor05.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\HeadArmor05.fbx",
+      "sourceSha256": "343fcb8f18042602fbbf553d4bf81350280b5028e19faf7c45e371dc67298524",
+      "destinationSha256": "343fcb8f18042602fbbf553d4bf81350280b5028e19faf7c45e371dc67298524"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Mouth01.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Mouth01.fbx",
+      "sourceSha256": "61e50df0f215b076024721f4cfa910aabf49a10b630ab23b61189d30b5a1ed37",
+      "destinationSha256": "61e50df0f215b076024721f4cfa910aabf49a10b630ab23b61189d30b5a1ed37"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Mouth02.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Mouth02.fbx",
+      "sourceSha256": "27e13052e7aef02ca91fa26c6f55911439a52f0466a8b37010e6820c50b31879",
+      "destinationSha256": "27e13052e7aef02ca91fa26c6f55911439a52f0466a8b37010e6820c50b31879"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Mouth03.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Mouth03.fbx",
+      "sourceSha256": "8329a86dc17a9aedbc924718510b549bc84aa3bcb7a38cae6fbc6037e2d0a035",
+      "destinationSha256": "8329a86dc17a9aedbc924718510b549bc84aa3bcb7a38cae6fbc6037e2d0a035"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Mouth04.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Mouth04.fbx",
+      "sourceSha256": "a0b3fb282c3443d457eb817d2671d69ca994d6a2a0f9ec00249da747ca1bd2f3",
+      "destinationSha256": "a0b3fb282c3443d457eb817d2671d69ca994d6a2a0f9ec00249da747ca1bd2f3"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Mouth05.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Mouth05.fbx",
+      "sourceSha256": "c440b3db9a19bb7435d7ad1a65efaaaa759bd03dbc425f4e29a4480e67bc2235",
+      "destinationSha256": "c440b3db9a19bb7435d7ad1a65efaaaa759bd03dbc425f4e29a4480e67bc2235"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Mouth06.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Mouth06.fbx",
+      "sourceSha256": "f9e181fac18b2c44108faf5335b4efa0152974db1f852e7cb9bc200b8a209bbf",
+      "destinationSha256": "f9e181fac18b2c44108faf5335b4efa0152974db1f852e7cb9bc200b8a209bbf"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Mouth07.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Mouth07.fbx",
+      "sourceSha256": "7bffc9e35d69bcec22a2512b0ed31bd5010b8597297f66f1234cb79a83206150",
+      "destinationSha256": "7bffc9e35d69bcec22a2512b0ed31bd5010b8597297f66f1234cb79a83206150"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Mouth08.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Mouth08.fbx",
+      "sourceSha256": "b0330edb87e43ae5148110c8208aeaaf431c719ee2825bd80e720649531c1192",
+      "destinationSha256": "b0330edb87e43ae5148110c8208aeaaf431c719ee2825bd80e720649531c1192"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Mouth09.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Mouth09.fbx",
+      "sourceSha256": "104960c31f9725a1ec09f0d04153442f89b5691cfd9b24c59a12e4cc19400b64",
+      "destinationSha256": "104960c31f9725a1ec09f0d04153442f89b5691cfd9b24c59a12e4cc19400b64"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Mouth10.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Mouth10.fbx",
+      "sourceSha256": "09ba37a9a417d9aa7a9f365a76bf3ca4a8be91ec9215233a041ba7e3e8bec142",
+      "destinationSha256": "09ba37a9a417d9aa7a9f365a76bf3ca4a8be91ec9215233a041ba7e3e8bec142"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Mouth11.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Mouth11.fbx",
+      "sourceSha256": "a30d223e233bf6eccb623d19c7ee9fdfc327af587803214ba696b0d4f1597fae",
+      "destinationSha256": "a30d223e233bf6eccb623d19c7ee9fdfc327af587803214ba696b0d4f1597fae"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\HeadParts\\Mouth12.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\HeadParts\\Mouth12.fbx",
+      "sourceSha256": "aaa3b612594c43fe5e0ab42ee6519d01e3427bd58459bc8e20de6580a97f9656",
+      "destinationSha256": "aaa3b612594c43fe5e0ab42ee6519d01e3427bd58459bc8e20de6580a97f9656"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\ArrowsSkinnedMesh.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\ArrowsSkinnedMesh.fbx",
+      "sourceSha256": "4e5189b101563232c36676e1ce7d224a6cc727ad906e831d74b0778eab9042cf",
+      "destinationSha256": "4e5189b101563232c36676e1ce7d224a6cc727ad906e831d74b0778eab9042cf"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\BowsSkinnedMesh.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\BowsSkinnedMesh.fbx",
+      "sourceSha256": "d54c11aaff1aca42efddaddcfe46c29f783cfe1255ee1ff5e72c1aa3867a2f03",
+      "destinationSha256": "d54c11aaff1aca42efddaddcfe46c29f783cfe1255ee1ff5e72c1aa3867a2f03"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\OHS01_Stick.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\OHS01_Stick.fbx",
+      "sourceSha256": "b5abe8e3bd26ab481a8e17776d787edf121e4e1cc39d95c632eddb44a3b72b38",
+      "destinationSha256": "b5abe8e3bd26ab481a8e17776d787edf121e4e1cc39d95c632eddb44a3b72b38"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\OHS02_Niddle.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\OHS02_Niddle.fbx",
+      "sourceSha256": "796db28f2300e91b16935a18d2348a1de81db3dd1447e768e2f5f6e2f57fcbb2",
+      "destinationSha256": "796db28f2300e91b16935a18d2348a1de81db3dd1447e768e2f5f6e2f57fcbb2"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\OHS03_Sword.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\OHS03_Sword.fbx",
+      "sourceSha256": "95bcc784cb6da8ddc39d1865e81c3b4299569cb146e8f47f57b295352c0028dd",
+      "destinationSha256": "95bcc784cb6da8ddc39d1865e81c3b4299569cb146e8f47f57b295352c0028dd"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\OHS04_Sword.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\OHS04_Sword.fbx",
+      "sourceSha256": "470ed88b706fefb44a0b1d1e4983ba97582abffbcdfa574387e12880a035e193",
+      "destinationSha256": "470ed88b706fefb44a0b1d1e4983ba97582abffbcdfa574387e12880a035e193"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\OHS05_Sword.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\OHS05_Sword.fbx",
+      "sourceSha256": "d68740d1b11fe10da5f38108f76b31c72f6e0a6fc38ae24360e2b07a260e27f3",
+      "destinationSha256": "d68740d1b11fe10da5f38108f76b31c72f6e0a6fc38ae24360e2b07a260e27f3"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\OHS06_Sword.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\OHS06_Sword.fbx",
+      "sourceSha256": "59ca66ace0d795b5e46877a3c80ccf7bfc15422df73aac01e703f4dc24dc7b72",
+      "destinationSha256": "59ca66ace0d795b5e46877a3c80ccf7bfc15422df73aac01e703f4dc24dc7b72"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\OHS07_Sword.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\OHS07_Sword.fbx",
+      "sourceSha256": "ed9c501cc5ae381049038ae2cf864aae15d04a01ae7b5723b325575339cb212f",
+      "destinationSha256": "ed9c501cc5ae381049038ae2cf864aae15d04a01ae7b5723b325575339cb212f"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\OHS08_Sword.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\OHS08_Sword.fbx",
+      "sourceSha256": "5e68935bf6a577c0aa05e19536722f0fd918a3860a9a174dc936b3ee9926971b",
+      "destinationSha256": "5e68935bf6a577c0aa05e19536722f0fd918a3860a9a174dc936b3ee9926971b"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\OHS09_Sword.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\OHS09_Sword.fbx",
+      "sourceSha256": "1d2c7b0585a45c4a6b1a4b126a8a64c5d5a18f33dfa621e761b6aff5dbe96815",
+      "destinationSha256": "1d2c7b0585a45c4a6b1a4b126a8a64c5d5a18f33dfa621e761b6aff5dbe96815"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\OHS10_Axe.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\OHS10_Axe.fbx",
+      "sourceSha256": "fd9f47c9f2993951d003824c09dbd5e9b54e510e08056217809f697b8d7b62ed",
+      "destinationSha256": "fd9f47c9f2993951d003824c09dbd5e9b54e510e08056217809f697b8d7b62ed"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\OHS11_Hammer.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\OHS11_Hammer.fbx",
+      "sourceSha256": "f7ac379dd4fe7956ec8d8b625b53c4c3d86c32b3d6e24fb5ad3864ba3814a2da",
+      "destinationSha256": "f7ac379dd4fe7956ec8d8b625b53c4c3d86c32b3d6e24fb5ad3864ba3814a2da"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\OHS12_Sword.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\OHS12_Sword.fbx",
+      "sourceSha256": "be95f9342d0a68a288da2849b44f7ebe66c653aa54c67b0627a96804ff7a2f30",
+      "destinationSha256": "be95f9342d0a68a288da2849b44f7ebe66c653aa54c67b0627a96804ff7a2f30"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\OHS13_Axe.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\OHS13_Axe.fbx",
+      "sourceSha256": "51f0b2d13d73e7e2fdbb0f662a08a5358ed8bd9714cf1f3313ecf41c0b0fb4d8",
+      "destinationSha256": "51f0b2d13d73e7e2fdbb0f662a08a5358ed8bd9714cf1f3313ecf41c0b0fb4d8"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\OHS14_Hammer.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\OHS14_Hammer.fbx",
+      "sourceSha256": "246bc030bf49aa31099632c75fc16c185ee1ef2f004a6756e49d126d1e4aaf09",
+      "destinationSha256": "246bc030bf49aa31099632c75fc16c185ee1ef2f004a6756e49d126d1e4aaf09"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\OHS15_Sword.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\OHS15_Sword.fbx",
+      "sourceSha256": "0a21eb47fb72eb2e668c1cb5f3394212049aa6c6676045b3c30d3e347e9366d4",
+      "destinationSha256": "0a21eb47fb72eb2e668c1cb5f3394212049aa6c6676045b3c30d3e347e9366d4"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\OHS16_Sword.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\OHS16_Sword.fbx",
+      "sourceSha256": "fc5df2bd7077f73da36f481b65838edd260ed8646bd9fab351e4d69578674ff7",
+      "destinationSha256": "fc5df2bd7077f73da36f481b65838edd260ed8646bd9fab351e4d69578674ff7"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\Shield01.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\Shield01.fbx",
+      "sourceSha256": "65fc731b805b35a2977a7662933111ff75386cedee8788ba5b008583c00b840f",
+      "destinationSha256": "65fc731b805b35a2977a7662933111ff75386cedee8788ba5b008583c00b840f"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\Shield02.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\Shield02.fbx",
+      "sourceSha256": "21e52a2cec55074f05e4620b9cc018ddeeeaade5ceb25d2a9b4c55e6e1c6b58e",
+      "destinationSha256": "21e52a2cec55074f05e4620b9cc018ddeeeaade5ceb25d2a9b4c55e6e1c6b58e"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\Shield03.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\Shield03.fbx",
+      "sourceSha256": "6313ab81b58d7f4fe308263d06cf3d70e9fd8a26aa2b73b45c7f938c793f5d92",
+      "destinationSha256": "6313ab81b58d7f4fe308263d06cf3d70e9fd8a26aa2b73b45c7f938c793f5d92"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\Shield04.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\Shield04.fbx",
+      "sourceSha256": "cfd0b2c9349841fd0b249a3106e9190c9d0365b30cb2ef9071f3fed77620f272",
+      "destinationSha256": "cfd0b2c9349841fd0b249a3106e9190c9d0365b30cb2ef9071f3fed77620f272"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\Shield05.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\Shield05.fbx",
+      "sourceSha256": "ec96a864ced24172712f7fe7d97d60d553bbe5e5ea06471815a892bfcf179ad6",
+      "destinationSha256": "ec96a864ced24172712f7fe7d97d60d553bbe5e5ea06471815a892bfcf179ad6"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\Shield06.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\Shield06.fbx",
+      "sourceSha256": "01bf00a2dc757bde8c8001302b43f00460ad2233be0233ebdea78e9f2c0a4178",
+      "destinationSha256": "01bf00a2dc757bde8c8001302b43f00460ad2233be0233ebdea78e9f2c0a4178"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\Shield07.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\Shield07.fbx",
+      "sourceSha256": "ad9cb5145af4b8e913853e97e59966a68d0363347c311dec9203a3956ac6c70d",
+      "destinationSha256": "ad9cb5145af4b8e913853e97e59966a68d0363347c311dec9203a3956ac6c70d"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\Shield08.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\Shield08.fbx",
+      "sourceSha256": "be2fa35278c44c07a28a960339bc121b50f6d0e21b7c5009a7c5dada0316d5ea",
+      "destinationSha256": "be2fa35278c44c07a28a960339bc121b50f6d0e21b7c5009a7c5dada0316d5ea"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\Shield09.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\Shield09.fbx",
+      "sourceSha256": "5ad21db811e885192dabe05af51100ee937947b85cc64f65b97507b37df39f52",
+      "destinationSha256": "5ad21db811e885192dabe05af51100ee937947b85cc64f65b97507b37df39f52"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\Shield10.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\Shield10.fbx",
+      "sourceSha256": "766b5b231488a67c09134722d9ce6e52268fac4d14bc2b4144397144e918024c",
+      "destinationSha256": "766b5b231488a67c09134722d9ce6e52268fac4d14bc2b4144397144e918024c"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\Shield11.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\Shield11.fbx",
+      "sourceSha256": "75b1e9bfc8a2122b2954779175a95da7d7cbd526a27bb6a12381e36fcb24c8ca",
+      "destinationSha256": "75b1e9bfc8a2122b2954779175a95da7d7cbd526a27bb6a12381e36fcb24c8ca"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\Shield12.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\Shield12.fbx",
+      "sourceSha256": "ac05b25241a7aae3206c8493c2137f65f1a6091df6e0836a8a935770fb577c26",
+      "destinationSha256": "ac05b25241a7aae3206c8493c2137f65f1a6091df6e0836a8a935770fb577c26"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\Shield13.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\Shield13.fbx",
+      "sourceSha256": "4ee3a71cf1118e87b8b3f2ae4a38995c4f5d4256f02296641cd283e10f363c7c",
+      "destinationSha256": "4ee3a71cf1118e87b8b3f2ae4a38995c4f5d4256f02296641cd283e10f363c7c"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\Shield14.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\Shield14.fbx",
+      "sourceSha256": "3ce60b84cdedcc68af7cd74cb32b56c06868f960815658378b29d43e20c15bc6",
+      "destinationSha256": "3ce60b84cdedcc68af7cd74cb32b56c06868f960815658378b29d43e20c15bc6"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\Shield15.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\Shield15.fbx",
+      "sourceSha256": "c01114adb8bfaca524b0d8018e29913cc46cccdd08b7c96c909e19da1c3991e4",
+      "destinationSha256": "c01114adb8bfaca524b0d8018e29913cc46cccdd08b7c96c909e19da1c3991e4"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\Shield16.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\Shield16.fbx",
+      "sourceSha256": "a5dde063ffd643312cc321ee48106350f000ecb93ba08f12bbc0dcdf11add893",
+      "destinationSha256": "a5dde063ffd643312cc321ee48106350f000ecb93ba08f12bbc0dcdf11add893"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\Shield17.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\Shield17.fbx",
+      "sourceSha256": "c17e7c6dc2f3f78112746f813e0a5cd2095a19bfc309a7c2d6db40a23bc4f2da",
+      "destinationSha256": "c17e7c6dc2f3f78112746f813e0a5cd2095a19bfc309a7c2d6db40a23bc4f2da"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\Shield18.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\Shield18.fbx",
+      "sourceSha256": "f42d330628170c46436a0193a1cc2e1cd062004ec37e35b8314deac45b7a0b9a",
+      "destinationSha256": "f42d330628170c46436a0193a1cc2e1cd062004ec37e35b8314deac45b7a0b9a"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\Shield19.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\Shield19.fbx",
+      "sourceSha256": "f6160dd3285435d9e8668149f9894804321645a4b891592d952d2c883fa576bd",
+      "destinationSha256": "f6160dd3285435d9e8668149f9894804321645a4b891592d952d2c883fa576bd"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\Shield20.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\Shield20.fbx",
+      "sourceSha256": "1ae28a2216295f39a3ea3f0603539da62b64288e712c3a46bca580d3491bdc63",
+      "destinationSha256": "1ae28a2216295f39a3ea3f0603539da62b64288e712c3a46bca580d3491bdc63"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\Spear01.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\Spear01.fbx",
+      "sourceSha256": "0def6b72348f18c941552bd33e5a2530d5fb8fab56144e281230f1b573dfcbe1",
+      "destinationSha256": "0def6b72348f18c941552bd33e5a2530d5fb8fab56144e281230f1b573dfcbe1"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\Spear02.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\Spear02.fbx",
+      "sourceSha256": "e7d77a4783daa94ee50e7f32be284edf383a562dbe85b256b67aeb21233638a2",
+      "destinationSha256": "e7d77a4783daa94ee50e7f32be284edf383a562dbe85b256b67aeb21233638a2"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\Spear03.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\Spear03.fbx",
+      "sourceSha256": "a689ff4345bd7e2196ca59ca8d204b78d760fbab63a4ae5fe4a493c27363e129",
+      "destinationSha256": "a689ff4345bd7e2196ca59ca8d204b78d760fbab63a4ae5fe4a493c27363e129"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\Spear04.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\Spear04.fbx",
+      "sourceSha256": "401dc8cdae4998aadcce3d74e7cc545bafcac70a82373587109c8295d83f0ddb",
+      "destinationSha256": "401dc8cdae4998aadcce3d74e7cc545bafcac70a82373587109c8295d83f0ddb"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\Spear05.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\Spear05.fbx",
+      "sourceSha256": "ef256e43e285147986b4fe2115ae412281dc08c33bb304aeca6e47c197b4967e",
+      "destinationSha256": "ef256e43e285147986b4fe2115ae412281dc08c33bb304aeca6e47c197b4967e"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\THS01_Sword.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\THS01_Sword.fbx",
+      "sourceSha256": "6e69c61be5ca481d6c51188e2940b6bad4afd4bb753217139b3845931cda9b37",
+      "destinationSha256": "6e69c61be5ca481d6c51188e2940b6bad4afd4bb753217139b3845931cda9b37"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\THS02_Sword.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\THS02_Sword.fbx",
+      "sourceSha256": "8a4f9028023a9473414c6716d6e22879d1f8ea2db5d6f73862ff0eb9ee185feb",
+      "destinationSha256": "8a4f9028023a9473414c6716d6e22879d1f8ea2db5d6f73862ff0eb9ee185feb"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\THS03_Sword.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\THS03_Sword.fbx",
+      "sourceSha256": "cb12470f01087d98987d43baac64969c0a430dcdcbcd9d1d2b41520500e630b4",
+      "destinationSha256": "cb12470f01087d98987d43baac64969c0a430dcdcbcd9d1d2b41520500e630b4"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\THS04_Sword.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\THS04_Sword.fbx",
+      "sourceSha256": "1528d39fdaad7089fecf4043e537b28f0d799bc92d48176005ce43fe110fbf2f",
+      "destinationSha256": "1528d39fdaad7089fecf4043e537b28f0d799bc92d48176005ce43fe110fbf2f"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\THS05_Sword.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\THS05_Sword.fbx",
+      "sourceSha256": "56bd31c83e3f53c47cf93e48a35c66d6591de280ee492483b984783481e2d5fa",
+      "destinationSha256": "56bd31c83e3f53c47cf93e48a35c66d6591de280ee492483b984783481e2d5fa"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\THS06_Sword.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\THS06_Sword.fbx",
+      "sourceSha256": "0179ce339d711c35020e735e03b5bbd7d71a8afbbb8c99e3ac4b2caa7b2bbbb3",
+      "destinationSha256": "0179ce339d711c35020e735e03b5bbd7d71a8afbbb8c99e3ac4b2caa7b2bbbb3"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\THS07_Sword.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\THS07_Sword.fbx",
+      "sourceSha256": "50dd579f85895612f42b02d7ada26d7fe43980acee2e2cd26c7ed4894c3d647a",
+      "destinationSha256": "50dd579f85895612f42b02d7ada26d7fe43980acee2e2cd26c7ed4894c3d647a"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\Wand01.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\Wand01.fbx",
+      "sourceSha256": "9b9bb27fcd713bb23ec48e1fe41263d20b7e0bed9c9d6379838794eee28ddbb7",
+      "destinationSha256": "9b9bb27fcd713bb23ec48e1fe41263d20b7e0bed9c9d6379838794eee28ddbb7"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\Wand02.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\Wand02.fbx",
+      "sourceSha256": "ee59838dd4a993e07cc1f1742eaa390f99879c21afb915f4fbc966cdee85c172",
+      "destinationSha256": "ee59838dd4a993e07cc1f1742eaa390f99879c21afb915f4fbc966cdee85c172"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\Wand03.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\Wand03.fbx",
+      "sourceSha256": "2be05fa297426d174911cda7c46698c042f138532b659280ead1780f69ca117c",
+      "destinationSha256": "2be05fa297426d174911cda7c46698c042f138532b659280ead1780f69ca117c"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\Wand04.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\Wand04.fbx",
+      "sourceSha256": "a4985b03221d78dce797db02664bdf40e5776cb29d758b43e7d0195b32a89e17",
+      "destinationSha256": "a4985b03221d78dce797db02664bdf40e5776cb29d758b43e7d0195b32a89e17"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\Wand05.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\Wand05.fbx",
+      "sourceSha256": "b32a077c0cfc3cbc7fbff07623d4756ba6668b09a97f38d9da63cfc223ed3e55",
+      "destinationSha256": "b32a077c0cfc3cbc7fbff07623d4756ba6668b09a97f38d9da63cfc223ed3e55"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\Wand06.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\Wand06.fbx",
+      "sourceSha256": "64c0383aed04e77dce73ffdbe728ec918066f5a7cf5fa12500ee23a0810b2c2b",
+      "destinationSha256": "64c0383aed04e77dce73ffdbe728ec918066f5a7cf5fa12500ee23a0810b2c2b"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\Wand07.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\Wand07.fbx",
+      "sourceSha256": "19e14575d48532af2668e85aecb788d7a842857b0e6e9d078943e31f73ae82c9",
+      "destinationSha256": "19e14575d48532af2668e85aecb788d7a842857b0e6e9d078943e31f73ae82c9"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\Projectile\\Arrow01Projectile.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\Projectile\\Arrow01Projectile.fbx",
+      "sourceSha256": "b5b3680c5aece479dadc49c897b1b708fcaa6797e5062db505b6e602b04be2fc",
+      "destinationSha256": "b5b3680c5aece479dadc49c897b1b708fcaa6797e5062db505b6e602b04be2fc"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\Projectile\\Arrow02Projectile.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\Projectile\\Arrow02Projectile.fbx",
+      "sourceSha256": "643d4f60e48cf3f5b4fac8571047cfba0c2d0e0df94924dbad4cafaee4cca281",
+      "destinationSha256": "643d4f60e48cf3f5b4fac8571047cfba0c2d0e0df94924dbad4cafaee4cca281"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\Projectile\\Arrow03Projectile.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\Projectile\\Arrow03Projectile.fbx",
+      "sourceSha256": "256ecfd5a05f5c8ca0f9ee4cdc7c2c83c76813ea7b7a4847e651a4e30bcb0084",
+      "destinationSha256": "256ecfd5a05f5c8ca0f9ee4cdc7c2c83c76813ea7b7a4847e651a4e30bcb0084"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\Projectile\\Arrow04Projectile.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\Projectile\\Arrow04Projectile.fbx",
+      "sourceSha256": "370e4bd38f60abe1f5953d28a0f71d47e25eb3df27bd7fdddc2a7488152cf98c",
+      "destinationSha256": "370e4bd38f60abe1f5953d28a0f71d47e25eb3df27bd7fdddc2a7488152cf98c"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Mesh\\Weapons\\Projectile\\Arrow05Projectile.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Mesh\\Weapons\\Projectile\\Arrow05Projectile.fbx",
+      "sourceSha256": "97f6cae780105daa116802590d0a5aee83e1bf2cde5a657415e694aa5de7d626",
+      "destinationSha256": "97f6cae780105daa116802590d0a5aee83e1bf2cde5a657415e694aa5de7d626"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\AC01_Heart.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\AC01_Heart.prefab",
+      "sourceSha256": "44293673b4b74a965dc350126a05da8bb7ea44e42d06a2e571e9ab9c1adfb435",
+      "destinationSha256": "44293673b4b74a965dc350126a05da8bb7ea44e42d06a2e571e9ab9c1adfb435"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\AC02_Leaf.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\AC02_Leaf.prefab",
+      "sourceSha256": "2c7d7f40546b00f52949f61ae62c802bf80cef55c6b492454cb49fb4c0c00a60",
+      "destinationSha256": "2c7d7f40546b00f52949f61ae62c802bf80cef55c6b492454cb49fb4c0c00a60"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\AC03_BlackGlass.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\AC03_BlackGlass.prefab",
+      "sourceSha256": "71932ef59bf7d3e8353acc3f0fac00a332ca8bdc4498f2c07506f4f2a948b381",
+      "destinationSha256": "71932ef59bf7d3e8353acc3f0fac00a332ca8bdc4498f2c07506f4f2a948b381"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\AC03_HeavyMetalGlass.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\AC03_HeavyMetalGlass.prefab",
+      "sourceSha256": "934b8498ed9e96f07c7702215a9d50b468be2a37f9d2a78896af7e3ca53b0002",
+      "destinationSha256": "934b8498ed9e96f07c7702215a9d50b468be2a37f9d2a78896af7e3ca53b0002"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\AC03_NerdGlass.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\AC03_NerdGlass.prefab",
+      "sourceSha256": "98c042923fdaca43e57f05f7c20b82ecbfdea30137c073ac246348f2c4036485",
+      "destinationSha256": "98c042923fdaca43e57f05f7c20b82ecbfdea30137c073ac246348f2c4036485"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\AC03_NightVision.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\AC03_NightVision.prefab",
+      "sourceSha256": "553754a747840b01ecfc35092113d91b4a055ed51635532baedc3234abbe91ee",
+      "destinationSha256": "553754a747840b01ecfc35092113d91b4a055ed51635532baedc3234abbe91ee"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\AC04_AngelEars.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\AC04_AngelEars.prefab",
+      "sourceSha256": "881c1bf4c81d38922d0d38d1d454ecc14cd72f0e5bbb1c0b3630f1ec498336d5",
+      "destinationSha256": "881c1bf4c81d38922d0d38d1d454ecc14cd72f0e5bbb1c0b3630f1ec498336d5"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\AC04_AnthenaEars.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\AC04_AnthenaEars.prefab",
+      "sourceSha256": "4dd259af26f3c6ccb66fc59a97f5045e41ae129af7543c35eeaa369a51c892c8",
+      "destinationSha256": "4dd259af26f3c6ccb66fc59a97f5045e41ae129af7543c35eeaa369a51c892c8"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\AC04_BunnyEars.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\AC04_BunnyEars.prefab",
+      "sourceSha256": "ae09df69850dc013ab9109495358cb5b70ef4239c658c367b6428b54d65233ab",
+      "destinationSha256": "ae09df69850dc013ab9109495358cb5b70ef4239c658c367b6428b54d65233ab"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\AC04_ShortEars.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\AC04_ShortEars.prefab",
+      "sourceSha256": "e369b00d9b7b66d54645433691d389e41bc8f974dea7f82c300cbe9588ae3a63",
+      "destinationSha256": "e369b00d9b7b66d54645433691d389e41bc8f974dea7f82c300cbe9588ae3a63"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\AC05_Horn01.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\AC05_Horn01.prefab",
+      "sourceSha256": "e09b0b44b2caf05f773161bb8334f9436b6a7d38ed646fe26bc034c3104c00cc",
+      "destinationSha256": "e09b0b44b2caf05f773161bb8334f9436b6a7d38ed646fe26bc034c3104c00cc"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\AC05_Horn02.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\AC05_Horn02.prefab",
+      "sourceSha256": "5480822c82a3e6b04a44dc49c1726892e0f52f91de887bb6b8134254b1079bd0",
+      "destinationSha256": "5480822c82a3e6b04a44dc49c1726892e0f52f91de887bb6b8134254b1079bd0"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\AC05_Horn03.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\AC05_Horn03.prefab",
+      "sourceSha256": "f647fb3e3521424eaa30d45bf8cef239777fa910db297f865878270f4df3e1ad",
+      "destinationSha256": "f647fb3e3521424eaa30d45bf8cef239777fa910db297f865878270f4df3e1ad"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\AC05_Horn04.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\AC05_Horn04.prefab",
+      "sourceSha256": "8d51cfb6646596fccc5a5f5cd5d4e0f51f5918264e60f87fd8e9ba0db83553c7",
+      "destinationSha256": "8d51cfb6646596fccc5a5f5cd5d4e0f51f5918264e60f87fd8e9ba0db83553c7"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\AC06_Crown01.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\AC06_Crown01.prefab",
+      "sourceSha256": "fae151439eab23f28108df20882ef3acb4038a871f678098eaaeeaea35093b1c",
+      "destinationSha256": "fae151439eab23f28108df20882ef3acb4038a871f678098eaaeeaea35093b1c"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\AC06_Crown02.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\AC06_Crown02.prefab",
+      "sourceSha256": "337d9675a76e1768eeb221e9490546224951f8d1ba5907fb719e2930cdd971bf",
+      "destinationSha256": "337d9675a76e1768eeb221e9490546224951f8d1ba5907fb719e2930cdd971bf"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\AC06_Crown03.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\AC06_Crown03.prefab",
+      "sourceSha256": "c09a848b50d2aeaad7eaba94c1306d293314f64b0b84c1eb1857eed6cf2bcfb5",
+      "destinationSha256": "c09a848b50d2aeaad7eaba94c1306d293314f64b0b84c1eb1857eed6cf2bcfb5"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\AC07_PiratePatch.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\AC07_PiratePatch.prefab",
+      "sourceSha256": "895d25a9df0ef1460a1ad108d477a9a453d7581a723b076a0a31a9058c8d0882",
+      "destinationSha256": "895d25a9df0ef1460a1ad108d477a9a453d7581a723b076a0a31a9058c8d0882"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\AC08_NinjaMask01.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\AC08_NinjaMask01.prefab",
+      "sourceSha256": "d6a86ff0d354dc12943f1311b0f092ecf45a0b05dc3121549f4248583b259a0c",
+      "destinationSha256": "d6a86ff0d354dc12943f1311b0f092ecf45a0b05dc3121549f4248583b259a0c"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\AC08_NinjaMask02.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\AC08_NinjaMask02.prefab",
+      "sourceSha256": "addd3ff3dcd0024758c3baa35a3b4961f50f17e716a518b42e9b007b78829eec",
+      "destinationSha256": "addd3ff3dcd0024758c3baa35a3b4961f50f17e716a518b42e9b007b78829eec"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\AC08_NinjaMask03.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\AC08_NinjaMask03.prefab",
+      "sourceSha256": "3893b0487a1c1f35377bfa1510ba7cb2ef59c854709aba93051f26b2fa311593",
+      "destinationSha256": "3893b0487a1c1f35377bfa1510ba7cb2ef59c854709aba93051f26b2fa311593"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\AC08_NinjaMask04.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\AC08_NinjaMask04.prefab",
+      "sourceSha256": "9e39624d9a8d2f571a83a5c2e11c531a7ebaef167b3fc96043a35a2141412ebc",
+      "destinationSha256": "9e39624d9a8d2f571a83a5c2e11c531a7ebaef167b3fc96043a35a2141412ebc"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\AC08_NinjaMask05.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\AC08_NinjaMask05.prefab",
+      "sourceSha256": "f57f75e2c3d855b5d34c3b02e662cf9755cf348d9969bc9da19a0dc37f8249fb",
+      "destinationSha256": "f57f75e2c3d855b5d34c3b02e662cf9755cf348d9969bc9da19a0dc37f8249fb"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\AC08_NinjaMask06.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\AC08_NinjaMask06.prefab",
+      "sourceSha256": "cb5459734aab245e5ff02cf5071cc8464b951006c5945573c9ac84b5c7a5248e",
+      "destinationSha256": "cb5459734aab245e5ff02cf5071cc8464b951006c5945573c9ac84b5c7a5248e"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\AC08_NinjaMask07.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\AC08_NinjaMask07.prefab",
+      "sourceSha256": "5269475019f19dbe75f8997ce394623627aaa8a9ecbd53639564c9e49154563c",
+      "destinationSha256": "5269475019f19dbe75f8997ce394623627aaa8a9ecbd53639564c9e49154563c"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\AC08_NinjaMask08.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\AC08_NinjaMask08.prefab",
+      "sourceSha256": "5a343e3b12190b893b281f118ca4919e049996dcbf1e2d546d24761bc7ad0b04",
+      "destinationSha256": "5a343e3b12190b893b281f118ca4919e049996dcbf1e2d546d24761bc7ad0b04"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\AC09_Ribbon.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\AC09_Ribbon.prefab",
+      "sourceSha256": "fbf6dc0b59fd195b9568d5b9d09ffd7f6c57b62350ba360f1cfd5f2f0eab9a72",
+      "destinationSha256": "fbf6dc0b59fd195b9568d5b9d09ffd7f6c57b62350ba360f1cfd5f2f0eab9a72"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\AC10_Mustache01.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\AC10_Mustache01.prefab",
+      "sourceSha256": "1ac0a2c609631873ad942b3dbb723301adaceba6f0563eee0110762e5e12695e",
+      "destinationSha256": "1ac0a2c609631873ad942b3dbb723301adaceba6f0563eee0110762e5e12695e"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\AC10_Mustache02.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\AC10_Mustache02.prefab",
+      "sourceSha256": "163821688a3cfd02eea318f9ec7207053e965c017c746aa026a0584f27548292",
+      "destinationSha256": "163821688a3cfd02eea318f9ec7207053e965c017c746aa026a0584f27548292"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\AC10_Mustache03.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\AC10_Mustache03.prefab",
+      "sourceSha256": "055611d1a1fb880fff9c142f26fa7460b2ca2368c11c550f3ad01f83cbcbd51f",
+      "destinationSha256": "055611d1a1fb880fff9c142f26fa7460b2ca2368c11c550f3ad01f83cbcbd51f"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\AC10_Mustache04.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\AC10_Mustache04.prefab",
+      "sourceSha256": "175bb838a67ad4fbbc588af45e75ecb967d823548e113a29e3a16277302635a0",
+      "destinationSha256": "175bb838a67ad4fbbc588af45e75ecb967d823548e113a29e3a16277302635a0"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\AC10_Mustache05.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\AC10_Mustache05.prefab",
+      "sourceSha256": "1e6b1b0a4009fb04e0a85917a54c8adc6e652b41657f3fe4bcee2201241e3ce8",
+      "destinationSha256": "1e6b1b0a4009fb04e0a85917a54c8adc6e652b41657f3fe4bcee2201241e3ce8"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\AC10_Mustache06.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\AC10_Mustache06.prefab",
+      "sourceSha256": "eb83c529bb9451c5f0d7be3bd8b1f3ccf0150b9ad4619373db6e67e977285696",
+      "destinationSha256": "eb83c529bb9451c5f0d7be3bd8b1f3ccf0150b9ad4619373db6e67e977285696"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\AC11_Mustache01.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\AC11_Mustache01.prefab",
+      "sourceSha256": "95a94ea9b1e925dfeedf88db58496ae6ab67ed41ac62b8546d134e8ec634eed0",
+      "destinationSha256": "95a94ea9b1e925dfeedf88db58496ae6ab67ed41ac62b8546d134e8ec634eed0"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\AC11_Mustache02.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\AC11_Mustache02.prefab",
+      "sourceSha256": "9116c2f984f65a10fb8d5ac29d143aaf60007c38d7456ca884456ea179112e67",
+      "destinationSha256": "9116c2f984f65a10fb8d5ac29d143aaf60007c38d7456ca884456ea179112e67"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\AC11_Mustache03.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\AC11_Mustache03.prefab",
+      "sourceSha256": "bbe6e35a171eac01643300316ab0cb7d74b29166a239aabc0ea93ff4f4673963",
+      "destinationSha256": "bbe6e35a171eac01643300316ab0cb7d74b29166a239aabc0ea93ff4f4673963"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\AC11_Mustache04.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\AC11_Mustache04.prefab",
+      "sourceSha256": "8e633bfecedcffd2f7f44a5786d5b2a876f6734ac0f62914ff979a36f1d9848d",
+      "destinationSha256": "8e633bfecedcffd2f7f44a5786d5b2a876f6734ac0f62914ff979a36f1d9848d"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\AC11_Mustache05.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\AC11_Mustache05.prefab",
+      "sourceSha256": "a1cb18d1c1508f5b19c99f885d48b9b5bfc29bd0a2e71ccde6050110a00dd2a2",
+      "destinationSha256": "a1cb18d1c1508f5b19c99f885d48b9b5bfc29bd0a2e71ccde6050110a00dd2a2"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\AC11_Mustache06.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\AC11_Mustache06.prefab",
+      "sourceSha256": "90cc23672e11ffbfaa9499345b456a82be4de6c14f10c9f0b495bb6be87d4629",
+      "destinationSha256": "90cc23672e11ffbfaa9499345b456a82be4de6c14f10c9f0b495bb6be87d4629"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\BackPack01.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\BackPack01.prefab",
+      "sourceSha256": "295088346adc6212afcbd70fb618bbe0437dbfd36f9d9c352567d1a8fc4d3a79",
+      "destinationSha256": "295088346adc6212afcbd70fb618bbe0437dbfd36f9d9c352567d1a8fc4d3a79"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\BackPack02.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\BackPack02.prefab",
+      "sourceSha256": "c282c4d51e10573dd99d855ff7eaf9c9ccf124097c85e10c5c0db180dd85f942",
+      "destinationSha256": "c282c4d51e10573dd99d855ff7eaf9c9ccf124097c85e10c5c0db180dd85f942"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\BackPack03.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\BackPack03.prefab",
+      "sourceSha256": "efb0de5dfb780253fd21b3afe92f062c96726889fcf4b548d1d2388ddcacd711",
+      "destinationSha256": "efb0de5dfb780253fd21b3afe92f062c96726889fcf4b548d1d2388ddcacd711"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Eye01.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Eye01.prefab",
+      "sourceSha256": "b83ad591a13382c1b12261ff91bf2e035d90717b7699b965b9123b6e1f5e59cd",
+      "destinationSha256": "b83ad591a13382c1b12261ff91bf2e035d90717b7699b965b9123b6e1f5e59cd"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Eye02.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Eye02.prefab",
+      "sourceSha256": "0b24b97ffdcc4bd175dd2b68f288d13e448a38d3a8682cfbc983a564847fae5d",
+      "destinationSha256": "0b24b97ffdcc4bd175dd2b68f288d13e448a38d3a8682cfbc983a564847fae5d"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Eye03.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Eye03.prefab",
+      "sourceSha256": "adefce114b6c66c5df60200dd86e02944912a8ee71ad587f675f89ef6f4a08ba",
+      "destinationSha256": "adefce114b6c66c5df60200dd86e02944912a8ee71ad587f675f89ef6f4a08ba"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Eye04.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Eye04.prefab",
+      "sourceSha256": "43f3b9b52e66338114bd67b5f7dedcddd65e7f1d38b898edf66808af7e0938e6",
+      "destinationSha256": "43f3b9b52e66338114bd67b5f7dedcddd65e7f1d38b898edf66808af7e0938e6"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Eye05.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Eye05.prefab",
+      "sourceSha256": "f7728778582761f2addddb6b311a2e90095d447a1d34233bb60f5392116df9c7",
+      "destinationSha256": "f7728778582761f2addddb6b311a2e90095d447a1d34233bb60f5392116df9c7"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Eye06.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Eye06.prefab",
+      "sourceSha256": "e2580df55f744a9de20bacaa1c41c896b3949d9e43665e037601612e020850d3",
+      "destinationSha256": "e2580df55f744a9de20bacaa1c41c896b3949d9e43665e037601612e020850d3"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Eye07.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Eye07.prefab",
+      "sourceSha256": "6974b06c7a9714e9441313148bb95f7ff89cd052d42df714efdb524e03b30cdd",
+      "destinationSha256": "6974b06c7a9714e9441313148bb95f7ff89cd052d42df714efdb524e03b30cdd"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Eye08.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Eye08.prefab",
+      "sourceSha256": "cb591e0a4d5feb4020bf95dd4d2b962dad5238a635bbd7657e4358602d51a252",
+      "destinationSha256": "cb591e0a4d5feb4020bf95dd4d2b962dad5238a635bbd7657e4358602d51a252"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Eye09.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Eye09.prefab",
+      "sourceSha256": "ce2a5e337501adce1dbac9a55d5e2c091a0c01aec875807868b023e5ed6e75a6",
+      "destinationSha256": "ce2a5e337501adce1dbac9a55d5e2c091a0c01aec875807868b023e5ed6e75a6"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Eye10.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Eye10.prefab",
+      "sourceSha256": "8a5b04cc4e99764e3414338d2e4d9129b00030a5a28318e6aa953464f90bfaad",
+      "destinationSha256": "8a5b04cc4e99764e3414338d2e4d9129b00030a5a28318e6aa953464f90bfaad"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Eye11.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Eye11.prefab",
+      "sourceSha256": "ebb662482559e42dac15f3c403534de845078ee15ac778c629e64fd4f95797f1",
+      "destinationSha256": "ebb662482559e42dac15f3c403534de845078ee15ac778c629e64fd4f95797f1"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Eye12.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Eye12.prefab",
+      "sourceSha256": "28f141a05eecaef578bb84c01ec575442ba22b863db6881914b3d2d6c950dcef",
+      "destinationSha256": "28f141a05eecaef578bb84c01ec575442ba22b863db6881914b3d2d6c950dcef"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Eyebrow01.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Eyebrow01.prefab",
+      "sourceSha256": "9340d7f5bcdc629102a1d3da6e6f18b3c788beaf51982fffafb71bcc0351f2e9",
+      "destinationSha256": "9340d7f5bcdc629102a1d3da6e6f18b3c788beaf51982fffafb71bcc0351f2e9"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Eyebrow02.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Eyebrow02.prefab",
+      "sourceSha256": "3973a5e07c42e7051466bed00fa0685b2720c7807977f6a23d0d04ab9c1ef8b0",
+      "destinationSha256": "3973a5e07c42e7051466bed00fa0685b2720c7807977f6a23d0d04ab9c1ef8b0"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Hair01.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Hair01.prefab",
+      "sourceSha256": "b951481c1000d4ddf0559871e3f4e5afd1bcb6e0664d4e3f19386274208aadf5",
+      "destinationSha256": "b951481c1000d4ddf0559871e3f4e5afd1bcb6e0664d4e3f19386274208aadf5"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Hair02.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Hair02.prefab",
+      "sourceSha256": "921a969e1db4a551e6c5f8b737de3b8b67b483b0c93b7f9af8d5affbe1c87e43",
+      "destinationSha256": "921a969e1db4a551e6c5f8b737de3b8b67b483b0c93b7f9af8d5affbe1c87e43"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Hair03.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Hair03.prefab",
+      "sourceSha256": "3c7843bdf0f221a8e17b0a1aef9ef33edfd3ef805922418ebd908992ddc36105",
+      "destinationSha256": "3c7843bdf0f221a8e17b0a1aef9ef33edfd3ef805922418ebd908992ddc36105"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Hair04.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Hair04.prefab",
+      "sourceSha256": "79d3cd6fdc7a0d67b2317d1f2964ba9fbf657723c30b6e42046a7fb00d94e5de",
+      "destinationSha256": "79d3cd6fdc7a0d67b2317d1f2964ba9fbf657723c30b6e42046a7fb00d94e5de"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Hair05.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Hair05.prefab",
+      "sourceSha256": "81d1232fb57501fc087c3e6baffd27f0421d8524a82dc92c644102719ac3df29",
+      "destinationSha256": "81d1232fb57501fc087c3e6baffd27f0421d8524a82dc92c644102719ac3df29"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Hair06.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Hair06.prefab",
+      "sourceSha256": "c8726dfd3d824eb10cfaf39c339abad5187905f54257918cba124899a09946e1",
+      "destinationSha256": "c8726dfd3d824eb10cfaf39c339abad5187905f54257918cba124899a09946e1"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Hair07.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Hair07.prefab",
+      "sourceSha256": "3744fa10b0cf0ba572099f01d8bfdc91c7d03cd35c905dddfa27b3e0c3888203",
+      "destinationSha256": "3744fa10b0cf0ba572099f01d8bfdc91c7d03cd35c905dddfa27b3e0c3888203"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Hair08.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Hair08.prefab",
+      "sourceSha256": "ccabf9d98e98f8f618dd350d2b4e79a1582229dcc266554cf0f6abb40d3e38f6",
+      "destinationSha256": "ccabf9d98e98f8f618dd350d2b4e79a1582229dcc266554cf0f6abb40d3e38f6"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Hair09.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Hair09.prefab",
+      "sourceSha256": "704fcd6f1cfb1858438b67ca6d29459b849d228e5cbbce1b15c02ea8408fe240",
+      "destinationSha256": "704fcd6f1cfb1858438b67ca6d29459b849d228e5cbbce1b15c02ea8408fe240"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Hair10.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Hair10.prefab",
+      "sourceSha256": "177975a67a3daa9c62f5964a4c3e866a896183d0612cca79cc6b01804b50a08f",
+      "destinationSha256": "177975a67a3daa9c62f5964a4c3e866a896183d0612cca79cc6b01804b50a08f"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Hair11.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Hair11.prefab",
+      "sourceSha256": "715f9fffe856e1a0e0b7a31abdb7d99807ea2ea4979876895b9747ee7193ac02",
+      "destinationSha256": "715f9fffe856e1a0e0b7a31abdb7d99807ea2ea4979876895b9747ee7193ac02"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Hair12.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Hair12.prefab",
+      "sourceSha256": "bb738ea76b3c5c68ac41067c3e175e5873348a4e7df67659b7e919f1ea22095c",
+      "destinationSha256": "bb738ea76b3c5c68ac41067c3e175e5873348a4e7df67659b7e919f1ea22095c"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Hair13.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Hair13.prefab",
+      "sourceSha256": "ed067f4507b4504ad1f8f258d3c72ac762b6f9642ad9a5c6658ca28d28577785",
+      "destinationSha256": "ed067f4507b4504ad1f8f258d3c72ac762b6f9642ad9a5c6658ca28d28577785"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Hat01.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Hat01.prefab",
+      "sourceSha256": "daf6fdeacff90a1fcdd656c36f6e87d4928820535fa1462a004588574ad27a80",
+      "destinationSha256": "daf6fdeacff90a1fcdd656c36f6e87d4928820535fa1462a004588574ad27a80"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Hat02.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Hat02.prefab",
+      "sourceSha256": "0ce158157947dab34b90d3bf91c12754cf9150206920e9104ed9cde261e77d1d",
+      "destinationSha256": "0ce158157947dab34b90d3bf91c12754cf9150206920e9104ed9cde261e77d1d"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Hat03.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Hat03.prefab",
+      "sourceSha256": "297c5f812502e1169cff973e00d9bc77c49ba0dd69bcabb34716e87fbaa58e8e",
+      "destinationSha256": "297c5f812502e1169cff973e00d9bc77c49ba0dd69bcabb34716e87fbaa58e8e"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Hat04.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Hat04.prefab",
+      "sourceSha256": "cb5663f44cf1e70a520d6ec721c2b2e242b3776d23cfaf0e5742994031ed6ba8",
+      "destinationSha256": "cb5663f44cf1e70a520d6ec721c2b2e242b3776d23cfaf0e5742994031ed6ba8"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Hat05.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Hat05.prefab",
+      "sourceSha256": "846da60aab5ec893d1b8b6aaeff46ffc1325b09a61d86c6558a01f26c1a69cad",
+      "destinationSha256": "846da60aab5ec893d1b8b6aaeff46ffc1325b09a61d86c6558a01f26c1a69cad"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Hat06.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Hat06.prefab",
+      "sourceSha256": "1f661972d71c10906dd6c595f53280bf0fce6f0b2d144d96cb953acb7d6d94d9",
+      "destinationSha256": "1f661972d71c10906dd6c595f53280bf0fce6f0b2d144d96cb953acb7d6d94d9"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Hat07.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Hat07.prefab",
+      "sourceSha256": "96161d2946a997c4537a5da12608474cd633a5f8f814c11ddd29de7361c4c908",
+      "destinationSha256": "96161d2946a997c4537a5da12608474cd633a5f8f814c11ddd29de7361c4c908"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Hat08.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Hat08.prefab",
+      "sourceSha256": "11ecd8a5c3a6babac9d18a4005afd2451b0553980904efbae34143fbc7a7820b",
+      "destinationSha256": "11ecd8a5c3a6babac9d18a4005afd2451b0553980904efbae34143fbc7a7820b"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Hat09.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Hat09.prefab",
+      "sourceSha256": "6435d367889da30a06f149199c9e10de7643b0e895c1d0322e3dc334c3559c93",
+      "destinationSha256": "6435d367889da30a06f149199c9e10de7643b0e895c1d0322e3dc334c3559c93"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Hat10.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Hat10.prefab",
+      "sourceSha256": "364cb298a0b93fc0999e179799a5a957766ca403ca3675ab3d3b8f708e64c87e",
+      "destinationSha256": "364cb298a0b93fc0999e179799a5a957766ca403ca3675ab3d3b8f708e64c87e"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Hat11.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Hat11.prefab",
+      "sourceSha256": "da758cda25cf1963892d296442e43c62592f50578bb45af3e109bef273f59178",
+      "destinationSha256": "da758cda25cf1963892d296442e43c62592f50578bb45af3e109bef273f59178"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Hat12.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Hat12.prefab",
+      "sourceSha256": "95f692631877e46767253637c30490dfbff1a5bddd5f49f25705cdea45a6d45f",
+      "destinationSha256": "95f692631877e46767253637c30490dfbff1a5bddd5f49f25705cdea45a6d45f"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Hat13.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Hat13.prefab",
+      "sourceSha256": "a7323b4d3ca54f963746110fd1fdd76cbd3a191af70c1a6072f3104db36cf2bd",
+      "destinationSha256": "a7323b4d3ca54f963746110fd1fdd76cbd3a191af70c1a6072f3104db36cf2bd"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Hat14.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Hat14.prefab",
+      "sourceSha256": "24d02464998af01c288c5526bcfdd51b1ea55f82b2a3e76e0502cca57a2b4511",
+      "destinationSha256": "24d02464998af01c288c5526bcfdd51b1ea55f82b2a3e76e0502cca57a2b4511"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Head01_Male.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Head01_Male.prefab",
+      "sourceSha256": "5a85d1cf1008d6814f5818239046ba0d49eaa2f16f19bd60e98eb7c9a4c4bfea",
+      "destinationSha256": "5a85d1cf1008d6814f5818239046ba0d49eaa2f16f19bd60e98eb7c9a4c4bfea"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Head02_Female.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Head02_Female.prefab",
+      "sourceSha256": "c4cca8146d809bce17ea1fdbc0ad581409a63bc8df16557a5bd952139152d868",
+      "destinationSha256": "c4cca8146d809bce17ea1fdbc0ad581409a63bc8df16557a5bd952139152d868"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Head03_Blue.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Head03_Blue.prefab",
+      "sourceSha256": "6de33683eabaed6000046c6c0d75a6b99370e080b9f268eb59f11ee0d28b672c",
+      "destinationSha256": "6de33683eabaed6000046c6c0d75a6b99370e080b9f268eb59f11ee0d28b672c"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Head03_Brown.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Head03_Brown.prefab",
+      "sourceSha256": "0396deb6cd15bec3fb562cb10e107f12e14912272233c2e8cbbe8366b1406170",
+      "destinationSha256": "0396deb6cd15bec3fb562cb10e107f12e14912272233c2e8cbbe8366b1406170"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Head03_Grey.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Head03_Grey.prefab",
+      "sourceSha256": "fb48e81f43d48cebab356e195f108aa301d767fea05d1c071460c985539975e7",
+      "destinationSha256": "fb48e81f43d48cebab356e195f108aa301d767fea05d1c071460c985539975e7"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Head03_Purple.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Head03_Purple.prefab",
+      "sourceSha256": "9d9eafac1e6030af6c7660afa78b63b5becd928e2ba38671cdb4fb7393c6b288",
+      "destinationSha256": "9d9eafac1e6030af6c7660afa78b63b5becd928e2ba38671cdb4fb7393c6b288"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Head03_Red.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Head03_Red.prefab",
+      "sourceSha256": "e2a9b9498d1a9c71df438e9cbe4ab2c0c7673d7db2299998a513f34c6a78dcf0",
+      "destinationSha256": "e2a9b9498d1a9c71df438e9cbe4ab2c0c7673d7db2299998a513f34c6a78dcf0"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Head03_Yellow.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Head03_Yellow.prefab",
+      "sourceSha256": "eda40e6a5ba794313eda8c1bcd1dd1656d7bd41566f1053c438987a1ad182c79",
+      "destinationSha256": "eda40e6a5ba794313eda8c1bcd1dd1656d7bd41566f1053c438987a1ad182c79"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Head04_Blue.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Head04_Blue.prefab",
+      "sourceSha256": "18e60f7174dec8f9fe71d95b37ca7c702a02243090703b55742aae1067d4594c",
+      "destinationSha256": "18e60f7174dec8f9fe71d95b37ca7c702a02243090703b55742aae1067d4594c"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Head04_Brown.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Head04_Brown.prefab",
+      "sourceSha256": "409af697bfc48b688921700b752a28df6726ea0f3fcc5d52868834f1b8d00f44",
+      "destinationSha256": "409af697bfc48b688921700b752a28df6726ea0f3fcc5d52868834f1b8d00f44"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Head04_Grey.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Head04_Grey.prefab",
+      "sourceSha256": "55eb64c4df30aefa26df6f24735cbb7d3c0d724a56d17ead6ca09c8e8eed79cd",
+      "destinationSha256": "55eb64c4df30aefa26df6f24735cbb7d3c0d724a56d17ead6ca09c8e8eed79cd"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Head04_Purple.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Head04_Purple.prefab",
+      "sourceSha256": "a1a17cb22abc54793288f81b02db495cbc9dd7d0ef298bf614f5e33f984546f9",
+      "destinationSha256": "a1a17cb22abc54793288f81b02db495cbc9dd7d0ef298bf614f5e33f984546f9"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Head04_Red.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Head04_Red.prefab",
+      "sourceSha256": "60cbacf4efd5690da3e505cfe0a63c87b3cc641b8948631a4843762f002bebf5",
+      "destinationSha256": "60cbacf4efd5690da3e505cfe0a63c87b3cc641b8948631a4843762f002bebf5"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Head04_Yellow.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Head04_Yellow.prefab",
+      "sourceSha256": "c5f157b12ef724be718b7b0538ef1d55ab052a0b04485dc29f745942000da2f2",
+      "destinationSha256": "c5f157b12ef724be718b7b0538ef1d55ab052a0b04485dc29f745942000da2f2"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Head05_Santa.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Head05_Santa.prefab",
+      "sourceSha256": "6e7892422a16ae88e9cbd4a1eb84a9423e450f2dc1134e1efa0a71eb16df592e",
+      "destinationSha256": "6e7892422a16ae88e9cbd4a1eb84a9423e450f2dc1134e1efa0a71eb16df592e"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\HeadArmor01.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\HeadArmor01.prefab",
+      "sourceSha256": "ac7bdf24d3a13d6d76940399dc77d9194fa00c0291d4976598f4b217bea71d18",
+      "destinationSha256": "ac7bdf24d3a13d6d76940399dc77d9194fa00c0291d4976598f4b217bea71d18"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\HeadArmor02.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\HeadArmor02.prefab",
+      "sourceSha256": "dcc78ed37cb89438aadb8c8b65f5f94b96f3ec712b11c28489bc2dbb7cb20f9a",
+      "destinationSha256": "dcc78ed37cb89438aadb8c8b65f5f94b96f3ec712b11c28489bc2dbb7cb20f9a"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\HeadArmor03.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\HeadArmor03.prefab",
+      "sourceSha256": "d05918cc6893b58502bd99c92d081df251a03b6df9ac6776e822e72556712f72",
+      "destinationSha256": "d05918cc6893b58502bd99c92d081df251a03b6df9ac6776e822e72556712f72"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\HeadArmor04.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\HeadArmor04.prefab",
+      "sourceSha256": "fbdca533227256119c2ddaa20e368ac2f0080c958222ee267ac68d4b47593e61",
+      "destinationSha256": "fbdca533227256119c2ddaa20e368ac2f0080c958222ee267ac68d4b47593e61"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\HeadArmor05.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\HeadArmor05.prefab",
+      "sourceSha256": "e8f51536cf7f154515caccc8e09e29b55a010f9e52477de55dcc48d02c52e5f3",
+      "destinationSha256": "e8f51536cf7f154515caccc8e09e29b55a010f9e52477de55dcc48d02c52e5f3"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Mouth01.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Mouth01.prefab",
+      "sourceSha256": "381e246e1d19f528235e001fcd79261113ce0402f781170781152382b3a18cba",
+      "destinationSha256": "381e246e1d19f528235e001fcd79261113ce0402f781170781152382b3a18cba"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Mouth02.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Mouth02.prefab",
+      "sourceSha256": "e25de2022fa44fb3360e8c0cf14a7aa1be8a09c1fce412a85eb2be1aaaa07862",
+      "destinationSha256": "e25de2022fa44fb3360e8c0cf14a7aa1be8a09c1fce412a85eb2be1aaaa07862"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Mouth03.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Mouth03.prefab",
+      "sourceSha256": "bd9a2c4d5902f328ea57a8fd7e5de46cf615c6a3a94e3e02ceba52f4c8195241",
+      "destinationSha256": "bd9a2c4d5902f328ea57a8fd7e5de46cf615c6a3a94e3e02ceba52f4c8195241"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Mouth04.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Mouth04.prefab",
+      "sourceSha256": "7cf9a942d9eeef2faf51eab97e8686fcbea4e4af672b2caae474f9ffe8406dc7",
+      "destinationSha256": "7cf9a942d9eeef2faf51eab97e8686fcbea4e4af672b2caae474f9ffe8406dc7"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Mouth05.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Mouth05.prefab",
+      "sourceSha256": "9d32763e2d6823157426759c6893416c9e3d08635666aef06a0b914edc2dee7c",
+      "destinationSha256": "9d32763e2d6823157426759c6893416c9e3d08635666aef06a0b914edc2dee7c"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Mouth06.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Mouth06.prefab",
+      "sourceSha256": "d03db3d63e7eb51a2d4098b0cdcf0a8e2d8434d02b3f4724c88e6e9d2bac4a0e",
+      "destinationSha256": "d03db3d63e7eb51a2d4098b0cdcf0a8e2d8434d02b3f4724c88e6e9d2bac4a0e"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Mouth07.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Mouth07.prefab",
+      "sourceSha256": "301fc2cae15c127f4cd5ba5a589e32a586e59769088bf9a0275c514aa91173d1",
+      "destinationSha256": "301fc2cae15c127f4cd5ba5a589e32a586e59769088bf9a0275c514aa91173d1"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Mouth08.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Mouth08.prefab",
+      "sourceSha256": "b3432fc9d8275b70c19bab4a87fea2dd4bfef6d50011abe57e733b286f039449",
+      "destinationSha256": "b3432fc9d8275b70c19bab4a87fea2dd4bfef6d50011abe57e733b286f039449"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Mouth09.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Mouth09.prefab",
+      "sourceSha256": "53325127efea0299b1e4df297ded2288a11a7033ff0c5de695f0cf2d372c6200",
+      "destinationSha256": "53325127efea0299b1e4df297ded2288a11a7033ff0c5de695f0cf2d372c6200"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Mouth10.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Mouth10.prefab",
+      "sourceSha256": "af5e7cd27f32e80c4dc051933a8ac38d0ffcb39b1b854678f4ab06c3caf4964c",
+      "destinationSha256": "af5e7cd27f32e80c4dc051933a8ac38d0ffcb39b1b854678f4ab06c3caf4964c"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Mouth11.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Mouth11.prefab",
+      "sourceSha256": "411a73a26e5f60ee3ab36683f18c1eab0167da3d4bb9a75f69b09ba7e2cbfcc1",
+      "destinationSha256": "411a73a26e5f60ee3ab36683f18c1eab0167da3d4bb9a75f69b09ba7e2cbfcc1"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\HeadParts\\Mouth12.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\HeadParts\\Mouth12.prefab",
+      "sourceSha256": "8f9a2e5921b88d20c434c7f43233a1ddbd33d2f28fa0135d04dd58285b9ed306",
+      "destinationSha256": "8f9a2e5921b88d20c434c7f43233a1ddbd33d2f28fa0135d04dd58285b9ed306"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\MaskTintCharacters\\MaskTint01.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\MaskTintCharacters\\MaskTint01.prefab",
+      "sourceSha256": "ec56ef0783432ebc8a4cae6db07975ee8cc4aaef0d0422da45dc59628d15fb47",
+      "destinationSha256": "c7b137e9a941cbd680c3bf15a13540db99d6ce956ba31aa5e71f36823c83a1e5"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\ModularCharacters\\MC01.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\ModularCharacters\\MC01.prefab",
+      "sourceSha256": "a06d45f060d4722abb56ba3d84eaa7cd0b62d8d4720756cc57f6eb588eb78949",
+      "destinationSha256": "fac68584e04bd1751f3ddbb72ba11f094c6f7ffe28d60b1074935215aabec8c0"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\ModularCharacters\\MC02.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\ModularCharacters\\MC02.prefab",
+      "sourceSha256": "d1bdafdf813d611b14911511537f49e79729a257e8f20c7e93e343c8c41e9894",
+      "destinationSha256": "b78117429fcc988c73afe19d7fe1b8f9d46f5c3a24844e05439493cc38927bb8"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\ModularCharacters\\MC03.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\ModularCharacters\\MC03.prefab",
+      "sourceSha256": "54968aae821bd1a583b7460d7c7989b918a14fb797634916c7f6dee2f7628e0c",
+      "destinationSha256": "22379d0e3e7989a69a0f25fdc56937d79fe447651cf12165b4808b39de317577"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\ModularCharacters\\MC04.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\ModularCharacters\\MC04.prefab",
+      "sourceSha256": "685d0eb43e5df16b9e67793676481cc3189d907afe082efc85b1c3b0c8693e61",
+      "destinationSha256": "e53898040e8d1bd3cb784866ea064156c16b560df9690281e5d1b186d7b38598"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\ModularCharacters\\MC05.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\ModularCharacters\\MC05.prefab",
+      "sourceSha256": "e15363217b29b46fc2894bcf4d32a11ac874f200d98789095f6426a8bf85e5f2",
+      "destinationSha256": "36417b2ff33980c888975d42a2b6e34124109d39d4dd110fccd2f2512e310fa5"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\ModularCharacters\\MC06.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\ModularCharacters\\MC06.prefab",
+      "sourceSha256": "2b58cc55125b3779576c044c8d7eb5caeaff2f9bb9e82762ea812450507ba2bd",
+      "destinationSha256": "cb75f6700814c7b7076f2fb058dfdcc47db438f0aa18beb022745a2707ab4263"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\ModularCharacters\\MC07.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\ModularCharacters\\MC07.prefab",
+      "sourceSha256": "c51bd668df9b3d933b255fa8d80b81a4b90f6ded12d903050cb87874faabafa6",
+      "destinationSha256": "36c7cda30356e7456f9210c8ae59a343d6f4286cfe2fb3f3eb52abe53f29a30e"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\ModularCharacters\\MC08.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\ModularCharacters\\MC08.prefab",
+      "sourceSha256": "d396a1ce08ca9cf51c422a400fac93acbbb089a2c23c0ad062f4aded236a19e7",
+      "destinationSha256": "fa25201364c7cb4d33a551db162012da4a87b269464bf58af5ee6c4f711deb56"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\ModularCharacters\\MC09.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\ModularCharacters\\MC09.prefab",
+      "sourceSha256": "c9939efbcb2e69c0fc61c799f0c8105efc54ee701db54987c9acc7edcfbb66a3",
+      "destinationSha256": "117b0d38190188875d95ee09a95996dce20088cb89f11fc96f61e30d385e023c"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\ModularCharacters\\MC10.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\ModularCharacters\\MC10.prefab",
+      "sourceSha256": "f5fbe39383e1a15f2f31461cb140987aeb910b401d698c414a3310e62bb823ed",
+      "destinationSha256": "f398351d671961ac613888f5e4d126741825bfb153d14a5927ade3a533efa250"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\ModularCharacters\\MC11.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\ModularCharacters\\MC11.prefab",
+      "sourceSha256": "39c4a651e8ad0dbae850371ad1a658510ec9756170c24985646f51e0cdb04298",
+      "destinationSha256": "fb2d388a53f72e46de38d1a0b7292051302b5b53b0a2aeebbfabb86ef13defa1"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\ModularCharacters\\MC12.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\ModularCharacters\\MC12.prefab",
+      "sourceSha256": "cc0e653e8bdc784f95d71824863b7931d7e076f9d908c839d4737f89e8cf8a6e",
+      "destinationSha256": "55f8b7f659e2193f93b371fa8c25c758be1a8f65cf483d6b123438fe2aa7e0fa"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\ModularCharacters\\MC13.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\ModularCharacters\\MC13.prefab",
+      "sourceSha256": "5ca5b7c533a02df1a012050cab6af25794101b033b98c48d5e9a82f701a41804",
+      "destinationSha256": "b0d959e3ab349496f700848a3125c5082fec4083aae07062a05edc3fdb8718e0"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\ModularCharacters\\MC14.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\ModularCharacters\\MC14.prefab",
+      "sourceSha256": "80411e5510301ab7e9f56f438ce27e0d1a7e1a84142d40a53bdfde6c0a45a310",
+      "destinationSha256": "cf987d1289f27e41ba0973cbbfeaf945f7a431162463ff1115d8bcea2417098d"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\ModularCharacters\\MC15.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\ModularCharacters\\MC15.prefab",
+      "sourceSha256": "d5ab4ae2494e617c43975949215a6f05f03a30eca35c9e981d07e986b119183b",
+      "destinationSha256": "1e82a13787c31e0befa6c5fd11e8d06c35f70d1b9c81136bd9745afce61e1920"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\ModularCharacters\\MC16.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\ModularCharacters\\MC16.prefab",
+      "sourceSha256": "9c68cda03b42ed7b96d5a5bd3f457de4f226a25cf856172c07ecb1bff20b29a4",
+      "destinationSha256": "9fdbc709cbe7bf62d729e27adbc50e971b5a150c59af8bde2e894d95feb06aa1"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\ModularCharacters\\MC17.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\ModularCharacters\\MC17.prefab",
+      "sourceSha256": "d71ba7c7a11be4610bc312ce8b03391826a14d63e9422f3e44d89fac31f253ee",
+      "destinationSha256": "e7768fa35629da8241277998ca870f89e500b9275a5aa881fb6bfe7bb1776706"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\ModularCharacters\\MC18.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\ModularCharacters\\MC18.prefab",
+      "sourceSha256": "2ce52e5a53eb1d0c353ff7905405476b298df721e3114e44fe6c4c7bf30c1fc9",
+      "destinationSha256": "faab8051185b14dc6a393dc05666e8da3f002d92375cfdd4c203a66a65842dcd"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\ModularCharacters\\MC19.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\ModularCharacters\\MC19.prefab",
+      "sourceSha256": "75bbb1375f4d8a2052e8ce3178168b6991d5cdc9ed4428e26d3dc3eb110687af",
+      "destinationSha256": "bf4f6e1c358d443a9928f17c3e860561a2efd037c56a27f5d9e4209e618f52d3"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\ModularCharacters\\MC20.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\ModularCharacters\\MC20.prefab",
+      "sourceSha256": "bce6fc3f2f01baf3c59f963e7994489b4fc585c6f994a9783f49ae522cca82fa",
+      "destinationSha256": "898e129d025fd02660a6cdc9d272813f19bd16c8950f25f1c4a5c2c9c7758512"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\ModularCharacters\\MC21.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\ModularCharacters\\MC21.prefab",
+      "sourceSha256": "6b419cc77f3140016d0c72002c06d4b9f7c75c5921681f281f4a13c7490099a6",
+      "destinationSha256": "c3bd3986fbb1e3fcb098eb2e1d7a41bc5e80c209af2d961f0786ded2f7c7567c"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\ModularCharacters\\MC22.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\ModularCharacters\\MC22.prefab",
+      "sourceSha256": "971c9b0798fb71894d6f28bf75f8f3f5271acb17e64455ceb5e8bbbdd64b0e2c",
+      "destinationSha256": "da8052c7d5d180c4704ee8c4001ada24d5af73e4c2087ac4b300e949755e0f97"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\ModularCharacters\\MC23.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\ModularCharacters\\MC23.prefab",
+      "sourceSha256": "5f0ca109ceba590e3c8eaddbb220ae37cf34ccd21ab3661714897cc92dd7679e",
+      "destinationSha256": "21299c1ab216424e6b00a0f1eb0be34efda087f9bf006b7d9517c8c95612de01"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\ModularCharacters\\MC24.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\ModularCharacters\\MC24.prefab",
+      "sourceSha256": "8b17893a073dc5e047da67bd9656652b07c42f0a306dde75328eb3a184ca1933",
+      "destinationSha256": "6b5b1072395cec58ea3ef18d7a5cbd2b4b50c9ad6587b178c6c4cc6449528083"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\Arrows.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\Arrows.prefab",
+      "sourceSha256": "3e70241e7fa6c7e1d1a0ec3641afdee3e1c9e74ae2e06a8075e1dfe17af45b12",
+      "destinationSha256": "b1f7a1e8c5187ac8bb85d683f3b597c8191ef42ccce85d4970787ae579ac1f6f"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\Bows.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\Bows.prefab",
+      "sourceSha256": "0ce79ba97fd3ad387311c48e58e3320a39dea27720df13fb6a6efec89de95707",
+      "destinationSha256": "dd1e3c7df824fb0936b47f3754c923b36867aa9908402f9864277fb222bd55cd"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\OHS01_Stick.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\OHS01_Stick.prefab",
+      "sourceSha256": "344c9581e87e0e37b086a294770c297d3fe87b24c85b7c8fff5a7cde90d62260",
+      "destinationSha256": "344c9581e87e0e37b086a294770c297d3fe87b24c85b7c8fff5a7cde90d62260"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\OHS02_Niddle.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\OHS02_Niddle.prefab",
+      "sourceSha256": "0ae01948d40340c2e2d3f98c21a0d315a4be75c7be5f8f721ffd36605c22a579",
+      "destinationSha256": "0ae01948d40340c2e2d3f98c21a0d315a4be75c7be5f8f721ffd36605c22a579"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\OHS03_Sword.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\OHS03_Sword.prefab",
+      "sourceSha256": "32d07cc93a88ee4714c4dd8c208572a7ce3faf8f905c0d60e1a76a141761bd53",
+      "destinationSha256": "32d07cc93a88ee4714c4dd8c208572a7ce3faf8f905c0d60e1a76a141761bd53"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\OHS04_Sword.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\OHS04_Sword.prefab",
+      "sourceSha256": "f5327f8c862a0c8accae5621dbc0cafaa2e7da84c32f55689980283f89d4b1c0",
+      "destinationSha256": "f5327f8c862a0c8accae5621dbc0cafaa2e7da84c32f55689980283f89d4b1c0"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\OHS05_Sword.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\OHS05_Sword.prefab",
+      "sourceSha256": "d34ff95b6bd0ecf7d1005fbaa31487a2599fc5c8dcbea1022c0d4ae85f489b0d",
+      "destinationSha256": "d34ff95b6bd0ecf7d1005fbaa31487a2599fc5c8dcbea1022c0d4ae85f489b0d"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\OHS06_Sword.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\OHS06_Sword.prefab",
+      "sourceSha256": "d4f4cf9e439fb65554ba7e21231465172874dbae6f4348c2f977412620790356",
+      "destinationSha256": "d4f4cf9e439fb65554ba7e21231465172874dbae6f4348c2f977412620790356"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\OHS07_Sword.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\OHS07_Sword.prefab",
+      "sourceSha256": "74786b6b30efdbf75c5bc4dddfd1f00f1d4b4df379b9318efd315dc8f974bd40",
+      "destinationSha256": "74786b6b30efdbf75c5bc4dddfd1f00f1d4b4df379b9318efd315dc8f974bd40"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\OHS08_Sword.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\OHS08_Sword.prefab",
+      "sourceSha256": "ba40f965d326b22232983c4221b0c000caf712afbb5f01b852f293869e47d5f7",
+      "destinationSha256": "ba40f965d326b22232983c4221b0c000caf712afbb5f01b852f293869e47d5f7"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\OHS09_Sword.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\OHS09_Sword.prefab",
+      "sourceSha256": "0b4231d3e95eb946e42511c526b2d92b5e56df4666e148f0e412bc8536eb5fad",
+      "destinationSha256": "0b4231d3e95eb946e42511c526b2d92b5e56df4666e148f0e412bc8536eb5fad"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\OHS10_Axe.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\OHS10_Axe.prefab",
+      "sourceSha256": "cae1f4c4a2b393a35e4401c5a7a68fa8a501f3a0da15d9c4e983c09604cf4c32",
+      "destinationSha256": "cae1f4c4a2b393a35e4401c5a7a68fa8a501f3a0da15d9c4e983c09604cf4c32"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\OHS11_Hammer.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\OHS11_Hammer.prefab",
+      "sourceSha256": "97dc995b7d541e3e4d2ae5e09d22272125e77fc5abffc5fab3989678b909b1e5",
+      "destinationSha256": "97dc995b7d541e3e4d2ae5e09d22272125e77fc5abffc5fab3989678b909b1e5"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\OHS12_Sword.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\OHS12_Sword.prefab",
+      "sourceSha256": "c215e0b6efd0653c0a657cff5e4a768309fa61153b6ed895b341e3e670de34a4",
+      "destinationSha256": "c215e0b6efd0653c0a657cff5e4a768309fa61153b6ed895b341e3e670de34a4"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\OHS13_Axe.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\OHS13_Axe.prefab",
+      "sourceSha256": "ec617e4ad6d503634ae4e70a3ec6bf29d2bcd021ce0bec903d44bb669b1387eb",
+      "destinationSha256": "ec617e4ad6d503634ae4e70a3ec6bf29d2bcd021ce0bec903d44bb669b1387eb"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\OHS14_Hammer.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\OHS14_Hammer.prefab",
+      "sourceSha256": "bab886a7e2be1a004ab77fed080a9facbcbe974def38cac0716b45dd362e621f",
+      "destinationSha256": "bab886a7e2be1a004ab77fed080a9facbcbe974def38cac0716b45dd362e621f"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\OHS15_Sword.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\OHS15_Sword.prefab",
+      "sourceSha256": "8b34cc578d33699163b8126de93b5104a3000104fd18ae0a075a8a51859be1e7",
+      "destinationSha256": "8b34cc578d33699163b8126de93b5104a3000104fd18ae0a075a8a51859be1e7"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\OHS16_Sword.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\OHS16_Sword.prefab",
+      "sourceSha256": "9c7bd8afdd44fef0a295b4d8abfe2ddcf89ac1718909fe607bcb84a906f94a1b",
+      "destinationSha256": "9c7bd8afdd44fef0a295b4d8abfe2ddcf89ac1718909fe607bcb84a906f94a1b"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\Shield01.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\Shield01.prefab",
+      "sourceSha256": "d7fc4bd81288353cf3fb5f58d0a1fb7ae9c5b959abc2e203e14813a150471e9f",
+      "destinationSha256": "d7fc4bd81288353cf3fb5f58d0a1fb7ae9c5b959abc2e203e14813a150471e9f"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\Shield02.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\Shield02.prefab",
+      "sourceSha256": "76743769be54e40372fc5c0887f1cd7ee73f61e05e62eecce4e53ed703c69b41",
+      "destinationSha256": "76743769be54e40372fc5c0887f1cd7ee73f61e05e62eecce4e53ed703c69b41"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\Shield03.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\Shield03.prefab",
+      "sourceSha256": "b92a589e154eda53fabb8e150aaf26715f01171037b9f9c77e7496dfb8842b10",
+      "destinationSha256": "b92a589e154eda53fabb8e150aaf26715f01171037b9f9c77e7496dfb8842b10"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\Shield04.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\Shield04.prefab",
+      "sourceSha256": "287cd9abaefb5790d27210d6e6974159874a5b298e61eefc378d64ea0f3661c5",
+      "destinationSha256": "287cd9abaefb5790d27210d6e6974159874a5b298e61eefc378d64ea0f3661c5"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\Shield05.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\Shield05.prefab",
+      "sourceSha256": "3543188056dbad8a5c62303908cce45a2bee60a8c0c971c25c79b6fc5e007f21",
+      "destinationSha256": "3543188056dbad8a5c62303908cce45a2bee60a8c0c971c25c79b6fc5e007f21"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\Shield06.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\Shield06.prefab",
+      "sourceSha256": "c0654308b3eb9d92504b3b829c13ecbb0e59f8ec0ce2af40c1f48e95ed6efa81",
+      "destinationSha256": "c0654308b3eb9d92504b3b829c13ecbb0e59f8ec0ce2af40c1f48e95ed6efa81"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\Shield07.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\Shield07.prefab",
+      "sourceSha256": "bcdc8c2a01fa69740905870aace776f20ea120783ad3ef96ca013bc5bf63c34a",
+      "destinationSha256": "bcdc8c2a01fa69740905870aace776f20ea120783ad3ef96ca013bc5bf63c34a"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\Shield08.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\Shield08.prefab",
+      "sourceSha256": "6374925217910bf6a2a0199eb3c05223f258bfb9f2da94c5df1eaa47b95b83a7",
+      "destinationSha256": "6374925217910bf6a2a0199eb3c05223f258bfb9f2da94c5df1eaa47b95b83a7"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\Shield09.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\Shield09.prefab",
+      "sourceSha256": "00a15d2a68becc25e9260d74c78d0fb69c8f8b42be2eaecabd949b4361df4b1f",
+      "destinationSha256": "00a15d2a68becc25e9260d74c78d0fb69c8f8b42be2eaecabd949b4361df4b1f"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\Shield10.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\Shield10.prefab",
+      "sourceSha256": "6c9a3aecbaf14edeaa5a78b64f171c4b3ebfbb74b9fa4661673d1cadaeda9038",
+      "destinationSha256": "6c9a3aecbaf14edeaa5a78b64f171c4b3ebfbb74b9fa4661673d1cadaeda9038"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\Shield11.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\Shield11.prefab",
+      "sourceSha256": "153c61e8cdceb0e56d6dc6830f1ed4f3d4d78dc25968b2917d06bb72d376f057",
+      "destinationSha256": "153c61e8cdceb0e56d6dc6830f1ed4f3d4d78dc25968b2917d06bb72d376f057"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\Shield12.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\Shield12.prefab",
+      "sourceSha256": "f8d4e9579172e1fa6457284aeaed40512a6b27c058141e765f74356c3221bc26",
+      "destinationSha256": "f8d4e9579172e1fa6457284aeaed40512a6b27c058141e765f74356c3221bc26"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\Shield13.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\Shield13.prefab",
+      "sourceSha256": "b4995b3a40d29543ca6e175079b5766bbcb31995601d495423be956f2135a949",
+      "destinationSha256": "b4995b3a40d29543ca6e175079b5766bbcb31995601d495423be956f2135a949"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\Shield14.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\Shield14.prefab",
+      "sourceSha256": "77c9d72c0262aa315b71410c9f84da71db9c6cb7ed4eea06dab0d42fbfe87a46",
+      "destinationSha256": "77c9d72c0262aa315b71410c9f84da71db9c6cb7ed4eea06dab0d42fbfe87a46"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\Shield15.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\Shield15.prefab",
+      "sourceSha256": "eefc6c8003a7bfc2724ed3f800c3070455b9ccebe88f7fc7940ebcc4ecc077a6",
+      "destinationSha256": "eefc6c8003a7bfc2724ed3f800c3070455b9ccebe88f7fc7940ebcc4ecc077a6"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\Shield16.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\Shield16.prefab",
+      "sourceSha256": "bdfb26b9bffa7c41df7c634bc60fc2d1ba2daa14ed686961ba73cc66ce3ebbab",
+      "destinationSha256": "bdfb26b9bffa7c41df7c634bc60fc2d1ba2daa14ed686961ba73cc66ce3ebbab"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\Shield17.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\Shield17.prefab",
+      "sourceSha256": "e9d885bb7d6c0661f9dc4b9d12dadd497bf020af429e6b00f65bf08518cff421",
+      "destinationSha256": "e9d885bb7d6c0661f9dc4b9d12dadd497bf020af429e6b00f65bf08518cff421"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\Shield18.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\Shield18.prefab",
+      "sourceSha256": "2d02ede9f89ae673520713e6d905ffc397ed5a8d83c4304973ae0064e51de5e1",
+      "destinationSha256": "2d02ede9f89ae673520713e6d905ffc397ed5a8d83c4304973ae0064e51de5e1"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\Shield19.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\Shield19.prefab",
+      "sourceSha256": "003bc6bed6a35df34d89041debff6aafccbdae10555bcc28679a45bed7aa13d1",
+      "destinationSha256": "003bc6bed6a35df34d89041debff6aafccbdae10555bcc28679a45bed7aa13d1"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\Shield20.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\Shield20.prefab",
+      "sourceSha256": "275524559ff53c6a622a9d484df779bfad4ff9da8d04896008b517c8ce731f4e",
+      "destinationSha256": "275524559ff53c6a622a9d484df779bfad4ff9da8d04896008b517c8ce731f4e"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\Spear01.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\Spear01.prefab",
+      "sourceSha256": "5fe5093114448d2b7da149f56db39a40cab2e4426ab365dedc8b5ab22fe30fa8",
+      "destinationSha256": "5fe5093114448d2b7da149f56db39a40cab2e4426ab365dedc8b5ab22fe30fa8"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\Spear02.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\Spear02.prefab",
+      "sourceSha256": "eecad65ba8929c7e7bdc4c1aeec722b85d91e952a677cd8881212f283d2acc67",
+      "destinationSha256": "eecad65ba8929c7e7bdc4c1aeec722b85d91e952a677cd8881212f283d2acc67"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\Spear03.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\Spear03.prefab",
+      "sourceSha256": "876cfb87a9a80d60f6c6d5fd134790a6814b0fe42c953e7bf706529437a19573",
+      "destinationSha256": "876cfb87a9a80d60f6c6d5fd134790a6814b0fe42c953e7bf706529437a19573"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\Spear04.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\Spear04.prefab",
+      "sourceSha256": "fcebcbaa429a89df7d065ac290d923285effa24cf52593c80d7d3f19170e7f15",
+      "destinationSha256": "fcebcbaa429a89df7d065ac290d923285effa24cf52593c80d7d3f19170e7f15"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\Spear05.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\Spear05.prefab",
+      "sourceSha256": "1559d84a001c1569116f1510f4360c5d5d1557c1b0fe72adc0deb2b63dcf9c0b",
+      "destinationSha256": "1559d84a001c1569116f1510f4360c5d5d1557c1b0fe72adc0deb2b63dcf9c0b"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\THS01_Sword.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\THS01_Sword.prefab",
+      "sourceSha256": "3f1ffe098ff6583ee2a20784dd717c8a39e6f24c8f06d8cea6cb26924a187824",
+      "destinationSha256": "3f1ffe098ff6583ee2a20784dd717c8a39e6f24c8f06d8cea6cb26924a187824"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\THS02_Sword.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\THS02_Sword.prefab",
+      "sourceSha256": "cb23011ceb42d7ffea04d10e0d15c1905ead3fa105e3026835195948bcc12bb7",
+      "destinationSha256": "cb23011ceb42d7ffea04d10e0d15c1905ead3fa105e3026835195948bcc12bb7"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\THS03_Sword.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\THS03_Sword.prefab",
+      "sourceSha256": "4585c4f74a0bcc71dc39d864f96474192a4b3800085fa76898ab8f9bd865cd5e",
+      "destinationSha256": "4585c4f74a0bcc71dc39d864f96474192a4b3800085fa76898ab8f9bd865cd5e"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\THS04_Sword.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\THS04_Sword.prefab",
+      "sourceSha256": "630a3ddcb93f744e7c7bba4eb0721302a502ab8e076f883d4d8680bde07a0ea8",
+      "destinationSha256": "630a3ddcb93f744e7c7bba4eb0721302a502ab8e076f883d4d8680bde07a0ea8"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\THS05_Sword.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\THS05_Sword.prefab",
+      "sourceSha256": "a96a8479724c8fd9b44fb74e0310aeb5926d2dbbfd28c24151264958a32da067",
+      "destinationSha256": "a96a8479724c8fd9b44fb74e0310aeb5926d2dbbfd28c24151264958a32da067"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\THS06_Sword.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\THS06_Sword.prefab",
+      "sourceSha256": "9ae7efe16726b5bb28bf18fced4fbe186ae7f8c5a16ca57183bddf4bc3c9bf2a",
+      "destinationSha256": "9ae7efe16726b5bb28bf18fced4fbe186ae7f8c5a16ca57183bddf4bc3c9bf2a"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\THS07_Sword.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\THS07_Sword.prefab",
+      "sourceSha256": "789e9a427ec04b16866b20fab170ed049c88444430fc346db13db105e9d0519a",
+      "destinationSha256": "789e9a427ec04b16866b20fab170ed049c88444430fc346db13db105e9d0519a"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\Wand01.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\Wand01.prefab",
+      "sourceSha256": "9ef850024b259fe882701d993c17be30283bf47a1cd7052113db43e2cf2a9bff",
+      "destinationSha256": "9ef850024b259fe882701d993c17be30283bf47a1cd7052113db43e2cf2a9bff"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\Wand02.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\Wand02.prefab",
+      "sourceSha256": "010d93db1df0e180c181226af23514e44c5ebd8ebe014b4565a7ff3baf5ccf17",
+      "destinationSha256": "010d93db1df0e180c181226af23514e44c5ebd8ebe014b4565a7ff3baf5ccf17"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\Wand03.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\Wand03.prefab",
+      "sourceSha256": "931cb29acf1c33864699d11e76d6bfaa83e89c663d985d71514025c0c202ea29",
+      "destinationSha256": "931cb29acf1c33864699d11e76d6bfaa83e89c663d985d71514025c0c202ea29"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\Wand04.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\Wand04.prefab",
+      "sourceSha256": "3b6dca84b0fae130d8635b16f2865e4502301ca7d616b03048f4de596b0a3ad8",
+      "destinationSha256": "3b6dca84b0fae130d8635b16f2865e4502301ca7d616b03048f4de596b0a3ad8"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\Wand05.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\Wand05.prefab",
+      "sourceSha256": "23c0cc2cdee347f96faf6b6d2cc1eeb28d7a9f71893eae5d53ff13594a538210",
+      "destinationSha256": "23c0cc2cdee347f96faf6b6d2cc1eeb28d7a9f71893eae5d53ff13594a538210"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\Wand06.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\Wand06.prefab",
+      "sourceSha256": "4a33f5f3b891d2cb53c3fc2d2dd9ffab873125f83e49a865d5f64b774bb764a9",
+      "destinationSha256": "4a33f5f3b891d2cb53c3fc2d2dd9ffab873125f83e49a865d5f64b774bb764a9"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Prefab\\Weapons\\Wand07.prefab",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Prefab\\Weapons\\Wand07.prefab",
+      "sourceSha256": "032e1b69532d661e6140d71c848190414a39ba581ceb67c17a02f8fdf311e22b",
+      "destinationSha256": "032e1b69532d661e6140d71c848190414a39ba581ceb67c17a02f8fdf311e22b"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Material\\DefaultPBR.mat",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Material\\DefaultPBR.mat",
+      "sourceSha256": "c98d6e6c27ea9419422c65e52c5e31cbf78989dc6a90c436f7b6f97e566866b8",
+      "destinationSha256": "9827e3e52550989ff10667cb2b2091b21cc5ce147504ee0a93b395cfc8dafa3d",
+      "postUnityImportSha256": "d170904dda6669c153945fa9790e9bc70a1287fe632c8821553182b408e571bd",
+      "importNote": "Unity2022导入/材质升级后的实际序列化文件哈希；destinationSha256保留提取阶段结果"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Material\\PBRMaskTint.mat",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Material\\PBRMaskTint.mat",
+      "sourceSha256": "20d052239fd9f730899f583220125f33abcab63ea2277f8eca9ff470f8b720fa",
+      "destinationSha256": "ba65d5ef73d09aa4cb04fa7039b20f54314c7c8d12895202bda9b3d20b36bccd",
+      "postUnityImportSha256": "ddc2ba006c67520441d40318246d38b6570b84b6404a4fdd540ded6d5760914d",
+      "importNote": "Unity2022导入/材质升级后的实际序列化文件哈希；destinationSha256保留提取阶段结果"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Material\\Skybox_Mat.mat",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Material\\Skybox_Mat.mat",
+      "sourceSha256": "c9b7b65af416f3e1ee935c2b34a2c6de4ef3fa38aaf446a3ea36f9549520e14a",
+      "destinationSha256": "e7670a50698961cfeb83a053cf18cb39e38f25fb74aee744337aebfa642c46cc",
+      "postUnityImportSha256": "34bfa21f07ab642df10c1383ed862bd86aa8c63afaa1f9fc86a83b19cddc8719",
+      "importNote": "Unity2022导入/材质升级后的实际序列化文件哈希；destinationSha256保留提取阶段结果"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Material\\Stage.mat",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Material\\Stage.mat",
+      "sourceSha256": "40bc3220e9eab34a23e3f3d4b5023bccfaaf91b570214fa4ef041335109f1caf",
+      "destinationSha256": "acd01ae0c029bfaa1be4c2b5bf1ef7da3e565f9f8e035f29a77049abf8b140f9",
+      "postUnityImportSha256": "6ecad05e976dcac244311a15dc17d1bc9d3c959aef1abf07328179ea5477bca2",
+      "importNote": "Unity2022导入/材质升级后的实际序列化文件哈希；destinationSha256保留提取阶段结果"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Texture\\DefaultPBR\\Albedo.png",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Texture\\DefaultPBR\\Albedo.png",
+      "sourceSha256": "d0e04a6b74dbc3728ff5f2912a2f89c562c7129581a0d6e11c558ae28c7ab216",
+      "destinationSha256": "d0e04a6b74dbc3728ff5f2912a2f89c562c7129581a0d6e11c558ae28c7ab216"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Texture\\DefaultPBR\\Emission.png",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Texture\\DefaultPBR\\Emission.png",
+      "sourceSha256": "eb60b8b8258425c32b3c0954da46b0dd8b2a00f82421f4264603f08a981259e3",
+      "destinationSha256": "eb60b8b8258425c32b3c0954da46b0dd8b2a00f82421f4264603f08a981259e3"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Texture\\DefaultPBR\\Metallic-Smoothness.png",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Texture\\DefaultPBR\\Metallic-Smoothness.png",
+      "sourceSha256": "6956566a4f1301bd99614fdca37e161a456533426d13d0446cbd0458917e9eb9",
+      "destinationSha256": "6956566a4f1301bd99614fdca37e161a456533426d13d0446cbd0458917e9eb9"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Animation\\SwordAndShield\\Idle_Battle_SwordAndShiled.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Animation\\SwordAndShield\\Idle_Battle_SwordAndShiled.fbx",
+      "sourceSha256": "9eddd7bad61432f6180e13dd1d3e359110560836c5cb82bca23f8d6ddc56fd52",
+      "destinationSha256": "9eddd7bad61432f6180e13dd1d3e359110560836c5cb82bca23f8d6ddc56fd52"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Animation\\SwordAndShield\\Attack01_SwordAndShiled.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Animation\\SwordAndShield\\Attack01_SwordAndShiled.fbx",
+      "sourceSha256": "e8543fcd036c84c9a9f60f382bd94ad5c898de3b060a3d78bfb6a163a2b8be20",
+      "destinationSha256": "e8543fcd036c84c9a9f60f382bd94ad5c898de3b060a3d78bfb6a163a2b8be20"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Animation\\SwordAndShield\\GetHit01_SwordAndShield.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Animation\\SwordAndShield\\GetHit01_SwordAndShield.fbx",
+      "sourceSha256": "85037dea3f8604388f1d511d6fc7cfa053affd1cd8346494eb160ab9f155069c",
+      "destinationSha256": "85037dea3f8604388f1d511d6fc7cfa053affd1cd8346494eb160ab9f155069c"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Animation\\SwordAndShield\\Die01_SwordAndShield.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Animation\\SwordAndShield\\Die01_SwordAndShield.fbx",
+      "sourceSha256": "3fe01149c2540475e54c5ac1c183f6626cac0d4a4afebefca67bafdd833af6b4",
+      "destinationSha256": "3fe01149c2540475e54c5ac1c183f6626cac0d4a4afebefca67bafdd833af6b4"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Animation\\SwordAndShield\\InPlace\\MoveFWD_Battle_InPlace_SwordAndShield.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Animation\\SwordAndShield\\InPlace\\MoveFWD_Battle_InPlace_SwordAndShield.fbx",
+      "sourceSha256": "05b39ef7c7150079ed53d0e6dd50ee7523d02a55eb1e39e549a4db85f111b520",
+      "destinationSha256": "05b39ef7c7150079ed53d0e6dd50ee7523d02a55eb1e39e549a4db85f111b520"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Animation\\BowAndArrow\\Idle_Battle_BowAndArrow.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Animation\\BowAndArrow\\Idle_Battle_BowAndArrow.fbx",
+      "sourceSha256": "d3e4194fd54faf26e0aaa8157fe7bace000fb51fc4ac69f116b501401c8fb71c",
+      "destinationSha256": "d3e4194fd54faf26e0aaa8157fe7bace000fb51fc4ac69f116b501401c8fb71c"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Animation\\BowAndArrow\\Attack01_BowAndArrow.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Animation\\BowAndArrow\\Attack01_BowAndArrow.fbx",
+      "sourceSha256": "cd3f3f75eee3f566edf3f53bbe4438c2b0f95aa9d228be64534bcf12ea2169ff",
+      "destinationSha256": "cd3f3f75eee3f566edf3f53bbe4438c2b0f95aa9d228be64534bcf12ea2169ff"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Animation\\BowAndArrow\\GetHit01_BowAndArrow.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Animation\\BowAndArrow\\GetHit01_BowAndArrow.fbx",
+      "sourceSha256": "ca99b1b021af414828da255385901e82e4dfa272087608455b6432eafb6c130a",
+      "destinationSha256": "ca99b1b021af414828da255385901e82e4dfa272087608455b6432eafb6c130a"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Animation\\BowAndArrow\\Die01_BowAndArrow.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Animation\\BowAndArrow\\Die01_BowAndArrow.fbx",
+      "sourceSha256": "110d77cb49f0cadce9ce5ffab0b0abaf5bf16e77af13327ec23a41921d3ea76e",
+      "destinationSha256": "110d77cb49f0cadce9ce5ffab0b0abaf5bf16e77af13327ec23a41921d3ea76e"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Animation\\BowAndArrow\\InPlace\\MoveFWD_Battle_InPlace_BowAndArrow.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Animation\\BowAndArrow\\InPlace\\MoveFWD_Battle_InPlace_BowAndArrow.fbx",
+      "sourceSha256": "bc13f2bd28432d6c45f6fe39fe9e9abf6dda4501396a2c233ccd36cbd12fe394",
+      "destinationSha256": "bc13f2bd28432d6c45f6fe39fe9e9abf6dda4501396a2c233ccd36cbd12fe394"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Animation\\MagicWand\\Idle_Battle_MagicWand.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Animation\\MagicWand\\Idle_Battle_MagicWand.fbx",
+      "sourceSha256": "6ccfb242eaf70c4352a8302039a298591e786ede2989b4a1ce59f57e69e37c89",
+      "destinationSha256": "6ccfb242eaf70c4352a8302039a298591e786ede2989b4a1ce59f57e69e37c89"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Animation\\MagicWand\\Attack01_MagicWand.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Animation\\MagicWand\\Attack01_MagicWand.fbx",
+      "sourceSha256": "6c7d10aebd7191a8c848f7f0285145c9a700b2a7544a2c3ae8f89a446ce5952d",
+      "destinationSha256": "6c7d10aebd7191a8c848f7f0285145c9a700b2a7544a2c3ae8f89a446ce5952d"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Animation\\MagicWand\\GetHit01_MagicWand.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Animation\\MagicWand\\GetHit01_MagicWand.fbx",
+      "sourceSha256": "aea0015a63d45478521c52a98bf47fb8feaa48ca426d363e94a8f18516bce2a1",
+      "destinationSha256": "aea0015a63d45478521c52a98bf47fb8feaa48ca426d363e94a8f18516bce2a1"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Animation\\MagicWand\\Die01_MagicWand.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Animation\\MagicWand\\Die01_MagicWand.fbx",
+      "sourceSha256": "1bf28dba5fe308a6e2c5cab325c7abb00b6a3658692cb097a121541057cfac17",
+      "destinationSha256": "1bf28dba5fe308a6e2c5cab325c7abb00b6a3658692cb097a121541057cfac17"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\RPGTinyHeroWavePBR\\Animation\\MagicWand\\InPlace\\MoveFWD_Battle_InPlace_MagicWand.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\TinyHero\\Animation\\MagicWand\\InPlace\\MoveFWD_Battle_InPlace_MagicWand.fbx",
+      "sourceSha256": "958f514c153ac33c0b8e3ecc60d3d9c1ae71b90d04862c24650e5cedd6b1c8d2",
+      "destinationSha256": "958f514c153ac33c0b8e3ecc60d3d9c1ae71b90d04862c24650e5cedd6b1c8d2"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\Monsters Ultimate Pack 02 Cute Series\\T\\Wolf Cute Series\\FBX\\Wolf.FBX",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\Wolf\\Wolf.FBX",
+      "sourceSha256": "f922a9fe8f2462c45fccd6d9b5f03c93601b7a1e75987d06a7b07138f14ed050",
+      "destinationSha256": "f922a9fe8f2462c45fccd6d9b5f03c93601b7a1e75987d06a7b07138f14ed050"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\Monsters Ultimate Pack 02 Cute Series\\T\\Wolf Cute Series\\FBX\\Wolf@Idle.FBX",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\Wolf\\Wolf@Idle.FBX",
+      "sourceSha256": "c9b6570a653a360dbe4d194e77cede96dd22754596a7947dde17f6c28045a702",
+      "destinationSha256": "c9b6570a653a360dbe4d194e77cede96dd22754596a7947dde17f6c28045a702"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\Monsters Ultimate Pack 02 Cute Series\\T\\Wolf Cute Series\\FBX\\Wolf@Run Forward In Place.FBX",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\Wolf\\Wolf@Run Forward In Place.FBX",
+      "sourceSha256": "3f2bc9b4d75e3f2f10a4c3bc6402901ac256920eccdd00f8ee8ae14ae1edfdf0",
+      "destinationSha256": "3f2bc9b4d75e3f2f10a4c3bc6402901ac256920eccdd00f8ee8ae14ae1edfdf0"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\Monsters Ultimate Pack 02 Cute Series\\T\\Wolf Cute Series\\FBX\\Wolf@Bite Attack.FBX",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\Wolf\\Wolf@Bite Attack.FBX",
+      "sourceSha256": "ebfa22cf459f0c60ded856361e7ccb1aaa100b0bb79d93df7faccbf256ef562d",
+      "destinationSha256": "ebfa22cf459f0c60ded856361e7ccb1aaa100b0bb79d93df7faccbf256ef562d"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\Monsters Ultimate Pack 02 Cute Series\\T\\Wolf Cute Series\\FBX\\Wolf@Take Damage.FBX",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\Wolf\\Wolf@Take Damage.FBX",
+      "sourceSha256": "93fc530770c35822e6cb46d6717d40025e237658531e6e093ca9e8a918de8f5b",
+      "destinationSha256": "93fc530770c35822e6cb46d6717d40025e237658531e6e093ca9e8a918de8f5b"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\Monsters Ultimate Pack 02 Cute Series\\T\\Wolf Cute Series\\FBX\\Wolf@Die.FBX",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\Wolf\\Wolf@Die.FBX",
+      "sourceSha256": "1f790d06ee1bce8e62f1a78404b8c68587d27c80f8ec75b30bb76b78b1d7a1ab",
+      "destinationSha256": "1f790d06ee1bce8e62f1a78404b8c68587d27c80f8ec75b30bb76b78b1d7a1ab"
+    },
+    {
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\Monsters Ultimate Pack 02 Cute Series\\T\\Wolf Cute Series\\Textures\\Wolf.psd",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\Wolf\\Wolf.psd",
+      "sourceSha256": "8793c5323252cdf3f008c9df6c1b64dc37a61cf608f75f00cfc39ba21016ab71",
+      "destinationSha256": "8793c5323252cdf3f008c9df6c1b64dc37a61cf608f75f00cfc39ba21016ab71"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Assets\\Characters\\052_Golem_StoneGolem\\GolemMesh.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\Golem\\GolemMesh.fbx",
+      "sourceSha256": "63a6eb579c6482329d57b130e169c0c0faa362042856b17419c8b1cd7fc4e31f",
+      "destinationSha256": "63a6eb579c6482329d57b130e169c0c0faa362042856b17419c8b1cd7fc4e31f"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Assets\\Characters\\052_Golem_StoneGolem\\IdleBattle_Golem_Anim.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\Golem\\IdleBattle_Golem_Anim.fbx",
+      "sourceSha256": "a8e632df55b79c790d8838c5d8d957600688a5fe7101d14988b0c1bcdbd16578",
+      "destinationSha256": "a8e632df55b79c790d8838c5d8d957600688a5fe7101d14988b0c1bcdbd16578"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Assets\\Characters\\052_Golem_StoneGolem\\Walk_Golem_Anim.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\Golem\\Walk_Golem_Anim.fbx",
+      "sourceSha256": "aec4228d5ca3b9a883d132529f443345056603ea0560b1c98f64ce27792995b5",
+      "destinationSha256": "aec4228d5ca3b9a883d132529f443345056603ea0560b1c98f64ce27792995b5"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Assets\\Characters\\052_Golem_StoneGolem\\Attack01_Golem_Anim.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\Golem\\Attack01_Golem_Anim.fbx",
+      "sourceSha256": "7fbb39b8a7f68cc4028b19bbe937ef25e0e1b83ec167bdc15569870383549a15",
+      "destinationSha256": "7fbb39b8a7f68cc4028b19bbe937ef25e0e1b83ec167bdc15569870383549a15"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Assets\\Characters\\052_Golem_StoneGolem\\Attack02_Golem_Anim.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\Golem\\Attack02_Golem_Anim.fbx",
+      "sourceSha256": "95eded4d7d72c1561a353d70156a662b8d49dd4c5dd536d32387aa7d83f83127",
+      "destinationSha256": "95eded4d7d72c1561a353d70156a662b8d49dd4c5dd536d32387aa7d83f83127"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Assets\\Characters\\052_Golem_StoneGolem\\GetHit_Golem_Anim.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\Golem\\GetHit_Golem_Anim.fbx",
+      "sourceSha256": "536b143e9a7c93eba2359768dc2dd7f6cdd0e796c4d81aba20b0e87ead842428",
+      "destinationSha256": "536b143e9a7c93eba2359768dc2dd7f6cdd0e796c4d81aba20b0e87ead842428"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Assets\\Characters\\052_Golem_StoneGolem\\Die_Golem_Anim.fbx",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\Golem\\Die_Golem_Anim.fbx",
+      "sourceSha256": "fe8b248effa75b9eb25e89e8d1ef8312304d5fd3aad8780cda7cb4dcc9c57374",
+      "destinationSha256": "fe8b248effa75b9eb25e89e8d1ef8312304d5fd3aad8780cda7cb4dcc9c57374"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Assets\\Characters\\000_Texture&Material\\Texture_Character_Enemy.png",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\Golem\\Texture_Character_Enemy.png",
+      "sourceSha256": "2d2a17d2d6bf15157f80d4c6f4a8dfc41c51a41e5f8177000e9b18ed31931af1",
+      "destinationSha256": "2d2a17d2d6bf15157f80d4c6f4a8dfc41c51a41e5f8177000e9b18ed31931af1"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Assets\\Characters\\000_Texture&Material\\PolyartDefaultTex.png",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\Golem\\PolyartDefaultTex.png",
+      "sourceSha256": "6814d3205a35bad383380f26eb5ae8563ae434b687e5fdc51574f23fd1d3a18c",
+      "destinationSha256": "6814d3205a35bad383380f26eb5ae8563ae434b687e5fdc51574f23fd1d3a18c"
+    },
+    {
+      "source": "F:\\Git\\kabu_mobile\\demo\\client-demo-assets\\Assets\\Art\\Shaders\\Roco\\Roco_Character.shader",
+      "destination": "Assets\\LittleGame\\Shaders\\Roco\\Roco_Character.shader",
+      "sourceSha256": "4680c82aa19fd26ae3264208f6ca21a67e2f646899a809bb96e0b45ddb24989b",
+      "destinationSha256": "6d77afe0495f321c95b323e799495277233a742a18cc35374b76b843a80eae43",
+      "adaptation": "移除Demo专用材质GUI，使用本项目资源构建器配置；着色逻辑保留"
+    },
+    {
+      "source": "F:\\Git\\kabu_mobile\\demo\\client-demo-assets\\Assets\\Art\\Shaders\\Roco\\RocoCharacter.hlsl",
+      "destination": "Assets\\LittleGame\\Shaders\\Roco\\RocoCharacter.hlsl",
+      "sourceSha256": "58fa131f0745d0a938200fd9a67dafd18c75f491647ba4fa4f237b9566bdb2a4",
+      "destinationSha256": "58fa131f0745d0a938200fd9a67dafd18c75f491647ba4fa4f237b9566bdb2a4"
+    },
+    {
+      "source": "F:\\Git\\kabu_mobile\\demo\\client-demo-assets\\Assets\\Art\\Shaders\\Roco\\RocoCharacterOutline.hlsl",
+      "destination": "Assets\\LittleGame\\Shaders\\Roco\\RocoCharacterOutline.hlsl",
+      "sourceSha256": "a00e026b8dbfe0425e5659d622845754368b0d669d59b0dd6822fd937afda244",
+      "destinationSha256": "94fb2dce2e4fa382aa9b40240d79414ff47fb3a5261026ce2db566efb129aca0",
+      "adaptation": "正交镜头像素描边线宽不乘视深，透视行为保留"
+    },
+    {
+      "source": "F:\\Git\\kabu_mobile\\demo\\client-demo\\Assets\\Scripts\\client-shared\\Rendering\\Runtime\\Outline\\RocoCharacterOutlineFeature.cs",
+      "destination": "Assets\\LittleGame\\Client\\Presentation\\RocoCharacterOutlineFeature.cs",
+      "sourceSha256": "e222bdac435f8d994db19171aba65578367b442657275506435208b5955cb8a0",
+      "destinationSha256": "a4927719aef33ccfa41ad8c8821acfd0116bd6b73d12f5d8c7b8859368d3dc3d",
+      "adaptation": "移除Demo整块网格描边配置依赖；当前正交战场不限制描边距离"
+    }
+  ]
+}

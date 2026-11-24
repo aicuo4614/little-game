@@ -1,0 +1,287 @@
+{
+  "mcpSource": "F:\\Git\\kabu_mobile\\demo\\kabu-unity-mcp",
+  "changed": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "9be70b9275ead9bb45def0dd0f97f0db745f11c07f41e32b5958ecff7d749721"
+    },
+    {
+      "path": "AGENTS.md.meta",
+      "sha256": "e235745b0769021f94af21c544447ec8d1dd45bebf4c38bd9d1f745754de9baf"
+    },
+    {
+      "path": "TestProject~\\.gitignore",
+      "sha256": "b18ecd934b4003323561c92849384ce461ae6311166e1170cea98074d940df24"
+    },
+    {
+      "path": "TestProject~\\README.md",
+      "sha256": "129286d8703330ae4ca8c100357b74ca6188d2f8b3ee834718282227253484d7"
+    },
+    {
+      "path": "TestProject~\\TestResults-EditMode.xml",
+      "sha256": "4f32b50b36a123441e17e8f80168c6c9edd3e0b01a03e5dac578d1c60927caf2"
+    },
+    {
+      "path": "TestProject~\\unity-test.log",
+      "sha256": "bc80741a2d9d4cd78ebe1c5d929f99bd36f531590892434e6e962b70fe7cddfe"
+    },
+    {
+      "path": "Tools~\\compare_editors.py",
+      "sha256": "169eae85a72637a6cf47b22b546a7e0216968f26859b02cb8ede3d12d59cdd8d"
+    },
+    {
+      "path": "Tests~\\Reliability\\Program.cs",
+      "sha256": "dbf424a063f6f320bd98c792e655f7ed01d5b0c839f78cb70f72cc74b64416c5"
+    },
+    {
+      "path": "Tests~\\Reliability\\README.md",
+      "sha256": "416af3e7ffd5dda8c5efb419ee62ef233eab4575b52af8e0367f5ea4d71c23f3"
+    },
+    {
+      "path": "Tests~\\Reliability\\Reliability.csproj",
+      "sha256": "e6072104d01614bc9744f52f360f7b0dcb90035a3f85230a6e3bf9fa1dad34f6"
+    },
+    {
+      "path": "TestProject~\\.vscode\\extensions.json",
+      "sha256": "1ec2c3bd04d36a68f2864376a94f4cb804050770f879302d44762e5d1acc3135"
+    },
+    {
+      "path": "TestProject~\\.vscode\\launch.json",
+      "sha256": "255efd1c9152b2efbea22b1c0386d5e253605c0db476eb5b5c15d4335271f0eb"
+    },
+    {
+      "path": "TestProject~\\.vscode\\settings.json",
+      "sha256": "afa7cd0c8d5fe82d11a1d3ba8e675177634f989b539c3bdf3411e06ad76b79da"
+    },
+    {
+      "path": "TestProject~\\Assets\\kabu-unity-mcp.meta",
+      "sha256": "a3f53d3a1eacf727c5c6e07da3b00324a87c0ebefa7ee2125845b56311ac252b"
+    },
+    {
+      "path": "TestProject~\\Assets\\Scenes.meta",
+      "sha256": "1989659b79e2e31492435899231426b15736dc6a308f1888e3e175a25715ba69"
+    },
+    {
+      "path": "TestProject~\\Assets\\Scripts.meta",
+      "sha256": "f4d05f2e9d2e4dc9da3f514f9e8a82b18b56b4e348f28ac383abec10ec948576"
+    },
+    {
+      "path": "TestProject~\\Assets\\Settings.meta",
+      "sha256": "fa4ade308d94f4213fe1712fbe10839379c26bc8b4ca3b4c43cf02ccc03a7687"
+    },
+    {
+      "path": "TestProject~\\Assets\\UniversalRenderPipelineGlobalSettings.asset",
+      "sha256": "a0cc20c8336e699d43fb0333f6301862fd457eaabca605c2a29cceb8585cbce6"
+    },
+    {
+      "path": "TestProject~\\Assets\\UniversalRenderPipelineGlobalSettings.asset.meta",
+      "sha256": "9f7756af7860ade1e88db1b5cffa7dff8cc535f6ac08819a4e26164bf4018717"
+    },
+    {
+      "path": "TestProject~\\Packages\\manifest.json",
+      "sha256": "6ec36481bc216e1d2dec10673fcc91d42fba6f9c059138cff7d59549632e149b"
+    },
+    {
+      "path": "TestProject~\\Packages\\packages-lock.json",
+      "sha256": "13114c0f6e27bcbdfe9cd41cc3cdd5efa3fd17225f3b658d12fc275aa94e8455"
+    },
+    {
+      "path": "TestProject~\\ProjectSettings\\AudioManager.asset",
+      "sha256": "357669746cf56d00b1da30298b454a5fe771252180f81c2406220acab95438bc"
+    },
+    {
+      "path": "TestProject~\\ProjectSettings\\ClusterInputManager.asset",
+      "sha256": "06a192320121e445dcff1ae8ddad2a948ff671ca134603c043d9f4e920427ea9"
+    },
+    {
+      "path": "TestProject~\\ProjectSettings\\DynamicsManager.asset",
+      "sha256": "75b99d95212e2a363a9ce0849abe344fa85a355072375fd0270b7cbce64a31ab"
+    },
+    {
+      "path": "TestProject~\\ProjectSettings\\EditorBuildSettings.asset",
+      "sha256": "65f012cb8f5697059abd088f540367a11927a57f0d4acffde2b9e1ed68eb4966"
+    },
+    {
+      "path": "TestProject~\\ProjectSettings\\EditorSettings.asset",
+      "sha256": "184d81933abc0da3688d96283978bcf952e0afe7e9e37d1f8c66f9604a11ee7c"
+    },
+    {
+      "path": "TestProject~\\ProjectSettings\\GraphicsSettings.asset",
+      "sha256": "1965d795622315852c0e3dced3f15db7b16b805958387add74fe54f10d684e71"
+    },
+    {
+      "path": "TestProject~\\ProjectSettings\\InputManager.asset",
+      "sha256": "17ebf6e47832d8e97feaa71831c075628aa112c4dfa6ad06b29427d731fac4ef"
+    },
+    {
+      "path": "TestProject~\\ProjectSettings\\MemorySettings.asset",
+      "sha256": "a660cb9890d880df92f3b80fa40723f183cc5ef2cb3ecc850b366191f05834c7"
+    },
+    {
+      "path": "TestProject~\\ProjectSettings\\NavMeshAreas.asset",
+      "sha256": "75da067e99628dc5c30d90492887cdaff68171e7b33d1217a1311b182aa47b50"
+    },
+    {
+      "path": "TestProject~\\ProjectSettings\\PackageManagerSettings.asset",
+      "sha256": "945e3e16c88021b2b7bdfd03ae013b1913a1e0a93321a4c5addb4b4bdf40809c"
+    },
+    {
+      "path": "TestProject~\\ProjectSettings\\Physics2DSettings.asset",
+      "sha256": "4c0823d5f0742e9a546000e33fe82cf050f2acfb5f1092c0854e712a5d8dd136"
+    },
+    {
+      "path": "TestProject~\\ProjectSettings\\PresetManager.asset",
+      "sha256": "6ba879310e2be2e5ba18702578cda93b26b030ecd88e883fef22ab456a9f9697"
+    },
+    {
+      "path": "TestProject~\\ProjectSettings\\ProjectSettings.asset",
+      "sha256": "f4e8b69fd22e57cdc22c26705b754c485f4d545f091a6776e0c0650a8bab50bc"
+    },
+    {
+      "path": "TestProject~\\ProjectSettings\\ProjectVersion.txt",
+      "sha256": "b51e896aa269e68a1a2edc32ed0920b7c15973e9775f9c03967074bf5854ca73"
+    },
+    {
+      "path": "TestProject~\\ProjectSettings\\QualitySettings.asset",
+      "sha256": "f7698a6c2c236296dc0f4ff054c925bf44a80a57c09b2ad2b643105e8a389249"
+    },
+    {
+      "path": "TestProject~\\ProjectSettings\\SceneTemplateSettings.json",
+      "sha256": "017f2e3f4c71e36d0b77cb5f84452fb363bf523b0779ae0b8d45e9c780c2883f"
+    },
+    {
+      "path": "TestProject~\\ProjectSettings\\ShaderGraphSettings.asset",
+      "sha256": "1f89d26643fc766f86d5acaa2f0da8922a8ae85c6c92c89c520d8c0cacd05dc2"
+    },
+    {
+      "path": "TestProject~\\ProjectSettings\\TagManager.asset",
+      "sha256": "9234e7ac4d5cd6d4d21b26fbbb2530b754e87a147df38e852bf774ccf5179b44"
+    },
+    {
+      "path": "TestProject~\\ProjectSettings\\TimeManager.asset",
+      "sha256": "6c320ee59ae1e55aa74558f012437f63cb9de59d69fda62fc321c4f1971c52cb"
+    },
+    {
+      "path": "TestProject~\\ProjectSettings\\UnityConnectSettings.asset",
+      "sha256": "210f1b07fa9d1209b4433e01699046f790dc5755a6101ef909263c642b4a4247"
+    },
+    {
+      "path": "TestProject~\\ProjectSettings\\URPProjectSettings.asset",
+      "sha256": "c734f086cf686d5bfeee501b13d114f54543da2de89ad1a474e98fea8c988dcd"
+    },
+    {
+      "path": "TestProject~\\ProjectSettings\\VersionControlSettings.asset",
+      "sha256": "b693342eb84fb0378d21cd2a4557d900777709ad00c2ff5041c2d8451b6da246"
+    },
+    {
+      "path": "TestProject~\\ProjectSettings\\VFXManager.asset",
+      "sha256": "10f40a79781aad9c6e22766a05ee3ea0b0fe7028102487607ab29050b7a2d49f"
+    },
+    {
+      "path": "TestProject~\\Assets\\kabu-unity-mcp\\settings.json",
+      "sha256": "7d4f480c29f230ed259d361e167b31933634a0dd8886d4b4a7714cb74911c6ac"
+    },
+    {
+      "path": "TestProject~\\Assets\\kabu-unity-mcp\\settings.json.meta",
+      "sha256": "01d93924f66a558a7ed0a75fb10570c31b8afd5a1a426cdf99aed3aaf6d0d9af"
+    },
+    {
+      "path": "TestProject~\\Assets\\kabu-unity-mcp\\_TestTemp.meta",
+      "sha256": "f40e983e7b80de84847e376002bf0cfaf845d6f09103a0e3fbddb16bb8b9e225"
+    },
+    {
+      "path": "TestProject~\\Assets\\Scenes\\Demo.unity",
+      "sha256": "0d8c8cf3adc3fadb3fd89871ac80db8f5585e3ca56d29e111c4f3915f6fefbaf"
+    },
+    {
+      "path": "TestProject~\\Assets\\Scenes\\Demo.unity.meta",
+      "sha256": "f84a2656a94756ec867be5285de9ef4a0a6ecdb4a1ee7648335f8c2dcfe78d1c"
+    },
+    {
+      "path": "TestProject~\\Assets\\Scripts\\HelloWorldTest.cs",
+      "sha256": "bfd6542dea064e7d1c0f628df01aff2272abbd6196a2fb64495f0e726ec95ea9"
+    },
+    {
+      "path": "TestProject~\\Assets\\Scripts\\HelloWorldTest.cs.meta",
+      "sha256": "c492364ecbd9532e9cec706d1879f604d15e4f7f17cd3af3f1ce7ff118eb36d1"
+    },
+    {
+      "path": "TestProject~\\Assets\\Settings\\SampleSceneProfile.asset",
+      "sha256": "4d4c6f220c271e8b76a1b23722c6240f264535f7dbaec003b320431dcb4fb822"
+    },
+    {
+      "path": "TestProject~\\Assets\\Settings\\SampleSceneProfile.asset.meta",
+      "sha256": "668517f56295df70fe9a33f16326b0ddf1719646abb6be44a48d1c99c3a764c1"
+    },
+    {
+      "path": "TestProject~\\Assets\\Settings\\URP-Balanced-Renderer.asset",
+      "sha256": "d47d383d68993708437c134d0f9de8134c2f7e8d87c494e6fcb2b870798d7078"
+    },
+    {
+      "path": "TestProject~\\Assets\\Settings\\URP-Balanced-Renderer.asset.meta",
+      "sha256": "5932b7155156c9a2e8067aab784ba4ce4320f39f9e7b85e1692c72440b2edbc0"
+    },
+    {
+      "path": "TestProject~\\Assets\\Settings\\URP-Balanced.asset",
+      "sha256": "88488555fe49938959187cd6d5d3a02f91fe882287f38b726de9826df3b79cfa"
+    },
+    {
+      "path": "TestProject~\\Assets\\Settings\\URP-Balanced.asset.meta",
+      "sha256": "6238d3f9e08ab6dfa0709c79ffd026d73fd53e8d0741017e5d90ed9874f9716a"
+    },
+    {
+      "path": "TestProject~\\Assets\\Settings\\URP-HighFidelity-Renderer.asset",
+      "sha256": "8a02659eb1038165cb05635d3a2017f86309c8bd62f6ca91410df5d00a377c52"
+    },
+    {
+      "path": "TestProject~\\Assets\\Settings\\URP-HighFidelity-Renderer.asset.meta",
+      "sha256": "7a8d1b27dd61f323ee78fcef6db57565020e14b78743d7c3f829b3fecc0e2d7b"
+    },
+    {
+      "path": "TestProject~\\Assets\\Settings\\URP-HighFidelity.asset",
+      "sha256": "f2eb0d76a9cf210787a3657d8984bc1dcde2981797a32f57fc0ef9988aca78ef"
+    },
+    {
+      "path": "TestProject~\\Assets\\Settings\\URP-HighFidelity.asset.meta",
+      "sha256": "b715dfa3b79ef01d6b3650c55d212f1f874dce2ffe4ea9d01761663b796ecb20"
+    },
+    {
+      "path": "TestProject~\\Assets\\Settings\\URP-Performant-Renderer.asset",
+      "sha256": "7621cd6ca6cc2fd46df2b92890ac0df8451782656ca94408a0505fc43083233b"
+    },
+    {
+      "path": "TestProject~\\Assets\\Settings\\URP-Performant-Renderer.asset.meta",
+      "sha256": "04bfe6f398cd37ec946cd42b17422da41c8e38c527df5c95e1405053a3d79bf7"
+    },
+    {
+      "path": "TestProject~\\Assets\\Settings\\URP-Performant.asset",
+      "sha256": "9f2e78db8cb9613b32cd699f4fa4eec1f2e73f9ca9c7a048c304df177b772688"
+    },
+    {
+      "path": "TestProject~\\Assets\\Settings\\URP-Performant.asset.meta",
+      "sha256": "23fbb4a6f17e7a6ff57927e436389f19a34420f0456faa8b14ad07946a1ad8c9"
+    },
+    {
+      "path": "TestProject~\\Assets\\kabu-unity-mcp\\_TestTemp\\Batch1Additive.unity",
+      "sha256": "86b8d7f01643bf4197b49bc8929f4e0571c1910bc46bf72502ac0d07f2041d2c"
+    },
+    {
+      "path": "TestProject~\\Assets\\kabu-unity-mcp\\_TestTemp\\Batch1Additive.unity.meta",
+      "sha256": "17d68888b450e3f5594a9bc129154d39d9b2d95aeb9bd98634f5b17e21c0df64"
+    },
+    {
+      "path": "Editor\\Scripts\\Services\\McpServerLauncher.cs",
+      "sha256": "b0f0df3a64e86b12bc90e09c809e5a3c0f7fe8dc3fb6b435463db5052264951d"
+    },
+    {
+      "path": "Editor\\Scripts\\Services\\McpServerProcessStore.cs",
+      "sha256": "f989b0028b3a7ed5a20c1d722e9136d82c5fea459b1cfe9c1de00a6a33641f85"
+    },
+    {
+      "path": ".cursor\\rules\\kabu-unity-mcp-dev.mdc",
+      "sha256": "1e1c0fd2bd297c838a7645c2e79b334f27a14de809046f6787e5188834c6e78e"
+    }
+  ],
+  "artArchive": "E:\\Art\\material-vault\\libraries\\kaykit\\downloads\\adventurers-free-2.0.zip",
+  "artSha256": "abe48f4763fba0896bab486ee9e6d08ca6b5b3884b9601f235c8847ae94dc479"
+}

@@ -1,0 +1,13 @@
+{
+  "packageId": "com.littlegame.teardown.dev",
+  "apk": "E:\\Project\\little-game\\Builds\\Android\\little-game.apk",
+  "pid": "19399",
+  "foreground": [
+    "    mResumedActivity: ActivityRecord{8cee362 u0 com.zhiliaoapp.musically/com.ss.android.ugc.aweme.splash.SplashActivity t69972}",
+    "  ResumedActivity: ActivityRecord{8cee362 u0 com.zhiliaoapp.musically/com.ss.android.ugc.aweme.splash.SplashActivity t69972}",
+    "mLastResumedActivity=ActivityRecord{8cee362 u0 com.zhiliaoapp.musically/com.ss.android.ugc.aweme.splash.SplashActivity t69972}"
+  ],
+  "launched": true,
+  "runtimeErrors": [],
+  "screenshot": "E:\\Project\\little-game\\Reports\\Mobile\\20261124-114817\\screen.png"
+}

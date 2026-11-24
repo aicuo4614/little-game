@@ -1,0 +1,25 @@
+{
+  "checks": [
+    "遗迹庭院模型/Shader完整、静态合批、无环境玩法碰撞、普通波隔栏升起",
+    "正确工程、编译、场景、Play和战斗工具发现；旧玩法扩展已移除",
+    "共用pointer取消和远处松手不误转盘；正常点击扣一次",
+    "候补共用拖动入口命中、起拖、取消、松手部署通过",
+    "正常合成、素材唯一性、开战前必须选分支以及分支锁定通过",
+    "实际自动战斗、暂停、瞄准取消、保护消耗一次、战中拒绝布阵通过",
+    "不跳波完整12波获胜；普通栏/首领撤栏、奖励唯一、每波4转及首领预警通过",
+    "正常少兵防守漏怪失败及重开复位通过"
+  ],
+  "console": {
+    "Error": "Console 日志 0 条：",
+    "Exception": "Console 日志 0 条：",
+    "Assert": "Console 日志 0 条：",
+    "Warning": "Console 日志 0 条："
+  },
+  "extensionVersion": "1.0.1",
+  "screenshots": [
+    "combat-preparation.png",
+    "combat-boss-warning-6.png",
+    "combat-victory.png"
+  ],
+  "scope": "场景与共享输入验证，非手机性能验证"
+}

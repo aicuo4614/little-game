@@ -1,0 +1,63 @@
+Shield Idle curves=326 missing=0 paths=
+Shield Move curves=326 missing=0 paths=
+Shield Attack curves=326 missing=0 paths=
+Shield Hit curves=326 missing=0 paths=
+Shield Death curves=326 missing=0 paths=
+Shield Slam curves=326 missing=0 paths=
+Shield renderers=5 triangles=5988 nodes=49
+Archer Idle curves=326 missing=0 paths=
+Archer Move curves=326 missing=0 paths=
+Archer Attack curves=326 missing=0 paths=
+Archer Hit curves=326 missing=0 paths=
+Archer Death curves=326 missing=0 paths=
+Archer Slam curves=326 missing=0 paths=
+Archer renderers=8 triangles=6244 nodes=65
+Storm Idle curves=326 missing=0 paths=
+Storm Move curves=326 missing=0 paths=
+Storm Attack curves=326 missing=0 paths=
+Storm Hit curves=326 missing=0 paths=
+Storm Death curves=326 missing=0 paths=
+Storm Slam curves=326 missing=0 paths=
+Storm renderers=6 triangles=5936 nodes=50
+Frost Idle curves=326 missing=0 paths=
+Frost Move curves=326 missing=0 paths=
+Frost Attack curves=326 missing=0 paths=
+Frost Hit curves=326 missing=0 paths=
+Frost Death curves=326 missing=0 paths=
+Frost Slam curves=326 missing=0 paths=
+Frost renderers=6 triangles=4674 nodes=50
+Grunt Idle curves=326 missing=0 paths=
+Grunt Move curves=326 missing=0 paths=
+Grunt Attack curves=326 missing=0 paths=
+Grunt Hit curves=326 missing=0 paths=
+Grunt Death curves=326 missing=0 paths=
+Grunt Slam curves=326 missing=0 paths=
+Grunt renderers=7 triangles=3714 nodes=51
+Armored Idle curves=326 missing=0 paths=
+Armored Move curves=326 missing=0 paths=
+Armored Attack curves=326 missing=0 paths=
+Armored Hit curves=326 missing=0 paths=
+Armored Death curves=326 missing=0 paths=
+Armored Slam curves=326 missing=0 paths=
+Armored renderers=5 triangles=6533 nodes=49
+Healer Idle curves=326 missing=0 paths=
+Healer Move curves=326 missing=0 paths=
+Healer Attack curves=326 missing=0 paths=
+Healer Hit curves=326 missing=0 paths=
+Healer Death curves=326 missing=0 paths=
+Healer Slam curves=326 missing=0 paths=
+Healer renderers=6 triangles=5591 nodes=50
+Runner Idle curves=380 missing=0 paths=
+Runner Move curves=380 missing=0 paths=
+Runner Attack curves=380 missing=0 paths=
+Runner Hit curves=380 missing=0 paths=
+Runner Death curves=380 missing=0 paths=
+Runner Slam curves=380 missing=0 paths=
+Runner renderers=1 triangles=1534 nodes=39
+Giant Idle curves=408 missing=0 paths=
+Giant Move curves=408 missing=0 paths=
+Giant Attack curves=408 missing=0 paths=
+Giant Hit curves=408 missing=0 paths=
+Giant Death curves=408 missing=0 paths=
+Giant Slam curves=408 missing=0 paths=
+Giant renderers=1 triangles=2658 nodes=58

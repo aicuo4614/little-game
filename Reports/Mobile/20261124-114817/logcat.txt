@@ -1,0 +1,81 @@
+--------- beginning of system
+11-24 11:48:21.659 19399 19399 I AndroidRuntime: RuntimeInit: Starting application from zygote
+11-24 11:48:21.660 19399 19399 D AndroidRuntime: Entered RuntimeInit!
+11-24 11:48:21.663 19399 19399 I AndroidRuntime: MethodAndArgsCaller run()
+11-24 11:48:21.670 19399 19399 D ActivityThread: Attach thread to application
+11-24 11:48:21.707 19399 29524 I LoadedApk: createSharedLibrariesLoaders::sharedLibraries is null
+11-24 11:48:21.728 19399 29524 I ActivityThread: Init compatible state: true
+11-24 11:48:21.755 19399 19399 I ActivityThread: finishPreloaded preloadStatus 0
+11-24 11:48:21.756 19399 19399 I LaunchActivityItem: execute start, token = android.os.BinderProxy@54ef9ab
+11-24 11:48:21.783 19399 19399 V ActivityThread: callActivityOnCreate
+11-24 11:48:22.004 19399 19399 I ActivityThread: add activity client record, r= ActivityRecord{5975e4c token=android.os.BinderProxy@54ef9ab {com.littlegame.teardown.dev/com.unity3d.player.UnityPlayerActivity}} token= android.os.BinderProxy@54ef9ab
+11-24 11:48:22.042 19399 19399 I TopResumedActivityChangeItem: execute start, ActivityClientRecord = ActivityRecord{5975e4c token=android.os.BinderProxy@54ef9ab {com.littlegame.teardown.dev/com.unity3d.player.UnityPlayerActivity}}
+--------- beginning of main
+11-24 11:48:23.600 19399 29548 D HwViewRootImpl: [DetectViewsLocationRunner] start to get views' rect, type = SCENE_WINDOW_FOCUS_CHANGE
+11-24 11:48:23.600 19399 29548 D HwViewRootImpl: [DetectViewsLocationRunner] windowModeType: 1
+11-24 11:48:23.601 19399 29548 D HwViewRootImpl: [DetectViewsLocationRunner] displayPoint: Point(1216, 2688)
+11-24 11:48:23.601 19399 29548 D HwViewRootImpl: [DetectViewsLocationRunner] windowModeType: 1
+11-24 11:48:23.606 19399 29548 D HwViewRootImpl: [DetectViewsLocationRunner] lazyMode:
+11-24 11:48:23.606 19399 29548 D HwViewRootImpl: [DetectViewsLocationRunner] current mode is full screen
+11-24 11:48:23.606 19399 19399 D HwViewRootImpl: [DetectViewsLocationRunner] start to getViewHierarchy
+11-24 11:48:23.608 19399 29548 D HwViewRootImpl: [DetectViewsLocationRunner] deviceOrientation: 0
+11-24 11:48:23.608 19399 29548 D HwViewRootImpl: [DetectViewsLocationRunner-ScreenDirection] ROTATION_0
+11-24 11:48:23.608 19399 29548 D HwViewRootImpl: [DetectViewsLocationRunner] get views' rect = 0, SCENE_WINDOW_FOCUS_CHANGE
+11-24 11:48:24.600 19399 19399 D stylus  : init stylus touchlistener.
+11-24 11:48:24.601 19399 19399 I Hwaps   : APS: EventAnalyzed: initAPS: version is 11.0.0.4
+11-24 11:48:24.602 19399 19399 D Hwaps   : Fpsrequest create,type:EXACTLY_IDENTIFY
+11-24 11:48:24.602 19399 19399 D Hwaps   : Fpsrequest create,type:EXACTLY_IDENTIFY
+11-24 11:48:24.602 19399 19399 D Hwaps   : Fpsrequest create,type:OPENGL_SETTING
+11-24 11:48:24.602 19399 19399 D Hwaps   : FpsController create
+11-24 11:48:24.604 19399 19399 D Hwaps   : APS: EventAnalyzed: reInitFpsPara :mBaseFps = 120; mMaxFps = 120
+11-24 11:48:24.607 19399 19399 I HwViewRootImpl: Add sceneId 11 topId: 10
+11-24 11:48:24.607 19399 19399 W Settings: Setting device_provisioned has moved from android.provider.Settings.Secure to android.provider.Settings.Global.
+11-24 11:48:24.608 19399 19399 V HiTouch_HiTouchSensor: User setup is finished.
+11-24 11:48:24.610 19399 19399 D HwDragEnhancementImpl: handleTimerDrag: false
+11-24 11:48:24.610 19399 19399 D HwDragEnhancementImpl: handleTimerDrag: false
+11-24 11:48:24.610 19399 19399 D HwDragEnhancementImpl: handleTimerDrag: false
+11-24 11:48:24.611 19399 19399 W HwApsManager: HwApsManagerService, registerCallback, start !
+11-24 11:48:24.614 19399 19399 D Hwaps   : APS: EventAnalyzed: registerCallbackInApsManagerService, mPkgName:com.littlegame.teardown.dev; result = true
+11-24 11:48:24.615 19399 19399 D HwViewRootImpl: [DetectViewsLocationRunner] current resolutionScale: 1.0
+11-24 11:48:24.615 19399 19399 I HwViewRootImpl: remove sceneId 11 topId: 10
+11-24 11:48:24.615 19399 19399 D WebViewDragEnhancement: dragReset.
+11-24 11:48:24.615 19399 19399 D WebViewDragEnhancement: dragReset cacheSize = 0
+11-24 11:48:25.067 19399 29547 D Unity   : [PhysX] Initialized MultithreadedTaskDispatcher with 5 workers.
+11-24 11:48:25.068 19399 29547 D Unity   : UnloadTime: 2.913542 ms
+11-24 11:48:25.175 19399 29547 I Unity   : [Client] 军团客户端启动；MCP与玩家共用指令，场景=Assets/Scenes/Combat.unity
+11-24 11:48:25.175 19399 29547 I Unity   : LittleGame.Client.ClientBootstrap:Awake()
+11-24 11:48:25.175 19399 29547 I Unity   : UnityEngine.GameObject:AddComponent()
+11-24 11:48:25.175 19399 29547 I Unity   : LittleGame.Client.ClientBootstrap:TryBoot()
+11-24 11:48:25.175 19399 29547 I Unity   : 
+11-24 11:48:25.178 19399 29547 D Unity   : InitializeOrResetSwapChain 1216x2688 hdr=0 samples=0
+11-24 11:48:25.196 19399 29547 V SwappyVk: SwappyVk initialized for VkDevice 0x7cd607c060 using VK_GOOGLE_display_timing on Android
+11-24 11:48:25.196 19399 29547 I SwappyVk: Returning refresh duration of 8333333 nsec (approx 120.000005 Hz)
+11-24 11:48:25.197 19399 29547 I AudioManager: getStreamVolume streamType: 3
+11-24 11:48:25.200 19399 29547 D Unity   : Sensor :        Accelerometer ( 1) ; 0.000010 / 0.00s ; acc_s002_006 / 002 
+11-24 11:48:25.200 19399 29547 D Unity   : Choreographer available: Enabling VSYNC timing
+11-24 11:48:25.201 19399 29547 I AudioManager: getStreamVolume streamType: 3
+11-24 11:48:25.400 19399 29547 I IL2CPP  : Locale zh-Hans-CN
+11-24 11:48:25.417 19399 29548 D HwViewRootImpl: [DetectViewsLocationRunner] start to get views' rect, type = SCENE_GESTURE_SINGLE_TAP
+11-24 11:48:25.418 19399 29548 D HwViewRootImpl: [DetectViewsLocationRunner] windowModeType: 1
+11-24 11:48:25.418 19399 29548 D HwViewRootImpl: [DetectViewsLocationRunner] displayPoint: Point(1216, 2688)
+11-24 11:48:25.418 19399 29548 D HwViewRootImpl: [DetectViewsLocationRunner] windowModeType: 1
+11-24 11:48:25.418 19399 29548 D HwViewRootImpl: [DetectViewsLocationRunner] lazyMode:
+11-24 11:48:25.419 19399 29548 D HwViewRootImpl: [DetectViewsLocationRunner] current mode is full screen
+11-24 11:48:25.419 19399 19399 D HwViewRootImpl: [DetectViewsLocationRunner] start to getViewHierarchy
+11-24 11:48:25.420 19399 29548 D HwViewRootImpl: [DetectViewsLocationRunner] deviceOrientation: 0
+11-24 11:48:25.420 19399 29548 D HwViewRootImpl: [DetectViewsLocationRunner-ScreenDirection] ROTATION_0
+11-24 11:48:25.420 19399 29548 D HwViewRootImpl: [DetectViewsLocationRunner] get views' rect = 0, SCENE_GESTURE_SINGLE_TAP
+11-24 11:48:25.765 19399 29547 D Unity   : InitializeOrResetSwapChain 1216x2688 hdr=0 samples=2
+11-24 11:48:25.789 19399 29547 V SwappyVk: SwappyVk initialized for VkDevice 0x7cd607c060 using VK_GOOGLE_display_timing on Android
+11-24 11:48:25.789 19399 29547 I SwappyVk: Returning refresh duration of 8333333 nsec (approx 120.000005 Hz)
+11-24 11:48:26.789 19399 19399 I AwareBitmapCacher: init lrucache size: 4194304 pid=19399
+11-24 11:48:27.057 19399 29527 I LifecycleTransaction: activityCallbacks TopResumedActivityChangeItem{onTop=false}
+11-24 11:48:27.057 19399 19399 I TopResumedActivityChangeItem: execute start, ActivityClientRecord = ActivityRecord{5975e4c token=android.os.BinderProxy@54ef9ab {com.littlegame.teardown.dev/com.unity3d.player.UnityPlayerActivity}}
+11-24 11:48:27.059 19399 29527 I LifecycleTransaction: lifecycleStateRequest PauseActivityItem{finished=false,userLeaving=true,configChanges=0,dontReport=false}
+11-24 11:48:27.064 19399 19399 I HwViewRootImpl: remove sceneId 10 topId: 0
+11-24 11:48:27.064 19399 19399 I Unity   : onPause
+11-24 11:48:27.097 19399 29547 D Unity   : Vulkan PSO: data extracted [new size=183220, old size=92864, incomplete=0]
+11-24 11:48:27.100 19399 29547 D Unity   : Vulkan PSO: Saved size[183220] path[/storage/emulated/0/Android/data/com.littlegame.teardown.dev/cache/vulkan_pso_cache.bin] success=1 headerChanged=0 sizeChanged=1
+11-24 11:48:27.102 19399 29547 D Unity   : Sensor :        Accelerometer ( 1) ; 0.000010 / 0.00s ; acc_s002_006 / 002 
+11-24 11:48:27.139 19399 19399 I InsetsSourceConsumer: ViewUI_insets mSourceControl is null notifyControlRevoked type: 0
+11-24 11:48:27.141 19399 19399 I Unity   : windowFocusChanged: false

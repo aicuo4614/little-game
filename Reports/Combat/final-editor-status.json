@@ -1,0 +1,27 @@
+{
+  "project": {
+    "productName": "符阵军团",
+    "companyName": "DefaultCompany",
+    "unityVersion": "2022.3.62f3c1",
+    "platform": "WindowsEditor",
+    "dataPath": "E:/Project/little-game/Assets",
+    "persistentDataPath": "C:/Users/1250c/AppData/LocalLow/DefaultCompany/符阵军团",
+    "isEditor": true,
+    "isPlaying": false,
+    "isPaused": false,
+    "isCompiling": false,
+    "activeScene": {
+      "name": "Combat",
+      "path": "Assets/Scenes/Combat.unity",
+      "isDirty": false,
+      "rootCount": 0
+    },
+    "message": "项目 符阵军团 / Unity 2022.3.62f3c1"
+  },
+  "compilation": "未在编译，最近编译成功。",
+  "console": {
+    "Error": "Console 日志 0 条：",
+    "Exception": "Console 日志 0 条：",
+    "Assert": "Console 日志 0 条："
+  }
+}

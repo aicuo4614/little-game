@@ -1,0 +1,11 @@
+{
+  "jobId": "500976698211403780609e666bf9f0c8",
+  "bytes": 47071760,
+  "sha256": "b027fc00d17069cfff6cc8dcc71de1521bca90fe1dca6cf4308ccafe08636f91",
+  "abis": [
+    "arm64-v8a"
+  ],
+  "il2cpp": true,
+  "latestSourceBuilt": true,
+  "deviceInstalled": false
+}

@@ -1,0 +1,106 @@
+{
+  "authorization": "用户2026-11-24确认这批资源可以使用，无需核对商用授权",
+  "assets": [
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Zhan\\New Scene\\Mesh\\brick_1.FBX",
+      "destination": "E:\\Project\\little-game\\Assets\\LittleGame\\Resources\\Courtyard\\brick_1.FBX",
+      "sha256": "1bf7fdd7ca1ebe9b51da2b4f055d1af51643b868738beaa238557b7aed1c4b4c"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Zhan\\New Scene\\Mesh\\brick_2.FBX",
+      "destination": "E:\\Project\\little-game\\Assets\\LittleGame\\Resources\\Courtyard\\brick_2.FBX",
+      "sha256": "980ebaf60827c75a371a7820e1a61bf9954624e8eb290018e828648b461dee1f"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Zhan\\New Scene\\Mesh\\brick_3.FBX",
+      "destination": "E:\\Project\\little-game\\Assets\\LittleGame\\Resources\\Courtyard\\brick_3.FBX",
+      "sha256": "0f72d78163bb803ded3aeb28f64f352bba16ce2a8d87ef70ebf66f48bf36c6e8"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Zhan\\New Scene\\Mesh\\brick_4.FBX",
+      "destination": "E:\\Project\\little-game\\Assets\\LittleGame\\Resources\\Courtyard\\brick_4.FBX",
+      "sha256": "3e504e0ec0ffeac5909bfeef96d3350ae8b0196e39ebd6e3563c746d3fa58afb"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Zhan\\New Scene\\Mesh\\Crystal_2.FBX",
+      "destination": "E:\\Project\\little-game\\Assets\\LittleGame\\Resources\\Courtyard\\Crystal_2.FBX",
+      "sha256": "52b0ea1e91ce3eb302c060a06726ebe0f4dfbe64e75197f2c9effc96943fccdf"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Zhan\\New Scene\\Mesh\\Grass.fbx",
+      "destination": "E:\\Project\\little-game\\Assets\\LittleGame\\Resources\\Courtyard\\Grass.fbx",
+      "sha256": "9a666153407e973a158688e70afb7703c52d0935c704e908e4c66464e1104f14"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Zhan\\New Scene\\Mesh\\ground.FBX",
+      "destination": "E:\\Project\\little-game\\Assets\\LittleGame\\Resources\\Courtyard\\ground.FBX",
+      "sha256": "971f7e6cbbe316cd47b45a06ca72898dc781862c2d296d1498a2d37ac195c605"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Zhan\\New Scene\\Mesh\\nw_Grass.FBX",
+      "destination": "E:\\Project\\little-game\\Assets\\LittleGame\\Resources\\Courtyard\\nw_Grass.FBX",
+      "sha256": "af13606e37230c8392008e4a7b1310f6a8761c1a2094c8a69435a089bcfd465c"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Zhan\\New Scene\\Mesh\\Rock_1.fbx",
+      "destination": "E:\\Project\\little-game\\Assets\\LittleGame\\Resources\\Courtyard\\Rock_1.fbx",
+      "sha256": "4a322e27274d2ecce6d2f52149f079787436fa458319680a6844d7457e9d207c"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Zhan\\New Scene\\Mesh\\Tree_04.fbx",
+      "destination": "E:\\Project\\little-game\\Assets\\LittleGame\\Resources\\Courtyard\\Tree_04.fbx",
+      "sha256": "ac3df8634adfa4bf2850724d9785c2c7ebe739eb5f143255076b64c7f24859e8"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Zhan\\New Scene\\S07\\Dungeon Crypt - Proto Series\\Models\\Dungeon Crypt Models\\archway.fbx",
+      "destination": "E:\\Project\\little-game\\Assets\\LittleGame\\Resources\\Courtyard\\archway.fbx",
+      "sha256": "04b3f7c6c2185e76645038322b900bd62d13eced0599b21b6104a08ff0770c3c"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Zhan\\New Scene\\S07\\Dungeon Crypt - Proto Series\\Models\\Dungeon Crypt Models\\cube_1m_dark.fbx",
+      "destination": "E:\\Project\\little-game\\Assets\\LittleGame\\Resources\\Courtyard\\cube_1m_dark.fbx",
+      "sha256": "3922d621c76e6482af1d284e59dbcb7158cc95de12cc7a79dbfe530eacf95801"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Zhan\\New Scene\\S07\\Dungeon Crypt - Proto Series\\Models\\Dungeon Crypt Models\\door_large_left.fbx",
+      "destination": "E:\\Project\\little-game\\Assets\\LittleGame\\Resources\\Courtyard\\door_large_left.fbx",
+      "sha256": "bd8a6c9d2c0e9edeed6ac83ff39ed7d626939fc65e1d418f9ebd4efeb1cf6b8c"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Zhan\\New Scene\\S07\\Dungeon Crypt - Proto Series\\Models\\Dungeon Crypt Models\\door_large_right.fbx",
+      "destination": "E:\\Project\\little-game\\Assets\\LittleGame\\Resources\\Courtyard\\door_large_right.fbx",
+      "sha256": "2e9d6851ac2dd11c6101d6ee3bd4bbe774332ff6c7ba911a46513c02d41611d0"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Zhan\\New Scene\\S07\\Dungeon Crypt - Proto Series\\Models\\Dungeon Crypt Models\\pillar.fbx",
+      "destination": "E:\\Project\\little-game\\Assets\\LittleGame\\Resources\\Courtyard\\pillar.fbx",
+      "sha256": "53a69b7ffdd7b60ade6ce9309e04d0e629bb1d7a9809e07e6de005f72ea08beb"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Zhan\\New Scene\\S07\\Dungeon Crypt - Proto Series\\Models\\Dungeon Crypt Models\\pillar_bottom.fbx",
+      "destination": "E:\\Project\\little-game\\Assets\\LittleGame\\Resources\\Courtyard\\pillar_bottom.fbx",
+      "sha256": "41affcfd91124a4e76c0b7c9f530d1cf0b04a7da03f521abcf18ef98018c3e33"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Zhan\\New Scene\\S07\\Dungeon Crypt - Proto Series\\Models\\Dungeon Crypt Models\\pillar_narrow_1.fbx",
+      "destination": "E:\\Project\\little-game\\Assets\\LittleGame\\Resources\\Courtyard\\pillar_narrow_1.fbx",
+      "sha256": "21e637fb918e1c9e69422d452f8eaa87bbaa8ea2783414988e05fe4d1724a688"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Zhan\\New Scene\\S07\\Dungeon Crypt - Proto Series\\Models\\Dungeon Crypt Models\\pillar_short_slim_1.fbx",
+      "destination": "E:\\Project\\little-game\\Assets\\LittleGame\\Resources\\Courtyard\\pillar_short_slim_1.fbx",
+      "sha256": "bef9fe3112748b8c4eb56d6bf50ac8b793ec3c162e3af3ccc8e8f0fa56f776ce"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Zhan\\New Scene\\S07\\Dungeon Crypt - Proto Series\\Models\\Dungeon Crypt Models\\torch_2.fbx",
+      "destination": "E:\\Project\\little-game\\Assets\\LittleGame\\Resources\\Courtyard\\torch_2.fbx",
+      "sha256": "300711f570c315526139a21d5ae613fa8775cdb3249259231bf73be7a6a8eecb"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Zhan\\New Scene\\S07\\Dungeon Crypt - Proto Series\\Models\\Dungeon Crypt Models\\wall_element_tileable_4meters_top.fbx",
+      "destination": "E:\\Project\\little-game\\Assets\\LittleGame\\Resources\\Courtyard\\wall_element_tileable_4meters_top.fbx",
+      "sha256": "bcef75f9e24159de695118e8326645a0fb96f6c95e00c3e9b7a4bea82867d003"
+    }
+  ],
+  "shaderSource": "F:\\Git\\kabu_mobile\\demo\\client-demo-assets\\Assets\\Art\\Shaders\\Scene\\Simple.shader"
+}

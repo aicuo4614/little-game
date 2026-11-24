@@ -15,7 +15,7 @@ def main():
     font = TTFont(SOURCE)
     if 'fvar' in font:
         font = instantiateVariableFont(font, {'wght': 400}, inplace=True)
-    text = ''.join(p.read_text(encoding='utf-8-sig') for p in (ROOT / 'Assets/LittleGame/Runtime').rglob('*.cs'))
+    text = ''.join(p.read_text(encoding='utf-8-sig') for p in (ROOT / 'Assets/LittleGame/Client').rglob('*.cs'))
     text += ''.join(chr(i) for i in range(32, 127))
     missing = sorted({c for c in text if ord(c) > 31 and ord(c) not in font.getBestCmap()})
     if missing:

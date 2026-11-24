@@ -1,6 +1,7 @@
 <linker>
-  <!-- 小型原型的开发包只读观测使用 Newtonsoft 读取匿名状态对象的属性。 -->
-  <assembly fullname="Assembly-CSharp" preserve="all" />
+  <!-- 本地存档、MCP和开发包观测通过Newtonsoft读取状态及匿名快照。 -->
+  <assembly fullname="LittleGame.Domain" preserve="all" />
+  <assembly fullname="LittleGame.Client" preserve="all" />
   <!-- CreatePrimitive 在运行时生成模型，IL2CPP 必须保留原生组件注册。 -->
   <assembly fullname="UnityEngine.CoreModule">
     <type fullname="UnityEngine.MeshFilter" preserve="all" />

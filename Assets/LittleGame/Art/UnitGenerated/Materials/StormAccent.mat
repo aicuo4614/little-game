@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StormAccent
+  m_Shader: {fileID: 4800000, guid: f956afd8aa2ee4f4b8f2bad0b9b5c35a, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - _RECEIVE_SHADOWS_OFF
+  m_InvalidKeywords:
+  - _TOONMIDGRADIENT_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _IDMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MaskMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RampMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AOStrength: 0
+    - _AmbientStrength: 0.55
+    - _DyeStrength: 0
+    - _MaskMetallic: 0
+    - _MaskSmoothness: 0.25
+    - _OutlineEnabled: 1
+    - _OutlineFar: 20
+    - _OutlineNear: 2
+    - _OutlineUseSmoothNormal: 0
+    - _OutlineWidth: 0.8
+    - _OutlineWidthMode: 1
+    - _OutlineZOffset: 0
+    - _ReceiveShadows: 0
+    - _SpecialIntensity: 0
+    - _ToonLit: 1
+    - _ToonLitAngle: 81
+    - _ToonMid: 0.64
+    - _ToonMidAngle: 93
+    - _ToonMidGradient: 1
+    - _ToonShadow: 0.32
+    m_Colors:
+    - _BaseColor: {r: 0.2, g: 0.07, b: 0.35, a: 1}
+    - _Color0: {r: 1, g: 1, b: 1, a: 1}
+    - _Color1: {r: 1, g: 0.85, b: 0.7, a: 1}
+    - _Color2: {r: 0.75, g: 0.54999995, b: 0.85, a: 1}
+    - _Color3: {r: 0.45, g: 0.34999996, b: 0.54999995, a: 1}
+    - _Color4: {r: 1, g: 0.95, b: 0.8, a: 1}
+    - _OutlineColor: {r: 0.18039218, g: 0.18039218, b: 0.18039218, a: 1}
+    - _SpecialColor: {r: 1, g: 1, b: 0.95, a: 1}
+  m_BuildTextureStacks: []

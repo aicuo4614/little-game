@@ -1,0 +1,1 @@
+{"name":"LittleGame.Client.Editor","references":["LittleGame.Client","LittleGame.Domain","kabu-unity-mcp.Editor","Unity.Nuget.Newtonsoft-Json","Unity.RenderPipelines.Core.Runtime","Unity.RenderPipelines.Core.Editor","Unity.RenderPipelines.Universal.Runtime","UnityEngine.UI"],"includePlatforms":["Editor"],"autoReferenced":true}

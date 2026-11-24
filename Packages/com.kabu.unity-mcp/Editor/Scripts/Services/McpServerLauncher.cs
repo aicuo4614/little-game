@@ -13,7 +13,7 @@ namespace KabuUnityMcp.Editor.Services
 {
     /// <summary>
     /// Starts / stops the local <c>dotnet run</c> process.
-    /// 启动和停止只清理本工程的服务器进程。
+    /// Start 前会回收占用端口/残留进程，避免 AddressInUse 与 exe 文件锁。
     /// </summary>
     internal static class McpServerLauncher
     {
@@ -63,7 +63,7 @@ namespace KabuUnityMcp.Editor.Services
 
 
 
-                McpServerProcessStore.SetProcess(process);
+                McpServerProcessStore.SetPid(process.Id);
                 McpServerStatusService.Instance.NotifyStarted(process.Id);
                 Debug.Log($"[kabu-unity-mcp] Server starting (PID {process.Id}) → {McpServerEndpoints.McpUrl}");
                 return McpLaunchResult.Success();
@@ -78,7 +78,8 @@ namespace KabuUnityMcp.Editor.Services
         public static McpLaunchResult Stop()
         {
             var pid = McpServerProcessStore.GetPid();
-            var serverDirectory = PackagePaths.GetServerDirectory();
+            var host = McpServerEndpoints.Host;
+            var port = McpServerEndpoints.Port;
             McpUnityBridge.PrepareForServerStop();
             _ = McpUnityBridge.DisconnectAsync();
             Task.Run(async () =>
@@ -86,7 +87,7 @@ namespace KabuUnityMcp.Editor.Services
                 try
                 {
                     await Task.Delay(200);
-                    StopProjectProcesses(serverDirectory, pid);
+                    ReclaimPort(host, port, pid);
                 }
                 finally
                 {
@@ -170,49 +171,110 @@ namespace KabuUnityMcp.Editor.Services
             }
         }
 
+        /// <summary>
+        /// 若端口被占或存在残留 kabu-unity-mcp，先杀掉并等到端口空闲。
+        /// </summary>
         private static bool EnsurePortAvailable(string host, int port, out string error)
         {
-            StopProjectProcesses(PackagePaths.GetServerDirectory(), McpServerProcessStore.GetPid());
-            McpServerProcessStore.ClearPid();
-            var timer = Stopwatch.StartNew();
-            while (McpPortProbe.IsPortOpen(host, port))
-            {
-                if (timer.ElapsedMilliseconds >= PortFreeWaitMs)
-                {
-                    error = $"端口 {port} 仍被占用，请检查本工程独立端口的配置。";
-                    return false;
-                }
-
-                Thread.Sleep(PortFreePollMs);
-            }
-
             error = null;
-            return true;
+            var trackedPid = McpServerProcessStore.GetPid();
+            var portBusy = McpPortProbe.IsPortOpen(host, port);
+            var hasStray = HasServerProcess();
+
+            if (!portBusy && trackedPid <= 0 && !hasStray)
+                return true;
+
+            Debug.Log(
+                $"[kabu-unity-mcp] 启动前回收占用：portBusy={portBusy}, trackedPid={trackedPid}, strayServer={hasStray}");
+
+            ReclaimPort(host, port, trackedPid);
+            McpServerProcessStore.ClearPid();
+
+            if (WaitUntilPortFree(host, port, PortFreeWaitMs))
+                return true;
+
+            error =
+                $"端口 {port} 仍被占用，无法启动。\n\n" +
+                $"请先点「关闭服务器」，或在任务管理器结束 kabu-unity-mcp / 占用 {port} 的进程，" +
+                "也可在配置里换一个端口后再启动。";
+            return false;
         }
 
-        private static void StopProjectProcesses(string serverDirectory, int trackedPid)
+        private static void ReclaimPort(string host, int port, int trackedPid)
         {
             if (trackedPid > 0)
                 KillPidTree(trackedPid);
 
-            // 编辑器重启后 SessionState 可能已丢失，仅回收从本工程目录启动的残留服务端。
-            var prefix = Path.GetFullPath(serverDirectory).TrimEnd(Path.DirectorySeparatorChar)
-                + Path.DirectorySeparatorChar;
-            foreach (var process in Process.GetProcessesByName("kabu-unity-mcp"))
+            KillServerProcessesByName();
+
+            if (McpPortProbe.IsPortOpen(host, port))
+                TryKillByPortWindows(port);
+        }
+
+        private static bool WaitUntilPortFree(string host, int port, int timeoutMs)
+        {
+            var timer = Stopwatch.StartNew();
+            while (timer.ElapsedMilliseconds < timeoutMs)
             {
-                using (process)
+                if (!McpPortProbe.IsPortOpen(host, port))
+                    return true;
+                Thread.Sleep(PortFreePollMs);
+            }
+
+            return !McpPortProbe.IsPortOpen(host, port);
+        }
+
+        private static bool HasServerProcess()
+        {
+            try
+            {
+                foreach (var name in new[] { "kabu-unity-mcp", "kabu-unity-mcp.exe" })
+                {
+                    var list = Process.GetProcessesByName(
+                        name.EndsWith(".exe", StringComparison.OrdinalIgnoreCase)
+                            ? Path.GetFileNameWithoutExtension(name)
+                            : name);
+                    if (list != null && list.Length > 0)
+                    {
+                        foreach (var p in list)
+                            p.Dispose();
+                        return true;
+                    }
+                }
+            }
+            catch
+            {
+                // ignore
+            }
+
+            return false;
+        }
+
+        private static void KillServerProcessesByName()
+        {
+            try
+            {
+                foreach (var process in Process.GetProcessesByName("kabu-unity-mcp"))
                 {
                     try
                     {
-                        var executable = process.MainModule?.FileName;
-                        if (executable != null && executable.StartsWith(prefix, StringComparison.OrdinalIgnoreCase))
-                            KillPidTree(process.Id);
+                        var id = process.Id;
+                        KillPidTree(id);
+                        MarshalLog($"已结束残留进程 kabu-unity-mcp (PID {id})", isError: false);
                     }
                     catch (Exception ex)
                     {
-                        MarshalLog($"检查 MCP 进程归属失败：{ex.Message}", isError: true);
+                        MarshalLog($"结束 kabu-unity-mcp 失败：{ex.Message}", isError: true);
+                    }
+                    finally
+                    {
+                        process.Dispose();
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                MarshalLog($"查找 kabu-unity-mcp 失败：{ex.Message}", isError: true);
             }
         }
 
@@ -253,6 +315,47 @@ namespace KabuUnityMcp.Editor.Services
             catch (Exception ex)
             {
                 MarshalLog($"Kill PID {pid}: {ex.Message}", isError: true);
+                return false;
+            }
+        }
+
+        private static bool TryKillByPortWindows(int port)
+        {
+            if (Application.platform != RuntimePlatform.WindowsEditor)
+                return false;
+
+            try
+            {
+                // Get-NetTCPConnection 在部分环境不可用；用 netstat 兜底
+                var psi = new ProcessStartInfo
+                {
+                    FileName = "powershell",
+                    Arguments =
+                        "-NoProfile -Command \"" +
+                        "$pids = @(); " +
+                        "try { $pids += @(Get-NetTCPConnection -LocalPort " + port +
+                        " -State Listen -ErrorAction Stop | Select-Object -ExpandProperty OwningProcess) } catch {}; " +
+                        "netstat -ano | ForEach-Object { if ($_ -match '[:.]" + port +
+                        "\\s+.*LISTENING\\s+(\\d+)$') { $pids += [int]$Matches[1] } }; " +
+                        "$pids | Select-Object -Unique | ForEach-Object { if ($_ -gt 0) { Stop-Process -Id $_ -Force -ErrorAction SilentlyContinue; Write-Output $_ } }" +
+                        "\"",
+                    UseShellExecute = false,
+                    CreateNoWindow = true,
+                    RedirectStandardOutput = false,
+                    RedirectStandardError = false,
+                };
+                using var p = Process.Start(psi);
+                if (p == null)
+                    return false;
+                var output = p.StandardOutput.ReadToEnd();
+                p.WaitForExit(8000);
+                if (!string.IsNullOrWhiteSpace(output))
+                    MarshalLog($"已按端口 {port} 结束进程：{output.Trim()}", isError: false);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MarshalLog($"按端口结束进程失败：{ex.Message}", isError: true);
                 return false;
             }
         }
