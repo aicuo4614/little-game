@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 1,
+  "SchemaVersion": 2,
   "TimelineId": "archer_skill",
   "DisplayName": "风弓手疾风箭",
   "DurationBindClipKey": "",
@@ -30,9 +30,9 @@
       "DelayTime": 0.0,
       "Duration": 0.16,
       "EffectId": "fx_arrow_wind",
-      "FromAnchor": "Caster",
+      "FromAnchor": "CastPoint",
       "ToAnchor": "Target",
-      "StartHeight": 0.72,
+      "StartHeight": 0,
       "EndHeight": 0.65,
       "ArcHeight": 0.2,
       "Width": 0.12,
@@ -81,5 +81,13 @@
       "ColorHex": "#B9FFCF",
       "EventConfigs": []
     }
-  ]
+  ],
+  "Execution": {
+    "Enabled": true,
+    "LaunchKey": "c_arrow",
+    "ImpactKey": "c_hit",
+    "RecoveryKey": "c_anim",
+    "InterruptOnControl": true,
+    "TrackTarget": true
+  }
 }

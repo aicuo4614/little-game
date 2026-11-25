@@ -12,7 +12,7 @@ namespace LittleGame.Client.Battle
     /// 横向战场持续态可视化与场景氛围控制器（只读规则状态，无碰撞体）：
     /// 1. 整体白色布阵框（平时隐藏，拖拽场上或候补单位时显现，拖出范围边界变红提示越界）；
     /// 2. 持续雷池法阵、集火准星、首领横向蓄力预警带；
-    /// 3. 选中单位脚底双环光标 + 可合成单位脚底金光提示环；
+    /// 3. 选中单位脚底光标；
     /// 4. 技能大招场景压暗（SceneDarken）。
     /// </summary>
     public sealed class BattleFieldOverlayView : MonoBehaviour
@@ -49,9 +49,8 @@ namespace LittleGame.Client.Battle
         private Transform selectionCursorRoot;
         private Transform selectionInnerRing;
 
-        // 持续雷池法阵池 & 可合成金光环池
+        // 持续雷池法阵池
         private readonly List<Transform> zoneRings = new List<Transform>();
-        private readonly List<Transform> mergeableRings = new List<Transform>();
 
         private float currentDarken;
         private float targetDarken;
@@ -120,24 +119,23 @@ namespace LittleGame.Client.Battle
             dragSpotRing.gameObject.SetActive(false);
         }
 
-        /// <summary>拖拽单位（无论来自候补 UI 还是战场）时显示白色布阵范围框；超界或满员空格时变红警示。</summary>
-        public void SetDragZoneVisual(bool dragging, Vector3 groundPos, bool insideBox, bool canPlace)
+        /// <summary>拖拽单位时显示白色布阵范围框与夹紧最近合法点 A 的落点环（拖出框外不再变红，而是平稳吸附至最近合法点 A）。</summary>
+        public void SetDragZoneVisual(bool dragging, Vector3 clampedPos, bool showSpot, bool isReplace)
         {
             if (deployBoxRoot != null) deployBoxRoot.gameObject.SetActive(dragging);
-            if (dragSpotRing != null) dragSpotRing.gameObject.SetActive(dragging);
+            if (dragSpotRing != null) dragSpotRing.gameObject.SetActive(dragging && showSpot);
             if (!dragging) return;
 
-            bool valid = insideBox && canPlace;
-            Color borderCol = valid ? new Color(1f, 1f, 1f, 0.95f) : new Color(1f, 0.34f, 0.30f, 0.95f);
-            Color fillCol = valid ? new Color(1f, 1f, 1f, 0.11f) : new Color(1f, 0.25f, 0.22f, 0.14f);
+            Color borderCol = new Color(1f, 1f, 1f, 0.95f);
+            Color fillCol = new Color(1f, 1f, 1f, 0.11f);
 
             for (int i = 0; i < deployBorderMats.Count; i++) ApplyMatColor(deployBorderMats[i], borderCol);
             ApplyMatColor(deployFillMat, fillCol);
 
-            if (dragSpotRing != null)
+            if (dragSpotRing != null && showSpot)
             {
-                dragSpotRing.position = new Vector3(groundPos.x, 0.155f, groundPos.z);
-                ApplyMatColor(dragSpotMat, valid ? new Color(0.55f, 1f, 0.72f, 0.92f) : new Color(1f, 0.32f, 0.28f, 0.92f));
+                dragSpotRing.position = new Vector3(clampedPos.x, 0.155f, clampedPos.z);
+                ApplyMatColor(dragSpotMat, isReplace ? new Color(1f, 0.86f, 0.34f, 0.94f) : new Color(0.55f, 1f, 0.78f, 0.92f));
             }
         }
 
@@ -226,27 +224,7 @@ namespace LittleGame.Client.Battle
                 zoneRings[i].rotation = Quaternion.Euler(0f, t * 75f + i * 45f, 0f);
             }
 
-            // 4. 准备期可合成单位脚底金光提示环
-            var mergeables = session.Phase == RunPhase.Preparation && registry != null
-                ? session.Troops.Where(u => u.Deployed && session.CanMerge(u)).ToArray()
-                : Array.Empty<Troop>();
-            while (mergeableRings.Count < mergeables.Length)
-            {
-                var mr = new GameObject("MergeableHintRing_" + mergeableRings.Count).transform;
-                mr.SetParent(transform, false);
-                CreateRingObject(mr, "MergeGoldHalo", 1.24f, new Color(1f, 0.82f, 0.24f, 0.82f));
-                mergeableRings.Add(mr);
-            }
-            for (int i = 0; i < mergeableRings.Count; i++)
-            {
-                bool active = i < mergeables.Length && registry.TryGet(mergeables[i].Id, out var ma) && ma != null && ma.gameObject.activeSelf;
-                mergeableRings[i].gameObject.SetActive(active);
-                if (!active) continue;
-                registry.TryGet(mergeables[i].Id, out var actor);
-                mergeableRings[i].position = new Vector3(actor.transform.position.x, 0.142f, actor.transform.position.z);
-                float pulse = 0.96f + 0.10f * Mathf.Sin(t * 6.5f + i);
-                mergeableRings[i].localScale = Vector3.one * pulse;
-            }
+            // 三同已经自动合成，不再为未选中单位创建旧版手动合成金圈。
 
             // 5. 平滑更新场景压暗（SceneDarken）
             float speed = targetDarken > currentDarken ? 14f : 7f;

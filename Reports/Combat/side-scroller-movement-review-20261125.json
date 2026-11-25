@@ -1,0 +1,161 @@
+{
+  "date": "2026-11-25",
+  "status": "static_analysis_and_recommendation_only",
+  "reference": "E:\\Project\\射雕1.9版本\\Client",
+  "referenceUnityVersion": "5.6.6f2",
+  "authorization": "只读分析，未复制代码或素材，未启动、升级或改写参考工程",
+  "referenceFindings": [
+    {
+      "finding": "AI按配置创建状态和条件连线，移动、围绕、等待、技能为独立行为",
+      "evidence": "Assets/Scripts/Character/AI/AIController.cs:86"
+    },
+    {
+      "finding": "FindOpponent在行为触发时选目标，使用距离或XY范围停止；非跟随模式可加随机/固定偏移点",
+      "evidence": "Assets/Scripts/Character/AI/AIBehavior/AIBehaviorFindOpponent.cs:25"
+    },
+    {
+      "finding": "跟随模式直接按目标方向移动；MovingTo用DOMoveX/Y插值到目标点，没有路径节点搜索",
+      "evidence": "Assets/Scripts/Character/Move/MoveBehaviorBase.cs:240"
+    },
+    {
+      "finding": "到点/行为结束进入EndMove并停止Tween、播放站立",
+      "evidence": "Assets/Scripts/Character/Move/MoveBehaviorBase.cs:373"
+    },
+    {
+      "finding": "Around计算目标前后侧偏移点，移动后按计时器重选，是围绕表演而非避开障碍的路径搜索",
+      "evidence": "Assets/Scripts/Character/AI/AIBehavior/AIBehaviorAround.cs:77"
+    },
+    {
+      "finding": "普通非障碍物物理盒配置为Hero层，项目Hero-Hero碰撞关闭；因此不能把这种直线移动直接等同当前军团避障",
+      "evidence": [
+        "Assets/Scripts/Character/Body/CharBodyController.cs:105",
+        "ProjectSettings/Physics2DSettings.asset:21"
+      ]
+    },
+    {
+      "finding": "场景边界采用矩形裁剪与碰边事件；角色受击框与阻挡框分开",
+      "evidence": "Assets/Scripts/Character/Move/MoveBehaviorBase.cs:533"
+    }
+  ],
+  "referenceData": {
+    "characterRows": 136,
+    "canStopCounts": {
+      "TRUE": 88,
+      "FALSE": 48
+    },
+    "heroLayer": 8,
+    "heroHeroCollisionEnabled": false
+  },
+  "currentProjectFindings": [
+    {
+      "finding": "当前战斗由目标方向和局部ORCA避障推进，没有真正的路径节点搜索、通路预订或独立阻挡等待",
+      "evidence": "Assets/LittleGame/Client/Domain/BattleAgentBrain.cs"
+    },
+    {
+      "finding": "坐标Clamp后保留求解器速度，动画读取该速度，存在实际不移动但播放走路的静态漏洞；不能据此断言已复现用户手机上的全部原因",
+      "evidence": [
+        "Assets/LittleGame/Client/Domain/BattleSimulation.cs:168",
+        "Assets/LittleGame/Client/Domain/BattleSimulation.cs:170",
+        "Assets/LittleGame/Client/Presentation/CharacterMotion.cs:168"
+      ]
+    },
+    {
+      "finding": "此前采样只证明采样时的速度/动作条件，没有覆盖连续拥堵绕行、无路、对向让行和边界裁剪；验收不足",
+      "evidence": "Reports/Combat/movement-fsm-20261125/movement-observations.json"
+    }
+  ],
+  "recommendation": {
+    "removeRvo": true,
+    "design": "攻击站位预订 + 小范围二维A*路径搜索 + 连续路径跟随 + 运动碰撞校验 + 阻挡等待状态机",
+    "planning": [
+      "先选并预订能攻击的落脚位置，而非追到敌人中心",
+      "直线可达则直接走，被挡才搜索路径；按单位身体半径扩张占用范围，禁止斜穿角",
+      "固定地形和站定交战单位作为阻挡，移动单位用短程通路预订和确定性让行，避免全员每帧改路",
+      "路径保持稳定，失效/持续受阻才重算；路径简化需再次检查整段身体通行空间"
+    ],
+    "execution": [
+      "按职业正常速度连续移动，仅最后一步截到终点，不逐格瞬移",
+      "每步先验碰撞，执行后重算真实位移和速度；被挡站定，不靠推挤解拥堵",
+      "BlockedWait明确播放待机；间隔重试并监听阻挡单位移动/死亡，长期受阻改站位或改目标",
+      "动画取执行结果与真实位移，不取寻路愿望速度或避障计划速度"
+    ],
+    "architecture": [
+      "Domain/BattleNavigationGrid：可行走区域与身体空间",
+      "Domain/BattlePathfinder：A*和安全路径简化",
+      "Domain/BattleEngagementPlanner：攻击位置及通路预订",
+      "Domain/BattleMovementSystem：碰撞校验、移动执行和真实速度",
+      "BattleAgentBrain：明确追击、交战、阻挡等待等转移",
+      "Presentation：只读移动执行结果驱动动作"
+    ],
+    "implementationStatus": "尚未实施，现有客户端仍含RVO；这轮只完成静态分析、来源登记和替代方案",
+    "verificationRequired": [
+      "前排友军挡住直线时能从上/下侧绕到空位",
+      "U形/连续阻挡不能只左右试探",
+      "通道完全堵死站立等待且无持续跑步",
+      "障碍移动/死亡后恢复移动",
+      "对向行走、有优先让行与长期堵塞退出策略",
+      "边界裁剪、无可达攻击位、目标死亡、集火重选、巨像大半径",
+      "连续短帧位移、动画步速及手工正常回放；Unity与MCP同入口"
+    ]
+  },
+  "technicalReading": [
+    {
+      "url": "https://arongranberg.com/astar/documentation/stable/getstartedgrid.html",
+      "scope": "官方网格、碰撞检测和禁止斜穿角概念参考；未下载、购买或安装插件，不属于素材授权"
+    },
+    {
+      "url": "https://arongranberg.com/astar/docs/localavoidance.html",
+      "scope": "官方确认该插件Local Avoidance使用RVO/ORCA，仅技术阅读，未购买/下载/安装"
+    },
+    {
+      "url": "https://docs.unity3d.com/Packages/com.unity.ai.navigation@1.1/manual/NavInnerWorkings.html",
+      "scope": "Unity官方导航内部机制说明，仅技术阅读，未接入AI Navigation包"
+    }
+  ],
+  "runtimeValidation": {
+    "referenceRun": false,
+    "currentCodeChanged": false,
+    "unityRun": false,
+    "apkBuilt": false
+  },
+  "followupAnalysis": {
+    "userSteering": "方案不限定参考旧项目，允许A*等算法；继续分析，未要求本轮直接重写",
+    "actualScale": {
+      "maxFriendly": 9,
+      "maxEnemiesPerOrdinaryWave": 10,
+      "bossWaveEnemies": 1,
+      "battlefield": "单层小范围X/Z连续平面，背景横向滚动不等于大地图导航"
+    },
+    "importantDistinction": "A*是路径搜索算法，网格/NavMesh是导航空间表达；采用寻路库不等于自动解决多人拥堵与动画同步",
+    "options": [
+      {
+        "option": "仅直线移动+左右探测",
+        "assessment": "投入低，但无法稳定解决连续阻挡、U形和通道选择，不作为最终方案"
+      },
+      {
+        "option": "二维网格+A*+战斗站位/临时通路占用",
+        "assessment": "当前优先方案；地形/身体通行约束容易表达，适合纯规则层与固定种子复现；需安全路径简化、避免频繁重算和格子折线感"
+      },
+      {
+        "option": "NavMesh路径查询+独立战斗移动执行",
+        "assessment": "可行，复杂静态地形/坡道更值得；动态人物争位、等待、动画执行仍需自己处理"
+      },
+      {
+        "option": "流场或完整多人时空寻路",
+        "assessment": "当前最多约19个单位且多个攻击落点，暂不承担额外复杂度，规模变化再评估"
+      }
+    ],
+    "selectedRecommendation": "不用RVO；攻击位置分配 + 二维网格A* + 稳定路径跟随 + 短程预约与让行 + 明确阻挡等待 + 依据执行后位移驱动动画",
+    "criticalDetails": [
+      "A*算法与A* Pathfinding Project插件分开评估；后者Local Avoidance本身是RVO/ORCA，不启用该功能",
+      "站位必须既有空位又可达，不能先锁不可达位置再无限寻路",
+      "移动单位不可当永久墙；短时阻挡先等待，持续阻挡触发重规划；检测相向交换和通路交叉",
+      "固定优先级需等待时长补偿/让行，不能承诺仅预约就完全无死锁",
+      "首领大半径和地图出生入口必须单独验证，不能照普通兵膨胀网格导致出生点不可达",
+      "路径只在失效/目标明显移动/持续受阻时重算，保留路线避免左右横跳",
+      "没有位移就待机；移动速度与动画步速匹配，短暂碰撞分离不播放行走",
+      "先做可视化拥堵小场景验证绕行/无路/释放恢复，再迁移完整远征，不能以数值通关取代手感验收"
+    ],
+    "status": "分析建议，未替换客户端、未导入插件或新增运行验证"
+  }
+}

@@ -28,8 +28,23 @@ namespace LittleGame.Client.Editor.Timeline
 
         private static readonly Vector3 CameraBasePos = new Vector3(0f, 9.2f, -7.2f);
         private static readonly Vector3 CameraLookTarget = new Vector3(0f, 0.5f, 0.2f);
-        private static readonly Vector3 CasterPos = new Vector3(0f, 0.11f, -1.65f);
-        private static readonly Vector3 TargetPos = new Vector3(0f, 0.11f, 1.85f);
+        private static readonly Vector3 CasterPos = new Vector3(-1.75f, 0.11f, 0f);
+        private static readonly Vector3 TargetPos = new Vector3(1.75f, 0.11f, 0f);
+
+        public float Distance { get; private set; } = 3.5f;
+        public float Angle { get; private set; } = 90f;
+        public float TargetSpeed { get; private set; }
+        public int TargetCount { get; private set; } = 1;
+        private readonly List<GameObject> extraTargets = new List<GameObject>();
+        private Vector3 fixedTarget;
+        private float currentTime;
+        public void SetGeometry(float distance, float angle, float speed, int count)
+        {
+            if (float.IsNaN(distance) || float.IsInfinity(distance) || float.IsNaN(angle) || float.IsInfinity(angle) || float.IsNaN(speed) || float.IsInfinity(speed)) throw new ArgumentException("预览参数必须有限");
+            Distance = Mathf.Clamp(distance, .6f, 7f); Angle = angle; TargetSpeed = Mathf.Clamp(speed, -2f, 2f); TargetCount = Mathf.Clamp(count, 1, 5);
+            if (stageRoot != null) { Stop(); RebuildPreviewActors(); }
+            Invalidate();
+        }
 
         private GameObject stageRoot;
         private Camera previewCamera;
@@ -47,6 +62,7 @@ namespace LittleGame.Client.Editor.Timeline
         private bool casterIsEnemy;
 
         private SkillTimelinePlayer player;
+        private SkillTimelineConfig playerConfig;
         private string cachedJson;
         private string rejectedJson;
         private float sampledTime = -1f;
@@ -213,6 +229,7 @@ namespace LittleGame.Client.Editor.Timeline
         {
             if (Application.isPlaying || !IsPreviewSceneActive()) return;
             EnsureStage();
+            playerConfig = config;
             if (config == null || config.Clips == null || config.Clips.Count == 0 || time < 0f)
             {
                 Stop();
@@ -254,6 +271,8 @@ namespace LittleGame.Client.Editor.Timeline
             targetAnimatedThisFrame = false;
             ResetActorBaseTransform();
 
+            currentTime = time;
+            if (targetObj != null) targetObj.transform.position = fixedTarget + Quaternion.Euler(0f, Angle, 0f) * Vector3.right * (TargetSpeed * time);
             player.Evaluate(time);
 
             // 若当前时刻未播放攻击/受击动作，采样默认 Idle 姿态，避免角色卡死在最后一帧
@@ -287,6 +306,7 @@ namespace LittleGame.Client.Editor.Timeline
         public void Dispose()
         {
             Stop();
+            SceneView.duringSceneGui -= DrawRuleRanges;
             if (stageRoot != null)
             {
                 UnityEngine.Object.DestroyImmediate(stageRoot);
@@ -304,9 +324,20 @@ namespace LittleGame.Client.Editor.Timeline
 
             Vector3 cPos = casterIsEnemy ? TargetPos : CasterPos;
             Vector3 tPos = casterIsEnemy ? CasterPos : TargetPos;
-            float cYaw = casterIsEnemy ? 180f : 0f;
-            float tYaw = casterIsEnemy ? 0f : 180f;
+            float cYaw = Angle + (casterIsEnemy ? 180f : 0f);
+            float tYaw = cYaw + 180f;
+            cPos = casterIsEnemy ? TargetPos : CasterPos;
+            tPos = cPos + Quaternion.Euler(0f, cYaw, 0f) * Vector3.forward * Distance;
+            fixedTarget = tPos;
+            foreach (var extra in extraTargets) if (extra != null) UnityEngine.Object.DestroyImmediate(extra);
+            extraTargets.Clear();
+            for (int i = 1; i < TargetCount; i++)
+            {
+                var extra = SpawnPreviewUnit("PreviewTarget_" + i, targetRole, tPos + new Vector3((i / 2) * .8f, 0f, (i % 2 == 0 ? -1f : 1f) * (1 + i / 2) * .8f), tYaw, out var extraAnim, out var extraAppearance, out var extraScale);
+                SampleRoleAnimation(extraAnim, extraAppearance, "Idle", 0, 1f); extraTargets.Add(extra);
+            }
 
+            SceneView.duringSceneGui -= DrawRuleRanges; SceneView.duringSceneGui += DrawRuleRanges;
             casterObj = SpawnPreviewUnit("PreviewCaster_" + casterRole, casterRole, cPos, cYaw, out casterAnim, out casterAppearance, out casterBaseScale);
             targetObj = SpawnPreviewUnit("PreviewTarget_" + targetRole, targetRole, tPos, tYaw, out targetAnim, out targetAppearance, out targetBaseScale);
             SampleRoleAnimation(casterAnim, casterAppearance, "Idle", 0f, 1f);
@@ -407,7 +438,7 @@ namespace LittleGame.Client.Editor.Timeline
                 {
                     var go = GetOrSpawnFx(cfg, true);
                     Vector3 from = ResolveAnchor(cfg.FromAnchor) + Vector3.up * cfg.StartHeight;
-                    Vector3 to = ResolveAnchor(cfg.ToAnchor) + Vector3.up * cfg.EndHeight;
+                    Vector3 to = (cfg.ToAnchor == SkillAnchorType.Target && playerConfig != null && !playerConfig.Execution.TrackTarget ? fixedTarget : ResolveAnchor(cfg.ToAnchor)) + Vector3.up * cfg.EndHeight;
                     Vector3 pos = Vector3.Lerp(from, to, t);
                     pos.y += Mathf.Sin(t * Mathf.PI) * cfg.ArcHeight;
                     go.transform.position = pos;
@@ -422,7 +453,10 @@ namespace LittleGame.Client.Editor.Timeline
                 {
                     var go = GetOrSpawnFx(cfg, false);
                     Vector3 offset = cfg.Offset != null ? cfg.Offset.ToVector3() : Vector3.zero;
-                    go.transform.position = ResolveAnchor(cfg.ToAnchor) + offset;
+                    if (cfg.LocalOffset) offset = Quaternion.Euler(0f, Angle + (casterIsEnemy ? 180f : 0f), 0f) * offset;
+                    var anchor = cfg.FollowAnchor || cfg.ToAnchor == SkillAnchorType.Caster || cfg.ToAnchor == SkillAnchorType.CastPoint ? ResolveAnchor(cfg.ToAnchor) : cfg.ToAnchor == SkillAnchorType.Target || cfg.ToAnchor == SkillAnchorType.TargetGround || cfg.ToAnchor == SkillAnchorType.ImpactPoint ? fixedTarget : ResolveAnchor(cfg.ToAnchor);
+                    go.transform.position = anchor + offset;
+                    if (cfg.OrientToCaster) go.transform.rotation = Quaternion.Euler(0f, Angle + (casterIsEnemy ? 180f : 0f), 0f);
                     SimulateParticles(go, localTime);
                     break;
                 }
@@ -536,12 +570,30 @@ namespace LittleGame.Client.Editor.Timeline
                 ps.Simulate(Mathf.Max(0f, localTime), false, true, false);
         }
 
+        private void DrawRuleRanges(SceneView view)
+        {
+            if (casterObj == null || !IsPreviewSceneActive()) return;
+            float range = 1.15f;
+            if (Enum.TryParse<LittleGame.Combat.TroopKind>(casterRole, out var kind)) range = LittleGame.Combat.BattleDefinitions.Range(kind);
+            Handles.color = new Color(.4f, .85f, 1f, .6f);
+            Handles.DrawWireDisc(casterObj.transform.position + Vector3.up * .04f, Vector3.up, range);
+            Handles.DrawWireArc(casterObj.transform.position + Vector3.up * .05f, Vector3.up,
+                Quaternion.Euler(0f, Angle - 28f, 0f) * Vector3.forward, 56f, range);
+            Handles.color = new Color(1f, .7f, .2f, .7f);
+            string id = playerConfig?.TimelineId ?? "";
+            if (id == "storm_pool") Handles.DrawWireDisc(fixedTarget + Vector3.up * .05f, Vector3.up, 1.35f);
+            if (id == "storm_chain") Handles.DrawWireDisc(fixedTarget + Vector3.up * .05f, Vector3.up, 3.4f);
+            if (id == "shield_warcry" || id == "frost_icearmor") Handles.DrawWireDisc(casterObj.transform.position + Vector3.up * .05f, Vector3.up, id == "shield_warcry" ? 3.2f : 3.4f);
+        }
+
         private Vector3 ResolveAnchor(SkillAnchorType anchor)
         {
             Vector3 c = casterObj != null ? casterObj.transform.position : CasterPos;
             Vector3 t = targetObj != null ? targetObj.transform.position : TargetPos;
             switch (anchor)
             {
+                case SkillAnchorType.CastPoint: return c + Quaternion.Euler(0f, Angle + (casterIsEnemy ? 180f : 0f), 0f) * new Vector3(.06f, .65f, .25f);
+                case SkillAnchorType.ImpactPoint: return new Vector3(fixedTarget.x, .14f, fixedTarget.z);
                 case SkillAnchorType.Caster: return c;
                 case SkillAnchorType.Target: return t;
                 case SkillAnchorType.TargetGround: return new Vector3(t.x, 0.14f, t.z);
@@ -593,7 +645,7 @@ namespace LittleGame.Client.Editor.Timeline
             lane.hideFlags = HideFlags.DontSave;
             lane.transform.SetParent(parent, false);
             lane.transform.position = new Vector3(0f, 0.06f, 0.1f);
-            lane.transform.localScale = new Vector3(2.4f, 0.02f, 7.6f);
+            lane.transform.localScale = new Vector3(7.6f, 0.02f, 2.4f);
             var lcol = lane.GetComponent<Collider>();
             if (lcol != null) UnityEngine.Object.DestroyImmediate(lcol);
             lane.GetComponent<Renderer>().sharedMaterial = GetProcMaterial(new Color(0.40f, 0.43f, 0.48f), false);

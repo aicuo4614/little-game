@@ -1,0 +1,1844 @@
+{
+  "passed": true,
+  "project": "E:/Project/little-game",
+  "platform": "WindowsEditor",
+  "gameplayChanged": false,
+  "console": {
+    "Error": "Console 日志 0 条：",
+    "Exception": "Console 日志 0 条：",
+    "Assert": "Console 日志 0 条：",
+    "Warning": "Console 日志 0 条："
+  },
+  "result": {
+    "schemaVersion": 5,
+    "layout": "horizontal-free-deploy-rvo",
+    "phase": "WaveResult",
+    "seed": 173,
+    "wave": 1,
+    "totalWaves": 12,
+    "marchDistance": 0.0,
+    "aliveTroops": 3,
+    "regrouping": true,
+    "enraged": false,
+    "deployBox": {
+      "minX": -5.2,
+      "maxX": -0.35,
+      "minZ": -2.65,
+      "maxZ": 2.65
+    },
+    "spins": 0,
+    "spinsPerWave": 3,
+    "consecutiveMisses": 0,
+    "teaching": false,
+    "deployedCount": 3,
+    "maxDeployed": 6,
+    "popExp": 2,
+    "popExpNeeded": 4,
+    "winRowMid": true,
+    "winColMid": false,
+    "tactics": 0,
+    "aim": "None",
+    "paused": false,
+    "speed": 1,
+    "battleTime": 6.75000763,
+    "forecast": [
+      {
+        "kind": "Grunt",
+        "name": "步兵",
+        "lane": 0,
+        "at": 0.0
+      },
+      {
+        "kind": "Grunt",
+        "name": "步兵",
+        "lane": 1,
+        "at": 0.0
+      },
+      {
+        "kind": "Grunt",
+        "name": "步兵",
+        "lane": 2,
+        "at": 0.0
+      }
+    ],
+    "units": [
+      {
+        "id": 1,
+        "kind": "Shield",
+        "name": "盾卫",
+        "star": 1,
+        "branch": "None",
+        "lane": 0,
+        "row": 0,
+        "homeX": -1.15,
+        "homeZ": 2.15,
+        "x": 2.85,
+        "z": 2.36,
+        "vx": 0.0,
+        "vz": 0.0,
+        "targetId": 0,
+        "aiState": "Idle",
+        "facingYaw": 137.7,
+        "turnSpeed": 340.0,
+        "moveSpeed": 2.4,
+        "canMerge": false,
+        "hp": 340.0,
+        "maxHp": 340.0,
+        "shield": 0.0,
+        "cooldown": 0.25,
+        "skillCooldown": 0.8
+      },
+      {
+        "id": 2,
+        "kind": "Archer",
+        "name": "风弓手",
+        "star": 1,
+        "branch": "None",
+        "lane": 1,
+        "row": 0,
+        "homeX": -1.15,
+        "homeZ": 0.0,
+        "x": -0.15,
+        "z": 0.0,
+        "vx": 0.0,
+        "vz": 0.0,
+        "targetId": 0,
+        "aiState": "Idle",
+        "facingYaw": 26.6,
+        "turnSpeed": 620.0,
+        "moveSpeed": 2.4,
+        "canMerge": false,
+        "hp": 170.0,
+        "maxHp": 170.0,
+        "shield": 0.0,
+        "cooldown": 0.25,
+        "skillCooldown": 0.92
+      },
+      {
+        "id": 3,
+        "kind": "Storm",
+        "name": "雷法师",
+        "star": 1,
+        "branch": "None",
+        "lane": 2,
+        "row": 0,
+        "homeX": -1.15,
+        "homeZ": -2.15,
+        "x": 1.06,
+        "z": -1.37,
+        "vx": 0.0,
+        "vz": 0.0,
+        "targetId": 0,
+        "aiState": "Idle",
+        "facingYaw": 6.6,
+        "turnSpeed": 560.0,
+        "moveSpeed": 2.4,
+        "canMerge": false,
+        "hp": 160.0,
+        "maxHp": 160.0,
+        "shield": 0.0,
+        "cooldown": 0.25,
+        "skillCooldown": 1.04
+      }
+    ],
+    "enemies": [
+      {
+        "id": 4,
+        "kind": "Grunt",
+        "lane": 0,
+        "x": 3.99,
+        "z": 1.89,
+        "vx": 0.0,
+        "vz": 0.0,
+        "targetId": 1,
+        "aiState": "Dead",
+        "facingYaw": -63.0,
+        "turnSpeed": 380.0,
+        "moveSpeed": 1.25,
+        "hp": 0.0,
+        "maxHp": 135.0,
+        "alive": false,
+        "frozenUntil": 0.0
+      },
+      {
+        "id": 5,
+        "kind": "Grunt",
+        "lane": 1,
+        "x": 3.21,
+        "z": 1.33,
+        "vx": 0.0,
+        "vz": 0.0,
+        "targetId": 1,
+        "aiState": "Dead",
+        "facingYaw": -8.5,
+        "turnSpeed": 380.0,
+        "moveSpeed": 1.25,
+        "hp": 0.0,
+        "maxHp": 135.0,
+        "alive": false,
+        "frozenUntil": 0.0
+      },
+      {
+        "id": 6,
+        "kind": "Grunt",
+        "lane": 2,
+        "x": 1.77,
+        "z": -2.15,
+        "vx": 0.0,
+        "vz": 0.0,
+        "targetId": 3,
+        "aiState": "Dead",
+        "facingYaw": -90.0,
+        "turnSpeed": 380.0,
+        "moveSpeed": 1.25,
+        "hp": 0.0,
+        "maxHp": 135.0,
+        "alive": false,
+        "frozenUntil": 0.0
+      }
+    ],
+    "pending": [],
+    "rewards": [],
+    "reels": [
+      "Archer",
+      "Frost",
+      "Shield",
+      "Storm",
+      "Storm",
+      "Storm",
+      "Frost",
+      "Storm",
+      "Storm"
+    ],
+    "rewardOptions": [],
+    "bossTelegraph": {
+      "lane": -1,
+      "impactAt": -1.0
+    },
+    "lastEventSequence": 65,
+    "events": [
+      {
+        "Sequence": 31,
+        "Type": "skill_tick",
+        "Message": "法术命中",
+        "Source": 3,
+        "Target": 6,
+        "Lane": 2,
+        "Amount": 12.0,
+        "Time": 1.99999917
+      },
+      {
+        "Sequence": 32,
+        "Type": "ai_state_changed",
+        "Message": "Pursuing -> Engaging",
+        "Source": 1,
+        "Target": 4,
+        "Lane": -1,
+        "Amount": 0.0,
+        "Time": 2.54999876
+      },
+      {
+        "Sequence": 33,
+        "Type": "hit",
+        "Message": "物理命中",
+        "Source": 2,
+        "Target": 6,
+        "Lane": 2,
+        "Amount": 23.0,
+        "Time": 2.54999876
+      },
+      {
+        "Sequence": 34,
+        "Type": "hit",
+        "Message": "物理命中",
+        "Source": 1,
+        "Target": 4,
+        "Lane": 0,
+        "Amount": 17.0,
+        "Time": 2.59999871
+      },
+      {
+        "Sequence": 35,
+        "Type": "skill",
+        "Message": "盾卫释放技能",
+        "Source": 1,
+        "Target": 4,
+        "Lane": 0,
+        "Amount": 0.0,
+        "Time": 2.59999871
+      },
+      {
+        "Sequence": 36,
+        "Type": "hit",
+        "Message": "物理命中",
+        "Source": 1,
+        "Target": 4,
+        "Lane": 0,
+        "Amount": 23.0,
+        "Time": 2.59999871
+      },
+      {
+        "Sequence": 37,
+        "Type": "hit",
+        "Message": "法术命中",
+        "Source": 3,
+        "Target": 6,
+        "Lane": 2,
+        "Amount": 21.0,
+        "Time": 3.249998
+      },
+      {
+        "Sequence": 38,
+        "Type": "hit",
+        "Message": "物理命中",
+        "Source": 2,
+        "Target": 6,
+        "Lane": 2,
+        "Amount": 23.0,
+        "Time": 3.54999781
+      },
+      {
+        "Sequence": 39,
+        "Type": "ai_state_changed",
+        "Message": "Pursuing -> Dead",
+        "Source": 6,
+        "Target": 3,
+        "Lane": -1,
+        "Amount": 0.0,
+        "Time": 3.54999781
+      },
+      {
+        "Sequence": 40,
+        "Type": "enemy_killed",
+        "Message": "消灭步兵",
+        "Source": 2,
+        "Target": 6,
+        "Lane": 2,
+        "Amount": 0.0,
+        "Time": 3.54999781
+      },
+      {
+        "Sequence": 41,
+        "Type": "ai_state_changed",
+        "Message": "Engaging -> Pursuing",
+        "Source": 3,
+        "Target": 5,
+        "Lane": -1,
+        "Amount": 0.0,
+        "Time": 3.54999781
+      },
+      {
+        "Sequence": 42,
+        "Type": "ai_state_changed",
+        "Message": "Pursuing -> Engaging",
+        "Source": 3,
+        "Target": 5,
+        "Lane": -1,
+        "Amount": 0.0,
+        "Time": 3.64999771
+      },
+      {
+        "Sequence": 43,
+        "Type": "hit",
+        "Message": "物理命中",
+        "Source": 1,
+        "Target": 4,
+        "Lane": 0,
+        "Amount": 17.0,
+        "Time": 3.89999747
+      },
+      {
+        "Sequence": 44,
+        "Type": "ai_state_changed",
+        "Message": "Pursuing -> Engaging",
+        "Source": 4,
+        "Target": 1,
+        "Lane": -1,
+        "Amount": 0.0,
+        "Time": 4.449999
+      },
+      {
+        "Sequence": 45,
+        "Type": "troop_hit",
+        "Message": "友军受击",
+        "Source": 4,
+        "Target": 1,
+        "Lane": 0,
+        "Amount": 0.0,
+        "Time": 4.449999
+      },
+      {
+        "Sequence": 46,
+        "Type": "hit",
+        "Message": "法术命中",
+        "Source": 3,
+        "Target": 5,
+        "Lane": 1,
+        "Amount": 21.0,
+        "Time": 4.499999
+      },
+      {
+        "Sequence": 47,
+        "Type": "hit",
+        "Message": "物理命中",
+        "Source": 2,
+        "Target": 5,
+        "Lane": 1,
+        "Amount": 23.0,
+        "Time": 4.549999
+      },
+      {
+        "Sequence": 48,
+        "Type": "ai_state_changed",
+        "Message": "Pursuing -> Engaging",
+        "Source": 5,
+        "Target": 1,
+        "Lane": -1,
+        "Amount": 0.0,
+        "Time": 4.7
+      },
+      {
+        "Sequence": 49,
+        "Type": "troop_hit",
+        "Message": "友军受击",
+        "Source": 5,
+        "Target": 1,
+        "Lane": 0,
+        "Amount": 0.0,
+        "Time": 4.7
+      },
+      {
+        "Sequence": 50,
+        "Type": "hit",
+        "Message": "物理命中",
+        "Source": 1,
+        "Target": 4,
+        "Lane": 0,
+        "Amount": 17.0,
+        "Time": 5.20000172
+      },
+      {
+        "Sequence": 51,
+        "Type": "hit",
+        "Message": "物理命中",
+        "Source": 2,
+        "Target": 5,
+        "Lane": 1,
+        "Amount": 23.0,
+        "Time": 5.550003
+      },
+      {
+        "Sequence": 52,
+        "Type": "hit",
+        "Message": "法术命中",
+        "Source": 3,
+        "Target": 5,
+        "Lane": 1,
+        "Amount": 21.0,
+        "Time": 5.750004
+      },
+      {
+        "Sequence": 53,
+        "Type": "ai_state_changed",
+        "Message": "Engaging -> Dead",
+        "Source": 5,
+        "Target": 1,
+        "Lane": -1,
+        "Amount": 0.0,
+        "Time": 5.750004
+      },
+      {
+        "Sequence": 54,
+        "Type": "enemy_killed",
+        "Message": "消灭步兵",
+        "Source": 3,
+        "Target": 5,
+        "Lane": 1,
+        "Amount": 0.0,
+        "Time": 5.750004
+      },
+      {
+        "Sequence": 55,
+        "Type": "troop_hit",
+        "Message": "友军受击",
+        "Source": 4,
+        "Target": 1,
+        "Lane": 0,
+        "Amount": 0.0,
+        "Time": 5.750004
+      },
+      {
+        "Sequence": 56,
+        "Type": "ai_state_changed",
+        "Message": "Engaging -> Pursuing",
+        "Source": 3,
+        "Target": 4,
+        "Lane": -1,
+        "Amount": 0.0,
+        "Time": 5.800004
+      },
+      {
+        "Sequence": 57,
+        "Type": "ai_state_changed",
+        "Message": "Pursuing -> Engaging",
+        "Source": 3,
+        "Target": 4,
+        "Lane": -1,
+        "Amount": 0.0,
+        "Time": 6.20000553
+      },
+      {
+        "Sequence": 58,
+        "Type": "hit",
+        "Message": "物理命中",
+        "Source": 1,
+        "Target": 4,
+        "Lane": 0,
+        "Amount": 17.0,
+        "Time": 6.50000668
+      },
+      {
+        "Sequence": 59,
+        "Type": "hit",
+        "Message": "物理命中",
+        "Source": 2,
+        "Target": 4,
+        "Lane": 0,
+        "Amount": 23.0,
+        "Time": 6.550007
+      },
+      {
+        "Sequence": 60,
+        "Type": "skill",
+        "Message": "风弓手释放技能",
+        "Source": 2,
+        "Target": 4,
+        "Lane": 0,
+        "Amount": 0.0,
+        "Time": 6.75000763
+      },
+      {
+        "Sequence": 61,
+        "Type": "hit",
+        "Message": "物理命中",
+        "Source": 2,
+        "Target": 4,
+        "Lane": 0,
+        "Amount": 35.0,
+        "Time": 6.75000763
+      },
+      {
+        "Sequence": 62,
+        "Type": "ai_state_changed",
+        "Message": "Engaging -> Dead",
+        "Source": 4,
+        "Target": 1,
+        "Lane": -1,
+        "Amount": 0.0,
+        "Time": 6.75000763
+      },
+      {
+        "Sequence": 63,
+        "Type": "enemy_killed",
+        "Message": "消灭步兵",
+        "Source": 2,
+        "Target": 4,
+        "Lane": 0,
+        "Amount": 0.0,
+        "Time": 6.75000763
+      },
+      {
+        "Sequence": 64,
+        "Type": "ai_state_changed",
+        "Message": "Engaging -> Idle",
+        "Source": 3,
+        "Target": 0,
+        "Lane": -1,
+        "Amount": 0.0,
+        "Time": 6.75000763
+      },
+      {
+        "Sequence": 65,
+        "Type": "wave_cleared",
+        "Message": "本波告捷！全员满血归队，人口经验 +2",
+        "Source": 0,
+        "Target": 0,
+        "Lane": -1,
+        "Amount": 0.0,
+        "Time": 6.75000763
+      }
+    ],
+    "availableActions": [
+      "next_wave",
+      "restart"
+    ]
+  },
+  "checkpoints": [
+    {
+      "label": "unselected",
+      "selected": 0,
+      "actors": [
+        {
+          "id": 1,
+          "role": "Shield",
+          "model": "Unit_Shield",
+          "active": true,
+          "x": -1.15,
+          "z": 2.15,
+          "facingYaw": 90.0,
+          "movementSpeed": -1.0,
+          "motionPaused": false,
+          "forceWalk": true,
+          "hitStopped": false,
+          "groundMarkers": [
+            {
+              "name": "StatusRing",
+              "active": false
+            }
+          ],
+          "action": "Walk",
+          "actionTime": 0.918809652,
+          "animationPlaying": true,
+          "renderers": [
+            {
+              "type": "SkinnedMeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "SkinnedMeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            }
+          ],
+          "upperArm": [
+            {
+              "x": 342.456268,
+              "y": 349.173065,
+              "z": 20.7456589
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "role": "Archer",
+          "model": "Unit_Archer",
+          "active": true,
+          "x": -1.15,
+          "z": 0.0,
+          "facingYaw": 90.0,
+          "movementSpeed": -1.0,
+          "motionPaused": false,
+          "forceWalk": true,
+          "hitStopped": false,
+          "groundMarkers": [
+            {
+              "name": "StatusRing",
+              "active": false
+            }
+          ],
+          "action": "Walk",
+          "actionTime": 0.5487226,
+          "animationPlaying": true,
+          "renderers": [
+            {
+              "type": "SkinnedMeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "SkinnedMeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "SkinnedMeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            }
+          ],
+          "upperArm": [
+            {
+              "x": 29.0027084,
+              "y": 357.636749,
+              "z": 59.24817
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "role": "Storm",
+          "model": "Unit_Storm",
+          "active": true,
+          "x": -1.15,
+          "z": -2.15,
+          "facingYaw": 90.0,
+          "movementSpeed": -1.0,
+          "motionPaused": false,
+          "forceWalk": true,
+          "hitStopped": false,
+          "groundMarkers": [
+            {
+              "name": "StatusRing",
+              "active": false
+            }
+          ],
+          "action": "Walk",
+          "actionTime": 0.3435162,
+          "animationPlaying": true,
+          "renderers": [
+            {
+              "type": "SkinnedMeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            }
+          ],
+          "upperArm": [
+            {
+              "x": 17.40559,
+              "y": 321.5209,
+              "z": 16.90918
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "selected",
+      "selected": 1,
+      "actors": [
+        {
+          "id": 1,
+          "role": "Shield",
+          "model": "Unit_Shield",
+          "active": true,
+          "x": -1.15,
+          "z": 2.15,
+          "facingYaw": 90.0,
+          "movementSpeed": -1.0,
+          "motionPaused": false,
+          "forceWalk": true,
+          "hitStopped": false,
+          "groundMarkers": [
+            {
+              "name": "StatusRing",
+              "active": false
+            }
+          ],
+          "action": "Walk",
+          "actionTime": 1.20568216,
+          "animationPlaying": true,
+          "renderers": [
+            {
+              "type": "SkinnedMeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "SkinnedMeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            }
+          ],
+          "upperArm": [
+            {
+              "x": 348.607635,
+              "y": 341.556458,
+              "z": 33.4123764
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "role": "Archer",
+          "model": "Unit_Archer",
+          "active": true,
+          "x": -1.15,
+          "z": 0.0,
+          "facingYaw": 90.0,
+          "movementSpeed": -1.0,
+          "motionPaused": false,
+          "forceWalk": true,
+          "hitStopped": false,
+          "groundMarkers": [
+            {
+              "name": "StatusRing",
+              "active": false
+            }
+          ],
+          "action": "Walk",
+          "actionTime": 0.835595131,
+          "animationPlaying": true,
+          "renderers": [
+            {
+              "type": "SkinnedMeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "SkinnedMeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "SkinnedMeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            }
+          ],
+          "upperArm": [
+            {
+              "x": 30.76167,
+              "y": 352.174469,
+              "z": 62.3958359
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "role": "Storm",
+          "model": "Unit_Storm",
+          "active": true,
+          "x": -1.15,
+          "z": -2.15,
+          "facingYaw": 90.0,
+          "movementSpeed": -1.0,
+          "motionPaused": false,
+          "forceWalk": true,
+          "hitStopped": false,
+          "groundMarkers": [
+            {
+              "name": "StatusRing",
+              "active": false
+            }
+          ],
+          "action": "Walk",
+          "actionTime": 0.6303887,
+          "animationPlaying": true,
+          "renderers": [
+            {
+              "type": "SkinnedMeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            }
+          ],
+          "upperArm": [
+            {
+              "x": 30.7667313,
+              "y": 322.244232,
+              "z": 16.27306
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "fighting-protected",
+      "selected": 1,
+      "actors": [
+        {
+          "id": 1,
+          "role": "Shield",
+          "model": "Unit_Shield",
+          "active": true,
+          "x": -0.01959911,
+          "z": 2.15,
+          "facingYaw": 90.0,
+          "movementSpeed": 2.4,
+          "motionPaused": false,
+          "forceWalk": false,
+          "hitStopped": false,
+          "groundMarkers": [
+            {
+              "name": "StatusRing",
+              "active": false
+            }
+          ],
+          "action": "Walk",
+          "actionTime": 1.90960646,
+          "animationPlaying": true,
+          "renderers": [
+            {
+              "type": "SkinnedMeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "SkinnedMeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            }
+          ],
+          "upperArm": [
+            {
+              "x": 344.375549,
+              "y": 342.474457,
+              "z": 30.7666149
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "role": "Archer",
+          "model": "Unit_Archer",
+          "active": true,
+          "x": -0.01959911,
+          "z": 0.0,
+          "facingYaw": 90.0,
+          "movementSpeed": 2.4,
+          "motionPaused": false,
+          "forceWalk": false,
+          "hitStopped": false,
+          "groundMarkers": [
+            {
+              "name": "StatusRing",
+              "active": true
+            }
+          ],
+          "action": "Walk",
+          "actionTime": 1.53951943,
+          "animationPlaying": true,
+          "renderers": [
+            {
+              "type": "SkinnedMeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "SkinnedMeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "SkinnedMeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            }
+          ],
+          "upperArm": [
+            {
+              "x": 32.90357,
+              "y": 357.41095,
+              "z": 59.9982452
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "role": "Storm",
+          "model": "Unit_Storm",
+          "active": true,
+          "x": -0.01959911,
+          "z": -2.15,
+          "facingYaw": 90.0,
+          "movementSpeed": 2.4,
+          "motionPaused": false,
+          "forceWalk": false,
+          "hitStopped": false,
+          "groundMarkers": [
+            {
+              "name": "StatusRing",
+              "active": false
+            }
+          ],
+          "action": "Walk",
+          "actionTime": 1.334313,
+          "animationPlaying": true,
+          "renderers": [
+            {
+              "type": "SkinnedMeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            }
+          ],
+          "upperArm": [
+            {
+              "x": 12.2327976,
+              "y": 318.870758,
+              "z": 30.18775
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "role": "Grunt",
+          "model": "Unit_Grunt",
+          "active": true,
+          "x": 5.01124668,
+          "z": 2.15,
+          "facingYaw": 270.0,
+          "movementSpeed": 1.25,
+          "motionPaused": false,
+          "forceWalk": false,
+          "hitStopped": false,
+          "groundMarkers": [
+            {
+              "name": "StatusRing",
+              "active": false
+            }
+          ],
+          "action": "Walk",
+          "actionTime": 0.455732316,
+          "animationPlaying": true,
+          "renderers": [
+            {
+              "type": "SkinnedMeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            }
+          ],
+          "upperArm": [
+            {
+              "x": 345.29776,
+              "y": 353.868835,
+              "z": 20.6809158
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "role": "Grunt",
+          "model": "Unit_Grunt",
+          "active": true,
+          "x": 5.01124668,
+          "z": 0.0,
+          "facingYaw": 270.0,
+          "movementSpeed": 1.25,
+          "motionPaused": false,
+          "forceWalk": false,
+          "hitStopped": false,
+          "groundMarkers": [
+            {
+              "name": "StatusRing",
+              "active": false
+            }
+          ],
+          "action": "Walk",
+          "actionTime": 0.455732316,
+          "animationPlaying": true,
+          "renderers": [
+            {
+              "type": "SkinnedMeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            }
+          ],
+          "upperArm": [
+            {
+              "x": 345.29776,
+              "y": 353.868835,
+              "z": 20.6809158
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "role": "Grunt",
+          "model": "Unit_Grunt",
+          "active": true,
+          "x": 5.01124668,
+          "z": -2.15,
+          "facingYaw": 270.0,
+          "movementSpeed": 1.25,
+          "motionPaused": false,
+          "forceWalk": false,
+          "hitStopped": false,
+          "groundMarkers": [
+            {
+              "name": "StatusRing",
+              "active": false
+            }
+          ],
+          "action": "Walk",
+          "actionTime": 0.455732316,
+          "animationPlaying": true,
+          "renderers": [
+            {
+              "type": "SkinnedMeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            }
+          ],
+          "upperArm": [
+            {
+              "x": 345.29776,
+              "y": 353.868835,
+              "z": 20.6809158
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "wave-result",
+      "selected": 1,
+      "actors": [
+        {
+          "id": 1,
+          "role": "Shield",
+          "model": "Unit_Shield",
+          "active": true,
+          "x": 1.97240138,
+          "z": 2.31630421,
+          "facingYaw": 229.263519,
+          "movementSpeed": -1.0,
+          "motionPaused": false,
+          "forceWalk": true,
+          "hitStopped": false,
+          "groundMarkers": [
+            {
+              "name": "StatusRing",
+              "active": false
+            }
+          ],
+          "action": "Walk",
+          "actionTime": 0.0662305,
+          "animationPlaying": true,
+          "renderers": [
+            {
+              "type": "SkinnedMeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "SkinnedMeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            }
+          ],
+          "upperArm": [
+            {
+              "x": 349.5388,
+              "y": 337.625122,
+              "z": 34.1051865
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "role": "Archer",
+          "model": "Unit_Archer",
+          "active": true,
+          "x": -1.02863133,
+          "z": 0.0,
+          "facingYaw": 270.0,
+          "movementSpeed": -1.0,
+          "motionPaused": false,
+          "forceWalk": true,
+          "hitStopped": false,
+          "groundMarkers": [
+            {
+              "name": "StatusRing",
+              "active": false
+            }
+          ],
+          "action": "Attack",
+          "actionTime": 0.277464867,
+          "animationPlaying": true,
+          "renderers": [
+            {
+              "type": "SkinnedMeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "SkinnedMeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "SkinnedMeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            }
+          ],
+          "upperArm": [
+            {
+              "x": 358.7032,
+              "y": 7.27490044,
+              "z": 62.2264175
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "role": "Storm",
+          "model": "Unit_Storm",
+          "active": true,
+          "x": 0.226803049,
+          "z": -1.66644216,
+          "facingYaw": 250.647812,
+          "movementSpeed": -1.0,
+          "motionPaused": false,
+          "forceWalk": true,
+          "hitStopped": false,
+          "groundMarkers": [
+            {
+              "name": "StatusRing",
+              "active": false
+            }
+          ],
+          "action": "Walk",
+          "actionTime": 0.1834407,
+          "animationPlaying": true,
+          "renderers": [
+            {
+              "type": "SkinnedMeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            },
+            {
+              "type": "MeshRenderer",
+              "visible": true,
+              "shaders": [
+                "Roco/Character"
+              ],
+              "supported": true
+            }
+          ],
+          "upperArm": [
+            {
+              "x": 23.3157635,
+              "y": 329.0101,
+              "z": 18.8534355
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "note": "仅Unity表现验证，未重打APK。"
+}

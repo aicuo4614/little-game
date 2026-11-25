@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 1,
+  "SchemaVersion": 2,
   "TimelineId": "storm_basic",
   "DisplayName": "雷法师普攻",
   "DurationBindClipKey": "",
@@ -30,9 +30,9 @@
       "DelayTime": 0.0,
       "Duration": 0.16,
       "EffectId": "fx_lightning_orb",
-      "FromAnchor": "Caster",
+      "FromAnchor": "CastPoint",
       "ToAnchor": "Target",
-      "StartHeight": 0.72,
+      "StartHeight": 0,
       "EndHeight": 0.65,
       "ArcHeight": 0.28,
       "Width": 0.11,
@@ -61,5 +61,13 @@
       "ColorHex": "#D0C4FF",
       "EventConfigs": []
     }
-  ]
+  ],
+  "Execution": {
+    "Enabled": true,
+    "LaunchKey": "c_orb",
+    "ImpactKey": "c_hit",
+    "RecoveryKey": "c_anim",
+    "InterruptOnControl": true,
+    "TrackTarget": true
+  }
 }

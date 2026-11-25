@@ -18,6 +18,8 @@
 | PELibDemo | `E:\Project\PELibDemo` | 2026-11-24 用户明确其中多组模型可以使用；不扩张为任意代码、SDK或网络服务授权 |
 | 架构与工具参考 | `F:\Git\kabu_mobile\demo`；历史路径 `E:\Git\demo` | 已授权技术参考，路径/版本使用前确认；不自动视为所有第三方美术均获授权 |
 | 玩法与镜头参考 | `E:\Project\bump` | 2026-11-24 用户新增为玩法/横向推进与战斗体验参考工程（只读检查）；未获美术资源或代码使用授权，不搬入素材 |
+| 避障算法参考 | `E:\Project\AnimalBattle` | 2026-11-25 用户新增为避障插件参考工程（只读检查）；`Assets/RVO/RVO/src` 内为 Apache License 2.0 开源 RVO2 Library C#（UNC Chapel Hill），仅适配其开源 ORCA/RVO2 算法至本工程纯规则层，不搬入其他美术资源或业务代码 |
+| 旧横板动作移动/AI参考 | `E:\Project\射雕1.9版本\Client` | 2026-11-25 用户提供旧作参考，要求分析移动、阻挡和 AI 并评估不用 RVO 的方案；仅授权只读分析，未授权迁入代码/美术。目录可访问，ProjectVersion 为 Unity 5.6.6f2，已完成 Character/Move、Character/AI、CharBodyController、Physics2D 碰撞矩阵及角色数据的静态分析；不运行、升级或修改源工程。 |
 | Unity Asset Store | https://assetstore.unity.com | 可自主筛选；付费由用户决定并提供，不代付款；优先查本地是否已有同包 |
 | 作者网站与其他网络来源 | Kay Lousberg、Quaternius、Synty、itch.io 等 | 保留原始作者链接，区分免费、EXTRA、SOURCE，按具体来源核对许可；不从不明转载站获取付费包 |
 
@@ -115,3 +117,30 @@
 - 从 `F:/Git/kabu_mobile/demo/client-demo-assets/Assets/Scripts/Editor/TimelineEditor/TimeLineWindow` 直接迁入原版 `DMTimeArea.SimpleTimeArea` 轨道渲染引擎与 `EditorResources` 图标至 `Assets/LittleGame/Client/Editor/TimeLineWindow`，改造 `SkillTimelineEditorWindow`（`Little Game/Combat/Skill Timeline Editor`）支持缩放时间标尺、播放头/截止游标、多轨道彩色片段条、拖拽调时/缩放时长、关键帧菱形标记与前置连线、右侧属性编辑及 JSON 校验保存热重载。
 - 单位战斗表现参考 Demo 客户端分层，拆分为 `CombatUnitActor`（标准挂点/动作/血条/状态环）、`CombatUnitRegistry`、`BattleActionRouter`、`BattleFloatingText` 与 `SkillTimelineDirector`；`UnitSkillBindings.json`（23 条规则）与 21 个技能 JSON 位于 `Assets/LittleGame/Resources/SkillTimelines/`。
 - 从已授权 `E:/Project/PELibDemo/Assets/Art/3D/Hovl Studio` 按最小 GUID 依赖提取 18 个精选特效（共 199 文件，不含源演示脚本）至 `Assets/LittleGame/Art/SkillEffectsSources/HovlStudio`，哈希清单见 `Reports/Art/skill-effects-migration.json`；经 `SkillEffectAssetBuilder`（`Little Game/Combat/Build Skill Effects`）剥离碰撞体/刚体/灯光/音频并自动适配 73 份 URP 14 `Particles/Unlit` 材质，输出 39 个 `EffectId` 预制体至 `Assets/LittleGame/Resources/SkillEffects/`（构建日志 `Reports/Art/skill-effects-build.txt`）。
+
+
+## 2026-11-25 旧横板动作工程移动与 AI 静态分析
+
+入口 `E:\Project\射雕1.9版本\Client`（Unity 5.6.6f2）。授权仅只读分析，不迁入代码/美术。`AIController` 使用配置状态及条件连线；`AIBehaviorFindOpponent` 选目标及偏移落点，`AIBehaviorAround` 选前后侧位置并计时重选；`MoveBehaviorBase` 使用直接位移或 DOMoveX/Y，到点进入 EndMove 并切站立。主移动链路未发现真正的路径搜索，不能将 Around 视为障碍绕行。普通非障碍角色的物理盒设为 Hero 层，当前 Hero-Hero 碰撞矩阵关闭；角色 CanStop 配置有 88 条 TRUE、48 条 FALSE，阻挡能力不能脱离层矩阵理解。
+
+适合借鉴：目标落点稳定、动作结束边界、行为状态分层；不直接照搬直线 Tween、随机偏移或关闭人物碰撞。当前推荐改为攻击站位预订、二维 A*、连续移动及阻挡等待，方案尚未实施。静态证据、当前客户端漏洞和验收要求：`Reports/Combat/side-scroller-movement-review-20261125.json`。技术文档参考：https://arongranberg.com/astar/documentation/stable/getstartedgrid.html （仅官方导航概念阅读，未下载、购买或接入该插件，无素材授权）。
+
+
+## 2026-11-25 导航开源候选与需求澄清
+
+用户最新明确不排斥RVO，允许按实际需求选算法和开源方案，不必沿用旧作；此前“不用RVO”的表述已被覆盖。以下来源均为技术研究，无美术授权、付费授权或运行时接入结论。
+
+| 来源 | 已检查版本与许可证/依赖 | 当前验证与取舍 |
+| --- | --- | --- |
+| https://github.com/roy-t/AStar | `3d57efaa83c8cd217e4973fd4738c57e2f694bd2`，MIT；netstandard2.0，核心无外部包 | 26个核心源码与LICENSE缓存于`Library/NavigationReview/RoyTAStar`，六项.NET静态路径测试通过；未接入Unity。当前优先小样候选，非完整战斗导航系统；动态占位、不同体型与动作需另行处理 |
+| https://github.com/ikpil/DotRecast | `6fce4ac0d59f4d4efdf9de0a9e5beae5784bca12`，Zlib；当前netstandard2.1 Core依赖Unsafe6.1.2 | 只读检查模块和csproj，未导入/编译；功能更完整但当前小平面接入成本较高 |
+| https://github.com/juhgiyo/EpPathFinding.cs | `e0d3d4bf735364774912df7f5c3b44f8bec0457a`，README含MIT文本；旧.NET4.0/C5依赖需核查 | 只读源码目录/工程/README检查，未编译，不优先 |
+| https://arongranberg.com/astar/documentation/stable/getstartedgrid.html 及 https://arongranberg.com/astar/docs/localavoidance.html | 官方产品文档；Local Avoidance为RVO/ORCA且属Pro功能，不能把产品免费版当成MIT开源库 | 未下载、购买或接入；可作为成熟集成候选，具体版本、许可与Unity兼容需单独实测 |
+| https://docs.unity3d.com/Packages/com.unity.ai.navigation@1.1/manual/NavInnerWorkings.html | Unity官方AI Navigation1.1文档；NavMesh是空间表达，内部A*搜索、局部RVO避障 | 当前工程尚无AI Navigation/modules.ai依赖，未接入；成熟集成备选，须解决与纯规则固定步长的适配 |
+
+完整审查、提交时间、依赖差异及推荐边界见`Reports/Combat/navigation-options-20261125.json`，Roy隔离测试见`Reports/Combat/navigation-roy-probe-20261125.json`。本轮未修改运行时或重打APK。
+
+2026-11-25 补充官方产品信息核查：Aron Granberg [下载页](https://arongranberg.com/astar/download)当前列出 Free4.2.17（2021-11-06，声明兼容Unity2019.3+）及Pro5.4.7（声明兼容Unity2022.3+）；[官方FAQ](https://arongranberg.com/astar/documentation/stable/faq.html)允许Free用于商业项目，[购买页](https://arongranberg.com/astar/buy/)说明Pro采用Asset Store许可。仅核查声明，未下载包、未购买，也未验证本工程兼容。EpPathFinding固定提交的csproj已确认引用C5 2.4系列与.NET4.0。用户最新允许RVO，候选不因采用RVO而排除。
+
+
+2026-11-25 本轮落地更新：用户要求继续推进，Roy-T.AStar固定提交的26个核心C#文件已迁入`Assets/LittleGame/ThirdParty/RoyTAStar`，以`LittleGame.RoyTAStar.asmdef`供纯规则Domain引用。修改仅增加动态通行边过滤接口；LICENSE.txt、SOURCE.json保留来源，发行随包许可副本位于`Assets/StreamingAssets/ThirdPartyNotices/RoyTAStar.txt`。未引入其他候选、未付费、未修改外部旧工程。规则层导航场景已通过；Unity正常远征正在验收，手机未验证。后续最终状态读取`Reports/Combat/astar-navigation-20261125/`。

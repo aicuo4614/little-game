@@ -1,0 +1,109 @@
+{
+  "date": "2026-11-25",
+  "project": "E:/Project/little-game",
+  "scene": "Assets/Scenes/Combat.unity",
+  "ai": "finite_state_machine",
+  "states": [
+    "Idle",
+    "Pursuing",
+    "Engaging",
+    "Controlled",
+    "Dead"
+  ],
+  "rootCauses": [
+    "ORCA安全速度被重新归一化到满速，且站定单位没有承担原来的部分避让责任",
+    "盾卫追击站位落在身体半径内部",
+    "逐帧选最近敌人导致目标抢换，射程临界没有状态转移缓冲",
+    "战中离开布阵位置被误判为归队并强制走路",
+    "20Hz规则位置直接写到表现，每步瞬跳",
+    "交叉淡出中的Idle仍被IsPlaying判为已切回，导致短暂漏切"
+  ],
+  "avoidanceReproduction": {
+    "before": {
+      "initialSpeed": 2.4,
+      "safeSpeed": 1.1764705,
+      "minimumCenterDistanceOver6Seconds": 0.004843235
+    },
+    "after": {
+      "initialSpeed": 1.1764705,
+      "safeSpeed": 1.1764705,
+      "minimumCenterDistanceOver6Seconds": 1.0006926
+    },
+    "conditions": "纯规则两单位直线逼近，半径各0.5米，静止障碍，逻辑步0.05秒；不代表所有拥挤场景"
+  },
+  "domain": {
+    "checks": 107,
+    "campaigns": [
+      {
+        "seed": 173,
+        "phase": "Won",
+        "wave": 12,
+        "wave1Duration": 6.9,
+        "march": 275,
+        "maxDeployed": 9,
+        "alive": 7
+      },
+      {
+        "seed": 7,
+        "phase": "Won",
+        "wave": 12,
+        "wave1Duration": 6.9,
+        "march": 275,
+        "maxDeployed": 9,
+        "alive": 9
+      },
+      {
+        "seed": 91,
+        "phase": "Won",
+        "wave": 12,
+        "wave1Duration": 6.9,
+        "march": 275,
+        "maxDeployed": 9,
+        "alive": 9
+      }
+    ],
+    "fsmTransitionBoundaryCases": 11,
+    "movementFocusedTestsPassed": true
+  },
+  "unity": {
+    "checks": [
+      "开局零单位（全靠老虎机招募）与禁止空阵开战通过",
+      "招募动画落地前隐藏图标、抵达候补槽瞬间显现通过",
+      "双击候补军团卡片自动寻位上场通过",
+      "tap即选中、无按钮面板、拖出白框吸附点A(剪影预览)通过",
+      "拖动场上单位到候补区直接召回通过",
+      "真实战斗、固定移速RVO2避障、暂停/瞄准/护盾及战中拒绝布阵通过",
+      "从零单位起手完整12波横向远征获胜通过",
+      "单兵阵亡团灭判负及重开归零通过",
+      "UI换肤sprite完整、按钮边界/触屏高度/无重叠及Console零报错通过"
+    ],
+    "console": {
+      "Error": "Console 日志 0 条：",
+      "Exception": "Console 日志 0 条：",
+      "Assert": "Console 日志 0 条：",
+      "Warning": "Console 日志 0 条："
+    },
+    "movementCompleted": true,
+    "sampleCount": 619,
+    "stationaryWalkSamples": 0,
+    "crossFrameSamples": 42,
+    "frozenWalkSamples": 0
+  },
+  "mcp": {
+    "extension": "little-game.combat",
+    "version": "1.5.0",
+    "sameRuleEntry": "BattleApplication.Submit -> BattleSession.Execute",
+    "observability": [
+      "aiState",
+      "targetId",
+      "vx/vz",
+      "ai_state_changed",
+      "actor movementSpeed/motionPaused/forceWalk/hitStopped"
+    ]
+  },
+  "limits": [
+    "WindowsEditor验证，未构建或安装手机包",
+    "619组采样未发现非暂停/受击停顿的原地走路，不等于所有帧及所有布阵绝无抖动"
+  ],
+  "gitCommitOrPush": false
+}

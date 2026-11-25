@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 1,
+  "SchemaVersion": 2,
   "TimelineId": "shield_skill",
   "DisplayName": "盾卫护盾猛击",
   "DurationBindClipKey": "",
@@ -94,5 +94,13 @@
       "Frequency": 24.0,
       "EventConfigs": []
     }
-  ]
+  ],
+  "Execution": {
+    "Enabled": true,
+    "LaunchKey": "ev_impact",
+    "ImpactKey": "c_hit",
+    "RecoveryKey": "c_anim",
+    "InterruptOnControl": true,
+    "TrackTarget": true
+  }
 }

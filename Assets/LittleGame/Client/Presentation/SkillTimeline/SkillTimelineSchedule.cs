@@ -103,6 +103,29 @@ namespace LittleGame.Client.SkillTimeline
             {
                 TotalDuration = maxEnd;
             }
+            BuildDefinition(config);
+        }
+
+        /// <summary>规则节点绑定片段起点或事件；动作结束节点绑定片段终点。</summary>
+        public float ResolveKey(string key, bool end = false)
+        {
+            if (clips.TryGetValue(key ?? "", out var clip)) return end ? GetEnd(clip) : GetStart(clip);
+            if (events.TryGetValue(key ?? "", out var ev)) return GetStart(ev.Clip) + GetEventOffset(ev.Clip, ev.Event);
+            throw new ArgumentException("技能规则节点不存在: " + key);
+        }
+
+        public LittleGame.Combat.BattleSkillDefinition BuildDefinition(SkillTimelineConfig config)
+        {
+            if (config.Execution == null || !config.Execution.Enabled) return null;
+            var e = config.Execution;
+            var d = new LittleGame.Combat.BattleSkillDefinition {
+                UnitKind = "*", Trigger = "Skill", TimelineId = config.TimelineId,
+                LaunchAt = ResolveKey(e.LaunchKey), ImpactAt = ResolveKey(e.ImpactKey),
+                RecoveryEnd = ResolveKey(e.RecoveryKey, true), InterruptOnControl = e.InterruptOnControl, TrackTarget = e.TrackTarget
+            };
+            d.Validate();
+            if (d.RecoveryEnd > TotalDuration + .0001f) throw new ArgumentException("动作结束节点超出时间轴总时长");
+            return d;
         }
 
         public float GetStart(SkillClipConfig clip)

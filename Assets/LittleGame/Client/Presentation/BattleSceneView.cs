@@ -66,11 +66,12 @@ namespace LittleGame.Client
             Camera.backgroundColor = new Color(.095f, .095f, .155f);
             Camera.nearClipPlane = .1f;
             Camera.farClipPlane = 80f;
-            Camera.allowHDR = true;
+            bool isMobile = Application.isMobilePlatform;
+            Camera.allowHDR = !isMobile;
 
             var urpCam = Camera.GetUniversalAdditionalCameraData();
-            urpCam.renderPostProcessing = true;
-            SetupSelectiveEffectBloom(world);
+            urpCam.renderPostProcessing = !isMobile;
+            if (!isMobile) SetupSelectiveEffectBloom(world);
 
             HudCamera = new GameObject("HudCamera").AddComponent<Camera>();
             HudCamera.transform.SetParent(world, false);
@@ -94,7 +95,7 @@ namespace LittleGame.Client
             combatSun.transform.SetParent(world);
             combatSun.type = LightType.Directional;
             combatSun.transform.rotation = Quaternion.Euler(46, -28, 0);
-            combatSun.shadows = LightShadows.Soft;
+            combatSun.shadows = isMobile ? LightShadows.Hard : LightShadows.Soft;
             combatSun.color = new Color(1f, .96f, .88f);
             combatSun.intensity = 1.18f;
             RenderSettings.ambientMode = AmbientMode.Trilight;
@@ -164,15 +165,17 @@ namespace LittleGame.Client
                 float targetCamX = BaseCamX;
                 if (s.Phase == RunPhase.Fighting)
                 {
-                    var aliveTroops = s.Troops.Where(t => t.Deployed && t.Alive).ToArray();
-                    var aliveEnemies = s.Enemies.Where(e => e.Alive).ToArray();
-                    if (aliveTroops.Length > 0)
+                    float vanguardX = float.MinValue;
+                    var troops = s.Troops;
+                    for (int i = 0; i < troops.Count; i++)
+                        if (troops[i].Deployed && troops[i].Alive && troops[i].X > vanguardX) vanguardX = troops[i].X;
+                    if (vanguardX > float.MinValue)
                     {
-                        float vanguardX = aliveTroops.Max(t => t.X);
-                        float focusX = aliveEnemies.Length > 0
-                            ? Mathf.Lerp(vanguardX, aliveEnemies.Min(e => e.X), 0.38f)
-                            : vanguardX;
-                        // 偏移量 disX 保持我方阵型偏左、交战区偏中右，并做左右边界限幅
+                        float enemyMinX = float.MaxValue;
+                        var enemies = s.Enemies;
+                        for (int i = 0; i < enemies.Count; i++)
+                            if (enemies[i].Alive && enemies[i].X < enemyMinX) enemyMinX = enemies[i].X;
+                        float focusX = enemyMinX < float.MaxValue ? Mathf.Lerp(vanguardX, enemyMinX, 0.38f) : vanguardX;
                         targetCamX = Mathf.Clamp(BaseCamX + (focusX + 1.15f) * 0.42f, CamBoundMinX, CamBoundMaxX);
                     }
                 }
@@ -183,10 +186,7 @@ namespace LittleGame.Client
             }
             float deltaCamX = camCurrentX - prevCamX;
 
-            // 行军速度自动匹配我方当前上阵军团的平均 MoveSpeed（确保脚底步频与大道滚动一致）
-            float avgMoveSpeed = s.Troops.Any(t => t.Deployed)
-                ? s.Troops.Where(t => t.Deployed).Average(t => t.MoveSpeed)
-                : 2.5f;
+            float avgMoveSpeed = BattleDefinitions.FixedTroopMoveSpeed;
             float scrollSpeed = paused || s.Phase == RunPhase.Lost || s.Phase == RunPhase.Won
                 ? 0f
                 : s.Phase == RunPhase.Preparation
@@ -207,8 +207,8 @@ namespace LittleGame.Client
         }
 
         public void SetSelectedUnit(int unitId, bool visible) => fieldOverlay?.SyncSelectionCursor(unitId, visible, unitRegistry);
-        public void SetDragZoneVisual(bool dragging, Vector3 groundPos, bool insideBox, bool canPlace) =>
-            fieldOverlay?.SetDragZoneVisual(dragging, groundPos, insideBox, canPlace);
+        public void SetDragZoneVisual(bool dragging, Vector3 clampedPos, bool showSpot, bool isReplace) =>
+            fieldOverlay?.SetDragZoneVisual(dragging, clampedPos, showSpot, isReplace);
 
         public bool TryGetUnitPosition(int unitId, out Vector3 position)
         {
@@ -223,6 +223,12 @@ namespace LittleGame.Client
 
         public CharacterMotion GetUnitMotion(int unitId) =>
             unitRegistry != null && unitRegistry.TryGet(unitId, out var actor) ? actor.Motion : null;
+
+        public bool TryGetCastPoint(int unitId, out Vector3 position)
+        {
+            if (unitRegistry.TryGet(unitId, out var actor) && actor.CastPoint != null) { position = actor.CastPoint.position; return true; }
+            position = default; return false;
+        }
 
         public Vector3 GetLaneCenter(int lane) => new Vector3(-2.4f, 0.14f, BattleDefinitions.CellZ(Mathf.Clamp(lane, 0, 2)));
         public Camera GetCamera() => Camera;

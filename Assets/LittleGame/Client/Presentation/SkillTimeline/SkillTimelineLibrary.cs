@@ -100,6 +100,21 @@ namespace LittleGame.Client.SkillTimeline
             return best?.TimelineId;
         }
 
+        public LittleGame.Combat.BattleSkillDefinition[] BuildDefinitions()
+        {
+            var result = new List<LittleGame.Combat.BattleSkillDefinition>();
+            foreach (var b in bindings.Bindings)
+            {
+                var cfg = Get(b.TimelineId);
+                if (cfg == null) continue;
+                var d = new SkillTimelineSchedule(cfg).BuildDefinition(cfg);
+                if (d == null) continue;
+                d.UnitKind = b.UnitKind; d.Trigger = b.Trigger; d.Branch = b.Branch; d.MinStar = b.MinStar;
+                result.Add(d);
+            }
+            return result.ToArray();
+        }
+
         public SkillTimelineValidationReport ValidateAll()
         {
             var report = new SkillTimelineValidationReport
@@ -118,6 +133,13 @@ namespace LittleGame.Client.SkillTimeline
                 try
                 {
                     var schedule = new SkillTimelineSchedule(kv.Value);
+                    foreach (var clip in kv.Value.Clips)
+                    {
+                        if (!string.IsNullOrEmpty(clip.EffectId) && Resources.Load<GameObject>("SkillEffects/" + clip.EffectId) == null)
+                            report.Errors.Add($"技能 {kv.Key}/{clip.ClipKey} 缺少特效 {clip.EffectId}");
+                        if (clip.Type == SkillClipType.PlayAnimation && !new[] { "Idle", "Walk", "Attack", "Hit", "Death", "Slam" }.Contains(clip.ActionName))
+                            report.Errors.Add($"技能 {kv.Key} 使用未知动作 {clip.ActionName}");
+                    }
                     if (schedule.TotalDuration <= 0f)
                         report.Warnings.Add($"技能 {kv.Key} 总时长为 0");
                 }

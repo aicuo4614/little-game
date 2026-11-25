@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 1,
+  "SchemaVersion": 2,
   "TimelineId": "enemy_melee_basic",
   "DisplayName": "敌方近战攻击",
   "DurationBindClipKey": "",
@@ -63,5 +63,13 @@
       "ColorHex": "#FFA396",
       "EventConfigs": []
     }
-  ]
+  ],
+  "Execution": {
+    "Enabled": true,
+    "LaunchKey": "ev_hit",
+    "ImpactKey": "c_hit",
+    "RecoveryKey": "c_anim",
+    "InterruptOnControl": true,
+    "TrackTarget": true
+  }
 }

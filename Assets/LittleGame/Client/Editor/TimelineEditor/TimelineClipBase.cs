@@ -230,6 +230,8 @@ namespace LittleGame.Client.Editor.Timeline
             EditorGUI.EndDisabledGroup();
 
             EditorGUILayout.Space(4);
+            Config.LocalOffset = EditorGUILayout.Toggle("偏移随施法朝向旋转", Config.LocalOffset);
+            Config.OrientToCaster = EditorGUILayout.Toggle("特效随施法朝向旋转", Config.OrientToCaster);
             switch (Config.Type)
             {
                 case SkillClipType.PlayAnimation:

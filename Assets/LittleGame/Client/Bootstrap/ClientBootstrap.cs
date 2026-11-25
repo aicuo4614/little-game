@@ -29,7 +29,7 @@ namespace LittleGame.Client
         private void Awake()
         {
             Current = this;
-            if (QualitySettings.names != null && QualitySettings.names.Length > 0)
+            if (!Application.isMobilePlatform && QualitySettings.names != null && QualitySettings.names.Length > 0)
                 QualitySettings.SetQualityLevel(QualitySettings.names.Length - 1, true);
             QualitySettings.vSyncCount = 0;
             Application.targetFrameRate = 60;
@@ -37,6 +37,7 @@ namespace LittleGame.Client
             var store = new LocalRunStore(Path.Combine(Application.persistentDataPath, "combat-run-v1.json"));
             App = new BattleApplication(store); App.PersistenceError += message => GameDebug.LogWarning("CombatSave", message);
             View = gameObject.AddComponent<BattleSceneView>(); View.Build(App);
+            App.Session.ConfigureSkills(View.TimelineDirector.Library.BuildDefinitions());
             Hud = gameObject.AddComponent<BattleHud>(); Hud.Build(App, View);
             Input = gameObject.AddComponent<BattleInput>(); Input.Bind(App, View, Hud);
             App.AttachView(Hud); gameObject.AddComponent<CombatDiagnostics>();

@@ -191,6 +191,13 @@ namespace LittleGame.Client.Editor.Timeline
                 if (nextIdx != selectedTimelineIdx) onPickTimeline?.Invoke(nextIdx);
             }
 
+            EditorGUI.BeginChangeCheck();
+            float distance = EditorGUILayout.Slider("目标距离", PreviewPlayback.Distance, .6f, 7f);
+            float angle = EditorGUILayout.Slider("交战角度", PreviewPlayback.Angle, -180f, 180f);
+            float move = EditorGUILayout.Slider("目标横移速度", PreviewPlayback.TargetSpeed, -2f, 2f);
+            int count = EditorGUILayout.IntSlider("预览目标数量", PreviewPlayback.TargetCount, 1, 5);
+            if (EditorGUI.EndChangeCheck()) { PreviewPlayback.SetGeometry(distance, angle, move, count); EvaluatePreview(); }
+            EditorGUILayout.HelpBox("范围线为规则参考；移动/多目标用于演出预览，命中与中断需通过正常战斗验收。", MessageType.None);
             int casterIdx = Math.Max(0, Array.IndexOf(TimelinePreviewPlayback.PreviewRoles, PreviewPlayback.CasterRole));
             int targetIdx = Math.Max(0, Array.IndexOf(TimelinePreviewPlayback.PreviewRoles, PreviewPlayback.TargetRole));
 
@@ -206,7 +213,7 @@ namespace LittleGame.Client.Editor.Timeline
 
             EditorGUILayout.BeginHorizontal();
             EditorGUILayout.LabelField("预览阵营", GUILayout.Width(64));
-            int teamIdx = GUILayout.Toolbar(PreviewPlayback.CasterIsEnemy ? 1 : 0, new[] { "我方(下)", "敌方(上)" });
+            int teamIdx = GUILayout.Toolbar(PreviewPlayback.CasterIsEnemy ? 1 : 0, new[] { "我方(左)", "敌方(右)" });
             EditorGUILayout.EndHorizontal();
 
             if (nextCaster != casterIdx || nextTarget != targetIdx || (teamIdx == 1) != PreviewPlayback.CasterIsEnemy)
@@ -273,6 +280,13 @@ namespace LittleGame.Client.Editor.Timeline
             Timeline.LocateClip(clip);
         }
 
+        private static string DrawRuleKey(string label, string selected, string[] keys)
+        {
+            int index = Array.IndexOf(keys, selected ?? "");
+            if (index < 0) { EditorGUILayout.HelpBox("节点不存在: " + selected, MessageType.Error); index = 0; }
+            return keys[EditorGUILayout.Popup(label, index, keys)];
+        }
+
         private void DrawInspectorFields(SkillTimelineLibrary library)
         {
             if (!string.IsNullOrEmpty(catchFeedback))
@@ -290,6 +304,23 @@ namespace LittleGame.Client.Editor.Timeline
                 EditorGUILayout.EndHorizontal();
 
                 Config.DisplayName = EditorGUILayout.TextField("名称/备注", Config.DisplayName ?? string.Empty);
+                if (Config.Execution == null) Config.Execution = new SkillExecutionConfig();
+                var execution = Config.Execution;
+                execution.Enabled = EditorGUILayout.Toggle("规则时序", execution.Enabled);
+                if (execution.Enabled)
+                {
+                    var keys = new[] { "" }.Concat(Config.Clips.Select(c => c.ClipKey)).Concat(Config.Clips.SelectMany(c => c.EventConfigs ?? new List<SkillEventConfig>()).Select(e => e.EventKey)).ToArray();
+                    execution.LaunchKey = DrawRuleKey("发射节点", execution.LaunchKey, keys);
+                    execution.ImpactKey = DrawRuleKey("命中节点", execution.ImpactKey, keys);
+                    execution.RecoveryKey = DrawRuleKey("动作结束节点", execution.RecoveryKey, keys);
+                    execution.InterruptOnControl = EditorGUILayout.Toggle("受控打断", execution.InterruptOnControl);
+                    execution.TrackTarget = EditorGUILayout.Toggle("弹道跟踪目标", execution.TrackTarget);
+                    if (Schedule != null && string.IsNullOrEmpty(ScheduleError))
+                    {
+                        try { var rule = Schedule.BuildDefinition(Config); EditorGUILayout.LabelField($"发射 {rule.LaunchAt:F3}s / 命中 {rule.ImpactAt:F3}s / 结束 {rule.RecoveryEnd:F3}s", EditorStyles.wordWrappedMiniLabel); }
+                        catch (Exception ex) { EditorGUILayout.HelpBox(ex.Message, MessageType.Error); }
+                    }
+                }
 
                 EditorGUILayout.BeginHorizontal();
                 EditorGUI.BeginDisabledGroup(true);

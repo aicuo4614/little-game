@@ -13,6 +13,10 @@ namespace LittleGame.Combat
         private readonly List<TroopKind> pending = new List<TroopKind>();
         private readonly List<RewardKind> rewards = new List<RewardKind>();
         private readonly List<StormZone> zones = new List<StormZone>();
+        private readonly BattleNavigation navigation = new BattleNavigation();
+        private readonly List<BattleNavigation.AgentInput> navInputs = new List<BattleNavigation.AgentInput>(32);
+        private readonly List<BattleNavigation.AgentOutput> navOutputs = new List<BattleNavigation.AgentOutput>(32);
+
         private BattleRandom random;
         private int nextId, misses, spinCount, spawnCursor;
         private int maxDeployed = 6, popExp;
@@ -47,6 +51,7 @@ namespace LittleGame.Combat
         public int FocusTarget => focusTarget;
         public float FocusUntil => focusUntil;
         public long LastSequence => eventSequence;
+        public long LastSpinSequence { get; private set; }
         public TroopKind[] Reels { get; private set; } = new TroopKind[9];
         public IReadOnlyList<Troop> Troops => troops;
         public IReadOnlyList<Enemy> Enemies => enemies;
@@ -64,20 +69,91 @@ namespace LittleGame.Combat
             return troops.Count(t => t.Kind == host.Kind && t.Star == host.Star) >= 3;
         }
 
+        /// <summary>
+        /// 为候补单位自动寻找白色布阵框内最合适的空位（供双击上场与拖拽复用同一套落位规则）：
+        /// 盾卫优先前排，远程优先中后排，优先挑选与现有单位间距宽裕的标准阵位或自由空位。
+        /// </summary>
+        public bool FindAutoDeployPosition(Troop unit, out float bestX, out float bestZ)
+        {
+            bestX = BattleDefinitions.CellX(1);
+            bestZ = BattleDefinitions.CellZ(1);
+            if (unit == null) return false;
+
+            int[] preferredRows = unit.Kind == TroopKind.Shield ? new[] { 0, 1, 2 } : new[] { 1, 2, 0 };
+            int[] preferredLanes = { 1, 0, 2 };
+
+            float bestScore = -1f;
+            bool found = false;
+
+            foreach (int row in preferredRows)
+            {
+                foreach (int lane in preferredLanes)
+                {
+                    float cx = BattleDefinitions.CellX(row);
+                    float cz = BattleDefinitions.CellZ(lane);
+                    BattleDefinitions.ClampToDeployBox(cx, cz, out cx, out cz);
+                    float minDist = MinDistanceToOtherDeployed(unit.Id, cx, cz);
+                    if (minDist >= 0.88f)
+                    {
+                        bestX = cx;
+                        bestZ = cz;
+                        return true;
+                    }
+                    if (minDist > bestScore)
+                    {
+                        bestScore = minDist;
+                        bestX = cx;
+                        bestZ = cz;
+                        found = true;
+                    }
+                }
+            }
+
+            // 若标准 9 个参考位均有近邻，则在白色布阵框内做均匀网格采样，挑选离其他单位最远的空点
+            for (int ix = 0; ix < 5; ix++)
+            {
+                float x = BattleDefinitions.DeployMaxX - 0.35f - ix * ((BattleDefinitions.DeployMaxX - BattleDefinitions.DeployMinX - 0.7f) / 4f);
+                for (int iz = 0; iz < 5; iz++)
+                {
+                    float z = BattleDefinitions.DeployMinZ + 0.35f + iz * ((BattleDefinitions.DeployMaxZ - BattleDefinitions.DeployMinZ - 0.7f) / 4f);
+                    float minDist = MinDistanceToOtherDeployed(unit.Id, x, z);
+                    if (minDist > bestScore)
+                    {
+                        bestScore = minDist;
+                        bestX = x;
+                        bestZ = z;
+                        found = true;
+                    }
+                }
+            }
+
+            return found;
+        }
+
+        private float MinDistanceToOtherDeployed(int excludeId, float x, float z)
+        {
+            float minD = 99f;
+            foreach (var other in troops)
+            {
+                if (other.Id == excludeId || !other.Deployed) continue;
+                float d = Distance(other.HomeX, other.HomeZ, x, z);
+                if (d < minD) minD = d;
+            }
+            return minD;
+        }
+
         private void Reset(int seed)
         {
             Seed = seed; random = new BattleRandom(seed); nextId = 1; Wave = 1; MarchDistance = 0f; Spins = 3;
             maxDeployed = 6; popExp = 0; lastWinRowMid = lastWinColMid = enraged = false;
-            misses = spinCount = spawnCursor = 0; Phase = RunPhase.Preparation; Aim = AimKind.None; Paused = false; Speed = 1; BattleTime = accumulator = 0;
+            misses = spinCount = spawnCursor = 0; LastSpinSequence = 0; Phase = RunPhase.Preparation; Aim = AimKind.None; Paused = false; Speed = 1; BattleTime = accumulator = 0;
             Tactics = 0; focusTarget = 0; focusUntil = 0; slamAt = -1; slamLane = -1;
             troops.Clear(); enemies.Clear(); pending.Clear(); rewards.Clear(); zones.Clear(); events.Clear();
+            skillInstances.Clear(); nextSkillId = 0; resolvingSkill = null;
             Reels = new[] { TroopKind.Shield, TroopKind.Archer, TroopKind.Storm, TroopKind.Archer, TroopKind.Storm, TroopKind.Frost, TroopKind.Storm, TroopKind.Frost, TroopKind.Shield };
-            for (int lane = 0; lane < 3; lane++)
-            {
-                AddTroop(TroopKind.Shield, lane, 0);
-                AddTroop(lane == 1 ? TroopKind.Storm : TroopKind.Archer, lane, 1);
-            }
-            Emit("run_started", "军团集结：在白色布阵区内自由拖放，迎战来敌");
+
+            // 开局不提前放置我方单位，全部通过老虎机招募获得并上阵
+            Emit("run_started", "军团集结：转动十字法阵招募单位并部署上阵");
         }
 
         private void AddTroop(TroopKind kind, int lane = -1, int row = -1)
@@ -98,8 +174,13 @@ namespace LittleGame.Combat
             {
                 if (!BattleDefinitions.IsInsideDeployBox(t.HomeX, t.HomeZ))
                 {
-                    t.HomeX = Clamp(BattleDefinitions.CellX(t.Row), BattleDefinitions.DeployMinX, BattleDefinitions.DeployMaxX);
-                    t.HomeZ = Clamp(BattleDefinitions.CellZ(t.Lane), BattleDefinitions.DeployMinZ, BattleDefinitions.DeployMaxZ);
+                    BattleDefinitions.ClampToDeployBox(
+                        BattleDefinitions.CellX(t.Row),
+                        BattleDefinitions.CellZ(t.Lane),
+                        out float hx,
+                        out float hz);
+                    t.HomeX = hx;
+                    t.HomeZ = hz;
                 }
                 if (snapToHome)
                 {
@@ -113,6 +194,10 @@ namespace LittleGame.Combat
                 t.X = t.Z = t.HomeX = t.HomeZ = 0f;
                 t.FacingYaw = 90f;
             }
+            t.Vx = t.Vz = 0f;
+            t.TargetId = 0;
+            t.AiState = CombatAiState.Idle;
+            t.Navigation.Reset();
             t.TurnSpeed = BattleDefinitions.TurnSpeed(t.Kind);
             t.MoveSpeed = BattleDefinitions.MoveSpeed(t.Kind);
             t.Hp = t.MaxHp = BattleDefinitions.Health(t);
@@ -198,13 +283,14 @@ namespace LittleGame.Combat
                     return ExecuteDeploy(unit, c);
                 case CommandKind.Recall:
                     if (!unit.Deployed) return Reject("该单位已在候补区");
-                    if (troops.Count(t => !t.Deployed) >= 6) return Reject("候补区已满");
+                    if (troops.Count(t => !t.Deployed) >= BattleDefinitions.ReserveCapacity) return Reject("候补区已满");
                     if (troops.Count(t => t.Deployed) <= 1) return Reject("至少保留一名上阵单位");
                     unit.Lane = unit.Row = -1;
                     unit.HomeX = unit.HomeZ = unit.X = unit.Z = 0f;
+                    Emit("recalled", "已召回" + BattleDefinitions.Name(unit.Kind) + "至候补", unit.Id);
                     break;
                 case CommandKind.Recycle:
-                    if (unit.Deployed) return Reject("先召回候补再遣散，避免误删阵线");
+                    if (unit.Deployed) return Reject("先拖回候补再遣散，避免误删阵线");
                     troops.Remove(unit); Emit("recycled", "已遣散候补", unit.Id);
                     break;
                 case CommandKind.Merge: return Merge(unit, c.OtherId, c.ThirdId);
@@ -214,7 +300,8 @@ namespace LittleGame.Combat
                     break;
                 default: return Reject("该指令不适用于准备阶段");
             }
-            DrainPending(); return new CommandResult(true, "操作成功");
+            DrainPendingAndAutoMerge();
+            return new CommandResult(true, "操作成功");
         }
 
         private CommandResult ExecuteDeploy(Troop unit, BattleCommand c)
@@ -223,13 +310,12 @@ namespace LittleGame.Combat
             int targetLane, targetRow;
             if (c.UseWorldPos)
             {
-                if (float.IsNaN(c.TargetX) || float.IsInfinity(c.TargetX) || float.IsNaN(c.TargetZ) || float.IsInfinity(c.TargetZ)
-                    || !BattleDefinitions.IsInsideDeployBox(c.TargetX, c.TargetZ))
+                if (float.IsNaN(c.TargetX) || float.IsInfinity(c.TargetX) || float.IsNaN(c.TargetZ) || float.IsInfinity(c.TargetZ))
                 {
-                    return Reject("拖动超出白色布阵范围，放置失败");
+                    return Reject("目标坐标无效");
                 }
-                tx = c.TargetX;
-                tz = c.TargetZ;
+                // 超出白色布阵框不再拒绝，而是自动夹紧到可放置区域内离手最近的点 A
+                BattleDefinitions.ClampToDeployBox(c.TargetX, c.TargetZ, out tx, out tz);
                 targetLane = BattleDefinitions.NearestLane(tz);
                 targetRow = BattleDefinitions.NearestRow(tx);
             }
@@ -277,7 +363,7 @@ namespace LittleGame.Combat
             }
 
             Emit("deployed", "已部署" + BattleDefinitions.Name(unit.Kind), unit.Id, 0, unit.Lane);
-            DrainPending();
+            DrainPendingAndAutoMerge();
             return new CommandResult(true, "操作成功");
         }
 
@@ -309,22 +395,82 @@ namespace LittleGame.Combat
             var a = troops.Find(t => t.Id == aId); var b = troops.Find(t => t.Id == bId);
             if (a == null || b == null || a == b || a == host || b == host) return Reject("合成需要三个不同单位");
             if (host.Star >= 3 || a.Star != host.Star || b.Star != host.Star || a.Kind != host.Kind || b.Kind != host.Kind) return Reject("需要三个同职业同星单位，最高三星");
-            host.Star++; troops.Remove(a); troops.Remove(b); ResetTroop(host, snapToHome: true); DrainPending();
-            Emit("merged", "升为" + host.Star + "星，二星需选择分支", host.Id);
+            host.Star++;
+            troops.Remove(a);
+            troops.Remove(b);
+            ResetTroop(host, snapToHome: true);
+            Emit("merged", $"{BattleDefinitions.Name(host.Kind)}升为{host.Star}星！", host.Id, 0, host.Lane, host.Star);
+            DrainPendingAndAutoMerge();
             return new CommandResult(true, "合成成功");
+        }
+
+        /// <summary>
+        /// 自动三兵合成：凑齐三个同职业同星（最高升至3星）时自动合成，
+        /// 优先保留已上阵单位的位置作为宿主，并释放候补空间接收暂存单位。
+        /// </summary>
+        private void TryAutoMerge()
+        {
+            if (Phase != RunPhase.Preparation) return;
+            bool mergedAny;
+            do
+            {
+                mergedAny = false;
+                var group = troops
+                    .Where(t => t.Star < 3)
+                    .GroupBy(t => new { t.Kind, t.Star })
+                    .FirstOrDefault(g => g.Count() >= 3);
+
+                if (group != null)
+                {
+                    var ordered = group
+                        .OrderByDescending(t => t.Deployed)
+                        .ThenBy(t => t.Id)
+                        .ToList();
+                    var host = ordered[0];
+                    var donor1 = ordered[1];
+                    var donor2 = ordered[2];
+                    host.Star++;
+                    troops.Remove(donor1);
+                    troops.Remove(donor2);
+                    ResetTroop(host, snapToHome: true);
+                    Emit("merged", $"{BattleDefinitions.Name(host.Kind)}自动合成 {host.Star} 星！", host.Id, 0, host.Lane, host.Star);
+                    mergedAny = true;
+                }
+            }
+            while (mergedAny);
+        }
+
+        private void DrainPendingAndAutoMerge()
+        {
+            bool changed;
+            do
+            {
+                changed = false;
+                while (pending.Count > 0 && troops.Count(t => !t.Deployed) < BattleDefinitions.ReserveCapacity)
+                {
+                    AddTroop(pending[0]);
+                    pending.RemoveAt(0);
+                    changed = true;
+                }
+                int beforeCount = troops.Count;
+                TryAutoMerge();
+                if (troops.Count != beforeCount) changed = true;
+            }
+            while (changed);
         }
 
         private CommandResult Spin()
         {
             if (Spins <= 0) return Reject("本波招募次数已用完");
-            if (pending.Count > 0) return Reject("请先处理暂存单位：部署、合成或遣散候补");
+            if (pending.Count > 0) return Reject("请先处理暂存单位：部署或遣散候补");
             Spins--; spinCount++;
             for (int i = 0; i < 9; i++) Reels[i] = (TroopKind)random.Next(4);
-            bool tutorial = spinCount <= 2;
+            bool tutorial = spinCount <= 3;
             if (tutorial)
             {
                 if (spinCount == 1) { Reels[3] = Reels[4] = Reels[5] = TroopKind.Shield; }
-                else { Reels[1] = Reels[4] = Reels[7] = TroopKind.Archer; }
+                else if (spinCount == 2) { Reels[1] = Reels[4] = Reels[7] = TroopKind.Archer; }
+                else { Reels[3] = Reels[4] = Reels[5] = TroopKind.Storm; }
             }
             bool guarantee = misses >= 2;
             if (guarantee)
@@ -339,10 +485,12 @@ namespace LittleGame.Combat
             int won = 0;
             if (lastWinRowMid) { pending.Add(Reels[4]); won++; }
             if (lastWinColMid) { pending.Add(Reels[4]); won++; }
-            misses = won == 0 ? misses + 1 : 0; DrainPending();
+            misses = won == 0 ? misses + 1 : 0;
+            DrainPendingAndAutoMerge();
             string lineText = lastWinRowMid && lastWinColMid ? "十字双连！" : lastWinRowMid ? "中横三同！" : lastWinColMid ? "中竖三同！" : "";
-            Emit("spin", (tutorial ? "教学预设 · " : guarantee ? "保底触发 · " : "随机招募 · ") + lineText + "出兵" + won + "名");
-            return new CommandResult(true, won > 0 ? lineText + "获得" + won + "名单位" : "未连成十字三同");
+            Emit("spin", (tutorial ? "教学预设 · " : guarantee ? "保底触发 · " : "随机招募 · ") + lineText + "出兵" + won + "名", 0, 0, -1, won);
+            LastSpinSequence = eventSequence;
+            return new CommandResult(true, won > 0 ? lineText + "获得" + won + "名" + BattleDefinitions.Name(Reels[4]) : "未连成十字三同");
         }
 
         internal void GrantWavePopExp(int amount)
@@ -358,18 +506,26 @@ namespace LittleGame.Combat
             if (maxDeployed >= 9) popExp = 0;
         }
 
-        private void DrainPending() { while (pending.Count > 0 && troops.Count(t => !t.Deployed) < 6) { AddTroop(pending[0]); pending.RemoveAt(0); } }
-
         private void Emit(string type, string message, int source = 0, int target = 0, int lane = -1, float amount = 0)
         {
-            events.Add(new CombatEvent { Sequence = ++eventSequence, Type = type, Message = message, Source = source, Target = target, Lane = lane, Amount = amount, Time = BattleTime });
+            events.Add(new CombatEvent { Sequence = ++eventSequence, Type = type, Message = message, Source = source, Target = target, Lane = lane, Amount = amount, Time = BattleTime, SkillInstanceId = resolvingSkill?.Id ?? 0, TimelineId = resolvingSkill?.TimelineId, Trigger = resolvingSkill?.Trigger, CasterX = resolvingSkill?.CasterX ?? 0f, CasterZ = resolvingSkill?.CasterZ ?? 0f, TargetX = resolvingSkill?.TargetX ?? 0f, TargetZ = resolvingSkill?.TargetZ ?? 0f, FacingYaw = resolvingSkill?.FacingYaw ?? 0f });
             if (events.Count > 600) events.RemoveRange(0, events.Count - 600);
         }
 
+        public object NavigationSnapshot(int unitId = 0) => new
+        {
+            algorithm = "roy_astar_attack_slots_swept_motion", rvoActive = false, fixedStep = BattleDefinitions.Step,
+            units = troops.Where(t => t.Deployed && (unitId == 0 || t.Id == unitId)).Select(t => new
+                { id = t.Id, aiState = t.AiState.ToString(), targetId = t.TargetId, x = t.X, z = t.Z, vx = t.Vx, vz = t.Vz, navigation = t.Navigation.Snapshot() }),
+            enemies = enemies.Where(e => unitId == 0 || e.Id == unitId).Select(e => new
+                { id = e.Id, aiState = e.AiState.ToString(), targetId = e.TargetId, x = e.X, z = e.Z, vx = e.Vx, vz = e.Vz, navigation = e.Navigation.Snapshot() })
+        };
+
         public object Snapshot() => new
         {
-            schemaVersion = 4,
-            layout = "horizontal-free-deploy",
+            schemaVersion = 6,
+            skills = skillInstances.Select(a => new { id = a.Id, source = a.Source, target = a.Target, trigger = a.Trigger, timelineId = a.TimelineId, phase = a.Phase.ToString(), startedAt = a.StartedAt, launchAt = a.LaunchAt, impactAt = a.ImpactAt, endAt = a.EndAt, targetX = a.TargetX, targetZ = a.TargetZ, facingYaw = a.FacingYaw, cancelReason = a.CancelReason }),
+            layout = "horizontal-free-deploy-astar",
             phase = Phase.ToString(),
             seed = Seed,
             wave = Wave,
@@ -382,7 +538,7 @@ namespace LittleGame.Combat
             spins = Spins,
             spinsPerWave = SpinsPerWave,
             consecutiveMisses = misses,
-            teaching = spinCount < 2,
+            teaching = spinCount < 3,
             deployedCount = DeployedCount,
             maxDeployed = maxDeployed,
             popExp = popExp,
@@ -408,6 +564,11 @@ namespace LittleGame.Combat
                 homeZ = Math.Round(t.HomeZ, 2),
                 x = Math.Round(t.X, 2),
                 z = Math.Round(t.Z, 2),
+                vx = t.Vx,
+                vz = t.Vz,
+                targetId = t.TargetId,
+                aiState = t.AiState.ToString(),
+                navigation = t.Navigation.Snapshot(),
                 facingYaw = Math.Round(t.FacingYaw, 1),
                 turnSpeed = t.TurnSpeed,
                 moveSpeed = t.MoveSpeed,
@@ -425,13 +586,19 @@ namespace LittleGame.Combat
                 lane = e.Lane,
                 x = Math.Round(e.X, 2),
                 z = Math.Round(e.Z, 2),
+                vx = e.Vx,
+                vz = e.Vz,
+                targetId = e.TargetId,
+                aiState = e.AiState.ToString(),
+                navigation = e.Navigation.Snapshot(),
                 facingYaw = Math.Round(e.FacingYaw, 1),
                 turnSpeed = e.TurnSpeed,
                 moveSpeed = e.MoveSpeed,
                 hp = e.Hp,
                 maxHp = e.MaxHp,
                 alive = e.Alive,
-                frozenUntil = e.FrozenUntil
+                frozenUntil = e.FrozenUntil,
+                slowUntil = e.SlowUntil
             }),
             pending = pending.Select(k => k.ToString()),
             rewards = rewards.Select(r => r.ToString()),
@@ -449,11 +616,10 @@ namespace LittleGame.Combat
             {
                 var actions = new List<string> { "deploy", "restart" };
                 if (Spins > 0 && pending.Count == 0) actions.Add("spin");
-                if (troops.Count(t => t.Deployed) > 1 && troops.Count(t => !t.Deployed) < 6) actions.Add("recall");
+                if (troops.Count(t => t.Deployed) > 1 && troops.Count(t => !t.Deployed) < BattleDefinitions.ReserveCapacity) actions.Add("recall");
                 if (troops.Any(t => !t.Deployed)) actions.Add("recycle");
                 if (troops.GroupBy(t => new { t.Kind, t.Star }).Any(g => g.Key.Star < 3 && g.Count() >= 3)) actions.Add("merge");
-                if (troops.Any(t => t.Star >= 2 && t.Branch == SkillBranch.None)) actions.Add("choose_branch");
-                else if (pending.Count == 0 && troops.Any(t => t.Deployed)) actions.Add("start_wave");
+                if (pending.Count == 0 && troops.Any(t => t.Deployed)) actions.Add("start_wave");
                 return actions.ToArray();
             }
             if (Phase == RunPhase.Fighting) return Tactics > 0 ? new[] { "aim", "focus", "protect", "cancel_aim", "pause", "set_speed", "restart" } : new[] { "pause", "set_speed", "restart" };

@@ -1,0 +1,221 @@
+--------- beginning of main
+03-26 18:44:05.945 22633 22633 E Zygote  : v2
+--------- beginning of system
+03-26 18:44:05.945 22633 22633 I libpersona: KNOX_SDCARD checking this for 11108
+03-26 18:44:05.945 22633 22633 I libpersona: KNOX_SDCARD not a persona
+03-26 18:44:05.946 22633 22633 E Zygote  : accessInfo : 0
+03-26 18:44:05.947 22633 22633 W SELinux : SELinux selinux_android_compute_policy_index : Policy Index[2],  Con:u:r:zygote:s0 RAM:SEPF_SECMOBILE_7.0_0010, [-1 -1 -1 -1 0 1]
+03-26 18:44:05.949 22633 22633 I SELinux : SELinux: seapp_context_lookup: seinfo=untrusted, level=s0:c512,c768, pkgname=com.littlegame.teardown.dev 
+03-26 18:44:05.973 22633 22633 I art     : Late-enabling -Xcheck:jni
+03-26 18:44:06.022 22633 22633 D TimaKeyStoreProvider: TimaKeyStore is not enabled: cannot add TimaSignature Service and generateKeyPair Service
+03-26 18:44:06.054 22633 22633 I ResourcesManager: updateResourcesForOpenThemeChange for Desktop mode 
+03-26 18:44:06.096 22633 22633 V ActivityThread: performLaunchActivity: mActivityCurrentConfig={0 1.0 themeSeq = 0 showBtnBg = 0 ?mcc?mnc [zh_CN_#Hans] ldltr sw411dp w411dp h773dp 420dpi nrml long port ?dc finger -keyb/v/h -nav/h mkbd/h desktop/d s.4}
+03-26 18:44:06.146 22633 22633 I IL2CPP  : JNI_OnLoad
+03-26 18:44:06.147 22633 22633 D Unity   : CommandLine:  
+03-26 18:44:06.158 22633 22633 I art     : Rejecting re-init on previously-failed class java.lang.Class<com.unity3d.player.d>: java.lang.NoClassDefFoundError: Failed resolution of: Landroid/window/OnBackInvokedCallback;
+03-26 18:44:06.158 22633 22633 I art     :   at com.unity3d.player.C com.unity3d.player.D.a(java.lang.Object, int, java.lang.Runnable) (SourceFile:-1)
+03-26 18:44:06.158 22633 22633 I art     :   at void com.unity3d.player.UnityPlayer.<init>(android.content.Context, com.unity3d.player.IUnityPlayerLifecycleEvents) (SourceFile:-1)
+03-26 18:44:06.158 22633 22633 I art     :   at void com.unity3d.player.UnityPlayerActivity.onCreate(android.os.Bundle) (UnityPlayerActivity.java:40)
+03-26 18:44:06.158 22633 22633 I art     :   at void android.app.Activity.performCreate(android.os.Bundle) (Activity.java:6955)
+03-26 18:44:06.158 22633 22633 I art     :   at void android.app.Instrumentation.callActivityOnCreate(android.app.Activity, android.os.Bundle) (Instrumentation.java:1126)
+03-26 18:44:06.158 22633 22633 I art     :   at android.app.Activity android.app.ActivityThread.performLaunchActivity(android.app.ActivityThread$ActivityClientRecord, android.content.Intent) (ActivityThread.java:2927)
+03-26 18:44:06.158 22633 22633 I art     :   at void android.app.ActivityThread.handleLaunchActivity(android.app.ActivityThread$ActivityClientRecord, android.content.Intent, java.lang.String) (ActivityThread.java:3045)
+03-26 18:44:06.159 22633 22633 I art     :   at void android.app.ActivityThread.-wrap14(android.app.ActivityThread, android.app.ActivityThread$ActivityClientRecord, android.content.Intent, java.lang.String) (ActivityThread.java:-1)
+03-26 18:44:06.159 22633 22633 I art     :   at void android.app.ActivityThread$H.handleMessage(android.os.Message) (ActivityThread.java:1642)
+03-26 18:44:06.159 22633 22633 I art     :   at void android.os.Handler.dispatchMessage(android.os.Message) (Handler.java:102)
+03-26 18:44:06.159 22633 22633 I art     :   at void android.os.Looper.loop() (Looper.java:154)
+03-26 18:44:06.159 22633 22633 I art     :   at void android.app.ActivityThread.main(java.lang.String[]) (ActivityThread.java:6776)
+03-26 18:44:06.159 22633 22633 I art     :   at java.lang.Object java.lang.reflect.Method.invoke!(java.lang.Object, java.lang.Object[]) (Method.java:-2)
+03-26 18:44:06.159 22633 22633 I art     :   at void com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run() (ZygoteInit.java:1520)
+03-26 18:44:06.159 22633 22633 I art     :   at void com.android.internal.os.ZygoteInit.main(java.lang.String[]) (ZygoteInit.java:1410)
+03-26 18:44:06.159 22633 22633 I art     : Caused by: java.lang.ClassNotFoundException: Didn't find class "android.window.OnBackInvokedCallback" on path: DexPathList[[zip file "/data/app/com.littlegame.teardown.dev-1/base.apk"],nativeLibraryDirectories=[/data/app/com.littlegame.teardown.dev-1/lib/arm64, /data/app/com.littlegame.teardown.dev-1/base.apk!/lib/arm64-v8a, /system/lib64, /vendor/lib64]]
+03-26 18:44:06.159 22633 22633 I art     :   at java.lang.Class dalvik.system.BaseDexClassLoader.findClass(java.lang.String) (BaseDexClassLoader.java:56)
+03-26 18:44:06.159 22633 22633 I art     :   at java.lang.Class java.lang.ClassLoader.loadClass(java.lang.String, boolean) (ClassLoader.java:380)
+03-26 18:44:06.159 22633 22633 I art     :   at java.lang.Class java.lang.ClassLoader.loadClass(java.lang.String) (ClassLoader.java:312)
+03-26 18:44:06.159 22633 22633 I art     :   at com.unity3d.player.C com.unity3d.player.D.a(java.lang.Object, int, java.lang.Runnable) (SourceFile:-1)
+03-26 18:44:06.159 22633 22633 I art     :   at void com.unity3d.player.UnityPlayer.<init>(android.content.Context, com.unity3d.player.IUnityPlayerLifecycleEvents) (SourceFile:-1)
+03-26 18:44:06.159 22633 22633 I art     :   at void com.unity3d.player.UnityPlayerActivity.onCreate(android.os.Bundle) (UnityPlayerActivity.java:40)
+03-26 18:44:06.159 22633 22633 I art     :   at void android.app.Activity.performCreate(android.os.Bundle) (Activity.java:6955)
+03-26 18:44:06.159 22633 22633 I art     :   at void android.app.Instrumentation.callActivityOnCreate(android.app.Activity, android.os.Bundle) (Instrumentation.java:1126)
+03-26 18:44:06.159 22633 22633 I art     :   at android.app.Activity android.app.ActivityThread.performLaunchActivity(android.app.ActivityThread$ActivityClientRecord, android.content.Intent) (ActivityThread.java:2927)
+03-26 18:44:06.159 22633 22633 I art     :   at void android.app.ActivityThread.handleLaunchActivity(android.app.ActivityThread$ActivityClientRecord, android.content.Intent, java.lang.String) (ActivityThread.java:3045)
+03-26 18:44:06.159 22633 22633 I art     :   at void android.app.ActivityThread.-wrap14(android.app.ActivityThread, android.app.ActivityThread$ActivityClientRecord, android.content.Intent, java.lang.String) (ActivityThread.java:-1)
+03-26 18:44:06.159 22633 22633 I art     :   at void android.app.ActivityThread$H.handleMessage(android.os.Message) (ActivityThread.java:1642)
+03-26 18:44:06.159 22633 22633 I art     :   at void android.os.Handler.dispatchMessage(android.os.Message) (Handler.java:102)
+03-26 18:44:06.159 22633 22633 I art     :   at void android.os.Looper.loop() (Looper.java:154)
+03-26 18:44:06.159 22633 22633 I art     :   at void android.app.ActivityThread.main(java.lang.String[]) (ActivityThread.java:6776)
+03-26 18:44:06.159 22633 22633 I art     :   at java.lang.Object java.lang.reflect.Method.invoke!(java.lang.Object, java.lang.Object[]) (Method.java:-2)
+03-26 18:44:06.159 22633 22633 I art     :   at void com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run() (ZygoteInit.java:1520)
+03-26 18:44:06.159 22633 22633 I art     :   at void com.android.internal.os.ZygoteInit.main(java.lang.String[]) (ZygoteInit.java:1410)
+03-26 18:44:06.159 22633 22633 I art     : 
+03-26 18:44:06.167 22633 22633 I Unity   : onResume
+03-26 18:44:06.192 22633 22633 D Choreographer: init sf_choreo_doframe   debug_Level : 0x4f4cdebug_game_running : false
+03-26 18:44:06.197 22633 22633 I SemDesktopModeManager: registerListener: android.view.ViewRootImpl$3@6de01d3
+03-26 18:44:06.257 22633 22633 D InputTransport: Input channel constructed: fd=61
+03-26 18:44:06.258 22633 22633 D ViewRootImpl@d474110[UnityPlayerActivity]: setView = DecorView@f89c409[UnityPlayerActivity] touchMode=true
+03-26 18:44:06.314 22633 22633 I Unity   : onPause
+03-26 18:44:06.321 22633 22633 W Activity: AppLock checkAppLockState locked:false verifying:false pkgName = com.littlegame.teardown.dev isInMultiWindowMode:false
+03-26 18:44:06.322 22633 22633 V InputMethodManager: Not IME target window, ignoring
+03-26 18:44:06.322 22633 22633 D ViewRootImpl@d474110[UnityPlayerActivity]: dispatchAttachedToWindow
+03-26 18:44:06.342 22633 22633 D ViewRootImpl@d474110[UnityPlayerActivity]: Relayout returned: oldFrame=[0,0][0,0] newFrame=[0,0][1080,2220] result=0x27 surface={isValid=true 547585631744} surfaceGenerationChanged=true
+03-26 18:44:06.355 22633 22633 D SurfaceView: Relayout returned: oldFrame=[0,0][0,0] newFrame=[0,0][1080,2220] result=0x7 surface={Surface(name=null)/@0x268eb41 isValid=true 547585638912}
+03-26 18:44:06.356 22633 22682 D Unity   : SetWindow 0 0x7f7ea5c210
+03-26 18:44:06.356 22633 22682 D Unity   : SetWindow 0 0x7f7ea5c210
+03-26 18:44:06.377 22633 22633 D ViewRootImpl@d474110[UnityPlayerActivity]: Relayout returned: oldFrame=[0,0][1080,2220] newFrame=[0,0][1080,2220] result=0x1 surface={isValid=true 547585631744} surfaceGenerationChanged=false
+03-26 18:44:06.392 22633 22633 D SurfaceView: Relayout returned: oldFrame=[0,0][1080,2220] newFrame=[0,0][1080,2220] result=0x1 surface={Surface(name=null)/@0x268eb41 isValid=true 547287199744}
+03-26 18:44:06.419 22633 22633 D ViewRootImpl@d474110[UnityPlayerActivity]: MSG_RESIZED_REPORT: frame=Rect(0, 0 - 1080, 2220) ci=Rect(0, 0 - 0, 0) vi=Rect(0, 63 - 0, 0) or=1
+03-26 18:44:06.426 22633 22633 I Unity   : onResume
+03-26 18:44:06.436 22633 22633 W Activity: AppLock checkAppLockState locked:false verifying:false pkgName = com.littlegame.teardown.dev isInMultiWindowMode:false
+03-26 18:44:06.523 22633 22633 D ViewRootImpl@d474110[UnityPlayerActivity]: MSG_RESIZED: frame=Rect(0, 0 - 1080, 2220) ci=Rect(0, 0 - 0, 0) vi=Rect(0, 0 - 0, 0) or=1
+03-26 18:44:06.534 22633 22633 D ViewRootImpl@d474110[UnityPlayerActivity]: MSG_WINDOW_FOCUS_CHANGED 1
+03-26 18:44:06.534 22633 22633 I Unity   : windowFocusChanged: true
+03-26 18:44:06.567 22633 22633 V InputMethodManager: Starting input: tba=android.view.inputmethod.EditorInfo@3a028e6 nm : com.littlegame.teardown.dev ic=null
+03-26 18:44:06.567 22633 22633 I InputMethodManager: [IMM] startInputInner - mService.startInputOrWindowGainedFocus
+03-26 18:44:06.576 22633 22682 I Unity   : MemoryManager: Using 'Dynamic Heap' Allocator.
+03-26 18:44:06.576 22633 22682 D Unity   : [UnityMemory] Configuration Parameters - Can be set up in boot.config
+03-26 18:44:06.576 22633 22682 D Unity   :     "memorysetup-allocator-temp-initial-block-size-main=262144"
+03-26 18:44:06.576 22633 22682 D Unity   :     "memorysetup-allocator-temp-initial-block-size-worker=262144"
+03-26 18:44:06.576 22633 22682 D Unity   :     "memorysetup-bucket-allocator-granularity=16"
+03-26 18:44:06.576 22633 22682 D Unity   :     "memorysetup-bucket-allocator-bucket-count=8"
+03-26 18:44:06.576 22633 22682 D Unity   :     "memorysetup-bucket-allocator-block-size=4194304"
+03-26 18:44:06.576 22633 22682 D Unity   :     "memorysetup-bucket-allocator-block-count=1"
+03-26 18:44:06.576 22633 22682 D Unity   :     "memorysetup-main-allocator-block-size=16777216"
+03-26 18:44:06.576 22633 22682 D Unity   :     "memorysetup-thread-allocator-block-size=16777216"
+03-26 18:44:06.576 22633 22682 D Unity   :     "memorysetup-gfx-main-allocator-block-size=16777216"
+03-26 18:44:06.576 22633 22682 D Unity   :     "memorysetup-gfx-thread-allocator-block-size=16777216"
+03-26 18:44:06.576 22633 22682 D Unity   :     "memorysetup-cache-allocator-block-size=4194304"
+03-26 18:44:06.576 22633 22682 D Unity   :     "memorysetup-typetree-allocator-block-size=2097152"
+03-26 18:44:06.576 22633 22682 D Unity   :     "memorysetup-profiler-bucket-allocator-granularity=16"
+03-26 18:44:06.576 22633 22682 D Unity   :     "memorysetup-profiler-bucket-allocator-bucket-count=8"
+03-26 18:44:06.576 22633 22682 D Unity   :     "memorysetup-profiler-bucket-allocator-block-size=4194304"
+03-26 18:44:06.576 22633 22682 D Unity   :     "memorysetup-profiler-bucket-allocator-block-count=1"
+03-26 18:44:06.576 22633 22682 D Unity   :     "memorysetup-profiler-allocator-block-size=16777216"
+03-26 18:44:06.576 22633 22682 D Unity   :     "memorysetup-profiler-editor-allocator-block-size=1048576"
+03-26 18:44:06.576 22633 22682 D Unity   :     "memorysetup-temp-allocator-size-main=4194304"
+03-26 18:44:06.576 22633 22682 D Unity   :     "memorysetup-job-temp-allocator-block-size=2097152"
+03-26 18:44:06.576 22633 22682 D Unity   :     "memorysetup-job-temp-allocator-block-size-background=1048576"
+03-26 18:44:06.576 22633 22682 D Unity   :     "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+03-26 18:44:06.576 22633 22682 D Unity   :     "memorysetup-temp-allocator-size-background-worker=32768"
+03-26 18:44:06.576 22633 22682 D Unity   :     "memorysetup-temp-allocator-size-job-worker=262144"
+03-26 18:44:06.576 22633 22682 D Unity   :     "memorysetup-temp-allocator-size-preload-manager=262144"
+03-26 18:44:06.576 22633 22682 D Unity   :     "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+03-26 18:44:06.576 22633 22682 D Unity   :     "memorysetup-temp-allocator-size-audio-worker=65536"
+03-26 18:44:06.576 22633 22682 D Unity   :     "memorysetup-temp-allocator-size-cloud-worker=32768"
+03-26 18:44:06.576 22633 22682 D Unity   :     "memorysetup-temp-allocator-size-gfx=262144"
+03-26 18:44:06.584 22633 22647 D InputTransport: Input channel constructed: fd=69
+03-26 18:44:06.584 22633 22633 V InputMethodManager: Starting input: tba=android.view.inputmethod.EditorInfo@f8bae27 nm : com.littlegame.teardown.dev ic=null
+03-26 18:44:06.685 22633 22682 D Unity   : Enabling Unity systrace
+03-26 18:44:06.728 22633 22682 D Unity   : [VFS] Mount /data/app/com.littlegame.teardown.dev-1/base.apk
+03-26 18:44:06.777 22633 22682 I Unity   : SystemInfo CPU = ARM64 FP ASIMD AES, Cores = 8, Memory = 3363mb
+03-26 18:44:06.777 22633 22682 I Unity   : SystemInfo ARM big.LITTLE configuration: 4 big (mask: 0xf0), 4 little (mask: 0xf)
+03-26 18:44:06.779 22633 22633 D ViewRootImpl@d474110[UnityPlayerActivity]: Relayout returned: oldFrame=[0,0][1080,2220] newFrame=[0,0][1080,2220] result=0x1 surface={isValid=true 547585631744} surfaceGenerationChanged=false
+03-26 18:44:06.780 22633 22682 I Unity   : ApplicationInfo com.littlegame.teardown.dev version 2.0.0
+03-26 18:44:06.780 22633 22682 I Unity   : Built from 'origin/2022.3/china_unity/release' branch, Version '2022.3.62f3c1 (1623fc0bbb97)', Build type 'Development', Scripting Backend 'il2cpp', CPU 'arm64-v8a', Stripping 'Enabled'
+03-26 18:44:06.783 22633 22682 D Unity   : Determine if il2cpp resources need to extracted:
+03-26 18:44:06.783 22633 22682 D Unity   :     Missing '/storage/emulated/0/Android/data/com.littlegame.teardown.dev/files/il2cpp/unity.ver'
+03-26 18:44:06.783 22633 22682 D Unity   :     Extracting il2cpp resources
+03-26 18:44:06.793 22633 22633 D ViewRootImpl@d474110[UnityPlayerActivity]: Relayout returned: oldFrame=[0,0][1080,2220] newFrame=[0,0][1080,2220] result=0x1 surface={isValid=true 547585631744} surfaceGenerationChanged=false
+03-26 18:44:07.142 22633 22682 D Unity   : [EGL] Attaching window :0x7f7ea5c210
+03-26 18:44:07.142 22633 22682 D Unity   : InitializeScriptEngine OK (0x7f564b8fc0)
+03-26 18:44:07.144 22633 22682 D Unity   : Found 1 interfaces on host :
+03-26 18:44:07.144 22633 22682 D Unity   :  0) 192.168.232.54
+03-26 18:44:07.144 22633 22682 D Unity   : 
+03-26 18:44:07.144 22633 22682 D TcpOptimizer: TcpOptimizer-ON
+03-26 18:44:07.146 22633 22682 D Unity   : Player connection [547561923664]  Target information:
+03-26 18:44:07.146 22633 22682 D Unity   : 
+03-26 18:44:07.146 22633 22682 D Unity   : Player connection [547561923664]  * "[IP] 192.168.232.54 [Port] 55000 [Flags] 2 [Guid] 126534182 [EditorId] 3657405872 [Version] 1048832 [Id] AndroidPlayer(11,samsung_SM-G9550@192.168.232.54) [Debug] 0 [PackageName] AndroidPlayer [ProjectName] 符阵军团" 
+03-26 18:44:07.146 22633 22682 D Unity   : 
+03-26 18:44:07.146 22633 22682 D Unity   : Player connection [547561923664] Started UDP target info broadcast (1) on [225.0.0.222:54997].
+03-26 18:44:07.146 22633 22682 D Unity   : 
+03-26 18:44:07.164 22633 22682 D Unity   : [PhysX] Initialized MultithreadedTaskDispatcher with 5 workers.
+03-26 18:44:07.168 22633 22682 D Unity   : PlayerInitEngineNoGraphics OK
+03-26 18:44:07.169 22633 22682 I Unity   : Company Name: DefaultCompany
+03-26 18:44:07.169 22633 22682 I Unity   : Product Name: 符阵军团
+03-26 18:44:07.169 22633 22682 D Unity   : AndroidGraphics::Startup window =  0x7f7ea5c210
+03-26 18:44:07.169 22633 22682 D Unity   : [EGL] Attaching window :0x7f7ea5c210
+03-26 18:44:07.174 22633 22682 E vulkan  : invalid vkGetInstanceProcAddr(VK_NULL_HANDLE, "vkEnumerateInstanceVersion") call
+03-26 18:44:07.338 22633 22682 D vulkan  : searching for layers in '/data/app/com.littlegame.teardown.dev-1/lib/arm64'
+03-26 18:44:07.338 22633 22682 D vulkan  : searching for layers in '/data/app/com.littlegame.teardown.dev-1/base.apk!/lib/arm64-v8a'
+03-26 18:44:07.341 22633 22682 D Unity   : [Vulkan init] extensions: count=4
+03-26 18:44:07.341 22633 22682 D Unity   : [Vulkan init] extensions: name=VK_EXT_debug_report [enabled=1, external=0]
+03-26 18:44:07.341 22633 22682 D Unity   : [Vulkan init] extensions: name=VK_KHR_android_surface [enabled=1, external=0]
+03-26 18:44:07.341 22633 22682 D Unity   : [Vulkan init] extensions: name=VK_KHR_get_physical_device_properties2 [enabled=1, external=0]
+03-26 18:44:07.341 22633 22682 D Unity   : [Vulkan init] extensions: name=VK_KHR_surface [enabled=1, external=0]
+03-26 18:44:07.341 22633 22682 D vulkan  : vulkan api version_1_0 1.0.0
+03-26 18:44:07.341 22633 22682 D vulkan  : vulkan header version 13
+03-26 18:44:07.352 22633 22682 I Adreno  : QUALCOMM build          : c14e124, I87973f90d2
+03-26 18:44:07.352 22633 22682 I Adreno  : Build Date              : 03/30/17
+03-26 18:44:07.352 22633 22682 I Adreno  : Shader Compiler Version : V14.00.00
+03-26 18:44:07.352 22633 22682 I Adreno  : Local Branch            : 
+03-26 18:44:07.352 22633 22682 I Adreno  : Remote Branch           : 
+03-26 18:44:07.352 22633 22682 I Adreno  : Remote Branch           : 
+03-26 18:44:07.352 22633 22682 I Adreno  : Reconstruct Branch      : 
+03-26 18:44:07.355 22633 22682 D Unity   : [Vulkan init] SelectPhysicalDevice requestedDeviceIndex=-1 xrDevice=0x0
+03-26 18:44:07.355 22633 22682 D Unity   : [Vulkan init] Physical Device 0x7f71198320 [0]: "Adreno (TM) 540" deviceType=1 vendorID=5143 deviceID=5040001
+03-26 18:44:07.355 22633 22682 D Unity   : Incompatible driver detected - Vendor[Qualcomm] DriverVersion[1.0.38] RequestedVersion[1.0.49] (API version)
+03-26 18:44:07.355 22633 22682 D Unity   : Vulkan detection: 1
+03-26 18:44:07.356 22633 22682 I Adreno  : QUALCOMM build                   : dd296bd, I7547f23799
+03-26 18:44:07.356 22633 22682 I Adreno  : Build Date                       : 03/29/17
+03-26 18:44:07.356 22633 22682 I Adreno  : OpenGL ES Shader Compiler Version: XE031.12.00.02
+03-26 18:44:07.356 22633 22682 I Adreno  : Local Branch                     : 
+03-26 18:44:07.356 22633 22682 I Adreno  : Remote Branch                    : refs/tags/AU_LINUX_ANDROID_LA.UM.5.7.C1.07.00.00.278.066
+03-26 18:44:07.356 22633 22682 I Adreno  : Remote Branch                    : NONE
+03-26 18:44:07.356 22633 22682 I Adreno  : Reconstruct Branch               : NOTHING
+03-26 18:44:07.357 22633 22682 I Adreno  : PFP: 0x005ff104, ME: 0x005ff063
+03-26 18:44:07.359 22633 22682 D Unity   : [EGL] Request: ES 3.2 RGB 000 0/0
+03-26 18:44:07.360 22633 22682 D Unity   : [EGL] Checking ES 3.2 support...
+03-26 18:44:07.363 22633 22682 D Unity   : [EGL] ES 3.2 support detected
+03-26 18:44:07.364 22633 22682 D Unity   : [EGL] Found: ID[1] ES 3.2 RGB 565 0/0
+03-26 18:44:07.364 22633 22682 D Unity   : GfxDevice: creating device client; threaded=1; jobified=0
+03-26 18:44:07.364 22633 22682 D Unity   : [EGL] Request: ES 3.2 RGB 000 0/0
+03-26 18:44:07.364 22633 22682 D Unity   : [EGL] Found: ID[1] ES 3.2 RGB 565 0/0
+03-26 18:44:07.364 22633 22682 D Unity   : [EGL] Request: ES 3.0 RGBA 8888 0/0
+03-26 18:44:07.366 22633 22682 D Unity   : [EGL] Found: ID[9] ES 3.0 RGBA 8888 0/0
+03-26 18:44:07.371 22633 22682 D Unity   : ANativeWindow: (1080/2220) RequestedResolution: (0/0) RenderingResolution: (0/0) EGLSurface: (1080/2220)
+03-26 18:44:07.377 22633 22682 D Unity   : Renderer: Adreno (TM) 540
+03-26 18:44:07.377 22633 22682 D Unity   : Vendor:   Qualcomm
+03-26 18:44:07.377 22633 22682 D Unity   : Version:  OpenGL ES 3.2 V@197.0 (GIT@dd296bd, I7547f23799) (Date:03/29/17)
+03-26 18:44:07.377 22633 22682 D Unity   : GLES:     3
+03-26 18:44:07.377 22633 22682 D Unity   :  GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_EGL_sync GL_OES_vertex_half_float GL_OES_framebuffer_object GL_OES_rgb8_rgba8 GL_OES_compressed_ETC1_RGB8_texture GL_AMD_compressed_ATC_texture GL_KHR_texture_compression_astc_ldr GL_KHR_texture_compression_astc_hdr GL_OES_texture_compression_astc GL_OES_texture_npot GL_EXT_texture_filter_anisotropic GL_EXT_texture_format_BGRA8888 GL_OES_texture_3D GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_QCOM_alpha_test GL_OES_depth24 GL_OES_packed_depth_stencil GL_OES_depth_texture GL_OES_depth_texture_cube_map GL_EXT_sRGB GL_OES_texture_float GL_OES_texture_float_linear GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_EXT_texture_type_2_10_10_10_REV GL_EXT_texture_sRGB_decode GL_OES_element_index_uint GL_EXT_copy_image GL_EXT_geometry_shader GL_EXT_tessellation_shader GL_OES_texture_stencil8 GL_EXT_shader_io_blocks GL_OES_shader_image_atomic GL_OES_sample_variables GL_EXT_texture_border_clamp GL_EXT_multisampled_render_to_texture GL_OES_sha
+03-26 18:44:07.377 22633 22682 D Unity   : der_multisample_interpolation GL_EXT_texture_cube_map_array GL_EXT_draw_buffers_indexed GL_EXT_gpu_shader5 GL_EXT_robustness GL_EXT_texture_buffer GL_EXT_shader_framebuffer_fetch GL_ARM_shader_framebuffer_fetch_depth_stencil GL_OES_texture_storage_multisample_2d_array GL_OES_sample_shading GL_OES_get_program_binary GL_EXT_debug_label GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_QCOM_tiled_rendering GL_ANDROID_extension_pack_es31a GL_EXT_primitive_bounding_box GL_OES_standard_derivatives GL_OES_vertex_array_object GL_EXT_disjoint_timer_query GL_KHR_debug GL_EXT_YUV_target GL_EXT_sRGB_write_control GL_EXT_texture_norm16 GL_EXT_discard_framebuffer GL_OES_surfaceless_context GL_OVR_multiview GL_OVR_multiview2 GL_EXT_texture_sRGB_R8 GL_ARB_texture_barrier GL_KHR_no_error GL_EXT_debug_marker GL_OES_EGL_image_external_essl3 GL_OVR_multiview_multisampled_render_to_texture GL_EXT_buffer_storage GL_EXT_blit_framebuffer_params GL_EXT_clip_cull_distance GL_EXT_protected_textures GL_EXT_shade
+03-26 18:44:07.377 22633 22682 D Unity   : r_non_constant_global_initializers
+03-26 18:44:07.383 22633 22682 D Unity   : OPENGL LOG: Creating OpenGL ES 3.2 graphics device ; Context level  <OpenGL ES 3.2> ; Context handle 1382636160
+03-26 18:44:07.384 22633 22682 D Unity   : [EGL] Attaching window :0x7f7ea5c210
+03-26 18:44:07.385 22633 22682 D Unity   : Requested framebuffer: resolution[1080x2220], rgba[8/8/8/8], depth+stencil[on], samples[1]
+03-26 18:44:07.385 22633 22682 D Unity   : Created framebuffer: resolution[1080x2220], rgba[8/8/8/8], depth+stencil[24/8], samples[0] 
+03-26 18:44:07.395 22633 22682 D Unity   : [EGL] Attaching window :0x7f7ea5c210
+03-26 18:44:07.395 22633 22682 D Unity   : Initialize engine version: 2022.3.62f3c1 (1623fc0bbb97)
+03-26 18:44:07.420 22633 22682 I libOpenSLES: Emulating old channel mask behavior (ignoring positional mask 0x3, using default mask 0x3 based on channel count of 2)
+03-26 18:44:07.420 22633 22682 W AudioTrack: notificationFrames=-10 clamped to the range -1 to -8
+03-26 18:44:07.427 22633 22682 D AudioTrack: Client defaulted notificationFrames to 192 for frameCount 1536
+03-26 18:44:07.428 22633 22682 I AudioTrack: updateAudioTranstionLength FadeIn[0] FadeOut[0] FadeInRing[0]
+03-26 18:44:07.550 22633 22682 D Unity   : PlayerInitEngineGraphics OK
+03-26 18:44:07.591 22633 22682 D Unity   : Found 29 native sensors
+03-26 18:44:07.597 22633 22633 D ViewRootImpl@d474110[UnityPlayerActivity]: Relayout returned: oldFrame=[0,0][1080,2220] newFrame=[0,0][1080,2220] result=0x1 surface={isValid=true 547585631744} surfaceGenerationChanged=false
+03-26 18:44:07.605 22633 22682 I sensor  : ASensorEventQueue_enableSensor: handle=1, name=LSM6DSL Accelerometer, ret=0
+03-26 18:44:07.605 22633 22682 D Unity   : Sensor :        Accelerometer ( 1) ; 0.002396 / 0.00s ; LSM6DSL Accelerometer / STMicroelectronics 
+03-26 18:44:07.606 22633 22682 I sensor  : ASensorEventQueue_setEventRate: handle=1, name=LSM6DSL Accelerometer, delay=20000, ret=0
+03-26 18:44:07.606 22633 22682 D Unity   : Sensor :        Accelerometer ( 1) ; 0.002396 / 0.00s ; LSM6DSL Accelerometer / STMicroelectronics 
+03-26 18:44:07.606 22633 22682 D Unity   : enabled Accelerometer sensor
+03-26 18:44:07.617 22633 22682 D Unity   : ANativeWindow: (1080/2220) RequestedResolution: (0/0) RenderingResolution: (0/0) EGLSurface: (1080/2220)
+03-26 18:44:07.621 22633 22682 V MediaRouter: Adding route: RouteInfo{ name=电话, description=null, status=null, category=RouteCategory{ name=null types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+03-26 18:44:07.627 22633 22682 V MediaRouter: Updating audio routes: AudioRoutesInfo{ type=SPEAKER }
+03-26 18:44:07.629 22633 22682 V MediaRouter: Selecting route: RouteInfo{ name=电话, description=null, status=null, category=RouteCategory{ name=null types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+03-26 18:44:07.876 22633 22633 D ViewRootImpl@d474110[UnityPlayerActivity]: Relayout returned: oldFrame=[0,0][1080,2220] newFrame=[0,0][1080,2220] result=0x1 surface={isValid=true 547585631744} surfaceGenerationChanged=false
+03-26 18:44:09.697 22633 22682 D Unity   : [PhysX] Initialized MultithreadedTaskDispatcher with 5 workers.
+03-26 18:44:09.698 22633 22682 D Unity   : UnloadTime: 1.488020 ms
+03-26 18:44:09.730 22633 22842 D Unity   : Requested framebuffer: resolution[1080x2220], rgba[8/8/8/8], depth+stencil[on], samples[4]
+03-26 18:44:09.730 22633 22842 D Unity   : Created framebuffer: resolution[1080x2220], rgba[8/8/8/8], depth+stencil[24/8], samples[4] (MSAA)
+03-26 18:44:10.024 22633 22682 I IL2CPP  : Locale zh-Hans-CN
+03-26 18:44:10.076 22633 22682 I Unity   : [Client] 军团客户端启动；MCP与玩家共用指令，场景=Assets/Scenes/Combat.unity
+03-26 18:44:10.076 22633 22682 I Unity   : LittleGame.Client.ClientBootstrap:Awake()
+03-26 18:44:10.076 22633 22682 I Unity   : UnityEngine.GameObject:AddComponent()
+03-26 18:44:10.076 22633 22682 I Unity   : LittleGame.Client.ClientBootstrap:TryBoot()
+03-26 18:44:10.076 22633 22682 I Unity   : 
+03-26 18:44:10.110 22633 22633 D ViewRootImpl@d474110[UnityPlayerActivity]: Relayout returned: oldFrame=[0,0][1080,2220] newFrame=[0,0][1080,2220] result=0x1 surface={isValid=true 547585631744} surfaceGenerationChanged=false
+03-26 18:44:10.110 22633 22682 I sensor  : ASensorEventQueue_enableSensor: handle=1, name=LSM6DSL Accelerometer, ret=0
+03-26 18:44:10.111 22633 22682 I sensor  : ASensorEventQueue_setEventRate: handle=1, name=LSM6DSL Accelerometer, delay=20000, ret=0
+03-26 18:44:10.111 22633 22682 D Unity   : Sensor :        Accelerometer ( 1) ; 0.002396 / 0.00s ; LSM6DSL Accelerometer / STMicroelectronics 
+03-26 18:44:10.111 22633 22682 D Unity   : Choreographer available: Enabling VSYNC timing
+03-26 18:44:10.116 22633 23069 D Choreographer: init sf_choreo_doframe   debug_Level : 0x4f4cdebug_game_running : false
+03-26 18:44:11.106 22633 22682 D Unity   : ANativeWindow: (1080/2220) RequestedResolution: (0/0) RenderingResolution: (0/0) EGLSurface: (1080/2220)

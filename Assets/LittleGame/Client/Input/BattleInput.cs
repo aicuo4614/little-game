@@ -6,12 +6,15 @@ namespace LittleGame.Client
 {
     /// <summary>
     /// 鼠标、触屏与 MCP pointer 共用输入入口：
-    /// 1. 拖拽场上或候补单位时：立即在战场地面显现整体白色布阵框，同时在高于 UI 的 3D 拖拽层拎起 1:1 同大小、面向右(+X)的真实 3D 模型；
-    /// 2. 在白框内自由松手即落位（贴近已有单位自动替换），满员拖入白框空处先轻踩再抛物线弹回 + 红色 Tip；
-    /// 3. 拖动超出白色布阵框松手：弹出红色 Tip 提示拖拽失败，候补单位抛物线弹回原槽、场上单位留在原位。
+    /// 1. 按下(tap)命中场上单位立即选中（只显示脚底光环，不弹出任何按钮面板）；
+    /// 2. 拖拽单位时，超出白色布阵框不再变红拒绝，而是夹紧到可放置区域离手最近的点 A 并在 A 点显示半透明剪影预览，松手落位至 A；
+    /// 3. 拖拽场上单位到候补军团区域松手，直接召回至候补；
+    /// 4. 双击候补军团卡片自动寻找白色布阵框内最合适的空位上阵（与拖拽复用同一套 Deploy 规则）。
     /// </summary>
     public sealed class BattleInput : MonoBehaviour
     {
+        private const float DoubleTapWindow = 0.42f;
+
         private BattleApplication app;
         private BattleSceneView view;
         private BattleHud hud;
@@ -20,6 +23,10 @@ namespace LittleGame.Client
         private int heldUnit, finger = -1;
         private string heldButton;
         private RectTransform pressedVisual;
+
+        // 双击候补卡片状态
+        private int lastReserveTapUnitId;
+        private float lastReserveTapTime = -10f;
 
         public void Bind(BattleApplication application, BattleSceneView scene, BattleHud ui)
         {
@@ -60,7 +67,11 @@ namespace LittleGame.Client
                 pressedVisual = hit?.Rect;
                 if (pressedVisual != null) pressedVisual.localScale = Vector3.one * .96f;
                 if (hit == null && !hud.BlocksWorld && app.Session.Phase == RunPhase.Preparation)
+                {
                     heldUnit = view.HitUnit(point, false);
+                    // Tap 即选中场上单位，无需等 click 松手
+                    if (heldUnit > 0) hud.Select(heldUnit);
+                }
                 return;
             }
 
@@ -85,15 +96,30 @@ namespace LittleGame.Client
                             view.DragOverlay?.UpdateDrag(point);
                         }
 
-                        // 只要起拖（包括从候补 UI 拖出），立即显示整体白色布阵框
-                        bool hasGround = view.ScreenToGround(point, out var ground, requireViewport: false);
-                        bool inViewport = BattleSceneView.IsInBattleViewport(point);
-                        bool insideBox = hasGround && inViewport && BattleDefinitions.IsInsideDeployBox(ground.x, ground.z);
-                        bool occupied = insideBox && app.Session.Troops.Any(t =>
-                            t.Id != troop.Id && t.Deployed &&
-                            Vector2.Distance(new Vector2(t.HomeX, t.HomeZ), new Vector2(ground.x, ground.z)) <= 0.78f);
-                        bool canPlace = insideBox && (troop.Deployed || occupied || app.Session.DeployedCount < app.Session.MaxDeployed);
-                        view.SetDragZoneVisual(true, hasGround ? ground : Vector3.zero, insideBox, canPlace);
+                        bool overReserve = troop.Deployed && hud.IsPointInReserveArea(point);
+                        hud.SetReserveDropHighlight(overReserve);
+
+                        if (overReserve)
+                        {
+                            view.SetDragZoneVisual(true, Vector3.zero, showSpot: false, isReplace: false);
+                            view.DragOverlay?.UpdateLandingPreview(false, Vector3.zero, false);
+                        }
+                        else if (view.ScreenToGround(point, out var ground, requireViewport: false))
+                        {
+                            // 超出白框外不再变红，夹紧到可放置区域离手最近的点 A，并在 A 点显示半透明剪影角色
+                            BattleDefinitions.ClampToDeployBox(ground.x, ground.z, out float cx, out float cz);
+                            Vector3 clampedPos = new Vector3(cx, 0.12f, cz);
+                            bool occupied = app.Session.Troops.Any(t =>
+                                t.Id != troop.Id && t.Deployed &&
+                                Vector2.Distance(new Vector2(t.HomeX, t.HomeZ), new Vector2(cx, cz)) <= 0.78f);
+                            view.SetDragZoneVisual(true, clampedPos, showSpot: true, isReplace: occupied);
+                            view.DragOverlay?.UpdateLandingPreview(true, clampedPos, occupied);
+                        }
+                        else
+                        {
+                            view.SetDragZoneVisual(true, Vector3.zero, showSpot: false, isReplace: false);
+                            view.DragOverlay?.UpdateLandingPreview(false, Vector3.zero, false);
+                        }
                     }
                 }
                 return;
@@ -106,6 +132,7 @@ namespace LittleGame.Client
             Vector2 dragOrigin = start;
             bool hadGhost = ghostStarted;
             ClearHoldState(keepGhost: hadGhost);
+            hud.SetReserveDropHighlight(false);
             view.SetDragZoneVisual(false, Vector3.zero, false, false);
 
             if (wasDragged)
@@ -113,16 +140,33 @@ namespace LittleGame.Client
                 var troop = app.Session.Troops.FirstOrDefault(t => t.Id == unit);
                 if (unit > 0 && troop != null && !hud.BlocksWorld && app.Session.Phase == RunPhase.Preparation)
                 {
-                    if (view.ScreenToGround(point, out var dropWorld, requireViewport: true))
+                    // 1. 场上单位拖到候补区松手 -> 直接召回候补
+                    if (troop.Deployed && hud.IsPointInReserveArea(point))
                     {
-                        bool insideBox = BattleDefinitions.IsInsideDeployBox(dropWorld.x, dropWorld.z);
+                        hud.Submit(new BattleCommand { Kind = CommandKind.Recall, UnitId = unit });
+                        if (app.LastResult.Accepted)
+                        {
+                            view.DragOverlay?.EndDragSuccess();
+                            hud.ClearSelection();
+                        }
+                        else
+                        {
+                            view.DragOverlay?.CancelDrag();
+                        }
+                        return;
+                    }
+
+                    // 2. 其他任意位置松手 -> 夹紧到可放置区域离手最近的点 A 落位
+                    if (view.ScreenToGround(point, out var dropWorld, requireViewport: false))
+                    {
+                        BattleDefinitions.ClampToDeployBox(dropWorld.x, dropWorld.z, out float cx, out float cz);
                         hud.Submit(new BattleCommand
                         {
                             Kind = CommandKind.Deploy,
                             UnitId = unit,
                             UseWorldPos = true,
-                            TargetX = dropWorld.x,
-                            TargetZ = dropWorld.z
+                            TargetX = cx,
+                            TargetZ = cz
                         });
                         if (app.LastResult.Accepted)
                         {
@@ -132,19 +176,12 @@ namespace LittleGame.Client
                         else
                         {
                             if (!troop.Deployed)
-                                view.DragOverlay?.BounceBackToSlot(troop, point, dragOrigin, pauseOnLand: insideBox);
+                                view.DragOverlay?.BounceBackToSlot(troop, point, dragOrigin, pauseOnLand: true);
                             else
                                 view.DragOverlay?.CancelDrag();
                         }
                         return;
                     }
-
-                    hud.ShowTip("拖动超出白色布阵范围，放置失败", isError: true);
-                    if (!troop.Deployed)
-                        view.DragOverlay?.BounceBackToSlot(troop, point, dragOrigin, pauseOnLand: false);
-                    else
-                        view.DragOverlay?.CancelDrag();
-                    return;
                 }
                 view.DragOverlay?.CancelDrag();
                 return;
@@ -154,9 +191,36 @@ namespace LittleGame.Client
             var endHit = hud.Hit(point);
             if (button != null)
             {
-                if (endHit?.Id == button) endHit.Click();
+                if (endHit?.Id == button)
+                {
+                    // 双击候补卡片自动寻找合适位置上场（与拖拽复用同一套 Deploy 规则）
+                    if (button.StartsWith("unit_") && unit > 0 && app.Session.Phase == RunPhase.Preparation && !hud.BlocksWorld)
+                    {
+                        var reserveTroop = app.Session.Troops.FirstOrDefault(t => t.Id == unit && !t.Deployed);
+                        if (reserveTroop != null)
+                        {
+                            float now = Time.unscaledTime;
+                            if (lastReserveTapUnitId == unit && (now - lastReserveTapTime) <= DoubleTapWindow)
+                            {
+                                lastReserveTapUnitId = 0;
+                                lastReserveTapTime = -10f;
+                                TryAutoDeployReserveTroop(reserveTroop);
+                                return;
+                            }
+                            lastReserveTapUnitId = unit;
+                            lastReserveTapTime = now;
+                        }
+                    }
+                    else
+                    {
+                        lastReserveTapUnitId = 0;
+                    }
+                    endHit.Click();
+                }
                 return;
             }
+
+            lastReserveTapUnitId = 0;
             if (hud.BlocksWorld) return;
             var s = app.Session;
             if (s.Aim == AimKind.Focus)
@@ -172,21 +236,52 @@ namespace LittleGame.Client
                 return;
             }
             if (s.Phase != RunPhase.Preparation) return;
-            if (unit > 0) hud.Select(unit);
-            else if (hud.Selected > 0 && view.ScreenToGround(point, out var tapWorld, requireViewport: true) && BattleDefinitions.IsInsideDeployBox(tapWorld.x, tapWorld.z))
+            if (unit > 0)
+            {
+                hud.Select(unit);
+            }
+            else if (hud.Selected > 0 && view.ScreenToGround(point, out var tapWorld, requireViewport: true))
             {
                 var sel = s.Troops.FirstOrDefault(t => t.Id == hud.Selected);
                 if (sel != null && sel.Deployed)
-                    hud.Submit(new BattleCommand { Kind = CommandKind.Deploy, UnitId = hud.Selected, UseWorldPos = true, TargetX = tapWorld.x, TargetZ = tapWorld.z });
+                {
+                    BattleDefinitions.ClampToDeployBox(tapWorld.x, tapWorld.z, out float cx, out float cz);
+                    hud.Submit(new BattleCommand { Kind = CommandKind.Deploy, UnitId = hud.Selected, UseWorldPos = true, TargetX = cx, TargetZ = cz });
+                }
                 else
+                {
                     hud.ClearSelection();
+                }
             }
-            else hud.ClearSelection();
+            else
+            {
+                hud.ClearSelection();
+            }
+        }
+
+        private void TryAutoDeployReserveTroop(Troop reserveTroop)
+        {
+            if (!app.Session.FindAutoDeployPosition(reserveTroop, out float ax, out float az))
+            {
+                hud.ShowTip("未找到合适的部署位置", isError: true);
+                return;
+            }
+            hud.Submit(new BattleCommand
+            {
+                Kind = CommandKind.Deploy,
+                UnitId = reserveTroop.Id,
+                UseWorldPos = true,
+                TargetX = ax,
+                TargetZ = az
+            });
+            if (app.LastResult.Accepted)
+                hud.Select(reserveTroop.Id);
         }
 
         public void Cancel()
         {
             ClearHoldState(keepGhost: false);
+            hud?.SetReserveDropHighlight(false);
             view?.SetDragZoneVisual(false, Vector3.zero, false, false);
         }
 

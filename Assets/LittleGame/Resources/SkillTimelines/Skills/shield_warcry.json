@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 1,
+  "SchemaVersion": 2,
   "TimelineId": "shield_warcry",
   "DisplayName": "盾卫·战吼激励",
   "DurationBindClipKey": "",
@@ -74,5 +74,13 @@
       "Frequency": 26.0,
       "EventConfigs": []
     }
-  ]
+  ],
+  "Execution": {
+    "Enabled": true,
+    "LaunchKey": "ev_cry",
+    "ImpactKey": "c_hit",
+    "RecoveryKey": "c_anim",
+    "InterruptOnControl": true,
+    "TrackTarget": true
+  }
 }

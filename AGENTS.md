@@ -2,6 +2,13 @@
 
 ## 最新已确认方向与规则 2026-11-23
 
+- 2026-11-25 用户要求战斗 AI 使用状态机或行为树规范实现。当前规模采用纯规则层有限状态机，明确待机、追击、交战、阻挡等待、受控、死亡及转移边界；行为意图、避障执行、伤害结算与表现分离，状态和目标同步向 MCP 开放并做正常玩法验收。
+- 2026-11-25 用户反馈未选中单位脚底常驻彩圈难看；移除职业/阵营、分支、三星和旧版手动合成装饰圈，保留实际选中和临时状态、技能范围/危险预警。用户同时提出阻挡时应站定等待；此前的站位/等待建议现已开始按下述A*导航方案落地，验证范围以最新报告为准。
+- 2026-11-25 用户提供旧横板动作工程 `E:\Project\射雕1.9版本\Client` 作为移动/AI只读参考，不要求照搬；未授权迁入其中代码或美术，不启动、升级或修改源工程（Unity 5.6.6f2）。用户随后明确：不是禁止 RVO，而是采用适合需求、实际体验好的方案，允许客观比较 A*、NavMesh、RVO 及开源实现；此前“不使用 RVO”的限制已被此澄清覆盖。此前为方案分析；用户本轮要求继续推进后已接入A*战斗导航，仍以实测结果评估，不新增禁止RVO的限制。
+- 2026-11-25 已研究开源导航候选 `https://github.com/roy-t/AStar`（MIT）、`https://github.com/ikpil/DotRecast`（Zlib）、`https://github.com/juhgiyo/EpPathFinding.cs`（README标注MIT），以及 Aron Granberg A* Pathfinding Project 和 Unity AI Navigation 官方文档。范围为公开源码/许可证/依赖只读研究和隔离验证；Roy核心已缓存于 Library 作.NET路径测试，未接入Unity运行时、未购买插件。具体版本、风险和验证状态见资源目录及 Reports/Combat/navigation-options-20261125.json。
+
+- 2026-11-25 本轮已迁入 Roy-T.AStar 核心（MIT，固定提交 `3d57efaa83c8cd217e4973fd4738c57e2f694bd2`）到 `Assets/LittleGame/ThirdParty/RoyTAStar`，以独立无Unity依赖程序集被Domain引用；保留许可和来源，动态通行过滤属于本项目修改。战斗现用攻击落点预订、A*路径、安全连续移动、阻挡等待与实际位移速度；旧RVO实现保留在 `Archive~/NavigationRvo`，不参与当前运行。纯规则绕行/无路/恢复/相向/体型测试通过，Unity正常流程正在验收；MCP扩展1.6.0、快照schema6返回导航路径与阻挡原因，不能把规则测试当成手机验证。
+
 - 2026-11-24 用户确认 AutoClash 与本次指定资源均可使用，不再核对商用授权；继续做技术兼容、材质与运行验证。已授权尽量完整制作遗迹庭院场景，不顺带修改老虎机规则或 UI。
 - 2026-11-24 用户新增授权 `E:\Project\PELibDemo` 内模型资源可用于本项目。资源统一登记与选型见 `Docs/Art-Resource-Catalog.md`；后续对话出现新的资源路径、网站、资源包或参考时，智能体必须主动更新本文件的来源登记及该目录文档，保留授权范围和验证状态，无需用户再次提醒。
 - 2026-11-24 用户明确允许单位使用 Demo 工程的卡通渲染 Shader；已定位 `F:\Git\kabu_mobile\demo\client-demo-assets\Assets\Art\Shaders\Roco` 的 `Roco/Character` 及 Demo Rendering 中配套描边 Feature。按需直接迁入本项目并适配 URP14，不因 Shader 存在就宣称模型、描边或手机效果已验证。
@@ -86,7 +93,7 @@
 
 ## 美术与资源分工
 
-- 统一资源入口：`E:\Art\material-vault`（素材收藏室，网站 `https://myassetroom.com`）、`E:\Project\AutoClash_20210125\AutoClash1`（已授权资源工程）、`E:\Project\PELibDemo`（已授权模型资源工程）、`E:\Project\bump`（2026-11-24 用户新增的玩法/镜头/体验参考工程，仅参考，未明确素材或代码使用授权），以及 Unity Asset Store、作者官网/itch.io、其他按需筛选的网络来源。详细路径、已检查资源、用途、缺口和验证记录维护在 `Docs/Art-Resource-Catalog.md`。上述外部工程默认只读，按需提取依赖到当前工程，不整库搬入、不升级或改写源工程。
+- 统一资源入口：`E:\Art\material-vault`（素材收藏室，网站 `https://myassetroom.com`）、`E:\Project\AutoClash_20210125\AutoClash1`（已授权资源工程）、`E:\Project\PELibDemo`（已授权模型资源工程）、`E:\Project\bump`（2026-11-24 用户新增的玩法/镜头/体验参考工程，仅参考，未明确素材或代码使用授权）、`E:\Project\AnimalBattle`（2026-11-25 用户新增的避障算法参考工程，只读检查发现内含 Apache License 2.0 开源的 RVO2 Library C#，仅引用其开源 RVO2/ORCA 避障算法，不搬入其他美术素材或业务代码），以及 Unity Asset Store、作者官网/itch.io、其他按需筛选的网络来源。详细路径、已检查资源、用途、缺口和验证记录维护在 `Docs/Art-Resource-Catalog.md`。上述外部工程默认只读，按需提取依赖到当前工程，不整库搬入、不升级或改写源工程。
 - 后续新增资源参考必须在当前任务中自动持久化：在本文件登记来源入口及用户明确的授权范围；在资源目录记录具体路径/链接、提出日期、适用对象、获取状态、技术风险与验证状态。只有参考、没有明确使用授权的，不写成已授权；当前不可访问的也要登记并注明，不能丢失线索。重复来源合并补充，过时结论标记更新，不靠聊天记忆保存。
 - 选型统一比较现有项目资源、素材网缓存包、商店与作者来源。已有合适本地包时先检查，避免重复索取或购买；不能只按文件夹名称、预制体数或宣传数量判断完整度。用户已确认可使用的 AutoClash 资源及 PELibDemo 模型不反复请求商用授权确认，继续核查实际模型、动作、材质、性能和运行情况；新网络来源仍按其实际许可和获取条件处理。
 - 现有素材来源包括 `E:\Art\material-vault`。选型时优先检索其现有目录、预览、来源许可和本地下载包；它是外部素材来源，不默认修改该项目或将整库复制进 Unity。

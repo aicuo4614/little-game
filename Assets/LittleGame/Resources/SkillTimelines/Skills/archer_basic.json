@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 1,
+  "SchemaVersion": 2,
   "TimelineId": "archer_basic",
   "DisplayName": "风弓手普攻",
   "DurationBindClipKey": "",
@@ -30,9 +30,9 @@
       "DelayTime": 0.0,
       "Duration": 0.14,
       "EffectId": "fx_arrow_basic",
-      "FromAnchor": "Caster",
+      "FromAnchor": "CastPoint",
       "ToAnchor": "Target",
-      "StartHeight": 0.72,
+      "StartHeight": 0,
       "EndHeight": 0.65,
       "ArcHeight": 0.18,
       "Width": 0.07,
@@ -61,5 +61,13 @@
       "ColorHex": "#D7FFB8",
       "EventConfigs": []
     }
-  ]
+  ],
+  "Execution": {
+    "Enabled": true,
+    "LaunchKey": "c_arrow",
+    "ImpactKey": "c_hit",
+    "RecoveryKey": "c_anim",
+    "InterruptOnControl": true,
+    "TrackTarget": true
+  }
 }

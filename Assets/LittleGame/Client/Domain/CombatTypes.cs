@@ -45,6 +45,13 @@ namespace LittleGame.Combat
         public float HomeZ { get; internal set; }
         public float X { get; internal set; }
         public float Z { get; internal set; }
+        /// <summary>执行移动并处理碰撞/边界后的实际速度（米/秒）。</summary>
+        public float Vx { get; internal set; }
+        public float Vz { get; internal set; }
+        /// <summary>当前追击/攻击目标；避免新怪出现时每帧抢换最近目标。</summary>
+        public int TargetId { get; internal set; }
+        public CombatAiState AiState { get; internal set; }
+        public BattleNavigationState Navigation { get; } = new BattleNavigationState();
         /// <summary>当前朝向角（度，0=+Z，90=+X 向右推进，-90=-X 向左）。</summary>
         public float FacingYaw { get; internal set; } = 90f;
         /// <summary>转身速率（度/秒）。</summary>
@@ -69,6 +76,12 @@ namespace LittleGame.Combat
         public int Lane { get; internal set; }
         public float X { get; internal set; }
         public float Z { get; internal set; }
+        /// <summary>执行移动并处理碰撞/边界后的实际速度（米/秒）。</summary>
+        public float Vx { get; internal set; }
+        public float Vz { get; internal set; }
+        public int TargetId { get; internal set; }
+        public CombatAiState AiState { get; internal set; }
+        public BattleNavigationState Navigation { get; } = new BattleNavigationState();
         public float FacingYaw { get; internal set; } = -90f;
         public float TurnSpeed { get; internal set; } = 360f;
         public float MoveSpeed { get; internal set; } = 1.15f;
@@ -87,6 +100,9 @@ namespace LittleGame.Combat
         public string Type, Message;
         public int Source, Target, Lane;
         public float Amount, Time;
+        public int SkillInstanceId;
+        public string TimelineId, Trigger;
+        public float CasterX, CasterZ, TargetX, TargetZ, FacingYaw;
     }
 
     public sealed class WaveSpawn { public EnemyKind Kind; public int Lane; public float At; }

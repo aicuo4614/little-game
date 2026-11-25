@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 1,
+  "SchemaVersion": 2,
   "TimelineId": "frost_icearmor",
   "DisplayName": "冰法师·极寒冰甲",
   "DurationBindClipKey": "",
@@ -50,9 +50,9 @@
       "DelayTime": 0.0,
       "Duration": 0.16,
       "EffectId": "fx_ice_lance",
-      "FromAnchor": "Caster",
+      "FromAnchor": "CastPoint",
       "ToAnchor": "Target",
-      "StartHeight": 0.72,
+      "StartHeight": 0,
       "EndHeight": 0.65,
       "ArcHeight": 0.18,
       "Width": 0.12,
@@ -81,5 +81,13 @@
       "ColorHex": "#CCF7FF",
       "EventConfigs": []
     }
-  ]
+  ],
+  "Execution": {
+    "Enabled": true,
+    "LaunchKey": "c_lance",
+    "ImpactKey": "c_hit",
+    "RecoveryKey": "c_anim",
+    "InterruptOnControl": true,
+    "TrackTarget": true
+  }
 }

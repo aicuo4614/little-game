@@ -168,6 +168,14 @@ namespace LittleGame.Client.Editor.Timeline
             Repaint();
         }
 
+        public object ConfigurePreview(float distance, float angle, float speed, int count, float time)
+        {
+            timelineControl.PreviewPlayback.SetGeometry(distance, angle, speed, count);
+            RunningTime = time; timelineControl.EvaluatePreview(); Repaint();
+            var cfg = timelineControl.Config;
+            return new { timelineId = cfg?.TimelineId, distance, angle, targetSpeed = speed, targetCount = count, time, ruleTiming = cfg == null ? null : new SkillTimelineSchedule(cfg).BuildDefinition(cfg), previewOnly = true };
+        }
+
         public void MarkDirty()
         {
             dirty = true;

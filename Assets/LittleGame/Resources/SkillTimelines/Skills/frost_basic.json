@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 1,
+  "SchemaVersion": 2,
   "TimelineId": "frost_basic",
   "DisplayName": "冰法师普攻",
   "DurationBindClipKey": "",
@@ -30,9 +30,9 @@
       "DelayTime": 0.0,
       "Duration": 0.16,
       "EffectId": "fx_ice_shard",
-      "FromAnchor": "Caster",
+      "FromAnchor": "CastPoint",
       "ToAnchor": "Target",
-      "StartHeight": 0.72,
+      "StartHeight": 0,
       "EndHeight": 0.65,
       "ArcHeight": 0.16,
       "Width": 0.1,
@@ -61,5 +61,13 @@
       "ColorHex": "#B8F0FF",
       "EventConfigs": []
     }
-  ]
+  ],
+  "Execution": {
+    "Enabled": true,
+    "LaunchKey": "c_shard",
+    "ImpactKey": "c_hit",
+    "RecoveryKey": "c_anim",
+    "InterruptOnControl": true,
+    "TrackTarget": true
+  }
 }

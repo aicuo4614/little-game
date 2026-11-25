@@ -21,8 +21,8 @@ namespace LittleGame.Client.Editor
         }
 
         public string Id => "little-game.skill-timeline";
-        public string Version => "1.0.0";
-        public string Description => "3D技能时间轴 JSON 与单位绑定工具：列出、读取、校验、保存、预览及热重载技能演出。";
+        public string Version => "2.0.0";
+        public string Description => "技能规则时序、二维演出预览、单位绑定、运行实例与热重载。";
         public string UnavailableReason => null;
 
         private static JObject Schema(string properties = "", string required = "") =>
@@ -30,6 +30,8 @@ namespace LittleGame.Client.Editor
 
         public McpExtensionOperation[] Operations => new[]
         {
+            new McpExtensionOperation("configure_preview", "设置二维预览距离、角度、移动速度和目标数量；仅演出预览，不替代正常战斗验收", false, Schema("'timelineId':{'type':'string'},'distance':{'type':'number','minimum':0.6,'maximum':7},'angle':{'type':'number'},'targetSpeed':{'type':'number','minimum':-2,'maximum':2},'targetCount':{'type':'integer','minimum':1,'maximum':5},'time':{'type':'number','minimum':0}", "'timelineId'")),
+            new McpExtensionOperation("runtime_instances", "读取真实技能实例阶段、锁定目标、释放/命中/结束时间和中断原因", true, Schema()),
             new McpExtensionOperation("list_timelines", "列出全部技能 JSON（含总时长、片段数）、单位绑定表和校验结果", true, Schema()),
             new McpExtensionOperation("get_timeline", "读取指定技能 JSON 及解析后的片段起止调度表", true, Schema("'timelineId':{'type':'string'}", "'timelineId'")),
             new McpExtensionOperation("save_timeline", "校验并保存技能 JSON（非法时间/循环依赖会拒绝），并自动热重载到当前战斗", false, Schema("'timeline':{'type':'object'}", "'timeline'")),
@@ -46,6 +48,18 @@ namespace LittleGame.Client.Editor
 
             switch (operation)
             {
+                case "runtime_instances":
+                    return ClientBootstrap.Current?.App != null ? McpHostResult.Success(new { instances = ClientBootstrap.Current.App.Session.SkillInstances.Select(a => new { id = a.Id, source = a.Source, target = a.Target, trigger = a.Trigger, timelineId = a.TimelineId, phase = a.Phase.ToString(), startedAt = a.StartedAt, launchAt = a.LaunchAt, impactAt = a.ImpactAt, endAt = a.EndAt, cancelReason = a.CancelReason }) }) : McpHostResult.Fail("请先进入 Combat Play");
+                case "configure_preview":
+                {
+                    if (Application.isPlaying) return McpHostResult.Fail("二维独立预览需要先退出 Play");
+                    string id = (string)args["timelineId"];
+                    if (lib.Get(id) == null) return McpHostResult.Fail("技能不存在: " + id);
+                    if (!Timeline.TimelinePreviewPlayback.OpenPreviewSceneIfNeeded()) return McpHostResult.Fail("无法打开预览场景");
+                    var window = EditorWindow.GetWindow<Timeline.EditorTimeLine>();
+                    window.ReloadLibrary(id);
+                    return McpHostResult.Success(window.ConfigurePreview((float?)args["distance"] ?? 3.5f, (float?)args["angle"] ?? 90f, (float?)args["targetSpeed"] ?? 0f, (int?)args["targetCount"] ?? 1, (float?)args["time"] ?? 0f));
+                }
                 case "list_timelines":
                 {
                     var report = lib.ValidateAll();
@@ -85,6 +99,7 @@ namespace LittleGame.Client.Editor
                     {
                         timeline = cfg,
                         totalDuration = schedule.TotalDuration,
+                        ruleTiming = schedule.BuildDefinition(cfg),
                         scheduled = schedule.OrderedClips.Select(c => new
                         {
                             clipKey = c.Config.ClipKey,
@@ -103,6 +118,7 @@ namespace LittleGame.Client.Editor
                     SkillTimelineConfig cfg;
                     try { cfg = SkillTimelineJson.Deserialize<SkillTimelineConfig>(token.ToString()); }
                     catch (Exception ex) { return McpHostResult.Fail("JSON 解析失败: " + ex.Message); }
+                    if (cfg != null && (cfg.TimelineId.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0 || cfg.TimelineId.Contains("..") || cfg.TimelineId.Contains("/") || cfg.TimelineId.Contains("\\"))) return McpHostResult.Fail("TimelineId 必须是安全的文件名");
                     if (cfg == null || string.IsNullOrWhiteSpace(cfg.TimelineId))
                         return McpHostResult.Fail("TimelineId 不能为空");
 

@@ -32,27 +32,49 @@ namespace LittleGame.Client
 
     /// <summary>
     /// 横向无限远征战斗 HUD：
-    /// 1. 顶部无城墙血条，精简展示波次进度、自走棋人口经验圆环与存活军团数；
-    /// 2. 选中场上单位弹出动态头顶竖排泡泡（仅在凑齐三兵时才显示「三兵合成」按钮，平时绝不出现无效合成按钮）；
-    /// 3. 全局悬浮红/金 Toast Tip 条：拒绝/错误操作用红色轻抖提示替代重弹窗；
-    /// 4. 候补卡片仅拖动上阵，拖动后默认选中；老虎机十字中线高亮 + 逐列滚动 + 中奖流光闪白。
+    /// 1. 顶部精简展示波次进度、自走棋人口经验圆环与存活军团数；
+    /// 2. 选中场上单位不再弹出任何按钮面板，仅高亮脚底光标；拖回候补区直接召回；
+    /// 3. 候补卡片支持拖动上阵与双击自动寻找空位上阵；
+    /// 4. 老虎机十字中线滚动 → 闪白流光 → 3格汇聚合成光球 → 抛物线飞入目标：
+    ///    - 新进候补的单位在飞行落地前先隐藏图标与计数，抵达槽位那一帧才真正显示并弹跳；
+    ///    - 若新兵直接触发自动三合一升星，则飞行光球飞向升星宿主位置，绝不误飞向空候补格。
     /// </summary>
     public sealed class BattleHud : MonoBehaviour, IBattleView
     {
         private static readonly int ShinePosId = Shader.PropertyToID("_ShinePos");
         private static readonly int FlashIntensityId = Shader.PropertyToID("_FlashIntensity");
 
+        private sealed class RecruitFlyAnim
+        {
+            public TroopKind Kind;
+            public int[] SourceIndices;
+            public RectTransform[] ConvergeIcons;
+            public RectTransform MergedOrb;
+            public RectTransform MergedHalo;
+            public Vector2 CenterAnchor;
+            public Vector2 TargetAnchor;
+            public int RevealUnitId;
+            public int TargetSlotIdx = -1;
+            public float Delay;
+            public float Elapsed;
+            public float ConvergeDuration = 0.22f;
+            public float FlyDuration = 0.36f;
+            public bool BurstDone;
+        }
+
         private BattleApplication app;
         private BattleSceneView view;
         private Camera uiCamera;
-        private RectTransform root, dynamic;
+        private RectTransform root, dynamic, fxLayer;
+        private RectTransform reserveDropZone;
+        private Image reserveDropBg;
         private Text status, forecast, instruction;
         private Text squadText, phaseLabel, reserveTitle, popText;
         private Image popRingFill;
         private Sprite radialRingSprite;
         private Material slotShineMat;
 
-        // 全局悬浮 Toast Tip 条（红：无效/拒绝；金：提示/正向反馈）
+        // 全局悬浮 Toast Tip 条
         private RectTransform toastRoot;
         private Image toastBg;
         private Text toastLabel;
@@ -66,17 +88,34 @@ namespace LittleGame.Client
         private Font font;
         private readonly List<HudTarget> targets = new List<HudTarget>();
         private string signature;
-        private bool confirmMerge, confirmStart, confirmRestart, confirmRecycle;
+        private int lastHudWave = -1, lastHudAlive = -1, lastHudDeployed = -1, lastHudMaxDeployed = -1, lastHudPopExp = -1, lastHudTactics = -1, lastHudReserve = -1;
+        private float lastHudMarch = -1f;
+        private RunPhase lastHudPhase = (RunPhase)(-1);
+        private AimKind lastHudAim = (AimKind)(-1);
+        private bool lastHudPaused, lastHudEnraged, lastHudDropHighlight;
+        private long lastCheckedSeq = -1;
+        private int lastCheckedSelected = -1, lastCheckedHidden = -1;
+        private bool confirmStart, confirmRestart, confirmRecycle;
+        private bool reserveDropHighlighted;
 
-        // 老虎机滚动与中奖闪光动画状态
+        // 老虎机滚动、中奖闪光与合成飞入动画状态（含延迟揭晓）
         private readonly Image[] reelCardImages = new Image[9];
         private readonly Image[] reelIconImages = new Image[9];
         private readonly RectTransform[] reelTileRects = new RectTransform[9];
+        private readonly RectTransform[] reserveSlotRects = new RectTransform[6];
+        private readonly List<RecruitFlyAnim> recruitFlyAnims = new List<RecruitFlyAnim>();
+        private readonly HashSet<int> knownReserveIds = new HashSet<int>();
+        private readonly HashSet<int> hiddenReserveIds = new HashSet<int>();
+        private readonly List<int> pendingRevealIds = new List<int>();
+        private readonly List<int> pendingMergedHostIds = new List<int>();
+
         private float reelSpinTimer;
         private float reelWinFlashTimer;
         private float reelIconFlipTimer;
-        private int lastObservedSpinSeq = int.MinValue;
+        private long lastObservedSpinSeq = -1;
         private bool reelWinRowMid, reelWinColMid;
+        private TroopKind lastWonKind;
+        private int pendingFlyCount;
 
         public int Selected { get; private set; }
         public IReadOnlyList<HudTarget> Targets => targets;
@@ -120,15 +159,17 @@ namespace LittleGame.Client
             var footer = Panel(root, "Footer", new Rect(0, 0, 1, .325f), Color.white);
             CombatUiSkin.Decorate(footer, "Panel", Color.white, true, 3);
 
+            reserveDropZone = Panel(root, "ReserveDropZone", new Rect(.495f, .105f, .485f, .212f), new Color(0.28f, 0.85f, 0.65f, 0f));
+            reserveDropBg = reserveDropZone.GetComponent<Image>();
+
             Icon(root, "Shield", new Rect(.035f, .948f, .072f, .044f));
             Text(root, "符阵军团", new Rect(.12f, .946f, .37f, .05f), 26, TextAnchor.MiddleLeft, CombatUiSkin.Paper).fontStyle = FontStyle.Bold;
             Text(root, "无尽遗迹  ·  远征", new Rect(.12f, .930f, .37f, .025f), 12, TextAnchor.MiddleLeft, new Color(.7f, .67f, .78f));
 
-            // 自走棋人口经验圆环（顶栏中右，更舒展清晰）
             var popRoot = Panel(root, "PopRing", new Rect(.505f, .936f, .295f, .056f), Color.clear);
             CreateRingImage(popRoot, "PopRingBg", new Rect(0f, .04f, .27f, .92f), new Color(.36f, .34f, .48f, .95f), 1f);
             popRingFill = CreateRingImage(popRoot, "PopRingFill", new Rect(0f, .04f, .27f, .92f), CombatUiSkin.Gold, 0f);
-            popText = Text(popRoot, "人口 6/6", new Rect(.29f, .04f, .71f, .92f), 15, TextAnchor.MiddleLeft, CombatUiSkin.Gold);
+            popText = Text(popRoot, "人口 0/6", new Rect(.29f, .04f, .71f, .92f), 15, TextAnchor.MiddleLeft, CombatUiSkin.Gold);
             popText.fontStyle = FontStyle.Bold;
 
             status = Text(root, "", new Rect(.035f, .892f, .42f, .038f), 20, TextAnchor.MiddleLeft, CombatUiSkin.Gold);
@@ -147,7 +188,8 @@ namespace LittleGame.Client
             reserveTitle = Text(root, "", new Rect(.51f, .296f, .43f, .026f), 14, TextAnchor.MiddleLeft, CombatUiSkin.Gold);
             dynamic = Panel(root, "Actions", new Rect(0, 0, 1, 1), Color.clear);
 
-            // 全局悬浮 Toast Tip 条（置于最上层，位于战场上方安全区，绝不遮挡英雄与按钮）
+            fxLayer = Panel(root, "RecruitFxLayer", new Rect(0, 0, 1, 1), Color.clear);
+
             toastRoot = Panel(root, "ToastTip", new Rect(.10f, .748f, .80f, .048f), new Color(.58f, .11f, .14f, .94f));
             toastBg = toastRoot.GetComponent<Image>();
             toastGroup = toastRoot.gameObject.AddComponent<CanvasGroup>();
@@ -158,10 +200,30 @@ namespace LittleGame.Client
             toastLabel.fontStyle = FontStyle.Bold;
             toastRoot.gameObject.SetActive(false);
 
+            SyncKnownReserveIds(app.Session);
             Refresh();
         }
 
-        /// <summary>弹出悬浮 Tip：无效/拒绝操作显示红色轻抖 Tip，正向/引导信息显示深靛金色 Tip。</summary>
+        private void SyncKnownReserveIds(BattleSession s)
+        {
+            knownReserveIds.Clear();
+            foreach (var t in s.Troops)
+                if (!t.Deployed) knownReserveIds.Add(t.Id);
+        }
+
+        public bool IsPointInReserveArea(Vector2 screenPoint)
+        {
+            if (reserveDropZone == null) return false;
+            return RectTransformUtility.RectangleContainsScreenPoint(reserveDropZone, screenPoint, uiCamera);
+        }
+
+        public void SetReserveDropHighlight(bool active)
+        {
+            reserveDropHighlighted = active;
+            if (reserveDropBg != null)
+                reserveDropBg.color = active ? new Color(0.26f, 0.88f, 0.68f, 0.28f) : new Color(0.26f, 0.88f, 0.68f, 0f);
+        }
+
         public void ShowTip(string text, bool isError)
         {
             if (string.IsNullOrWhiteSpace(text)) return;
@@ -187,70 +249,153 @@ namespace LittleGame.Client
             if (app == null) return;
             var s = app.Session;
 
+            // 若离开准备阶段或发生重开，立即清理未播完的飞行动画并揭晓所有单位
+            if (s.Phase != RunPhase.Preparation && (recruitFlyAnims.Count > 0 || hiddenReserveIds.Count > 0))
+            {
+                ClearRecruitFlyAnims(revealAll: true);
+            }
+
             view?.SetSelectedUnit(Selected, s.Phase == RunPhase.Preparation);
 
-            status.text = $"第 {s.Wave:00} 波 <size=12>/ {BattleDefinitions.TotalWaves}</size>";
-            if (squadText != null)
+            // 仅在数据变化时更新顶部/底栏文本，消除每帧字符串分配与 Canvas 网格重建
+            if (s.Wave != lastHudWave)
             {
-                squadText.text = s.Phase == RunPhase.Fighting
-                    ? $"存活军团  {s.AliveTroopCount} / {s.DeployedCount}" + (s.Enraged ? "  · 敌军狂暴" : "")
-                    : $"远征推进  {Mathf.RoundToInt(s.MarchDistance)}m  ·  波后全员满血";
-                squadText.color = s.Enraged ? new Color(1f, .46f, .42f) : new Color(.84f, .92f, .96f);
+                lastHudWave = s.Wave;
+                status.text = $"第 {s.Wave:00} 波 <size=12>/ {BattleDefinitions.TotalWaves}</size>";
+                for (int i = 0; i < wavePips.Count; i++)
+                    wavePips[i].color = i < s.Wave ? CombatUiSkin.Gold : new Color(.28f, .26f, .35f);
+                forecast.text = BattleDefinitions.IsBoss(s.Wave)
+                    ? "首领来袭  ·  石甲巨像  ·  全军自由合围迎战"
+                    : "前方敌情  ·  " + string.Join("  /  ", s.Forecast.GroupBy(e => e.Kind).Select(g => BattleDefinitions.Name(g.Key) + "×" + g.Count()));
             }
 
-            if (popRingFill != null)
+            int aliveCount = s.AliveTroopCount;
+            int deployedCount = s.DeployedCount;
+            if (s.Phase != lastHudPhase || aliveCount != lastHudAlive || deployedCount != lastHudDeployed || s.Enraged != lastHudEnraged || Math.Abs(s.MarchDistance - lastHudMarch) > 0.1f)
             {
-                float ratio = s.PopExpNeeded <= 0 ? 1f : Mathf.Clamp01((float)s.PopExp / s.PopExpNeeded);
-                popRingFill.fillAmount = ratio;
-                popRingFill.color = s.DeployedCount >= s.MaxDeployed ? new Color(1f, 0.72f, 0.30f) : new Color(0.45f, 0.92f, 0.78f);
-            }
-            if (popText != null)
-                popText.text = $"人口 {s.DeployedCount}/{s.MaxDeployed}";
-
-            for (int i = 0; i < wavePips.Count; i++)
-                wavePips[i].color = i < s.Wave ? CombatUiSkin.Gold : new Color(.28f, .26f, .35f);
-
-            if (BattleDefinitions.IsBoss(s.Wave))
-                forecast.text = "首领来袭  ·  石甲巨像  ·  全军自由合围迎战";
-            else
-                forecast.text = "前方敌情  ·  " + string.Join("  /  ", s.Forecast.GroupBy(e => e.Kind).Select(g => BattleDefinitions.Name(g.Key) + "×" + g.Count()));
-
-            phaseLabel.text = s.Phase == RunPhase.Preparation ? "十字法阵" : s.Phase == RunPhase.Fighting ? "战术指挥  ·  本波剩余 " + s.Tactics + " 次" : s.Phase == RunPhase.Reward ? "远征奖励  ·  选择一项强化" : "远征战报";
-            reserveTitle.gameObject.SetActive(s.Phase == RunPhase.Preparation);
-            reserveTitle.text = "候补军团  " + s.Troops.Count(t => !t.Deployed) + "/6";
-            instruction.text = s.Aim != AimKind.None
-                ? "瞄准已暂停 · 点目标确认，或取消"
-                : s.Phase == RunPhase.Preparation
-                    ? "全军向前推进 · 拖动候补上阵，三同亮金可合成"
-                    : s.Phase == RunPhase.Fighting
-                        ? (s.Paused ? "已暂停 · 继续后战斗推进" : "自由转向交锋 · 每波一次集火或保护")
-                        : s.Phase == RunPhase.Reward ? "选择一项本局强化"
-                        : s.Phase == RunPhase.Won ? "十二波远征大捷！"
-                        : s.Phase == RunPhase.Lost ? "全军覆没 · 调整阵容再战"
-                        : "本波告捷！全员满血推进，人口经验 +2";
-
-            var latestSpin = s.EventsAfter(0).LastOrDefault(ev => ev.Type == "spin");
-            int spinSeq = latestSpin != null ? (int)latestSpin.Sequence : 0;
-            if (spinSeq != lastObservedSpinSeq)
-            {
-                bool wasInit = lastObservedSpinSeq == int.MinValue;
-                lastObservedSpinSeq = spinSeq;
-                if (!wasInit && spinSeq > 0)
+                lastHudAlive = aliveCount;
+                lastHudEnraged = s.Enraged;
+                lastHudMarch = s.MarchDistance;
+                if (squadText != null)
                 {
-                    reelSpinTimer = 0.62f;
-                    reelWinFlashTimer = 0f;
-                    reelWinRowMid = s.LastWinRowMid;
-                    reelWinColMid = s.LastWinColMid;
+                    squadText.text = s.Phase == RunPhase.Fighting
+                        ? $"存活军团  {aliveCount} / {deployedCount}" + (s.Enraged ? "  · 敌军狂暴" : "")
+                        : $"远征推进  {Mathf.RoundToInt(s.MarchDistance)}m  ·  波后全员满血";
+                    squadText.color = s.Enraged ? new Color(1f, .46f, .42f) : new Color(.84f, .92f, .96f);
                 }
             }
 
-            string next = s.Phase + "/" + s.Spins + "/" + Selected + "/" + s.Aim + "/" + s.Paused + "/" + s.Speed + "/" + s.Tactics
-                + "/" + s.MaxDeployed + "/" + s.PopExp + "/" + confirmMerge + confirmStart + confirmRestart + confirmRecycle
-                + "/" + string.Join(",", s.Troops.Select(t => $"{t.Id}:{t.Star}:{t.Branch}:{t.Lane}:{t.Row}"))
-                + "/" + string.Join(",", s.Rewards) + "/" + string.Join("", s.Reels.Select(r => (int)r));
-            if (next != signature) { signature = next; Rebuild(); }
+            if (deployedCount != lastHudDeployed || s.MaxDeployed != lastHudMaxDeployed || s.PopExp != lastHudPopExp)
+            {
+                lastHudDeployed = deployedCount;
+                lastHudMaxDeployed = s.MaxDeployed;
+                lastHudPopExp = s.PopExp;
+                if (popRingFill != null)
+                {
+                    float ratio = s.PopExpNeeded <= 0 ? 1f : Mathf.Clamp01((float)s.PopExp / s.PopExpNeeded);
+                    popRingFill.fillAmount = ratio;
+                    popRingFill.color = deployedCount >= s.MaxDeployed ? new Color(1f, 0.72f, 0.30f) : new Color(0.45f, 0.92f, 0.78f);
+                }
+                if (popText != null)
+                    popText.text = $"人口 {deployedCount}/{s.MaxDeployed}";
+            }
+
+            int visibleReserveCount = 0;
+            var allTroops = s.Troops;
+            for (int i = 0; i < allTroops.Count; i++)
+                if (!allTroops[i].Deployed && !hiddenReserveIds.Contains(allTroops[i].Id)) visibleReserveCount++;
+
+            if (s.Phase != lastHudPhase || s.Tactics != lastHudTactics || s.Aim != lastHudAim || s.Paused != lastHudPaused || visibleReserveCount != lastHudReserve || reserveDropHighlighted != lastHudDropHighlight)
+            {
+                lastHudPhase = s.Phase;
+                lastHudTactics = s.Tactics;
+                lastHudAim = s.Aim;
+                lastHudPaused = s.Paused;
+                lastHudReserve = visibleReserveCount;
+                lastHudDropHighlight = reserveDropHighlighted;
+                phaseLabel.text = s.Phase == RunPhase.Preparation ? "十字法阵" : s.Phase == RunPhase.Fighting ? "战术指挥  ·  本波剩余 " + s.Tactics + " 次" : s.Phase == RunPhase.Reward ? "远征奖励  ·  选择一项强化" : "远征战报";
+                reserveTitle.gameObject.SetActive(s.Phase == RunPhase.Preparation);
+                reserveTitle.text = reserveDropHighlighted ? "松手召回至候补军团" : "候补军团  " + visibleReserveCount + "/6";
+                reserveTitle.color = reserveDropHighlighted ? new Color(0.48f, 1f, 0.80f) : CombatUiSkin.Gold;
+                instruction.text = s.Aim != AimKind.None
+                    ? "瞄准已暂停 · 点目标确认，或取消"
+                    : s.Phase == RunPhase.Preparation
+                        ? (deployedCount == 0
+                            ? "点击招募获得军团 · 拖动或双击候补上阵"
+                            : "拖动或双击候补上阵 · 拖回候补区召回 · 三同自动升星")
+                        : s.Phase == RunPhase.Fighting
+                            ? (s.Paused ? "已暂停 · 继续后战斗推进" : "自由转向交锋 · 每波一次集火或保护")
+                            : s.Phase == RunPhase.Reward ? "选择一项本局强化"
+                            : s.Phase == RunPhase.Won ? "十二波远征大捷！"
+                            : s.Phase == RunPhase.Lost ? "全军覆没 · 调整阵容再战"
+                            : "本波告捷！全员满血推进，人口经验 +2";
+            }
+
+            // O(1) 读取最新 spin 序号，彻底消灭每帧拷贝 600 条事件
+            long spinSeq = s.LastSpinSequence;
+            if (spinSeq != lastObservedSpinSeq)
+            {
+                bool wasInit = lastObservedSpinSeq < 0;
+                long prevSeq = Math.Max(0, lastObservedSpinSeq);
+                lastObservedSpinSeq = spinSeq;
+
+                if (!wasInit && spinSeq > 0)
+                {
+                    // 先把上一次尚未播完的飞行单位立刻揭晓，避免连续快点招募吞掉图标
+                    ClearRecruitFlyAnims(revealAll: true);
+
+                    pendingRevealIds.Clear();
+                    pendingMergedHostIds.Clear();
+
+                    // 找出本次 spin 新进入候补的单位 ID，先加入 hiddenReserveIds 等飞行落地后再显现
+                    foreach (var t in s.Troops)
+                    {
+                        if (!t.Deployed && !knownReserveIds.Contains(t.Id))
+                        {
+                            pendingRevealIds.Add(t.Id);
+                            hiddenReserveIds.Add(t.Id);
+                        }
+                    }
+
+                    // 找出本次 spin 触发的自动合成宿主（若有新兵直接合成到了场上/候补宿主，飞行目标指向宿主）
+                    foreach (var ev in s.EventsAfter(prevSeq))
+                    {
+                        if (ev.Type == "merged" && ev.Sequence <= spinSeq && ev.Source > 0)
+                            pendingMergedHostIds.Add(ev.Source);
+                    }
+
+                    reelSpinTimer = 0.50f;
+                    reelWinFlashTimer = 0f;
+                    reelWinRowMid = s.LastWinRowMid;
+                    reelWinColMid = s.LastWinColMid;
+                    lastWonKind = s.Reels[4];
+                    pendingFlyCount = (reelWinRowMid ? 1 : 0) + (reelWinColMid ? 1 : 0);
+                }
+                SyncKnownReserveIds(s);
+            }
+            else if (reelSpinTimer <= 0f && reelWinFlashTimer <= 0f && recruitFlyAnims.Count == 0)
+            {
+                // 无动画进行时清理无效隐藏 ID 并同步已知候补集合
+                if (hiddenReserveIds.Count > 0) hiddenReserveIds.Clear();
+                SyncKnownReserveIds(s);
+            }
+
+            if (signature == null || s.LastSequence != lastCheckedSeq || Selected != lastCheckedSelected || hiddenReserveIds.Count != lastCheckedHidden)
+            {
+                lastCheckedSeq = s.LastSequence;
+                lastCheckedSelected = Selected;
+                lastCheckedHidden = hiddenReserveIds.Count;
+                string hiddenSig = hiddenReserveIds.Count > 0 ? string.Join(",", hiddenReserveIds.OrderBy(id => id)) : "";
+                string next = s.Phase + "/" + s.Spins + "/" + Selected + "/" + s.Aim + "/" + s.Paused + "/" + s.Speed + "/" + s.Tactics
+                    + "/" + s.MaxDeployed + "/" + s.PopExp + "/" + confirmStart + confirmRestart + confirmRecycle
+                    + "/" + hiddenSig
+                    + "/" + string.Join(",", s.Troops.Select(t => $"{t.Id}:{t.Star}:{t.Lane}:{t.Row}"))
+                    + "/" + string.Join(",", s.Rewards) + "/" + string.Join("", s.Reels.Select(r => (int)r));
+                if (next != signature) { signature = next; Rebuild(); }
+            }
 
             UpdateSlotReelAnimation(s);
+            UpdateRecruitFlyAnims(Time.unscaledDeltaTime);
             UpdateToastTip();
         }
 
@@ -260,7 +405,6 @@ namespace LittleGame.Client
             toastTimer = Mathf.Max(0f, toastTimer - Time.unscaledDeltaTime);
             float elapsed = toastDuration - toastTimer;
 
-            // 红色错误 Tip 前 0.24s 轻幅左右抖动，突出禁止/失败反馈
             float shakeX = toastIsError && elapsed < 0.24f
                 ? Mathf.Sin(elapsed * 52f) * (1f - elapsed / 0.24f) * 0.014f
                 : 0f;
@@ -284,8 +428,8 @@ namespace LittleGame.Client
                 bool flipTick = reelIconFlipTimer <= 0f;
                 if (flipTick) reelIconFlipTimer = 0.055f;
 
-                float elapsed = 0.62f - reelSpinTimer;
-                float[] stopTimes = { 0.24f, 0.42f, 0.60f };
+                float elapsed = 0.50f - reelSpinTimer;
+                float[] stopTimes = { 0.18f, 0.32f, 0.46f };
 
                 for (int row = 0; row < 3; row++)
                 {
@@ -312,7 +456,7 @@ namespace LittleGame.Client
                             var kind = s.Reels[idx];
                             icon.sprite = CombatUiSkin.Sprite(CombatUiSkin.TroopIcon((int)kind));
                             icon.color = kind == TroopKind.Frost ? new Color(.55f, .9f, 1f) : Color.white;
-                            float settle = Mathf.Clamp01((elapsed - stopTimes[col]) / 0.12f);
+                            float settle = Mathf.Clamp01((elapsed - stopTimes[col]) / 0.10f);
                             float pop = 1f + Mathf.Sin(settle * Mathf.PI) * 0.12f;
                             tile.localScale = Vector3.one * pop;
                         }
@@ -322,7 +466,7 @@ namespace LittleGame.Client
                 if (reelSpinTimer <= 0f)
                 {
                     for (int i = 0; i < 9; i++) if (reelTileRects[i] != null) reelTileRects[i].localScale = Vector3.one;
-                    if (reelWinRowMid || reelWinColMid) reelWinFlashTimer = 0.68f;
+                    if (reelWinRowMid || reelWinColMid) reelWinFlashTimer = 0.42f;
                 }
                 return;
             }
@@ -330,7 +474,7 @@ namespace LittleGame.Client
             if (reelWinFlashTimer > 0f)
             {
                 reelWinFlashTimer = Mathf.Max(0f, reelWinFlashTimer - dt);
-                float progress = 1f - reelWinFlashTimer / 0.68f;
+                float progress = 1f - reelWinFlashTimer / 0.42f;
                 float flash = Mathf.Sin(progress * Mathf.PI * 3f) * 0.5f + 0.5f;
                 float shinePos = Mathf.Lerp(-0.4f, 1.4f, progress);
                 if (slotShineMat != null)
@@ -350,7 +494,7 @@ namespace LittleGame.Client
                             reelCardImages[idx].material = reelWinFlashTimer > 0.01f ? slotShineMat : null;
                         if (reelTileRects[idx] != null)
                         {
-                            float sPop = 1f + Mathf.Sin(progress * Mathf.PI * 2f) * 0.10f * (1f - progress);
+                            float sPop = 1f + Mathf.Sin(progress * Mathf.PI * 2f) * 0.11f * (1f - progress);
                             reelTileRects[idx].localScale = Vector3.one * sPop;
                         }
                     }
@@ -362,8 +506,222 @@ namespace LittleGame.Client
                         if (reelCardImages[i] != null) reelCardImages[i].material = null;
                         if (reelTileRects[i] != null) reelTileRects[i].localScale = Vector3.one;
                     }
+                    if (pendingFlyCount > 0)
+                    {
+                        LaunchRecruitConvergeAndFly(s);
+                        pendingFlyCount = 0;
+                    }
                 }
             }
+        }
+
+        private void LaunchRecruitConvergeAndFly(BattleSession s)
+        {
+            if (fxLayer == null)
+            {
+                ClearRecruitFlyAnims(revealAll: true);
+                return;
+            }
+
+            var linesToLaunch = new List<int[]>();
+            if (reelWinRowMid) linesToLaunch.Add(new[] { 3, 4, 5 });
+            if (reelWinColMid) linesToLaunch.Add(new[] { 1, 4, 7 });
+
+            // 当前已可见候补数决定新单位落地槽位序号
+            int visibleBefore = s.Troops.Count(t => !t.Deployed && !hiddenReserveIds.Contains(t.Id));
+            Vector2 centerAnchor = ReelTileAnchorCenter(4);
+
+            for (int li = 0; li < linesToLaunch.Count; li++)
+            {
+                int revealId = li < pendingRevealIds.Count ? pendingRevealIds[li] : 0;
+                int slotIdx = -1;
+                Vector2 targetAnchor;
+
+                if (revealId > 0)
+                {
+                    // 正常进入候补军团：飞向对应候补空槽，落地后再显现卡片
+                    slotIdx = Mathf.Clamp(visibleBefore + li, 0, 5);
+                    targetAnchor = ReserveSlotAnchorCenter(slotIdx);
+                }
+                else if (pendingMergedHostIds.Count > 0)
+                {
+                    // 直接触发了自动 3 合 1 升星：飞向发生升星的宿主真实位置（场上英雄或候补宿主）
+                    int hostId = pendingMergedHostIds[Mathf.Min(li, pendingMergedHostIds.Count - 1)];
+                    var host = s.Troops.FirstOrDefault(t => t.Id == hostId);
+                    if (host != null && host.Deployed)
+                    {
+                        Vector2 scr = view.UnitScreen(host.Id);
+                        targetAnchor = new Vector2(
+                            Mathf.Clamp01(scr.x / Mathf.Max(1f, Screen.width)),
+                            Mathf.Clamp01(scr.y / Mathf.Max(1f, Screen.height)));
+                    }
+                    else
+                    {
+                        int hostReserveIdx = s.Troops.Where(t => !t.Deployed).ToList().FindIndex(t => t.Id == hostId);
+                        slotIdx = Mathf.Clamp(hostReserveIdx >= 0 ? hostReserveIdx : 0, 0, 5);
+                        targetAnchor = ReserveSlotAnchorCenter(slotIdx);
+                    }
+                }
+                else
+                {
+                    slotIdx = Mathf.Clamp(visibleBefore + li, 0, 5);
+                    targetAnchor = ReserveSlotAnchorCenter(slotIdx);
+                }
+
+                var anim = new RecruitFlyAnim
+                {
+                    Kind = lastWonKind,
+                    SourceIndices = linesToLaunch[li],
+                    ConvergeIcons = new RectTransform[3],
+                    CenterAnchor = centerAnchor,
+                    TargetAnchor = targetAnchor,
+                    RevealUnitId = revealId,
+                    TargetSlotIdx = slotIdx,
+                    Delay = li * 0.10f
+                };
+
+                Color iconTint = lastWonKind == TroopKind.Frost ? new Color(0.65f, 0.94f, 1f) : Color.white;
+                string iconKey = CombatUiSkin.TroopIcon((int)lastWonKind);
+
+                for (int k = 0; k < 3; k++)
+                {
+                    Vector2 src = ReelTileAnchorCenter(anim.SourceIndices[k]);
+                    var iconRoot = Panel(fxLayer, "RecruitConverge_" + li + "_" + k, new Rect(src.x - 0.045f, src.y - 0.032f, 0.09f, 0.064f), Color.clear);
+                    Icon(iconRoot, iconKey, new Rect(0.08f, 0.08f, 0.84f, 0.84f), iconTint);
+                    anim.ConvergeIcons[k] = iconRoot;
+                }
+
+                var orb = Panel(fxLayer, "RecruitMergedOrb_" + li, new Rect(centerAnchor.x - 0.055f, centerAnchor.y - 0.04f, 0.11f, 0.08f), Color.clear);
+                var halo = CreateRingImage(orb, "OrbHalo", new Rect(0f, 0f, 1f, 1f), new Color(1f, 0.86f, 0.30f, 0.95f), 1f).rectTransform;
+                Icon(orb, iconKey, new Rect(0.16f, 0.16f, 0.68f, 0.68f), iconTint);
+                orb.gameObject.SetActive(false);
+
+                anim.MergedOrb = orb;
+                anim.MergedHalo = halo;
+                recruitFlyAnims.Add(anim);
+            }
+            fxLayer.SetAsLastSibling();
+            if (toastRoot != null) toastRoot.SetAsLastSibling();
+        }
+
+        private void UpdateRecruitFlyAnims(float dt)
+        {
+            if (recruitFlyAnims.Count > 0)
+            {
+                for (int i = recruitFlyAnims.Count - 1; i >= 0; i--)
+                {
+                    var a = recruitFlyAnims[i];
+                    if (a.Delay > 0f)
+                    {
+                        a.Delay -= dt;
+                        continue;
+                    }
+
+                    a.Elapsed += dt;
+                    if (a.Elapsed < a.ConvergeDuration)
+                    {
+                        float t = Mathf.Clamp01(a.Elapsed / a.ConvergeDuration);
+                        float ease = t * t * (3f - 2f * t);
+                        for (int k = 0; k < 3; k++)
+                        {
+                            var rt = a.ConvergeIcons[k];
+                            if (rt == null) continue;
+                            Vector2 src = ReelTileAnchorCenter(a.SourceIndices[k]);
+                            Vector2 p = Vector2.Lerp(src, a.CenterAnchor, ease);
+                            rt.anchorMin = p - new Vector2(0.045f, 0.032f);
+                            rt.anchorMax = p + new Vector2(0.045f, 0.032f);
+                            rt.localScale = Vector3.one * Mathf.Lerp(1.05f, 0.65f, ease);
+                        }
+                        continue;
+                    }
+
+                    if (!a.BurstDone)
+                    {
+                        a.BurstDone = true;
+                        for (int k = 0; k < 3; k++)
+                            if (a.ConvergeIcons[k] != null) Destroy(a.ConvergeIcons[k].gameObject);
+                        if (a.MergedOrb != null) a.MergedOrb.gameObject.SetActive(true);
+                    }
+
+                    float flyT = Mathf.Clamp01((a.Elapsed - a.ConvergeDuration) / a.FlyDuration);
+                    float flyEase = 1f - Mathf.Pow(1f - flyT, 2.2f);
+                    if (a.MergedOrb != null)
+                    {
+                        Vector2 lin = Vector2.Lerp(a.CenterAnchor, a.TargetAnchor, flyEase);
+                        float arcY = Mathf.Sin(flyT * Mathf.PI) * 0.135f;
+                        Vector2 p = lin + new Vector2(0f, arcY);
+                        a.MergedOrb.anchorMin = p - new Vector2(0.055f, 0.04f);
+                        a.MergedOrb.anchorMax = p + new Vector2(0.055f, 0.04f);
+                        float popScale = flyT < 0.25f
+                            ? Mathf.Lerp(1.38f, 1.08f, flyT / 0.25f)
+                            : Mathf.Lerp(1.08f, 0.78f, (flyT - 0.25f) / 0.75f);
+                        a.MergedOrb.localScale = Vector3.one * popScale;
+                        if (a.MergedHalo != null) a.MergedHalo.localRotation = Quaternion.Euler(0f, 0f, -flyT * 420f);
+                    }
+
+                    if (flyT >= 1f)
+                    {
+                        if (a.MergedOrb != null) Destroy(a.MergedOrb.gameObject);
+                        int arrivedSlot = a.TargetSlotIdx;
+                        // 动画抵达结束：此时才真正显现候补图标并触发槽位弹跳！
+                        if (a.RevealUnitId > 0 && hiddenReserveIds.Remove(a.RevealUnitId))
+                        {
+                            signature = null;
+                            Rebuild();
+                            Canvas.ForceUpdateCanvases();
+                        }
+                        if (arrivedSlot >= 0 && arrivedSlot < reserveSlotRects.Length && reserveSlotRects[arrivedSlot] != null)
+                        {
+                            reserveSlotRects[arrivedSlot].localScale = Vector3.one * 1.16f;
+                        }
+                        recruitFlyAnims.RemoveAt(i);
+                    }
+                }
+            }
+
+            // 候补槽位弹跳平滑回弹至 1.0
+            for (int sIdx = 0; sIdx < reserveSlotRects.Length; sIdx++)
+            {
+                var rt = reserveSlotRects[sIdx];
+                if (rt != null && rt.localScale.x > 1.001f)
+                    rt.localScale = Vector3.Lerp(rt.localScale, Vector3.one, Mathf.Clamp01(dt * 14f));
+            }
+        }
+
+        private void ClearRecruitFlyAnims(bool revealAll)
+        {
+            for (int i = 0; i < recruitFlyAnims.Count; i++)
+            {
+                var a = recruitFlyAnims[i];
+                if (a.ConvergeIcons != null)
+                    for (int k = 0; k < a.ConvergeIcons.Length; k++)
+                        if (a.ConvergeIcons[k] != null) Destroy(a.ConvergeIcons[k].gameObject);
+                if (a.MergedOrb != null) Destroy(a.MergedOrb.gameObject);
+            }
+            recruitFlyAnims.Clear();
+            pendingFlyCount = 0;
+            if (revealAll && hiddenReserveIds.Count > 0)
+            {
+                hiddenReserveIds.Clear();
+                Refresh();
+            }
+        }
+
+        private static Vector2 ReelTileAnchorCenter(int idx)
+        {
+            int row = idx / 3;
+            int col = idx % 3;
+            float rx = 0.03f + (col / 3f + 0.02f + 0.1475f) * 0.435f;
+            float ry = 0.11f + ((2 - row) / 3f + 0.025f + 0.145f) * 0.18f;
+            return new Vector2(rx, ry);
+        }
+
+        private static Vector2 ReserveSlotAnchorCenter(int slotIdx)
+        {
+            int i = Mathf.Clamp(slotIdx, 0, 5);
+            float x = 0.51f + (i % 3) * 0.158f + 0.074f;
+            float y = 0.205f - (i / 3) * 0.09f + 0.041f;
+            return new Vector2(x, y);
         }
 
         public void Refresh() { signature = null; }
@@ -374,19 +732,25 @@ namespace LittleGame.Client
             if (t == null || !t.Deployed)
             {
                 Selected = 0;
-                if (t != null) ShowTip("按住拖动" + BattleDefinitions.Name(t.Kind) + "到左侧阵位上阵", isError: false);
+                if (t != null) ShowTip("拖动或双击" + BattleDefinitions.Name(t.Kind) + "上阵", isError: false);
                 Refresh();
                 return;
             }
             Selected = unitId;
-            confirmMerge = confirmStart = confirmRestart = confirmRecycle = false;
+            confirmStart = confirmRestart = confirmRecycle = false;
             Refresh();
         }
 
         public void Submit(BattleCommand command)
         {
+            if (command.Kind == CommandKind.NewRun)
+            {
+                ClearRecruitFlyAnims(revealAll: true);
+                lastObservedSpinSeq = 0;
+                knownReserveIds.Clear();
+            }
             var result = app.Submit(command);
-            confirmStart = confirmMerge = confirmRestart = confirmRecycle = false;
+            confirmStart = confirmRestart = confirmRecycle = false;
             var sel = app.Session.Troops.FirstOrDefault(t => t.Id == Selected);
             if (sel == null || !sel.Deployed) Selected = 0;
 
@@ -394,15 +758,15 @@ namespace LittleGame.Client
             {
                 ShowTip(result.Reason, isError: true);
             }
-            else if (command.Kind == CommandKind.Spin || command.Kind == CommandKind.Merge || command.Kind == CommandKind.ChooseBranch || command.Kind == CommandKind.ChooseReward)
+            else if (command.Kind == CommandKind.Spin || command.Kind == CommandKind.Merge || command.Kind == CommandKind.ChooseReward || command.Kind == CommandKind.Recall)
             {
                 ShowTip(result.Reason, isError: false);
             }
             Refresh();
         }
 
-        public void ClearSelection() { Selected = 0; confirmMerge = confirmStart = confirmRestart = confirmRecycle = false; Refresh(); }
-        public void CancelUi() { confirmMerge = confirmStart = confirmRestart = confirmRecycle = false; Refresh(); }
+        public void ClearSelection() { Selected = 0; confirmStart = confirmRestart = confirmRecycle = false; Refresh(); }
+        public void CancelUi() { confirmStart = confirmRestart = confirmRecycle = false; Refresh(); }
 
         private void Rebuild()
         {
@@ -411,6 +775,7 @@ namespace LittleGame.Client
             Array.Clear(reelCardImages, 0, 9);
             Array.Clear(reelIconImages, 0, 9);
             Array.Clear(reelTileRects, 0, 9);
+            Array.Clear(reserveSlotRects, 0, 6);
 
             var s = app.Session;
             Button("restart", "重开", new Rect(.82f, .944f, .145f, .046f), () => { confirmRestart = true; Refresh(); });
@@ -447,7 +812,8 @@ namespace LittleGame.Client
                     }
                 }
 
-                var reserve = s.Troops.Where(t => !t.Deployed).ToArray();
+                // 仅显示已落地揭晓的候补单位（飞行途中隐藏，抵达后立即显现）
+                var reserve = s.Troops.Where(t => !t.Deployed && !hiddenReserveIds.Contains(t.Id)).ToArray();
                 for (int i = 0; i < 6; i++)
                 {
                     var rect = new Rect(.51f + (i % 3) * .158f, .205f - (i / 3) * .09f, .148f, .082f);
@@ -456,21 +822,20 @@ namespace LittleGame.Client
                         var empty = Panel(dynamic, "EmptyReserve", rect, Color.white);
                         CombatUiSkin.Decorate(empty, "Card", new Color(.55f, .55f, .67f));
                         Text(empty, "+", new Rect(0, .1f, 1, .8f), 24, TextAnchor.MiddleCenter, new Color(.4f, .39f, .49f));
+                        reserveSlotRects[i] = empty;
                         continue;
                     }
                     var t = reserve[i];
-                    // 点击候补卡片绝不弹出大面板，仅弹出轻量悬浮 Tip 提示拖动上阵
-                    Button("unit_" + t.Id, BattleDefinitions.Name(t.Kind) + "\n" + new string('★', t.Star), rect,
-                        () => ShowTip("按住拖动" + BattleDefinitions.Name(t.Kind) + "到左侧阵位上阵", isError: false), t.Id, s.CanMerge(t));
+                    var btnRect = Button("unit_" + t.Id, BattleDefinitions.Name(t.Kind) + "\n" + new string('★', t.Star), rect,
+                        () => ShowTip("拖动或双击" + BattleDefinitions.Name(t.Kind) + "上阵", isError: false), t.Id, t.Star >= 2);
+                    reserveSlotRects[i] = btnRect;
                 }
 
                 Button("spin", "招募  ·  " + s.Spins + " 次", new Rect(.03f, .027f, .435f, .065f), () => Submit(new BattleCommand { Kind = CommandKind.Spin }));
                 Button("start_wave", "开始战斗", new Rect(.51f, .027f, .46f, .065f), () => { if (s.Spins > 0) { confirmStart = true; Refresh(); } else Submit(new BattleCommand { Kind = CommandKind.StartWave }); });
-                Text(dynamic, "十字中线三同出兵  ·  拖动候补上阵，三同自动亮起合成", new Rect(.04f, .004f, .92f, .02f), 10, TextAnchor.MiddleCenter, new Color(.6f, .57f, .67f));
+                Text(dynamic, "十字三同出兵 · 拖动或双击候补上阵 · 拖回候补区召回", new Rect(.04f, .004f, .92f, .02f), 10, TextAnchor.MiddleCenter, new Color(.6f, .57f, .67f));
 
-                var selected = s.Troops.FirstOrDefault(t => t.Id == Selected && t.Deployed);
-                if (selected != null) OverheadBubble(s, selected);
-                if (s.Pending.Count > 0) ShowTip("暂存" + s.Pending.Count + "兵：先部署、合成或遣散候补再继续", isError: true);
+                if (s.Pending.Count > 0) ShowTip("暂存" + s.Pending.Count + "兵：先部署或遣散候补再继续", isError: true);
             }
             else if (s.Phase == RunPhase.Fighting)
             {
@@ -496,71 +861,9 @@ namespace LittleGame.Client
                 if (s.Phase == RunPhase.WaveResult) Button("next_wave", "继续推进", new Rect(.15f, .05f, .7f, .085f), () => { ClearSelection(); Submit(new BattleCommand { Kind = CommandKind.NextWave }); });
                 else Button("new_run", "重新远征", new Rect(.15f, .05f, .7f, .085f), () => Submit(new BattleCommand { Kind = CommandKind.NewRun, Seed = BattleApplication.FreshSeed() }));
             }
-            if (confirmMerge || confirmStart || confirmRestart || confirmRecycle) ConfirmPanel();
+            if (confirmStart || confirmRestart || confirmRecycle) ConfirmPanel();
+            if (fxLayer != null) fxLayer.SetAsLastSibling();
             if (toastRoot != null) toastRoot.SetAsLastSibling();
-        }
-
-        /// <summary>
-        /// 动态头顶竖排泡泡：
-        /// - 二星未选分支：显示双分支按钮；
-        /// - 满足三兵合成条件：显示「三兵合成」+「召回候补」；
-        /// - 无法合成时：绝不显示无用的「三兵合成」按钮，只显示紧凑单按钮「召回候补」。
-        /// </summary>
-        private void OverheadBubble(BattleSession s, Troop unit)
-        {
-            Vector2 screen = view.UnitScreen(unit.Id);
-            if (screen.x < 0f || screen.y < 0f) screen = view.WorldToScreen(unit.HomeX, unit.HomeZ);
-            float ux = Mathf.Clamp01(screen.x / Mathf.Max(1f, Screen.width));
-            float uy = Mathf.Clamp01(screen.y / Mathf.Max(1f, Screen.height));
-
-            bool needBranch = unit.Star >= 2 && unit.Branch == SkillBranch.None;
-            bool canMerge = !needBranch && s.CanMerge(unit);
-            int btnCount = needBranch || canMerge ? 2 : 1;
-
-            const float bw = 0.255f;
-            const float btnH = 0.052f;
-            const float gap = 0.008f;
-            const float headerH = 0.028f;
-            const float pad = 0.010f;
-            float bh = pad * 2f + headerH + btnCount * btnH + (btnCount - 1) * gap;
-
-            float bx = Mathf.Clamp(ux - bw * 0.5f, 0.03f, 0.97f - bw);
-            float by = Mathf.Max(0.355f, uy + 0.072f);
-            if (by + bh > 0.742f)
-            {
-                by = Mathf.Clamp(uy + 0.02f, 0.355f, 0.742f - bh);
-                bx = ux > 0.5f ? Mathf.Max(0.03f, ux - bw - 0.08f) : Mathf.Min(0.97f - bw, ux + 0.08f);
-            }
-
-            var bubble = Panel(dynamic, "OverheadBubble", new Rect(bx, by, bw, bh), Color.white);
-            CombatUiSkin.Decorate(bubble, "Panel", new Color(0.96f, 0.95f, 1f, 0.96f), true, 4);
-
-            string title = BattleDefinitions.Name(unit.Kind) + " " + new string('★', unit.Star);
-            Text(dynamic, title, new Rect(bx + 0.012f, by + bh - pad - headerH, bw - 0.024f, headerH), 13, TextAnchor.MiddleCenter, CombatUiSkin.Gold).fontStyle = FontStyle.Bold;
-
-            float yBtn1 = by + bh - pad - headerH - btnH;
-            float yBtn2 = yBtn1 - gap - btnH;
-
-            if (needBranch)
-            {
-                var b0 = (SkillBranch)(1 + (int)unit.Kind * 2);
-                var b1 = (SkillBranch)(2 + (int)unit.Kind * 2);
-                Button("branch_" + b0, BattleDefinitions.Name(b0), new Rect(bx + 0.014f, yBtn1, bw - 0.028f, btnH), () => Submit(new BattleCommand { Kind = CommandKind.ChooseBranch, UnitId = unit.Id, Branch = b0 }));
-                Button("branch_" + b1, BattleDefinitions.Name(b1), new Rect(bx + 0.014f, yBtn2, bw - 0.028f, btnH), () => Submit(new BattleCommand { Kind = CommandKind.ChooseBranch, UnitId = unit.Id, Branch = b1 }));
-            }
-            else if (canMerge)
-            {
-                Button("merge", "三兵合成", new Rect(bx + 0.014f, yBtn1, bw - 0.028f, btnH), () =>
-                {
-                    if (!app.Session.CanMerge(unit)) { ShowTip("需要三个同职业同星单位才能合成", isError: true); Refresh(); return; }
-                    confirmMerge = true; Refresh();
-                });
-                Button("recall", "召回候补", new Rect(bx + 0.014f, yBtn2, bw - 0.028f, btnH), () => Submit(new BattleCommand { Kind = CommandKind.Recall, UnitId = unit.Id }));
-            }
-            else
-            {
-                Button("recall", "召回候补", new Rect(bx + 0.014f, yBtn1, bw - 0.028f, btnH), () => Submit(new BattleCommand { Kind = CommandKind.Recall, UnitId = unit.Id }));
-            }
         }
 
         private void ConfirmPanel()
@@ -568,11 +871,10 @@ namespace LittleGame.Client
             Panel(dynamic, "ConfirmBackdrop", new Rect(0, 0, 1, 1), new Color(0, 0, 0, .7f));
             var confirm = Panel(dynamic, "Confirm", new Rect(.07f, .35f, .86f, .31f), Color.white);
             CombatUiSkin.Decorate(confirm, "Panel", Color.white, true, 2);
-            Text(confirm, confirmRestart ? "重新远征" : confirmStart ? "准备迎战" : confirmMerge ? "军团升星" : "遣散候补", new Rect(.08f, .78f, .84f, .14f), 23, TextAnchor.MiddleCenter, CombatUiSkin.Gold).fontStyle = FontStyle.Bold;
+            Text(confirm, confirmRestart ? "重新远征" : confirmStart ? "准备迎战" : "遣散候补", new Rect(.08f, .78f, .84f, .14f), 23, TextAnchor.MiddleCenter, CombatUiSkin.Gold).fontStyle = FontStyle.Bold;
             var s = app.Session;
             var host = s.Troops.FirstOrDefault(t => t.Id == Selected);
-            var donors = host == null ? Array.Empty<Troop>() : s.Troops.Where(t => t.Id != host.Id && t.Kind == host.Kind && t.Star == host.Star).OrderBy(t => t.Deployed).ThenBy(t => t.Id).Take(2).ToArray();
-            string text = confirmRestart ? "重开会清空本局军团与奖励，确定？" : confirmStart ? "还有" + s.Spins + "次未转，提前开战会放弃这些次数。确定？" : confirmRecycle ? "遣散这名候补，本局不可找回。确定？" : $"保留{Location(host)}的位置与分支\n消耗{Location(donors[0])}、{Location(donors[1])}\n合成为 {host.Star + 1} 星";
+            string text = confirmRestart ? "重开会清空本局军团与奖励，确定？" : confirmStart ? "还有" + s.Spins + "次未转，提前开战会放弃这些次数。确定？" : "遣散这名候补，本局不可找回。确定？";
             Text(dynamic, text, new Rect(.12f, .455f, .76f, .12f), 18, TextAnchor.MiddleCenter);
             Button("confirm_cancel", "取消", new Rect(.12f, .375f, .33f, .063f), CancelUi);
             Button("confirm_accept", "确认", new Rect(.55f, .375f, .33f, .063f), () =>
@@ -580,8 +882,7 @@ namespace LittleGame.Client
                 if (confirmRestart) { Selected = 0; Submit(new BattleCommand { Kind = CommandKind.NewRun, Seed = BattleApplication.FreshSeed() }); }
                 else if (confirmStart) Submit(new BattleCommand { Kind = CommandKind.StartWave });
                 else if (confirmRecycle && host != null) Submit(new BattleCommand { Kind = CommandKind.Recycle, UnitId = host.Id });
-                else if (host != null && donors.Length == 2) Submit(new BattleCommand { Kind = CommandKind.Merge, UnitId = host.Id, OtherId = donors[0].Id, ThirdId = donors[1].Id });
-                else { CancelUi(); ShowTip("合成条件已变化", isError: true); }
+                else CancelUi();
             });
         }
 
@@ -595,12 +896,11 @@ namespace LittleGame.Client
             return targets.LastOrDefault(t => RectTransformUtility.RectangleContainsScreenPoint(t.Rect, screen, uiCamera));
         }
 
-        public bool BlocksWorld => confirmMerge || confirmStart || confirmRestart || confirmRecycle;
-        private static string Location(Troop t) => t == null ? "" : t.Deployed ? (t.Lane == 0 ? "上" : t.Lane == 1 ? "中" : "下") + "行第" + (t.Row + 1) + "列" : "候补区";
+        public bool BlocksWorld => confirmStart || confirmRestart || confirmRecycle;
 
-        private void Button(string id, string label, Rect area, Action click, int unitId = 0, bool accent = false)
+        private RectTransform Button(string id, string label, Rect area, Action click, int unitId = 0, bool accent = false)
         {
-            string sprite = id.StartsWith("unit_") ? (accent ? "CardGold" : "Card") : id == "start_wave" || id == "confirm_accept" || id == "next_wave" || id == "new_run" ? "ButtonBlue" : id == "spin" || id == "merge" || id.StartsWith("branch_") || id.StartsWith("reward_") ? "ButtonGold" : id.StartsWith("aim_") ? (app.Session.Tactics > 0 ? "ButtonBlue" : "ButtonDark") : "ButtonGray";
+            string sprite = id.StartsWith("unit_") ? (accent ? "CardGold" : "Card") : id == "start_wave" || id == "confirm_accept" || id == "next_wave" || id == "new_run" ? "ButtonBlue" : id == "spin" || id.StartsWith("reward_") ? "ButtonGold" : id.StartsWith("aim_") ? (app.Session.Tactics > 0 ? "ButtonBlue" : "ButtonDark") : "ButtonGray";
             Color tint = id.StartsWith("unit_") ? (accent ? new Color(1, .95f, .72f) : new Color(.9f, .9f, 1)) : id == "spin" && app.Session.Spins <= 0 ? new Color(.55f, .55f, .62f) : Color.white;
             var rect = Panel(dynamic, "Btn_" + id, area, Color.white);
             CombatUiSkin.Decorate(rect, sprite, tint);
@@ -615,6 +915,7 @@ namespace LittleGame.Client
             var text = Text(rect, label, id.StartsWith("unit_") ? new Rect(.04f, .02f, .92f, .44f) : iconBtn ? new Rect(.35f, .05f, .61f, .9f) : new Rect(.05f, .05f, .9f, .9f), id.StartsWith("unit_") ? 10 : id == "spin" || id == "start_wave" || id.StartsWith("aim_") ? 19 : 14, iconBtn && !id.StartsWith("unit_") ? TextAnchor.MiddleLeft : TextAnchor.MiddleCenter, textColor);
             if (id == "spin" || id == "start_wave" || id == "confirm_accept" || id.StartsWith("aim_")) text.fontStyle = FontStyle.Bold;
             targets.Add(new HudTarget { Id = id, Rect = rect, Click = click, UnitId = unitId, UiCamera = uiCamera });
+            return rect;
         }
 
         private Image Icon(Transform parent, string key, Rect area, Color? tint = null)
@@ -707,6 +1008,8 @@ namespace LittleGame.Client
             modal = BlocksWorld,
             skin = CombatUiSkin.Snapshot(),
             tip = new { text = toastText, isError = toastIsError, active = toastTimer > 0f },
+            reserveDropArea = reserveDropZone != null ? new { x = 0.7375f, y = 0.211f } : null,
+            recruitAnimating = reelSpinTimer > 0f || reelWinFlashTimer > 0f || recruitFlyAnims.Count > 0,
             buttons = targets.Select(t =>
             {
                 var r = t.ScreenRect;
@@ -730,6 +1033,7 @@ namespace LittleGame.Client
 
         private void OnDestroy()
         {
+            ClearRecruitFlyAnims(revealAll: false);
             if (slotShineMat != null) Destroy(slotShineMat);
         }
     }

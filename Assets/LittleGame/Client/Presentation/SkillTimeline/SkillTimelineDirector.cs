@@ -9,6 +9,7 @@ namespace LittleGame.Client.SkillTimeline
     {
         bool TryGetUnitPosition(int unitId, out Vector3 position);
         CharacterMotion GetUnitMotion(int unitId);
+        bool TryGetCastPoint(int unitId, out Vector3 position);
         Vector3 GetLaneCenter(int lane);
         Camera GetCamera();
         Vector3 GetCameraBasePosition();
@@ -25,9 +26,14 @@ namespace LittleGame.Client.SkillTimeline
         public readonly string Branch;
         public readonly int Star;
         public readonly Vector3 FallbackTargetPos;
+        public readonly int InstanceId;
+        public readonly Vector3 CasterPosition;
+        public readonly float FacingYaw;
+        public readonly bool TrackTarget;
 
-        public SkillTriggerContext(int casterId, int targetId, int lane, string unitKind, string trigger, string branch, int star, Vector3 fallbackTargetPos)
+        public SkillTriggerContext(int casterId, int targetId, int lane, string unitKind, string trigger, string branch, int star, Vector3 fallbackTargetPos, int instanceId = 0, Vector3 casterPosition = default, float facingYaw = 90f, bool trackTarget = true)
         {
+            InstanceId = instanceId; CasterPosition = casterPosition; FacingYaw = facingYaw; TrackTarget = trackTarget;
             CasterId = casterId;
             TargetId = targetId;
             Lane = lane;
@@ -50,6 +56,7 @@ namespace LittleGame.Client.SkillTimeline
             public SkillTriggerContext Context;
             public Vector3 CasterStart;
             public Vector3 TargetStart;
+            public Vector3 CastPointStart;
             public SkillTimelinePlayer Player;
             public readonly Dictionary<string, GameObject> ClipObjects = new Dictionary<string, GameObject>();
             public readonly HashSet<string> FiredClips = new HashSet<string>();
@@ -86,8 +93,8 @@ namespace LittleGame.Client.SkillTimeline
 
         public void ReloadLibrary()
         {
-            ClearAll();
             library.Reload();
+            ClientBootstrap.Current?.App?.Session.ConfigureSkills(library.BuildDefinitions());
         }
 
         public bool Trigger(SkillTriggerContext context)
@@ -108,15 +115,16 @@ namespace LittleGame.Client.SkillTimeline
                 active.RemoveAt(0);
             }
 
-            Vector3 casterPos = host.TryGetUnitPosition(context.CasterId, out var cp) ? cp : host.GetLaneCenter(context.Lane);
-            Vector3 targetPos = host.TryGetUnitPosition(context.TargetId, out var tp) ? tp : context.FallbackTargetPos;
+            Vector3 casterPos = context.InstanceId > 0 ? context.CasterPosition : host.TryGetUnitPosition(context.CasterId, out var cp) ? cp : host.GetLaneCenter(context.Lane);
+            Vector3 targetPos = context.InstanceId > 0 ? context.FallbackTargetPos : host.TryGetUnitPosition(context.TargetId, out var tp) ? tp : context.FallbackTargetPos;
 
             var play = new ActivePlay
             {
                 TimelineId = timelineId,
                 Context = context,
                 CasterStart = casterPos,
-                TargetStart = targetPos
+                TargetStart = targetPos,
+                CastPointStart = host.TryGetCastPoint(context.CasterId, out var castPoint) ? castPoint : casterPos + Vector3.up * .65f
             };
 
             try
@@ -125,7 +133,7 @@ namespace LittleGame.Client.SkillTimeline
                     config,
                     (clip, localTime) => SampleClip(play, clip, localTime),
                     clip => ExitClip(play, clip),
-                    clip => HandleHit(play, clip),
+                    clip => { if (play.Context.InstanceId == 0) HandleHit(play, clip); },
                     () => ResetPlayVisuals(play));
             }
             catch (Exception ex)
@@ -196,6 +204,7 @@ namespace LittleGame.Client.SkillTimeline
                 valid = report.Valid,
                 validationErrors = report.Errors.Count,
                 activeCount = active.Count,
+                instances = active.Select(p => new { instanceId = p.Context.InstanceId, timelineId = p.TimelineId, casterId = p.Context.CasterId, targetId = p.Context.TargetId, time = p.Player.Time, state = p.Player.State.ToString() }).ToArray(),
                 totalTriggered,
                 recentTriggered = recentTriggered.ToArray()
             };
@@ -227,6 +236,7 @@ namespace LittleGame.Client.SkillTimeline
                     break;
 
                 case SkillClipType.PlayHit:
+                    if (play.Context.InstanceId > 0) break;
                     SampleHitVisual(play, cfg, t);
                     break;
 
@@ -243,12 +253,41 @@ namespace LittleGame.Client.SkillTimeline
                     break;
 
                 case SkillClipType.HitStop:
+                    if (play.Context.InstanceId > 0) break;
                     if (play.FiredClips.Add(cfg.ClipKey))
                     {
                         int stopId = cfg.TargetAnchor == SkillAnchorType.Caster ? play.Context.CasterId : play.Context.TargetId;
                         host.GetUnitMotion(stopId)?.TriggerHitStop(scheduled.ResolvedDuration);
                     }
                     break;
+            }
+        }
+
+        public void CancelInstance(int instanceId)
+        {
+            for (int i = active.Count - 1; i >= 0; i--)
+                if (active[i].Context.InstanceId == instanceId) { StopPlay(active[i]); active.RemoveAt(i); }
+        }
+
+        /// <summary>所有实际受影响单位逐个反馈，群攻不再只给主目标播放受击。</summary>
+        public void PresentImpact(string timelineId, int targetId)
+        {
+            var cfg = library.Get(timelineId);
+            var hit = cfg?.Clips?.Find(c => c.Type == SkillClipType.PlayHit);
+            var motion = host.GetUnitMotion(targetId);
+            if (motion == null) return;
+            motion.TriggerHitFeedback(hit?.FlashDuration ?? .12f, SkillTimelineJson.ParseColor(hit?.FlashColorHex, Color.white));
+            var stop = cfg?.Clips?.Find(c => c.Type == SkillClipType.HitStop);
+            if (stop != null) motion.TriggerHitStop(stop.Duration);
+            if (hit != null && !string.IsNullOrEmpty(hit.EffectId))
+            {
+                var copy = SkillTimelineJson.Deserialize<SkillClipConfig>(SkillTimelineJson.Serialize(hit));
+                copy.Type = SkillClipType.PlayEffect; copy.ToAnchor = SkillAnchorType.Target; copy.FollowAnchor = true;
+                copy.StartTime = 0; copy.PreKey = ""; copy.EndByClipKey = ""; copy.DelayTime = 0;
+                var config = new SkillTimelineConfig { TimelineId = "impact", Clips = new List<SkillClipConfig> { copy } };
+                var play = new ActivePlay { Context = new SkillTriggerContext(0, targetId, 1, "", "", "", 1, Vector3.zero), TargetStart = host.TryGetUnitPosition(targetId, out var pos) ? pos : Vector3.zero };
+                play.Player = new SkillTimelinePlayer(config, (clip, time) => SampleClip(play, clip, time), clip => ExitClip(play, clip), null, () => ResetPlayVisuals(play));
+                active.Add(play); play.Player.Play();
             }
         }
 
@@ -272,7 +311,7 @@ namespace LittleGame.Client.SkillTimeline
             if (go == null) return;
 
             Vector3 from = ResolveAnchor(play, cfg.FromAnchor, false) + Vector3.up * cfg.StartHeight;
-            Vector3 to = ResolveAnchor(play, cfg.ToAnchor, true) + Vector3.up * cfg.EndHeight;
+            Vector3 to = ResolveAnchor(play, cfg.ToAnchor, play.Context.TrackTarget) + Vector3.up * cfg.EndHeight;
             Vector3 pos = Vector3.Lerp(from, to, t);
             pos.y += Mathf.Sin(t * Mathf.PI) * cfg.ArcHeight;
             go.transform.position = pos;
@@ -291,7 +330,9 @@ namespace LittleGame.Client.SkillTimeline
                 ? ResolveAnchor(play, cfg.ToAnchor, true)
                 : ResolveAnchor(play, cfg.ToAnchor, false);
             Vector3 offset = cfg.Offset != null ? cfg.Offset.ToVector3() : Vector3.zero;
+            if (cfg.LocalOffset) offset = Quaternion.Euler(0f, play.Context.FacingYaw, 0f) * offset;
             go.transform.position = anchor + offset;
+            if (cfg.OrientToCaster) go.transform.rotation = Quaternion.Euler(0f, play.Context.FacingYaw, 0f);
 
             // 若使用的是内置程序化占位特效，按形状做简单缩放/展开动画提升观感。
             if (go.name.StartsWith("ProcFx_"))
@@ -450,6 +491,11 @@ namespace LittleGame.Client.SkillTimeline
         {
             switch (anchor)
             {
+                case SkillAnchorType.CastPoint:
+                    if (live && host.TryGetCastPoint(play.Context.CasterId, out var point)) return point;
+                    return play.CastPointStart;
+                case SkillAnchorType.ImpactPoint:
+                    return new Vector3(play.Context.FallbackTargetPos.x, .14f, play.Context.FallbackTargetPos.z);
                 case SkillAnchorType.Caster:
                     if (live && host.TryGetUnitPosition(play.Context.CasterId, out var c)) return c;
                     return play.CasterStart;

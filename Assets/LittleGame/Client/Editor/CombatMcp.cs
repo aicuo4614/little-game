@@ -16,26 +16,27 @@ namespace LittleGame.Client.Editor
         private static readonly CombatMcp instance = new CombatMcp();
         static CombatMcp() { McpExtensionRegistry.Register(instance); AssemblyReloadEvents.beforeAssemblyReload += () => McpExtensionRegistry.Unregister(instance); }
         public string Id => "little-game.combat";
-        public string Version => "1.3.0";
-        public string Description => "横向无限远征军团：无城墙无栅栏、整体白色布阵框自由拖放、职业差异化移速与转身速率、波后快速跑回白框、bump 风格平滑跟镜、十字中线招募与自走棋人口上限；所有操作调用玩家共用规则。";
+        public string Version => "1.6.0";
+        public string Description => "横向军团：Roy A*真实绕行、攻击落点预订、阻挡等待和实际位移动画；招募、布阵、自动合成及战术均调用玩家共用规则。";
         public string UnavailableReason => !Application.isPlaying || ClientBootstrap.Current == null ? "打开 Little Game/Combat/Open Combat 并进入Play" : null;
         private static JObject Schema(string properties = "", string required = "") => JObject.Parse("{'type':'object','properties':{" + properties + "},'required':[" + required + "],'additionalProperties':false}");
         private const string Unit = "'unitId':{'type':'integer','minimum':1}";
         private const string Lane = "'lane':{'type':'integer','minimum':0,'maximum':2}";
         public McpExtensionOperation[] Operations => new[]
         {
-            new McpExtensionOperation("get_state", "读取横向远征阶段、白色布阵框边界、归队状态、推进里程、存活军团、狂暴状态、人口上限与经验圆环、招募次数/保底/十字中奖线、军团/敌人(含homeX/homeZ/facingYaw/turnSpeed/moveSpeed/canMerge)、冷却、战术、首领预警、胜负与最近事件", true, Schema()),
-            new McpExtensionOperation("get_view", "读取UI主题/缺失素材、全局悬浮Tip(红/金)、按钮坐标与宽高、单位/阵位坐标、相机X位置、单位模型与动作/播放时间、技能时间轴统计、材质Shader支持及无限横向滚动场景状态；坐标左下原点0到1", true, Schema()),
+            new McpExtensionOperation("get_state", "读取横向远征阶段、白色布阵框边界、归队状态、推进里程、存活军团、狂暴状态、人口上限与经验圆环、招募次数/保底/十字中奖线、军团/敌人(含homeX/homeZ/facingYaw/turnSpeed/moveSpeed/vx/vz/targetId/aiState/canMerge)、冷却、战术、首领预警、胜负与最近事件", true, Schema()),
+            new McpExtensionOperation("get_view", "读取UI主题/缺失素材、全局悬浮Tip(红/金)、候补拖回热区、按钮坐标与宽高、单位/阵位坐标、相机X位置、单位模型与动作/播放时间、技能时间轴统计、材质Shader支持及无限横向滚动场景状态；坐标左下原点0到1", true, Schema()),
+            new McpExtensionOperation("get_navigation", "只读导航：算法、状态、实际速度、目标落点、剩余路径转角、规划版本、阻挡原因及等待时间；unitId可选。不是刷兵或调试移动", true, Schema(Unit)),
             new McpExtensionOperation("get_events", "读取sequence之后的实际规则事件；重复轮询不推进时间。缓存保留最近600条，返回oldestSequence供识别缺口", true, Schema("'after':{'type':'integer','minimum':0}")),
-            new McpExtensionOperation("get_definitions", "查看职业分支、移动速度、转身速率、白色布阵框范围、奖励及规则版本；不改变状态", true, Schema()),
+            new McpExtensionOperation("get_definitions", "查看职业射程、攻速、移动速度、转身速率、白色布阵框范围、奖励及规则版本；不改变状态", true, Schema()),
             new McpExtensionOperation("restart", "玩家重开同样调用，清空本局；seed为可复现随机种子，默认173", false, Schema("'seed':{'type':'integer'}")),
-            new McpExtensionOperation("spin", "正常转盘：每波3次，援军令后4次，十字中线（中横排与中竖排）三同出兵，十字双连出2兵；两次空转后下次保底", false, Schema()),
-            new McpExtensionOperation("deploy", "在整体白色布阵框内自由部署或替换单位；支持传世界坐标 x/z（超白框拒绝）或参考 lane/row(0..2)；准备阶段限定，受自走棋人口上限(6→9)约束", false, Schema(Unit + "," + Lane + ",'row':{'type':'integer','minimum':0,'maximum':2},'x':{'type':'number'},'z':{'type':'number'}", "'unitId'")),
-            new McpExtensionOperation("recall", "召回候补；至少保留一名上阵、候补容量6", false, Schema(Unit, "'unitId'")),
+            new McpExtensionOperation("spin", "正常转盘：每波3次，援军令后4次，十字中线（中横排与中竖排）三同出兵，十字双连出2兵；两次空转后下次保底；凑齐三同自动合成升星", false, Schema()),
+            new McpExtensionOperation("deploy", "在整体白色布阵框内自由部署或替换单位；传世界坐标 x/z 时超出白框自动夹紧到最近合法点 A；也支持参考 lane/row(0..2)；准备阶段限定，受人口上限(6→9)约束", false, Schema(Unit + "," + Lane + ",'row':{'type':'integer','minimum':0,'maximum':2},'x':{'type':'number'},'z':{'type':'number'}", "'unitId'")),
+            new McpExtensionOperation("recall", "召回候补（玩家通过将场上单位拖入候补区触发）；至少保留一名上阵、候补容量6", false, Schema(Unit, "'unitId'")),
             new McpExtensionOperation("recycle", "遣散候补，不能直接删除上阵兵；仅用于处理容量，无材料收益", false, Schema(Unit, "'unitId'")),
-            new McpExtensionOperation("merge", "三个同职业同星不同单位合成，保留unitId的位置与分支，消耗otherId和thirdId；最高3星", false, Schema(Unit + ",'otherId':{'type':'integer','minimum':1},'thirdId':{'type':'integer','minimum':1}", "'unitId','otherId','thirdId'")),
-            new McpExtensionOperation("choose_branch", "二星后必须选一次合法职业分支，之后锁定；从get_definitions读职业选项", false, Schema(Unit + ",'branch':{'type':'string','enum':['Bastion','WarCry','Pierce','Gale','StormPool','ChainLightning','DeepFreeze','IceArmor']}", "'unitId','branch'")),
-            new McpExtensionOperation("start_wave", "正常开战，未用次数放弃；暂存未处理或分支未选会拒绝。全军自由转向自动交锋", false, Schema()),
+            new McpExtensionOperation("merge", "兼容手动三兵合成（正常流程已自动三合一升星）；最高3星", false, Schema(Unit + ",'otherId':{'type':'integer','minimum':1},'thirdId':{'type':'integer','minimum':1}", "'unitId','otherId','thirdId'")),
+            new McpExtensionOperation("choose_branch", "保留底层职业分支接口（当前版本升二星不强制选择，UI已隐藏）", false, Schema(Unit + ",'branch':{'type':'string','enum':['Bastion','WarCry','Pierce','Gale','StormPool','ChainLightning','DeepFreeze','IceArmor']}", "'unitId','branch'")),
+            new McpExtensionOperation("start_wave", "正常开战，未用次数放弃；暂存未处理会拒绝（二星不强制选分支）。全军通过A*路径与攻击站位自动交锋，受阻站定等待", false, Schema()),
             new McpExtensionOperation("next_wave", "仅波后进入下一波，全员满血恢复推进下一段、刷新次数，不能跳过奖励或战斗", false, Schema()),
             new McpExtensionOperation("choose_reward", "第4/8波后选择尚未持有的局内强化；援军令不可叠加", false, Schema("'reward':{'type':'string','enum':['Reinforcements','WideStorm','LongFreeze']}", "'reward'")),
             new McpExtensionOperation("aim", "进入集火或护盾保护瞄准，暂停战斗但不扣次数；取消可恢复", false, Schema("'kind':{'type':'string','enum':['Focus','Protect']}", "'kind'")),
@@ -44,7 +45,7 @@ namespace LittleGame.Client.Editor
             new McpExtensionOperation("cancel_aim", "取消瞄准，不扣战术点", false, Schema()),
             new McpExtensionOperation("pause", "正常暂停或继续，仅战斗阶段", false, Schema("'paused':{'type':'boolean'}", "'paused'")),
             new McpExtensionOperation("set_speed", "玩家同款1/2倍速度；不是调试跳帧或直接结算", false, Schema("'speed':{'type':'integer','enum':[1,2]}", "'speed'")),
-            new McpExtensionOperation("pointer", "共用触屏/鼠标入口：begin/move/end/cancel；用于验证按钮、选中、起拖、白框落位、越界失败与取消；坐标左下0到1", false, Schema("'phase':{'type':'string','enum':['begin','move','end','cancel']},'x':{'type':'number','minimum':0,'maximum':1},'y':{'type':'number','minimum':0,'maximum':1}", "'phase','x','y'")),
+            new McpExtensionOperation("pointer", "共用触屏/鼠标入口：begin/move/end/cancel；用于验证tap即选中、拖拽吸附最近点A、拖回候补召回、双击候补上场与取消；坐标左下0到1", false, Schema("'phase':{'type':'string','enum':['begin','move','end','cancel']},'x':{'type':'number','minimum':0,'maximum':1},'y':{'type':'number','minimum':0,'maximum':1}", "'phase','x','y'")),
             new McpExtensionOperation("capture_view", "保存实际场景和HUD合成渲染，540x960；编辑器截图不是手机截图", true, Schema()),
             new McpExtensionOperation("performance", "最近240帧的帧间隔、尺寸和平台；编辑器数据不得作为手机帧率", true, Schema())
         };
@@ -55,24 +56,40 @@ namespace LittleGame.Client.Editor
             {
                 case "get_state": return McpHostResult.Success(session.Snapshot());
                 case "get_view": return McpHostResult.Success(boot.Hud.Snapshot());
+                case "get_navigation": return McpHostResult.Success(session.NavigationSnapshot((int?)args["unitId"] ?? 0));
                 case "get_events": var events = session.EventsAfter(0).ToArray(); return McpHostResult.Success(new { oldestSequence = events.FirstOrDefault()?.Sequence ?? 0, lastSequence = session.LastSequence, events = session.EventsAfter((long?)args["after"] ?? 0) });
                 case "get_definitions":
                     return McpHostResult.Success(new
                     {
-                        rulesVersion = "chat-approved-20261124-free-white-box-movespeed",
+                        rulesVersion = "chat-approved-20261125-astar-navigation",
                         sameRuleEntry = "BattleApplication.Submit -> BattleSession.Execute",
                         deployBox = new { minX = BattleDefinitions.DeployMinX, maxX = BattleDefinitions.DeployMaxX, minZ = BattleDefinitions.DeployMinZ, maxZ = BattleDefinitions.DeployMaxZ },
                         professions = Enum.GetValues(typeof(TroopKind)).Cast<TroopKind>().Select(k => new
                         {
                             kind = k.ToString(),
                             name = BattleDefinitions.Name(k),
+                            range = BattleDefinitions.Range(k),
+                            attackInterval = BattleDefinitions.AttackInterval(k),
                             moveSpeed = BattleDefinitions.MoveSpeed(k),
-                            turnSpeed = BattleDefinitions.TurnSpeed(k),
-                            branches = Enum.GetValues(typeof(SkillBranch)).Cast<SkillBranch>().Where(b => BattleDefinitions.ValidBranch(k, b)).Select(b => new { id = b.ToString(), name = BattleDefinitions.Name(b) })
+                            turnSpeed = BattleDefinitions.TurnSpeed(k)
                         }),
                         rules = new
                         {
                             layout = "horizontal_free_white_box_infinite_scroll",
+                            navigation = "roy_astar_attack_slots_swept_motion",
+                            rvoActive = false,
+                            blockedWait = true,
+                            actualDisplacementVelocity = true,
+                            stickyCombatTargets = true,
+                            ai = "finite_state_machine",
+                            aiStates = Enum.GetNames(typeof(CombatAiState)),
+                            autoMerge = true,
+                            mandatoryBranch = false,
+                            clampOutOfBoxDeploy = true,
+                            doubleTapReserveDeploy = true,
+                            dragToReserveRecall = true,
+                            tapImmediateSelect = true,
+                            selectionActionPanel = false,
                             noGateHp = true,
                             noFences = true,
                             postWaveRegroupRun = true,

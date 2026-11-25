@@ -90,5 +90,42 @@
 ## 自由白框布阵、差异化移速、波后跑回归队与跟镜（扩展 1.3.0 / 快照 schemaVersion 4）
 
 - `get_state` 升级至 `schemaVersion = 4`（`layout = "horizontal-free-deploy"`），新增 `deployBox`、`regrouping`，以及单位级 `homeX`、`homeZ`、`moveSpeed`、`facingYaw`、`turnSpeed`、`canMerge`。
-- `deploy` 兼容原 `lane/row` 并新增自由世界坐标参数 `x/z`；超出整体白色布阵框范围返回规则拒绝并弹出红色悬浮 Tip。
+- `deploy` 兼容原 `lane/row` 并新增自由世界坐标参数 `x/z`。
 - `get_view` 新增 `presentation.cameraX` 与全局悬浮 `tip`（`text`、`isError`、`active`）；`get_definitions` 返回各职业 `moveSpeed`、`turnSpeed` 及 `deployBox`。
+
+## RVO2 避障、自动升星、超界吸附与无面板拖拽交互（扩展 1.4.0 / 快照 schemaVersion 5）
+
+- `get_state` 升级至 `schemaVersion = 5`（`layout = "horizontal-free-deploy-rvo"`），战斗移动与避障全面切换为纯规则层单线程确定性 ORCA/RVO2（参考 `E:\Project\AnimalBattle` 内 Apache 2.0 RVO2 Library C#）。
+- 远程射程收紧（风弓手 4.85m、雷/冰法 4.15m），无目标时自动推进至射程内站定；12 波血量攻击与攻速统一在 `BattleDefinitions` 中平滑过渡。
+- 凑齐三同自动合成升星（发出 `merged` 事件触发烟雾特效与金色大星级），去掉升二星强制选分支阻塞（`choose_branch` 仅作底层兼容保留）。
+- `deploy` 传 `x/z` 超出白色布阵框不再拒绝，而是自动夹紧到可放置区域离手最近的点 A（拖拽未松手时在 A 点渲染半透明剪影预览）。
+- `pointer` 入口支持：按下(tap)即刻选中单位且不弹出任何按钮面板、拖拽场上单位到 `get_view.reserveDropArea` 候补区直接召回、双击候补卡片自动寻找合适空位上阵（复用 `Deploy` 规则）。
+
+## 战斗 AI 状态机与安全速度（扩展 1.5.0，兼容快照 schemaVersion 5）
+
+- `get_state.units/enemies` 增加 `aiState`、`targetId`、`vx/vz`，状态为 `Idle/Pursuing/Engaging/Controlled/Dead`；`moveSpeed` 是最大速度，实际让行速度允许降低。
+- `get_events` 增加 `ai_state_changed`，仅状态变化时发送，Source 为单位 ID、Target 为当前目标；波后复活直接重置 Idle。
+- `get_view.presentation.actors` 增加实际表现坐标 `x/z/facingYaw`，结合规则位置和动作采样判断移动与动画是否一致。
+- 模型同次同步的 `movementSpeed/motionPaused/forceWalk/hitStopped` 用于区分真实原地走路、受击顿帧和两次工具读取跨帧；不得把不同时刻的规则速度与动画直接判成不一致。
+- 扩展 1.5.1 的 `get_view.presentation.actors[].groundMarkers` 返回实际存在的单位脚底提示（`name/active`）。移除职业/阵营、分支、三星及旧版手动合成装饰圈；选中标识和临时状态/技能范围仍按真实条件显示。正常操作参数和玩法规则未变。验证：`python -X utf8 Tools/Preparation/verify_ground_markers.py`。
+- `get_definitions.rules` 返回 `ai=finite_state_machine`、`aiStates`、`stickyCombatTargets`、`avoidancePreservesSafeVelocity`。
+- 正常招募/开战/集火/保护/重开参数不变，共用玩家入口未增加 AI 调试捷径。完整回放和移动采样：`python -X utf8 Tools/Preparation/verify_combat_movement.py`，输出 `Reports/Combat/movement-fsm-20261125/`。
+
+## 技能规则时序与二维预览（`little-game.skill-timeline` 2.0.0）
+
+- 技能时间轴 JSON 升级至 `SchemaVersion = 2`，新增纯规则时序配置 `Execution`（`Enabled`、`LaunchKey`、`ImpactKey`、`RecoveryKey`、`InterruptOnControl`、`TrackTarget`）与空间字段（`TargetGround`/`CastPoint`/`ImpactPoint` 挂点、`LocalOffset`、`OrientToCaster`）。启动与热重载时通过 `BattleSession.ConfigureSkills` 下发给规则层，由规则层按统一节点推进前摇/发射/命中/后摇与中断结算，不依赖 Unity 动画回调。
+- `get_state` 新增 `skills` 列表，暴露活跃与近期技能实例（`id`、`source`、`target`、`trigger`、`timelineId`、`phase`、`startedAt`、`launchAt`、`impactAt`、`endAt`、`targetX/Z`、`facingYaw`、`cancelReason`）；`get_events` 新增 `cast_started`、`cast_launched`、`cast_impact`、`cast_completed`、`cast_cancelled` 事件；`get_view.presentation.skillTimeline` 新增 `instances` 演出实例观测。
+- `little-game.skill-timeline` 2.0.0 变更：
+  - `get_timeline(timelineId)` 补充返回 `ruleTiming`（解析后的规则层发射/命中/后摇时间与中断配置）。
+  - 新增 `configure_preview(timelineId, distance, angle, targetSpeed, targetCount, time)`（仅 Edit 模式可用）：配置二维距离、朝向角、移动目标速度与多目标数量进行演出预览（`previewOnly=true`，不替代正常战斗验收）。
+  - 新增 `runtime_instances`（Play 模式只读）：直接查询规则层 `SkillInstances` 的阶段、时间节点与中断原因。
+  - `validate_all` 补充校验特效资源（`Resources/SkillEffects/*`）、动作名合法性及 `Execution` 规则节点时序。
+
+
+## A*导航与阻挡等待（扩展1.6.0，快照schemaVersion 6，当前实现）
+
+本节覆盖前述版本的移动执行描述。`get_state.layout`为`horizontal-free-deploy-astar`，单位和敌人新增`navigation`，含`status`（Holding/Moving/Waiting/NoPath/Arrived）、`blockReason`、`blockedFor`、`goalX/goalZ`、`revision`、`remainingCorners`和`corners`。FSM增加Waiting；`vx/vz`均为碰撞/边界处理后的实际位移速度。
+
+新增只读扩展操作`get_navigation(unitId?)`：返回当前算法、固定步长、单位/敌人的路径与状态；不推进时间、不设置坐标、不刷兵。`get_definitions.rules`返回`navigation=roy_astar_attack_slots_swept_motion`、`rvoActive=false`、`blockedWait=true`、`actualDisplacementVelocity=true`。当前RVO未启用是本轮实现选择，不是用户永久禁止RVO。
+
+正常招募、部署、开战、战术与共用pointer参数不变。`get_state`原字段保留，schema变更用于识别导航行为。验证观察应把Waiting/NoPath与实际零速度、模型Idle/Attack/受控状态对应，并观察阻挡解除后的Moving恢复。纯规则测试不可代替Unity完整流程，编辑器数据不可当手机表现。

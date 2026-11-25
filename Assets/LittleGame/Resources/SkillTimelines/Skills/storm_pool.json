@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 1,
+  "SchemaVersion": 2,
   "TimelineId": "storm_pool",
   "DisplayName": "雷法师·落雷区域",
   "DurationBindClipKey": "",
@@ -41,7 +41,7 @@
       "DelayTime": 0.0,
       "Duration": 0.28,
       "EffectId": "fx_lightning_strike",
-      "ToAnchor": "TargetGround",
+      "ToAnchor": "ImpactPoint",
       "Shape": "Beam",
       "Offset": {
         "x": 0.0,
@@ -61,7 +61,7 @@
       "DelayTime": 0.05,
       "Duration": 0.75,
       "EffectId": "fx_storm_zone",
-      "ToAnchor": "TargetGround",
+      "ToAnchor": "ImpactPoint",
       "Shape": "Zone",
       "Offset": {
         "x": 0.0,
@@ -115,5 +115,13 @@
       "Frequency": 32.0,
       "EventConfigs": []
     }
-  ]
+  ],
+  "Execution": {
+    "Enabled": true,
+    "LaunchKey": "ev_cast",
+    "ImpactKey": "c_hit",
+    "RecoveryKey": "c_anim",
+    "InterruptOnControl": true,
+    "TrackTarget": false
+  }
 }

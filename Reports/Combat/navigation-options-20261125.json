@@ -1,0 +1,275 @@
+{
+  "date": "2026-11-25",
+  "purpose": "结合项目实际需求客观评估，不限定旧项目、不排除RVO",
+  "latestUserConstraint": "采用实际适合的方案；允许研究开源；未授权付款或要求本轮改写运行时",
+  "projectNeeds": {
+    "friendlyLimit": 9,
+    "ordinaryWaveMaxEnemyCount": 10,
+    "bossWaveEnemyCount": 1,
+    "space": "小型单层X/Z平面，背景横向滚动",
+    "priorities": [
+      "能绕过连续阻挡",
+      "攻击位置不争抢",
+      "无路站定且不持续跑步",
+      "对向和交叉行走有让行机制",
+      "首领与普通兵体积分别校验",
+      "既有统一指令/纯规则固定步长结构",
+      "Android IL2CPP ARM64，性能需真机实测",
+      "零额外现金优先，控制接入与维护成本"
+    ]
+  },
+  "sourceAudits": [
+    {
+      "repo": "roy-t/AStar",
+      "url": "https://github.com/roy-t/AStar",
+      "commit": "3d57efaa83c8cd217e4973fd4738c57e2f694bd2",
+      "commitDate": "2024-04-07T11:22:45Z",
+      "pushedAt": "2024-04-07T11:22:45Z",
+      "archived": false,
+      "licenseApi": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      },
+      "csproj": {
+        "Roy-T.AStar/Roy-T.AStar.csproj": [
+          "<TargetFramework>netstandard2.0</TargetFramework>"
+        ]
+      },
+      "csFileCount": 45,
+      "coreSourceFileCount": 26,
+      "cache": "Library\\NavigationReview\\RoyTAStar"
+    },
+    {
+      "repo": "ikpil/DotRecast",
+      "url": "https://github.com/ikpil/DotRecast",
+      "commit": "6fce4ac0d59f4d4efdf9de0a9e5beae5784bca12",
+      "commitDate": "2026-10-03T04:48:56Z",
+      "pushedAt": "2026-10-03T04:49:02Z",
+      "archived": false,
+      "licenseApi": {
+        "key": "zlib",
+        "name": "zlib License",
+        "spdx_id": "Zlib",
+        "url": "https://api.github.com/licenses/zlib",
+        "node_id": "MDc6TGljZW5zZTI3"
+      },
+      "csproj": {
+        "src/DotRecast.Core/DotRecast.Core.csproj": [
+          "<TargetFrameworks>netstandard2.1;net8.0;net9.0;net10.0</TargetFrameworks>",
+          "<ItemGroup Condition=\"'$(TargetFramework)' == 'netstandard2.1'\">",
+          "<PackageReference Include=\"System.Runtime.CompilerServices.Unsafe\" Version=\"6.1.2\" />"
+        ],
+        "src/DotRecast.Detour.Crowd/DotRecast.Detour.Crowd.csproj": [
+          "<TargetFrameworks>netstandard2.1;net8.0;net9.0;net10.0</TargetFrameworks>",
+          "<ProjectReference Include=\"..\\DotRecast.Detour\\DotRecast.Detour.csproj\"/>"
+        ],
+        "src/DotRecast.Detour.Dynamic/DotRecast.Detour.Dynamic.csproj": [
+          "<TargetFrameworks>netstandard2.1;net8.0;net9.0;net10.0</TargetFrameworks>",
+          "<ProjectReference Include=\"..\\DotRecast.Detour\\DotRecast.Detour.csproj\"/>",
+          "<ProjectReference Include=\"..\\DotRecast.Recast\\DotRecast.Recast.csproj\"/>"
+        ],
+        "src/DotRecast.Detour.Extras/DotRecast.Detour.Extras.csproj": [
+          "<TargetFrameworks>netstandard2.1;net8.0;net9.0;net10.0</TargetFrameworks>",
+          "<PackageReference Include=\"Newtonsoft.Json\" Version=\"13.0.4\"/>",
+          "<ProjectReference Include=\"..\\DotRecast.Recast\\DotRecast.Recast.csproj\"/>",
+          "<ProjectReference Include=\"..\\DotRecast.Detour\\DotRecast.Detour.csproj\"/>"
+        ],
+        "src/DotRecast.Detour.TileCache/DotRecast.Detour.TileCache.csproj": [
+          "<TargetFrameworks>netstandard2.1;net8.0;net9.0;net10.0</TargetFrameworks>",
+          "<ProjectReference Include=\"..\\DotRecast.Recast\\DotRecast.Recast.csproj\"/>",
+          "<ProjectReference Include=\"..\\DotRecast.Detour\\DotRecast.Detour.csproj\"/>"
+        ],
+        "src/DotRecast.Detour/DotRecast.Detour.csproj": [
+          "<TargetFrameworks>netstandard2.1;net8.0;net9.0;net10.0</TargetFrameworks>",
+          "<ProjectReference Include=\"..\\DotRecast.Core\\DotRecast.Core.csproj\"/>"
+        ],
+        "src/DotRecast.Recast.Demo/DotRecast.Recast.Demo.csproj": [
+          "<TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>",
+          "<PackageReference Include=\"Serilog\" Version=\"4.4.0\" />",
+          "<PackageReference Include=\"Serilog.Settings.Configuration\" Version=\"10.0.1\" />",
+          "<PackageReference Include=\"Serilog.Enrichers.Thread\" Version=\"4.0.0\"/>",
+          "<PackageReference Include=\"Serilog.Sinks.Async\" Version=\"2.1.0\"/>",
+          "<PackageReference Include=\"Serilog.Sinks.Console\" Version=\"6.1.1\"/>",
+          "<PackageReference Include=\"Serilog.Sinks.File\" Version=\"7.0.0\"/>",
+          "<PackageReference Include=\"K4os.Compression.LZ4\" Version=\"1.3.8\"/>",
+          "<PackageReference Include=\"Silk.NET\" Version=\"2.23.0\"/>",
+          "<PackageReference Include=\"Silk.NET.OpenGL.Extensions.ImGui\" Version=\"2.23.0\"/>",
+          "<ProjectReference Include=\"..\\DotRecast.Recast.Toolset\\DotRecast.Recast.Toolset.csproj\"/>"
+        ],
+        "src/DotRecast.Recast.Toolset/DotRecast.Recast.Toolset.csproj": [
+          "<TargetFrameworks>netstandard2.1;net8.0;net9.0;net10.0</TargetFrameworks>",
+          "<ProjectReference Include=\"..\\DotRecast.Core\\DotRecast.Core.csproj\"/>",
+          "<ProjectReference Include=\"..\\DotRecast.Recast\\DotRecast.Recast.csproj\"/>",
+          "<ProjectReference Include=\"..\\DotRecast.Detour\\DotRecast.Detour.csproj\"/>",
+          "<ProjectReference Include=\"..\\DotRecast.Detour.Crowd\\DotRecast.Detour.Crowd.csproj\"/>",
+          "<ProjectReference Include=\"..\\DotRecast.Detour.Dynamic\\DotRecast.Detour.Dynamic.csproj\"/>",
+          "<ProjectReference Include=\"..\\DotRecast.Detour.Extras\\DotRecast.Detour.Extras.csproj\"/>",
+          "<ProjectReference Include=\"..\\DotRecast.Detour.TileCache\\DotRecast.Detour.TileCache.csproj\"/>"
+        ],
+        "src/DotRecast.Recast/DotRecast.Recast.csproj": [
+          "<TargetFrameworks>netstandard2.1;net8.0;net9.0;net10.0</TargetFrameworks>",
+          "<ProjectReference Include=\"..\\DotRecast.Core\\DotRecast.Core.csproj\"/>"
+        ]
+      },
+      "csFileCount": 464
+    },
+    {
+      "repo": "juhgiyo/EpPathFinding.cs",
+      "url": "https://github.com/juhgiyo/EpPathFinding.cs",
+      "commit": "e0d3d4bf735364774912df7f5c3b44f8bec0457a",
+      "commitDate": "2018-04-24T01:40:01Z",
+      "pushedAt": "2021-07-08T10:46:08Z",
+      "archived": false,
+      "licenseApi": null,
+      "csproj": {},
+      "csFileCount": 25,
+      "licenseReadme": "MIT License",
+      "c5DependencyMentioned": false
+    }
+  ],
+  "royIsolatedProbe": {
+    "passed": [
+      "连续墙体留上方出口：找到绕行路径",
+      "路径不进入墙体节点",
+      "通道封死：明确返回部分接近路径，不能误判到达",
+      "调用禁止切角接口后，不从两个阻挡之间斜穿",
+      "已在目标：完整空路径",
+      "同一图重复查询路线一致"
+    ],
+    "emptyGraphConvenienceOverloadThrows": true,
+    "workaround": "显式传maximumVelocity避免空图边集合Max异常；明确检查Complete/ClosestApproach；阻挡节点需另行移除切角连线",
+    "platform": ".NET 10, source language C#9",
+    "limitations": "隔离静态路径搜索测试；不是Unity、动态人群、动画或Android验证；尚未接入游戏"
+  },
+  "comparison": [
+    {
+      "candidate": "roy-t/AStar",
+      "fit": "当前优先验证的轻量寻路核心",
+      "strengths": [
+        "MIT许可",
+        "netstandard2.0、核心无外部包依赖",
+        "26个核心C#文件、纯逻辑层易隔离",
+        "已完成六项.NET静态路径场景验证"
+      ],
+      "risks": [
+        "主分支提交2024-04-07，维护频率较低",
+        "不是完整导航/人群/动画系统",
+        "不同体型通行、动态占位、路径跟随和让行需额外适配",
+        "空边图便捷FindPath重载会异常、部分路径类型和切角接口需正确处理"
+      ],
+      "unityValidated": false
+    },
+    {
+      "candidate": "Unity AI Navigation/NavMeshAgent",
+      "fit": "成熟集成方案，重要备选",
+      "strengths": [
+        "Unity现成的路径搜索、通路跟随与局部避障",
+        "复杂静态地形/高差有优势"
+      ],
+      "risks": [
+        "当前manifest尚无modules.ai或AI Navigation",
+        "默认局部避障使用RVO，RVO已获用户允许但不能当作解决战斗位置的替代",
+        "接入纯规则固定步长系统需要明确导航服务适配，避免表现回写规则",
+        "单位互堵、攻击位置、等待和动画仍需战斗层处理"
+      ],
+      "unityValidated": false
+    },
+    {
+      "candidate": "Aron Granberg A* Pathfinding Project",
+      "fit": "功能齐全的Unity导航产品，作为集成候选",
+      "strengths": [
+        "网格/导航网格和可视化工作流",
+        "可选局部避障与成熟移动组件"
+      ],
+      "risks": [
+        "A*算法与该产品不是一回事，免费版本不等于MIT开源库",
+        "Local Avoidance为RVO/ORCA且属于Pro功能；付费需用户单独授权",
+        "当前未获取完整包，许可证、目标版本与Unity2022接入仍未验证"
+      ],
+      "unityValidated": false,
+      "versionFindings": {
+        "free": "4.2.17，官方标注2021-11-06更新，兼容Unity2019.3+",
+        "pro": "5.4.7，官方标注兼容Unity2022.3+",
+        "commercial": "官方FAQ允许Free用于商业项目；Pro采用Asset Store许可，局部RVO为Pro功能",
+        "validation": "只读官方页面，不宣称已拿到包/兼容性通过，也不执行付费"
+      }
+    },
+    {
+      "candidate": "ikpil/DotRecast",
+      "fit": "更复杂地形或后续服务器导航的候选，本轮不首选",
+      "strengths": [
+        "Zlib许可、模块化C# Recast/Detour",
+        "主分支2026-10仍有提交",
+        "有网格生成、查询和测试模块"
+      ],
+      "risks": [
+        "能力范围较大，本项目当前小平面难以抵消额外接入工作",
+        "当前netstandard2.1的Core需要Unsafe6.1.2包，不能直接照README称完全无依赖",
+        "导入Core/Detour与是否使用Crowd模块需分别决定",
+        "未完成Unity2022编译/IL2CPP测试"
+      ],
+      "unityValidated": false
+    },
+    {
+      "candidate": "juhgiyo/EpPathFinding.cs",
+      "fit": "不优先",
+      "strengths": [
+        "README含MIT许可文本、C#网格A*/JPS实现"
+      ],
+      "risks": [
+        "主分支提交较旧（2018），仓库推送2021不等于核心更新",
+        "旧.NET4.0工程与C5依赖需要额外核查",
+        "未作编译测试；当前小地图的主要风险不是寻路节点搜索性能"
+      ],
+      "unityValidated": false,
+      "dependencyConfirmed": "已读取固定提交csproj：.NET Framework4.0，引用C5 2.4.5947.17248，HintPath指向packages/C5.2.4.5947.17249/lib/net40/C5.dll"
+    }
+  ],
+  "recommendation": {
+    "architecture": "路径搜索 + 攻击位置分配 + 动态通行/让行 + 移动执行与等待状态 + 实际位移动画",
+    "firstCandidate": "Roy-T.AStar作为路径核心，先做可视化拥堵场景；若所需自行补齐成本/实测效果不合适，再对比Unity原生NavMesh集成",
+    "rvoPolicy": "用户最新确认允许RVO。是否采用成熟局部避障按拥堵场景实测决定；不能因本项目自定义简化实现的缺陷而否定RVO，也不能让局部避障替代找路/攻击站位/明确阻挡等待。",
+    "avoidPrematureClaims": "目前只是源码审查和.NET路径测试，不是Unity或手机效果已通过，不称某库已经是实测最优",
+    "acceptance": [
+      "连续墙体和U形阻挡能绕行",
+      "攻击位满时有等待点且动作站立",
+      "相向行走与交叉争路可以让行",
+      "阻挡解除后恢复而非长期停住",
+      "边界实际零位移时不跑步",
+      "大首领、出生入口和窄通道不会因体型图错误不可达",
+      "正常游戏流程和MCP同入口验证、连续录屏与实际位移采样"
+    ],
+    "implementationCostsAcknowledged": [
+      "Roy核心仅路径搜索，动态占位、多体型、让行、连续路径跟随和动画执行均是本项目集成成本",
+      "Unity原生导航可减少通用组件开发，但接入固定步长纯规则层有成本；不因前述架构偏好就断言实测一定差",
+      "纯.NET路径通过只提升核心候选可信度；最终优先级需用同一组Unity可视化拥堵场景验证，不以库名判定"
+    ]
+  },
+  "sources": [
+    {
+      "url": "https://docs.unity3d.com/Packages/com.unity.ai.navigation@1.1/manual/NavInnerWorkings.html",
+      "supports": "Unity NavMesh使用A*搜索及RVO局部避障"
+    },
+    {
+      "url": "https://arongranberg.com/astar/docs/localavoidance.html",
+      "supports": "该产品Local Avoidance使用RVO/ORCA且为Pro功能"
+    },
+    {
+      "url": "https://arongranberg.com/astar/download",
+      "supports": "Free/Pro版本及官方Unity兼容声明"
+    },
+    {
+      "url": "https://arongranberg.com/astar/documentation/stable/faq.html",
+      "supports": "Free版本可用于商业项目"
+    },
+    {
+      "url": "https://arongranberg.com/astar/buy/",
+      "supports": "Pro按Asset Store许可；未购买"
+    }
+  ],
+  "runtimeChanges": false,
+  "apkBuilt": false
+}

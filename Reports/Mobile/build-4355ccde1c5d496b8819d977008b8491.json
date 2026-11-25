@@ -1,0 +1,17 @@
+{
+  "buildId": "4355ccde1c5d496b8819d977008b8491",
+  "state": "succeeded",
+  "apk": "E:\\Project\\little-game\\Builds\\Android\\little-game.apk",
+  "bytes": 58532625,
+  "sizeMiB": 55.82,
+  "sha256": "6c91014896a04f4a02167994854132a553f2e78e80c6b370413a4d1ae5552fa3",
+  "badging": [
+    "package: name='com.littlegame.teardown.dev' versionCode='6' versionName='2.0.0' platformBuildVersionName='13' platformBuildVersionCode='33' compileSdkVersion='33' compileSdkVersionCodename='13'",
+    "sdkVersion:'22'",
+    "targetSdkVersion:'33'",
+    "application-label:'符阵军团'",
+    "native-code: 'arm64-v8a'"
+  ],
+  "il2cppArm64Verified": true,
+  "installed": false
+}

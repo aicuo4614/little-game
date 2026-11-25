@@ -54,7 +54,8 @@ public sealed class RocoCharacterOutlineFeature : ScriptableRendererFeature
         }
 
         var cameraType = renderingData.cameraData.cameraType;
-        if (cameraType == CameraType.Preview)
+        // 仅主战场 Base 相机执行角色描边，跳过 UI Overlay 与拖拽 Overlay 相机以节省渲染开销
+        if (cameraType == CameraType.Preview || renderingData.cameraData.renderType != CameraRenderType.Base)
         {
             return;
         }

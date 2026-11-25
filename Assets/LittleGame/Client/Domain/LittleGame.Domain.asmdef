@@ -1,1 +1,9 @@
-{"name":"LittleGame.Domain","rootNamespace":"LittleGame.Combat","noEngineReferences":true,"autoReferenced":true}
+{
+  "name": "LittleGame.Domain",
+  "rootNamespace": "LittleGame.Combat",
+  "noEngineReferences": true,
+  "autoReferenced": true,
+  "references": [
+    "LittleGame.RoyTAStar"
+  ]
+}

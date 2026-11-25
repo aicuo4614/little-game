@@ -47,7 +47,7 @@ namespace LittleGame.Combat
                 throw new ArgumentException("不支持或损坏的远征存档");
             if (save.Troops == null || save.Troops.Count > 15 || save.Troops.Select(t => t.Id).Distinct().Count() != save.Troops.Count || save.Troops.Any(t => t.Id < 1 || t.Id >= save.NextId || t.Star < 1 || t.Star > 3 || !Enum.IsDefined(typeof(TroopKind), t.Kind) || (t.Branch != SkillBranch.None && !BattleDefinitions.ValidBranch(t.Kind, t.Branch)) || (t.Star == 1 && t.Branch != SkillBranch.None) || t.Lane < -1 || t.Lane > 2 || t.Row < -1 || t.Row > 2 || ((t.Lane == -1) != (t.Row == -1))))
                 throw new ArgumentException("存档军团无效");
-            if (save.Troops.Count(t => t.Lane == -1) > 6 || !save.Troops.Any(t => t.Lane >= 0))
+            if (save.Troops.Count(t => t.Lane == -1) > 6 || (save.Phase != RunPhase.Preparation && !save.Troops.Any(t => t.Lane >= 0)))
                 throw new ArgumentException("存档阵位冲突");
             if (save.Rewards == null || save.Rewards.Distinct().Count() != save.Rewards.Count || save.Rewards.Any(r => !Enum.IsDefined(typeof(RewardKind), r)) || save.Pending == null || save.Pending.Count > 3 || save.Pending.Any(k => !Enum.IsDefined(typeof(TroopKind), k)) || save.Reels == null || save.Reels.Length != 9 || save.Reels.Any(k => !Enum.IsDefined(typeof(TroopKind), k)) || (save.Speed != 1 && save.Speed != 2))
                 throw new ArgumentException("存档奖励或转盘无效");

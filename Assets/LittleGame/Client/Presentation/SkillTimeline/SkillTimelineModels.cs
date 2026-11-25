@@ -22,7 +22,9 @@ namespace LittleGame.Client.SkillTimeline
         Caster,
         Target,
         LaneCenter,
-        TargetGround
+        TargetGround,
+        CastPoint,
+        ImpactPoint
     }
 
     public enum SkillEffectShape
@@ -90,6 +92,8 @@ namespace LittleGame.Client.SkillTimeline
         public float Width = 0.14f;
         public float Scale = 1f;
         public bool FollowAnchor;
+        public bool LocalOffset;
+        public bool OrientToCaster;
         public string ColorHex = "#F5C24C";
 
         // PlayHit
@@ -107,12 +111,24 @@ namespace LittleGame.Client.SkillTimeline
     }
 
     [Serializable]
+    public sealed class SkillExecutionConfig
+    {
+        public bool Enabled;
+        public string LaunchKey = "";
+        public string ImpactKey = "";
+        public string RecoveryKey = "";
+        public bool InterruptOnControl = true;
+        public bool TrackTarget = true;
+    }
+
+    [Serializable]
     public sealed class SkillTimelineConfig
     {
-        public int SchemaVersion = 1;
+        public int SchemaVersion = 2;
         public string TimelineId = "";
         public string DisplayName = "";
         public string DurationBindClipKey = "";
+        public SkillExecutionConfig Execution = new SkillExecutionConfig();
         public List<SkillClipConfig> Clips = new List<SkillClipConfig>();
     }
 

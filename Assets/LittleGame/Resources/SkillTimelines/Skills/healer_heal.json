@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 1,
+  "SchemaVersion": 2,
   "TimelineId": "healer_heal",
   "DisplayName": "治疗师回血",
   "DurationBindClipKey": "",
@@ -30,9 +30,9 @@
       "DelayTime": 0.0,
       "Duration": 0.18,
       "EffectId": "fx_heal_orb",
-      "FromAnchor": "Caster",
+      "FromAnchor": "CastPoint",
       "ToAnchor": "Target",
-      "StartHeight": 0.72,
+      "StartHeight": 0,
       "EndHeight": 0.65,
       "ArcHeight": 0.45,
       "Width": 0.11,
@@ -59,6 +59,22 @@
       "FollowAnchor": true,
       "ColorHex": "#5CFF8D",
       "EventConfigs": []
+    },
+    {
+      "ClipKey": "rule_impact",
+      "Type": "PlayEffect",
+      "StartTime": 0.18,
+      "Duration": 0,
+      "Scale": 0,
+      "ToAnchor": "Target"
     }
-  ]
+  ],
+  "Execution": {
+    "Enabled": true,
+    "LaunchKey": "c_orb",
+    "ImpactKey": "rule_impact",
+    "RecoveryKey": "c_anim",
+    "InterruptOnControl": true,
+    "TrackTarget": true
+  }
 }

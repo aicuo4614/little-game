@@ -14,11 +14,11 @@ namespace LittleGame.Client.Units.Controls
         public string CurrentAction => Motion != null ? Motion.CurrentAction : null;
         public float ActionTime => Motion != null ? Motion.ActionTime : 0f;
 
-        public void Sync(bool alive, bool paused, bool forceWalk = false)
+        public void Sync(bool alive, bool paused, bool forceWalk = false, float movementSpeed = -1f)
         {
             if (Motion == null) return;
             Motion.SetAlive(alive);
-            Motion.Apply(paused, forceWalk);
+            Motion.Apply(paused, forceWalk, movementSpeed);
         }
 
         public void PlayAction(string alias, float speed = 1f) => Motion?.PlayAction(alias, speed);

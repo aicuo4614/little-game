@@ -22,6 +22,7 @@ namespace LittleGame.Client
         private readonly List<Transform> roadChunks = new List<Transform>();
         private readonly List<Transform> farChunks = new List<Transform>();
         private readonly List<Material> materials = new List<Material>();
+        private readonly List<Mesh> combinedMeshes = new List<Mesh>();
         private Material stone, pale, dark, earth, moss, blue, floorA, floorB;
         private float currentScrollSpeed;
         private float scrollTotal;
@@ -55,6 +56,7 @@ namespace LittleGame.Client
                 chunk.SetParent(transform, false);
                 chunk.localPosition = Vector3.zero;
                 BuildRoadChunk(chunk, c);
+                CombineChunkByMaterial(chunk, castShadows: false);
                 chunk.localPosition = new Vector3((c - 1) * ChunkWidth, 0f, 0f);
                 roadChunks.Add(chunk);
             }
@@ -66,6 +68,7 @@ namespace LittleGame.Client
                 far.SetParent(transform, false);
                 far.localPosition = Vector3.zero;
                 BuildFarChunk(far, c);
+                CombineChunkByMaterial(far, castShadows: false);
                 far.localPosition = new Vector3((c - 1) * ChunkWidth, 0f, 0f);
                 farChunks.Add(far);
             }
@@ -226,9 +229,63 @@ namespace LittleGame.Client
             return go;
         }
 
+        /// <summary>将滚动 Chunk 内的数百个静态子模型按材质合并为极少网格，大幅削减移动端 DrawCall 与阴影开销。</summary>
+        private void CombineChunkByMaterial(Transform chunkRoot, bool castShadows)
+        {
+            var filters = chunkRoot.GetComponentsInChildren<MeshFilter>();
+            if (filters.Length == 0) return;
+
+            var byMat = new Dictionary<Material, List<CombineInstance>>();
+            Matrix4x4 rootInv = chunkRoot.worldToLocalMatrix;
+            var toDestroy = new List<GameObject>();
+
+            for (int i = 0; i < filters.Length; i++)
+            {
+                var mf = filters[i];
+                var mr = mf.GetComponent<MeshRenderer>();
+                if (mr == null || mf.sharedMesh == null || mr.sharedMaterial == null) continue;
+                var mat = mr.sharedMaterial;
+                if (!byMat.TryGetValue(mat, out var list))
+                {
+                    list = new List<CombineInstance>();
+                    byMat[mat] = list;
+                }
+                list.Add(new CombineInstance
+                {
+                    mesh = mf.sharedMesh,
+                    transform = rootInv * mf.transform.localToWorldMatrix
+                });
+            }
+
+            for (int i = 0; i < chunkRoot.childCount; i++)
+                toDestroy.Add(chunkRoot.GetChild(i).gameObject);
+            for (int i = 0; i < toDestroy.Count; i++)
+                Destroy(toDestroy[i]);
+
+            int batchIdx = 0;
+            foreach (var kv in byMat)
+            {
+                var combined = new Mesh { name = chunkRoot.name + "_Batch_" + batchIdx++ };
+                combined.indexFormat = IndexFormat.UInt32;
+                combined.CombineMeshes(kv.Value.ToArray(), true, true);
+                combined.RecalculateBounds();
+                combinedMeshes.Add(combined);
+
+                var go = new GameObject(combined.name, typeof(MeshFilter), typeof(MeshRenderer));
+                go.transform.SetParent(chunkRoot, false);
+                go.GetComponent<MeshFilter>().sharedMesh = combined;
+                var mr = go.GetComponent<MeshRenderer>();
+                mr.sharedMaterial = kv.Key;
+                mr.shadowCastingMode = castShadows ? ShadowCastingMode.On : ShadowCastingMode.Off;
+                mr.receiveShadows = true;
+            }
+        }
+
         private void OnDestroy()
         {
             foreach (var m in materials) Destroy(m);
+            foreach (var mesh in combinedMeshes) if (mesh != null) Destroy(mesh);
+            combinedMeshes.Clear();
         }
     }
 }

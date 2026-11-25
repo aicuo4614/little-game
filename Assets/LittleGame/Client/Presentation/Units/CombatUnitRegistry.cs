@@ -7,12 +7,15 @@ using UnityEngine;
 namespace LittleGame.Client.Units
 {
     /// <summary>
-    /// 战场单位表现注册表（参考 Demo Unit 管理分层）：
-    /// 负责全部 CombatUnitActor 的创建、复用、状态同步、清理与屏幕拾取。
+    /// 战场单位表现注册表（零每帧 LINQ/HashSet 分配）：
+    /// 负责全部 CombatUnitActor 的创建、复用、状态同步、清理与屏幕拾取；
+    /// 波次结束后立即清理已死亡敌人表现，杜绝最后一只怪在波后滚动路面残留。
     /// </summary>
     public sealed class CombatUnitRegistry
     {
-        private readonly Dictionary<int, CombatUnitActor> actors = new Dictionary<int, CombatUnitActor>();
+        private readonly Dictionary<int, CombatUnitActor> actors = new Dictionary<int, CombatUnitActor>(24);
+        private readonly HashSet<int> activeIds = new HashSet<int>();
+        private readonly List<int> removeBuffer = new List<int>(16);
         private readonly Transform parent;
         private readonly Camera camera;
         private readonly Mesh ringMesh;
@@ -37,11 +40,15 @@ namespace LittleGame.Client.Units
 
         public void Sync(BattleSession session, bool marching = false)
         {
-            var activeIds = new HashSet<int>();
+            activeIds.Clear();
+            bool fighting = session.Phase == RunPhase.Fighting;
             bool paused = session.Paused || session.Aim != AimKind.None;
 
-            foreach (var t in session.Troops.Where(t => t.Deployed))
+            var troops = session.Troops;
+            for (int i = 0; i < troops.Count; i++)
             {
+                var t = troops[i];
+                if (!t.Deployed) continue;
                 activeIds.Add(t.Id);
                 var actor = GetOrCreate(t.Id, (int)t.Kind, false, false);
                 float scale = t.Star == 3 ? 1.18f : t.Star == 2 ? 1.08f : 1f;
@@ -49,38 +56,53 @@ namespace LittleGame.Client.Units
                     new Vector3(t.X, 0.11f, t.Z),
                     t.FacingYaw,
                     t.Hp / Mathf.Max(1f, t.MaxHp),
-                    new string('★', t.Star),
+                    t.Star == 1 ? "★" : t.Star == 2 ? "★★" : "★★★",
                     t.Shield > 0f,
                     scale,
-                    t.Alive || session.Phase != RunPhase.Fighting,
-                    session.Phase != RunPhase.Fighting,
-                    session.Phase == RunPhase.Fighting,
+                    t.Alive || !fighting,
+                    !fighting,
+                    fighting,
                     paused,
                     t.Star,
                     t.Branch,
-                    forceWalk: (marching || t.NeedsRegroup) && !paused);
+                    forceWalk: !fighting && (marching || t.NeedsRegroup) && !paused,
+                    movementSpeed: fighting ? Mathf.Sqrt(t.Vx * t.Vx + t.Vz * t.Vz) : -1f);
             }
 
-            foreach (var e in session.Enemies)
+            // 仅在战斗阶段保留敌方表现（含死亡演出）；波次结束切出 Fighting 后立即清除死怪，消除最后一只怪残留
+            if (fighting)
             {
-                activeIds.Add(e.Id);
-                var actor = GetOrCreate(e.Id, (int)e.Kind, true, e.Boss);
-                bool frozen = e.Alive && e.FrozenUntil > session.BattleTime;
-                actor.SyncState(
-                    new Vector3(e.X, 0.11f, e.Z),
-                    e.FacingYaw,
-                    e.Hp / Mathf.Max(1f, e.MaxHp),
-                    e.Boss ? BattleDefinitions.Name(e.Kind) : "",
-                    frozen,
-                    1f,
-                    e.Alive,
-                    false,
-                    e.Alive && session.Phase == RunPhase.Fighting && !frozen,
-                    paused || frozen);
+                var enemies = session.Enemies;
+                for (int i = 0; i < enemies.Count; i++)
+                {
+                    var e = enemies[i];
+                    activeIds.Add(e.Id);
+                    var actor = GetOrCreate(e.Id, (int)e.Kind, true, e.Boss);
+                    bool frozen = e.Alive && e.FrozenUntil > session.BattleTime;
+                    actor.SyncState(
+                        new Vector3(e.X, 0.11f, e.Z),
+                        e.FacingYaw,
+                        e.Hp / Mathf.Max(1f, e.MaxHp),
+                        e.Boss ? BattleDefinitions.Name(e.Kind) : "",
+                        frozen,
+                        1f,
+                        e.Alive,
+                        false,
+                        e.Alive && !frozen,
+                        paused || frozen,
+                        movementSpeed: Mathf.Sqrt(e.Vx * e.Vx + e.Vz * e.Vz));
+                }
             }
 
-            foreach (var id in actors.Keys.Where(id => !activeIds.Contains(id)).ToArray())
+            removeBuffer.Clear();
+            foreach (var kv in actors)
             {
+                if (!activeIds.Contains(kv.Key))
+                    removeBuffer.Add(kv.Key);
+            }
+            for (int i = 0; i < removeBuffer.Count; i++)
+            {
+                int id = removeBuffer[i];
                 if (actors[id] != null) UnityEngine.Object.Destroy(actors[id].gameObject);
                 actors.Remove(id);
             }
@@ -95,15 +117,30 @@ namespace LittleGame.Client.Units
 
         public int HitUnit(BattleSession session, Vector2 screen, bool enemy)
         {
-            var ids = enemy
-                ? session.Enemies.Where(e => e.Alive).Select(e => e.Id)
-                : session.Troops.Where(t => t.Deployed).Select(t => t.Id);
-            return ids
-                .Select(id => new { id, d = Vector2.Distance(screen, UnitScreen(id)) })
-                .Where(x => x.d < Mathf.Max(23f, Screen.width * 0.065f))
-                .OrderBy(x => x.d)
-                .Select(x => x.id)
-                .FirstOrDefault();
+            float maxDist = Mathf.Max(23f, Screen.width * 0.065f);
+            int bestId = 0;
+            float bestDist = maxDist;
+            if (enemy)
+            {
+                var enemies = session.Enemies;
+                for (int i = 0; i < enemies.Count; i++)
+                {
+                    if (!enemies[i].Alive) continue;
+                    float d = Vector2.Distance(screen, UnitScreen(enemies[i].Id));
+                    if (d < bestDist) { bestDist = d; bestId = enemies[i].Id; }
+                }
+            }
+            else
+            {
+                var troops = session.Troops;
+                for (int i = 0; i < troops.Count; i++)
+                {
+                    if (!troops[i].Deployed) continue;
+                    float d = Vector2.Distance(screen, UnitScreen(troops[i].Id));
+                    if (d < bestDist) { bestDist = d; bestId = troops[i].Id; }
+                }
+            }
+            return bestId;
         }
 
         public IEnumerable<object> SnapshotActors() => actors.Values.Select(a => a.Snapshot());

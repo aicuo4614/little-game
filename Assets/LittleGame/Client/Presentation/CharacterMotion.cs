@@ -14,6 +14,7 @@ namespace LittleGame.Client
         private MaterialPropertyBlock flashBlock;
         private Vector3 previous;
         private bool hasAttack;
+        private bool walking;
         private bool dying;
         private float deathTime;
         private float attackSpeed = 1.5f;
@@ -26,6 +27,7 @@ namespace LittleGame.Client
         private Vector3 baseLocalScale = Vector3.one;
 
         public string CurrentAction { get; private set; }
+        public bool IsHitStopped => hitStopRemaining > 0f;
         public bool DeathFinished => dying && deathTime >= (animationPlayer["Death"]?.length ?? 0);
         public float ActionTime => animationPlayer != null && CurrentAction != null && animationPlayer[CurrentAction] != null ? animationPlayer[CurrentAction].time : 0;
 
@@ -127,7 +129,7 @@ namespace LittleGame.Client
             Play("Attack"); animationPlayer["Attack"].speed = attackSpeed;
         }
 
-        public void Apply(bool paused, bool forceWalk = false)
+        public void Apply(bool paused, bool forceWalk = false, float movementSpeed = -1f)
         {
             if (animationPlayer == null || !isActiveAndEnabled) return;
             if (!paused && hitStopRemaining > 0f)
@@ -159,10 +161,20 @@ namespace LittleGame.Client
             if (hitStopRemaining > 0f) { previous = transform.position; return; }
 
             var delta = transform.position - previous;
-            bool moving = forceWalk || (delta.x * delta.x + delta.z * delta.z > .000001f); previous = transform.position;
-            if (animationPlayer.IsPlaying("Attack") || animationPlayer.IsPlaying("Hit") || animationPlayer.IsPlaying("Slam")) return;
+            previous = transform.position;
+            float horizDist = Mathf.Sqrt(delta.x * delta.x + delta.z * delta.z);
+            float moveRate = horizDist / Mathf.Max(0.001f, Time.unscaledDeltaTime);
+            // 战斗使用规则速度，避免20Hz步进及模型浮动使Idle/Walk逐帧互切。
+            if (movementSpeed >= 0f) moveRate = movementSpeed;
+            walking = forceWalk || moveRate > (walking ? .08f : .20f);
+            bool moving = walking;
+            if ((CurrentAction == "Attack" && animationPlayer.IsPlaying("Attack"))
+                || (CurrentAction == "Hit" && animationPlayer.IsPlaying("Hit"))
+                || (CurrentAction == "Slam" && animationPlayer.IsPlaying("Slam"))) return;
             string desired = moving && animationPlayer["Walk"] != null ? "Walk" : "Idle";
-            if (animationPlayer[desired] != null && !animationPlayer.IsPlaying(desired)) { CurrentAction = desired; animationPlayer.CrossFade(desired, .1f); }
+            // 淡出中的旧片段仍会返回IsPlaying=true；不能据此跳过切回，否则临界启停会漏切。
+            if (animationPlayer[desired] != null && (CurrentAction != desired || !animationPlayer.IsPlaying(desired)))
+            { CurrentAction = desired; animationPlayer.CrossFade(desired, .1f); }
         }
 
         private void ApplyFlash(float strength)

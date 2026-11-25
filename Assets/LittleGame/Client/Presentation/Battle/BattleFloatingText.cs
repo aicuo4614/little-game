@@ -1,9 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 namespace LittleGame.Client.Battle
 {
-    /// <summary>手机清晰可读的大号 3D 世界空间伤害、治疗与状态飘字（带深色阴影描边，无碰撞体）。</summary>
+    /// <summary>手机清晰可读的大号 3D 世界空间伤害、治疗与状态飘字（带轻量对象池，零高频 Instantiate/Destroy GC，无碰撞体）。</summary>
     public sealed class BattleFloatingText : MonoBehaviour
     {
         private const int MaxEntries = 36;
@@ -21,7 +22,8 @@ namespace LittleGame.Client.Battle
             public float BaseScale;
         }
 
-        private readonly List<Entry> entries = new List<Entry>();
+        private readonly List<Entry> active = new List<Entry>(MaxEntries);
+        private readonly Stack<Entry> pool = new Stack<Entry>(MaxEntries);
         private Camera targetCamera;
         private Font font;
 
@@ -34,60 +36,83 @@ namespace LittleGame.Client.Battle
         public void Spawn(Vector3 worldPos, string content, Color color, float scale = 1f, float lifetime = 0.68f)
         {
             if (targetCamera == null || string.IsNullOrWhiteSpace(content)) return;
-            if (entries.Count >= MaxEntries)
+
+            Entry e;
+            if (active.Count >= MaxEntries)
             {
-                if (entries[0].Root != null) Destroy(entries[0].Root);
-                entries.RemoveAt(0);
+                e = active[0];
+                active.RemoveAt(0);
+            }
+            else if (pool.Count > 0)
+            {
+                e = pool.Pop();
+                e.Root.SetActive(true);
+            }
+            else
+            {
+                e = CreateEntry();
             }
 
-            var go = new GameObject("FloatText");
-            go.transform.SetParent(transform, false);
             Vector3 jitter = new Vector3(Random.Range(-0.26f, 0.26f), Random.Range(0.05f, 0.22f), Random.Range(-0.12f, 0.12f));
-            go.transform.position = worldPos + jitter;
-            go.transform.rotation = targetCamera.transform.rotation;
+            e.StartPos = worldPos + jitter;
+            e.Root.transform.position = e.StartPos;
+            e.Root.transform.rotation = targetCamera.transform.rotation;
 
             float clampedScale = Mathf.Clamp(scale, 0.85f, 1.55f);
             int fontSize = Mathf.RoundToInt(46 * clampedScale);
-            const float charSize = 0.062f;
+            e.Text.text = content;
+            e.Text.fontSize = fontSize;
+            e.Text.color = color;
+            if (e.Shadow != null)
+            {
+                e.Shadow.text = content;
+                e.Shadow.fontSize = fontSize;
+                e.Shadow.color = new Color(0.04f, 0.03f, 0.08f, 0.92f);
+            }
 
-            // 深色投影底字，保证在亮色粒子与地砖上依然清晰醒目
+            e.BaseColor = color;
+            e.Age = 0f;
+            e.Lifetime = Mathf.Max(0.32f, lifetime);
+            e.RiseHeight = 0.92f * clampedScale;
+            e.BaseScale = 1f;
+            e.Root.transform.localScale = Vector3.one * 0.65f;
+            active.Add(e);
+        }
+
+        private Entry CreateEntry()
+        {
+            var go = new GameObject("FloatText");
+            go.transform.SetParent(transform, false);
+
             var shadowGo = new GameObject("Shadow");
             shadowGo.transform.SetParent(go.transform, false);
             shadowGo.transform.localPosition = new Vector3(0.032f, -0.032f, 0.03f);
-            var shadowTm = CreateTextMesh(shadowGo, content, fontSize, charSize, new Color(0.04f, 0.03f, 0.08f, 0.92f));
+            var shadowTm = CreateTextMesh(shadowGo, 46, 0.062f, new Color(0.04f, 0.03f, 0.08f, 0.92f));
 
             var mainGo = new GameObject("Main");
             mainGo.transform.SetParent(go.transform, false);
-            var mainTm = CreateTextMesh(mainGo, content, fontSize, charSize, color);
+            var mainTm = CreateTextMesh(mainGo, 46, 0.062f, Color.white);
 
-            entries.Add(new Entry
-            {
-                Root = go,
-                Text = mainTm,
-                Shadow = shadowTm,
-                StartPos = go.transform.position,
-                BaseColor = color,
-                Age = 0f,
-                Lifetime = Mathf.Max(0.32f, lifetime),
-                RiseHeight = 0.92f * clampedScale,
-                BaseScale = 1f
-            });
+            return new Entry { Root = go, Text = mainTm, Shadow = shadowTm };
         }
 
-        private TextMesh CreateTextMesh(GameObject go, string content, int fontSize, float charSize, Color color)
+        private TextMesh CreateTextMesh(GameObject go, int fontSize, float charSize, Color color)
         {
             var tm = go.AddComponent<TextMesh>();
-            tm.text = content;
+            tm.text = "";
             tm.fontSize = fontSize;
             tm.characterSize = charSize;
             tm.anchor = TextAnchor.MiddleCenter;
             tm.alignment = TextAlignment.Center;
             tm.fontStyle = FontStyle.Bold;
             tm.color = color;
+            var mr = go.GetComponent<MeshRenderer>();
+            mr.shadowCastingMode = ShadowCastingMode.Off;
+            mr.receiveShadows = false;
             if (font != null)
             {
                 tm.font = font;
-                go.GetComponent<MeshRenderer>().sharedMaterial = font.material;
+                mr.sharedMaterial = font.material;
             }
             return tm;
         }
@@ -95,14 +120,13 @@ namespace LittleGame.Client.Battle
         public void Step(float dt, bool paused)
         {
             if (paused || dt <= 0f) return;
-            for (int i = entries.Count - 1; i >= 0; i--)
+            for (int i = active.Count - 1; i >= 0; i--)
             {
-                var e = entries[i];
+                var e = active[i];
                 e.Age += dt;
                 if (e.Age >= e.Lifetime || e.Root == null)
                 {
-                    if (e.Root != null) Destroy(e.Root);
-                    entries.RemoveAt(i);
+                    RecycleAt(i);
                     continue;
                 }
 
@@ -125,11 +149,21 @@ namespace LittleGame.Client.Battle
             }
         }
 
+        private void RecycleAt(int index)
+        {
+            var e = active[index];
+            active.RemoveAt(index);
+            if (e.Root != null)
+            {
+                e.Root.SetActive(false);
+                pool.Push(e);
+            }
+        }
+
         public void ClearAll()
         {
-            for (int i = entries.Count - 1; i >= 0; i--)
-                if (entries[i].Root != null) Destroy(entries[i].Root);
-            entries.Clear();
+            for (int i = active.Count - 1; i >= 0; i--)
+                RecycleAt(i);
         }
     }
 }

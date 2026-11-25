@@ -60,6 +60,22 @@ namespace LittleGame.Client.Battle
             {
                 var ev = batch[i];
                 EmitFloatingFeedback(ev);
+                if (ev.Type == "cast_started")
+                {
+                    var troop = session.Troops.FirstOrDefault(t => t.Id == ev.Source);
+                    var enemy = session.Enemies.FirstOrDefault(t => t.Id == ev.Source);
+                    var cfg = timelineDirector.Library.Get(ev.TimelineId);
+                    if (cfg != null) timelineDirector.PlayTimeline(ev.TimelineId, new SkillTriggerContext(ev.Source, ev.Target, ev.Lane,
+                        troop != null ? troop.Kind.ToString() : enemy?.Kind.ToString(), ev.Trigger, troop?.Branch.ToString() ?? "", troop?.Star ?? 1,
+                        new Vector3(ev.TargetX, .14f, ev.TargetZ), ev.SkillInstanceId, new Vector3(ev.CasterX, .14f, ev.CasterZ), ev.FacingYaw, cfg.Execution.TrackTarget));
+                    continue;
+                }
+                if (ev.Type == "cast_cancelled") { timelineDirector.CancelInstance(ev.SkillInstanceId); continue; }
+                if (ev.SkillInstanceId > 0)
+                {
+                    if (ev.Type == "hit" || ev.Type == "troop_hit" || ev.Type == "skill_tick") timelineDirector.PresentImpact(ev.TimelineId, ev.Target);
+                    continue;
+                }
                 // 同一帧释放技能附带的伤害命中不再重复触发普攻动作时间轴
                 if (ev.Type == "hit" && skillCasters.Contains(ev.Source)) continue;
                 DispatchTimeline(session, ev);
@@ -112,6 +128,10 @@ namespace LittleGame.Client.Battle
                     played = timelineDirector.Trigger(new SkillTriggerContext(0, ev.Target, ev.Lane, "*", "Focus", "", 1, lanePos));
                     break;
                 case "merged":
+                    int mergedStar = Mathf.Clamp(Mathf.RoundToInt(ev.Amount), 2, 3);
+                    SpawnMergeSmokeVfx(ev.Source, mergedStar);
+                    played = timelineDirector.Trigger(new SkillTriggerContext(ev.Source, ev.Source, ev.Lane, "*", "Upgrade", "", mergedStar, lanePos));
+                    break;
                 case "branch_chosen":
                     played = timelineDirector.Trigger(new SkillTriggerContext(ev.Source, ev.Source, ev.Lane, "*", "Upgrade", "", 2, lanePos));
                     break;
@@ -169,7 +189,110 @@ namespace LittleGame.Client.Battle
                     floatingText.Spawn(getLaneCenter(ev.Lane) + Vector3.up * 1.1f, "护盾保护",
                         new Color(0.45f, 0.88f, 1f), 1.15f, 0.8f);
                     break;
+                case "merged":
+                    if (TryGetOverhead(ev.Source, out var mergePos))
+                    {
+                        int star = Mathf.Clamp(Mathf.RoundToInt(ev.Amount), 2, 3);
+                        Color textCol = star >= 3 ? new Color(1f, 0.82f, 0.16f) : new Color(0.32f, 0.84f, 1f);
+                        floatingText.Spawn(mergePos + Vector3.up * 0.25f, new string('★', star) + " 升星!",
+                            textCol, 1.25f, 0.95f);
+                    }
+                    break;
             }
+        }
+
+        private static Texture2D sharedSmokeTex;
+        private static Material sharedSmokeMat;
+
+        /// <summary>在自动合成升星的单位身上生成清晰柔边烟雾团（2星亮蓝白光、3星灿金暖光），播完自动销毁。</summary>
+        private void SpawnMergeSmokeVfx(int unitId, int star)
+        {
+            if (!unitRegistry.TryGet(unitId, out var actor) || actor == null) return;
+            Vector3 pos = actor.BodyPoint != null ? actor.BodyPoint.position : actor.transform.position + Vector3.up * 0.55f;
+
+            EnsureSmokeMaterial();
+
+            var root = new GameObject("MergeSmokeVfx_" + unitId);
+            root.transform.position = pos;
+
+            var smokePs = root.AddComponent<ParticleSystem>();
+            smokePs.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+            var main = smokePs.main;
+            main.playOnAwake = false;
+            main.duration = 0.65f;
+            main.loop = false;
+            main.startLifetime = new ParticleSystem.MinMaxCurve(0.45f, 0.80f);
+            main.startSpeed = new ParticleSystem.MinMaxCurve(0.95f, 2.05f);
+            main.startSize = new ParticleSystem.MinMaxCurve(0.55f, 1.05f);
+            Color tint = star >= 3 ? new Color(1f, 0.84f, 0.30f, 0.78f) : new Color(0.42f, 0.86f, 1f, 0.78f);
+            main.startColor = new ParticleSystem.MinMaxGradient(new Color(0.96f, 0.98f, 1f, 0.86f), tint);
+            main.gravityModifier = -0.22f;
+            main.simulationSpace = ParticleSystemSimulationSpace.World;
+            main.stopAction = ParticleSystemStopAction.Destroy;
+
+            var emission = smokePs.emission;
+            emission.enabled = true;
+            emission.rateOverTime = 0f;
+            emission.SetBursts(new[] { new ParticleSystem.Burst(0f, 18) });
+
+            var shape = smokePs.shape;
+            shape.enabled = true;
+            shape.shapeType = ParticleSystemShapeType.Sphere;
+            shape.radius = 0.35f;
+
+            var sizeOverLifetime = smokePs.sizeOverLifetime;
+            sizeOverLifetime.enabled = true;
+            sizeOverLifetime.size = new ParticleSystem.MinMaxCurve(1f, new AnimationCurve(
+                new Keyframe(0f, 0.55f),
+                new Keyframe(0.35f, 1.25f),
+                new Keyframe(1f, 1.55f)));
+
+            var colorOverLifetime = smokePs.colorOverLifetime;
+            colorOverLifetime.enabled = true;
+            var grad = new Gradient();
+            grad.SetKeys(
+                new[] { new GradientColorKey(new Color(1f, 0.96f, 0.80f), 0f), new GradientColorKey(new Color(0.96f, 0.96f, 0.98f), 1f) },
+                new[] { new GradientAlphaKey(0.88f, 0f), new GradientAlphaKey(0.58f, 0.5f), new GradientAlphaKey(0f, 1f) });
+            colorOverLifetime.color = grad;
+
+            var renderer = smokePs.GetComponent<ParticleSystemRenderer>();
+            renderer.sharedMaterial = sharedSmokeMat;
+            renderer.renderMode = ParticleSystemRenderMode.Billboard;
+            renderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+            renderer.receiveShadows = false;
+
+            smokePs.Play();
+            UnityEngine.Object.Destroy(root, 1.6f);
+        }
+
+        private static void EnsureSmokeMaterial()
+        {
+            if (sharedSmokeMat != null) return;
+            const int size = 64;
+            sharedSmokeTex = new Texture2D(size, size, TextureFormat.RGBA32, false) { filterMode = FilterMode.Bilinear };
+            float half = (size - 1) * 0.5f;
+            for (int y = 0; y < size; y++)
+            {
+                for (int x = 0; x < size; x++)
+                {
+                    float d = Vector2.Distance(new Vector2(x, y), new Vector2(half, half)) / half;
+                    float a = Mathf.Pow(Mathf.Clamp01(1f - d), 1.8f);
+                    sharedSmokeTex.SetPixel(x, y, new Color(1f, 1f, 1f, a));
+                }
+            }
+            sharedSmokeTex.Apply();
+
+            var shader = Shader.Find("Universal Render Pipeline/Particles/Unlit") ?? Shader.Find("Sprites/Default");
+            sharedSmokeMat = new Material(shader);
+            sharedSmokeMat.mainTexture = sharedSmokeTex;
+            if (sharedSmokeMat.HasProperty("_BaseMap")) sharedSmokeMat.SetTexture("_BaseMap", sharedSmokeTex);
+            sharedSmokeMat.SetFloat("_Surface", 1f);
+            sharedSmokeMat.SetFloat("_SrcBlend", (float)UnityEngine.Rendering.BlendMode.SrcAlpha);
+            sharedSmokeMat.SetFloat("_DstBlend", (float)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+            sharedSmokeMat.SetFloat("_ZWrite", 0f);
+            sharedSmokeMat.EnableKeyword("_SURFACE_TYPE_TRANSPARENT");
+            sharedSmokeMat.SetOverrideTag("RenderType", "Transparent");
+            sharedSmokeMat.renderQueue = (int)UnityEngine.Rendering.RenderQueue.Transparent + 20;
         }
 
         private bool TryGetOverhead(int unitId, out Vector3 pos)

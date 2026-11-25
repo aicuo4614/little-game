@@ -69,7 +69,7 @@ public sealed class CombatTools(UnityWebSocketHub hub)
     public Task<CallToolResult> Branch(int unitId, string branch) => Send("choose_branch", new { unitId, branch });
 
     [McpServerTool(Name = "unity_combat_start_wave")]
-    [Description("正常开始当前波，自动战斗；未使用转盘次数放弃，未选分支或未处理暂存会拒绝。")]
+    [Description("正常开始当前波，A*自动交战；未使用转盘次数放弃，未处理暂存会拒绝，二星不强制选分支。")]
     public Task<CallToolResult> StartWave() => Send("start_wave", new { });
 
     [McpServerTool(Name = "unity_combat_next_wave")]

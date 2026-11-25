@@ -1,0 +1,7 @@
+{
+  "name": "LittleGame.RoyTAStar",
+  "rootNamespace": "Roy_T.AStar",
+  "references": [],
+  "autoReferenced": true,
+  "noEngineReferences": true
+}

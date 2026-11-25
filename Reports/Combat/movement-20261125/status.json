@@ -1,0 +1,4 @@
+{
+  "status": "superseded",
+  "reason": "用户补充状态机要求后中断首轮回放，完整验收见movement-fsm-20261125"
+}
