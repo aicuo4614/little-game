@@ -1,0 +1,628 @@
+{
+  "passed": true,
+  "toolCount": 17,
+  "undoRedo": true,
+  "validations": {
+    "archer_basic": {
+      "editor": {
+        "valid": true,
+        "error": null
+      },
+      "battle": {
+        "valid": true,
+        "error": null,
+        "scope": "configuration-only",
+        "resources": {
+          "valid": true,
+          "error": null
+        },
+        "runtimeVerified": false,
+        "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+      }
+    },
+    "archer_gale": {
+      "editor": {
+        "valid": true,
+        "error": null
+      },
+      "battle": {
+        "valid": true,
+        "error": null,
+        "scope": "configuration-only",
+        "resources": {
+          "valid": true,
+          "error": null
+        },
+        "runtimeVerified": false,
+        "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+      }
+    },
+    "archer_pierce": {
+      "editor": {
+        "valid": true,
+        "error": null
+      },
+      "battle": {
+        "valid": true,
+        "error": null,
+        "scope": "configuration-only",
+        "resources": {
+          "valid": true,
+          "error": null
+        },
+        "runtimeVerified": false,
+        "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+      }
+    },
+    "archer_skill": {
+      "editor": {
+        "valid": true,
+        "error": null
+      },
+      "battle": {
+        "valid": true,
+        "error": null,
+        "scope": "configuration-only",
+        "resources": {
+          "valid": true,
+          "error": null
+        },
+        "runtimeVerified": false,
+        "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+      }
+    },
+    "enemy_melee_basic": {
+      "editor": {
+        "valid": true,
+        "error": null
+      },
+      "battle": {
+        "valid": true,
+        "error": null,
+        "scope": "configuration-only",
+        "resources": {
+          "valid": true,
+          "error": null
+        },
+        "runtimeVerified": false,
+        "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+      }
+    },
+    "frost_basic": {
+      "editor": {
+        "valid": true,
+        "error": null
+      },
+      "battle": {
+        "valid": true,
+        "error": null,
+        "scope": "configuration-only",
+        "resources": {
+          "valid": true,
+          "error": null
+        },
+        "runtimeVerified": false,
+        "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+      }
+    },
+    "frost_freeze": {
+      "editor": {
+        "valid": true,
+        "error": null
+      },
+      "battle": {
+        "valid": true,
+        "error": null,
+        "scope": "configuration-only",
+        "resources": {
+          "valid": true,
+          "error": null
+        },
+        "runtimeVerified": false,
+        "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+      }
+    },
+    "frost_icearmor": {
+      "editor": {
+        "valid": true,
+        "error": null
+      },
+      "battle": {
+        "valid": true,
+        "error": null,
+        "scope": "configuration-only",
+        "resources": {
+          "valid": true,
+          "error": null
+        },
+        "runtimeVerified": false,
+        "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+      }
+    },
+    "giant_slam": {
+      "editor": {
+        "valid": true,
+        "error": null
+      },
+      "battle": {
+        "valid": true,
+        "error": null,
+        "scope": "configuration-only",
+        "resources": {
+          "valid": true,
+          "error": null
+        },
+        "runtimeVerified": false,
+        "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+      }
+    },
+    "giant_telegraph": {
+      "editor": {
+        "valid": true,
+        "error": null
+      },
+      "battle": {
+        "valid": true,
+        "error": null,
+        "scope": "configuration-only",
+        "resources": {
+          "valid": true,
+          "error": null
+        },
+        "runtimeVerified": false,
+        "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+      }
+    },
+    "healer_heal": {
+      "editor": {
+        "valid": true,
+        "error": null
+      },
+      "battle": {
+        "valid": true,
+        "error": null,
+        "scope": "configuration-only",
+        "resources": {
+          "valid": true,
+          "error": null
+        },
+        "runtimeVerified": false,
+        "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+      }
+    },
+    "shield_basic": {
+      "editor": {
+        "valid": true,
+        "error": null
+      },
+      "battle": {
+        "valid": true,
+        "error": null,
+        "scope": "configuration-only",
+        "resources": {
+          "valid": true,
+          "error": null
+        },
+        "runtimeVerified": false,
+        "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+      }
+    },
+    "shield_bastion": {
+      "editor": {
+        "valid": true,
+        "error": null
+      },
+      "battle": {
+        "valid": true,
+        "error": null,
+        "scope": "configuration-only",
+        "resources": {
+          "valid": true,
+          "error": null
+        },
+        "runtimeVerified": false,
+        "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+      }
+    },
+    "shield_skill": {
+      "editor": {
+        "valid": true,
+        "error": null
+      },
+      "battle": {
+        "valid": true,
+        "error": null,
+        "scope": "configuration-only",
+        "resources": {
+          "valid": true,
+          "error": null
+        },
+        "runtimeVerified": false,
+        "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+      }
+    },
+    "shield_warcry": {
+      "editor": {
+        "valid": true,
+        "error": null
+      },
+      "battle": {
+        "valid": true,
+        "error": null,
+        "scope": "configuration-only",
+        "resources": {
+          "valid": true,
+          "error": null
+        },
+        "runtimeVerified": false,
+        "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+      }
+    },
+    "storm_basic": {
+      "editor": {
+        "valid": true,
+        "error": null
+      },
+      "battle": {
+        "valid": true,
+        "error": null,
+        "scope": "configuration-only",
+        "resources": {
+          "valid": true,
+          "error": null
+        },
+        "runtimeVerified": false,
+        "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+      }
+    },
+    "storm_chain": {
+      "editor": {
+        "valid": true,
+        "error": null
+      },
+      "battle": {
+        "valid": true,
+        "error": null,
+        "scope": "configuration-only",
+        "resources": {
+          "valid": true,
+          "error": null
+        },
+        "runtimeVerified": false,
+        "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+      }
+    },
+    "storm_pool": {
+      "editor": {
+        "valid": true,
+        "error": null
+      },
+      "battle": {
+        "valid": true,
+        "error": null,
+        "scope": "configuration-only",
+        "resources": {
+          "valid": true,
+          "error": null
+        },
+        "runtimeVerified": false,
+        "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+      }
+    },
+    "storm_tick": {
+      "editor": {
+        "valid": true,
+        "error": null
+      },
+      "battle": {
+        "valid": true,
+        "error": null,
+        "scope": "configuration-only",
+        "resources": {
+          "valid": true,
+          "error": null
+        },
+        "runtimeVerified": false,
+        "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+      }
+    },
+    "tactic_focus": {
+      "editor": {
+        "valid": true,
+        "error": null
+      },
+      "battle": {
+        "valid": true,
+        "error": null,
+        "scope": "configuration-only",
+        "resources": {
+          "valid": true,
+          "error": null
+        },
+        "runtimeVerified": false,
+        "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+      }
+    },
+    "tactic_protect": {
+      "editor": {
+        "valid": true,
+        "error": null
+      },
+      "battle": {
+        "valid": true,
+        "error": null,
+        "scope": "configuration-only",
+        "resources": {
+          "valid": true,
+          "error": null
+        },
+        "runtimeVerified": false,
+        "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+      }
+    },
+    "unit_upgrade": {
+      "editor": {
+        "valid": true,
+        "error": null
+      },
+      "battle": {
+        "valid": true,
+        "error": null,
+        "scope": "configuration-only",
+        "resources": {
+          "valid": true,
+          "error": null
+        },
+        "runtimeVerified": false,
+        "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+      }
+    }
+  },
+  "snapshot": {
+    "schema": "kabu.timeline.preview-record",
+    "version": 1,
+    "t": 0.22,
+    "catalog": {
+      "entities": [
+        {
+          "id": "unit:caster",
+          "kind": "unit",
+          "role": "caster",
+          "prefab": "Archer/Archer",
+          "team": "TeamA",
+          "origin": {
+            "pos": [
+              -1.8,
+              0.11,
+              0.0
+            ],
+            "euler": [
+              0.0,
+              90.0,
+              0.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "id": "unit:opp:0",
+          "kind": "unit",
+          "role": "opponent",
+          "prefab": "Grunt/Grunt",
+          "team": "TeamB",
+          "origin": {
+            "pos": [
+              1.8,
+              0.11,
+              0.0
+            ],
+            "euler": [
+              0.0,
+              270.0,
+              0.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "id": "unit:opp:1",
+          "kind": "unit",
+          "role": "opponent",
+          "prefab": "Grunt/Grunt",
+          "team": "TeamB",
+          "origin": {
+            "pos": [
+              1.8,
+              0.11,
+              2.15
+            ],
+            "euler": [
+              0.0,
+              270.0,
+              0.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "id": "unit:opp:2",
+          "kind": "unit",
+          "role": "opponent",
+          "prefab": "Grunt/Grunt",
+          "team": "TeamB",
+          "origin": {
+            "pos": [
+              1.8,
+              0.11,
+              -2.15
+            ],
+            "euler": [
+              0.0,
+              270.0,
+              0.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "id": "camera:battle",
+          "kind": "camera",
+          "origin": {
+            "pos": [
+              0.25,
+              14.0,
+              -17.6
+            ],
+            "euler": [
+              38.901,
+              0.0,
+              0.0
+            ],
+            "fov": 36.0,
+            "orthographic": true,
+            "orthographicSize": 11.25,
+            "aspect": 0.5625
+          }
+        }
+      ]
+    },
+    "entities": {
+      "unit:caster": {
+        "pos": [
+          -1.8,
+          0.11,
+          0.0
+        ],
+        "euler": [
+          0.0,
+          90.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "active": true
+      },
+      "unit:opp:0": {
+        "pos": [
+          1.8,
+          0.11,
+          0.0
+        ],
+        "euler": [
+          0.0,
+          270.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "active": true
+      },
+      "unit:opp:1": {
+        "pos": [
+          1.8,
+          0.11,
+          2.15
+        ],
+        "euler": [
+          0.0,
+          270.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "active": true
+      },
+      "unit:opp:2": {
+        "pos": [
+          1.8,
+          0.11,
+          -2.15
+        ],
+        "euler": [
+          0.0,
+          270.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "active": true
+      },
+      "camera:battle": {
+        "pos": [
+          0.25,
+          14.0,
+          -17.6
+        ],
+        "euler": [
+          38.901,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "fov": 36.0
+      }
+    }
+  },
+  "animations": {
+    "spine": null,
+    "animator": [
+      {
+        "name": "Idle",
+        "seconds": 0.6666667
+      },
+      {
+        "name": "Walk",
+        "seconds": 0.533333361
+      },
+      {
+        "name": "Attack",
+        "seconds": 0.444444448
+      },
+      {
+        "name": "Hit",
+        "seconds": 0.4666667
+      },
+      {
+        "name": "Death",
+        "seconds": 0.5
+      },
+      {
+        "name": "Slam",
+        "seconds": 0.6666667
+      }
+    ]
+  },
+  "note": "Unity 编辑器预览与配置验证，实战另见 unity-verification.json"
+}

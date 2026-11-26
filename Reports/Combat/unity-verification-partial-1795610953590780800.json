@@ -1,0 +1,3160 @@
+{
+  "checks": [
+    "开局零单位（全靠老虎机招募）与禁止空阵开战通过",
+    "招募动画落地前隐藏图标、抵达候补槽瞬间显现通过",
+    "双击候补军团卡片自动寻位上场通过"
+  ],
+  "records": [
+    {
+      "operation": "get_definitions",
+      "arguments": {},
+      "result": {
+        "rulesVersion": "current-20261125-astar-framework",
+        "sameRuleEntry": "BattleApplication.Submit -> BattleSession.Execute",
+        "deployBox": {
+          "minX": -5.2,
+          "maxX": -0.35,
+          "minZ": -2.65,
+          "maxZ": 2.65
+        },
+        "professions": [
+          {
+            "kind": "Shield",
+            "name": "盾卫",
+            "range": 1.15,
+            "attackInterval": 1.25,
+            "moveSpeed": 2.4,
+            "turnSpeed": 1080.0
+          },
+          {
+            "kind": "Archer",
+            "name": "风弓手",
+            "range": 4.85,
+            "attackInterval": 0.96,
+            "moveSpeed": 2.4,
+            "turnSpeed": 1260.0
+          },
+          {
+            "kind": "Storm",
+            "name": "雷法师",
+            "range": 4.15,
+            "attackInterval": 1.22,
+            "moveSpeed": 2.4,
+            "turnSpeed": 1140.0
+          },
+          {
+            "kind": "Frost",
+            "name": "冰法师",
+            "range": 4.15,
+            "attackInterval": 1.24,
+            "moveSpeed": 2.4,
+            "turnSpeed": 1140.0
+          }
+        ],
+        "rules": {
+          "layout": "horizontal_free_white_box_infinite_scroll",
+          "avoidance": "roy_astar_attack_slots_swept_motion",
+          "navigation": "roy_astar_attack_slots_swept_motion",
+          "rvoActive": false,
+          "blockedWait": true,
+          "actualDisplacementVelocity": true,
+          "autoMerge": true,
+          "mandatoryBranch": false,
+          "clampOutOfBoxDeploy": true,
+          "doubleTapReserveDeploy": true,
+          "dragToReserveRecall": true,
+          "tapImmediateSelect": true,
+          "selectionActionPanel": false,
+          "noGateHp": true,
+          "noFences": true,
+          "postWaveRegroupRun": true,
+          "failureCondition": "all_deployed_troops_dead",
+          "waveTimeoutEnrage": 48.0,
+          "turnSpeedGatedAttack": 28.0,
+          "spinLine": "cross_center_row_and_col",
+          "popStart": 6,
+          "popMax": 9,
+          "popExpPerWave": 2,
+          "spins": 3,
+          "reinforcedSpins": 4,
+          "pity": 3,
+          "mergeCount": 3,
+          "reserveCapacity": 6,
+          "waves": 12,
+          "firstTwoSpins": "explicit_teaching_presets"
+        }
+      }
+    },
+    {
+      "operation": "get_navigation",
+      "arguments": {},
+      "result": {
+        "algorithm": "roy_astar_attack_slots_swept_motion",
+        "rvoActive": false,
+        "fixedStep": 0.05,
+        "units": [],
+        "enemies": []
+      }
+    },
+    {
+      "operation": "restart",
+      "arguments": {
+        "seed": 173
+      },
+      "result": {
+        "accepted": true,
+        "reason": "已重开",
+        "state": {
+          "schemaVersion": 6,
+          "skills": [],
+          "layout": "horizontal-free-deploy-astar",
+          "phase": "Preparation",
+          "seed": 173,
+          "wave": 1,
+          "totalWaves": 12,
+          "marchDistance": 0.0,
+          "aliveTroops": 0,
+          "regrouping": false,
+          "enraged": false,
+          "deployBox": {
+            "minX": -5.2,
+            "maxX": -0.35,
+            "minZ": -2.65,
+            "maxZ": 2.65
+          },
+          "spins": 3,
+          "spinsPerWave": 3,
+          "consecutiveMisses": 0,
+          "teaching": true,
+          "deployedCount": 0,
+          "maxDeployed": 6,
+          "popExp": 0,
+          "popExpNeeded": 4,
+          "winRowMid": false,
+          "winColMid": false,
+          "tactics": 0,
+          "aim": "None",
+          "paused": false,
+          "speed": 1,
+          "battleTime": 0.0,
+          "forecast": [
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 0,
+              "at": 0.0
+            },
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 1,
+              "at": 0.0
+            },
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 2,
+              "at": 0.0
+            }
+          ],
+          "units": [],
+          "enemies": [],
+          "pending": [],
+          "rewards": [],
+          "reels": [
+            "Shield",
+            "Archer",
+            "Storm",
+            "Archer",
+            "Storm",
+            "Frost",
+            "Storm",
+            "Frost",
+            "Shield"
+          ],
+          "rewardOptions": [],
+          "bossTelegraph": {
+            "lane": -1,
+            "impactAt": -1.0
+          },
+          "lastEventSequence": 2,
+          "events": [
+            {
+              "Sequence": 2,
+              "Type": "run_started",
+              "Message": "军团集结：转动十字法阵招募单位并部署上阵",
+              "Source": 0,
+              "Target": 0,
+              "Lane": -1,
+              "Amount": 0.0,
+              "Time": 0.0,
+              "SkillInstanceId": 0,
+              "TimelineId": null,
+              "Trigger": null,
+              "CasterX": 0.0,
+              "CasterZ": 0.0,
+              "TargetX": 0.0,
+              "TargetZ": 0.0,
+              "FacingYaw": 0.0
+            }
+          ],
+          "availableActions": [
+            "deploy",
+            "restart",
+            "spin"
+          ]
+        }
+      }
+    },
+    {
+      "operation": "start_wave",
+      "arguments": {},
+      "result": {
+        "accepted": false,
+        "reason": "至少部署一名单位",
+        "state": {
+          "schemaVersion": 6,
+          "skills": [],
+          "layout": "horizontal-free-deploy-astar",
+          "phase": "Preparation",
+          "seed": 173,
+          "wave": 1,
+          "totalWaves": 12,
+          "marchDistance": 0.0,
+          "aliveTroops": 0,
+          "regrouping": false,
+          "enraged": false,
+          "deployBox": {
+            "minX": -5.2,
+            "maxX": -0.35,
+            "minZ": -2.65,
+            "maxZ": 2.65
+          },
+          "spins": 3,
+          "spinsPerWave": 3,
+          "consecutiveMisses": 0,
+          "teaching": true,
+          "deployedCount": 0,
+          "maxDeployed": 6,
+          "popExp": 0,
+          "popExpNeeded": 4,
+          "winRowMid": false,
+          "winColMid": false,
+          "tactics": 0,
+          "aim": "None",
+          "paused": false,
+          "speed": 1,
+          "battleTime": 0.0,
+          "forecast": [
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 0,
+              "at": 0.0
+            },
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 1,
+              "at": 0.0
+            },
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 2,
+              "at": 0.0
+            }
+          ],
+          "units": [],
+          "enemies": [],
+          "pending": [],
+          "rewards": [],
+          "reels": [
+            "Shield",
+            "Archer",
+            "Storm",
+            "Archer",
+            "Storm",
+            "Frost",
+            "Storm",
+            "Frost",
+            "Shield"
+          ],
+          "rewardOptions": [],
+          "bossTelegraph": {
+            "lane": -1,
+            "impactAt": -1.0
+          },
+          "lastEventSequence": 2,
+          "events": [
+            {
+              "Sequence": 2,
+              "Type": "run_started",
+              "Message": "军团集结：转动十字法阵招募单位并部署上阵",
+              "Source": 0,
+              "Target": 0,
+              "Lane": -1,
+              "Amount": 0.0,
+              "Time": 0.0,
+              "SkillInstanceId": 0,
+              "TimelineId": null,
+              "Trigger": null,
+              "CasterX": 0.0,
+              "CasterZ": 0.0,
+              "TargetX": 0.0,
+              "TargetZ": 0.0,
+              "FacingYaw": 0.0
+            }
+          ],
+          "availableActions": [
+            "deploy",
+            "restart",
+            "spin"
+          ]
+        }
+      }
+    },
+    {
+      "operation": "capture_view",
+      "arguments": {},
+      "result": {
+        "path": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\Captures\\combat-294ac6dac19b4dc7b6f0e42ad0163de1.png",
+        "width": 540,
+        "height": 960,
+        "pending": true,
+        "note": "实际GameView帧，下一帧写入；调用方等待文件存在后读取。非真机截图"
+      }
+    },
+    {
+      "operation": "pointer",
+      "arguments": {
+        "phase": "begin",
+        "x": 0.247500047,
+        "y": 0.0594999641
+      },
+      "result": {
+        "inputDispatched": true,
+        "state": {
+          "schemaVersion": 6,
+          "skills": [],
+          "layout": "horizontal-free-deploy-astar",
+          "phase": "Preparation",
+          "seed": 173,
+          "wave": 1,
+          "totalWaves": 12,
+          "marchDistance": 0.0,
+          "aliveTroops": 0,
+          "regrouping": false,
+          "enraged": false,
+          "deployBox": {
+            "minX": -5.2,
+            "maxX": -0.35,
+            "minZ": -2.65,
+            "maxZ": 2.65
+          },
+          "spins": 3,
+          "spinsPerWave": 3,
+          "consecutiveMisses": 0,
+          "teaching": true,
+          "deployedCount": 0,
+          "maxDeployed": 6,
+          "popExp": 0,
+          "popExpNeeded": 4,
+          "winRowMid": false,
+          "winColMid": false,
+          "tactics": 0,
+          "aim": "None",
+          "paused": false,
+          "speed": 1,
+          "battleTime": 0.0,
+          "forecast": [
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 0,
+              "at": 0.0
+            },
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 1,
+              "at": 0.0
+            },
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 2,
+              "at": 0.0
+            }
+          ],
+          "units": [],
+          "enemies": [],
+          "pending": [],
+          "rewards": [],
+          "reels": [
+            "Shield",
+            "Archer",
+            "Storm",
+            "Archer",
+            "Storm",
+            "Frost",
+            "Storm",
+            "Frost",
+            "Shield"
+          ],
+          "rewardOptions": [],
+          "bossTelegraph": {
+            "lane": -1,
+            "impactAt": -1.0
+          },
+          "lastEventSequence": 2,
+          "events": [
+            {
+              "Sequence": 2,
+              "Type": "run_started",
+              "Message": "军团集结：转动十字法阵招募单位并部署上阵",
+              "Source": 0,
+              "Target": 0,
+              "Lane": -1,
+              "Amount": 0.0,
+              "Time": 0.0,
+              "SkillInstanceId": 0,
+              "TimelineId": null,
+              "Trigger": null,
+              "CasterX": 0.0,
+              "CasterZ": 0.0,
+              "TargetX": 0.0,
+              "TargetZ": 0.0,
+              "FacingYaw": 0.0
+            }
+          ],
+          "availableActions": [
+            "deploy",
+            "restart",
+            "spin"
+          ]
+        }
+      }
+    },
+    {
+      "operation": "pointer",
+      "arguments": {
+        "phase": "cancel",
+        "x": 0.247500047,
+        "y": 0.0594999641
+      },
+      "result": {
+        "inputDispatched": true,
+        "state": {
+          "schemaVersion": 6,
+          "skills": [],
+          "layout": "horizontal-free-deploy-astar",
+          "phase": "Preparation",
+          "seed": 173,
+          "wave": 1,
+          "totalWaves": 12,
+          "marchDistance": 0.0,
+          "aliveTroops": 0,
+          "regrouping": false,
+          "enraged": false,
+          "deployBox": {
+            "minX": -5.2,
+            "maxX": -0.35,
+            "minZ": -2.65,
+            "maxZ": 2.65
+          },
+          "spins": 3,
+          "spinsPerWave": 3,
+          "consecutiveMisses": 0,
+          "teaching": true,
+          "deployedCount": 0,
+          "maxDeployed": 6,
+          "popExp": 0,
+          "popExpNeeded": 4,
+          "winRowMid": false,
+          "winColMid": false,
+          "tactics": 0,
+          "aim": "None",
+          "paused": false,
+          "speed": 1,
+          "battleTime": 0.0,
+          "forecast": [
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 0,
+              "at": 0.0
+            },
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 1,
+              "at": 0.0
+            },
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 2,
+              "at": 0.0
+            }
+          ],
+          "units": [],
+          "enemies": [],
+          "pending": [],
+          "rewards": [],
+          "reels": [
+            "Shield",
+            "Archer",
+            "Storm",
+            "Archer",
+            "Storm",
+            "Frost",
+            "Storm",
+            "Frost",
+            "Shield"
+          ],
+          "rewardOptions": [],
+          "bossTelegraph": {
+            "lane": -1,
+            "impactAt": -1.0
+          },
+          "lastEventSequence": 2,
+          "events": [
+            {
+              "Sequence": 2,
+              "Type": "run_started",
+              "Message": "军团集结：转动十字法阵招募单位并部署上阵",
+              "Source": 0,
+              "Target": 0,
+              "Lane": -1,
+              "Amount": 0.0,
+              "Time": 0.0,
+              "SkillInstanceId": 0,
+              "TimelineId": null,
+              "Trigger": null,
+              "CasterX": 0.0,
+              "CasterZ": 0.0,
+              "TargetX": 0.0,
+              "TargetZ": 0.0,
+              "FacingYaw": 0.0
+            }
+          ],
+          "availableActions": [
+            "deploy",
+            "restart",
+            "spin"
+          ]
+        }
+      }
+    },
+    {
+      "operation": "pointer",
+      "arguments": {
+        "phase": "end",
+        "x": 0.247500047,
+        "y": 0.0594999641
+      },
+      "result": {
+        "inputDispatched": true,
+        "state": {
+          "schemaVersion": 6,
+          "skills": [],
+          "layout": "horizontal-free-deploy-astar",
+          "phase": "Preparation",
+          "seed": 173,
+          "wave": 1,
+          "totalWaves": 12,
+          "marchDistance": 0.0,
+          "aliveTroops": 0,
+          "regrouping": false,
+          "enraged": false,
+          "deployBox": {
+            "minX": -5.2,
+            "maxX": -0.35,
+            "minZ": -2.65,
+            "maxZ": 2.65
+          },
+          "spins": 3,
+          "spinsPerWave": 3,
+          "consecutiveMisses": 0,
+          "teaching": true,
+          "deployedCount": 0,
+          "maxDeployed": 6,
+          "popExp": 0,
+          "popExpNeeded": 4,
+          "winRowMid": false,
+          "winColMid": false,
+          "tactics": 0,
+          "aim": "None",
+          "paused": false,
+          "speed": 1,
+          "battleTime": 0.0,
+          "forecast": [
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 0,
+              "at": 0.0
+            },
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 1,
+              "at": 0.0
+            },
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 2,
+              "at": 0.0
+            }
+          ],
+          "units": [],
+          "enemies": [],
+          "pending": [],
+          "rewards": [],
+          "reels": [
+            "Shield",
+            "Archer",
+            "Storm",
+            "Archer",
+            "Storm",
+            "Frost",
+            "Storm",
+            "Frost",
+            "Shield"
+          ],
+          "rewardOptions": [],
+          "bossTelegraph": {
+            "lane": -1,
+            "impactAt": -1.0
+          },
+          "lastEventSequence": 2,
+          "events": [
+            {
+              "Sequence": 2,
+              "Type": "run_started",
+              "Message": "军团集结：转动十字法阵招募单位并部署上阵",
+              "Source": 0,
+              "Target": 0,
+              "Lane": -1,
+              "Amount": 0.0,
+              "Time": 0.0,
+              "SkillInstanceId": 0,
+              "TimelineId": null,
+              "Trigger": null,
+              "CasterX": 0.0,
+              "CasterZ": 0.0,
+              "TargetX": 0.0,
+              "TargetZ": 0.0,
+              "FacingYaw": 0.0
+            }
+          ],
+          "availableActions": [
+            "deploy",
+            "restart",
+            "spin"
+          ]
+        }
+      }
+    },
+    {
+      "operation": "pointer",
+      "arguments": {
+        "phase": "begin",
+        "x": 0.247500047,
+        "y": 0.0594999641
+      },
+      "result": {
+        "inputDispatched": true,
+        "state": {
+          "schemaVersion": 6,
+          "skills": [],
+          "layout": "horizontal-free-deploy-astar",
+          "phase": "Preparation",
+          "seed": 173,
+          "wave": 1,
+          "totalWaves": 12,
+          "marchDistance": 0.0,
+          "aliveTroops": 0,
+          "regrouping": false,
+          "enraged": false,
+          "deployBox": {
+            "minX": -5.2,
+            "maxX": -0.35,
+            "minZ": -2.65,
+            "maxZ": 2.65
+          },
+          "spins": 3,
+          "spinsPerWave": 3,
+          "consecutiveMisses": 0,
+          "teaching": true,
+          "deployedCount": 0,
+          "maxDeployed": 6,
+          "popExp": 0,
+          "popExpNeeded": 4,
+          "winRowMid": false,
+          "winColMid": false,
+          "tactics": 0,
+          "aim": "None",
+          "paused": false,
+          "speed": 1,
+          "battleTime": 0.0,
+          "forecast": [
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 0,
+              "at": 0.0
+            },
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 1,
+              "at": 0.0
+            },
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 2,
+              "at": 0.0
+            }
+          ],
+          "units": [],
+          "enemies": [],
+          "pending": [],
+          "rewards": [],
+          "reels": [
+            "Shield",
+            "Archer",
+            "Storm",
+            "Archer",
+            "Storm",
+            "Frost",
+            "Storm",
+            "Frost",
+            "Shield"
+          ],
+          "rewardOptions": [],
+          "bossTelegraph": {
+            "lane": -1,
+            "impactAt": -1.0
+          },
+          "lastEventSequence": 2,
+          "events": [
+            {
+              "Sequence": 2,
+              "Type": "run_started",
+              "Message": "军团集结：转动十字法阵招募单位并部署上阵",
+              "Source": 0,
+              "Target": 0,
+              "Lane": -1,
+              "Amount": 0.0,
+              "Time": 0.0,
+              "SkillInstanceId": 0,
+              "TimelineId": null,
+              "Trigger": null,
+              "CasterX": 0.0,
+              "CasterZ": 0.0,
+              "TargetX": 0.0,
+              "TargetZ": 0.0,
+              "FacingYaw": 0.0
+            }
+          ],
+          "availableActions": [
+            "deploy",
+            "restart",
+            "spin"
+          ]
+        }
+      }
+    },
+    {
+      "operation": "pointer",
+      "arguments": {
+        "phase": "end",
+        "x": 0.447500047,
+        "y": 0.1594999641
+      },
+      "result": {
+        "inputDispatched": true,
+        "state": {
+          "schemaVersion": 6,
+          "skills": [],
+          "layout": "horizontal-free-deploy-astar",
+          "phase": "Preparation",
+          "seed": 173,
+          "wave": 1,
+          "totalWaves": 12,
+          "marchDistance": 0.0,
+          "aliveTroops": 0,
+          "regrouping": false,
+          "enraged": false,
+          "deployBox": {
+            "minX": -5.2,
+            "maxX": -0.35,
+            "minZ": -2.65,
+            "maxZ": 2.65
+          },
+          "spins": 3,
+          "spinsPerWave": 3,
+          "consecutiveMisses": 0,
+          "teaching": true,
+          "deployedCount": 0,
+          "maxDeployed": 6,
+          "popExp": 0,
+          "popExpNeeded": 4,
+          "winRowMid": false,
+          "winColMid": false,
+          "tactics": 0,
+          "aim": "None",
+          "paused": false,
+          "speed": 1,
+          "battleTime": 0.0,
+          "forecast": [
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 0,
+              "at": 0.0
+            },
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 1,
+              "at": 0.0
+            },
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 2,
+              "at": 0.0
+            }
+          ],
+          "units": [],
+          "enemies": [],
+          "pending": [],
+          "rewards": [],
+          "reels": [
+            "Shield",
+            "Archer",
+            "Storm",
+            "Archer",
+            "Storm",
+            "Frost",
+            "Storm",
+            "Frost",
+            "Shield"
+          ],
+          "rewardOptions": [],
+          "bossTelegraph": {
+            "lane": -1,
+            "impactAt": -1.0
+          },
+          "lastEventSequence": 2,
+          "events": [
+            {
+              "Sequence": 2,
+              "Type": "run_started",
+              "Message": "军团集结：转动十字法阵招募单位并部署上阵",
+              "Source": 0,
+              "Target": 0,
+              "Lane": -1,
+              "Amount": 0.0,
+              "Time": 0.0,
+              "SkillInstanceId": 0,
+              "TimelineId": null,
+              "Trigger": null,
+              "CasterX": 0.0,
+              "CasterZ": 0.0,
+              "TargetX": 0.0,
+              "TargetZ": 0.0,
+              "FacingYaw": 0.0
+            }
+          ],
+          "availableActions": [
+            "deploy",
+            "restart",
+            "spin"
+          ]
+        }
+      }
+    },
+    {
+      "operation": "pointer",
+      "arguments": {
+        "phase": "begin",
+        "x": 0.247500047,
+        "y": 0.0594999641
+      },
+      "result": {
+        "inputDispatched": true,
+        "state": {
+          "schemaVersion": 6,
+          "skills": [],
+          "layout": "horizontal-free-deploy-astar",
+          "phase": "Preparation",
+          "seed": 173,
+          "wave": 1,
+          "totalWaves": 12,
+          "marchDistance": 0.0,
+          "aliveTroops": 0,
+          "regrouping": false,
+          "enraged": false,
+          "deployBox": {
+            "minX": -5.2,
+            "maxX": -0.35,
+            "minZ": -2.65,
+            "maxZ": 2.65
+          },
+          "spins": 3,
+          "spinsPerWave": 3,
+          "consecutiveMisses": 0,
+          "teaching": true,
+          "deployedCount": 0,
+          "maxDeployed": 6,
+          "popExp": 0,
+          "popExpNeeded": 4,
+          "winRowMid": false,
+          "winColMid": false,
+          "tactics": 0,
+          "aim": "None",
+          "paused": false,
+          "speed": 1,
+          "battleTime": 0.0,
+          "forecast": [
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 0,
+              "at": 0.0
+            },
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 1,
+              "at": 0.0
+            },
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 2,
+              "at": 0.0
+            }
+          ],
+          "units": [],
+          "enemies": [],
+          "pending": [],
+          "rewards": [],
+          "reels": [
+            "Shield",
+            "Archer",
+            "Storm",
+            "Archer",
+            "Storm",
+            "Frost",
+            "Storm",
+            "Frost",
+            "Shield"
+          ],
+          "rewardOptions": [],
+          "bossTelegraph": {
+            "lane": -1,
+            "impactAt": -1.0
+          },
+          "lastEventSequence": 2,
+          "events": [
+            {
+              "Sequence": 2,
+              "Type": "run_started",
+              "Message": "军团集结：转动十字法阵招募单位并部署上阵",
+              "Source": 0,
+              "Target": 0,
+              "Lane": -1,
+              "Amount": 0.0,
+              "Time": 0.0,
+              "SkillInstanceId": 0,
+              "TimelineId": null,
+              "Trigger": null,
+              "CasterX": 0.0,
+              "CasterZ": 0.0,
+              "TargetX": 0.0,
+              "TargetZ": 0.0,
+              "FacingYaw": 0.0
+            }
+          ],
+          "availableActions": [
+            "deploy",
+            "restart",
+            "spin"
+          ]
+        }
+      }
+    },
+    {
+      "operation": "pointer",
+      "arguments": {
+        "phase": "end",
+        "x": 0.247500047,
+        "y": 0.0594999641
+      },
+      "result": {
+        "inputDispatched": true,
+        "state": {
+          "schemaVersion": 6,
+          "skills": [],
+          "layout": "horizontal-free-deploy-astar",
+          "phase": "Preparation",
+          "seed": 173,
+          "wave": 1,
+          "totalWaves": 12,
+          "marchDistance": 0.0,
+          "aliveTroops": 0,
+          "regrouping": false,
+          "enraged": false,
+          "deployBox": {
+            "minX": -5.2,
+            "maxX": -0.35,
+            "minZ": -2.65,
+            "maxZ": 2.65
+          },
+          "spins": 2,
+          "spinsPerWave": 3,
+          "consecutiveMisses": 0,
+          "teaching": true,
+          "deployedCount": 0,
+          "maxDeployed": 6,
+          "popExp": 0,
+          "popExpNeeded": 4,
+          "winRowMid": true,
+          "winColMid": false,
+          "tactics": 0,
+          "aim": "None",
+          "paused": false,
+          "speed": 1,
+          "battleTime": 0.0,
+          "forecast": [
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 0,
+              "at": 0.0
+            },
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 1,
+              "at": 0.0
+            },
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 2,
+              "at": 0.0
+            }
+          ],
+          "units": [
+            {
+              "id": 1,
+              "kind": "Shield",
+              "name": "盾卫",
+              "star": 1,
+              "branch": "None",
+              "lane": -1,
+              "row": -1,
+              "homeX": 0.0,
+              "homeZ": 0.0,
+              "x": 0.0,
+              "z": 0.0,
+              "vx": 0.0,
+              "vz": 0.0,
+              "targetId": 0,
+              "aiState": "Idle",
+              "navigation": {
+                "status": "Holding",
+                "blockReason": "",
+                "blockedFor": 0.0,
+                "goalX": 0.0,
+                "goalZ": 0.0,
+                "revision": 0,
+                "remainingCorners": 0,
+                "corners": []
+              },
+              "facingYaw": 90.0,
+              "turnSpeed": 1080.0,
+              "moveSpeed": 2.4,
+              "canMerge": false,
+              "hp": 340.0,
+              "maxHp": 340.0,
+              "shield": 0.0,
+              "cooldown": 0.25,
+              "skillCooldown": 0.8
+            }
+          ],
+          "enemies": [],
+          "pending": [],
+          "rewards": [],
+          "reels": [
+            "Frost",
+            "Frost",
+            "Shield",
+            "Shield",
+            "Shield",
+            "Shield",
+            "Storm",
+            "Frost",
+            "Storm"
+          ],
+          "rewardOptions": [],
+          "bossTelegraph": {
+            "lane": -1,
+            "impactAt": -1.0
+          },
+          "lastEventSequence": 3,
+          "events": [
+            {
+              "Sequence": 2,
+              "Type": "run_started",
+              "Message": "军团集结：转动十字法阵招募单位并部署上阵",
+              "Source": 0,
+              "Target": 0,
+              "Lane": -1,
+              "Amount": 0.0,
+              "Time": 0.0,
+              "SkillInstanceId": 0,
+              "TimelineId": null,
+              "Trigger": null,
+              "CasterX": 0.0,
+              "CasterZ": 0.0,
+              "TargetX": 0.0,
+              "TargetZ": 0.0,
+              "FacingYaw": 0.0
+            },
+            {
+              "Sequence": 3,
+              "Type": "spin",
+              "Message": "教学预设 · 中横三同！出兵1名",
+              "Source": 0,
+              "Target": 0,
+              "Lane": -1,
+              "Amount": 1.0,
+              "Time": 0.0,
+              "SkillInstanceId": 0,
+              "TimelineId": null,
+              "Trigger": null,
+              "CasterX": 0.0,
+              "CasterZ": 0.0,
+              "TargetX": 0.0,
+              "TargetZ": 0.0,
+              "FacingYaw": 0.0
+            }
+          ],
+          "availableActions": [
+            "deploy",
+            "restart",
+            "spin",
+            "recycle"
+          ]
+        }
+      }
+    },
+    {
+      "operation": "pointer",
+      "arguments": {
+        "phase": "begin",
+        "x": 0.247500047,
+        "y": 0.0594999641
+      },
+      "result": {
+        "inputDispatched": true,
+        "state": {
+          "schemaVersion": 6,
+          "skills": [],
+          "layout": "horizontal-free-deploy-astar",
+          "phase": "Preparation",
+          "seed": 173,
+          "wave": 1,
+          "totalWaves": 12,
+          "marchDistance": 0.0,
+          "aliveTroops": 0,
+          "regrouping": false,
+          "enraged": false,
+          "deployBox": {
+            "minX": -5.2,
+            "maxX": -0.35,
+            "minZ": -2.65,
+            "maxZ": 2.65
+          },
+          "spins": 2,
+          "spinsPerWave": 3,
+          "consecutiveMisses": 0,
+          "teaching": true,
+          "deployedCount": 0,
+          "maxDeployed": 6,
+          "popExp": 0,
+          "popExpNeeded": 4,
+          "winRowMid": true,
+          "winColMid": false,
+          "tactics": 0,
+          "aim": "None",
+          "paused": false,
+          "speed": 1,
+          "battleTime": 0.0,
+          "forecast": [
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 0,
+              "at": 0.0
+            },
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 1,
+              "at": 0.0
+            },
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 2,
+              "at": 0.0
+            }
+          ],
+          "units": [
+            {
+              "id": 1,
+              "kind": "Shield",
+              "name": "盾卫",
+              "star": 1,
+              "branch": "None",
+              "lane": -1,
+              "row": -1,
+              "homeX": 0.0,
+              "homeZ": 0.0,
+              "x": 0.0,
+              "z": 0.0,
+              "vx": 0.0,
+              "vz": 0.0,
+              "targetId": 0,
+              "aiState": "Idle",
+              "navigation": {
+                "status": "Holding",
+                "blockReason": "",
+                "blockedFor": 0.0,
+                "goalX": 0.0,
+                "goalZ": 0.0,
+                "revision": 0,
+                "remainingCorners": 0,
+                "corners": []
+              },
+              "facingYaw": 90.0,
+              "turnSpeed": 1080.0,
+              "moveSpeed": 2.4,
+              "canMerge": false,
+              "hp": 340.0,
+              "maxHp": 340.0,
+              "shield": 0.0,
+              "cooldown": 0.25,
+              "skillCooldown": 0.8
+            }
+          ],
+          "enemies": [],
+          "pending": [],
+          "rewards": [],
+          "reels": [
+            "Frost",
+            "Frost",
+            "Shield",
+            "Shield",
+            "Shield",
+            "Shield",
+            "Storm",
+            "Frost",
+            "Storm"
+          ],
+          "rewardOptions": [],
+          "bossTelegraph": {
+            "lane": -1,
+            "impactAt": -1.0
+          },
+          "lastEventSequence": 3,
+          "events": [
+            {
+              "Sequence": 2,
+              "Type": "run_started",
+              "Message": "军团集结：转动十字法阵招募单位并部署上阵",
+              "Source": 0,
+              "Target": 0,
+              "Lane": -1,
+              "Amount": 0.0,
+              "Time": 0.0,
+              "SkillInstanceId": 0,
+              "TimelineId": null,
+              "Trigger": null,
+              "CasterX": 0.0,
+              "CasterZ": 0.0,
+              "TargetX": 0.0,
+              "TargetZ": 0.0,
+              "FacingYaw": 0.0
+            },
+            {
+              "Sequence": 3,
+              "Type": "spin",
+              "Message": "教学预设 · 中横三同！出兵1名",
+              "Source": 0,
+              "Target": 0,
+              "Lane": -1,
+              "Amount": 1.0,
+              "Time": 0.0,
+              "SkillInstanceId": 0,
+              "TimelineId": null,
+              "Trigger": null,
+              "CasterX": 0.0,
+              "CasterZ": 0.0,
+              "TargetX": 0.0,
+              "TargetZ": 0.0,
+              "FacingYaw": 0.0
+            }
+          ],
+          "availableActions": [
+            "deploy",
+            "restart",
+            "spin",
+            "recycle"
+          ]
+        }
+      }
+    },
+    {
+      "operation": "pointer",
+      "arguments": {
+        "phase": "end",
+        "x": 0.247500047,
+        "y": 0.0594999641
+      },
+      "result": {
+        "inputDispatched": true,
+        "state": {
+          "schemaVersion": 6,
+          "skills": [],
+          "layout": "horizontal-free-deploy-astar",
+          "phase": "Preparation",
+          "seed": 173,
+          "wave": 1,
+          "totalWaves": 12,
+          "marchDistance": 0.0,
+          "aliveTroops": 0,
+          "regrouping": false,
+          "enraged": false,
+          "deployBox": {
+            "minX": -5.2,
+            "maxX": -0.35,
+            "minZ": -2.65,
+            "maxZ": 2.65
+          },
+          "spins": 1,
+          "spinsPerWave": 3,
+          "consecutiveMisses": 0,
+          "teaching": true,
+          "deployedCount": 0,
+          "maxDeployed": 6,
+          "popExp": 0,
+          "popExpNeeded": 4,
+          "winRowMid": false,
+          "winColMid": true,
+          "tactics": 0,
+          "aim": "None",
+          "paused": false,
+          "speed": 1,
+          "battleTime": 0.0,
+          "forecast": [
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 0,
+              "at": 0.0
+            },
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 1,
+              "at": 0.0
+            },
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 2,
+              "at": 0.0
+            }
+          ],
+          "units": [
+            {
+              "id": 1,
+              "kind": "Shield",
+              "name": "盾卫",
+              "star": 1,
+              "branch": "None",
+              "lane": -1,
+              "row": -1,
+              "homeX": 0.0,
+              "homeZ": 0.0,
+              "x": 0.0,
+              "z": 0.0,
+              "vx": 0.0,
+              "vz": 0.0,
+              "targetId": 0,
+              "aiState": "Idle",
+              "navigation": {
+                "status": "Holding",
+                "blockReason": "",
+                "blockedFor": 0.0,
+                "goalX": 0.0,
+                "goalZ": 0.0,
+                "revision": 0,
+                "remainingCorners": 0,
+                "corners": []
+              },
+              "facingYaw": 90.0,
+              "turnSpeed": 1080.0,
+              "moveSpeed": 2.4,
+              "canMerge": false,
+              "hp": 340.0,
+              "maxHp": 340.0,
+              "shield": 0.0,
+              "cooldown": 0.25,
+              "skillCooldown": 0.8
+            },
+            {
+              "id": 2,
+              "kind": "Archer",
+              "name": "风弓手",
+              "star": 1,
+              "branch": "None",
+              "lane": -1,
+              "row": -1,
+              "homeX": 0.0,
+              "homeZ": 0.0,
+              "x": 0.0,
+              "z": 0.0,
+              "vx": 0.0,
+              "vz": 0.0,
+              "targetId": 0,
+              "aiState": "Idle",
+              "navigation": {
+                "status": "Holding",
+                "blockReason": "",
+                "blockedFor": 0.0,
+                "goalX": 0.0,
+                "goalZ": 0.0,
+                "revision": 0,
+                "remainingCorners": 0,
+                "corners": []
+              },
+              "facingYaw": 90.0,
+              "turnSpeed": 1260.0,
+              "moveSpeed": 2.4,
+              "canMerge": false,
+              "hp": 170.0,
+              "maxHp": 170.0,
+              "shield": 0.0,
+              "cooldown": 0.25,
+              "skillCooldown": 0.92
+            }
+          ],
+          "enemies": [],
+          "pending": [],
+          "rewards": [],
+          "reels": [
+            "Frost",
+            "Archer",
+            "Archer",
+            "Frost",
+            "Archer",
+            "Storm",
+            "Archer",
+            "Archer",
+            "Storm"
+          ],
+          "rewardOptions": [],
+          "bossTelegraph": {
+            "lane": -1,
+            "impactAt": -1.0
+          },
+          "lastEventSequence": 4,
+          "events": [
+            {
+              "Sequence": 2,
+              "Type": "run_started",
+              "Message": "军团集结：转动十字法阵招募单位并部署上阵",
+              "Source": 0,
+              "Target": 0,
+              "Lane": -1,
+              "Amount": 0.0,
+              "Time": 0.0,
+              "SkillInstanceId": 0,
+              "TimelineId": null,
+              "Trigger": null,
+              "CasterX": 0.0,
+              "CasterZ": 0.0,
+              "TargetX": 0.0,
+              "TargetZ": 0.0,
+              "FacingYaw": 0.0
+            },
+            {
+              "Sequence": 3,
+              "Type": "spin",
+              "Message": "教学预设 · 中横三同！出兵1名",
+              "Source": 0,
+              "Target": 0,
+              "Lane": -1,
+              "Amount": 1.0,
+              "Time": 0.0,
+              "SkillInstanceId": 0,
+              "TimelineId": null,
+              "Trigger": null,
+              "CasterX": 0.0,
+              "CasterZ": 0.0,
+              "TargetX": 0.0,
+              "TargetZ": 0.0,
+              "FacingYaw": 0.0
+            },
+            {
+              "Sequence": 4,
+              "Type": "spin",
+              "Message": "教学预设 · 中竖三同！出兵1名",
+              "Source": 0,
+              "Target": 0,
+              "Lane": -1,
+              "Amount": 1.0,
+              "Time": 0.0,
+              "SkillInstanceId": 0,
+              "TimelineId": null,
+              "Trigger": null,
+              "CasterX": 0.0,
+              "CasterZ": 0.0,
+              "TargetX": 0.0,
+              "TargetZ": 0.0,
+              "FacingYaw": 0.0
+            }
+          ],
+          "availableActions": [
+            "deploy",
+            "restart",
+            "spin",
+            "recycle"
+          ]
+        }
+      }
+    },
+    {
+      "operation": "pointer",
+      "arguments": {
+        "phase": "begin",
+        "x": 0.247500047,
+        "y": 0.0594999641
+      },
+      "result": {
+        "inputDispatched": true,
+        "state": {
+          "schemaVersion": 6,
+          "skills": [],
+          "layout": "horizontal-free-deploy-astar",
+          "phase": "Preparation",
+          "seed": 173,
+          "wave": 1,
+          "totalWaves": 12,
+          "marchDistance": 0.0,
+          "aliveTroops": 0,
+          "regrouping": false,
+          "enraged": false,
+          "deployBox": {
+            "minX": -5.2,
+            "maxX": -0.35,
+            "minZ": -2.65,
+            "maxZ": 2.65
+          },
+          "spins": 1,
+          "spinsPerWave": 3,
+          "consecutiveMisses": 0,
+          "teaching": true,
+          "deployedCount": 0,
+          "maxDeployed": 6,
+          "popExp": 0,
+          "popExpNeeded": 4,
+          "winRowMid": false,
+          "winColMid": true,
+          "tactics": 0,
+          "aim": "None",
+          "paused": false,
+          "speed": 1,
+          "battleTime": 0.0,
+          "forecast": [
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 0,
+              "at": 0.0
+            },
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 1,
+              "at": 0.0
+            },
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 2,
+              "at": 0.0
+            }
+          ],
+          "units": [
+            {
+              "id": 1,
+              "kind": "Shield",
+              "name": "盾卫",
+              "star": 1,
+              "branch": "None",
+              "lane": -1,
+              "row": -1,
+              "homeX": 0.0,
+              "homeZ": 0.0,
+              "x": 0.0,
+              "z": 0.0,
+              "vx": 0.0,
+              "vz": 0.0,
+              "targetId": 0,
+              "aiState": "Idle",
+              "navigation": {
+                "status": "Holding",
+                "blockReason": "",
+                "blockedFor": 0.0,
+                "goalX": 0.0,
+                "goalZ": 0.0,
+                "revision": 0,
+                "remainingCorners": 0,
+                "corners": []
+              },
+              "facingYaw": 90.0,
+              "turnSpeed": 1080.0,
+              "moveSpeed": 2.4,
+              "canMerge": false,
+              "hp": 340.0,
+              "maxHp": 340.0,
+              "shield": 0.0,
+              "cooldown": 0.25,
+              "skillCooldown": 0.8
+            },
+            {
+              "id": 2,
+              "kind": "Archer",
+              "name": "风弓手",
+              "star": 1,
+              "branch": "None",
+              "lane": -1,
+              "row": -1,
+              "homeX": 0.0,
+              "homeZ": 0.0,
+              "x": 0.0,
+              "z": 0.0,
+              "vx": 0.0,
+              "vz": 0.0,
+              "targetId": 0,
+              "aiState": "Idle",
+              "navigation": {
+                "status": "Holding",
+                "blockReason": "",
+                "blockedFor": 0.0,
+                "goalX": 0.0,
+                "goalZ": 0.0,
+                "revision": 0,
+                "remainingCorners": 0,
+                "corners": []
+              },
+              "facingYaw": 90.0,
+              "turnSpeed": 1260.0,
+              "moveSpeed": 2.4,
+              "canMerge": false,
+              "hp": 170.0,
+              "maxHp": 170.0,
+              "shield": 0.0,
+              "cooldown": 0.25,
+              "skillCooldown": 0.92
+            }
+          ],
+          "enemies": [],
+          "pending": [],
+          "rewards": [],
+          "reels": [
+            "Frost",
+            "Archer",
+            "Archer",
+            "Frost",
+            "Archer",
+            "Storm",
+            "Archer",
+            "Archer",
+            "Storm"
+          ],
+          "rewardOptions": [],
+          "bossTelegraph": {
+            "lane": -1,
+            "impactAt": -1.0
+          },
+          "lastEventSequence": 4,
+          "events": [
+            {
+              "Sequence": 2,
+              "Type": "run_started",
+              "Message": "军团集结：转动十字法阵招募单位并部署上阵",
+              "Source": 0,
+              "Target": 0,
+              "Lane": -1,
+              "Amount": 0.0,
+              "Time": 0.0,
+              "SkillInstanceId": 0,
+              "TimelineId": null,
+              "Trigger": null,
+              "CasterX": 0.0,
+              "CasterZ": 0.0,
+              "TargetX": 0.0,
+              "TargetZ": 0.0,
+              "FacingYaw": 0.0
+            },
+            {
+              "Sequence": 3,
+              "Type": "spin",
+              "Message": "教学预设 · 中横三同！出兵1名",
+              "Source": 0,
+              "Target": 0,
+              "Lane": -1,
+              "Amount": 1.0,
+              "Time": 0.0,
+              "SkillInstanceId": 0,
+              "TimelineId": null,
+              "Trigger": null,
+              "CasterX": 0.0,
+              "CasterZ": 0.0,
+              "TargetX": 0.0,
+              "TargetZ": 0.0,
+              "FacingYaw": 0.0
+            },
+            {
+              "Sequence": 4,
+              "Type": "spin",
+              "Message": "教学预设 · 中竖三同！出兵1名",
+              "Source": 0,
+              "Target": 0,
+              "Lane": -1,
+              "Amount": 1.0,
+              "Time": 0.0,
+              "SkillInstanceId": 0,
+              "TimelineId": null,
+              "Trigger": null,
+              "CasterX": 0.0,
+              "CasterZ": 0.0,
+              "TargetX": 0.0,
+              "TargetZ": 0.0,
+              "FacingYaw": 0.0
+            }
+          ],
+          "availableActions": [
+            "deploy",
+            "restart",
+            "spin",
+            "recycle"
+          ]
+        }
+      }
+    },
+    {
+      "operation": "pointer",
+      "arguments": {
+        "phase": "end",
+        "x": 0.247500047,
+        "y": 0.0594999641
+      },
+      "result": {
+        "inputDispatched": true,
+        "state": {
+          "schemaVersion": 6,
+          "skills": [],
+          "layout": "horizontal-free-deploy-astar",
+          "phase": "Preparation",
+          "seed": 173,
+          "wave": 1,
+          "totalWaves": 12,
+          "marchDistance": 0.0,
+          "aliveTroops": 0,
+          "regrouping": false,
+          "enraged": false,
+          "deployBox": {
+            "minX": -5.2,
+            "maxX": -0.35,
+            "minZ": -2.65,
+            "maxZ": 2.65
+          },
+          "spins": 0,
+          "spinsPerWave": 3,
+          "consecutiveMisses": 0,
+          "teaching": false,
+          "deployedCount": 0,
+          "maxDeployed": 6,
+          "popExp": 0,
+          "popExpNeeded": 4,
+          "winRowMid": true,
+          "winColMid": false,
+          "tactics": 0,
+          "aim": "None",
+          "paused": false,
+          "speed": 1,
+          "battleTime": 0.0,
+          "forecast": [
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 0,
+              "at": 0.0
+            },
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 1,
+              "at": 0.0
+            },
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 2,
+              "at": 0.0
+            }
+          ],
+          "units": [
+            {
+              "id": 1,
+              "kind": "Shield",
+              "name": "盾卫",
+              "star": 1,
+              "branch": "None",
+              "lane": -1,
+              "row": -1,
+              "homeX": 0.0,
+              "homeZ": 0.0,
+              "x": 0.0,
+              "z": 0.0,
+              "vx": 0.0,
+              "vz": 0.0,
+              "targetId": 0,
+              "aiState": "Idle",
+              "navigation": {
+                "status": "Holding",
+                "blockReason": "",
+                "blockedFor": 0.0,
+                "goalX": 0.0,
+                "goalZ": 0.0,
+                "revision": 0,
+                "remainingCorners": 0,
+                "corners": []
+              },
+              "facingYaw": 90.0,
+              "turnSpeed": 1080.0,
+              "moveSpeed": 2.4,
+              "canMerge": false,
+              "hp": 340.0,
+              "maxHp": 340.0,
+              "shield": 0.0,
+              "cooldown": 0.25,
+              "skillCooldown": 0.8
+            },
+            {
+              "id": 2,
+              "kind": "Archer",
+              "name": "风弓手",
+              "star": 1,
+              "branch": "None",
+              "lane": -1,
+              "row": -1,
+              "homeX": 0.0,
+              "homeZ": 0.0,
+              "x": 0.0,
+              "z": 0.0,
+              "vx": 0.0,
+              "vz": 0.0,
+              "targetId": 0,
+              "aiState": "Idle",
+              "navigation": {
+                "status": "Holding",
+                "blockReason": "",
+                "blockedFor": 0.0,
+                "goalX": 0.0,
+                "goalZ": 0.0,
+                "revision": 0,
+                "remainingCorners": 0,
+                "corners": []
+              },
+              "facingYaw": 90.0,
+              "turnSpeed": 1260.0,
+              "moveSpeed": 2.4,
+              "canMerge": false,
+              "hp": 170.0,
+              "maxHp": 170.0,
+              "shield": 0.0,
+              "cooldown": 0.25,
+              "skillCooldown": 0.92
+            },
+            {
+              "id": 3,
+              "kind": "Storm",
+              "name": "雷法师",
+              "star": 1,
+              "branch": "None",
+              "lane": -1,
+              "row": -1,
+              "homeX": 0.0,
+              "homeZ": 0.0,
+              "x": 0.0,
+              "z": 0.0,
+              "vx": 0.0,
+              "vz": 0.0,
+              "targetId": 0,
+              "aiState": "Idle",
+              "navigation": {
+                "status": "Holding",
+                "blockReason": "",
+                "blockedFor": 0.0,
+                "goalX": 0.0,
+                "goalZ": 0.0,
+                "revision": 0,
+                "remainingCorners": 0,
+                "corners": []
+              },
+              "facingYaw": 90.0,
+              "turnSpeed": 1140.0,
+              "moveSpeed": 2.4,
+              "canMerge": false,
+              "hp": 160.0,
+              "maxHp": 160.0,
+              "shield": 0.0,
+              "cooldown": 0.25,
+              "skillCooldown": 1.04
+            }
+          ],
+          "enemies": [],
+          "pending": [],
+          "rewards": [],
+          "reels": [
+            "Archer",
+            "Frost",
+            "Shield",
+            "Storm",
+            "Storm",
+            "Storm",
+            "Frost",
+            "Storm",
+            "Storm"
+          ],
+          "rewardOptions": [],
+          "bossTelegraph": {
+            "lane": -1,
+            "impactAt": -1.0
+          },
+          "lastEventSequence": 5,
+          "events": [
+            {
+              "Sequence": 2,
+              "Type": "run_started",
+              "Message": "军团集结：转动十字法阵招募单位并部署上阵",
+              "Source": 0,
+              "Target": 0,
+              "Lane": -1,
+              "Amount": 0.0,
+              "Time": 0.0,
+              "SkillInstanceId": 0,
+              "TimelineId": null,
+              "Trigger": null,
+              "CasterX": 0.0,
+              "CasterZ": 0.0,
+              "TargetX": 0.0,
+              "TargetZ": 0.0,
+              "FacingYaw": 0.0
+            },
+            {
+              "Sequence": 3,
+              "Type": "spin",
+              "Message": "教学预设 · 中横三同！出兵1名",
+              "Source": 0,
+              "Target": 0,
+              "Lane": -1,
+              "Amount": 1.0,
+              "Time": 0.0,
+              "SkillInstanceId": 0,
+              "TimelineId": null,
+              "Trigger": null,
+              "CasterX": 0.0,
+              "CasterZ": 0.0,
+              "TargetX": 0.0,
+              "TargetZ": 0.0,
+              "FacingYaw": 0.0
+            },
+            {
+              "Sequence": 4,
+              "Type": "spin",
+              "Message": "教学预设 · 中竖三同！出兵1名",
+              "Source": 0,
+              "Target": 0,
+              "Lane": -1,
+              "Amount": 1.0,
+              "Time": 0.0,
+              "SkillInstanceId": 0,
+              "TimelineId": null,
+              "Trigger": null,
+              "CasterX": 0.0,
+              "CasterZ": 0.0,
+              "TargetX": 0.0,
+              "TargetZ": 0.0,
+              "FacingYaw": 0.0
+            },
+            {
+              "Sequence": 5,
+              "Type": "spin",
+              "Message": "教学预设 · 中横三同！出兵1名",
+              "Source": 0,
+              "Target": 0,
+              "Lane": -1,
+              "Amount": 1.0,
+              "Time": 0.0,
+              "SkillInstanceId": 0,
+              "TimelineId": null,
+              "Trigger": null,
+              "CasterX": 0.0,
+              "CasterZ": 0.0,
+              "TargetX": 0.0,
+              "TargetZ": 0.0,
+              "FacingYaw": 0.0
+            }
+          ],
+          "availableActions": [
+            "deploy",
+            "restart",
+            "recycle"
+          ]
+        }
+      }
+    },
+    {
+      "operation": "pointer",
+      "arguments": {
+        "phase": "begin",
+        "x": 0.584,
+        "y": 0.245999977
+      },
+      "result": {
+        "inputDispatched": true,
+        "state": {
+          "schemaVersion": 6,
+          "skills": [],
+          "layout": "horizontal-free-deploy-astar",
+          "phase": "Preparation",
+          "seed": 173,
+          "wave": 1,
+          "totalWaves": 12,
+          "marchDistance": 0.0,
+          "aliveTroops": 0,
+          "regrouping": false,
+          "enraged": false,
+          "deployBox": {
+            "minX": -5.2,
+            "maxX": -0.35,
+            "minZ": -2.65,
+            "maxZ": 2.65
+          },
+          "spins": 0,
+          "spinsPerWave": 3,
+          "consecutiveMisses": 0,
+          "teaching": false,
+          "deployedCount": 0,
+          "maxDeployed": 6,
+          "popExp": 0,
+          "popExpNeeded": 4,
+          "winRowMid": true,
+          "winColMid": false,
+          "tactics": 0,
+          "aim": "None",
+          "paused": false,
+          "speed": 1,
+          "battleTime": 0.0,
+          "forecast": [
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 0,
+              "at": 0.0
+            },
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 1,
+              "at": 0.0
+            },
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 2,
+              "at": 0.0
+            }
+          ],
+          "units": [
+            {
+              "id": 1,
+              "kind": "Shield",
+              "name": "盾卫",
+              "star": 1,
+              "branch": "None",
+              "lane": -1,
+              "row": -1,
+              "homeX": 0.0,
+              "homeZ": 0.0,
+              "x": 0.0,
+              "z": 0.0,
+              "vx": 0.0,
+              "vz": 0.0,
+              "targetId": 0,
+              "aiState": "Idle",
+              "navigation": {
+                "status": "Holding",
+                "blockReason": "",
+                "blockedFor": 0.0,
+                "goalX": 0.0,
+                "goalZ": 0.0,
+                "revision": 0,
+                "remainingCorners": 0,
+                "corners": []
+              },
+              "facingYaw": 90.0,
+              "turnSpeed": 1080.0,
+              "moveSpeed": 2.4,
+              "canMerge": false,
+              "hp": 340.0,
+              "maxHp": 340.0,
+              "shield": 0.0,
+              "cooldown": 0.25,
+              "skillCooldown": 0.8
+            },
+            {
+              "id": 2,
+              "kind": "Archer",
+              "name": "风弓手",
+              "star": 1,
+              "branch": "None",
+              "lane": -1,
+              "row": -1,
+              "homeX": 0.0,
+              "homeZ": 0.0,
+              "x": 0.0,
+              "z": 0.0,
+              "vx": 0.0,
+              "vz": 0.0,
+              "targetId": 0,
+              "aiState": "Idle",
+              "navigation": {
+                "status": "Holding",
+                "blockReason": "",
+                "blockedFor": 0.0,
+                "goalX": 0.0,
+                "goalZ": 0.0,
+                "revision": 0,
+                "remainingCorners": 0,
+                "corners": []
+              },
+              "facingYaw": 90.0,
+              "turnSpeed": 1260.0,
+              "moveSpeed": 2.4,
+              "canMerge": false,
+              "hp": 170.0,
+              "maxHp": 170.0,
+              "shield": 0.0,
+              "cooldown": 0.25,
+              "skillCooldown": 0.92
+            },
+            {
+              "id": 3,
+              "kind": "Storm",
+              "name": "雷法师",
+              "star": 1,
+              "branch": "None",
+              "lane": -1,
+              "row": -1,
+              "homeX": 0.0,
+              "homeZ": 0.0,
+              "x": 0.0,
+              "z": 0.0,
+              "vx": 0.0,
+              "vz": 0.0,
+              "targetId": 0,
+              "aiState": "Idle",
+              "navigation": {
+                "status": "Holding",
+                "blockReason": "",
+                "blockedFor": 0.0,
+                "goalX": 0.0,
+                "goalZ": 0.0,
+                "revision": 0,
+                "remainingCorners": 0,
+                "corners": []
+              },
+              "facingYaw": 90.0,
+              "turnSpeed": 1140.0,
+              "moveSpeed": 2.4,
+              "canMerge": false,
+              "hp": 160.0,
+              "maxHp": 160.0,
+              "shield": 0.0,
+              "cooldown": 0.25,
+              "skillCooldown": 1.04
+            }
+          ],
+          "enemies": [],
+          "pending": [],
+          "rewards": [],
+          "reels": [
+            "Archer",
+            "Frost",
+            "Shield",
+            "Storm",
+            "Storm",
+            "Storm",
+            "Frost",
+            "Storm",
+            "Storm"
+          ],
+          "rewardOptions": [],
+          "bossTelegraph": {
+            "lane": -1,
+            "impactAt": -1.0
+          },
+          "lastEventSequence": 5,
+          "events": [
+            {
+              "Sequence": 2,
+              "Type": "run_started",
+              "Message": "军团集结：转动十字法阵招募单位并部署上阵",
+              "Source": 0,
+              "Target": 0,
+              "Lane": -1,
+              "Amount": 0.0,
+              "Time": 0.0,
+              "SkillInstanceId": 0,
+              "TimelineId": null,
+              "Trigger": null,
+              "CasterX": 0.0,
+              "CasterZ": 0.0,
+              "TargetX": 0.0,
+              "TargetZ": 0.0,
+              "FacingYaw": 0.0
+            },
+            {
+              "Sequence": 3,
+              "Type": "spin",
+              "Message": "教学预设 · 中横三同！出兵1名",
+              "Source": 0,
+              "Target": 0,
+              "Lane": -1,
+              "Amount": 1.0,
+              "Time": 0.0,
+              "SkillInstanceId": 0,
+              "TimelineId": null,
+              "Trigger": null,
+              "CasterX": 0.0,
+              "CasterZ": 0.0,
+              "TargetX": 0.0,
+              "TargetZ": 0.0,
+              "FacingYaw": 0.0
+            },
+            {
+              "Sequence": 4,
+              "Type": "spin",
+              "Message": "教学预设 · 中竖三同！出兵1名",
+              "Source": 0,
+              "Target": 0,
+              "Lane": -1,
+              "Amount": 1.0,
+              "Time": 0.0,
+              "SkillInstanceId": 0,
+              "TimelineId": null,
+              "Trigger": null,
+              "CasterX": 0.0,
+              "CasterZ": 0.0,
+              "TargetX": 0.0,
+              "TargetZ": 0.0,
+              "FacingYaw": 0.0
+            },
+            {
+              "Sequence": 5,
+              "Type": "spin",
+              "Message": "教学预设 · 中横三同！出兵1名",
+              "Source": 0,
+              "Target": 0,
+              "Lane": -1,
+              "Amount": 1.0,
+              "Time": 0.0,
+              "SkillInstanceId": 0,
+              "TimelineId": null,
+              "Trigger": null,
+              "CasterX": 0.0,
+              "CasterZ": 0.0,
+              "TargetX": 0.0,
+              "TargetZ": 0.0,
+              "FacingYaw": 0.0
+            }
+          ],
+          "availableActions": [
+            "deploy",
+            "restart",
+            "recycle"
+          ]
+        }
+      }
+    },
+    {
+      "operation": "pointer",
+      "arguments": {
+        "phase": "end",
+        "x": 0.584,
+        "y": 0.245999977
+      },
+      "result": {
+        "inputDispatched": true,
+        "state": {
+          "schemaVersion": 6,
+          "skills": [],
+          "layout": "horizontal-free-deploy-astar",
+          "phase": "Preparation",
+          "seed": 173,
+          "wave": 1,
+          "totalWaves": 12,
+          "marchDistance": 0.0,
+          "aliveTroops": 0,
+          "regrouping": false,
+          "enraged": false,
+          "deployBox": {
+            "minX": -5.2,
+            "maxX": -0.35,
+            "minZ": -2.65,
+            "maxZ": 2.65
+          },
+          "spins": 0,
+          "spinsPerWave": 3,
+          "consecutiveMisses": 0,
+          "teaching": false,
+          "deployedCount": 0,
+          "maxDeployed": 6,
+          "popExp": 0,
+          "popExpNeeded": 4,
+          "winRowMid": true,
+          "winColMid": false,
+          "tactics": 0,
+          "aim": "None",
+          "paused": false,
+          "speed": 1,
+          "battleTime": 0.0,
+          "forecast": [
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 0,
+              "at": 0.0
+            },
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 1,
+              "at": 0.0
+            },
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 2,
+              "at": 0.0
+            }
+          ],
+          "units": [
+            {
+              "id": 1,
+              "kind": "Shield",
+              "name": "盾卫",
+              "star": 1,
+              "branch": "None",
+              "lane": -1,
+              "row": -1,
+              "homeX": 0.0,
+              "homeZ": 0.0,
+              "x": 0.0,
+              "z": 0.0,
+              "vx": 0.0,
+              "vz": 0.0,
+              "targetId": 0,
+              "aiState": "Idle",
+              "navigation": {
+                "status": "Holding",
+                "blockReason": "",
+                "blockedFor": 0.0,
+                "goalX": 0.0,
+                "goalZ": 0.0,
+                "revision": 0,
+                "remainingCorners": 0,
+                "corners": []
+              },
+              "facingYaw": 90.0,
+              "turnSpeed": 1080.0,
+              "moveSpeed": 2.4,
+              "canMerge": false,
+              "hp": 340.0,
+              "maxHp": 340.0,
+              "shield": 0.0,
+              "cooldown": 0.25,
+              "skillCooldown": 0.8
+            },
+            {
+              "id": 2,
+              "kind": "Archer",
+              "name": "风弓手",
+              "star": 1,
+              "branch": "None",
+              "lane": -1,
+              "row": -1,
+              "homeX": 0.0,
+              "homeZ": 0.0,
+              "x": 0.0,
+              "z": 0.0,
+              "vx": 0.0,
+              "vz": 0.0,
+              "targetId": 0,
+              "aiState": "Idle",
+              "navigation": {
+                "status": "Holding",
+                "blockReason": "",
+                "blockedFor": 0.0,
+                "goalX": 0.0,
+                "goalZ": 0.0,
+                "revision": 0,
+                "remainingCorners": 0,
+                "corners": []
+              },
+              "facingYaw": 90.0,
+              "turnSpeed": 1260.0,
+              "moveSpeed": 2.4,
+              "canMerge": false,
+              "hp": 170.0,
+              "maxHp": 170.0,
+              "shield": 0.0,
+              "cooldown": 0.25,
+              "skillCooldown": 0.92
+            },
+            {
+              "id": 3,
+              "kind": "Storm",
+              "name": "雷法师",
+              "star": 1,
+              "branch": "None",
+              "lane": -1,
+              "row": -1,
+              "homeX": 0.0,
+              "homeZ": 0.0,
+              "x": 0.0,
+              "z": 0.0,
+              "vx": 0.0,
+              "vz": 0.0,
+              "targetId": 0,
+              "aiState": "Idle",
+              "navigation": {
+                "status": "Holding",
+                "blockReason": "",
+                "blockedFor": 0.0,
+                "goalX": 0.0,
+                "goalZ": 0.0,
+                "revision": 0,
+                "remainingCorners": 0,
+                "corners": []
+              },
+              "facingYaw": 90.0,
+              "turnSpeed": 1140.0,
+              "moveSpeed": 2.4,
+              "canMerge": false,
+              "hp": 160.0,
+              "maxHp": 160.0,
+              "shield": 0.0,
+              "cooldown": 0.25,
+              "skillCooldown": 1.04
+            }
+          ],
+          "enemies": [],
+          "pending": [],
+          "rewards": [],
+          "reels": [
+            "Archer",
+            "Frost",
+            "Shield",
+            "Storm",
+            "Storm",
+            "Storm",
+            "Frost",
+            "Storm",
+            "Storm"
+          ],
+          "rewardOptions": [],
+          "bossTelegraph": {
+            "lane": -1,
+            "impactAt": -1.0
+          },
+          "lastEventSequence": 5,
+          "events": [
+            {
+              "Sequence": 2,
+              "Type": "run_started",
+              "Message": "军团集结：转动十字法阵招募单位并部署上阵",
+              "Source": 0,
+              "Target": 0,
+              "Lane": -1,
+              "Amount": 0.0,
+              "Time": 0.0,
+              "SkillInstanceId": 0,
+              "TimelineId": null,
+              "Trigger": null,
+              "CasterX": 0.0,
+              "CasterZ": 0.0,
+              "TargetX": 0.0,
+              "TargetZ": 0.0,
+              "FacingYaw": 0.0
+            },
+            {
+              "Sequence": 3,
+              "Type": "spin",
+              "Message": "教学预设 · 中横三同！出兵1名",
+              "Source": 0,
+              "Target": 0,
+              "Lane": -1,
+              "Amount": 1.0,
+              "Time": 0.0,
+              "SkillInstanceId": 0,
+              "TimelineId": null,
+              "Trigger": null,
+              "CasterX": 0.0,
+              "CasterZ": 0.0,
+              "TargetX": 0.0,
+              "TargetZ": 0.0,
+              "FacingYaw": 0.0
+            },
+            {
+              "Sequence": 4,
+              "Type": "spin",
+              "Message": "教学预设 · 中竖三同！出兵1名",
+              "Source": 0,
+              "Target": 0,
+              "Lane": -1,
+              "Amount": 1.0,
+              "Time": 0.0,
+              "SkillInstanceId": 0,
+              "TimelineId": null,
+              "Trigger": null,
+              "CasterX": 0.0,
+              "CasterZ": 0.0,
+              "TargetX": 0.0,
+              "TargetZ": 0.0,
+              "FacingYaw": 0.0
+            },
+            {
+              "Sequence": 5,
+              "Type": "spin",
+              "Message": "教学预设 · 中横三同！出兵1名",
+              "Source": 0,
+              "Target": 0,
+              "Lane": -1,
+              "Amount": 1.0,
+              "Time": 0.0,
+              "SkillInstanceId": 0,
+              "TimelineId": null,
+              "Trigger": null,
+              "CasterX": 0.0,
+              "CasterZ": 0.0,
+              "TargetX": 0.0,
+              "TargetZ": 0.0,
+              "FacingYaw": 0.0
+            }
+          ],
+          "availableActions": [
+            "deploy",
+            "restart",
+            "recycle"
+          ]
+        }
+      }
+    },
+    {
+      "operation": "pointer",
+      "arguments": {
+        "phase": "begin",
+        "x": 0.584,
+        "y": 0.245999977
+      },
+      "result": {
+        "inputDispatched": true,
+        "state": {
+          "schemaVersion": 6,
+          "skills": [],
+          "layout": "horizontal-free-deploy-astar",
+          "phase": "Preparation",
+          "seed": 173,
+          "wave": 1,
+          "totalWaves": 12,
+          "marchDistance": 0.0,
+          "aliveTroops": 0,
+          "regrouping": false,
+          "enraged": false,
+          "deployBox": {
+            "minX": -5.2,
+            "maxX": -0.35,
+            "minZ": -2.65,
+            "maxZ": 2.65
+          },
+          "spins": 0,
+          "spinsPerWave": 3,
+          "consecutiveMisses": 0,
+          "teaching": false,
+          "deployedCount": 0,
+          "maxDeployed": 6,
+          "popExp": 0,
+          "popExpNeeded": 4,
+          "winRowMid": true,
+          "winColMid": false,
+          "tactics": 0,
+          "aim": "None",
+          "paused": false,
+          "speed": 1,
+          "battleTime": 0.0,
+          "forecast": [
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 0,
+              "at": 0.0
+            },
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 1,
+              "at": 0.0
+            },
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 2,
+              "at": 0.0
+            }
+          ],
+          "units": [
+            {
+              "id": 1,
+              "kind": "Shield",
+              "name": "盾卫",
+              "star": 1,
+              "branch": "None",
+              "lane": -1,
+              "row": -1,
+              "homeX": 0.0,
+              "homeZ": 0.0,
+              "x": 0.0,
+              "z": 0.0,
+              "vx": 0.0,
+              "vz": 0.0,
+              "targetId": 0,
+              "aiState": "Idle",
+              "navigation": {
+                "status": "Holding",
+                "blockReason": "",
+                "blockedFor": 0.0,
+                "goalX": 0.0,
+                "goalZ": 0.0,
+                "revision": 0,
+                "remainingCorners": 0,
+                "corners": []
+              },
+              "facingYaw": 90.0,
+              "turnSpeed": 1080.0,
+              "moveSpeed": 2.4,
+              "canMerge": false,
+              "hp": 340.0,
+              "maxHp": 340.0,
+              "shield": 0.0,
+              "cooldown": 0.25,
+              "skillCooldown": 0.8
+            },
+            {
+              "id": 2,
+              "kind": "Archer",
+              "name": "风弓手",
+              "star": 1,
+              "branch": "None",
+              "lane": -1,
+              "row": -1,
+              "homeX": 0.0,
+              "homeZ": 0.0,
+              "x": 0.0,
+              "z": 0.0,
+              "vx": 0.0,
+              "vz": 0.0,
+              "targetId": 0,
+              "aiState": "Idle",
+              "navigation": {
+                "status": "Holding",
+                "blockReason": "",
+                "blockedFor": 0.0,
+                "goalX": 0.0,
+                "goalZ": 0.0,
+                "revision": 0,
+                "remainingCorners": 0,
+                "corners": []
+              },
+              "facingYaw": 90.0,
+              "turnSpeed": 1260.0,
+              "moveSpeed": 2.4,
+              "canMerge": false,
+              "hp": 170.0,
+              "maxHp": 170.0,
+              "shield": 0.0,
+              "cooldown": 0.25,
+              "skillCooldown": 0.92
+            },
+            {
+              "id": 3,
+              "kind": "Storm",
+              "name": "雷法师",
+              "star": 1,
+              "branch": "None",
+              "lane": -1,
+              "row": -1,
+              "homeX": 0.0,
+              "homeZ": 0.0,
+              "x": 0.0,
+              "z": 0.0,
+              "vx": 0.0,
+              "vz": 0.0,
+              "targetId": 0,
+              "aiState": "Idle",
+              "navigation": {
+                "status": "Holding",
+                "blockReason": "",
+                "blockedFor": 0.0,
+                "goalX": 0.0,
+                "goalZ": 0.0,
+                "revision": 0,
+                "remainingCorners": 0,
+                "corners": []
+              },
+              "facingYaw": 90.0,
+              "turnSpeed": 1140.0,
+              "moveSpeed": 2.4,
+              "canMerge": false,
+              "hp": 160.0,
+              "maxHp": 160.0,
+              "shield": 0.0,
+              "cooldown": 0.25,
+              "skillCooldown": 1.04
+            }
+          ],
+          "enemies": [],
+          "pending": [],
+          "rewards": [],
+          "reels": [
+            "Archer",
+            "Frost",
+            "Shield",
+            "Storm",
+            "Storm",
+            "Storm",
+            "Frost",
+            "Storm",
+            "Storm"
+          ],
+          "rewardOptions": [],
+          "bossTelegraph": {
+            "lane": -1,
+            "impactAt": -1.0
+          },
+          "lastEventSequence": 5,
+          "events": [
+            {
+              "Sequence": 2,
+              "Type": "run_started",
+              "Message": "军团集结：转动十字法阵招募单位并部署上阵",
+              "Source": 0,
+              "Target": 0,
+              "Lane": -1,
+              "Amount": 0.0,
+              "Time": 0.0,
+              "SkillInstanceId": 0,
+              "TimelineId": null,
+              "Trigger": null,
+              "CasterX": 0.0,
+              "CasterZ": 0.0,
+              "TargetX": 0.0,
+              "TargetZ": 0.0,
+              "FacingYaw": 0.0
+            },
+            {
+              "Sequence": 3,
+              "Type": "spin",
+              "Message": "教学预设 · 中横三同！出兵1名",
+              "Source": 0,
+              "Target": 0,
+              "Lane": -1,
+              "Amount": 1.0,
+              "Time": 0.0,
+              "SkillInstanceId": 0,
+              "TimelineId": null,
+              "Trigger": null,
+              "CasterX": 0.0,
+              "CasterZ": 0.0,
+              "TargetX": 0.0,
+              "TargetZ": 0.0,
+              "FacingYaw": 0.0
+            },
+            {
+              "Sequence": 4,
+              "Type": "spin",
+              "Message": "教学预设 · 中竖三同！出兵1名",
+              "Source": 0,
+              "Target": 0,
+              "Lane": -1,
+              "Amount": 1.0,
+              "Time": 0.0,
+              "SkillInstanceId": 0,
+              "TimelineId": null,
+              "Trigger": null,
+              "CasterX": 0.0,
+              "CasterZ": 0.0,
+              "TargetX": 0.0,
+              "TargetZ": 0.0,
+              "FacingYaw": 0.0
+            },
+            {
+              "Sequence": 5,
+              "Type": "spin",
+              "Message": "教学预设 · 中横三同！出兵1名",
+              "Source": 0,
+              "Target": 0,
+              "Lane": -1,
+              "Amount": 1.0,
+              "Time": 0.0,
+              "SkillInstanceId": 0,
+              "TimelineId": null,
+              "Trigger": null,
+              "CasterX": 0.0,
+              "CasterZ": 0.0,
+              "TargetX": 0.0,
+              "TargetZ": 0.0,
+              "FacingYaw": 0.0
+            }
+          ],
+          "availableActions": [
+            "deploy",
+            "restart",
+            "recycle"
+          ]
+        }
+      }
+    },
+    {
+      "operation": "pointer",
+      "arguments": {
+        "phase": "end",
+        "x": 0.584,
+        "y": 0.245999977
+      },
+      "result": {
+        "inputDispatched": true,
+        "state": {
+          "schemaVersion": 6,
+          "skills": [],
+          "layout": "horizontal-free-deploy-astar",
+          "phase": "Preparation",
+          "seed": 173,
+          "wave": 1,
+          "totalWaves": 12,
+          "marchDistance": 0.0,
+          "aliveTroops": 1,
+          "regrouping": false,
+          "enraged": false,
+          "deployBox": {
+            "minX": -5.2,
+            "maxX": -0.35,
+            "minZ": -2.65,
+            "maxZ": 2.65
+          },
+          "spins": 0,
+          "spinsPerWave": 3,
+          "consecutiveMisses": 0,
+          "teaching": false,
+          "deployedCount": 1,
+          "maxDeployed": 6,
+          "popExp": 0,
+          "popExpNeeded": 4,
+          "winRowMid": true,
+          "winColMid": false,
+          "tactics": 0,
+          "aim": "None",
+          "paused": false,
+          "speed": 1,
+          "battleTime": 0.0,
+          "forecast": [
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 0,
+              "at": 0.0
+            },
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 1,
+              "at": 0.0
+            },
+            {
+              "kind": "Grunt",
+              "name": "步兵",
+              "lane": 2,
+              "at": 0.0
+            }
+          ],
+          "units": [
+            {
+              "id": 1,
+              "kind": "Shield",
+              "name": "盾卫",
+              "star": 1,
+              "branch": "None",
+              "lane": 1,
+              "row": 0,
+              "homeX": -1.15,
+              "homeZ": 0.0,
+              "x": -1.15,
+              "z": 0.0,
+              "vx": 0.0,
+              "vz": 0.0,
+              "targetId": 0,
+              "aiState": "Idle",
+              "navigation": {
+                "status": "Holding",
+                "blockReason": "",
+                "blockedFor": 0.0,
+                "goalX": 0.0,
+                "goalZ": 0.0,
+                "revision": 0,
+                "remainingCorners": 0,
+                "corners": []
+              },
+              "facingYaw": 90.0,
+              "turnSpeed": 1080.0,
+              "moveSpeed": 2.4,
+              "canMerge": false,
+              "hp": 340.0,
+              "maxHp": 340.0,
+              "shield": 0.0,
+              "cooldown": 0.25,
+              "skillCooldown": 0.8
+            },
+            {
+              "id": 2,
+              "kind": "Archer",
+              "name": "风弓手",
+              "star": 1,
+              "branch": "None",
+              "lane": -1,
+              "row": -1,
+              "homeX": 0.0,
+              "homeZ": 0.0,
+              "x": 0.0,
+              "z": 0.0,
+              "vx": 0.0,
+              "vz": 0.0,
+              "targetId": 0,
+              "aiState": "Idle",
+              "navigation": {
+                "status": "Holding",
+                "blockReason": "",
+                "blockedFor": 0.0,
+                "goalX": 0.0,
+                "goalZ": 0.0,
+                "revision": 0,
+                "remainingCorners": 0,
+                "corners": []
+              },
+              "facingYaw": 90.0,
+              "turnSpeed": 1260.0,
+              "moveSpeed": 2.4,
+              "canMerge": false,
+              "hp": 170.0,
+              "maxHp": 170.0,
+              "shield": 0.0,
+              "cooldown": 0.25,
+              "skillCooldown": 0.92
+            },
+            {
+              "id": 3,
+              "kind": "Storm",
+              "name": "雷法师",
+              "star": 1,
+              "branch": "None",
+              "lane": -1,
+              "row": -1,
+              "homeX": 0.0,
+              "homeZ": 0.0,
+              "x": 0.0,
+              "z": 0.0,
+              "vx": 0.0,
+              "vz": 0.0,
+              "targetId": 0,
+              "aiState": "Idle",
+              "navigation": {
+                "status": "Holding",
+                "blockReason": "",
+                "blockedFor": 0.0,
+                "goalX": 0.0,
+                "goalZ": 0.0,
+                "revision": 0,
+                "remainingCorners": 0,
+                "corners": []
+              },
+              "facingYaw": 90.0,
+              "turnSpeed": 1140.0,
+              "moveSpeed": 2.4,
+              "canMerge": false,
+              "hp": 160.0,
+              "maxHp": 160.0,
+              "shield": 0.0,
+              "cooldown": 0.25,
+              "skillCooldown": 1.04
+            }
+          ],
+          "enemies": [],
+          "pending": [],
+          "rewards": [],
+          "reels": [
+            "Archer",
+            "Frost",
+            "Shield",
+            "Storm",
+            "Storm",
+            "Storm",
+            "Frost",
+            "Storm",
+            "Storm"
+          ],
+          "rewardOptions": [],
+          "bossTelegraph": {
+            "lane": -1,
+            "impactAt": -1.0
+          },
+          "lastEventSequence": 6,
+          "events": [
+            {
+              "Sequence": 2,
+              "Type": "run_started",
+              "Message": "军团集结：转动十字法阵招募单位并部署上阵",
+              "Source": 0,
+              "Target": 0,
+              "Lane": -1,
+              "Amount": 0.0,
+              "Time": 0.0,
+              "SkillInstanceId": 0,
+              "TimelineId": null,
+              "Trigger": null,
+              "CasterX": 0.0,
+              "CasterZ": 0.0,
+              "TargetX": 0.0,
+              "TargetZ": 0.0,
+              "FacingYaw": 0.0
+            },
+            {
+              "Sequence": 3,
+              "Type": "spin",
+              "Message": "教学预设 · 中横三同！出兵1名",
+              "Source": 0,
+              "Target": 0,
+              "Lane": -1,
+              "Amount": 1.0,
+              "Time": 0.0,
+              "SkillInstanceId": 0,
+              "TimelineId": null,
+              "Trigger": null,
+              "CasterX": 0.0,
+              "CasterZ": 0.0,
+              "TargetX": 0.0,
+              "TargetZ": 0.0,
+              "FacingYaw": 0.0
+            },
+            {
+              "Sequence": 4,
+              "Type": "spin",
+              "Message": "教学预设 · 中竖三同！出兵1名",
+              "Source": 0,
+              "Target": 0,
+              "Lane": -1,
+              "Amount": 1.0,
+              "Time": 0.0,
+              "SkillInstanceId": 0,
+              "TimelineId": null,
+              "Trigger": null,
+              "CasterX": 0.0,
+              "CasterZ": 0.0,
+              "TargetX": 0.0,
+              "TargetZ": 0.0,
+              "FacingYaw": 0.0
+            },
+            {
+              "Sequence": 5,
+              "Type": "spin",
+              "Message": "教学预设 · 中横三同！出兵1名",
+              "Source": 0,
+              "Target": 0,
+              "Lane": -1,
+              "Amount": 1.0,
+              "Time": 0.0,
+              "SkillInstanceId": 0,
+              "TimelineId": null,
+              "Trigger": null,
+              "CasterX": 0.0,
+              "CasterZ": 0.0,
+              "TargetX": 0.0,
+              "TargetZ": 0.0,
+              "FacingYaw": 0.0
+            },
+            {
+              "Sequence": 6,
+              "Type": "deployed",
+              "Message": "已部署盾卫",
+              "Source": 1,
+              "Target": 0,
+              "Lane": 1,
+              "Amount": 0.0,
+              "Time": 0.0,
+              "SkillInstanceId": 0,
+              "TimelineId": null,
+              "Trigger": null,
+              "CasterX": 0.0,
+              "CasterZ": 0.0,
+              "TargetX": 0.0,
+              "TargetZ": 0.0,
+              "FacingYaw": 0.0
+            }
+          ],
+          "availableActions": [
+            "deploy",
+            "restart",
+            "recycle",
+            "start_wave"
+          ]
+        }
+      }
+    }
+  ]
+}

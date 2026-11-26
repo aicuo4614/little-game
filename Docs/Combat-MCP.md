@@ -1,5 +1,7 @@
 # 战斗 MCP 操作与验证
 
+> 2026-11-25 更新：已接替并继续 Demo 技术栈迁移，当前分层、启动、资源、技能编辑器与验收边界以 [Framework-Migration.md](Framework-Migration.md) 为准。下文关于“尚未迁入完整 TimelineEditor”、旧 little-game.skill-timeline 扩展和 Resources 技能镜像的描述属于历史状态；当前使用原生 17 个 unity_skill_editor_* 工具、标准 TimelineConfig 与共享 3D 播放器。规则状态 schema6。
+
 端点 `http://127.0.0.1:3833/mcp`，工程 `E:/Project/little-game/Assets`。所有写操作均走 `BattleApplication.Submit → BattleSession.Execute`，与玩家相同，不存在跳波、直接改血或直接获胜的生产工具。
 
 ## 发现与入口
@@ -8,6 +10,10 @@
 2. 退出 Play 后执行菜单 `Little Game/Combat/Open Combat`，再 `unity_enter_play_mode`。
 3. `tools/list` 应发现 16 个 `unity_combat_*` 工具。`unity_extension_catalog(extensionId="little-game.combat")` 另提供完整 23 项扩展操作及参数。
 4. `unity_combat_get_state` 读取本波、敌情、军团、转盘、可用操作、预警和事件；`unity_combat_get_view` 读取真实屏幕目标。
+
+## 固定朝向机位（战斗扩展 1.9.0）
+
+`get_view.presentation` 返回 `cameraMode`、`cameraYaw`、`cameraX`、`cameraBaseX`、`cameraMaxX` 及 `environment.entrance`。基础偏航为 0°，自动跟战仅沿 X 小幅平移，暂停或瞄准时停止跟随。空地滑动使用同一 pointer 入口验证机位稳定。道路入口是场景地标，敌军出现后血条随单位显示。
 
 ## 正常一局
 

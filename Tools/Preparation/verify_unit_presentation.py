@@ -15,7 +15,7 @@ def main():
     captures = set()
     deadline = time.monotonic() + 210
     expected = {'Unit_' + role for role in ['Shield', 'Archer', 'Storm', 'Frost', 'Grunt', 'Runner', 'Armored', 'Healer', 'Giant']}
-    output = ROOT / 'Reports/Art/unit-runtime-verification.json'
+    output = ROOT / 'Reports/Art/unit-runtime-framework-20261125.json'
     while time.monotonic() < deadline:
         try:
             view = json.loads(mobile.mcp.tool('unity_extension_call', extensionId='little-game.combat', operation='get_view', arguments={}, allowWrite=True))
@@ -27,7 +27,7 @@ def main():
             entry = models.setdefault(actor['model'], {'actions': [], 'poses': [], 'times': [], 'materialsSupported': True})
             if actor['action'] not in entry['actions']:
                 entry['actions'].append(actor['action'])
-            pose = actor['upperArm']
+            pose = actor.get('bonePose') or actor['upperArm']
             if pose not in entry['poses'] and len(entry['poses']) < 5:
                 entry['poses'].append(pose)
             if len(entry['times']) < 20:
@@ -43,7 +43,7 @@ def main():
                 time.sleep(.05)
             import shutil
             name = sorted(interesting - captures)[0]
-            shutil.copyfile(source, ROOT / ('Reports/Art/normal-play-' + name + '.png'))
+            shutil.copyfile(source, ROOT / ('Reports/Art/framework-normal-play-' + name + '.png'))
             captures |= interesting
         result = {'scope': '正常规则回放期间只读采样；未生成敌人、跳波或改数值', 'models': models, 'missingModels': sorted(expected - models.keys()), 'captures': sorted(captures)}
         output.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding='utf-8')

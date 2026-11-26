@@ -1,0 +1,11 @@
+{
+    "FileVersion": "1.0.0",
+    "PackageName": "MainPackage",
+    "PackageVersion": "2026-11-25-1254",
+    "Wrappers": [
+        {
+            "BundleGUID": "30c2edbdfad1de6a7d298fb65f03b8ed",
+            "FileName": "mainpackage_assets_package_main_content_30c2edbdfad1de6a7d298fb65f03b8ed.bundle"
+        }
+    ]
+}

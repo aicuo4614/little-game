@@ -1,0 +1,56 @@
+{
+  "TimelineId": "giant_telegraph",
+  "Description": "巨像蓄力预警",
+  "PreviewCasterAddress": "Giant/Giant",
+  "DurationBindClipKey": "giant_telegraph_fx",
+  "Clips": [
+    {
+      "PreviewSource": "$caster",
+      "PreviewTargets": [
+        "$enemy:0"
+      ],
+      "ClipKey": "giant_telegraph_hit_targets",
+      "PreKey": "",
+      "Type": 32,
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.0,
+      "EventConfigs": []
+    },
+    {
+      "EffectPath": "fx_boss_charge",
+      "Subject": 0,
+      "PointData": {
+        "OffsetNodeType": 1,
+        "OffsetPos": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetEuler": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetScale": {
+          "x": 0.8,
+          "y": 0.8,
+          "z": 0.8
+        },
+        "NeedSetParent": false,
+        "DontFollow": true,
+        "UseOriginalRotation": true,
+        "OverlayCharacterFacing": true,
+        "UseOriginalScale": false
+      },
+      "AffectedByHitStop": false,
+      "ClipKey": "giant_telegraph_fx",
+      "PreKey": "",
+      "Type": 8,
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.8,
+      "EventConfigs": []
+    }
+  ]
+}

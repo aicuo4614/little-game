@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 946c59de4b9e84f4c8221cf53d2ddcd5, type: 3}
+  m_Name: QualitySOConfig
+  m_EditorClassIdentifier: 
+  Tiers:
+  - Tier: 0
+    DisplayName: Performant
+    VisibleInSettings: 1
+    TargetFrameRate: 60
+  - Tier: 1
+    DisplayName: Balanced
+    VisibleInSettings: 1
+    TargetFrameRate: 60
+  - Tier: 2
+    DisplayName: HighFidelity
+    VisibleInSettings: 1
+    TargetFrameRate: 60
+  - Tier: 3
+    DisplayName: Ultra
+    VisibleInSettings: 1
+    TargetFrameRate: 60
+  TargetFrameRate: 60
+  ShowFps: 0

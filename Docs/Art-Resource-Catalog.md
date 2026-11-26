@@ -1,6 +1,6 @@
 # 美术资源来源与单位选型
 
-更新：2026-11-24。用途：供后续对话持续查阅、补充资源入口与选型依据。本目录同时保存初选和后续接入记录；各阶段验证范围以文末记录为准。
+更新：2026-11-26。用途：供后续对话持续查阅、补充资源入口与选型依据。本目录同时保存初选和后续接入记录；各阶段验证范围以文末记录为准。
 
 ## 持续维护约定
 
@@ -144,3 +144,13 @@
 
 
 2026-11-25 本轮落地更新：用户要求继续推进，Roy-T.AStar固定提交的26个核心C#文件已迁入`Assets/LittleGame/ThirdParty/RoyTAStar`，以`LittleGame.RoyTAStar.asmdef`供纯规则Domain引用。修改仅增加动态通行边过滤接口；LICENSE.txt、SOURCE.json保留来源，发行随包许可副本位于`Assets/StreamingAssets/ThirdPartyNotices/RoyTAStar.txt`。未引入其他候选、未付费、未修改外部旧工程。规则层导航场景已通过；Unity正常远征正在验收，手机未验证。后续最终状态读取`Reports/Combat/astar-navigation-20261125/`。
+
+## 2026-11-25 Demo 框架和3D技能接续
+
+既有 Demo 来源此次用于完整 TimelineEditor/MCP Host、共享 UnitCore、3D Animator、AOT/资源热更、服务管理器、UGUI 与构建能力迁移，源工程只读。模型生成物新增 `Assets/Package_Unit/Low/Base/{Role}/{Role}.prefab`，标准技能与 VFX 使用 Package_Unit / Package_Effect；旧 Resources 时间轴镜像归档。没有新增外部素材购买或来源授权。许可沿用既有来源及嵌入包许可，验证状态和限制见 `Framework-Migration.md`。
+
+## 2026-11-26 竖屏技能调校
+
+继续使用既有授权的 PELibDemo/Hovl Studio 本地提取资源，来源工程未改动。当前工程保留的18份源Prefab含粒子，旧40份生成Prefab却只有Transform层级；已修复生成器并重新生成 `Assets/Package_Effect/Low/Base`，逐项核对粒子数量，不再以文件生成成功代替效果验收。缺失原Shader时从序列化属性恢复贴图，适配URP材质并保留生成资产GUID；仅拖尾材质槽按实际启用状态验证。
+
+本项目新增程序生成的刀光弧面、雷击折线、冰晶与集火标记网格粒子（`SkillEffectAccentBuilder`、`SkillEffectAssetBuilder`），用于竖屏可读的主形状；Hovl粒子作为其他效果及辅助层，不新增外部来源或费用。40个运行时Prefab统一由Package_Effect提供；旧Resources副本不作为调效目标。当前逐技能修改、画面、双阵营/画质与实际战斗验证分别见 `Reports/Skills/20261126`，不据此宣称手机效果或性能通过。

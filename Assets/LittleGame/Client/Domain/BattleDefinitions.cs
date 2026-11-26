@@ -24,8 +24,9 @@ namespace LittleGame.Combat
         public const float DeployMinZ = -2.65f;
         public const float DeployMaxZ = 2.65f;
 
-        public const float EnemySpawnX = 5.60f;
-        public const float BossSpawnX = 6.00f;
+        public const float EnemySpawnX = 7.20f;
+        public const float BossSpawnX = 7.60f;
+        public const float EnemyMaxX = 8.00f;
         public const float AttackAngleTolerance = 28f;
         public const float EnemyAttackAngleTolerance = 36f;
 

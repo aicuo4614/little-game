@@ -1,0 +1,15 @@
+{
+    "FileVersion": "1.0.0",
+    "PackageName": "ScenePackage",
+    "PackageVersion": "2026-11-25-1254",
+    "Wrappers": [
+        {
+            "BundleGUID": "c93b6892782192852ba87f3a4349b904",
+            "FileName": "scenepackage_assets_scenes_combat_c93b6892782192852ba87f3a4349b904.bundle"
+        },
+        {
+            "BundleGUID": "b367dadc37cbd251730863422765663f",
+            "FileName": "scenepackage_unityshaders_b367dadc37cbd251730863422765663f.bundle"
+        }
+    ]
+}

@@ -1,0 +1,127 @@
+{
+  "TimelineId": "enemy_melee_basic",
+  "Description": "敌方近战普攻",
+  "PreviewCasterAddress": "Grunt/Grunt",
+  "DurationBindClipKey": "enemy_melee_basic_hit",
+  "Clips": [
+    {
+      "PreviewTargets": [
+        "$enemy:0"
+      ],
+      "ClipKey": "enemy_melee_basic_cast_targets",
+      "PreKey": "",
+      "Type": 31,
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.0,
+      "EventConfigs": []
+    },
+    {
+      "PreviewSource": "$caster",
+      "PreviewTargets": [
+        "$enemy:0"
+      ],
+      "ClipKey": "enemy_melee_basic_hit_targets",
+      "PreKey": "",
+      "Type": 32,
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.0,
+      "EventConfigs": []
+    },
+    {
+      "PrefabPath": "Grunt/Grunt",
+      "ParamName": "Attack",
+      "AffectedByHitStop": true,
+      "AnimatorStateSpeed": 1.5,
+      "ClipKey": "enemy_melee_basic_anim",
+      "PreKey": "",
+      "Type": 2,
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.355555564,
+      "EventConfigs": [
+        {
+          "EventKey": "enemy_melee_basic_evt_hit",
+          "TimelineEventType": 0,
+          "ValueType": 0,
+          "Time": 0.2,
+          "EventName": "hit"
+        }
+      ]
+    },
+    {
+      "EffectPath": "fx_enemy_hit",
+      "Subject": 0,
+      "PointData": {
+        "OffsetNodeType": 40,
+        "OffsetPos": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.45
+        },
+        "OffsetEuler": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetScale": {
+          "x": 0.25,
+          "y": 0.25,
+          "z": 0.25
+        },
+        "NeedSetParent": false,
+        "DontFollow": true,
+        "UseOriginalRotation": true,
+        "OverlayCharacterFacing": true,
+        "UseOriginalScale": false
+      },
+      "AffectedByHitStop": false,
+      "ClipKey": "enemy_melee_basic_cast_fx",
+      "PreKey": "enemy_melee_basic_evt_hit",
+      "Type": 8,
+      "StartTime": 0.2,
+      "DelayTime": 0.0,
+      "Duration": 0.16,
+      "EventConfigs": []
+    },
+    {
+      "SpineAnimationDelay": 0.0,
+      "AnimatorParamName": "Hit",
+      "AnimatorDelayTime": 0.0,
+      "EffectPath": "fx_hit_enemy",
+      "UnitNodePointData": {
+        "OffsetNodeType": 43,
+        "OffsetPos": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetEuler": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetScale": {
+          "x": 0.6,
+          "y": 0.6,
+          "z": 0.6
+        },
+        "NeedSetParent": false,
+        "DontFollow": true,
+        "UseOriginalRotation": false,
+        "OverlayCharacterFacing": true,
+        "UseOriginalScale": false
+      },
+      "AffectedByHitStop": false,
+      "ClipKey": "enemy_melee_basic_hit",
+      "PreKey": "enemy_melee_basic_evt_hit",
+      "TargetBindingKey": "enemy_melee_basic_hit_targets",
+      "Type": 10,
+      "StartTime": 0.2,
+      "DelayTime": 0.0,
+      "Duration": 0.4666667,
+      "EventConfigs": []
+    }
+  ]
+}

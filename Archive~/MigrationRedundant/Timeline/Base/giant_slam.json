@@ -1,0 +1,154 @@
+{
+  "TimelineId": "giant_slam",
+  "Description": "巨像重击",
+  "PreviewCasterAddress": "Giant/Giant",
+  "DurationBindClipKey": "giant_slam_hit",
+  "Clips": [
+    {
+      "PreviewTargets": [
+        "$enemy:0"
+      ],
+      "ClipKey": "giant_slam_cast_targets",
+      "PreKey": "",
+      "Type": 31,
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.0
+    },
+    {
+      "PreviewSource": "$caster",
+      "PreviewTargets": [
+        "$enemy:0"
+      ],
+      "ClipKey": "giant_slam_hit_targets",
+      "PreKey": "",
+      "Type": 32,
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.0
+    },
+    {
+      "PrefabPath": "Giant/Giant",
+      "ParamName": "Slam",
+      "AffectedByHitStop": true,
+      "AnimatorStateSpeed": 1.0,
+      "ClipKey": "giant_slam_anim",
+      "PreKey": "",
+      "Type": 2,
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.65,
+      "EventConfigs": [
+        {
+          "EventKey": "giant_slam_evt_hit",
+          "TimelineEventType": 0,
+          "ValueType": 0,
+          "Time": 0.32,
+          "EventName": "hit"
+        }
+      ]
+    },
+    {
+      "EffectPath": "fx_boss_slam_wave",
+      "Subject": 0,
+      "PointData": {
+        "OffsetNodeType": 43,
+        "OffsetPos": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.45
+        },
+        "OffsetEuler": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "NeedSetParent": false,
+        "DontFollow": true,
+        "UseOriginalRotation": false,
+        "OverlayCharacterFacing": true,
+        "UseOriginalScale": false
+      },
+      "AffectedByHitStop": true,
+      "ClipKey": "giant_slam_cast_fx",
+      "PreKey": "giant_slam_evt_hit",
+      "Type": 8,
+      "StartTime": 0.32,
+      "DelayTime": 0.0,
+      "Duration": 0.4
+    },
+    {
+      "SpineAnimationDelay": 0.0,
+      "AnimatorParamName": "Hit",
+      "AnimatorDelayTime": 0.0,
+      "EffectPath": "fx_boss_slam_burst",
+      "UnitNodePointData": {
+        "OffsetNodeType": 43,
+        "OffsetPos": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetEuler": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "NeedSetParent": false,
+        "DontFollow": true,
+        "UseOriginalRotation": false,
+        "OverlayCharacterFacing": true,
+        "UseOriginalScale": false
+      },
+      "AffectedByHitStop": true,
+      "ClipKey": "giant_slam_hit",
+      "PreKey": "giant_slam_evt_hit",
+      "TargetBindingKey": "giant_slam_hit_targets",
+      "Type": 10,
+      "StartTime": 0.32,
+      "DelayTime": 0.0,
+      "Duration": 0.42
+    },
+    {
+      "PositionStrength": {
+        "x": 0.28,
+        "y": 0.28,
+        "z": 0.0
+      },
+      "RotationStrength": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "Vibrato": 20,
+      "Randomness": 90.0,
+      "EnvelopeType": 0,
+      "ClipKey": "giant_slam_shake",
+      "PreKey": "giant_slam_evt_hit",
+      "Type": 15,
+      "StartTime": 0.32,
+      "DelayTime": 0.0,
+      "Duration": 0.25
+    },
+    {
+      "StartStrength": 0.0,
+      "EndStrength": 0.45,
+      "ClipKey": "giant_slam_darken",
+      "PreKey": "",
+      "Type": 19,
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.55
+    }
+  ]
+}

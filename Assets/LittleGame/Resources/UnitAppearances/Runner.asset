@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Source: Assets/LittleGame/Art/UnitSources/Wolf/Wolf.FBX
   Model: {fileID: 8121207391399894758, guid: 2a4e3e151988d674da35aa32b88a08a9, type: 3}
+  AnimatorController: {fileID: 9100000, guid: 394b54a1a3c83a748b5c692526d28183, type: 2}
   Idle: {fileID: 7400000, guid: 23ee9a4cb375ac746ab939131532d267, type: 2}
-  Move: {fileID: 7400000, guid: b0016e5514298a34bb41c2b772ccef57, type: 2}
+  Move: {fileID: 7400000, guid: b5ca68079e9880c4a810dd88c0db6276, type: 2}
   Attack: {fileID: 7400000, guid: a58e8958324434c4a98446bf299e3e55, type: 2}
   Hit: {fileID: 7400000, guid: 9d60422afb293d04785ad05826ac7712, type: 2}
   Death: {fileID: 7400000, guid: 6342c774f00deb74fae514584c18457f, type: 2}

@@ -1,0 +1,3221 @@
+[
+  {
+    "id": "shield",
+    "time": 0.06,
+    "capture": {
+      "path": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\shield_basic_detail_0.060_d2395d4b4e164d3ca127f3a97c7195d3.png",
+      "width": 360,
+      "height": 640,
+      "source": "preview-camera-render (no overlay UI)",
+      "state": {
+        "mode": "Detail (magnified; not battle scale)",
+        "timelineId": "shield_basic",
+        "time": 0.05999999865889549,
+        "playback": {
+          "sampledTime": 0.06,
+          "playerTime": 0.06,
+          "duration": 0.6666667,
+          "dirty": false,
+          "rejected": false,
+          "spawnCount": 0
+        },
+        "distance": 1.3,
+        "aspect": 0.5625,
+        "camera": {
+          "instanceId": -1306220,
+          "orthographic": true,
+          "orthographicSize": 4.6,
+          "position": [
+            0.25,
+            14,
+            -17.6
+          ],
+          "euler": [
+            38.9006348,
+            0,
+            0
+          ]
+        },
+        "units": [
+          {
+            "name": "Grunt(Clone)",
+            "team": "TeamB",
+            "position": [
+              0.65,
+              0.11,
+              0
+            ],
+            "viewport": [
+              0.5772947,
+              0.5855834,
+              21.979908
+            ],
+            "sockets": [
+              {
+                "name": "Node_Root",
+                "position": [
+                  0.65,
+                  0.08778702,
+                  0
+                ]
+              },
+              {
+                "name": "Node_BodyCenter",
+                "position": [
+                  0.65,
+                  0.778596342,
+                  0
+                ]
+              },
+              {
+                "name": "Node_Spine",
+                "position": [
+                  0.65,
+                  0.831735551,
+                  0
+                ]
+              },
+              {
+                "name": "Node_Head",
+                "position": [
+                  0.65,
+                  1.256849,
+                  0
+                ]
+              },
+              {
+                "name": "Node_LeftHand",
+                "position": [
+                  0.410873652,
+                  0.8184508,
+                  -0.332119942
+                ]
+              },
+              {
+                "name": "Node_RightHand",
+                "position": [
+                  0.3577344,
+                  0.8184508,
+                  0.332119882
+                ]
+              },
+              {
+                "name": "Node_CastPoint",
+                "position": [
+                  0.1850321,
+                  0.911444366,
+                  -5.96046448e-8
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Grunt(Clone)",
+            "team": "TeamB",
+            "position": [
+              0.65,
+              0.11,
+              2.15
+            ],
+            "viewport": [
+              0.5772947,
+              0.732337654,
+              23.6531143
+            ],
+            "sockets": [
+              {
+                "name": "Node_Root",
+                "position": [
+                  0.65,
+                  0.08778702,
+                  2.15
+                ]
+              },
+              {
+                "name": "Node_BodyCenter",
+                "position": [
+                  0.65,
+                  0.778596342,
+                  2.15
+                ]
+              },
+              {
+                "name": "Node_Spine",
+                "position": [
+                  0.65,
+                  0.831735551,
+                  2.15
+                ]
+              },
+              {
+                "name": "Node_Head",
+                "position": [
+                  0.65,
+                  1.256849,
+                  2.15
+                ]
+              },
+              {
+                "name": "Node_LeftHand",
+                "position": [
+                  0.410873652,
+                  0.8184508,
+                  1.81788015
+                ]
+              },
+              {
+                "name": "Node_RightHand",
+                "position": [
+                  0.3577344,
+                  0.8184508,
+                  2.48212
+                ]
+              },
+              {
+                "name": "Node_CastPoint",
+                "position": [
+                  0.1850321,
+                  0.911444366,
+                  2.15
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Grunt(Clone)",
+            "team": "TeamB",
+            "position": [
+              0.65,
+              0.11,
+              -2.15
+            ],
+            "viewport": [
+              0.5772947,
+              0.438829124,
+              20.3066978
+            ],
+            "sockets": [
+              {
+                "name": "Node_Root",
+                "position": [
+                  0.65,
+                  0.08778702,
+                  -2.15
+                ]
+              },
+              {
+                "name": "Node_BodyCenter",
+                "position": [
+                  0.65,
+                  0.778596342,
+                  -2.15
+                ]
+              },
+              {
+                "name": "Node_Spine",
+                "position": [
+                  0.65,
+                  0.831735551,
+                  -2.15
+                ]
+              },
+              {
+                "name": "Node_Head",
+                "position": [
+                  0.65,
+                  1.256849,
+                  -2.15
+                ]
+              },
+              {
+                "name": "Node_LeftHand",
+                "position": [
+                  0.410873652,
+                  0.8184508,
+                  -2.48212
+                ]
+              },
+              {
+                "name": "Node_RightHand",
+                "position": [
+                  0.3577344,
+                  0.8184508,
+                  -1.81788015
+                ]
+              },
+              {
+                "name": "Node_CastPoint",
+                "position": [
+                  0.1850321,
+                  0.911444366,
+                  -2.15
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Shield(Clone)",
+            "team": "TeamA",
+            "position": [
+              -0.65,
+              0.11,
+              0
+            ],
+            "viewport": [
+              0.326086938,
+              0.5855834,
+              21.979908
+            ],
+            "sockets": [
+              {
+                "name": "Node_Root",
+                "position": [
+                  -0.65,
+                  0.08554475,
+                  0
+                ]
+              },
+              {
+                "name": "Node_BodyCenter",
+                "position": [
+                  -0.65,
+                  0.923767,
+                  0
+                ]
+              },
+              {
+                "name": "Node_Spine",
+                "position": [
+                  -0.65,
+                  0.988245666,
+                  0
+                ]
+              },
+              {
+                "name": "Node_Head",
+                "position": [
+                  -0.65,
+                  1.50407469,
+                  0
+                ]
+              },
+              {
+                "name": "Node_LeftHand",
+                "position": [
+                  -0.359846026,
+                  0.972126,
+                  0.4029915
+                ]
+              },
+              {
+                "name": "Node_RightHand",
+                "position": [
+                  -0.2953675,
+                  0.972126,
+                  -0.402991563
+                ]
+              },
+              {
+                "name": "Node_CastPoint",
+                "position": [
+                  -0.08581185,
+                  1.08496356,
+                  -5.96046448e-8
+                ]
+              }
+            ]
+          }
+        ],
+        "particles": [],
+        "runtimeVerified": false
+      }
+    }
+  },
+  {
+    "id": "shield",
+    "time": 0.12,
+    "capture": {
+      "path": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\shield_basic_detail_0.120_c0a1bec2e06448bf8fceecc27ebea499.png",
+      "width": 360,
+      "height": 640,
+      "source": "preview-camera-render (no overlay UI)",
+      "state": {
+        "mode": "Detail (magnified; not battle scale)",
+        "timelineId": "shield_basic",
+        "time": 0.11999999731779099,
+        "playback": {
+          "sampledTime": 0.12,
+          "playerTime": 0.12,
+          "duration": 0.6666667,
+          "dirty": false,
+          "rejected": false,
+          "spawnCount": 0
+        },
+        "distance": 1.3,
+        "aspect": 0.5625,
+        "camera": {
+          "instanceId": -1306220,
+          "orthographic": true,
+          "orthographicSize": 4.6,
+          "position": [
+            0.25,
+            14,
+            -17.6
+          ],
+          "euler": [
+            38.9006348,
+            0,
+            0
+          ]
+        },
+        "units": [
+          {
+            "name": "Grunt(Clone)",
+            "team": "TeamB",
+            "position": [
+              0.65,
+              0.11,
+              0
+            ],
+            "viewport": [
+              0.5772947,
+              0.5855834,
+              21.979908
+            ],
+            "sockets": [
+              {
+                "name": "Node_Root",
+                "position": [
+                  0.65,
+                  0.08778702,
+                  0
+                ]
+              },
+              {
+                "name": "Node_BodyCenter",
+                "position": [
+                  0.65,
+                  0.778596342,
+                  0
+                ]
+              },
+              {
+                "name": "Node_Spine",
+                "position": [
+                  0.65,
+                  0.831735551,
+                  0
+                ]
+              },
+              {
+                "name": "Node_Head",
+                "position": [
+                  0.65,
+                  1.256849,
+                  0
+                ]
+              },
+              {
+                "name": "Node_LeftHand",
+                "position": [
+                  0.410873652,
+                  0.8184508,
+                  -0.332119942
+                ]
+              },
+              {
+                "name": "Node_RightHand",
+                "position": [
+                  0.3577344,
+                  0.8184508,
+                  0.332119882
+                ]
+              },
+              {
+                "name": "Node_CastPoint",
+                "position": [
+                  0.1850321,
+                  0.911444366,
+                  -5.96046448e-8
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Grunt(Clone)",
+            "team": "TeamB",
+            "position": [
+              0.65,
+              0.11,
+              2.15
+            ],
+            "viewport": [
+              0.5772947,
+              0.732337654,
+              23.6531143
+            ],
+            "sockets": [
+              {
+                "name": "Node_Root",
+                "position": [
+                  0.65,
+                  0.08778702,
+                  2.15
+                ]
+              },
+              {
+                "name": "Node_BodyCenter",
+                "position": [
+                  0.65,
+                  0.778596342,
+                  2.15
+                ]
+              },
+              {
+                "name": "Node_Spine",
+                "position": [
+                  0.65,
+                  0.831735551,
+                  2.15
+                ]
+              },
+              {
+                "name": "Node_Head",
+                "position": [
+                  0.65,
+                  1.256849,
+                  2.15
+                ]
+              },
+              {
+                "name": "Node_LeftHand",
+                "position": [
+                  0.410873652,
+                  0.8184508,
+                  1.81788015
+                ]
+              },
+              {
+                "name": "Node_RightHand",
+                "position": [
+                  0.3577344,
+                  0.8184508,
+                  2.48212
+                ]
+              },
+              {
+                "name": "Node_CastPoint",
+                "position": [
+                  0.1850321,
+                  0.911444366,
+                  2.15
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Grunt(Clone)",
+            "team": "TeamB",
+            "position": [
+              0.65,
+              0.11,
+              -2.15
+            ],
+            "viewport": [
+              0.5772947,
+              0.438829124,
+              20.3066978
+            ],
+            "sockets": [
+              {
+                "name": "Node_Root",
+                "position": [
+                  0.65,
+                  0.08778702,
+                  -2.15
+                ]
+              },
+              {
+                "name": "Node_BodyCenter",
+                "position": [
+                  0.65,
+                  0.778596342,
+                  -2.15
+                ]
+              },
+              {
+                "name": "Node_Spine",
+                "position": [
+                  0.65,
+                  0.831735551,
+                  -2.15
+                ]
+              },
+              {
+                "name": "Node_Head",
+                "position": [
+                  0.65,
+                  1.256849,
+                  -2.15
+                ]
+              },
+              {
+                "name": "Node_LeftHand",
+                "position": [
+                  0.410873652,
+                  0.8184508,
+                  -2.48212
+                ]
+              },
+              {
+                "name": "Node_RightHand",
+                "position": [
+                  0.3577344,
+                  0.8184508,
+                  -1.81788015
+                ]
+              },
+              {
+                "name": "Node_CastPoint",
+                "position": [
+                  0.1850321,
+                  0.911444366,
+                  -2.15
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Shield(Clone)",
+            "team": "TeamA",
+            "position": [
+              -0.65,
+              0.11,
+              0
+            ],
+            "viewport": [
+              0.326086938,
+              0.5855834,
+              21.979908
+            ],
+            "sockets": [
+              {
+                "name": "Node_Root",
+                "position": [
+                  -0.65,
+                  0.08554475,
+                  0
+                ]
+              },
+              {
+                "name": "Node_BodyCenter",
+                "position": [
+                  -0.65,
+                  0.923767,
+                  0
+                ]
+              },
+              {
+                "name": "Node_Spine",
+                "position": [
+                  -0.65,
+                  0.988245666,
+                  0
+                ]
+              },
+              {
+                "name": "Node_Head",
+                "position": [
+                  -0.65,
+                  1.50407469,
+                  0
+                ]
+              },
+              {
+                "name": "Node_LeftHand",
+                "position": [
+                  -0.359846026,
+                  0.972126,
+                  0.4029915
+                ]
+              },
+              {
+                "name": "Node_RightHand",
+                "position": [
+                  -0.2953675,
+                  0.972126,
+                  -0.402991563
+                ]
+              },
+              {
+                "name": "Node_CastPoint",
+                "position": [
+                  -0.08581185,
+                  1.08496356,
+                  -5.96046448e-8
+                ]
+              }
+            ]
+          }
+        ],
+        "particles": [],
+        "runtimeVerified": false
+      }
+    }
+  },
+  {
+    "id": "shield",
+    "time": 0.16,
+    "capture": {
+      "path": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\shield_basic_detail_0.160_cdbd8964088a4bf6a4080d36373f32a9.png",
+      "width": 360,
+      "height": 640,
+      "source": "preview-camera-render (no overlay UI)",
+      "state": {
+        "mode": "Detail (magnified; not battle scale)",
+        "timelineId": "shield_basic",
+        "time": 0.1599999964237213,
+        "playback": {
+          "sampledTime": 0.16,
+          "playerTime": 0.16,
+          "duration": 0.6666667,
+          "dirty": false,
+          "rejected": false,
+          "spawnCount": 0
+        },
+        "distance": 1.3,
+        "aspect": 0.5625,
+        "camera": {
+          "instanceId": -1306220,
+          "orthographic": true,
+          "orthographicSize": 4.6,
+          "position": [
+            0.25,
+            14,
+            -17.6
+          ],
+          "euler": [
+            38.9006348,
+            0,
+            0
+          ]
+        },
+        "units": [
+          {
+            "name": "Grunt(Clone)",
+            "team": "TeamB",
+            "position": [
+              0.65,
+              0.11,
+              0
+            ],
+            "viewport": [
+              0.5772947,
+              0.5855834,
+              21.979908
+            ],
+            "sockets": [
+              {
+                "name": "Node_Root",
+                "position": [
+                  0.65,
+                  0.08778702,
+                  0
+                ]
+              },
+              {
+                "name": "Node_BodyCenter",
+                "position": [
+                  0.65,
+                  0.778596342,
+                  0
+                ]
+              },
+              {
+                "name": "Node_Spine",
+                "position": [
+                  0.65,
+                  0.831735551,
+                  0
+                ]
+              },
+              {
+                "name": "Node_Head",
+                "position": [
+                  0.65,
+                  1.256849,
+                  0
+                ]
+              },
+              {
+                "name": "Node_LeftHand",
+                "position": [
+                  0.410873652,
+                  0.8184508,
+                  -0.332119942
+                ]
+              },
+              {
+                "name": "Node_RightHand",
+                "position": [
+                  0.3577344,
+                  0.8184508,
+                  0.332119882
+                ]
+              },
+              {
+                "name": "Node_CastPoint",
+                "position": [
+                  0.1850321,
+                  0.911444366,
+                  -5.96046448e-8
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Grunt(Clone)",
+            "team": "TeamB",
+            "position": [
+              0.65,
+              0.11,
+              2.15
+            ],
+            "viewport": [
+              0.5772947,
+              0.732337654,
+              23.6531143
+            ],
+            "sockets": [
+              {
+                "name": "Node_Root",
+                "position": [
+                  0.65,
+                  0.08778702,
+                  2.15
+                ]
+              },
+              {
+                "name": "Node_BodyCenter",
+                "position": [
+                  0.65,
+                  0.778596342,
+                  2.15
+                ]
+              },
+              {
+                "name": "Node_Spine",
+                "position": [
+                  0.65,
+                  0.831735551,
+                  2.15
+                ]
+              },
+              {
+                "name": "Node_Head",
+                "position": [
+                  0.65,
+                  1.256849,
+                  2.15
+                ]
+              },
+              {
+                "name": "Node_LeftHand",
+                "position": [
+                  0.410873652,
+                  0.8184508,
+                  1.81788015
+                ]
+              },
+              {
+                "name": "Node_RightHand",
+                "position": [
+                  0.3577344,
+                  0.8184508,
+                  2.48212
+                ]
+              },
+              {
+                "name": "Node_CastPoint",
+                "position": [
+                  0.1850321,
+                  0.911444366,
+                  2.15
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Grunt(Clone)",
+            "team": "TeamB",
+            "position": [
+              0.65,
+              0.11,
+              -2.15
+            ],
+            "viewport": [
+              0.5772947,
+              0.438829124,
+              20.3066978
+            ],
+            "sockets": [
+              {
+                "name": "Node_Root",
+                "position": [
+                  0.65,
+                  0.08778702,
+                  -2.15
+                ]
+              },
+              {
+                "name": "Node_BodyCenter",
+                "position": [
+                  0.65,
+                  0.778596342,
+                  -2.15
+                ]
+              },
+              {
+                "name": "Node_Spine",
+                "position": [
+                  0.65,
+                  0.831735551,
+                  -2.15
+                ]
+              },
+              {
+                "name": "Node_Head",
+                "position": [
+                  0.65,
+                  1.256849,
+                  -2.15
+                ]
+              },
+              {
+                "name": "Node_LeftHand",
+                "position": [
+                  0.410873652,
+                  0.8184508,
+                  -2.48212
+                ]
+              },
+              {
+                "name": "Node_RightHand",
+                "position": [
+                  0.3577344,
+                  0.8184508,
+                  -1.81788015
+                ]
+              },
+              {
+                "name": "Node_CastPoint",
+                "position": [
+                  0.1850321,
+                  0.911444366,
+                  -2.15
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Shield(Clone)",
+            "team": "TeamA",
+            "position": [
+              -0.65,
+              0.11,
+              0
+            ],
+            "viewport": [
+              0.326086938,
+              0.5855834,
+              21.979908
+            ],
+            "sockets": [
+              {
+                "name": "Node_Root",
+                "position": [
+                  -0.65,
+                  0.08554475,
+                  0
+                ]
+              },
+              {
+                "name": "Node_BodyCenter",
+                "position": [
+                  -0.65,
+                  0.923767,
+                  0
+                ]
+              },
+              {
+                "name": "Node_Spine",
+                "position": [
+                  -0.65,
+                  0.988245666,
+                  0
+                ]
+              },
+              {
+                "name": "Node_Head",
+                "position": [
+                  -0.65,
+                  1.50407469,
+                  0
+                ]
+              },
+              {
+                "name": "Node_LeftHand",
+                "position": [
+                  -0.359846026,
+                  0.972126,
+                  0.4029915
+                ]
+              },
+              {
+                "name": "Node_RightHand",
+                "position": [
+                  -0.2953675,
+                  0.972126,
+                  -0.402991563
+                ]
+              },
+              {
+                "name": "Node_CastPoint",
+                "position": [
+                  -0.08581185,
+                  1.08496356,
+                  -5.96046448e-8
+                ]
+              }
+            ]
+          }
+        ],
+        "particles": [],
+        "runtimeVerified": false
+      }
+    }
+  },
+  {
+    "id": "shield",
+    "time": 0.2,
+    "capture": {
+      "path": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\shield_basic_detail_0.200_ffc21ceb9aa8497bbd21bd96c93a3cc9.png",
+      "width": 360,
+      "height": 640,
+      "source": "preview-camera-render (no overlay UI)",
+      "state": {
+        "mode": "Detail (magnified; not battle scale)",
+        "timelineId": "shield_basic",
+        "time": 0.20000000298023224,
+        "playback": {
+          "sampledTime": 0.2,
+          "playerTime": 0.2,
+          "duration": 0.6666667,
+          "dirty": false,
+          "rejected": false,
+          "spawnCount": 2
+        },
+        "distance": 1.3,
+        "aspect": 0.5625,
+        "camera": {
+          "instanceId": -1306220,
+          "orthographic": true,
+          "orthographicSize": 4.6,
+          "position": [
+            0.25,
+            14,
+            -17.6
+          ],
+          "euler": [
+            38.9006348,
+            0,
+            0
+          ]
+        },
+        "units": [
+          {
+            "name": "Grunt(Clone)",
+            "team": "TeamB",
+            "position": [
+              0.65,
+              0.11,
+              0
+            ],
+            "viewport": [
+              0.5772947,
+              0.5855834,
+              21.979908
+            ],
+            "sockets": [
+              {
+                "name": "Node_Root",
+                "position": [
+                  0.65,
+                  0.08778702,
+                  0
+                ]
+              },
+              {
+                "name": "Node_BodyCenter",
+                "position": [
+                  0.65,
+                  0.778596342,
+                  0
+                ]
+              },
+              {
+                "name": "Node_Spine",
+                "position": [
+                  0.65,
+                  0.831735551,
+                  0
+                ]
+              },
+              {
+                "name": "Node_Head",
+                "position": [
+                  0.65,
+                  1.256849,
+                  0
+                ]
+              },
+              {
+                "name": "Node_LeftHand",
+                "position": [
+                  0.410873652,
+                  0.8184508,
+                  -0.332119942
+                ]
+              },
+              {
+                "name": "Node_RightHand",
+                "position": [
+                  0.3577344,
+                  0.8184508,
+                  0.332119882
+                ]
+              },
+              {
+                "name": "Node_CastPoint",
+                "position": [
+                  0.1850321,
+                  0.911444366,
+                  -5.96046448e-8
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Grunt(Clone)",
+            "team": "TeamB",
+            "position": [
+              0.65,
+              0.11,
+              2.15
+            ],
+            "viewport": [
+              0.5772947,
+              0.732337654,
+              23.6531143
+            ],
+            "sockets": [
+              {
+                "name": "Node_Root",
+                "position": [
+                  0.65,
+                  0.08778702,
+                  2.15
+                ]
+              },
+              {
+                "name": "Node_BodyCenter",
+                "position": [
+                  0.65,
+                  0.778596342,
+                  2.15
+                ]
+              },
+              {
+                "name": "Node_Spine",
+                "position": [
+                  0.65,
+                  0.831735551,
+                  2.15
+                ]
+              },
+              {
+                "name": "Node_Head",
+                "position": [
+                  0.65,
+                  1.256849,
+                  2.15
+                ]
+              },
+              {
+                "name": "Node_LeftHand",
+                "position": [
+                  0.410873652,
+                  0.8184508,
+                  1.81788015
+                ]
+              },
+              {
+                "name": "Node_RightHand",
+                "position": [
+                  0.3577344,
+                  0.8184508,
+                  2.48212
+                ]
+              },
+              {
+                "name": "Node_CastPoint",
+                "position": [
+                  0.1850321,
+                  0.911444366,
+                  2.15
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Grunt(Clone)",
+            "team": "TeamB",
+            "position": [
+              0.65,
+              0.11,
+              -2.15
+            ],
+            "viewport": [
+              0.5772947,
+              0.438829124,
+              20.3066978
+            ],
+            "sockets": [
+              {
+                "name": "Node_Root",
+                "position": [
+                  0.65,
+                  0.08778702,
+                  -2.15
+                ]
+              },
+              {
+                "name": "Node_BodyCenter",
+                "position": [
+                  0.65,
+                  0.778596342,
+                  -2.15
+                ]
+              },
+              {
+                "name": "Node_Spine",
+                "position": [
+                  0.65,
+                  0.831735551,
+                  -2.15
+                ]
+              },
+              {
+                "name": "Node_Head",
+                "position": [
+                  0.65,
+                  1.256849,
+                  -2.15
+                ]
+              },
+              {
+                "name": "Node_LeftHand",
+                "position": [
+                  0.410873652,
+                  0.8184508,
+                  -2.48212
+                ]
+              },
+              {
+                "name": "Node_RightHand",
+                "position": [
+                  0.3577344,
+                  0.8184508,
+                  -1.81788015
+                ]
+              },
+              {
+                "name": "Node_CastPoint",
+                "position": [
+                  0.1850321,
+                  0.911444366,
+                  -2.15
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Shield(Clone)",
+            "team": "TeamA",
+            "position": [
+              -0.65,
+              0.11,
+              0
+            ],
+            "viewport": [
+              0.326086938,
+              0.5855834,
+              21.979908
+            ],
+            "sockets": [
+              {
+                "name": "Node_Root",
+                "position": [
+                  -0.65,
+                  0.08554475,
+                  0
+                ]
+              },
+              {
+                "name": "Node_BodyCenter",
+                "position": [
+                  -0.65,
+                  0.923767,
+                  0
+                ]
+              },
+              {
+                "name": "Node_Spine",
+                "position": [
+                  -0.65,
+                  0.988245666,
+                  0
+                ]
+              },
+              {
+                "name": "Node_Head",
+                "position": [
+                  -0.65,
+                  1.50407469,
+                  0
+                ]
+              },
+              {
+                "name": "Node_LeftHand",
+                "position": [
+                  -0.359846026,
+                  0.972126,
+                  0.4029915
+                ]
+              },
+              {
+                "name": "Node_RightHand",
+                "position": [
+                  -0.2953675,
+                  0.972126,
+                  -0.402991563
+                ]
+              },
+              {
+                "name": "Node_CastPoint",
+                "position": [
+                  -0.08581185,
+                  1.08496356,
+                  -5.96046448e-8
+                ]
+              }
+            ]
+          }
+        ],
+        "particles": [
+          {
+            "name": "ShockWave",
+            "position": [
+              0.65,
+              0.778596342,
+              0
+            ],
+            "particleCount": 0,
+            "loop": true,
+            "duration": 0.6,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Circle93bcg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "Punch Hit",
+            "position": [
+              0.65,
+              0.778596342,
+              0
+            ],
+            "particleCount": 0,
+            "loop": true,
+            "duration": 0.6,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Flash33cg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "GroundWave(Optional)",
+            "position": [
+              -0.199999928,
+              0.929267,
+              -5.96046448e-8
+            ],
+            "particleCount": 0,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Circle8cg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "EndSparks",
+            "position": [
+              -0.199999928,
+              0.923767,
+              -5.96046448e-8
+            ],
+            "particleCount": 0,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Point12cg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "Flash",
+            "position": [
+              -0.199999928,
+              1.143767,
+              -5.96046448e-8
+            ],
+            "particleCount": 0,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "FlashGroundCG_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "ShockWave",
+            "position": [
+              -0.199999928,
+              1.198767,
+              -5.96046448e-8
+            ],
+            "particleCount": 0,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Circle41cg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "FlowerExpl",
+            "position": [
+              -0.199999928,
+              0.923767,
+              -5.96046448e-8
+            ],
+            "particleCount": 0,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Leave9bcg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "LeavesExpl",
+            "position": [
+              -0.199999928,
+              0.923767,
+              -5.96046448e-8
+            ],
+            "particleCount": 0,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Leaf2bcg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "Leaves",
+            "position": [
+              -0.199999928,
+              0.923767,
+              -5.96046448e-8
+            ],
+            "particleCount": 0,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Leaf2bcg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "Flower",
+            "position": [
+              -0.199999928,
+              0.923767,
+              -5.96046448e-8
+            ],
+            "particleCount": 0,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Flower2bcg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "LeavesExpl",
+            "position": [
+              -0.199999928,
+              0.923767,
+              -5.96046448e-8
+            ],
+            "particleCount": 0,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Leaf2bcg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "Leaves",
+            "position": [
+              -0.199999928,
+              0.923767,
+              -5.96046448e-8
+            ],
+            "particleCount": 0,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Leaf2bcg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "GroundMap",
+            "position": [
+              -0.199999928,
+              0.929267,
+              -5.96046448e-8
+            ],
+            "particleCount": 0,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Crater18cg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "Sparks",
+            "position": [
+              -0.199999928,
+              1.473767,
+              -5.96046448e-8
+            ],
+            "particleCount": 0,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Point12cg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "Light",
+            "position": [
+              -0.199999928,
+              1.198767,
+              -5.96046448e-8
+            ],
+            "particleCount": 0,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Default-Particle_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "PTrails",
+            "position": [
+              -0.199999928,
+              0.923767,
+              -5.96046448e-8
+            ],
+            "particleCount": 0,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Default-Particle_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "Trail26bcg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              }
+            ]
+          },
+          {
+            "name": "Flower slash",
+            "position": [
+              -0.199999928,
+              0.923767,
+              -5.96046448e-8
+            ],
+            "particleCount": 0,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Default-Particle_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "Trail26bcg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              }
+            ]
+          }
+        ],
+        "runtimeVerified": false
+      }
+    }
+  },
+  {
+    "id": "shield",
+    "time": 0.24,
+    "capture": {
+      "path": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\shield_basic_detail_0.240_53e278d884b84ae1b6e370644bb2b1e3.png",
+      "width": 360,
+      "height": 640,
+      "source": "preview-camera-render (no overlay UI)",
+      "state": {
+        "mode": "Detail (magnified; not battle scale)",
+        "timelineId": "shield_basic",
+        "time": 0.23999999463558197,
+        "playback": {
+          "sampledTime": 0.24,
+          "playerTime": 0.24,
+          "duration": 0.6666667,
+          "dirty": false,
+          "rejected": false,
+          "spawnCount": 2
+        },
+        "distance": 1.3,
+        "aspect": 0.5625,
+        "camera": {
+          "instanceId": -1306220,
+          "orthographic": true,
+          "orthographicSize": 4.6,
+          "position": [
+            0.25,
+            14,
+            -17.6
+          ],
+          "euler": [
+            38.9006348,
+            0,
+            0
+          ]
+        },
+        "units": [
+          {
+            "name": "Grunt(Clone)",
+            "team": "TeamB",
+            "position": [
+              0.65,
+              0.11,
+              0
+            ],
+            "viewport": [
+              0.5772947,
+              0.5855834,
+              21.979908
+            ],
+            "sockets": [
+              {
+                "name": "Node_Root",
+                "position": [
+                  0.65,
+                  0.08778702,
+                  0
+                ]
+              },
+              {
+                "name": "Node_BodyCenter",
+                "position": [
+                  0.65,
+                  0.778596342,
+                  0
+                ]
+              },
+              {
+                "name": "Node_Spine",
+                "position": [
+                  0.65,
+                  0.831735551,
+                  0
+                ]
+              },
+              {
+                "name": "Node_Head",
+                "position": [
+                  0.65,
+                  1.256849,
+                  0
+                ]
+              },
+              {
+                "name": "Node_LeftHand",
+                "position": [
+                  0.410873652,
+                  0.8184508,
+                  -0.332119942
+                ]
+              },
+              {
+                "name": "Node_RightHand",
+                "position": [
+                  0.3577344,
+                  0.8184508,
+                  0.332119882
+                ]
+              },
+              {
+                "name": "Node_CastPoint",
+                "position": [
+                  0.1850321,
+                  0.911444366,
+                  -5.96046448e-8
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Grunt(Clone)",
+            "team": "TeamB",
+            "position": [
+              0.65,
+              0.11,
+              2.15
+            ],
+            "viewport": [
+              0.5772947,
+              0.732337654,
+              23.6531143
+            ],
+            "sockets": [
+              {
+                "name": "Node_Root",
+                "position": [
+                  0.65,
+                  0.08778702,
+                  2.15
+                ]
+              },
+              {
+                "name": "Node_BodyCenter",
+                "position": [
+                  0.65,
+                  0.778596342,
+                  2.15
+                ]
+              },
+              {
+                "name": "Node_Spine",
+                "position": [
+                  0.65,
+                  0.831735551,
+                  2.15
+                ]
+              },
+              {
+                "name": "Node_Head",
+                "position": [
+                  0.65,
+                  1.256849,
+                  2.15
+                ]
+              },
+              {
+                "name": "Node_LeftHand",
+                "position": [
+                  0.410873652,
+                  0.8184508,
+                  1.81788015
+                ]
+              },
+              {
+                "name": "Node_RightHand",
+                "position": [
+                  0.3577344,
+                  0.8184508,
+                  2.48212
+                ]
+              },
+              {
+                "name": "Node_CastPoint",
+                "position": [
+                  0.1850321,
+                  0.911444366,
+                  2.15
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Grunt(Clone)",
+            "team": "TeamB",
+            "position": [
+              0.65,
+              0.11,
+              -2.15
+            ],
+            "viewport": [
+              0.5772947,
+              0.438829124,
+              20.3066978
+            ],
+            "sockets": [
+              {
+                "name": "Node_Root",
+                "position": [
+                  0.65,
+                  0.08778702,
+                  -2.15
+                ]
+              },
+              {
+                "name": "Node_BodyCenter",
+                "position": [
+                  0.65,
+                  0.778596342,
+                  -2.15
+                ]
+              },
+              {
+                "name": "Node_Spine",
+                "position": [
+                  0.65,
+                  0.831735551,
+                  -2.15
+                ]
+              },
+              {
+                "name": "Node_Head",
+                "position": [
+                  0.65,
+                  1.256849,
+                  -2.15
+                ]
+              },
+              {
+                "name": "Node_LeftHand",
+                "position": [
+                  0.410873652,
+                  0.8184508,
+                  -2.48212
+                ]
+              },
+              {
+                "name": "Node_RightHand",
+                "position": [
+                  0.3577344,
+                  0.8184508,
+                  -1.81788015
+                ]
+              },
+              {
+                "name": "Node_CastPoint",
+                "position": [
+                  0.1850321,
+                  0.911444366,
+                  -2.15
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Shield(Clone)",
+            "team": "TeamA",
+            "position": [
+              -0.65,
+              0.11,
+              0
+            ],
+            "viewport": [
+              0.326086938,
+              0.5855834,
+              21.979908
+            ],
+            "sockets": [
+              {
+                "name": "Node_Root",
+                "position": [
+                  -0.65,
+                  0.08554475,
+                  0
+                ]
+              },
+              {
+                "name": "Node_BodyCenter",
+                "position": [
+                  -0.65,
+                  0.923767,
+                  0
+                ]
+              },
+              {
+                "name": "Node_Spine",
+                "position": [
+                  -0.65,
+                  0.988245666,
+                  0
+                ]
+              },
+              {
+                "name": "Node_Head",
+                "position": [
+                  -0.65,
+                  1.50407469,
+                  0
+                ]
+              },
+              {
+                "name": "Node_LeftHand",
+                "position": [
+                  -0.359846026,
+                  0.972126,
+                  0.4029915
+                ]
+              },
+              {
+                "name": "Node_RightHand",
+                "position": [
+                  -0.2953675,
+                  0.972126,
+                  -0.402991563
+                ]
+              },
+              {
+                "name": "Node_CastPoint",
+                "position": [
+                  -0.08581185,
+                  1.08496356,
+                  -5.96046448e-8
+                ]
+              }
+            ]
+          }
+        ],
+        "particles": [
+          {
+            "name": "ShockWave",
+            "position": [
+              0.65,
+              0.778596342,
+              0
+            ],
+            "particleCount": 1,
+            "loop": true,
+            "duration": 0.6,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Circle93bcg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "Punch Hit",
+            "position": [
+              0.65,
+              0.778596342,
+              0
+            ],
+            "particleCount": 1,
+            "loop": true,
+            "duration": 0.6,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Flash33cg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "GroundWave(Optional)",
+            "position": [
+              -0.199999928,
+              0.929267,
+              -5.96046448e-8
+            ],
+            "particleCount": 0,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Circle8cg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "EndSparks",
+            "position": [
+              -0.199999928,
+              0.923767,
+              -5.96046448e-8
+            ],
+            "particleCount": 0,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Point12cg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "Flash",
+            "position": [
+              -0.199999928,
+              1.143767,
+              -5.96046448e-8
+            ],
+            "particleCount": 0,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "FlashGroundCG_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "ShockWave",
+            "position": [
+              -0.199999928,
+              1.198767,
+              -5.96046448e-8
+            ],
+            "particleCount": 0,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Circle41cg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "FlowerExpl",
+            "position": [
+              -0.199999928,
+              0.923767,
+              -5.96046448e-8
+            ],
+            "particleCount": 0,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Leave9bcg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "LeavesExpl",
+            "position": [
+              -0.199999928,
+              0.923767,
+              -5.96046448e-8
+            ],
+            "particleCount": 0,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Leaf2bcg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "Leaves",
+            "position": [
+              -0.199999928,
+              0.923767,
+              -5.96046448e-8
+            ],
+            "particleCount": 0,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Leaf2bcg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "Flower",
+            "position": [
+              -0.199999928,
+              0.923767,
+              -5.96046448e-8
+            ],
+            "particleCount": 0,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Flower2bcg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "LeavesExpl",
+            "position": [
+              -0.199999928,
+              0.923767,
+              -5.96046448e-8
+            ],
+            "particleCount": 0,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Leaf2bcg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "Leaves",
+            "position": [
+              -0.199999928,
+              0.923767,
+              -5.96046448e-8
+            ],
+            "particleCount": 0,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Leaf2bcg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "GroundMap",
+            "position": [
+              -0.199999928,
+              0.929267,
+              -5.96046448e-8
+            ],
+            "particleCount": 0,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Crater18cg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "Sparks",
+            "position": [
+              -0.199999928,
+              1.473767,
+              -5.96046448e-8
+            ],
+            "particleCount": 1,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Point12cg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "Light",
+            "position": [
+              -0.199999928,
+              1.198767,
+              -5.96046448e-8
+            ],
+            "particleCount": 1,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Default-Particle_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "PTrails",
+            "position": [
+              -0.199999928,
+              0.923767,
+              -5.96046448e-8
+            ],
+            "particleCount": 5,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Default-Particle_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "Trail26bcg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              }
+            ]
+          },
+          {
+            "name": "Flower slash",
+            "position": [
+              -0.199999928,
+              0.923767,
+              -5.96046448e-8
+            ],
+            "particleCount": 2,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Default-Particle_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "Trail26bcg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              }
+            ]
+          }
+        ],
+        "runtimeVerified": false
+      }
+    }
+  },
+  {
+    "id": "shield",
+    "time": 0.3,
+    "capture": {
+      "path": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\shield_basic_detail_0.300_b3831b7170c640b995ad733e9b357051.png",
+      "width": 360,
+      "height": 640,
+      "source": "preview-camera-render (no overlay UI)",
+      "state": {
+        "mode": "Detail (magnified; not battle scale)",
+        "timelineId": "shield_basic",
+        "time": 0.30000001192092896,
+        "playback": {
+          "sampledTime": 0.3,
+          "playerTime": 0.3,
+          "duration": 0.6666667,
+          "dirty": false,
+          "rejected": false,
+          "spawnCount": 2
+        },
+        "distance": 1.3,
+        "aspect": 0.5625,
+        "camera": {
+          "instanceId": -1306220,
+          "orthographic": true,
+          "orthographicSize": 4.6,
+          "position": [
+            0.25,
+            14,
+            -17.6
+          ],
+          "euler": [
+            38.9006348,
+            0,
+            0
+          ]
+        },
+        "units": [
+          {
+            "name": "Grunt(Clone)",
+            "team": "TeamB",
+            "position": [
+              0.65,
+              0.11,
+              0
+            ],
+            "viewport": [
+              0.5772947,
+              0.5855834,
+              21.979908
+            ],
+            "sockets": [
+              {
+                "name": "Node_Root",
+                "position": [
+                  0.65,
+                  0.08778702,
+                  0
+                ]
+              },
+              {
+                "name": "Node_BodyCenter",
+                "position": [
+                  0.65,
+                  0.778596342,
+                  0
+                ]
+              },
+              {
+                "name": "Node_Spine",
+                "position": [
+                  0.65,
+                  0.831735551,
+                  0
+                ]
+              },
+              {
+                "name": "Node_Head",
+                "position": [
+                  0.65,
+                  1.256849,
+                  0
+                ]
+              },
+              {
+                "name": "Node_LeftHand",
+                "position": [
+                  0.410873652,
+                  0.8184508,
+                  -0.332119942
+                ]
+              },
+              {
+                "name": "Node_RightHand",
+                "position": [
+                  0.3577344,
+                  0.8184508,
+                  0.332119882
+                ]
+              },
+              {
+                "name": "Node_CastPoint",
+                "position": [
+                  0.1850321,
+                  0.911444366,
+                  -5.96046448e-8
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Grunt(Clone)",
+            "team": "TeamB",
+            "position": [
+              0.65,
+              0.11,
+              2.15
+            ],
+            "viewport": [
+              0.5772947,
+              0.732337654,
+              23.6531143
+            ],
+            "sockets": [
+              {
+                "name": "Node_Root",
+                "position": [
+                  0.65,
+                  0.08778702,
+                  2.15
+                ]
+              },
+              {
+                "name": "Node_BodyCenter",
+                "position": [
+                  0.65,
+                  0.778596342,
+                  2.15
+                ]
+              },
+              {
+                "name": "Node_Spine",
+                "position": [
+                  0.65,
+                  0.831735551,
+                  2.15
+                ]
+              },
+              {
+                "name": "Node_Head",
+                "position": [
+                  0.65,
+                  1.256849,
+                  2.15
+                ]
+              },
+              {
+                "name": "Node_LeftHand",
+                "position": [
+                  0.410873652,
+                  0.8184508,
+                  1.81788015
+                ]
+              },
+              {
+                "name": "Node_RightHand",
+                "position": [
+                  0.3577344,
+                  0.8184508,
+                  2.48212
+                ]
+              },
+              {
+                "name": "Node_CastPoint",
+                "position": [
+                  0.1850321,
+                  0.911444366,
+                  2.15
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Grunt(Clone)",
+            "team": "TeamB",
+            "position": [
+              0.65,
+              0.11,
+              -2.15
+            ],
+            "viewport": [
+              0.5772947,
+              0.438829124,
+              20.3066978
+            ],
+            "sockets": [
+              {
+                "name": "Node_Root",
+                "position": [
+                  0.65,
+                  0.08778702,
+                  -2.15
+                ]
+              },
+              {
+                "name": "Node_BodyCenter",
+                "position": [
+                  0.65,
+                  0.778596342,
+                  -2.15
+                ]
+              },
+              {
+                "name": "Node_Spine",
+                "position": [
+                  0.65,
+                  0.831735551,
+                  -2.15
+                ]
+              },
+              {
+                "name": "Node_Head",
+                "position": [
+                  0.65,
+                  1.256849,
+                  -2.15
+                ]
+              },
+              {
+                "name": "Node_LeftHand",
+                "position": [
+                  0.410873652,
+                  0.8184508,
+                  -2.48212
+                ]
+              },
+              {
+                "name": "Node_RightHand",
+                "position": [
+                  0.3577344,
+                  0.8184508,
+                  -1.81788015
+                ]
+              },
+              {
+                "name": "Node_CastPoint",
+                "position": [
+                  0.1850321,
+                  0.911444366,
+                  -2.15
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Shield(Clone)",
+            "team": "TeamA",
+            "position": [
+              -0.65,
+              0.11,
+              0
+            ],
+            "viewport": [
+              0.326086938,
+              0.5855834,
+              21.979908
+            ],
+            "sockets": [
+              {
+                "name": "Node_Root",
+                "position": [
+                  -0.65,
+                  0.08554475,
+                  0
+                ]
+              },
+              {
+                "name": "Node_BodyCenter",
+                "position": [
+                  -0.65,
+                  0.923767,
+                  0
+                ]
+              },
+              {
+                "name": "Node_Spine",
+                "position": [
+                  -0.65,
+                  0.988245666,
+                  0
+                ]
+              },
+              {
+                "name": "Node_Head",
+                "position": [
+                  -0.65,
+                  1.50407469,
+                  0
+                ]
+              },
+              {
+                "name": "Node_LeftHand",
+                "position": [
+                  -0.359846026,
+                  0.972126,
+                  0.4029915
+                ]
+              },
+              {
+                "name": "Node_RightHand",
+                "position": [
+                  -0.2953675,
+                  0.972126,
+                  -0.402991563
+                ]
+              },
+              {
+                "name": "Node_CastPoint",
+                "position": [
+                  -0.08581185,
+                  1.08496356,
+                  -5.96046448e-8
+                ]
+              }
+            ]
+          }
+        ],
+        "particles": [
+          {
+            "name": "ShockWave",
+            "position": [
+              0.65,
+              0.778596342,
+              0
+            ],
+            "particleCount": 1,
+            "loop": true,
+            "duration": 0.6,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Circle93bcg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "Punch Hit",
+            "position": [
+              0.65,
+              0.778596342,
+              0
+            ],
+            "particleCount": 1,
+            "loop": true,
+            "duration": 0.6,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Flash33cg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "GroundWave(Optional)",
+            "position": [
+              -0.199999928,
+              0.929267,
+              -5.96046448e-8
+            ],
+            "particleCount": 0,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Circle8cg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "EndSparks",
+            "position": [
+              -0.199999928,
+              0.923767,
+              -5.96046448e-8
+            ],
+            "particleCount": 0,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Point12cg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "Flash",
+            "position": [
+              -0.199999928,
+              1.143767,
+              -5.96046448e-8
+            ],
+            "particleCount": 0,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "FlashGroundCG_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "ShockWave",
+            "position": [
+              -0.199999928,
+              1.198767,
+              -5.96046448e-8
+            ],
+            "particleCount": 0,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Circle41cg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "FlowerExpl",
+            "position": [
+              -0.199999928,
+              0.923767,
+              -5.96046448e-8
+            ],
+            "particleCount": 0,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Leave9bcg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "LeavesExpl",
+            "position": [
+              -0.199999928,
+              0.923767,
+              -5.96046448e-8
+            ],
+            "particleCount": 0,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Leaf2bcg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "Leaves",
+            "position": [
+              -0.199999928,
+              0.923767,
+              -5.96046448e-8
+            ],
+            "particleCount": 0,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Leaf2bcg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "Flower",
+            "position": [
+              -0.199999928,
+              0.923767,
+              -5.96046448e-8
+            ],
+            "particleCount": 0,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Flower2bcg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "LeavesExpl",
+            "position": [
+              -0.199999928,
+              0.923767,
+              -5.96046448e-8
+            ],
+            "particleCount": 0,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Leaf2bcg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "Leaves",
+            "position": [
+              -0.199999928,
+              0.923767,
+              -5.96046448e-8
+            ],
+            "particleCount": 0,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Leaf2bcg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "GroundMap",
+            "position": [
+              -0.199999928,
+              0.929267,
+              -5.96046448e-8
+            ],
+            "particleCount": 0,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Crater18cg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "Sparks",
+            "position": [
+              -0.199999928,
+              1.473767,
+              -5.96046448e-8
+            ],
+            "particleCount": 5,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Point12cg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "Light",
+            "position": [
+              -0.199999928,
+              1.198767,
+              -5.96046448e-8
+            ],
+            "particleCount": 1,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Default-Particle_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "missing",
+                "shader": "missing",
+                "supported": false
+              }
+            ]
+          },
+          {
+            "name": "PTrails",
+            "position": [
+              -0.199999928,
+              0.923767,
+              -5.96046448e-8
+            ],
+            "particleCount": 5,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Default-Particle_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "Trail26bcg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              }
+            ]
+          },
+          {
+            "name": "Flower slash",
+            "position": [
+              -0.199999928,
+              0.923767,
+              -5.96046448e-8
+            ],
+            "particleCount": 4,
+            "loop": true,
+            "duration": 3,
+            "maxParticles": 1000,
+            "materials": [
+              {
+                "name": "Default-Particle_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              },
+              {
+                "name": "Trail26bcg_URP",
+                "shader": "Universal Render Pipeline/Particles/Unlit",
+                "supported": true
+              }
+            ]
+          }
+        ],
+        "runtimeVerified": false
+      }
+    }
+  }
+]

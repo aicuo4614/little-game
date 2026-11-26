@@ -1,0 +1,2117 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "id": "archer_basic",
+      "team": "TeamA",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\archer_basic_battle_0.342_64c9e4c51825416d9d7c76d7507a6728.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "archer_basic",
+      "team": "TeamA",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\archer_basic_battle_0.342_e608b0f2b667477ca7bad31f710f3894.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "archer_basic",
+      "team": "TeamB",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\archer_basic_battle_0.342_b314fc48e3eb4278922d19001791d6ca.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "archer_basic",
+      "team": "TeamB",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\archer_basic_battle_0.342_2457d1a4fbae4360b77fc362ebab93a9.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "archer_gale",
+      "team": "TeamA",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\archer_gale_battle_0.382_5ef589bb690a41b28c8950b256ccad50.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "archer_gale",
+      "team": "TeamA",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\archer_gale_battle_0.382_0449fce766584c32af4a1a9f1fb1557b.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "archer_gale",
+      "team": "TeamB",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\archer_gale_battle_0.382_01a514dd12514cb7a1dc96d29b065a8f.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "archer_gale",
+      "team": "TeamB",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\archer_gale_battle_0.382_4ce976d24dec4d1ca557584ecdcbc58f.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "archer_pierce",
+      "team": "TeamA",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\archer_pierce_battle_0.340_3f9ad311cda042f3b58b875106941cf5.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "archer_pierce",
+      "team": "TeamA",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\archer_pierce_battle_0.340_a09bda24788044689ca51e99b8f5dd23.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "archer_pierce",
+      "team": "TeamB",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\archer_pierce_battle_0.340_c9b54d5ee4e94eab88a887a2ddea3771.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "archer_pierce",
+      "team": "TeamB",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\archer_pierce_battle_0.340_dff30b1a751f455eae128faa8231ca3c.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "archer_skill",
+      "team": "TeamA",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\archer_skill_battle_0.345_a1d3773d2b9549c1b6f8e6de9fd096be.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "archer_skill",
+      "team": "TeamA",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\archer_skill_battle_0.345_ee965bc707ed49418340d10e49364f7f.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "archer_skill",
+      "team": "TeamB",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\archer_skill_battle_0.345_c69a6ffd947a421cbc5c0442af1ce140.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "archer_skill",
+      "team": "TeamB",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\archer_skill_battle_0.345_888e5f130fcc459d9dcc18b67736cc77.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "enemy_melee_basic",
+      "team": "TeamA",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\enemy_melee_basic_battle_0.230_9640ef868d32441fb8e44ae885b96ad8.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "enemy_melee_basic",
+      "team": "TeamA",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\enemy_melee_basic_battle_0.230_706a3b802e724a1b898e68e85c7bd208.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "enemy_melee_basic",
+      "team": "TeamB",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\enemy_melee_basic_battle_0.230_cf46046399b54fca8f4a09bdfc9f8371.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "enemy_melee_basic",
+      "team": "TeamB",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\enemy_melee_basic_battle_0.230_b837e561dd0a44dcb4bac1ffff59cffe.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "frost_basic",
+      "team": "TeamA",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\frost_basic_battle_0.379_b8dca39027fe4576858f5e5d207b1ee8.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "frost_basic",
+      "team": "TeamA",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\frost_basic_battle_0.379_d4d269c6e25641afb67b2591a644c4c4.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "frost_basic",
+      "team": "TeamB",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\frost_basic_battle_0.379_70d52c2fc50643cba8f2c6b8022c751a.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "frost_basic",
+      "team": "TeamB",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\frost_basic_battle_0.379_5e09e696539d4b80b7913a328871b09a.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "frost_freeze",
+      "team": "TeamA",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\frost_freeze_battle_0.378_7b7c453836fd4a91a36fadd580c9b585.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "frost_freeze",
+      "team": "TeamA",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\frost_freeze_battle_0.378_c2782425376d4408bf815471040466ca.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "frost_freeze",
+      "team": "TeamB",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\frost_freeze_battle_0.378_a6fbbef519754ce9a437a673dc7c4d2b.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "frost_freeze",
+      "team": "TeamB",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\frost_freeze_battle_0.378_8677eb66f8944bb0bf87cebb776db575.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "frost_icearmor",
+      "team": "TeamA",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\frost_icearmor_battle_0.399_cfeae3b8b5ab4ec18110d8d6a7aa5b9b.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "frost_icearmor",
+      "team": "TeamA",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\frost_icearmor_battle_0.399_a29daed35ba44f088fb7f5b7e0f6ef85.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "frost_icearmor",
+      "team": "TeamB",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\frost_icearmor_battle_0.399_b7203c48f9bf45c1a87532044e115f25.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "frost_icearmor",
+      "team": "TeamB",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\frost_icearmor_battle_0.399_30fa5571cf304105a3b3fa947cd773b0.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "giant_slam",
+      "team": "TeamA",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\giant_slam_battle_0.350_81e8db824ec8490c9a288e19fe3c5382.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "giant_slam",
+      "team": "TeamA",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\giant_slam_battle_0.350_adceee155b814651812ef84519e77ac2.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "giant_slam",
+      "team": "TeamB",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\giant_slam_battle_0.350_c1b86c7dd905495a95a598b299b33271.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "giant_slam",
+      "team": "TeamB",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\giant_slam_battle_0.350_ac7e5bed72794250a917d282c5f6bc32.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "giant_telegraph",
+      "team": "TeamA",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\giant_telegraph_battle_0.200_92c3e9b7b4f44efda7725784764cfefd.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "giant_telegraph",
+      "team": "TeamA",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\giant_telegraph_battle_0.200_2993d6b2d393487894e30da3b405d897.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "giant_telegraph",
+      "team": "TeamB",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\giant_telegraph_battle_0.200_728a463d583b46b6b1b057f2612aa5e3.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "giant_telegraph",
+      "team": "TeamB",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\giant_telegraph_battle_0.200_c6fc29661200463c9e0ba5b62fbe6f61.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "healer_heal",
+      "team": "TeamA",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\healer_heal_battle_0.431_78e4f48b4d1c4277a5dfefb03f18fd3a.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "healer_heal",
+      "team": "TeamA",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\healer_heal_battle_0.431_8aa7193d3c8d4e77a50a73ca51c314ca.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "healer_heal",
+      "team": "TeamB",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\healer_heal_battle_0.431_377d67a47243497681dbe10b9e29eb8e.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "healer_heal",
+      "team": "TeamB",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\healer_heal_battle_0.431_f9134c9ca0494a26b12b365e12f8a292.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "shield_basic",
+      "team": "TeamA",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\shield_basic_battle_0.150_33cadbf458e244878b2db9d1840a3051.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "shield_basic",
+      "team": "TeamA",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\shield_basic_battle_0.150_a5c396f3d8624951aa0215fc937df9f3.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "shield_basic",
+      "team": "TeamB",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\shield_basic_battle_0.150_9b5b94085dc3416db4256c6466408a1b.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "shield_basic",
+      "team": "TeamB",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\shield_basic_battle_0.150_61358cdbec224443a902ac8663263853.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "shield_bastion",
+      "team": "TeamA",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\shield_bastion_battle_0.160_e95a6394983247a8bdda2fc0de6ebe19.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "shield_bastion",
+      "team": "TeamA",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\shield_bastion_battle_0.160_db29a9e8d2154bb2bb420d9e058daf68.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "shield_bastion",
+      "team": "TeamB",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\shield_bastion_battle_0.160_7a89b2edf29a46e080e0686eaa8b73d7.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "shield_bastion",
+      "team": "TeamB",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\shield_bastion_battle_0.160_e02ff97d43c74b3387ea98d06c7113a0.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "shield_skill",
+      "team": "TeamA",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\shield_skill_battle_0.160_60bf874bfdb74a26890cb161a1269262.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "shield_skill",
+      "team": "TeamA",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\shield_skill_battle_0.160_5bc0dcb177c44f0cb1e865bcd0de206b.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "shield_skill",
+      "team": "TeamB",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\shield_skill_battle_0.160_d18ee1cf99654db7a320b99b0435d269.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "shield_skill",
+      "team": "TeamB",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\shield_skill_battle_0.160_55f8253afdd14e6a871692b8d06f2112.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "shield_warcry",
+      "team": "TeamA",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\shield_warcry_battle_0.270_259f46db16994362afdb74cbe54042c9.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "shield_warcry",
+      "team": "TeamA",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\shield_warcry_battle_0.270_54e2aedd50da464f94b19b76fb1eb8f4.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "shield_warcry",
+      "team": "TeamB",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\shield_warcry_battle_0.270_a662ae0451064914a112e0a0d21116cc.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "shield_warcry",
+      "team": "TeamB",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\shield_warcry_battle_0.270_03499f59e7bc4e4fa34d6d7f31d5bb30.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "storm_basic",
+      "team": "TeamA",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\storm_basic_battle_0.396_d22ac7c1655a4d72b2ac161f29b27f26.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "storm_basic",
+      "team": "TeamA",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\storm_basic_battle_0.396_8c9f5478036249a582755d0c9d7f0837.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "storm_basic",
+      "team": "TeamB",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\storm_basic_battle_0.396_dcd454a6a9984696a6e16980cda65680.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "storm_basic",
+      "team": "TeamB",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\storm_basic_battle_0.396_d352fa0906f94608a1cb57c7c395cc3f.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "storm_chain",
+      "team": "TeamA",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\storm_chain_battle_0.330_5e3d147f2b3348f19ed2c59000aabf7a.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "storm_chain",
+      "team": "TeamA",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\storm_chain_battle_0.330_0ff56c2e12334cd78e38ba481bccaa49.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "storm_chain",
+      "team": "TeamB",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\storm_chain_battle_0.330_2d8d443fc8a145618c86777b3beca38a.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "storm_chain",
+      "team": "TeamB",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\storm_chain_battle_0.330_a94b98d0392f4e10a8930284d3967b1f.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "storm_pool",
+      "team": "TeamA",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\storm_pool_battle_0.403_7c5888a1a4144fc99dd5b9b75a764528.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "storm_pool",
+      "team": "TeamA",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\storm_pool_battle_0.403_31bbbf52ca1241858d49f8d5efdb9ffa.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "storm_pool",
+      "team": "TeamB",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\storm_pool_battle_0.403_f35a5bd0c2d347fcb7e533706eb12681.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "storm_pool",
+      "team": "TeamB",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\storm_pool_battle_0.403_3470aedbc54149f59cc6adc1f5f38bb9.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "storm_tick",
+      "team": "TeamA",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\storm_tick_battle_0.080_b5dc0678639549498f2a785907933212.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "storm_tick",
+      "team": "TeamA",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\storm_tick_battle_0.080_ac0f515d43334fa08ad60493f997ee9e.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "storm_tick",
+      "team": "TeamB",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\storm_tick_battle_0.080_ff1576a4890b42c48a74eedc305dd63e.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "storm_tick",
+      "team": "TeamB",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\storm_tick_battle_0.080_2f46bde929004c568c2d41566dad171f.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "tactic_focus",
+      "team": "TeamA",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\tactic_focus_battle_0.200_b82f263a24434845960b2448c8ae7cc3.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "tactic_focus",
+      "team": "TeamA",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\tactic_focus_battle_0.200_ca059c2e8e5346b7826567885be4dd0e.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "tactic_focus",
+      "team": "TeamB",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\tactic_focus_battle_0.200_d0729e2d20144114aeaaa7e2500e6a8c.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "tactic_focus",
+      "team": "TeamB",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\tactic_focus_battle_0.200_669e1944cc0248ecba4e08f62d2ac06a.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "tactic_protect",
+      "team": "TeamA",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\tactic_protect_battle_0.200_2750718a17c545fdb449054ad180d3fa.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "tactic_protect",
+      "team": "TeamA",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\tactic_protect_battle_0.200_c25cab3d6254487e81da3814fa263e61.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "tactic_protect",
+      "team": "TeamB",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\tactic_protect_battle_0.200_d45bdc66eb474c97a25ec5eb0f61c863.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "tactic_protect",
+      "team": "TeamB",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\tactic_protect_battle_0.200_2911ab33b39b4c92b65c0162aa0c72bb.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "unit_upgrade",
+      "team": "TeamA",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\unit_upgrade_battle_0.200_9eaef7a8a752481a9967cbbdc5b47410.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "unit_upgrade",
+      "team": "TeamA",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\unit_upgrade_battle_0.200_86f259ba5edf48ec8a13bf8f96654933.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "unit_upgrade",
+      "team": "TeamB",
+      "quality": "Low",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\unit_upgrade_battle_0.200_313d9c6c005a47f890c9bbc802e5251d.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    },
+    {
+      "id": "unit_upgrade",
+      "team": "TeamB",
+      "quality": "HQ",
+      "capture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\unit_upgrade_battle_0.200_2d6a9798982c4653ba6c8b520ac9cdab.png",
+      "validation": {
+        "editor": {
+          "valid": true,
+          "error": null
+        },
+        "battle": {
+          "valid": true,
+          "error": null,
+          "scope": "configuration-only",
+          "resources": {
+            "valid": true,
+            "error": null
+          },
+          "runtimeVerified": false,
+          "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+        }
+      },
+      "cleanup": true
+    }
+  ]
+}

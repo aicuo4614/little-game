@@ -117,6 +117,18 @@ static class Tests
         // 技能规则时序：前摇/发射/命中/后摇严格按配置推进，命中前不提前扣血
         var skillTest = BattleSession.Restore(save);
         bool badDefRejected = false;
+        var projectileDefinition = new BattleSkillDefinition { UnitKind = "Archer", Trigger = "BasicAttack", LaunchAt = .14f,
+            ImpactAt = .3f, RecoveryEnd = .5f, ProjectileSpeed = 18f, ProjectileSourceY = 1f, ProjectileSourceZ = .4f,
+            ProjectileTargetPoints = new Dictionary<string, float[]> { ["Grunt"] = new[] { 0f, 1f, 0f } } };
+        projectileDefinition.Validate();
+        float nearArrival = projectileDefinition.ResolveImpact(1f, 0f, 90f, -90f, 1f, 1f, "Grunt");
+        float farArrival = projectileDefinition.ResolveImpact(6f, 0f, 90f, -90f, 1f, 1f, "Grunt");
+        Check(Math.Abs(nearArrival - .29f) < .0001f, "近距离弹道遵守0.15秒最短飞行，命中不早于离弦");
+        Check(farArrival > nearArrival + .1f, "远距离目标延后命中，不复用编辑器固定距离的扣血时间");
+        Check(Math.Abs(farArrival - projectileDefinition.ResolveImpact(-6f, 0f, -90f, 90f, 1f, 1f, "Grunt")) < .0001f,
+            "双阵营镜像距离得到一致的弹道命中时间");
+        Check(projectileDefinition.ResolveImpact(6f, 0f, 90f, -90f, 1.18f, 1f, "Grunt") < farArrival,
+            "升星体型增大同步修正发射挂点和飞行距离");
         try { skillTest.ConfigureSkills(new[] { new BattleSkillDefinition { UnitKind = "Archer", Trigger = "BasicAttack", LaunchAt = 0.4f, ImpactAt = 0.2f, RecoveryEnd = 0.5f } }); }
         catch (ArgumentException) { badDefRejected = true; }
         Check(badDefRejected, "非法技能时序(命中早于发射)被规则层拒绝");

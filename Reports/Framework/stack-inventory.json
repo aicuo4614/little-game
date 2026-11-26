@@ -1,0 +1,151 @@
+{
+  "sourceRoot": "F:/Git/kabu_mobile/demo",
+  "sourceReadOnly": true,
+  "packages": {
+    "com.tuyoogame.yooasset": {
+      "version": "2.3.18",
+      "embedded": true,
+      "licenseFiles": [
+        "LICENSE.md"
+      ]
+    },
+    "com.code-philosophy.hybridclr": {
+      "version": "8.11.0",
+      "embedded": true,
+      "licenseFiles": [
+        "LICENSE"
+      ]
+    },
+    "com.unity.textmeshpro": {
+      "version": "3.0.7",
+      "embedded": true,
+      "licenseFiles": [
+        "LICENSE.md"
+      ]
+    },
+    "com.unity.scriptablebuildpipeline": {
+      "version": "1.21.25",
+      "embedded": true,
+      "licenseFiles": [
+        "LICENSE.md"
+      ]
+    }
+  },
+  "assemblies": [
+    {
+      "path": "Assets\\Scripts\\AOT\\AOT.asmdef",
+      "definition": {
+        "name": "AOT",
+        "rootNamespace": "",
+        "references": [
+          "YooAsset",
+          "HybridCLR.Runtime",
+          "LittleGame.Demo",
+          "Kabu.Rendering",
+          "UnityEngine.UI",
+          "Unity.TextMeshPro",
+          "Unity.RenderPipelines.Core.Runtime",
+          "Unity.RenderPipelines.Universal.Runtime"
+        ],
+        "includePlatforms": [],
+        "excludePlatforms": [],
+        "allowUnsafeCode": false,
+        "overrideReferences": false,
+        "precompiledReferences": [],
+        "autoReferenced": true,
+        "defineConstraints": [],
+        "versionDefines": [],
+        "noEngineReferences": false
+      }
+    },
+    {
+      "path": "Assets\\Scripts\\Shared\\HotUpdate_UnitCore\\HotUpdate_UnitCore.asmdef",
+      "definition": {
+        "name": "HotUpdate_UnitCore",
+        "rootNamespace": "",
+        "references": [
+          "Kabu.Rendering",
+          "Unity.Nuget.Newtonsoft-Json"
+        ],
+        "includePlatforms": [],
+        "excludePlatforms": [],
+        "allowUnsafeCode": false,
+        "overrideReferences": false,
+        "precompiledReferences": [
+          "DOTween.dll"
+        ],
+        "autoReferenced": true,
+        "defineConstraints": [],
+        "versionDefines": [],
+        "noEngineReferences": false
+      }
+    },
+    {
+      "path": "Assets\\Scripts\\HotUpdate_Main\\HotUpdate_Main.asmdef",
+      "definition": {
+        "name": "HotUpdate_Main",
+        "rootNamespace": "",
+        "references": [
+          "AOT",
+          "HotUpdate_UnitCore",
+          "LittleGame.Domain",
+          "LittleGame.PureMVC",
+          "LittleGame.Demo",
+          "Kabu.Rendering",
+          "YooAsset",
+          "UnityEngine.UI",
+          "Unity.TextMeshPro",
+          "Unity.RenderPipelines.Core.Runtime",
+          "Unity.RenderPipelines.Universal.Runtime",
+          "Unity.Nuget.Newtonsoft-Json"
+        ],
+        "includePlatforms": [],
+        "excludePlatforms": [],
+        "allowUnsafeCode": false,
+        "overrideReferences": false,
+        "precompiledReferences": [
+          "DOTween.dll"
+        ],
+        "autoReferenced": true,
+        "defineConstraints": [],
+        "versionDefines": [],
+        "noEngineReferences": false
+      }
+    },
+    {
+      "path": "Assets\\LittleGame\\Client\\Domain\\LittleGame.Domain.asmdef",
+      "definition": {
+        "name": "LittleGame.Domain",
+        "rootNamespace": "LittleGame.Combat",
+        "noEngineReferences": true,
+        "autoReferenced": true,
+        "references": [
+          "LittleGame.RoyTAStar"
+        ]
+      }
+    },
+    {
+      "path": "Assets\\LittleGame\\Client\\LittleGame.Client.asmdef",
+      "definition": {
+        "name": "LittleGame.Client",
+        "rootNamespace": "LittleGame.Client",
+        "references": [
+          "AOT",
+          "HotUpdate_UnitCore",
+          "HotUpdate_Main",
+          "LittleGame.Domain",
+          "LittleGame.PureMVC",
+          "LittleGame.Demo",
+          "Kabu.Rendering",
+          "YooAsset",
+          "UnityEngine.UI",
+          "Unity.TextMeshPro",
+          "Unity.Nuget.Newtonsoft-Json",
+          "Unity.RenderPipelines.Core.Runtime",
+          "Unity.RenderPipelines.Universal.Runtime"
+        ],
+        "autoReferenced": true
+      }
+    }
+  ]
+}

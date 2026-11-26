@@ -1,0 +1,26 @@
+{
+    "name": "TimelineEditor",
+    "rootNamespace": "",
+    "references": [
+        "TimelineEditor.Runtime",
+        "HotUpdate_UnitCore",
+        "Kabu.Rendering",
+        "Unity.RenderPipelines.Universal.Runtime",
+        "kabu-unity-mcp",
+        "kabu-unity-mcp.Editor",
+        "Unity.Nuget.Newtonsoft-Json"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [
+        "DOTween.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

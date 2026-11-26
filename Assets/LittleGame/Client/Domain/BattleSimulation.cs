@@ -291,7 +291,7 @@ namespace LittleGame.Combat
                     {
                         float radians = (resolvingSkill?.FacingYaw ?? t.FacingYaw) * (float)Math.PI / 180f;
                         float push = t.Branch == SkillBranch.Gale ? 1.25f : .68f;
-                        target.X = Clamp(target.X + (float)Math.Sin(radians) * push, -5.35f, 6.35f);
+                        target.X = Clamp(target.X + (float)Math.Sin(radians) * push, -5.35f, BattleDefinitions.EnemyMaxX);
                         target.Z = Clamp(target.Z + (float)Math.Cos(radians) * push, -2.95f, 2.95f);
                         Emit("knockback", "击退", t.Id, target.Id, target.Lane);
                     }

@@ -10,15 +10,38 @@ namespace LittleGame.Combat
         public string UnitKind, Trigger, Branch = "", TimelineId;
         public int MinStar = 1;
         public float LaunchAt, ImpactAt, RecoveryEnd;
+        public float ProjectileSpeed, ProjectileDelay, ProjectileImpactLag, ProjectileMinFlight = .15f;
+        public float ProjectileSourceX, ProjectileSourceY, ProjectileSourceZ;
+        public Dictionary<string, float[]> ProjectileTargetPoints = new Dictionary<string, float[]>();
         public bool InterruptOnControl = true;
         public bool TrackTarget = true;
         public BattleSkillDefinition Copy() => (BattleSkillDefinition)MemberwiseClone();
+        /// <summary>由已导出的挂点和实际施法距离计算到达时间，规则层不依赖 Unity 动画回调。</summary>
+        public float ResolveImpact(float dx, float dz, float sourceYaw, float targetYaw,
+            float sourceScale, float targetScale, string targetKind)
+        {
+            if (ProjectileSpeed <= 0f) return ImpactAt;
+            var point = ProjectileTargetPoints.TryGetValue(targetKind, out var p) ? p : new[] { 0f, .8f, 0f };
+            double sr = sourceYaw * Math.PI / 180.0, tr = targetYaw * Math.PI / 180.0;
+            double x = dx + (point[0] * Math.Cos(tr) + point[2] * Math.Sin(tr)) * targetScale
+                - (ProjectileSourceX * Math.Cos(sr) + ProjectileSourceZ * Math.Sin(sr)) * sourceScale;
+            double z = dz + (-point[0] * Math.Sin(tr) + point[2] * Math.Cos(tr)) * targetScale
+                - (-ProjectileSourceX * Math.Sin(sr) + ProjectileSourceZ * Math.Cos(sr)) * sourceScale;
+            double y = point[1] * targetScale - ProjectileSourceY * sourceScale;
+            return LaunchAt + ProjectileDelay + Math.Max(ProjectileMinFlight,
+                (float)Math.Sqrt(x*x + y*y + z*z) / ProjectileSpeed) + ProjectileImpactLag;
+        }
         public void Validate()
         {
             if (string.IsNullOrWhiteSpace(UnitKind) || string.IsNullOrWhiteSpace(Trigger) ||
                 !Finite(LaunchAt) || !Finite(ImpactAt) || !Finite(RecoveryEnd) ||
                 LaunchAt < 0 || ImpactAt < LaunchAt || RecoveryEnd < ImpactAt)
                 throw new ArgumentException("技能必须满足 0 <= 发射 <= 命中 <= 动作结束，且时间必须有限");
+            if (!Finite(ProjectileSpeed) || ProjectileSpeed < 0 || !Finite(ProjectileDelay) || ProjectileDelay < 0
+                || !Finite(ProjectileMinFlight) || ProjectileMinFlight <= 0 || !Finite(ProjectileImpactLag) || ProjectileImpactLag < 0
+                || !Finite(ProjectileSourceX) || !Finite(ProjectileSourceY) || !Finite(ProjectileSourceZ)
+                || ProjectileTargetPoints == null || ProjectileTargetPoints.Any(p => p.Value == null || p.Value.Length != 3 || p.Value.Any(v => !Finite(v))))
+                throw new ArgumentException("弹道速度、延迟和挂点必须为有效有限数值");
         }
         private static bool Finite(float v) => !float.IsNaN(v) && !float.IsInfinity(v);
     }
@@ -77,6 +100,16 @@ namespace LittleGame.Combat
                 TargetZ = targetEnemy != null ? targetEnemy.Z : targetTroop.Z,
                 Phase = BattleSkillPhase.Windup
             };
+            if (definition.ProjectileSpeed > 0f)
+            {
+                float sourceScale = !enemy && troop.Star > 1 ? (troop.Star == 2 ? 1.08f : 1.18f) : 1f;
+                float targetScale = targetTroop != null && targetTroop.Star > 1 ? (targetTroop.Star == 2 ? 1.08f : 1.18f) : 1f;
+                float impact = definition.ResolveImpact(a.TargetX - a.CasterX, a.TargetZ - a.CasterZ, a.FacingYaw,
+                    targetEnemy != null ? targetEnemy.FacingYaw : targetTroop.FacingYaw, sourceScale, targetScale,
+                    targetEnemy != null ? targetEnemy.Kind.ToString() : targetTroop.Kind.ToString());
+                a.ImpactAt = BattleTime + impact;
+                a.EndAt = BattleTime + Math.Max(definition.RecoveryEnd, impact + .08f);
+            }
             skillInstances.Add(a);
             EmitSkillEvent("cast_started", a);
         }

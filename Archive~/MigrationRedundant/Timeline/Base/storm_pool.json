@@ -1,0 +1,217 @@
+{
+  "TimelineId": "storm_pool",
+  "Description": "雷法师雷池召唤",
+  "PreviewCasterAddress": "Storm/Storm",
+  "DurationBindClipKey": "storm_pool_hit",
+  "Clips": [
+    {
+      "PreviewTargets": [
+        "$enemy:0"
+      ],
+      "ClipKey": "storm_pool_cast_targets",
+      "PreKey": "",
+      "Type": 31,
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.0
+    },
+    {
+      "PreviewSource": "$caster",
+      "PreviewTargets": [
+        "$enemy:0"
+      ],
+      "ClipKey": "storm_pool_hit_targets",
+      "PreKey": "",
+      "Type": 32,
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.0
+    },
+    {
+      "PrefabPath": "Storm/Storm",
+      "ParamName": "Attack",
+      "AffectedByHitStop": true,
+      "AnimatorStateSpeed": 1.0,
+      "ClipKey": "storm_pool_anim",
+      "PreKey": "",
+      "Type": 2,
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.45,
+      "EventConfigs": [
+        {
+          "EventKey": "storm_pool_evt_launch",
+          "TimelineEventType": 0,
+          "ValueType": 0,
+          "Time": 0.18,
+          "EventName": "launch"
+        }
+      ]
+    },
+    {
+      "EffectPath": "fx_storm_zone",
+      "Subject": 0,
+      "PointData": {
+        "OffsetNodeType": 40,
+        "OffsetPos": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetEuler": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "NeedSetParent": false,
+        "DontFollow": true,
+        "UseOriginalRotation": false,
+        "OverlayCharacterFacing": true,
+        "UseOriginalScale": false
+      },
+      "AffectedByHitStop": true,
+      "ClipKey": "storm_pool_cast_fx",
+      "PreKey": "storm_pool_evt_launch",
+      "Type": 8,
+      "StartTime": 0.18,
+      "DelayTime": 0.0,
+      "Duration": 0.35
+    },
+    {
+      "Path": "fx_lightning_orb",
+      "MoveSpeed": 16.0,
+      "FacingType": 0,
+      "BillboardAngleOffset": 0.0,
+      "MoveDelayTime": 0.0,
+      "DelayScaleKeys": [],
+      "TrajectoryType": 0,
+      "ArcHeightFactor": 0.32,
+      "StartData": {
+        "OffsetNodeType": 40,
+        "OffsetPos": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetEuler": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "NeedSetParent": false,
+        "DontFollow": false,
+        "UseOriginalRotation": false,
+        "OverlayCharacterFacing": true,
+        "UseOriginalScale": false
+      },
+      "EndData": {
+        "OffsetNodeType": 43,
+        "OffsetPos": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetEuler": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "NeedSetParent": false,
+        "DontFollow": false,
+        "UseOriginalRotation": false,
+        "OverlayCharacterFacing": true,
+        "UseOriginalScale": false
+      },
+      "ClipKey": "storm_pool_bullet",
+      "PreKey": "storm_pool_evt_launch",
+      "TargetBindingKey": "storm_pool_hit_targets",
+      "Type": 7,
+      "StartTime": 0.18,
+      "DelayTime": 0.0,
+      "Duration": 0.26
+    },
+    {
+      "SpineAnimationDelay": 0.0,
+      "AnimatorParamName": "Hit",
+      "AnimatorDelayTime": 0.0,
+      "EffectPath": "fx_lightning_strike",
+      "UnitNodePointData": {
+        "OffsetNodeType": 43,
+        "OffsetPos": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetEuler": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "NeedSetParent": false,
+        "DontFollow": true,
+        "UseOriginalRotation": false,
+        "OverlayCharacterFacing": true,
+        "UseOriginalScale": false
+      },
+      "AffectedByHitStop": true,
+      "ClipKey": "storm_pool_hit",
+      "PreKey": "storm_pool_bullet",
+      "TargetBindingKey": "storm_pool_hit_targets",
+      "Type": 10,
+      "StartTime": 0.44,
+      "DelayTime": 0.0,
+      "Duration": 0.42
+    },
+    {
+      "PositionStrength": {
+        "x": 0.14,
+        "y": 0.112,
+        "z": 0.0
+      },
+      "RotationStrength": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "Vibrato": 18,
+      "Randomness": 90.0,
+      "EnvelopeType": 0,
+      "ClipKey": "storm_pool_shake",
+      "PreKey": "storm_pool_bullet",
+      "Type": 15,
+      "StartTime": 0.44,
+      "DelayTime": 0.0,
+      "Duration": 0.22
+    },
+    {
+      "StartStrength": 0.0,
+      "EndStrength": 0.22,
+      "ClipKey": "storm_pool_darken",
+      "PreKey": "",
+      "Type": 19,
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.45
+    }
+  ]
+}

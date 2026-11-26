@@ -1,0 +1,29 @@
+{
+  "name": "HotUpdate_Main",
+  "rootNamespace": "",
+  "references": [
+    "AOT",
+    "HotUpdate_UnitCore",
+    "LittleGame.Domain",
+    "LittleGame.PureMVC",
+    "LittleGame.Demo",
+    "Kabu.Rendering",
+    "YooAsset",
+    "UnityEngine.UI",
+    "Unity.TextMeshPro",
+    "Unity.RenderPipelines.Core.Runtime",
+    "Unity.RenderPipelines.Universal.Runtime",
+    "Unity.Nuget.Newtonsoft-Json"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [
+    "DOTween.dll"
+  ],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

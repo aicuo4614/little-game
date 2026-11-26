@@ -1,0 +1,91 @@
+{
+  "TimelineId": "storm_tick",
+  "Description": "雷区跳字电击",
+  "PreviewCasterAddress": "Storm/Storm",
+  "DurationBindClipKey": "storm_tick_fx",
+  "Clips": [
+    {
+      "PreviewSource": "$caster",
+      "PreviewTargets": [
+        "$enemy:0"
+      ],
+      "ClipKey": "storm_tick_hit_targets",
+      "PreKey": "",
+      "Type": 32,
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.0
+    },
+    {
+      "EffectPath": "fx_storm_tick",
+      "Subject": 0,
+      "PointData": {
+        "OffsetNodeType": 1,
+        "OffsetPos": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetEuler": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "NeedSetParent": false,
+        "DontFollow": true,
+        "UseOriginalRotation": false,
+        "OverlayCharacterFacing": true,
+        "UseOriginalScale": false
+      },
+      "AffectedByHitStop": true,
+      "ClipKey": "storm_tick_fx",
+      "PreKey": "",
+      "Type": 8,
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.3
+    },
+    {
+      "SpineAnimationDelay": 0.0,
+      "AnimatorParamName": "Hit",
+      "AnimatorDelayTime": 0.0,
+      "EffectPath": "fx_hit_lightning",
+      "UnitNodePointData": {
+        "OffsetNodeType": 43,
+        "OffsetPos": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetEuler": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "NeedSetParent": false,
+        "DontFollow": true,
+        "UseOriginalRotation": false,
+        "OverlayCharacterFacing": true,
+        "UseOriginalScale": false
+      },
+      "AffectedByHitStop": true,
+      "ClipKey": "storm_tick_hit",
+      "PreKey": "",
+      "TargetBindingKey": "storm_tick_hit_targets",
+      "Type": 10,
+      "StartTime": 0.05,
+      "DelayTime": 0.0,
+      "Duration": 0.35
+    }
+  ]
+}

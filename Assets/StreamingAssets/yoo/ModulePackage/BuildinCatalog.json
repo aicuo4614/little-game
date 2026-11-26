@@ -1,0 +1,15 @@
+{
+    "FileVersion": "1.0.0",
+    "PackageName": "ModulePackage",
+    "PackageVersion": "2026-11-25-1254",
+    "Wrappers": [
+        {
+            "BundleGUID": "b3bbf6f87776328b1b03ec5cf59bea78",
+            "FileName": "modulepackage_assets_package_modules_modules_b3bbf6f87776328b1b03ec5cf59bea78.bundle"
+        },
+        {
+            "BundleGUID": "4c0e5717bb3d5a28797cc965d6b8b3d1",
+            "FileName": "modulepackage_assets_package_modules_soconfig_qualitysoconfig_4c0e5717bb3d5a28797cc965d6b8b3d1.bundle"
+        }
+    ]
+}

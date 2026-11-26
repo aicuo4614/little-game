@@ -1,0 +1,20 @@
+{
+  "date": "2026-11-26",
+  "unity": "2022.3.62f3c1",
+  "scope": "Unity Editor only / EditorSimulateMode",
+  "timelinesTuned": 22,
+  "effectsRebuilt": 40,
+  "portraitCasesPassed": 88,
+  "previewRecords": 8,
+  "domainChecks": 118,
+  "normalCampaign": "12 waves won; loss and restart; shared pointer inputs; console zero errors/warnings/asserts/exceptions",
+  "timingSamples": 1260,
+  "maxTimingDifferenceSeconds": 0.028795200000000076,
+  "timingComparison": "rule and visual schedules, not pixel contact or phone latency",
+  "branchRuntimeCoverage": "All eight branches selected through normal recruitment/upgrade and observed at cast_impact",
+  "apkBuilt": false,
+  "resourcePackagesRebuilt": false,
+  "branchRuntimeMaxDifferenceSeconds": 0.02869333499999871,
+  "editorNewTemplate3D": true,
+  "baselineEditorCompilationWarnings": "8 inherited CS0414 unused fields in migrated Demo editor; recorded in final-editor-check.json before fresh scenario"
+}

@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Source: Assets/LittleGame/Art/UnitSources/TinyHero/Prefab/ModularCharacters/MC19.prefab
   Model: {fileID: 875427322564203412, guid: d10d844e0e9acb74c89778da68096bd3, type: 3}
+  AnimatorController: {fileID: 9100000, guid: a5e23ea7e0d5e2f4994c1fd16bf4e351, type: 2}
   Idle: {fileID: 7400000, guid: 6930bf8b2f8e16d4288958c8b953f3eb, type: 2}
-  Move: {fileID: 7400000, guid: 11ca8e37f4471bb4f851120988fc2d29, type: 2}
+  Move: {fileID: 7400000, guid: 49214ff1ed0160740906dfc2be269cd3, type: 2}
   Attack: {fileID: 7400000, guid: eb09b19f7bcdeaf4881a167ffb049742, type: 2}
   Hit: {fileID: 7400000, guid: 7761424963ef74741b48d5ec240fbfd0, type: 2}
   Death: {fileID: 7400000, guid: d50984cd29523a948838dc767cdd86c3, type: 2}

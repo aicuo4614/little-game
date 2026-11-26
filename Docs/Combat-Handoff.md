@@ -1,5 +1,7 @@
 # 军团客户端本轮交接
 
+> 2026-11-25 更新：已接替并继续 Demo 技术栈迁移，当前分层、启动、资源、技能编辑器与验收边界以 [Framework-Migration.md](Framework-Migration.md) 为准。下文关于“尚未迁入完整 TimelineEditor”、旧 little-game.skill-timeline 扩展和 Resources 技能镜像的描述属于历史状态；当前使用原生 17 个 unity_skill_editor_* 工具、标准 TimelineConfig 与共享 3D 播放器。战斗扩展为 1.7.0，规则状态 schema6。
+
 ## 当前成果
 
 当前可运行客户端由纯规则、应用宿主、三维表现、输入、平台接口、启动与编辑器适配组成，默认入口为 `Assets/Scenes/Combat.unity`。在 Unity 使用菜单 `Little Game/Combat/Open Combat` 后点击 Play，可直接招募、部署与战斗，不需配置角色或关卡。

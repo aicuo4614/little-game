@@ -1,4 +1,5 @@
 using System.Linq;
+using LittleGame.Client.Battle;
 using LittleGame.Combat;
 using UnityEngine;
 
@@ -14,9 +15,10 @@ namespace LittleGame.Client
     public sealed class BattleInput : MonoBehaviour
     {
         private const float DoubleTapWindow = 0.42f;
+        private const float CameraRotateDegreesPerScreenWidth = 115f;
 
         private BattleApplication app;
-        private BattleSceneView view;
+        private BattleView view;
         private BattleHud hud;
         private Vector2 start;
         private bool held, dragged, ghostStarted;
@@ -28,7 +30,7 @@ namespace LittleGame.Client
         private int lastReserveTapUnitId;
         private float lastReserveTapTime = -10f;
 
-        public void Bind(BattleApplication application, BattleSceneView scene, BattleHud ui)
+        public void Bind(BattleApplication application, BattleView scene, BattleHud ui)
         {
             app = application;
             view = scene;
@@ -242,15 +244,22 @@ namespace LittleGame.Client
             }
             else if (hud.Selected > 0 && view.ScreenToGround(point, out var tapWorld, requireViewport: true))
             {
-                var sel = s.Troops.FirstOrDefault(t => t.Id == hud.Selected);
-                if (sel != null && sel.Deployed)
+                // 点白色布阵框外空地取消选中；点框内空地仍可移动已选中单位
+                if (!BattleDefinitions.IsInsideDeployBox(tapWorld.x, tapWorld.z))
                 {
-                    BattleDefinitions.ClampToDeployBox(tapWorld.x, tapWorld.z, out float cx, out float cz);
-                    hud.Submit(new BattleCommand { Kind = CommandKind.Deploy, UnitId = hud.Selected, UseWorldPos = true, TargetX = cx, TargetZ = cz });
+                    hud.ClearSelection();
                 }
                 else
                 {
-                    hud.ClearSelection();
+                    var sel = s.Troops.FirstOrDefault(t => t.Id == hud.Selected);
+                    if (sel != null && sel.Deployed)
+                    {
+                        hud.Submit(new BattleCommand { Kind = CommandKind.Deploy, UnitId = hud.Selected, UseWorldPos = true, TargetX = tapWorld.x, TargetZ = tapWorld.z });
+                    }
+                    else
+                    {
+                        hud.ClearSelection();
+                    }
                 }
             }
             else

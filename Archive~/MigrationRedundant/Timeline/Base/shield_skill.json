@@ -1,0 +1,144 @@
+{
+  "TimelineId": "shield_skill",
+  "Description": "盾卫基础盾击",
+  "PreviewCasterAddress": "Shield/Shield",
+  "DurationBindClipKey": "shield_skill_hit",
+  "Clips": [
+    {
+      "PreviewTargets": [
+        "$enemy:0"
+      ],
+      "ClipKey": "shield_skill_cast_targets",
+      "PreKey": "",
+      "Type": 31,
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.0
+    },
+    {
+      "PreviewSource": "$caster",
+      "PreviewTargets": [
+        "$enemy:0"
+      ],
+      "ClipKey": "shield_skill_hit_targets",
+      "PreKey": "",
+      "Type": 32,
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.0
+    },
+    {
+      "PrefabPath": "Shield/Shield",
+      "ParamName": "Attack",
+      "AffectedByHitStop": true,
+      "AnimatorStateSpeed": 1.0,
+      "ClipKey": "shield_skill_anim",
+      "PreKey": "",
+      "Type": 2,
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.45,
+      "EventConfigs": [
+        {
+          "EventKey": "shield_skill_evt_hit",
+          "TimelineEventType": 0,
+          "ValueType": 0,
+          "Time": 0.22,
+          "EventName": "hit"
+        }
+      ]
+    },
+    {
+      "EffectPath": "fx_shield_bash",
+      "Subject": 0,
+      "PointData": {
+        "OffsetNodeType": 43,
+        "OffsetPos": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.45
+        },
+        "OffsetEuler": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "NeedSetParent": false,
+        "DontFollow": true,
+        "UseOriginalRotation": false,
+        "OverlayCharacterFacing": true,
+        "UseOriginalScale": false
+      },
+      "AffectedByHitStop": true,
+      "ClipKey": "shield_skill_cast_fx",
+      "PreKey": "shield_skill_evt_hit",
+      "Type": 8,
+      "StartTime": 0.22,
+      "DelayTime": 0.0,
+      "Duration": 0.4
+    },
+    {
+      "SpineAnimationDelay": 0.0,
+      "AnimatorParamName": "Hit",
+      "AnimatorDelayTime": 0.0,
+      "EffectPath": "fx_hit_heavy",
+      "UnitNodePointData": {
+        "OffsetNodeType": 43,
+        "OffsetPos": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetEuler": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "NeedSetParent": false,
+        "DontFollow": true,
+        "UseOriginalRotation": false,
+        "OverlayCharacterFacing": true,
+        "UseOriginalScale": false
+      },
+      "AffectedByHitStop": true,
+      "ClipKey": "shield_skill_hit",
+      "PreKey": "shield_skill_evt_hit",
+      "TargetBindingKey": "shield_skill_hit_targets",
+      "Type": 10,
+      "StartTime": 0.22,
+      "DelayTime": 0.0,
+      "Duration": 0.42
+    },
+    {
+      "PositionStrength": {
+        "x": 0.08,
+        "y": 0.08,
+        "z": 0.0
+      },
+      "RotationStrength": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "Vibrato": 20,
+      "Randomness": 90.0,
+      "EnvelopeType": 0,
+      "ClipKey": "shield_skill_shake",
+      "PreKey": "shield_skill_evt_hit",
+      "Type": 15,
+      "StartTime": 0.22,
+      "DelayTime": 0.0,
+      "Duration": 0.25
+    }
+  ]
+}

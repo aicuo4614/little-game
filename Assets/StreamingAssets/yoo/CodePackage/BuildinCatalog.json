@@ -1,0 +1,27 @@
+{
+    "FileVersion": "1.0.0",
+    "PackageName": "CodePackage",
+    "PackageVersion": "2026-11-25-1253",
+    "Wrappers": [
+        {
+            "BundleGUID": "88762458b40fb7025c99d97347f93a73",
+            "FileName": "codepackage_assets_package_code_hotupdate_domain_littlegame_domain_dll_88762458b40fb7025c99d97347f93a73.bundle"
+        },
+        {
+            "BundleGUID": "d6c08ade1be4972aaa23e80c6c4114bb",
+            "FileName": "codepackage_assets_package_code_hotupdate_main_hotupdate_main_dll_d6c08ade1be4972aaa23e80c6c4114bb.bundle"
+        },
+        {
+            "BundleGUID": "b90dd20d4a62d3ea431ed8ea88344f14",
+            "FileName": "codepackage_assets_package_code_hotupdate_unitcore_hotupdate_unitcore_dll_b90dd20d4a62d3ea431ed8ea88344f14.bundle"
+        },
+        {
+            "BundleGUID": "e4384d9e3e41ab8318497ebb0cbe7b85",
+            "FileName": "codepackage_assets_package_code_littlegame_client_littlegame_client_dll_e4384d9e3e41ab8318497ebb0cbe7b85.bundle"
+        },
+        {
+            "BundleGUID": "fa67fef17bc7774ad36d01a892a1c7a3",
+            "FileName": "codepackage_assets_package_code_package_fa67fef17bc7774ad36d01a892a1c7a3.bundle"
+        }
+    ]
+}

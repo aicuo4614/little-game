@@ -16,7 +16,7 @@ namespace LittleGame.Client
     public sealed class CourtyardEnvironment : MonoBehaviour
     {
         private const float ChunkWidth = 10.4f;
-        private const int ChunkCount = 3;
+        private const int ChunkCount = 5;
         private const float FarParallaxFactor = 0.45f;
 
         private readonly List<Transform> roadChunks = new List<Transform>();
@@ -41,15 +41,16 @@ namespace LittleGame.Client
             floorA = Material("Paving ash", new Color(.54f, .57f, .58f));
             floorB = Material("Paving variation", new Color(.50f, .53f, .55f));
 
-            // 1. 静态底层路基（全面去除蓝色 3×3 网格小框，保持干净开阔的大道画面）
+            // 1. 静态底层路基，覆盖道路与两侧遗迹
             var staticRoot = new GameObject("StaticRoadbedLayer").transform;
             staticRoot.SetParent(transform, false);
-            Cube(staticRoot, "ContinuousRoadbed", new Vector3(0f, -.52f, 1.4f), new Vector3(44f, .92f, 14.5f), earth);
-            Cube(staticRoot, "NorthCurbBase", new Vector3(0f, -.05f, 3.65f), new Vector3(44f, .18f, .6f), dark);
-            Cube(staticRoot, "SouthCurbBase", new Vector3(0f, -.05f, -3.55f), new Vector3(44f, .18f, .55f), dark);
+            Cube(staticRoot, "ContinuousRoadbed", new Vector3(0f, -.52f, 1.4f), new Vector3(68f, .92f, 16.5f), earth);
+            Cube(staticRoot, "NorthCurbBase", new Vector3(0f, -.05f, 3.65f), new Vector3(68f, .18f, .6f), dark);
+            Cube(staticRoot, "SouthCurbBase", new Vector3(0f, -.05f, -3.55f), new Vector3(68f, .18f, .55f), dark);
             StaticBatchingUtility.Combine(staticRoot.gameObject);
 
-            // 2. 近中景无限循环路段 Chunk（先在原点构建确保模型包围盒无偏移，再排布至 [-10.4, 0, +10.4]）
+            // 2. 近中景无限循环路段 Chunk（5 块覆盖 52m，先在原点构建再排布至 [-20.8..+20.8]）
+            int half = ChunkCount / 2;
             for (int c = 0; c < ChunkCount; c++)
             {
                 var chunk = new GameObject("RoadChunk_" + c).transform;
@@ -57,7 +58,7 @@ namespace LittleGame.Client
                 chunk.localPosition = Vector3.zero;
                 BuildRoadChunk(chunk, c);
                 CombineChunkByMaterial(chunk, castShadows: false);
-                chunk.localPosition = new Vector3((c - 1) * ChunkWidth, 0f, 0f);
+                chunk.localPosition = new Vector3((c - half) * ChunkWidth, 0f, 0f);
                 roadChunks.Add(chunk);
             }
 
@@ -69,9 +70,26 @@ namespace LittleGame.Client
                 far.localPosition = Vector3.zero;
                 BuildFarChunk(far, c);
                 CombineChunkByMaterial(far, castShadows: false);
-                far.localPosition = new Vector3((c - 1) * ChunkWidth, 0f, 0f);
+                far.localPosition = new Vector3((c - half) * ChunkWidth, 0f, 0f);
                 farChunks.Add(far);
             }
+
+            BuildRoadsideLandmarks();
+        }
+
+        private void BuildRoadsideLandmarks()
+        {
+            // 入口与来路的轮廓留在路肩，保证整幅交战路面清楚。
+            var root = new GameObject("RoadsideLandmarks").transform;
+            root.SetParent(transform, false);
+            Place(root, "pillar_bottom", new Vector3(-5.65f, 0f, -3.72f), new Vector3(1.1f, .36f, .58f), stone, true);
+            Place(root, "Rock_1", new Vector3(-5.42f, 0f, -4.17f), new Vector3(.66f, .36f, .57f), dark);
+            Place(root, "pillar", new Vector3(5.62f, 0f, 3.22f), new Vector3(1.05f, 2.5f, .92f), pale, true);
+            Place(root, "wall_element_tileable_4meters_top", new Vector3(6.95f, 0f, 3.35f), new Vector3(1.82f, 1.15f, .7f), dark, true);
+            Place(root, "Crystal_2", new Vector3(5.62f, 2.5f, 3.22f), new Vector3(.4f, .56f, .4f), blue);
+            Place(root, "pillar_bottom", new Vector3(5.62f, 0f, -3.7f), new Vector3(1.1f, .58f, .66f), stone, true);
+            Place(root, "Rock_1", new Vector3(6.33f, 0f, -4.04f), new Vector3(.9f, .42f, .74f), dark);
+            CombineChunkByMaterial(root, castShadows: false);
         }
 
         private void BuildRoadChunk(Transform parent, int variant)
@@ -161,6 +179,7 @@ namespace LittleGame.Client
         {
             theme = "infinite-ruins-road-horizontal",
             infiniteScrolling = true,
+            entrance = "roadside-ruined-gate",
             chunkCount = roadChunks.Count,
             scrollSpeed = Math.Round(currentScrollSpeed, 2),
             scrollOffset = Math.Round(scrollTotal, 2),
@@ -228,7 +247,6 @@ namespace LittleGame.Client
             Destroy(go.GetComponent<Collider>());
             return go;
         }
-
         /// <summary>将滚动 Chunk 内的数百个静态子模型按材质合并为极少网格，大幅削减移动端 DrawCall 与阴影开销。</summary>
         private void CombineChunkByMaterial(Transform chunkRoot, bool castShadows)
         {

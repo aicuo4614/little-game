@@ -1,0 +1,52 @@
+{
+  "new3DTemplate": true,
+  "newTemplateValidation": {
+    "editor": {
+      "valid": true,
+      "error": null
+    },
+    "battle": {
+      "valid": true,
+      "error": null,
+      "scope": "configuration-only",
+      "resources": {
+        "valid": true,
+        "error": null
+      },
+      "runtimeVerified": false,
+      "runtimeRequirements": "本地资源检查不代表构建包已更新。仍需在程序工程验证资源包地址、实际施法者动作及协议对象绑定。"
+    }
+  },
+  "captureDuringPlaybackRejected": true,
+  "finalStatus": {
+    "windowOpen": true,
+    "timelineId": "shield_basic",
+    "skillPath": "E:/Project/little-game/Assets\\Package_Unit/Timeline/Base\\shield_basic.json",
+    "previewCasterAddress": "Shield/Shield",
+    "effectiveCasterAddress": "Shield/Shield",
+    "casterTeam": "TeamA",
+    "previewQuality": "Low",
+    "previewLayout": "Battle",
+    "previewAspect": 0.5625,
+    "runningTime": 0.15000000596046448,
+    "cutoffTime": 15.0,
+    "contentEnd": 0.5866667,
+    "autoStop": 0.6366667,
+    "isPlaying": false,
+    "isRecording": false,
+    "hasUnsavedChanges": false,
+    "clipCount": 6,
+    "playbackEngine": "shared:TimelinePlayback/TimelinePlayer"
+  },
+  "scene": "已保存场景「TimelineEditor」→ Assets/Scripts/Editor/TimelineEditor/Scene/TimelineEditor.unity",
+  "console": {
+    "Error": "Console 日志 0 条：",
+    "Warning": "Console 日志 0 条：",
+    "Exception": "Console 日志 0 条：",
+    "Assert": "Console 日志 0 条："
+  },
+  "warningsBeforeScenario": "Console 日志 8 条：\r\n[Warning] Assets\\Scripts\\Editor\\TimelineEditor\\TimeLineWindow\\Editor\\EditorGUIExt.cs(46,35): warning CS0414: The field 'EditorGUIExt.s_LastFrameSelections' is assigned but its value is never used\r\n[Warning] Assets\\Scripts\\Editor\\TimelineEditor\\TimeLineWindow\\Editor\\SimpleTimeArea.cs(20,39): warning CS0414: The field 'SimpleTimeArea.kTimeAreaHeight' is assigned but its value is never used\r\n[Warning] Assets\\Scripts\\Editor\\TimelineEditor\\TimeLineWindow\\Editor\\SimpleTimeArea.cs(19,39): warning CS0414: The field 'SimpleTimeArea.kTimeAreaYPosition' is assigned but its value is never used\r\n[Warning] Assets\\Scripts\\Editor\\TimelineEditor\\TimeLineWindow\\Editor\\EditorGUIExt.cs(43,56): warning CS0414: The field 'EditorGUIExt.s_MultiSelectDragSelection' is assigned but its value is never used\r\n[Warning] Assets\\Scripts\\Editor\\TimelineEditor\\Editor\\EditorTimeLine.cs(2268,28): warning CS0414: The field 'EditorTimeLine.iconTexture' is assigned but its value is never used\r\n[Warning] Assets\\Scripts\\Editor\\TimelineEditor\\TimeLineWindow\\Editor\\TimeArea.cs(37,22): warning CS0414: The field 'TimeArea.m_showVTicks' is assigned but its value is never used\r\n[Warning] Assets\\Scripts\\Editor\\TimelineEditor\\TimeLineWindow\\Editor\\SimpleTimeArea.cs(41,22): warning CS0414: The field 'SimpleTimeArea._dragCurrentTimeArrow' is assigned but its value is never used\r\n[Warning] Assets\\Scripts\\Editor\\TimelineEditor\\TimeLineWindow\\Editor\\EditorGUIExt.cs(45,35): warning CS0414: The field 'EditorGUIExt.s_SelectionBackup' is assigned but its value is never used",
+  "consoleScope": "fresh editor preview scenario after compilation; baseline warnings recorded separately",
+  "detailCapture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\shield_basic_detail_0.150_b744dd7689a44dbcb1aeeea6f08f0333.png",
+  "battleCapture": "E:\\Project\\little-game\\Library\\KabuUnityMcp\\SkillCaptures\\shield_basic_battle_0.150_54428577885d4de4a7ff7bbc912d41e7.png"
+}

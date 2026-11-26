@@ -162,7 +162,7 @@ namespace LittleGame.Combat
         private static void Output(Body body, float dt, bool waiting, List<AgentOutput> outputs)
         {
             // 边界处理后再求实际速度，零位移必定输出零速度。
-            body.End = new NavPoint(Clamp(body.End.X, body.Input.IsTroop ? -5.25f : -5.35f, body.Input.IsTroop ? 5.2f : 6.35f), Clamp(body.End.Z, -2.95f, 2.95f));
+            body.End = new NavPoint(Clamp(body.End.X, body.Input.IsTroop ? -5.25f : -5.35f, body.Input.IsTroop ? 5.2f : BattleDefinitions.EnemyMaxX), Clamp(body.End.Z, -2.95f, 2.95f));
             outputs.Add(new AgentOutput { Id = body.Input.Id, IsTroop = body.Input.IsTroop, Waiting = waiting,
                 NewX = body.End.X, NewZ = body.End.Z, NewVx = (body.End.X - body.Start.X) / dt, NewVz = (body.End.Z - body.Start.Z) / dt });
         }
@@ -218,7 +218,7 @@ namespace LittleGame.Combat
             if (a > b) { float t = a; a = b; b = t; }
             lo = Math.Max(lo, a); hi = Math.Min(hi, b); return lo <= hi;
         }
-        private static bool Inside(NavPoint p, bool troop) => p.X >= (troop ? -5.25f : -5.35f) && p.X <= (troop ? 5.2f : 6.35f) && p.Z >= -2.95f && p.Z <= 2.95f;
+        private static bool Inside(NavPoint p, bool troop) => p.X >= (troop ? -5.25f : -5.35f) && p.X <= (troop ? 5.2f : BattleDefinitions.EnemyMaxX) && p.Z >= -2.95f && p.Z <= 2.95f;
         internal static float Distance(NavPoint a, NavPoint b) { float x = a.X - b.X, z = a.Z - b.Z; return (float)Math.Sqrt(x * x + z * z); }
         private static float SegmentDistance(NavPoint point, NavPoint a, NavPoint b)
         {

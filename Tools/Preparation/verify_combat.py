@@ -60,7 +60,7 @@ def capture(name):
     try:
         shutil.copyfile(path, dst)
     except OSError:
-        shutil.copyfile(path, OUT / f'{name}-latest.png')
+        shutil.copyfile(path, OUT / f'{name}-{time.time_ns()}.png')
 def wait(predicate, timeout=65):
     end = time.monotonic() + timeout
     while True:
@@ -105,11 +105,22 @@ def main():
     m.tool('unity_exit_play_mode')
     m.tool('unity_run_menu_item', menuPath='Little Game/Combat/Open Combat')
     m.tool('unity_enter_play_mode')
-    catalog = json.loads(m.tool('unity_extension_catalog'))
+    deadline = time.monotonic() + 30
+    while True:
+        catalog = json.loads(m.tool('unity_extension_catalog'))
+        if any(e['id'] == 'little-game.combat' and e['available'] for e in catalog['extensions']): break
+        assert time.monotonic() < deadline, catalog
+        time.sleep(.2)
     assert catalog['projectPath'] == 'E:/Project/little-game/Assets'
     assert any(e['id'] == 'little-game.combat' and e['available'] for e in catalog['extensions'])
     assert not any(e['id'] in ('little-game.puzzle', 'little-game.structure') for e in catalog['extensions'])
 
+    framework = view()['presentation']['framework']
+    assert framework['aotStarted'] and framework['mainLaunched'] and framework['mvcInitialized'] and framework['battleModuleOpen']
+    assert framework['qualityInitialized'] and all(p['manifestReady'] for p in framework['packages']), framework
+    definitions = call('get_definitions')
+    assert definitions['rules']['rvoActive'] is False and definitions['rules']['blockedWait'] is True, definitions
+    assert call('get_navigation')['algorithm'] == 'roy_astar_attack_slots_swept_motion'
     action('restart', seed=173)
     direct = json.loads(m.tool('unity_combat_get_state'))
     assert direct['wave'] == 1 and direct['phase'] == 'Preparation' and direct['deployedCount'] == 0 and len(direct['units']) == 0, direct
@@ -118,6 +129,16 @@ def main():
     assert event_wait['matched'], event_wait
     time.sleep(.25)
     capture('combat-preparation')
+    camera = view()['presentation']
+    assert camera['cameraMode'] == 'fixed-heading-horizontal-follow'
+    assert camera['environment']['entrance'] == 'roadside-ruined-gate'
+    empty_start, empty_end = {'x': .35, 'y': .55}, {'x': .73, 'y': .55}
+    pointer('begin', empty_start); pointer('move', empty_end); pointer('end', empty_end)
+    fixed = view()['presentation']
+    assert fixed['cameraYaw'] == camera['cameraYaw'] == 0
+    assert fixed['cameraX'] == camera['cameraX'] == fixed['cameraBaseX']
+    assert view()['selected'] == 0
+    checks.append('布阵空地横滑保持固定机位与选中状态通过')
     checks.append('开局零单位（全靠老虎机招募）与禁止空阵开战通过')
 
     # 1. 共用 pointer 取消/防误触；点击招募 -> 动画期间候补图标先隐藏，落地后才显现！
@@ -164,6 +185,21 @@ def main():
     box = state()['deployBox']
     assert abs(u1_after['homeX'] - box['maxX']) < 0.08
     checks.append('tap即选中、无按钮面板、拖出白框吸附点A(剪影预览)通过')
+    edge = {'x': .055, 'y': .60}
+    u1_pt = next(t for t in view()['troops'] if t['id'] == u1_id)
+    pointer('begin', u1_pt); pointer('move', edge); pointer('cancel', edge); pointer('end', edge)
+    assert next(u for u in state()['units'] if u['id'] == u1_id)['homeX'] == u1_after['homeX']
+    pointer('begin', u1_pt); pointer('move', edge); pointer('end', edge)
+    edge_unit = next(u for u in state()['units'] if u['id'] == u1_id)
+    assert abs(edge_unit['homeX'] - box['minX']) < .15, edge_unit
+    click({'x': .75, 'y': .55})
+    assert view()['selected'] == 0
+    edge_unit_screen = next(t for t in view()['troops'] if t['id'] == u1_id)
+    pointer('begin', edge_unit_screen)
+    assert view()['selected'] == u1_id
+    pointer('end', edge_unit_screen)
+    capture('combat-deploy-left-edge')
+    checks.append('竖屏左边缘部署、取消和重新命中通过')
 
     # 把剩余 2 名候补也上阵，验证拖回候补召回
     arrange()
@@ -180,7 +216,25 @@ def main():
     action('set_speed', speed=1)
     action('start_wave')
     wait(lambda s: len(s['enemies']) > 0)
-    action('aim', kind='Protect'); a = state()['battleTime']; time.sleep(.3); assert state()['battleTime'] == a
+    # 等首批敌人进入清晰可见的战场，再走真实按钮与瞄准输入。
+    deadline = time.monotonic() + 8
+    while not any(.67 < p['x'] < .96 and .32 < p['y'] < .81 for p in view()['enemies']):
+        assert time.monotonic() < deadline, '未观察到右侧敌人入场'
+        time.sleep(.05)
+    click(button('aim_focus'))
+    assert state()['aim'] == 'Focus'
+    aiming = view()
+    assert min(t['x'] for t in aiming['troops']) >= .04, '前移镜头挤到左侧友军'
+    a = state()['battleTime']
+    time.sleep(.3)
+    assert state()['battleTime'] == a
+    assert view()['presentation']['cameraX'] == aiming['presentation']['cameraX']
+    assert view()['presentation']['cameraYaw'] == 0
+    capture('combat-enemy-entrance')
+    action('cancel_aim')
+    action('aim', kind='Protect')
+    a = state()['battleTime']; time.sleep(.3); assert state()['battleTime'] == a
+    checks.append('右侧敌军入场可见，集火瞄准锁住相机平移与朝向通过')
     action('cancel_aim'); action('aim', kind='Protect'); action('protect', lane=1)
     assert state()['tactics'] == 0 and not call('aim', kind='Focus')['accepted']
     time.sleep(2.0)
@@ -189,11 +243,15 @@ def main():
     assert not call('deploy', unitId=u1_id, lane=1, row=0)['accepted']
     action('pause', paused=False)
     wait(lambda s: s['phase'] != 'Fighting')
-    checks.append('真实战斗、固定移速RVO2避障、暂停/瞄准/护盾及战中拒绝布阵通过')
+    time.sleep(1.3)
+    returned = view()['presentation']
+    assert abs(returned['cameraX'] - returned['cameraBaseX']) < .015, returned['cameraX']
+    checks.append('真实战斗、固定移速A*导航、暂停/瞄准/护盾及战中拒绝布阵通过')
 
     # 完整 12 波远征（从开局 0 单位全靠老虎机打通 12 波）
     action('restart', seed=173); action('set_speed', speed=2)
     seen_boss = False; seen_reward = False; captures = set()
+    focused_with_pointer = False
     end = time.monotonic() + 300
     while True:
         assert time.monotonic() < end, '远征超时'
@@ -217,13 +275,26 @@ def main():
             action('next_wave')
             if 'Reinforcements' in state()['rewards']: assert state()['spins'] == 4
         else:
+            if s['wave'] == 2 and not focused_with_pointer:
+                targets = [t for t in view()['enemies'] if .60 < t['x'] < .9 and .37 < t['y'] < .65]
+                if targets:
+                    target_id = targets[0]['id']
+                    click(button('aim_focus'))
+                    target = next(t for t in view()['enemies'] if t['id'] == target_id)
+                    click(target)
+                    assert state()['aim'] == 'None' and state()['tactics'] == 0
+                    focused_with_pointer = True
             if s['wave'] in (6, 12) and s['bossTelegraph']['lane'] >= 0 and s['wave'] not in captures:
-                action('pause', paused=True); capture('combat-boss-warning-' + str(s['wave'])); captures.add(s['wave'])
+                action('pause', paused=True)
+                assert view()['presentation']['cameraX'] <= .85, 'boss telegraph leaves the 540x960 frame'
+                capture('combat-boss-warning-' + str(s['wave'])); captures.add(s['wave'])
                 action('pause', paused=False)
                 if s['tactics'] > 0: action('aim', kind='Protect'); action('protect', lane=s['bossTelegraph']['lane'])
             time.sleep(.15)
     assert s['phase'] == 'Won' and s['maxDeployed'] == 9, s
     assert seen_boss and seen_reward
+    assert focused_with_pointer, '第二波未验证集火目标点击'
+    assert 6 in captures, '第6波未采集到首领预警'
     capture('combat-victory')
     checks.append('从零单位起手完整12波横向远征获胜通过')
 
@@ -252,7 +323,7 @@ def main():
         assert logs.startswith('Console 日志 0 条'), (level, logs)
     event_info = call('get_events', after=0)
     checks.append('UI换肤sprite完整、按钮边界/触屏高度/无重叠及Console零报错通过')
-    result = {'checks': checks, 'nativeTools': tool_names, 'eventWait': event_wait, 'catalog': catalog, 'console': console, 'lastState': state(), 'events': event_info, 'records': records, 'uiLayouts': ui_layouts}
+    result = {'framework': framework, 'checks': checks, 'nativeTools': tool_names, 'eventWait': event_wait, 'catalog': catalog, 'console': console, 'lastState': state(), 'events': event_info, 'records': records, 'uiLayouts': ui_layouts}
     (OUT / 'unity-verification.json').write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding='utf-8')
     print(json.dumps({'passed': checks}, ensure_ascii=False), flush=True)
     m.tool('unity_exit_play_mode')
@@ -261,5 +332,5 @@ if __name__ == '__main__':
     try: main()
     except Exception:
         OUT.mkdir(exist_ok=True, parents=True)
-        (OUT / 'unity-verification-partial.json').write_text(json.dumps({'checks': checks, 'records': records}, ensure_ascii=False, indent=2), encoding='utf-8')
+        (OUT / ('unity-verification-partial-' + str(time.time_ns()) + '.json')).write_text(json.dumps({'checks': checks, 'records': records}, ensure_ascii=False, indent=2), encoding='utf-8')
         raise

@@ -1,1 +1,23 @@
-{"name":"LittleGame.Client.Editor","references":["LittleGame.Client","LittleGame.Domain","kabu-unity-mcp.Editor","Unity.Nuget.Newtonsoft-Json","Unity.RenderPipelines.Core.Runtime","Unity.RenderPipelines.Core.Editor","Unity.RenderPipelines.Universal.Runtime","UnityEngine.UI"],"includePlatforms":["Editor"],"autoReferenced":true}
+{
+  "name": "LittleGame.Client.Editor",
+  "references": [
+    "AOT",
+    "HotUpdate_UnitCore",
+    "HotUpdate_Main",
+    "LittleGame.Client",
+    "LittleGame.Domain",
+    "Kabu.Rendering",
+    "YooAsset",
+    "YooAsset.Editor",
+    "kabu-unity-mcp.Editor",
+    "Unity.Nuget.Newtonsoft-Json",
+    "Unity.RenderPipelines.Core.Runtime",
+    "Unity.RenderPipelines.Core.Editor",
+    "Unity.RenderPipelines.Universal.Runtime",
+    "UnityEngine.UI"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "autoReferenced": true
+}

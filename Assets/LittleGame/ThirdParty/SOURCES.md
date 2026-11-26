@@ -21,3 +21,9 @@ Domain 与新客户端适配是本项目代码，架构参考 Demo 的运行时�
 - KayKit 保留为旧样品/对照，当前战斗九类角色已切换到新配置；尚未制作逐星专属套装和完整技能命中时序。
 
 - UI：用户2026-11-24明确授权PELibDemo Art内UI用于整体改造。本项目提取Fantasy RPG套件21张UI原图，保留九宫格边距，未迁入其演示脚本或业务预制体。来源/哈希见 Reports/Art/ui-source-migration.json；工具 import_combat_ui.py 可复现。
+
+## 2026-11-25 完整框架迁移更新
+
+此前“未迁入 YooAsset/HybridCLR”和 Legacy 动画的结论已过时。本轮从用户指定 Demo 直接迁入 AOT、资源/热更、MVC/Service/Mgr、窗口面板与技能编辑器；原工程只读。本工程保留独立纯规则层、UGUI 与3D Animator，并适配七个单工程资源包和四个热更 DLL。细节及验证范围见 Docs/Framework-Migration.md。
+
+嵌入包位于 Packages/com.tuyoogame.yooasset（2.3.18）、com.code-philosophy.hybridclr、com.unity.textmeshpro、com.unity.scriptablebuildpipeline，沿用对应包中的许可；DOTween 本地 DLL 来自 Demo 的 client-shared/ThirdParty/DOTween；该源目录没有单独的许可文本，当前保留 DLL 原始内容与来源记录，不声称附带独立许可文件。未将 PackageCache 作为修改位置，未引入新的付费插件。

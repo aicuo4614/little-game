@@ -1,0 +1,39 @@
+[
+  {
+    "path": "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\Hovl Studio",
+    "exists": true,
+    "effectCandidates": [
+      "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\Hovl Studio\\RPG VFX Bundle\\Prefabs\\Magic buffs and hits\\Buff 1.prefab",
+      "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\Hovl Studio\\RPG VFX Bundle\\Prefabs\\Magic buffs and hits\\Buff 2.prefab",
+      "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\Hovl Studio\\RPG VFX Bundle\\Prefabs\\Magic buffs and hits\\Buff 3.prefab",
+      "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\Hovl Studio\\RPG VFX Bundle\\Prefabs\\Magic buffs and hits\\Buff 4.prefab",
+      "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\Hovl Studio\\RPG VFX Bundle\\Prefabs\\Magic buffs and hits\\Buff 5.prefab",
+      "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\Hovl Studio\\RPG VFX Bundle\\Prefabs\\Magic buffs and hits\\Buff 6.prefab",
+      "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\Hovl Studio\\RPG VFX Bundle\\Prefabs\\Magic buffs and hits\\Buff 7.prefab",
+      "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\Hovl Studio\\RPG VFX Bundle\\Prefabs\\Magic buffs and hits\\Cute buff Yorai.prefab",
+      "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\Hovl Studio\\RPG VFX Bundle\\Prefabs\\Magic buffs and hits\\Debuff 1.prefab",
+      "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\Hovl Studio\\RPG VFX Bundle\\Prefabs\\Magic buffs and hits\\Debuff 2.prefab",
+      "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\Hovl Studio\\RPG VFX Bundle\\Prefabs\\Magic buffs and hits\\Dragon punch.prefab",
+      "E:\\Project\\PELibDemo\\Assets\\Art\\3D\\Hovl Studio\\RPG VFX Bundle\\Prefabs\\Magic buffs and hits\\Gold dot.prefab"
+    ]
+  },
+  {
+    "path": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets",
+    "exists": true,
+    "effectCandidates": [
+      "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\ModelNew\\MagicArcher.prefab",
+      "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Resources\\Model_L\\MagicArcher.prefab",
+      "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Resources\\UIModel\\MagicArcher.prefab",
+      "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Art\\Effect\\UI\\Chest_openFx.prefab",
+      "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Art\\Effect\\UI\\Equip_1_glow_2.prefab",
+      "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Art\\Effect\\UI\\SeasonPass_reward.prefab",
+      "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\3rdParty\\UITween\\Prefabs\\Click Effect Pref\\ClickedRound.prefab",
+      "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\3rdParty\\AstarPathfindingProject\\ExampleScenes\\Prefabs\\TargetReachedEffect.prefab"
+    ]
+  },
+  {
+    "path": "E:\\Art\\material-vault\\libraries",
+    "exists": true,
+    "effectCandidates": []
+  }
+]

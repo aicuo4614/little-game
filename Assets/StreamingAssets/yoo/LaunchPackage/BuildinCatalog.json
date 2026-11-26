@@ -1,0 +1,11 @@
+{
+    "FileVersion": "1.0.0",
+    "PackageName": "LaunchPackage",
+    "PackageVersion": "2026-11-25-1253",
+    "Wrappers": [
+        {
+            "BundleGUID": "11f1d04f204cdc1a8d3326ebf6ef0edf",
+            "FileName": "launchpackage_assets_package_launch_bootstrap_11f1d04f204cdc1a8d3326ebf6ef0edf.bundle"
+        }
+    ]
+}

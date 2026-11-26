@@ -524,7 +524,8 @@ namespace LittleGame.Combat
         public object Snapshot() => new
         {
             schemaVersion = 6,
-            skills = skillInstances.Select(a => new { id = a.Id, source = a.Source, target = a.Target, trigger = a.Trigger, timelineId = a.TimelineId, phase = a.Phase.ToString(), startedAt = a.StartedAt, launchAt = a.LaunchAt, impactAt = a.ImpactAt, endAt = a.EndAt, targetX = a.TargetX, targetZ = a.TargetZ, facingYaw = a.FacingYaw, cancelReason = a.CancelReason }),
+            skills = skillInstances.Select(a => new { id = a.Id, source = a.Source, target = a.Target, trigger = a.Trigger, timelineId = a.TimelineId, phase = a.Phase.ToString(), startedAt = a.StartedAt, launchAt = a.LaunchAt, impactAt = a.ImpactAt, endAt = a.EndAt, targetX = a.TargetX, targetZ = a.TargetZ, facingYaw = a.FacingYaw, cancelReason = a.CancelReason,
+                timingMode = a.Definition.ProjectileSpeed > 0 ? "distance-at-cast" : "timeline", projectileSpeed = a.Definition.ProjectileSpeed }),
             layout = "horizontal-free-deploy-astar",
             phase = Phase.ToString(),
             seed = Seed,

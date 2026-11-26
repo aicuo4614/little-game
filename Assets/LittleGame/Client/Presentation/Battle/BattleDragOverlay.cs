@@ -256,18 +256,13 @@ namespace LittleGame.Client.Battle
                 model.transform.localScale *= scale;
                 model.transform.localPosition = new Vector3(0f, -bounds.min.y * scale, 0f);
 
-                var anim = model.GetComponent<Animation>() ?? model.AddComponent<Animation>();
-                if (!asSilhouette && appearance.Move != null)
+                var animator = model.GetComponentInChildren<Animator>(true);
+                if (animator != null)
                 {
-                    anim.AddClip(appearance.Move, "Walk");
-                    anim["Walk"].wrapMode = WrapMode.Loop;
-                    anim.Play("Walk");
-                }
-                else if (appearance.Idle != null)
-                {
-                    anim.AddClip(appearance.Idle, "Idle");
-                    anim["Idle"].wrapMode = WrapMode.Loop;
-                    anim.Play("Idle");
+                    animator.runtimeAnimatorController = appearance.AnimatorController;
+                    animator.applyRootMotion = false;
+                    animator.cullingMode = AnimatorCullingMode.AlwaysAnimate;
+                    animator.Play(asSilhouette ? "Idle" : "Walk", 0, 0f);
                 }
             }
             else

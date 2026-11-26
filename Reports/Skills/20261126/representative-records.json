@@ -1,0 +1,3656 @@
+[
+  {
+    "id": "shield_basic",
+    "team": "TeamA",
+    "record": {
+      "copiedToClipboard": true,
+      "charCount": 8561,
+      "record": {
+        "schema": "kabu.timeline.preview-record",
+        "version": 1,
+        "meta": {
+          "timelineId": "shield_basic",
+          "skillPath": "E:/Project/little-game/Assets\\Package_Unit/Timeline/Base\\shield_basic.json",
+          "previewQuality": "Low",
+          "casterTeam": "TeamA",
+          "sampleHz": 30.0,
+          "t0": 0.0,
+          "tEnd": 0.641,
+          "cutoff": 15.0,
+          "contentEnd": 0.587,
+          "autoStop": 0.637,
+          "stopReason": "contentAuto"
+        },
+        "catalog": {
+          "clips": [
+            {
+              "key": "shield_basic_cast_targets",
+              "type": 31,
+              "typeName": "SetCastTargets",
+              "label": "配置施法对象",
+              "start": 0.0,
+              "delay": 0.0,
+              "duration": 0.0
+            },
+            {
+              "key": "shield_basic_hit_targets",
+              "type": 32,
+              "typeName": "SetHitTargets",
+              "label": "配置效果来源和目标",
+              "start": 0.0,
+              "delay": 0.0,
+              "duration": 0.0
+            },
+            {
+              "key": "shield_basic_anim",
+              "type": 2,
+              "typeName": "PlayAnimator",
+              "label": "单位 播放动画",
+              "start": 0.0,
+              "delay": 0.0,
+              "duration": 0.391
+            },
+            {
+              "key": "shield_basic_cast_fx",
+              "type": 8,
+              "typeName": "PlayEffect",
+              "label": "播放普通特效",
+              "start": 0.12,
+              "delay": 0.0,
+              "duration": 0.16
+            },
+            {
+              "key": "shield_basic_hit",
+              "type": 10,
+              "typeName": "PlayHit",
+              "label": "播放受击",
+              "start": 0.12,
+              "delay": 0.0,
+              "duration": 0.467
+            },
+            {
+              "key": "clip_e252636ce20a4c06b84f154c47e83a5c",
+              "type": 23,
+              "typeName": "HitStop",
+              "label": "角色定帧",
+              "start": 0.12,
+              "delay": 0.0,
+              "duration": 0.035
+            }
+          ],
+          "entities": [
+            {
+              "id": "unit:caster",
+              "kind": "unit",
+              "role": "caster",
+              "prefab": "Shield/Shield",
+              "team": "TeamA",
+              "origin": {
+                "pos": [
+                  -0.65,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "id": "unit:opp:0",
+              "kind": "unit",
+              "role": "opponent",
+              "prefab": "Grunt/Grunt",
+              "team": "TeamB",
+              "origin": {
+                "pos": [
+                  0.65,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "id": "unit:opp:1",
+              "kind": "unit",
+              "role": "opponent",
+              "prefab": "Grunt/Grunt",
+              "team": "TeamB",
+              "origin": {
+                "pos": [
+                  0.65,
+                  0.11,
+                  2.15
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "id": "unit:opp:2",
+              "kind": "unit",
+              "role": "opponent",
+              "prefab": "Grunt/Grunt",
+              "team": "TeamB",
+              "origin": {
+                "pos": [
+                  0.65,
+                  0.11,
+                  -2.15
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "id": "camera:battle",
+              "kind": "camera",
+              "origin": {
+                "pos": [
+                  0.25,
+                  14.0,
+                  -17.6
+                ],
+                "euler": [
+                  38.901,
+                  0.0,
+                  0.0
+                ],
+                "fov": 36.0,
+                "orthographic": true,
+                "orthographicSize": 11.25,
+                "aspect": 0.5625
+              }
+            }
+          ]
+        },
+        "samples": [
+          {
+            "t": 0.0,
+            "e": {
+              "unit:caster": {
+                "pos": [
+                  -0.65,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:0": {
+                "pos": [
+                  0.65,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:1": {
+                "pos": [
+                  0.65,
+                  0.11,
+                  2.15
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:2": {
+                "pos": [
+                  0.65,
+                  0.11,
+                  -2.15
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "camera:battle": {
+                "pos": [
+                  0.25,
+                  14.0,
+                  -17.6
+                ],
+                "euler": [
+                  38.901,
+                  0.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fov": 36.0
+              }
+            }
+          },
+          {
+            "t": 0.641,
+            "e": {
+              "unit:caster": {
+                "pos": [
+                  -0.65,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:0": {
+                "pos": [
+                  0.65,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:1": {
+                "pos": [
+                  0.65,
+                  0.11,
+                  2.15
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:2": {
+                "pos": [
+                  0.65,
+                  0.11,
+                  -2.15
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "camera:battle": {
+                "pos": [
+                  0.25,
+                  14.0,
+                  -17.6
+                ],
+                "euler": [
+                  38.901,
+                  0.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fov": 36.0
+              }
+            }
+          }
+        ],
+        "events": [
+          {
+            "t": 0.0,
+            "kind": "clipEnter",
+            "clipKey": "shield_basic_anim",
+            "type": 2
+          },
+          {
+            "t": 0.121,
+            "kind": "clipEnter",
+            "clipKey": "shield_basic_cast_fx",
+            "type": 8
+          },
+          {
+            "t": 0.121,
+            "kind": "clipEnter",
+            "clipKey": "shield_basic_hit",
+            "type": 10
+          },
+          {
+            "t": 0.121,
+            "kind": "clipEnter",
+            "clipKey": "clip_e252636ce20a4c06b84f154c47e83a5c",
+            "type": 23
+          },
+          {
+            "t": 0.156,
+            "kind": "clipExit",
+            "clipKey": "clip_e252636ce20a4c06b84f154c47e83a5c",
+            "type": 23
+          },
+          {
+            "t": 0.301,
+            "kind": "clipExit",
+            "clipKey": "shield_basic_cast_fx",
+            "type": 8
+          },
+          {
+            "t": 0.406,
+            "kind": "clipExit",
+            "clipKey": "shield_basic_anim",
+            "type": 2
+          },
+          {
+            "t": 0.625,
+            "kind": "clipExit",
+            "clipKey": "shield_basic_hit",
+            "type": 10
+          }
+        ]
+      },
+      "recordJson": null
+    }
+  },
+  {
+    "id": "shield_basic",
+    "team": "TeamB",
+    "record": {
+      "copiedToClipboard": true,
+      "charCount": 8561,
+      "record": {
+        "schema": "kabu.timeline.preview-record",
+        "version": 1,
+        "meta": {
+          "timelineId": "shield_basic",
+          "skillPath": "E:/Project/little-game/Assets\\Package_Unit/Timeline/Base\\shield_basic.json",
+          "previewQuality": "Low",
+          "casterTeam": "TeamB",
+          "sampleHz": 30.0,
+          "t0": 0.0,
+          "tEnd": 0.637,
+          "cutoff": 15.0,
+          "contentEnd": 0.587,
+          "autoStop": 0.637,
+          "stopReason": "contentAuto"
+        },
+        "catalog": {
+          "clips": [
+            {
+              "key": "shield_basic_cast_targets",
+              "type": 31,
+              "typeName": "SetCastTargets",
+              "label": "配置施法对象",
+              "start": 0.0,
+              "delay": 0.0,
+              "duration": 0.0
+            },
+            {
+              "key": "shield_basic_hit_targets",
+              "type": 32,
+              "typeName": "SetHitTargets",
+              "label": "配置效果来源和目标",
+              "start": 0.0,
+              "delay": 0.0,
+              "duration": 0.0
+            },
+            {
+              "key": "shield_basic_anim",
+              "type": 2,
+              "typeName": "PlayAnimator",
+              "label": "单位 播放动画",
+              "start": 0.0,
+              "delay": 0.0,
+              "duration": 0.391
+            },
+            {
+              "key": "shield_basic_cast_fx",
+              "type": 8,
+              "typeName": "PlayEffect",
+              "label": "播放普通特效",
+              "start": 0.12,
+              "delay": 0.0,
+              "duration": 0.16
+            },
+            {
+              "key": "shield_basic_hit",
+              "type": 10,
+              "typeName": "PlayHit",
+              "label": "播放受击",
+              "start": 0.12,
+              "delay": 0.0,
+              "duration": 0.467
+            },
+            {
+              "key": "clip_e252636ce20a4c06b84f154c47e83a5c",
+              "type": 23,
+              "typeName": "HitStop",
+              "label": "角色定帧",
+              "start": 0.12,
+              "delay": 0.0,
+              "duration": 0.035
+            }
+          ],
+          "entities": [
+            {
+              "id": "unit:caster",
+              "kind": "unit",
+              "role": "caster",
+              "prefab": "Shield/Shield",
+              "team": "TeamB",
+              "origin": {
+                "pos": [
+                  0.65,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "id": "unit:opp:0",
+              "kind": "unit",
+              "role": "opponent",
+              "prefab": "Grunt/Grunt",
+              "team": "TeamA",
+              "origin": {
+                "pos": [
+                  -0.65,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "id": "unit:opp:1",
+              "kind": "unit",
+              "role": "opponent",
+              "prefab": "Grunt/Grunt",
+              "team": "TeamA",
+              "origin": {
+                "pos": [
+                  -0.65,
+                  0.11,
+                  2.15
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "id": "unit:opp:2",
+              "kind": "unit",
+              "role": "opponent",
+              "prefab": "Grunt/Grunt",
+              "team": "TeamA",
+              "origin": {
+                "pos": [
+                  -0.65,
+                  0.11,
+                  -2.15
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "id": "camera:battle",
+              "kind": "camera",
+              "origin": {
+                "pos": [
+                  0.25,
+                  14.0,
+                  -17.6
+                ],
+                "euler": [
+                  38.901,
+                  0.0,
+                  0.0
+                ],
+                "fov": 36.0,
+                "orthographic": true,
+                "orthographicSize": 11.25,
+                "aspect": 0.5625
+              }
+            }
+          ]
+        },
+        "samples": [
+          {
+            "t": 0.0,
+            "e": {
+              "unit:caster": {
+                "pos": [
+                  0.65,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:0": {
+                "pos": [
+                  -0.65,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:1": {
+                "pos": [
+                  -0.65,
+                  0.11,
+                  2.15
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:2": {
+                "pos": [
+                  -0.65,
+                  0.11,
+                  -2.15
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "camera:battle": {
+                "pos": [
+                  0.25,
+                  14.0,
+                  -17.6
+                ],
+                "euler": [
+                  38.901,
+                  0.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fov": 36.0
+              }
+            }
+          },
+          {
+            "t": 0.637,
+            "e": {
+              "unit:caster": {
+                "pos": [
+                  0.65,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:0": {
+                "pos": [
+                  -0.65,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:1": {
+                "pos": [
+                  -0.65,
+                  0.11,
+                  2.15
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:2": {
+                "pos": [
+                  -0.65,
+                  0.11,
+                  -2.15
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "camera:battle": {
+                "pos": [
+                  0.25,
+                  14.0,
+                  -17.6
+                ],
+                "euler": [
+                  38.901,
+                  0.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fov": 36.0
+              }
+            }
+          }
+        ],
+        "events": [
+          {
+            "t": 0.0,
+            "kind": "clipEnter",
+            "clipKey": "shield_basic_anim",
+            "type": 2
+          },
+          {
+            "t": 0.137,
+            "kind": "clipEnter",
+            "clipKey": "shield_basic_cast_fx",
+            "type": 8
+          },
+          {
+            "t": 0.137,
+            "kind": "clipEnter",
+            "clipKey": "shield_basic_hit",
+            "type": 10
+          },
+          {
+            "t": 0.137,
+            "kind": "clipEnter",
+            "clipKey": "clip_e252636ce20a4c06b84f154c47e83a5c",
+            "type": 23
+          },
+          {
+            "t": 0.172,
+            "kind": "clipExit",
+            "clipKey": "clip_e252636ce20a4c06b84f154c47e83a5c",
+            "type": 23
+          },
+          {
+            "t": 0.281,
+            "kind": "clipExit",
+            "clipKey": "shield_basic_cast_fx",
+            "type": 8
+          },
+          {
+            "t": 0.391,
+            "kind": "clipExit",
+            "clipKey": "shield_basic_anim",
+            "type": 2
+          },
+          {
+            "t": 0.605,
+            "kind": "clipExit",
+            "clipKey": "shield_basic_hit",
+            "type": 10
+          }
+        ]
+      },
+      "recordJson": null
+    }
+  },
+  {
+    "id": "archer_gale",
+    "team": "TeamA",
+    "record": {
+      "copiedToClipboard": true,
+      "charCount": 8689,
+      "record": {
+        "schema": "kabu.timeline.preview-record",
+        "version": 1,
+        "meta": {
+          "timelineId": "archer_gale",
+          "skillPath": "E:/Project/little-game/Assets\\Package_Unit/Timeline/Base\\archer_gale.json",
+          "previewQuality": "Low",
+          "casterTeam": "TeamA",
+          "sampleHz": 30.0,
+          "t0": 0.0,
+          "tEnd": 0.871,
+          "cutoff": 15.0,
+          "contentEnd": 0.818,
+          "autoStop": 0.868,
+          "stopReason": "contentAuto"
+        },
+        "catalog": {
+          "clips": [
+            {
+              "key": "archer_gale_cast_targets",
+              "type": 31,
+              "typeName": "SetCastTargets",
+              "label": "配置施法对象",
+              "start": 0.0,
+              "delay": 0.0,
+              "duration": 0.0
+            },
+            {
+              "key": "archer_gale_hit_targets",
+              "type": 32,
+              "typeName": "SetHitTargets",
+              "label": "配置效果来源和目标",
+              "start": 0.0,
+              "delay": 0.0,
+              "duration": 0.0
+            },
+            {
+              "key": "archer_gale_anim",
+              "type": 2,
+              "typeName": "PlayAnimator",
+              "label": "单位 播放动画",
+              "start": 0.0,
+              "delay": 0.0,
+              "duration": 0.444
+            },
+            {
+              "key": "archer_gale_cast_fx",
+              "type": 8,
+              "typeName": "PlayEffect",
+              "label": "播放普通特效",
+              "start": 0.352,
+              "delay": 0.0,
+              "duration": 0.3
+            },
+            {
+              "key": "archer_gale_bullet",
+              "type": 7,
+              "typeName": "PlayBullet",
+              "label": "播放子弹",
+              "start": 0.18,
+              "delay": 0.0,
+              "duration": 0.172
+            },
+            {
+              "key": "archer_gale_hit",
+              "type": 10,
+              "typeName": "PlayHit",
+              "label": "播放受击",
+              "start": 0.352,
+              "delay": 0.0,
+              "duration": 0.467
+            },
+            {
+              "key": "archer_gale_shake",
+              "type": 15,
+              "typeName": "CameraShake",
+              "label": "相机 震动",
+              "start": 0.352,
+              "delay": 0.0,
+              "duration": 0.12
+            }
+          ],
+          "entities": [
+            {
+              "id": "unit:caster",
+              "kind": "unit",
+              "role": "caster",
+              "prefab": "Archer/Archer",
+              "team": "TeamA",
+              "origin": {
+                "pos": [
+                  -1.8,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "id": "unit:opp:0",
+              "kind": "unit",
+              "role": "opponent",
+              "prefab": "Grunt/Grunt",
+              "team": "TeamB",
+              "origin": {
+                "pos": [
+                  1.8,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "id": "unit:opp:1",
+              "kind": "unit",
+              "role": "opponent",
+              "prefab": "Grunt/Grunt",
+              "team": "TeamB",
+              "origin": {
+                "pos": [
+                  1.8,
+                  0.11,
+                  2.15
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "id": "unit:opp:2",
+              "kind": "unit",
+              "role": "opponent",
+              "prefab": "Grunt/Grunt",
+              "team": "TeamB",
+              "origin": {
+                "pos": [
+                  1.8,
+                  0.11,
+                  -2.15
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "id": "camera:battle",
+              "kind": "camera",
+              "origin": {
+                "pos": [
+                  0.25,
+                  14.0,
+                  -17.6
+                ],
+                "euler": [
+                  38.901,
+                  0.0,
+                  0.0
+                ],
+                "fov": 36.0,
+                "orthographic": true,
+                "orthographicSize": 11.25,
+                "aspect": 0.5625
+              }
+            }
+          ]
+        },
+        "samples": [
+          {
+            "t": 0.0,
+            "e": {
+              "unit:caster": {
+                "pos": [
+                  -1.8,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:0": {
+                "pos": [
+                  1.8,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:1": {
+                "pos": [
+                  1.8,
+                  0.11,
+                  2.15
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:2": {
+                "pos": [
+                  1.8,
+                  0.11,
+                  -2.15
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "camera:battle": {
+                "pos": [
+                  0.25,
+                  14.0,
+                  -17.6
+                ],
+                "euler": [
+                  38.901,
+                  0.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fov": 36.0
+              }
+            }
+          },
+          {
+            "t": 0.871,
+            "e": {
+              "unit:caster": {
+                "pos": [
+                  -1.8,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:0": {
+                "pos": [
+                  1.8,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:1": {
+                "pos": [
+                  1.8,
+                  0.11,
+                  2.15
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:2": {
+                "pos": [
+                  1.8,
+                  0.11,
+                  -2.15
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "camera:battle": {
+                "pos": [
+                  0.25,
+                  14.0,
+                  -17.6
+                ],
+                "euler": [
+                  38.901,
+                  0.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fov": 36.0
+              }
+            }
+          }
+        ],
+        "events": [
+          {
+            "t": 0.0,
+            "kind": "clipEnter",
+            "clipKey": "archer_gale_anim",
+            "type": 2
+          },
+          {
+            "t": 0.41,
+            "kind": "clipEnter",
+            "clipKey": "archer_gale_cast_fx",
+            "type": 8
+          },
+          {
+            "t": 0.41,
+            "kind": "clipEnter",
+            "clipKey": "archer_gale_hit",
+            "type": 10
+          },
+          {
+            "t": 0.41,
+            "kind": "clipEnter",
+            "clipKey": "archer_gale_shake",
+            "type": 15
+          },
+          {
+            "t": 0.445,
+            "kind": "clipExit",
+            "clipKey": "archer_gale_anim",
+            "type": 2
+          },
+          {
+            "t": 0.48,
+            "kind": "clipExit",
+            "clipKey": "archer_gale_shake",
+            "type": 15
+          },
+          {
+            "t": 0.66,
+            "kind": "clipExit",
+            "clipKey": "archer_gale_cast_fx",
+            "type": 8
+          },
+          {
+            "t": 0.848,
+            "kind": "clipExit",
+            "clipKey": "archer_gale_hit",
+            "type": 10
+          }
+        ]
+      },
+      "recordJson": null
+    }
+  },
+  {
+    "id": "archer_gale",
+    "team": "TeamB",
+    "record": {
+      "copiedToClipboard": true,
+      "charCount": 8694,
+      "record": {
+        "schema": "kabu.timeline.preview-record",
+        "version": 1,
+        "meta": {
+          "timelineId": "archer_gale",
+          "skillPath": "E:/Project/little-game/Assets\\Package_Unit/Timeline/Base\\archer_gale.json",
+          "previewQuality": "Low",
+          "casterTeam": "TeamB",
+          "sampleHz": 30.0,
+          "t0": 0.0,
+          "tEnd": 0.875,
+          "cutoff": 15.0,
+          "contentEnd": 0.818,
+          "autoStop": 0.868,
+          "stopReason": "contentAuto"
+        },
+        "catalog": {
+          "clips": [
+            {
+              "key": "archer_gale_cast_targets",
+              "type": 31,
+              "typeName": "SetCastTargets",
+              "label": "配置施法对象",
+              "start": 0.0,
+              "delay": 0.0,
+              "duration": 0.0
+            },
+            {
+              "key": "archer_gale_hit_targets",
+              "type": 32,
+              "typeName": "SetHitTargets",
+              "label": "配置效果来源和目标",
+              "start": 0.0,
+              "delay": 0.0,
+              "duration": 0.0
+            },
+            {
+              "key": "archer_gale_anim",
+              "type": 2,
+              "typeName": "PlayAnimator",
+              "label": "单位 播放动画",
+              "start": 0.0,
+              "delay": 0.0,
+              "duration": 0.444
+            },
+            {
+              "key": "archer_gale_cast_fx",
+              "type": 8,
+              "typeName": "PlayEffect",
+              "label": "播放普通特效",
+              "start": 0.352,
+              "delay": 0.0,
+              "duration": 0.3
+            },
+            {
+              "key": "archer_gale_bullet",
+              "type": 7,
+              "typeName": "PlayBullet",
+              "label": "播放子弹",
+              "start": 0.18,
+              "delay": 0.0,
+              "duration": 0.172
+            },
+            {
+              "key": "archer_gale_hit",
+              "type": 10,
+              "typeName": "PlayHit",
+              "label": "播放受击",
+              "start": 0.352,
+              "delay": 0.0,
+              "duration": 0.467
+            },
+            {
+              "key": "archer_gale_shake",
+              "type": 15,
+              "typeName": "CameraShake",
+              "label": "相机 震动",
+              "start": 0.352,
+              "delay": 0.0,
+              "duration": 0.12
+            }
+          ],
+          "entities": [
+            {
+              "id": "unit:caster",
+              "kind": "unit",
+              "role": "caster",
+              "prefab": "Archer/Archer",
+              "team": "TeamB",
+              "origin": {
+                "pos": [
+                  1.8,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "id": "unit:opp:0",
+              "kind": "unit",
+              "role": "opponent",
+              "prefab": "Grunt/Grunt",
+              "team": "TeamA",
+              "origin": {
+                "pos": [
+                  -1.8,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "id": "unit:opp:1",
+              "kind": "unit",
+              "role": "opponent",
+              "prefab": "Grunt/Grunt",
+              "team": "TeamA",
+              "origin": {
+                "pos": [
+                  -1.8,
+                  0.11,
+                  2.15
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "id": "unit:opp:2",
+              "kind": "unit",
+              "role": "opponent",
+              "prefab": "Grunt/Grunt",
+              "team": "TeamA",
+              "origin": {
+                "pos": [
+                  -1.8,
+                  0.11,
+                  -2.15
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "id": "camera:battle",
+              "kind": "camera",
+              "origin": {
+                "pos": [
+                  0.25,
+                  14.0,
+                  -17.6
+                ],
+                "euler": [
+                  38.901,
+                  0.0,
+                  0.0
+                ],
+                "fov": 36.0,
+                "orthographic": true,
+                "orthographicSize": 11.25,
+                "aspect": 0.5625
+              }
+            }
+          ]
+        },
+        "samples": [
+          {
+            "t": 0.0,
+            "e": {
+              "unit:caster": {
+                "pos": [
+                  1.8,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:0": {
+                "pos": [
+                  -1.8,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:1": {
+                "pos": [
+                  -1.8,
+                  0.11,
+                  2.15
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:2": {
+                "pos": [
+                  -1.8,
+                  0.11,
+                  -2.15
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "camera:battle": {
+                "pos": [
+                  0.25,
+                  14.0,
+                  -17.6
+                ],
+                "euler": [
+                  38.901,
+                  0.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fov": 36.0
+              }
+            }
+          },
+          {
+            "t": 0.875,
+            "e": {
+              "unit:caster": {
+                "pos": [
+                  1.8,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:0": {
+                "pos": [
+                  -1.8,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:1": {
+                "pos": [
+                  -1.8,
+                  0.11,
+                  2.15
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:2": {
+                "pos": [
+                  -1.8,
+                  0.11,
+                  -2.15
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "camera:battle": {
+                "pos": [
+                  0.25,
+                  14.0,
+                  -17.6
+                ],
+                "euler": [
+                  38.901,
+                  0.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fov": 36.0
+              }
+            }
+          }
+        ],
+        "events": [
+          {
+            "t": 0.0,
+            "kind": "clipEnter",
+            "clipKey": "archer_gale_anim",
+            "type": 2
+          },
+          {
+            "t": 0.379,
+            "kind": "clipEnter",
+            "clipKey": "archer_gale_cast_fx",
+            "type": 8
+          },
+          {
+            "t": 0.379,
+            "kind": "clipEnter",
+            "clipKey": "archer_gale_hit",
+            "type": 10
+          },
+          {
+            "t": 0.379,
+            "kind": "clipEnter",
+            "clipKey": "archer_gale_shake",
+            "type": 15
+          },
+          {
+            "t": 0.449,
+            "kind": "clipExit",
+            "clipKey": "archer_gale_anim",
+            "type": 2
+          },
+          {
+            "t": 0.484,
+            "kind": "clipExit",
+            "clipKey": "archer_gale_shake",
+            "type": 15
+          },
+          {
+            "t": 0.668,
+            "kind": "clipExit",
+            "clipKey": "archer_gale_cast_fx",
+            "type": 8
+          },
+          {
+            "t": 0.848,
+            "kind": "clipExit",
+            "clipKey": "archer_gale_hit",
+            "type": 10
+          }
+        ]
+      },
+      "recordJson": null
+    }
+  },
+  {
+    "id": "storm_pool",
+    "team": "TeamA",
+    "record": {
+      "copiedToClipboard": true,
+      "charCount": 8910,
+      "record": {
+        "schema": "kabu.timeline.preview-record",
+        "version": 1,
+        "meta": {
+          "timelineId": "storm_pool",
+          "skillPath": "E:/Project/little-game/Assets\\Package_Unit/Timeline/Base\\storm_pool.json",
+          "previewQuality": "Low",
+          "casterTeam": "TeamA",
+          "sampleHz": 30.0,
+          "t0": 0.0,
+          "tEnd": 0.977,
+          "cutoff": 15.0,
+          "contentEnd": 0.923,
+          "autoStop": 0.973,
+          "stopReason": "contentAuto"
+        },
+        "catalog": {
+          "clips": [
+            {
+              "key": "storm_pool_cast_targets",
+              "type": 31,
+              "typeName": "SetCastTargets",
+              "label": "配置施法对象",
+              "start": 0.0,
+              "delay": 0.0,
+              "duration": 0.0
+            },
+            {
+              "key": "storm_pool_hit_targets",
+              "type": 32,
+              "typeName": "SetHitTargets",
+              "label": "配置效果来源和目标",
+              "start": 0.0,
+              "delay": 0.0,
+              "duration": 0.0
+            },
+            {
+              "key": "storm_pool_anim",
+              "type": 2,
+              "typeName": "PlayAnimator",
+              "label": "单位 播放动画",
+              "start": 0.0,
+              "delay": 0.0,
+              "duration": 0.356
+            },
+            {
+              "key": "storm_pool_cast_fx",
+              "type": 8,
+              "typeName": "PlayEffect",
+              "label": "播放普通特效",
+              "start": 0.373,
+              "delay": 0.0,
+              "duration": 0.55
+            },
+            {
+              "key": "storm_pool_bullet",
+              "type": 7,
+              "typeName": "PlayBullet",
+              "label": "播放子弹",
+              "start": 0.18,
+              "delay": 0.0,
+              "duration": 0.193
+            },
+            {
+              "key": "storm_pool_hit",
+              "type": 10,
+              "typeName": "PlayHit",
+              "label": "播放受击",
+              "start": 0.373,
+              "delay": 0.0,
+              "duration": 0.467
+            },
+            {
+              "key": "storm_pool_shake",
+              "type": 15,
+              "typeName": "CameraShake",
+              "label": "相机 震动",
+              "start": 0.373,
+              "delay": 0.0,
+              "duration": 0.12
+            }
+          ],
+          "entities": [
+            {
+              "id": "unit:caster",
+              "kind": "unit",
+              "role": "caster",
+              "prefab": "Storm/Storm",
+              "team": "TeamA",
+              "origin": {
+                "pos": [
+                  -1.8,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "id": "unit:opp:0",
+              "kind": "unit",
+              "role": "opponent",
+              "prefab": "Grunt/Grunt",
+              "team": "TeamB",
+              "origin": {
+                "pos": [
+                  1.8,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "id": "unit:opp:1",
+              "kind": "unit",
+              "role": "opponent",
+              "prefab": "Grunt/Grunt",
+              "team": "TeamB",
+              "origin": {
+                "pos": [
+                  1.8,
+                  0.11,
+                  2.15
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "id": "unit:opp:2",
+              "kind": "unit",
+              "role": "opponent",
+              "prefab": "Grunt/Grunt",
+              "team": "TeamB",
+              "origin": {
+                "pos": [
+                  1.8,
+                  0.11,
+                  -2.15
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "id": "camera:battle",
+              "kind": "camera",
+              "origin": {
+                "pos": [
+                  0.25,
+                  14.0,
+                  -17.6
+                ],
+                "euler": [
+                  38.901,
+                  0.0,
+                  0.0
+                ],
+                "fov": 36.0,
+                "orthographic": true,
+                "orthographicSize": 11.25,
+                "aspect": 0.5625
+              }
+            }
+          ]
+        },
+        "samples": [
+          {
+            "t": 0.0,
+            "e": {
+              "unit:caster": {
+                "pos": [
+                  -1.8,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:0": {
+                "pos": [
+                  1.8,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:1": {
+                "pos": [
+                  1.8,
+                  0.11,
+                  2.15
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:2": {
+                "pos": [
+                  1.8,
+                  0.11,
+                  -2.15
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "camera:battle": {
+                "pos": [
+                  0.25,
+                  14.0,
+                  -17.6
+                ],
+                "euler": [
+                  38.901,
+                  0.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fov": 36.0
+              }
+            }
+          },
+          {
+            "t": 0.977,
+            "e": {
+              "unit:caster": {
+                "pos": [
+                  -1.8,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:0": {
+                "pos": [
+                  1.8,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:1": {
+                "pos": [
+                  1.8,
+                  0.11,
+                  2.15
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:2": {
+                "pos": [
+                  1.8,
+                  0.11,
+                  -2.15
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "camera:battle": {
+                "pos": [
+                  0.25,
+                  14.0,
+                  -17.6
+                ],
+                "euler": [
+                  38.901,
+                  0.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fov": 36.0
+              }
+            }
+          }
+        ],
+        "events": [
+          {
+            "t": 0.0,
+            "kind": "clipEnter",
+            "clipKey": "storm_pool_anim",
+            "type": 2
+          },
+          {
+            "t": 0.188,
+            "kind": "clipEnter",
+            "clipKey": "storm_pool_bullet",
+            "type": 7
+          },
+          {
+            "t": 0.371,
+            "kind": "clipExit",
+            "clipKey": "storm_pool_anim",
+            "type": 2
+          },
+          {
+            "t": 0.406,
+            "kind": "clipEnter",
+            "clipKey": "storm_pool_cast_fx",
+            "type": 8
+          },
+          {
+            "t": 0.406,
+            "kind": "clipEnter",
+            "clipKey": "storm_pool_hit",
+            "type": 10
+          },
+          {
+            "t": 0.406,
+            "kind": "clipEnter",
+            "clipKey": "storm_pool_shake",
+            "type": 15
+          },
+          {
+            "t": 0.406,
+            "kind": "clipExit",
+            "clipKey": "storm_pool_bullet",
+            "type": 7
+          },
+          {
+            "t": 0.52,
+            "kind": "clipExit",
+            "clipKey": "storm_pool_shake",
+            "type": 15
+          },
+          {
+            "t": 0.848,
+            "kind": "clipExit",
+            "clipKey": "storm_pool_hit",
+            "type": 10
+          },
+          {
+            "t": 0.957,
+            "kind": "clipExit",
+            "clipKey": "storm_pool_cast_fx",
+            "type": 8
+          }
+        ]
+      },
+      "recordJson": null
+    }
+  },
+  {
+    "id": "storm_pool",
+    "team": "TeamB",
+    "record": {
+      "copiedToClipboard": true,
+      "charCount": 8909,
+      "record": {
+        "schema": "kabu.timeline.preview-record",
+        "version": 1,
+        "meta": {
+          "timelineId": "storm_pool",
+          "skillPath": "E:/Project/little-game/Assets\\Package_Unit/Timeline/Base\\storm_pool.json",
+          "previewQuality": "Low",
+          "casterTeam": "TeamB",
+          "sampleHz": 30.0,
+          "t0": 0.0,
+          "tEnd": 0.98,
+          "cutoff": 15.0,
+          "contentEnd": 0.923,
+          "autoStop": 0.973,
+          "stopReason": "contentAuto"
+        },
+        "catalog": {
+          "clips": [
+            {
+              "key": "storm_pool_cast_targets",
+              "type": 31,
+              "typeName": "SetCastTargets",
+              "label": "配置施法对象",
+              "start": 0.0,
+              "delay": 0.0,
+              "duration": 0.0
+            },
+            {
+              "key": "storm_pool_hit_targets",
+              "type": 32,
+              "typeName": "SetHitTargets",
+              "label": "配置效果来源和目标",
+              "start": 0.0,
+              "delay": 0.0,
+              "duration": 0.0
+            },
+            {
+              "key": "storm_pool_anim",
+              "type": 2,
+              "typeName": "PlayAnimator",
+              "label": "单位 播放动画",
+              "start": 0.0,
+              "delay": 0.0,
+              "duration": 0.356
+            },
+            {
+              "key": "storm_pool_cast_fx",
+              "type": 8,
+              "typeName": "PlayEffect",
+              "label": "播放普通特效",
+              "start": 0.373,
+              "delay": 0.0,
+              "duration": 0.55
+            },
+            {
+              "key": "storm_pool_bullet",
+              "type": 7,
+              "typeName": "PlayBullet",
+              "label": "播放子弹",
+              "start": 0.18,
+              "delay": 0.0,
+              "duration": 0.193
+            },
+            {
+              "key": "storm_pool_hit",
+              "type": 10,
+              "typeName": "PlayHit",
+              "label": "播放受击",
+              "start": 0.373,
+              "delay": 0.0,
+              "duration": 0.467
+            },
+            {
+              "key": "storm_pool_shake",
+              "type": 15,
+              "typeName": "CameraShake",
+              "label": "相机 震动",
+              "start": 0.373,
+              "delay": 0.0,
+              "duration": 0.12
+            }
+          ],
+          "entities": [
+            {
+              "id": "unit:caster",
+              "kind": "unit",
+              "role": "caster",
+              "prefab": "Storm/Storm",
+              "team": "TeamB",
+              "origin": {
+                "pos": [
+                  1.8,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "id": "unit:opp:0",
+              "kind": "unit",
+              "role": "opponent",
+              "prefab": "Grunt/Grunt",
+              "team": "TeamA",
+              "origin": {
+                "pos": [
+                  -1.8,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "id": "unit:opp:1",
+              "kind": "unit",
+              "role": "opponent",
+              "prefab": "Grunt/Grunt",
+              "team": "TeamA",
+              "origin": {
+                "pos": [
+                  -1.8,
+                  0.11,
+                  2.15
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "id": "unit:opp:2",
+              "kind": "unit",
+              "role": "opponent",
+              "prefab": "Grunt/Grunt",
+              "team": "TeamA",
+              "origin": {
+                "pos": [
+                  -1.8,
+                  0.11,
+                  -2.15
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "id": "camera:battle",
+              "kind": "camera",
+              "origin": {
+                "pos": [
+                  0.25,
+                  14.0,
+                  -17.6
+                ],
+                "euler": [
+                  38.901,
+                  0.0,
+                  0.0
+                ],
+                "fov": 36.0,
+                "orthographic": true,
+                "orthographicSize": 11.25,
+                "aspect": 0.5625
+              }
+            }
+          ]
+        },
+        "samples": [
+          {
+            "t": 0.0,
+            "e": {
+              "unit:caster": {
+                "pos": [
+                  1.8,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:0": {
+                "pos": [
+                  -1.8,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:1": {
+                "pos": [
+                  -1.8,
+                  0.11,
+                  2.15
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:2": {
+                "pos": [
+                  -1.8,
+                  0.11,
+                  -2.15
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "camera:battle": {
+                "pos": [
+                  0.25,
+                  14.0,
+                  -17.6
+                ],
+                "euler": [
+                  38.901,
+                  0.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fov": 36.0
+              }
+            }
+          },
+          {
+            "t": 0.98,
+            "e": {
+              "unit:caster": {
+                "pos": [
+                  1.8,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:0": {
+                "pos": [
+                  -1.8,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:1": {
+                "pos": [
+                  -1.8,
+                  0.11,
+                  2.15
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:2": {
+                "pos": [
+                  -1.8,
+                  0.11,
+                  -2.15
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "camera:battle": {
+                "pos": [
+                  0.25,
+                  14.0,
+                  -17.6
+                ],
+                "euler": [
+                  38.901,
+                  0.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fov": 36.0
+              }
+            }
+          }
+        ],
+        "events": [
+          {
+            "t": 0.0,
+            "kind": "clipEnter",
+            "clipKey": "storm_pool_anim",
+            "type": 2
+          },
+          {
+            "t": 0.195,
+            "kind": "clipEnter",
+            "clipKey": "storm_pool_bullet",
+            "type": 7
+          },
+          {
+            "t": 0.375,
+            "kind": "clipEnter",
+            "clipKey": "storm_pool_cast_fx",
+            "type": 8
+          },
+          {
+            "t": 0.375,
+            "kind": "clipEnter",
+            "clipKey": "storm_pool_hit",
+            "type": 10
+          },
+          {
+            "t": 0.375,
+            "kind": "clipEnter",
+            "clipKey": "storm_pool_shake",
+            "type": 15
+          },
+          {
+            "t": 0.375,
+            "kind": "clipExit",
+            "clipKey": "storm_pool_anim",
+            "type": 2
+          },
+          {
+            "t": 0.375,
+            "kind": "clipExit",
+            "clipKey": "storm_pool_bullet",
+            "type": 7
+          },
+          {
+            "t": 0.523,
+            "kind": "clipExit",
+            "clipKey": "storm_pool_shake",
+            "type": 15
+          },
+          {
+            "t": 0.848,
+            "kind": "clipExit",
+            "clipKey": "storm_pool_hit",
+            "type": 10
+          },
+          {
+            "t": 0.953,
+            "kind": "clipExit",
+            "clipKey": "storm_pool_cast_fx",
+            "type": 8
+          }
+        ]
+      },
+      "recordJson": null
+    }
+  },
+  {
+    "id": "frost_freeze",
+    "team": "TeamA",
+    "record": {
+      "copiedToClipboard": true,
+      "charCount": 8948,
+      "record": {
+        "schema": "kabu.timeline.preview-record",
+        "version": 1,
+        "meta": {
+          "timelineId": "frost_freeze",
+          "skillPath": "E:/Project/little-game/Assets\\Package_Unit/Timeline/Base\\frost_freeze.json",
+          "previewQuality": "Low",
+          "casterTeam": "TeamA",
+          "sampleHz": 30.0,
+          "t0": 0.0,
+          "tEnd": 0.867,
+          "cutoff": 15.0,
+          "contentEnd": 0.814,
+          "autoStop": 0.864,
+          "stopReason": "contentAuto"
+        },
+        "catalog": {
+          "clips": [
+            {
+              "key": "frost_freeze_cast_targets",
+              "type": 31,
+              "typeName": "SetCastTargets",
+              "label": "配置施法对象",
+              "start": 0.0,
+              "delay": 0.0,
+              "duration": 0.0
+            },
+            {
+              "key": "frost_freeze_hit_targets",
+              "type": 32,
+              "typeName": "SetHitTargets",
+              "label": "配置效果来源和目标",
+              "start": 0.0,
+              "delay": 0.0,
+              "duration": 0.0
+            },
+            {
+              "key": "frost_freeze_anim",
+              "type": 2,
+              "typeName": "PlayAnimator",
+              "label": "单位 播放动画",
+              "start": 0.0,
+              "delay": 0.0,
+              "duration": 0.356
+            },
+            {
+              "key": "frost_freeze_cast_fx",
+              "type": 8,
+              "typeName": "PlayEffect",
+              "label": "播放普通特效",
+              "start": 0.348,
+              "delay": 0.0,
+              "duration": 0.4
+            },
+            {
+              "key": "frost_freeze_bullet",
+              "type": 7,
+              "typeName": "PlayBullet",
+              "label": "播放子弹",
+              "start": 0.18,
+              "delay": 0.0,
+              "duration": 0.168
+            },
+            {
+              "key": "frost_freeze_hit",
+              "type": 10,
+              "typeName": "PlayHit",
+              "label": "播放受击",
+              "start": 0.348,
+              "delay": 0.0,
+              "duration": 0.467
+            },
+            {
+              "key": "frost_freeze_shake",
+              "type": 15,
+              "typeName": "CameraShake",
+              "label": "相机 震动",
+              "start": 0.348,
+              "delay": 0.0,
+              "duration": 0.12
+            }
+          ],
+          "entities": [
+            {
+              "id": "unit:caster",
+              "kind": "unit",
+              "role": "caster",
+              "prefab": "Frost/Frost",
+              "team": "TeamA",
+              "origin": {
+                "pos": [
+                  -1.8,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "id": "unit:opp:0",
+              "kind": "unit",
+              "role": "opponent",
+              "prefab": "Grunt/Grunt",
+              "team": "TeamB",
+              "origin": {
+                "pos": [
+                  1.8,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "id": "unit:opp:1",
+              "kind": "unit",
+              "role": "opponent",
+              "prefab": "Grunt/Grunt",
+              "team": "TeamB",
+              "origin": {
+                "pos": [
+                  1.8,
+                  0.11,
+                  2.15
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "id": "unit:opp:2",
+              "kind": "unit",
+              "role": "opponent",
+              "prefab": "Grunt/Grunt",
+              "team": "TeamB",
+              "origin": {
+                "pos": [
+                  1.8,
+                  0.11,
+                  -2.15
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "id": "camera:battle",
+              "kind": "camera",
+              "origin": {
+                "pos": [
+                  0.25,
+                  14.0,
+                  -17.6
+                ],
+                "euler": [
+                  38.901,
+                  0.0,
+                  0.0
+                ],
+                "fov": 36.0,
+                "orthographic": true,
+                "orthographicSize": 11.25,
+                "aspect": 0.5625
+              }
+            }
+          ]
+        },
+        "samples": [
+          {
+            "t": 0.0,
+            "e": {
+              "unit:caster": {
+                "pos": [
+                  -1.8,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:0": {
+                "pos": [
+                  1.8,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:1": {
+                "pos": [
+                  1.8,
+                  0.11,
+                  2.15
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:2": {
+                "pos": [
+                  1.8,
+                  0.11,
+                  -2.15
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "camera:battle": {
+                "pos": [
+                  0.25,
+                  14.0,
+                  -17.6
+                ],
+                "euler": [
+                  38.901,
+                  0.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fov": 36.0
+              }
+            }
+          },
+          {
+            "t": 0.867,
+            "e": {
+              "unit:caster": {
+                "pos": [
+                  -1.8,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:0": {
+                "pos": [
+                  1.8,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:1": {
+                "pos": [
+                  1.8,
+                  0.11,
+                  2.15
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:2": {
+                "pos": [
+                  1.8,
+                  0.11,
+                  -2.15
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "camera:battle": {
+                "pos": [
+                  0.25,
+                  14.0,
+                  -17.6
+                ],
+                "euler": [
+                  38.901,
+                  0.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fov": 36.0
+              }
+            }
+          }
+        ],
+        "events": [
+          {
+            "t": 0.0,
+            "kind": "clipEnter",
+            "clipKey": "frost_freeze_anim",
+            "type": 2
+          },
+          {
+            "t": 0.195,
+            "kind": "clipEnter",
+            "clipKey": "frost_freeze_bullet",
+            "type": 7
+          },
+          {
+            "t": 0.375,
+            "kind": "clipEnter",
+            "clipKey": "frost_freeze_cast_fx",
+            "type": 8
+          },
+          {
+            "t": 0.375,
+            "kind": "clipEnter",
+            "clipKey": "frost_freeze_hit",
+            "type": 10
+          },
+          {
+            "t": 0.375,
+            "kind": "clipEnter",
+            "clipKey": "frost_freeze_shake",
+            "type": 15
+          },
+          {
+            "t": 0.375,
+            "kind": "clipExit",
+            "clipKey": "frost_freeze_anim",
+            "type": 2
+          },
+          {
+            "t": 0.375,
+            "kind": "clipExit",
+            "clipKey": "frost_freeze_bullet",
+            "type": 7
+          },
+          {
+            "t": 0.488,
+            "kind": "clipExit",
+            "clipKey": "frost_freeze_shake",
+            "type": 15
+          },
+          {
+            "t": 0.777,
+            "kind": "clipExit",
+            "clipKey": "frost_freeze_cast_fx",
+            "type": 8
+          },
+          {
+            "t": 0.848,
+            "kind": "clipExit",
+            "clipKey": "frost_freeze_hit",
+            "type": 10
+          }
+        ]
+      },
+      "recordJson": null
+    }
+  },
+  {
+    "id": "frost_freeze",
+    "team": "TeamB",
+    "record": {
+      "copiedToClipboard": true,
+      "charCount": 8947,
+      "record": {
+        "schema": "kabu.timeline.preview-record",
+        "version": 1,
+        "meta": {
+          "timelineId": "frost_freeze",
+          "skillPath": "E:/Project/little-game/Assets\\Package_Unit/Timeline/Base\\frost_freeze.json",
+          "previewQuality": "Low",
+          "casterTeam": "TeamB",
+          "sampleHz": 30.0,
+          "t0": 0.0,
+          "tEnd": 0.871,
+          "cutoff": 15.0,
+          "contentEnd": 0.814,
+          "autoStop": 0.864,
+          "stopReason": "contentAuto"
+        },
+        "catalog": {
+          "clips": [
+            {
+              "key": "frost_freeze_cast_targets",
+              "type": 31,
+              "typeName": "SetCastTargets",
+              "label": "配置施法对象",
+              "start": 0.0,
+              "delay": 0.0,
+              "duration": 0.0
+            },
+            {
+              "key": "frost_freeze_hit_targets",
+              "type": 32,
+              "typeName": "SetHitTargets",
+              "label": "配置效果来源和目标",
+              "start": 0.0,
+              "delay": 0.0,
+              "duration": 0.0
+            },
+            {
+              "key": "frost_freeze_anim",
+              "type": 2,
+              "typeName": "PlayAnimator",
+              "label": "单位 播放动画",
+              "start": 0.0,
+              "delay": 0.0,
+              "duration": 0.356
+            },
+            {
+              "key": "frost_freeze_cast_fx",
+              "type": 8,
+              "typeName": "PlayEffect",
+              "label": "播放普通特效",
+              "start": 0.348,
+              "delay": 0.0,
+              "duration": 0.4
+            },
+            {
+              "key": "frost_freeze_bullet",
+              "type": 7,
+              "typeName": "PlayBullet",
+              "label": "播放子弹",
+              "start": 0.18,
+              "delay": 0.0,
+              "duration": 0.168
+            },
+            {
+              "key": "frost_freeze_hit",
+              "type": 10,
+              "typeName": "PlayHit",
+              "label": "播放受击",
+              "start": 0.348,
+              "delay": 0.0,
+              "duration": 0.467
+            },
+            {
+              "key": "frost_freeze_shake",
+              "type": 15,
+              "typeName": "CameraShake",
+              "label": "相机 震动",
+              "start": 0.348,
+              "delay": 0.0,
+              "duration": 0.12
+            }
+          ],
+          "entities": [
+            {
+              "id": "unit:caster",
+              "kind": "unit",
+              "role": "caster",
+              "prefab": "Frost/Frost",
+              "team": "TeamB",
+              "origin": {
+                "pos": [
+                  1.8,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "id": "unit:opp:0",
+              "kind": "unit",
+              "role": "opponent",
+              "prefab": "Grunt/Grunt",
+              "team": "TeamA",
+              "origin": {
+                "pos": [
+                  -1.8,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "id": "unit:opp:1",
+              "kind": "unit",
+              "role": "opponent",
+              "prefab": "Grunt/Grunt",
+              "team": "TeamA",
+              "origin": {
+                "pos": [
+                  -1.8,
+                  0.11,
+                  2.15
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "id": "unit:opp:2",
+              "kind": "unit",
+              "role": "opponent",
+              "prefab": "Grunt/Grunt",
+              "team": "TeamA",
+              "origin": {
+                "pos": [
+                  -1.8,
+                  0.11,
+                  -2.15
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "id": "camera:battle",
+              "kind": "camera",
+              "origin": {
+                "pos": [
+                  0.25,
+                  14.0,
+                  -17.6
+                ],
+                "euler": [
+                  38.901,
+                  0.0,
+                  0.0
+                ],
+                "fov": 36.0,
+                "orthographic": true,
+                "orthographicSize": 11.25,
+                "aspect": 0.5625
+              }
+            }
+          ]
+        },
+        "samples": [
+          {
+            "t": 0.0,
+            "e": {
+              "unit:caster": {
+                "pos": [
+                  1.8,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:0": {
+                "pos": [
+                  -1.8,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:1": {
+                "pos": [
+                  -1.8,
+                  0.11,
+                  2.15
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:2": {
+                "pos": [
+                  -1.8,
+                  0.11,
+                  -2.15
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "camera:battle": {
+                "pos": [
+                  0.25,
+                  14.0,
+                  -17.6
+                ],
+                "euler": [
+                  38.901,
+                  0.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fov": 36.0
+              }
+            }
+          },
+          {
+            "t": 0.871,
+            "e": {
+              "unit:caster": {
+                "pos": [
+                  1.8,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  270.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:0": {
+                "pos": [
+                  -1.8,
+                  0.11,
+                  0.0
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:1": {
+                "pos": [
+                  -1.8,
+                  0.11,
+                  2.15
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "unit:opp:2": {
+                "pos": [
+                  -1.8,
+                  0.11,
+                  -2.15
+                ],
+                "euler": [
+                  0.0,
+                  90.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "active": true
+              },
+              "camera:battle": {
+                "pos": [
+                  0.25,
+                  14.0,
+                  -17.6
+                ],
+                "euler": [
+                  38.901,
+                  0.0,
+                  0.0
+                ],
+                "scale": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fov": 36.0
+              }
+            }
+          }
+        ],
+        "events": [
+          {
+            "t": 0.0,
+            "kind": "clipEnter",
+            "clipKey": "frost_freeze_anim",
+            "type": 2
+          },
+          {
+            "t": 0.188,
+            "kind": "clipEnter",
+            "clipKey": "frost_freeze_bullet",
+            "type": 7
+          },
+          {
+            "t": 0.367,
+            "kind": "clipEnter",
+            "clipKey": "frost_freeze_cast_fx",
+            "type": 8
+          },
+          {
+            "t": 0.367,
+            "kind": "clipEnter",
+            "clipKey": "frost_freeze_hit",
+            "type": 10
+          },
+          {
+            "t": 0.367,
+            "kind": "clipEnter",
+            "clipKey": "frost_freeze_shake",
+            "type": 15
+          },
+          {
+            "t": 0.367,
+            "kind": "clipExit",
+            "clipKey": "frost_freeze_anim",
+            "type": 2
+          },
+          {
+            "t": 0.367,
+            "kind": "clipExit",
+            "clipKey": "frost_freeze_bullet",
+            "type": 7
+          },
+          {
+            "t": 0.48,
+            "kind": "clipExit",
+            "clipKey": "frost_freeze_shake",
+            "type": 15
+          },
+          {
+            "t": 0.766,
+            "kind": "clipExit",
+            "clipKey": "frost_freeze_cast_fx",
+            "type": 8
+          },
+          {
+            "t": 0.836,
+            "kind": "clipExit",
+            "clipKey": "frost_freeze_hit",
+            "type": 10
+          }
+        ]
+      },
+      "recordJson": null
+    }
+  }
+]

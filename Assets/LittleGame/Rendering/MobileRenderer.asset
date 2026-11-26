@@ -17,6 +17,7 @@ MonoBehaviour:
     hdrDebugViewPS: {fileID: 4800000, guid: 573620ae32aec764abd4d728906d2587, type: 3}
   m_RendererFeatures:
   - {fileID: 1449015150853593078}
+  - {fileID: 283983997137530978}
   m_RendererFeatureMap: 
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 0}
@@ -58,6 +59,27 @@ MonoBehaviour:
   m_CopyDepthMode: 1
   m_AccurateGbufferNormals: 0
   m_IntermediateTextureMode: 1
+--- !u!114 &283983997137530978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08e3b208ad668f74faf39c889f0584f4, type: 3}
+  m_Name: SceneDarken
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  featureActive: 0
+  sceneLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  darkenSky: 1
+  injectionPoint: 305
+  multiplyColor: {r: 1, g: 1, b: 1, a: 1}
+  darkenShader: {fileID: 4800000, guid: d69a76c9608687847943fd91c634175e, type: 3}
 --- !u!114 &1449015150853593078
 MonoBehaviour:
   m_ObjectHideFlags: 0

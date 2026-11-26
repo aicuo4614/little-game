@@ -13,7 +13,6 @@ namespace LittleGame.Client
     public sealed class BattleApplication : IDisposable
     {
         public const string Changed = "combat.changed";
-        private const string CoreKey = "little-game.client";
         private readonly IRunStore store;
         private readonly IFacade facade;
         public BattleSession Session { get; private set; }
@@ -24,7 +23,7 @@ namespace LittleGame.Client
         public BattleApplication(IRunStore store)
         {
             this.store = store;
-            Facade.RemoveCore(CoreKey); facade = Facade.GetInstance(CoreKey, key => new Facade(key));
+            facade = MVC.Facade ?? throw new InvalidOperationException("MVC 必须先完成初始化");
             try { var save = store?.Load(); Session = save == null ? new BattleSession(FreshSeed()) : BattleSession.Restore(save); }
             catch (Exception e) { Session = new BattleSession(); SaveAvailable = false; LastResult = new CommandResult(true, "旧档无法恢复，已开新局；原档保留：" + e.Message); }
         }
@@ -50,6 +49,6 @@ namespace LittleGame.Client
             try { store.Save(Session.Save()); }
             catch (Exception e) { SaveAvailable = false; PersistenceError?.Invoke("保存失败，原档保留：" + e.Message); }
         }
-        public void Dispose() { SaveCheckpoint(); Facade.RemoveCore(CoreKey); }
+        public void Dispose() { SaveCheckpoint(); facade.RemoveMediator(BattleMediator.MediatorKey); }
     }
 }

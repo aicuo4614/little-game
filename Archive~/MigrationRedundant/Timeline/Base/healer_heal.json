@@ -1,0 +1,186 @@
+{
+  "TimelineId": "healer_heal",
+  "Description": "治疗师回血",
+  "PreviewCasterAddress": "Healer/Healer",
+  "DurationBindClipKey": "healer_heal_hit",
+  "Clips": [
+    {
+      "PreviewTargets": [
+        "$enemy:0"
+      ],
+      "ClipKey": "healer_heal_cast_targets",
+      "PreKey": "",
+      "Type": 31,
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.0
+    },
+    {
+      "PreviewSource": "$caster",
+      "PreviewTargets": [
+        "$enemy:0"
+      ],
+      "ClipKey": "healer_heal_hit_targets",
+      "PreKey": "",
+      "Type": 32,
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.0
+    },
+    {
+      "PrefabPath": "Healer/Healer",
+      "ParamName": "Attack",
+      "AffectedByHitStop": true,
+      "AnimatorStateSpeed": 1.0,
+      "ClipKey": "healer_heal_anim",
+      "PreKey": "",
+      "Type": 2,
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.45,
+      "EventConfigs": [
+        {
+          "EventKey": "healer_heal_evt_launch",
+          "TimelineEventType": 0,
+          "ValueType": 0,
+          "Time": 0.18,
+          "EventName": "launch"
+        }
+      ]
+    },
+    {
+      "EffectPath": "fx_heal_ring",
+      "Subject": 0,
+      "PointData": {
+        "OffsetNodeType": 40,
+        "OffsetPos": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetEuler": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "NeedSetParent": false,
+        "DontFollow": true,
+        "UseOriginalRotation": false,
+        "OverlayCharacterFacing": true,
+        "UseOriginalScale": false
+      },
+      "AffectedByHitStop": true,
+      "ClipKey": "healer_heal_cast_fx",
+      "PreKey": "healer_heal_evt_launch",
+      "Type": 8,
+      "StartTime": 0.18,
+      "DelayTime": 0.0,
+      "Duration": 0.35
+    },
+    {
+      "Path": "fx_heal_orb",
+      "MoveSpeed": 14.0,
+      "FacingType": 0,
+      "BillboardAngleOffset": 0.0,
+      "MoveDelayTime": 0.0,
+      "DelayScaleKeys": [],
+      "TrajectoryType": 0,
+      "ArcHeightFactor": 0.32,
+      "StartData": {
+        "OffsetNodeType": 40,
+        "OffsetPos": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetEuler": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "NeedSetParent": false,
+        "DontFollow": false,
+        "UseOriginalRotation": false,
+        "OverlayCharacterFacing": true,
+        "UseOriginalScale": false
+      },
+      "EndData": {
+        "OffsetNodeType": 43,
+        "OffsetPos": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetEuler": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "NeedSetParent": false,
+        "DontFollow": false,
+        "UseOriginalRotation": false,
+        "OverlayCharacterFacing": true,
+        "UseOriginalScale": false
+      },
+      "ClipKey": "healer_heal_bullet",
+      "PreKey": "healer_heal_evt_launch",
+      "TargetBindingKey": "healer_heal_hit_targets",
+      "Type": 7,
+      "StartTime": 0.18,
+      "DelayTime": 0.0,
+      "Duration": 0.26
+    },
+    {
+      "SpineAnimationDelay": 0.0,
+      "AnimatorParamName": "Hit",
+      "AnimatorDelayTime": 0.0,
+      "EffectPath": "fx_heal_ring",
+      "UnitNodePointData": {
+        "OffsetNodeType": 43,
+        "OffsetPos": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetEuler": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "NeedSetParent": false,
+        "DontFollow": true,
+        "UseOriginalRotation": false,
+        "OverlayCharacterFacing": true,
+        "UseOriginalScale": false
+      },
+      "AffectedByHitStop": true,
+      "ClipKey": "healer_heal_hit",
+      "PreKey": "healer_heal_bullet",
+      "TargetBindingKey": "healer_heal_hit_targets",
+      "Type": 10,
+      "StartTime": 0.44,
+      "DelayTime": 0.0,
+      "Duration": 0.42
+    }
+  ]
+}

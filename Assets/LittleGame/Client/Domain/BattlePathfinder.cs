@@ -11,7 +11,7 @@ namespace LittleGame.Combat
     internal sealed class BattlePathfinder
     {
         private const float MinX = -5.5f, MinZ = -3f, Cell = .25f;
-        private const int Width = 49, Height = 25;
+        private const int Width = 57, Height = 25;
         private readonly Grid grid;
         private readonly PathFinder finder = new PathFinder();
         private readonly List<NavPoint> raw = new List<NavPoint>();

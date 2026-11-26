@@ -1,0 +1,54 @@
+{
+  "TimelineId": "tactic_protect",
+  "Description": "战术护盾保护",
+  "PreviewCasterAddress": "Shield/Shield",
+  "DurationBindClipKey": "tactic_protect_fx",
+  "Clips": [
+    {
+      "PreviewSource": "$caster",
+      "PreviewTargets": [
+        "$enemy:0"
+      ],
+      "ClipKey": "tactic_protect_hit_targets",
+      "PreKey": "",
+      "Type": 32,
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.0
+    },
+    {
+      "EffectPath": "fx_tactic_protect",
+      "Subject": 0,
+      "PointData": {
+        "OffsetNodeType": 1,
+        "OffsetPos": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetEuler": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "NeedSetParent": false,
+        "DontFollow": true,
+        "UseOriginalRotation": false,
+        "OverlayCharacterFacing": true,
+        "UseOriginalScale": false
+      },
+      "AffectedByHitStop": true,
+      "ClipKey": "tactic_protect_fx",
+      "PreKey": "",
+      "Type": 8,
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.8
+    }
+  ]
+}

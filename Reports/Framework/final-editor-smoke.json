@@ -1,0 +1,341 @@
+{
+  "passed": true,
+  "project": {
+    "productName": "符阵军团",
+    "companyName": "DefaultCompany",
+    "unityVersion": "2022.3.62f3c1",
+    "platform": "WindowsEditor",
+    "dataPath": "E:/Project/little-game/Assets",
+    "persistentDataPath": "C:/Users/1250c/AppData/LocalLow/DefaultCompany/符阵军团",
+    "isEditor": true,
+    "isPlaying": true,
+    "isPaused": false,
+    "isCompiling": false,
+    "activeScene": {
+      "name": "Combat",
+      "path": "Assets/Scenes/Combat.unity",
+      "isDirty": false,
+      "rootCount": 2
+    },
+    "message": "项目 符阵军团 / Unity 2022.3.62f3c1"
+  },
+  "framework": {
+    "resourceMode": "EditorSimulateMode",
+    "aotStarted": true,
+    "mainLaunched": true,
+    "mvcInitialized": true,
+    "battleModuleOpen": true,
+    "qualityInitialized": true,
+    "qualityTier": "HighFidelity",
+    "packages": [
+      {
+        "name": "LaunchPackage",
+        "manifestReady": true
+      },
+      {
+        "name": "CodePackage",
+        "manifestReady": true
+      },
+      {
+        "name": "MainPackage",
+        "manifestReady": true
+      },
+      {
+        "name": "ModulePackage",
+        "manifestReady": true
+      },
+      {
+        "name": "UnitPackage",
+        "manifestReady": true
+      },
+      {
+        "name": "EffectPackage",
+        "manifestReady": true
+      },
+      {
+        "name": "ScenePackage",
+        "manifestReady": true
+      }
+    ],
+    "resourceEntries": [
+      {
+        "Key": "ModulePackage|SOConfig/QualitySOConfig",
+        "PackageName": "ModulePackage",
+        "Path": "SOConfig/QualitySOConfig",
+        "RefCount": 1,
+        "HandleValid": true
+      },
+      {
+        "Key": "UnitPackage|Unit/Low/Shield/Shield",
+        "PackageName": "UnitPackage",
+        "Path": "Unit/Low/Shield/Shield",
+        "RefCount": 1,
+        "HandleValid": true
+      }
+    ],
+    "pool": {
+      "active": 1,
+      "idle": 0,
+      "prefabCount": 1
+    },
+    "windows": [
+      {
+        "name": "BattleWindow",
+        "opened": true
+      }
+    ],
+    "note": "这是当前 Unity 宿主的资源与框架状态；Editor 的 DLL 使用编译程序集，不代表手机 HybridCLR 注入通过"
+  },
+  "actor": {
+    "id": 1,
+    "role": "Shield",
+    "model": "Unit_Shield",
+    "active": true,
+    "x": -2.8,
+    "z": 0.0,
+    "facingYaw": 90.0,
+    "movementSpeed": -1.0,
+    "motionPaused": false,
+    "forceWalk": true,
+    "fsmState": "Move",
+    "hasAnimator": true,
+    "hasUnitMono": true,
+    "hitStopped": false,
+    "groundMarkers": [
+      {
+        "name": "StatusRing",
+        "active": false
+      }
+    ],
+    "action": "Walk",
+    "actionTime": 0.3377744,
+    "animationPlaying": true,
+    "renderers": [
+      {
+        "type": "SkinnedMeshRenderer",
+        "visible": true,
+        "shaders": [
+          "Roco/Character"
+        ],
+        "supported": true
+      },
+      {
+        "type": "SkinnedMeshRenderer",
+        "visible": true,
+        "shaders": [
+          "Roco/Character"
+        ],
+        "supported": true
+      },
+      {
+        "type": "MeshRenderer",
+        "visible": true,
+        "shaders": [
+          "Roco/Character"
+        ],
+        "supported": true
+      },
+      {
+        "type": "MeshRenderer",
+        "visible": true,
+        "shaders": [
+          "Roco/Character"
+        ],
+        "supported": true
+      },
+      {
+        "type": "MeshRenderer",
+        "visible": true,
+        "shaders": [
+          "Roco/Character"
+        ],
+        "supported": true
+      }
+    ],
+    "bonePose": [
+      {
+        "name": "root",
+        "x": -0.709323466,
+        "y": -0.006456252,
+        "z": -0.00649747,
+        "w": 0.7048237
+      },
+      {
+        "name": "pelvis",
+        "x": 0.06258683,
+        "y": 0.700006962,
+        "z": -0.06181973,
+        "w": 0.7086971
+      },
+      {
+        "name": "thigh_l",
+        "x": -0.0464205667,
+        "y": 0.062074516,
+        "z": 0.413897634,
+        "w": 0.907017469
+      },
+      {
+        "name": "calf_l",
+        "x": -0.0311009772,
+        "y": 0.04586542,
+        "z": 0.363791764,
+        "w": 0.9298305
+      },
+      {
+        "name": "foot_l",
+        "x": -0.09395032,
+        "y": 0.0226079,
+        "z": -0.0523225181,
+        "w": 0.993944
+      },
+      {
+        "name": "ball_l",
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.7071068,
+        "w": 0.7071068
+      },
+      {
+        "name": "spine_01",
+        "x": -0.0857711,
+        "y": 0.0133744823,
+        "z": 0.07299206,
+        "w": 0.99354744
+      },
+      {
+        "name": "spine_02",
+        "x": -6.919457e-06,
+        "y": 0.00106479728,
+        "z": -0.06861522,
+        "w": 0.997642636
+      },
+      {
+        "name": "spine_03",
+        "x": -0.0420253351,
+        "y": -0.005209115,
+        "z": 0.04492089,
+        "w": 0.998092651
+      },
+      {
+        "name": "neck_01",
+        "x": 3.425554e-05,
+        "y": -0.00143710186,
+        "z": 0.113208026,
+        "w": 0.993570268
+      },
+      {
+        "name": "head",
+        "x": -0.00280382065,
+        "y": 0.000128987769,
+        "z": -0.04595553,
+        "w": 0.9989396
+      },
+      {
+        "name": "clavicle_l",
+        "x": 0.10418877,
+        "y": -0.7700337,
+        "z": -0.0322023034,
+        "w": 0.6286141
+      },
+      {
+        "name": "upperarm_l",
+        "x": -0.141456768,
+        "y": -0.102083325,
+        "z": 0.2845672,
+        "w": 0.9426508
+      },
+      {
+        "name": "lowerarm_l",
+        "x": 1.38157689e-14,
+        "y": -3.14976147e-14,
+        "z": 0.493360966,
+        "w": 0.8698247
+      },
+      {
+        "name": "hand_l",
+        "x": -0.5530113,
+        "y": 0.00430724537,
+        "z": -0.05771149,
+        "w": 0.831161439
+      },
+      {
+        "name": "index_01_l",
+        "x": -0.0009789666,
+        "y": 0.0023777457,
+        "z": -0.378693879,
+        "w": 0.9255184
+      },
+      {
+        "name": "index_02_l",
+        "x": -0.004321334,
+        "y": 0.002589848,
+        "z": 0.886375546,
+        "w": -0.4629396
+      },
+      {
+        "name": "index_03_l",
+        "x": -0.00265719229,
+        "y": 0.0108077927,
+        "z": -0.03571127,
+        "w": 0.9993002
+      },
+      {
+        "name": "thumb_01_l",
+        "x": 0.5924439,
+        "y": -0.3929715,
+        "z": -0.223986834,
+        "w": 0.6666436
+      },
+      {
+        "name": "thumb_02_l",
+        "x": 0.0151221883,
+        "y": -0.03924476,
+        "z": -0.857173562,
+        "w": 0.5133076
+      },
+      {
+        "name": "thumb_03_l",
+        "x": -0.0124975154,
+        "y": -0.00242743082,
+        "z": -0.07109492,
+        "w": 0.997388363
+      },
+      {
+        "name": "weapon_l",
+        "x": 0.7071068,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.7071068
+      },
+      {
+        "name": "shoulderPadJoint_l",
+        "x": -0.007477657,
+        "y": 0.104109183,
+        "z": 0.1131004,
+        "w": 0.988085866
+      },
+      {
+        "name": "CloakBone01",
+        "x": -0.408418238,
+        "y": 0.912794948,
+        "z": -8.090098e-17,
+        "w": -3.08841679e-17
+      }
+    ],
+    "upperArm": [
+      {
+        "x": 347.9603,
+        "y": 343.793182,
+        "z": 35.31645
+      }
+    ]
+  },
+  "console": {
+    "Error": "Console 日志 0 条：",
+    "Exception": "Console 日志 0 条：",
+    "Assert": "Console 日志 0 条：",
+    "Warning": "Console 日志 0 条："
+  },
+  "hostPlayModeReport": "Reports/Combat/unity-verification.json",
+  "defaultNoHttpRequired": true
+}

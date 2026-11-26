@@ -120,7 +120,7 @@
       "seed": 173,
       "phase": "Won",
       "wave": 12,
-      "wave1Duration": 7.3,
+      "wave1Duration": 7.15,
       "march": 275,
       "maxDeployed": 9,
       "alive": 7
@@ -129,7 +129,7 @@
       "seed": 7,
       "phase": "Won",
       "wave": 12,
-      "wave1Duration": 7.3,
+      "wave1Duration": 7.15,
       "march": 275,
       "maxDeployed": 9,
       "alive": 9
@@ -138,7 +138,7 @@
       "seed": 91,
       "phase": "Won",
       "wave": 12,
-      "wave1Duration": 7.3,
+      "wave1Duration": 7.15,
       "march": 275,
       "maxDeployed": 9,
       "alive": 9

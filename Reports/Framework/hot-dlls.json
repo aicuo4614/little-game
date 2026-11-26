@@ -1,0 +1,7 @@
+{
+    "completed": true,
+    "aotMetadataGenerated": false,
+    "target": "Android",
+    "output": "HybridCLRData/HotUpdateDlls/Android",
+    "note": "仅编译和同步 DLL；没有构建 APK，也不代表 HybridCLR 原生运行验收。完整发布需 HybridCLRBuilder.CompileAndSync 生成元数据。"
+}

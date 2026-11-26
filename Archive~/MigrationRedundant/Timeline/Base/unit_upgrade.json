@@ -1,0 +1,54 @@
+{
+  "TimelineId": "unit_upgrade",
+  "Description": "军团升星光效",
+  "PreviewCasterAddress": "Shield/Shield",
+  "DurationBindClipKey": "unit_upgrade_fx",
+  "Clips": [
+    {
+      "PreviewSource": "$caster",
+      "PreviewTargets": [
+        "$enemy:0"
+      ],
+      "ClipKey": "unit_upgrade_hit_targets",
+      "PreKey": "",
+      "Type": 32,
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.0
+    },
+    {
+      "EffectPath": "fx_level_up",
+      "Subject": 0,
+      "PointData": {
+        "OffsetNodeType": 1,
+        "OffsetPos": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetEuler": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "NeedSetParent": false,
+        "DontFollow": true,
+        "UseOriginalRotation": false,
+        "OverlayCharacterFacing": true,
+        "UseOriginalScale": false
+      },
+      "AffectedByHitStop": true,
+      "ClipKey": "unit_upgrade_fx",
+      "PreKey": "",
+      "Type": 8,
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.85
+    }
+  ]
+}

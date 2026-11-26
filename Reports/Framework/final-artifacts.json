@@ -1,0 +1,43 @@
+{
+  "dlls": [
+    {
+      "assembly": "LittleGame.Domain",
+      "sha256": "1265135f6f352ef422084cbe927471f30504d1d236343cd3de134f722cd5c7ab",
+      "synchronized": true
+    },
+    {
+      "assembly": "HotUpdate_UnitCore",
+      "sha256": "db9ffe22674df9139adbcce9ac8ab753c029b26211f7be9ec4af34e8a4a6ddd7",
+      "synchronized": true
+    },
+    {
+      "assembly": "HotUpdate_Main",
+      "sha256": "05bbf2f1da319ca9671621dd59bcb8e545a5ca2a07b8e21f7efea28a30f59a20",
+      "synchronized": true
+    },
+    {
+      "assembly": "LittleGame.Client",
+      "sha256": "77143b3c9cee02ea657b43adee579c31e82c9bd0db9569e35c351c8f13b7225b",
+      "synchronized": true
+    }
+  ],
+  "resourceBuild": {
+    "completed": true,
+    "failedPackage": "",
+    "error": "",
+    "target": "Android",
+    "cdnRoot": "E:\\Project\\little-game\\Library\\LocalCdn",
+    "packages": [
+      "LaunchPackage",
+      "CodePackage",
+      "MainPackage",
+      "ModulePackage",
+      "UnitPackage",
+      "EffectPackage",
+      "ScenePackage"
+    ]
+  },
+  "nativeAotMetadataValidated": false,
+  "phoneApkBuilt": false,
+  "defaultEditorMode": "EditorSimulateMode"
+}

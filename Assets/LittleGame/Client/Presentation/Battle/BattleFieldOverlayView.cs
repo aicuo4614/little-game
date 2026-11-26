@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using LittleGame.Client.Units;
 using LittleGame.Combat;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -20,7 +19,7 @@ namespace LittleGame.Client.Battle
         private static readonly Color BaseSky = new Color(0.65f, 0.71f, 0.82f);
         private static readonly Color BaseEquator = new Color(0.57f, 0.59f, 0.62f);
         private static readonly Color BaseGround = new Color(0.32f, 0.35f, 0.40f);
-        private static readonly Color BaseBg = new Color(0.095f, 0.095f, 0.155f);
+        private static readonly Color BaseBg = BattleView.BattleBackgroundColor;
         private const float BaseSunIntensity = 1.18f;
 
         private Light mainSun;
@@ -34,6 +33,9 @@ namespace LittleGame.Client.Battle
         private Material deployFillMat;
         private Transform dragSpotRing;
         private Material dragSpotMat;
+
+        internal const float BossTelegraphCenterX = .4f;
+        internal const float BossTelegraphLength = 11.6f;
 
         // 首领横向预警带
         private Transform telegraphRoot;
@@ -67,7 +69,7 @@ namespace LittleGame.Client.Battle
             // 2. 首领横向预警带
             telegraphRoot = new GameObject("BossTelegraphDynamic").transform;
             telegraphRoot.SetParent(transform, false);
-            var baseQuad = CreateFlatQuad(telegraphRoot, "TelegraphBase", Vector3.zero, new Vector3(11.6f, 0.02f, 2.25f), new Color(0.85f, 0.18f, 0.14f, 0.40f));
+            var baseQuad = CreateFlatQuad(telegraphRoot, "TelegraphBase", Vector3.zero, new Vector3(BossTelegraphLength, 0.02f, 2.25f), new Color(0.85f, 0.18f, 0.14f, 0.40f));
             telegraphBaseMat = baseQuad.GetComponent<Renderer>().sharedMaterial;
             telegraphFill = CreateFlatQuad(telegraphRoot, "TelegraphProgress", new Vector3(0f, 0.008f, 0f), new Vector3(11.4f, 0.02f, 2.05f), new Color(1f, 0.34f, 0.18f, 0.78f)).transform;
             telegraphFillMat = telegraphFill.GetComponent<Renderer>().sharedMaterial;
@@ -139,17 +141,17 @@ namespace LittleGame.Client.Battle
             }
         }
 
-        public void SyncSelectionCursor(int selectedUnitId, bool visible, CombatUnitRegistry registry)
+        public void SyncSelectionCursor(int selectedUnitId, bool visible, BattleUnitsControl registry)
         {
             if (selectionCursorRoot == null) return;
             bool show = visible && selectedUnitId > 0 && registry != null
-                        && registry.TryGet(selectedUnitId, out var actor) && actor != null && actor.gameObject.activeSelf;
+                        && registry.TryGet(selectedUnitId, out var actor) && actor != null && actor.Active;
             selectionCursorRoot.gameObject.SetActive(show);
             if (!show) return;
             registry.TryGet(selectedUnitId, out var a);
             float t = Time.unscaledTime;
             float pulse = 0.94f + 0.10f * Mathf.Sin(t * 7.5f);
-            selectionCursorRoot.position = new Vector3(a.transform.position.x, 0.152f, a.transform.position.z);
+            selectionCursorRoot.position = new Vector3(a.Transform.position.x, 0.152f, a.Transform.position.z);
             selectionCursorRoot.localScale = Vector3.one * pulse;
             selectionCursorRoot.rotation = Quaternion.Euler(0f, t * 55f, 0f);
             if (selectionInnerRing != null) selectionInnerRing.localRotation = Quaternion.Euler(0f, -t * 110f, 0f);
@@ -157,7 +159,7 @@ namespace LittleGame.Client.Battle
 
         public void SetTargetSceneDarken(float strength) => targetDarken = Mathf.Clamp01(strength);
 
-        public void Sync(BattleSession session, CombatUnitRegistry registry, float unscaledDt)
+        public void Sync(BattleSession session, BattleUnitsControl registry, float unscaledDt)
         {
             if (session == null) return;
             bool fighting = session.Phase == RunPhase.Fighting;
@@ -169,7 +171,7 @@ namespace LittleGame.Client.Battle
             if (showBossWarn)
             {
                 float laneZ = BattleDefinitions.CellZ(session.SlamLane);
-                telegraphRoot.position = new Vector3(0.4f, 0.135f, laneZ);
+                telegraphRoot.position = new Vector3(BossTelegraphCenterX, 0.135f, laneZ);
                 float remain = Mathf.Max(0f, session.SlamAt - session.BattleTime);
                 float progress = Mathf.Clamp01(1f - remain / 2f);
                 float pulse = 0.55f + 0.45f * Mathf.Sin(t * 14f);
@@ -186,11 +188,11 @@ namespace LittleGame.Client.Battle
             // 2. 持续集火准星
             bool showFocus = fighting && session.FocusTarget > 0 && session.FocusUntil > session.BattleTime
                              && registry != null && registry.TryGet(session.FocusTarget, out var focusActor)
-                             && focusActor != null && focusActor.gameObject.activeSelf;
+                             && focusActor != null && focusActor.Active;
             focusMarkerRoot.gameObject.SetActive(showFocus);
             if (showFocus && registry.TryGet(session.FocusTarget, out var fa))
             {
-                focusMarkerRoot.position = new Vector3(fa.transform.position.x, 0.155f, fa.transform.position.z);
+                focusMarkerRoot.position = new Vector3(fa.Transform.position.x, 0.155f, fa.Transform.position.z);
                 float scale = 0.95f + 0.10f * Mathf.Sin(t * 10f);
                 focusMarkerRoot.localScale = Vector3.one * (fa.IsBoss ? 1.95f * scale : scale);
                 focusMarkerRoot.rotation = Quaternion.Euler(0f, t * 90f, 0f);
@@ -246,7 +248,9 @@ namespace LittleGame.Client.Battle
             RenderSettings.ambientSkyColor = BaseSky * factor;
             RenderSettings.ambientEquatorColor = BaseEquator * factor;
             RenderSettings.ambientGroundColor = BaseGround * factor;
-            if (mainCamera != null) mainCamera.backgroundColor = BaseBg * Mathf.Lerp(1f, 0.35f, strength);
+            Color bg = BaseBg * Mathf.Lerp(1f, 0.35f, strength);
+            bg.a = 1f;
+            if (mainCamera != null) mainCamera.backgroundColor = bg;
         }
 
         private static void ApplyMatColor(Material mat, Color col)

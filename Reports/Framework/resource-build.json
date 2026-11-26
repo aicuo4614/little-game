@@ -1,0 +1,16 @@
+{
+    "completed": true,
+    "failedPackage": "",
+    "error": "",
+    "target": "Android",
+    "cdnRoot": "E:\\Project\\little-game\\Library\\LocalCdn",
+    "packages": [
+        "LaunchPackage",
+        "CodePackage",
+        "MainPackage",
+        "ModulePackage",
+        "UnitPackage",
+        "EffectPackage",
+        "ScenePackage"
+    ]
+}

@@ -1,0 +1,217 @@
+{
+  "TimelineId": "frost_freeze",
+  "Description": "冰法师冰冻术",
+  "PreviewCasterAddress": "Frost/Frost",
+  "DurationBindClipKey": "frost_freeze_hit",
+  "Clips": [
+    {
+      "PreviewTargets": [
+        "$enemy:0"
+      ],
+      "ClipKey": "frost_freeze_cast_targets",
+      "PreKey": "",
+      "Type": 31,
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.0
+    },
+    {
+      "PreviewSource": "$caster",
+      "PreviewTargets": [
+        "$enemy:0"
+      ],
+      "ClipKey": "frost_freeze_hit_targets",
+      "PreKey": "",
+      "Type": 32,
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.0
+    },
+    {
+      "PrefabPath": "Frost/Frost",
+      "ParamName": "Attack",
+      "AffectedByHitStop": true,
+      "AnimatorStateSpeed": 1.0,
+      "ClipKey": "frost_freeze_anim",
+      "PreKey": "",
+      "Type": 2,
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.45,
+      "EventConfigs": [
+        {
+          "EventKey": "frost_freeze_evt_launch",
+          "TimelineEventType": 0,
+          "ValueType": 0,
+          "Time": 0.18,
+          "EventName": "launch"
+        }
+      ]
+    },
+    {
+      "EffectPath": "fx_freeze_ring",
+      "Subject": 0,
+      "PointData": {
+        "OffsetNodeType": 40,
+        "OffsetPos": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetEuler": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "NeedSetParent": false,
+        "DontFollow": true,
+        "UseOriginalRotation": false,
+        "OverlayCharacterFacing": true,
+        "UseOriginalScale": false
+      },
+      "AffectedByHitStop": true,
+      "ClipKey": "frost_freeze_cast_fx",
+      "PreKey": "frost_freeze_evt_launch",
+      "Type": 8,
+      "StartTime": 0.18,
+      "DelayTime": 0.0,
+      "Duration": 0.35
+    },
+    {
+      "Path": "fx_ice_lance",
+      "MoveSpeed": 18.0,
+      "FacingType": 0,
+      "BillboardAngleOffset": 0.0,
+      "MoveDelayTime": 0.0,
+      "DelayScaleKeys": [],
+      "TrajectoryType": 1,
+      "ArcHeightFactor": 0.0,
+      "StartData": {
+        "OffsetNodeType": 40,
+        "OffsetPos": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetEuler": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "NeedSetParent": false,
+        "DontFollow": false,
+        "UseOriginalRotation": false,
+        "OverlayCharacterFacing": true,
+        "UseOriginalScale": false
+      },
+      "EndData": {
+        "OffsetNodeType": 43,
+        "OffsetPos": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetEuler": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "NeedSetParent": false,
+        "DontFollow": false,
+        "UseOriginalRotation": false,
+        "OverlayCharacterFacing": true,
+        "UseOriginalScale": false
+      },
+      "ClipKey": "frost_freeze_bullet",
+      "PreKey": "frost_freeze_evt_launch",
+      "TargetBindingKey": "frost_freeze_hit_targets",
+      "Type": 7,
+      "StartTime": 0.18,
+      "DelayTime": 0.0,
+      "Duration": 0.26
+    },
+    {
+      "SpineAnimationDelay": 0.0,
+      "AnimatorParamName": "Hit",
+      "AnimatorDelayTime": 0.0,
+      "EffectPath": "fx_hit_ice",
+      "UnitNodePointData": {
+        "OffsetNodeType": 43,
+        "OffsetPos": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetEuler": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "OffsetScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "NeedSetParent": false,
+        "DontFollow": true,
+        "UseOriginalRotation": false,
+        "OverlayCharacterFacing": true,
+        "UseOriginalScale": false
+      },
+      "AffectedByHitStop": true,
+      "ClipKey": "frost_freeze_hit",
+      "PreKey": "frost_freeze_bullet",
+      "TargetBindingKey": "frost_freeze_hit_targets",
+      "Type": 10,
+      "StartTime": 0.44,
+      "DelayTime": 0.0,
+      "Duration": 0.42
+    },
+    {
+      "PositionStrength": {
+        "x": 0.12,
+        "y": 0.096,
+        "z": 0.0
+      },
+      "RotationStrength": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "Vibrato": 18,
+      "Randomness": 90.0,
+      "EnvelopeType": 0,
+      "ClipKey": "frost_freeze_shake",
+      "PreKey": "frost_freeze_bullet",
+      "Type": 15,
+      "StartTime": 0.44,
+      "DelayTime": 0.0,
+      "Duration": 0.22
+    },
+    {
+      "StartStrength": 0.0,
+      "EndStrength": 0.25,
+      "ClipKey": "frost_freeze_darken",
+      "PreKey": "",
+      "Type": 19,
+      "StartTime": 0.0,
+      "DelayTime": 0.0,
+      "Duration": 0.45
+    }
+  ]
+}
