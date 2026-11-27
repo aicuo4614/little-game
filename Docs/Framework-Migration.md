@@ -27,6 +27,10 @@ Play 启动由 AOT 发起，激活 LaunchPackage → CodePackage 检查/下载/�
 
 `Build Resource Packages` 调用迁入并适配为七包的 YooAsset SBP 构建器。全部包复制到 StreamingAssets 作为内置首包，输出到 Bundles，再同步到本工程 `Library/LocalCdn`，配置为根 `conf.json`；本地 HTTP 使用 8087，游戏 MCP 仍为 3833。没有向外部服务器发布。
 
+## 2026-11-26 Android 离线启动调整
+
+首次进入战斗使用 Launch、Code 和五个内容包随 APK 内置的版本与清单。CodePackage 激活本地清单后加载 AOT 补充元数据与四个热更程序集，后续内容包也使用同样的内置初始化入口。Host 资源更新能力保留给显式流程。Editor 默认继续使用 EditorSimulateMode，勾选 EditorSimulateDevice 可验证内置资源启动，战斗 MCP 的 resourceMode 返回 OfflineBuiltIn。此前 CDN 的验收属于旧启动路径。
+
 ## UI 与技能边界
 
 BattleWindow 管理独立 StatusPanel 和 ActionsPanel；状态组件及刷新缓存已从 HUD 移出，招募动画、构造布局也分文件维护。所有区域共用分层根 Canvas 的缩放和渲染相机，避免嵌套根 Canvas 缩坏按钮。窗口隐藏/关闭清除输入目标、招募动画与临时确认状态。
@@ -60,3 +64,12 @@ MCP 技能工作流为 catalog → read_timeline/revision → edit dryRun → ed
 - `runtime-timing.json`：正常玩法观察1260个施法实例，10种普攻/基础技能时间轴的规则与表现命中排程最大差0.0287952秒，低于0.05秒规则步长。这是排程比较，不是逐像素接触或手机延迟测量。
 - `branch-runtime.json`：从零正常招募升星，分别选择堡垒/穿透/强化雷池/深寒与战吼/飓风/链雷/冰甲两组分支，八种分支均已观察到正常命中。与基础技能共用时间轴的雷池/深寒只统计已选择分支的来源单位；第一组在第8波的奖励阶段恢复验证，未跳波、刷兵或改数值。两组排程最大差分别0.028693335与0.028480159秒，Console四类零问题。22份技能的编辑器配置、双阵营和逐项截图见review与portrait-matrix记录。
 - 本轮没有构建手机APK、资源包或重新发布HybridCLR产物；默认EditorSimulateMode从当前源资产验证，旧已构建资源包不视为同步更新。手机、IAP和设备性能仍未验收。
+
+
+## 2026-11-27 Android 黑屏修复与真机验收
+
+用户明确授权最新包构建、覆盖安装与手机日志分析。本次在 Samsung SM-G9550 / Android 7.0 / ARM64 复现并修复：单位外观与 UnitMono 从原生 Resources 加载导致脚本缺失和序列化布局不一致；主包 URP 引用的 RocoCharacterOutlineFeature 原先处于热更程序集；修复资源后，手机首帧完整 BattleSession.Snapshot 诊断路径仍触发 SIGSEGV。外观和模型统一通过 UnitPackage 读取，描边 Feature 移至 AOT Kabu.Rendering；手机持续诊断改为 JsonTextWriter 逐项写入必要战况，格式明确为 little-game.mobile-observation/v2，不再调用完整匿名泛型快照。具体底层泛型表达式缺陷尚未定位，不能宣称已经修好手机完整 MCP 快照。
+
+已执行完整 HybridCLR GenerateAll / DLL 同步、最新代码和七包构建、IL2CPP ARM64 APK 覆盖安装。保留原第4波奖励存档，通过实际 ADB 触屏选奖励、下一波、招募、开战确认、第5波自然胜利、进入第6波并拖动部署；强制停止后重新启动，位置与阶段正确恢复，最终两次启动和实战进程日志均无 Unity Error / 原生 CRASH。手机停在第6波准备界面。Editor 编译、包地址、招募和共用 pointer 取消/部署/开战检查通过。规则和 Editor MCP schema6 不变；手机观察文件为独立精简格式，字段差异见 Tools/Mobile/README.md。
+
+证据：Reports/Mobile/black-screen-20261127/validation.json；首屏证据 Reports/Mobile/20261127-114220。仅覆盖上述流程，不代表整局12波、远程热更下载、IAP、所有机型或完整性能验收。没有卸载、清数据、提交或推送代码。

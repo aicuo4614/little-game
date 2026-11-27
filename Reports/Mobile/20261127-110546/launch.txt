@@ -1,0 +1,7 @@
+Starting: Intent { cmp=com.littlegame.teardown.dev/com.unity3d.player.UnityPlayerActivity launchParam=MultiScreenLaunchParams { mDisplayId=0 mBaseDisplayId=0 mFlags=0 } }
+Status: ok
+Activity: com.littlegame.teardown.dev/com.unity3d.player.UnityPlayerActivity
+ThisTime: 285
+TotalTime: 285
+WaitTime: 309
+Complete

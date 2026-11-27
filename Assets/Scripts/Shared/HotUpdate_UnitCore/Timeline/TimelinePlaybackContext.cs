@@ -5,6 +5,8 @@ using UnityEngine;
 /// <summary>预览和实战提供的场景依赖；不包含编辑器 API、网络或资源包实现。</summary>
 public sealed class TimelinePlaybackContext
 {
+    /// <summary>实战顺播增量推进粒子；预览仍使用绝对时间重采样。</summary>
+    public bool IncrementalEffects;
     /// <summary>隐藏选中的战斗 UI 层并返回恢复句柄；预览宿主可提供空恢复句柄。</summary>
     public Func<TimelineHideBattleUILayerType, Action> HideBattleUI;
     /// <summary>按配置路径取得已预加载的天空盒材质；宿主负责工程路径与资源地址转换。</summary>

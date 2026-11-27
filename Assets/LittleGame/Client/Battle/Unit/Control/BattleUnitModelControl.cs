@@ -12,6 +12,7 @@ namespace LittleGame.Client.Battle
         private GameObject modelInstance;
         private GameObject modelPrefab;
         private bool pooled;
+        private bool appearanceLoaded;
         private Renderer[] renderers = Array.Empty<Renderer>();
 
         public Transform Model { get; private set; }
@@ -30,10 +31,11 @@ namespace LittleGame.Client.Battle
         {
             base.Init(owner);
 
-            var appearance = Resources.Load<UnitAppearance>("UnitAppearances/" + owner.RoleKey);
+            var appearance = UnitAppearance.Load(owner.RoleKey);
+            appearanceLoaded = appearance != null;
             modelPrefab = appearance != null && appearance.Model != null
                 ? appearance.Model
-                : Resources.Load<GameObject>("UnitModels/" + owner.RoleKey);
+                : null;
             LogicalHeight = appearance != null ? appearance.Height : (owner.IsBoss ? 2.5f : 1.05f);
 
             if (modelPrefab != null)
@@ -185,6 +187,11 @@ namespace LittleGame.Client.Battle
             }
 
             Model = null;
+            if (appearanceLoaded)
+            {
+                UnitAppearance.Release(Owner.RoleKey);
+                appearanceLoaded = false;
+            }
             UnitMono = null;
             Animator = null;
             renderers = Array.Empty<Renderer>();

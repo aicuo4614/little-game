@@ -14,6 +14,8 @@ namespace LittleGame.Client
         {
             foreach (Transform child in dynamic) { child.gameObject.SetActive(false); Destroy(child.gameObject); }
             targets.Clear();
+            statusPanel.RegisterTargets();
+            footer.anchorMax = new Vector2(1, app.Session.Phase == RunPhase.Fighting ? .115f : .325f);
             Array.Clear(reelCardImages, 0, 9);
             Array.Clear(reelIconImages, 0, 9);
             Array.Clear(reelTileRects, 0, 9);
@@ -68,8 +70,8 @@ namespace LittleGame.Client
                         continue;
                     }
                     var t = reserve[i];
-                    var btnRect = Button("unit_" + t.Id, BattleDefinitions.Name(t.Kind) + "\n" + new string('★', t.Star), rect,
-                        () => ShowTip("拖动或双击" + BattleDefinitions.Name(t.Kind) + "上阵", isError: false), t.Id, t.Star >= 2);
+                    var btnRect = Button("unit_" + t.Id, t.Definition.Name + "\n" + new string('★', t.Star), rect,
+                        () => ShowTip("拖动或双击" + t.Definition.Name + "上阵", isError: false), t.Id, t.Star >= 2);
                     reserveSlotRects[i] = btnRect;
                 }
 
@@ -81,12 +83,8 @@ namespace LittleGame.Client
             }
             else if (s.Phase == RunPhase.Fighting)
             {
-                Text(dynamic, "选定战术后点击战场目标或区域，瞄准时暂停", new Rect(.06f, .249f, .88f, .034f), 13, TextAnchor.MiddleCenter, new Color(.73f, .7f, .8f));
-                Button("aim_focus", "集火目标", new Rect(.05f, .128f, .42f, .104f), () => Submit(new BattleCommand { Kind = CommandKind.Aim, Aim = AimKind.Focus }));
-                Button("aim_protect", "护盾保护", new Rect(.53f, .128f, .42f, .104f), () => Submit(new BattleCommand { Kind = CommandKind.Aim, Aim = AimKind.Protect }));
                 Button("pause", s.Paused ? "继续" : "暂停", new Rect(.05f, .035f, .27f, .06f), () => Submit(new BattleCommand { Kind = CommandKind.Pause, Flag = !s.Paused }));
-                Button("speed", s.Speed + "倍速", new Rect(.37f, .035f, .27f, .06f), () => Submit(new BattleCommand { Kind = CommandKind.SetSpeed, Speed = s.Speed == 1 ? 2 : 1 }));
-                Button("cancel_aim", "取消瞄准", new Rect(.69f, .035f, .27f, .06f), () => Submit(new BattleCommand { Kind = CommandKind.CancelAim }));
+                Button("speed", s.Speed + "倍速", new Rect(.68f, .035f, .27f, .06f), () => Submit(new BattleCommand { Kind = CommandKind.SetSpeed, Speed = s.Speed == 1 ? 2 : 1 }));
             }
             else if (s.Phase == RunPhase.Reward)
             {
@@ -99,7 +97,7 @@ namespace LittleGame.Client
             }
             else
             {
-                Text(dynamic, s.Phase == RunPhase.Won ? "大捷！十二波无尽远征全胜" : s.Phase == RunPhase.Lost ? "全军覆没 · 调整阵容再战" : "本波告捷 · 全员满血恢复，人口经验 +2", new Rect(.05f, .17f, .9f, .09f), 20, TextAnchor.MiddleCenter);
+                Text(dynamic, s.Phase == RunPhase.Won ? "大捷！第一关远征全胜" : s.Phase == RunPhase.Lost ? "全军覆没 · 调整阵容再战" : "本波告捷 · 全员满血恢复，人口经验 +2", new Rect(.05f, .17f, .9f, .09f), 20, TextAnchor.MiddleCenter);
                 if (s.Phase == RunPhase.WaveResult) Button("next_wave", "继续推进", new Rect(.15f, .05f, .7f, .085f), () => { ClearSelection(); Submit(new BattleCommand { Kind = CommandKind.NextWave }); });
                 else Button("new_run", "重新远征", new Rect(.15f, .05f, .7f, .085f), () => Submit(new BattleCommand { Kind = CommandKind.NewRun, Seed = BattleApplication.FreshSeed() }));
             }
@@ -130,20 +128,19 @@ namespace LittleGame.Client
 
         private RectTransform Button(string id, string label, Rect area, Action click, int unitId = 0, bool accent = false)
         {
-            string sprite = id.StartsWith("unit_") ? (accent ? "CardGold" : "Card") : id == "start_wave" || id == "confirm_accept" || id == "next_wave" || id == "new_run" ? "ButtonBlue" : id == "spin" || id.StartsWith("reward_") ? "ButtonGold" : id.StartsWith("aim_") ? (app.Session.Tactics > 0 ? "ButtonBlue" : "ButtonDark") : "ButtonGray";
+            string sprite = id.StartsWith("unit_") ? (accent ? "CardGold" : "Card") : id == "start_wave" || id == "confirm_accept" || id == "next_wave" || id == "new_run" ? "ButtonBlue" : id == "spin" || id.StartsWith("reward_") ? "ButtonGold" : "ButtonGray";
             Color tint = id.StartsWith("unit_") ? (accent ? new Color(1, .95f, .72f) : new Color(.9f, .9f, 1)) : id == "spin" && app.Session.Spins <= 0 ? new Color(.55f, .55f, .62f) : Color.white;
             var rect = Panel(dynamic, "Btn_" + id, area, Color.white);
             CombatUiSkin.Decorate(rect, sprite, tint);
             var textColor = sprite == "ButtonGold" ? new Color(.22f, .12f, .04f) : id.StartsWith("unit_") ? CombatUiSkin.Paper : Color.white;
-            bool iconBtn = id == "aim_focus" || id == "aim_protect" || id.StartsWith("unit_");
+            bool iconBtn = id.StartsWith("unit_");
             if (id.StartsWith("unit_"))
             {
                 var unit = app.Session.Troops.FirstOrDefault(u => u.Id == unitId);
-                if (unit != null) Icon(rect, CombatUiSkin.TroopIcon((int)unit.Kind), new Rect(.27f, .4f, .46f, .52f), unit.Kind == TroopKind.Frost ? new Color(.55f, .9f, 1) : (Color?)null);
+                if (unit != null) Icon(rect, "Helmet", new Rect(.27f, .4f, .46f, .52f)).sprite = CombatUiSkin.Portrait(unit.Identity);
             }
-            else if (id == "aim_focus" || id == "aim_protect") Icon(rect, id == "aim_focus" ? "Target" : "Protect", new Rect(.08f, .24f, .26f, .52f));
-            var text = Text(rect, label, id.StartsWith("unit_") ? new Rect(.04f, .02f, .92f, .44f) : iconBtn ? new Rect(.35f, .05f, .61f, .9f) : new Rect(.05f, .05f, .9f, .9f), id.StartsWith("unit_") ? 10 : id == "spin" || id == "start_wave" || id.StartsWith("aim_") ? 19 : 14, iconBtn && !id.StartsWith("unit_") ? TextAnchor.MiddleLeft : TextAnchor.MiddleCenter, textColor);
-            if (id == "spin" || id == "start_wave" || id == "confirm_accept" || id.StartsWith("aim_")) text.fontStyle = FontStyle.Bold;
+            var text = Text(rect, label, id.StartsWith("unit_") ? new Rect(.04f, .02f, .92f, .44f) : iconBtn ? new Rect(.35f, .05f, .61f, .9f) : new Rect(.05f, .05f, .9f, .9f), id.StartsWith("unit_") ? 10 : id == "spin" || id == "start_wave" ? 19 : 14, iconBtn && !id.StartsWith("unit_") ? TextAnchor.MiddleLeft : TextAnchor.MiddleCenter, textColor);
+            if (id == "spin" || id == "start_wave" || id == "confirm_accept") text.fontStyle = FontStyle.Bold;
             targets.Add(new HudTarget { Id = id, Rect = rect, Click = click, UnitId = unitId, UiCamera = uiCamera });
             return rect;
         }

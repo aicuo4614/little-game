@@ -1,0 +1,1077 @@
+--------- beginning of main
+03-28 18:25:38.258 16638 16638 E Zygote  : v2
+--------- beginning of system
+03-28 18:25:38.258 16638 16638 I libpersona: KNOX_SDCARD checking this for 11108
+03-28 18:25:38.258 16638 16638 I libpersona: KNOX_SDCARD not a persona
+03-28 18:25:38.260 16638 16638 E Zygote  : accessInfo : 0
+03-28 18:25:38.260 16638 16638 W SELinux : SELinux selinux_android_compute_policy_index : Policy Index[2],  Con:u:r:zygote:s0 RAM:SEPF_SECMOBILE_7.0_0010, [-1 -1 -1 -1 0 1]
+03-28 18:25:38.262 16638 16638 I SELinux : SELinux: seapp_context_lookup: seinfo=untrusted, level=s0:c512,c768, pkgname=com.littlegame.teardown.dev 
+03-28 18:25:38.269 16638 16638 I art     : Late-enabling -Xcheck:jni
+03-28 18:25:38.292 16638 16638 D TimaKeyStoreProvider: TimaKeyStore is not enabled: cannot add TimaSignature Service and generateKeyPair Service
+03-28 18:25:38.326 16638 16638 I ResourcesManager: updateResourcesForOpenThemeChange for Desktop mode 
+03-28 18:25:38.369 16638 16638 V ActivityThread: performLaunchActivity: mActivityCurrentConfig={0 1.0 themeSeq = 0 showBtnBg = 0 ?mcc?mnc [zh_CN_#Hans] ldltr sw411dp w411dp h773dp 420dpi nrml long port ?dc finger -keyb/v/h -nav/h mkbd/h desktop/d s.4}
+03-28 18:25:38.445 16638 16638 I IL2CPP  : JNI_OnLoad
+03-28 18:25:38.446 16638 16638 D Unity   : CommandLine:  
+03-28 18:25:38.460 16638 16638 I art     : Rejecting re-init on previously-failed class java.lang.Class<com.unity3d.player.d>: java.lang.NoClassDefFoundError: Failed resolution of: Landroid/window/OnBackInvokedCallback;
+03-28 18:25:38.460 16638 16638 I art     :   at com.unity3d.player.C com.unity3d.player.D.a(java.lang.Object, int, java.lang.Runnable) (SourceFile:-1)
+03-28 18:25:38.460 16638 16638 I art     :   at void com.unity3d.player.UnityPlayer.<init>(android.content.Context, com.unity3d.player.IUnityPlayerLifecycleEvents) (SourceFile:-1)
+03-28 18:25:38.460 16638 16638 I art     :   at void com.unity3d.player.UnityPlayerActivity.onCreate(android.os.Bundle) (UnityPlayerActivity.java:40)
+03-28 18:25:38.460 16638 16638 I art     :   at void android.app.Activity.performCreate(android.os.Bundle) (Activity.java:6955)
+03-28 18:25:38.460 16638 16638 I art     :   at void android.app.Instrumentation.callActivityOnCreate(android.app.Activity, android.os.Bundle) (Instrumentation.java:1126)
+03-28 18:25:38.460 16638 16638 I art     :   at android.app.Activity android.app.ActivityThread.performLaunchActivity(android.app.ActivityThread$ActivityClientRecord, android.content.Intent) (ActivityThread.java:2927)
+03-28 18:25:38.460 16638 16638 I art     :   at void android.app.ActivityThread.handleLaunchActivity(android.app.ActivityThread$ActivityClientRecord, android.content.Intent, java.lang.String) (ActivityThread.java:3045)
+03-28 18:25:38.460 16638 16638 I art     :   at void android.app.ActivityThread.-wrap14(android.app.ActivityThread, android.app.ActivityThread$ActivityClientRecord, android.content.Intent, java.lang.String) (ActivityThread.java:-1)
+03-28 18:25:38.460 16638 16638 I art     :   at void android.app.ActivityThread$H.handleMessage(android.os.Message) (ActivityThread.java:1642)
+03-28 18:25:38.460 16638 16638 I art     :   at void android.os.Handler.dispatchMessage(android.os.Message) (Handler.java:102)
+03-28 18:25:38.460 16638 16638 I art     :   at void android.os.Looper.loop() (Looper.java:154)
+03-28 18:25:38.460 16638 16638 I art     :   at void android.app.ActivityThread.main(java.lang.String[]) (ActivityThread.java:6776)
+03-28 18:25:38.460 16638 16638 I art     :   at java.lang.Object java.lang.reflect.Method.invoke!(java.lang.Object, java.lang.Object[]) (Method.java:-2)
+03-28 18:25:38.460 16638 16638 I art     :   at void com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run() (ZygoteInit.java:1520)
+03-28 18:25:38.460 16638 16638 I art     :   at void com.android.internal.os.ZygoteInit.main(java.lang.String[]) (ZygoteInit.java:1410)
+03-28 18:25:38.460 16638 16638 I art     : Caused by: java.lang.ClassNotFoundException: Didn't find class "android.window.OnBackInvokedCallback" on path: DexPathList[[zip file "/data/app/com.littlegame.teardown.dev-1/base.apk"],nativeLibraryDirectories=[/data/app/com.littlegame.teardown.dev-1/lib/arm64, /data/app/com.littlegame.teardown.dev-1/base.apk!/lib/arm64-v8a, /system/lib64, /vendor/lib64]]
+03-28 18:25:38.460 16638 16638 I art     :   at java.lang.Class dalvik.system.BaseDexClassLoader.findClass(java.lang.String) (BaseDexClassLoader.java:56)
+03-28 18:25:38.460 16638 16638 I art     :   at java.lang.Class java.lang.ClassLoader.loadClass(java.lang.String, boolean) (ClassLoader.java:380)
+03-28 18:25:38.460 16638 16638 I art     :   at java.lang.Class java.lang.ClassLoader.loadClass(java.lang.String) (ClassLoader.java:312)
+03-28 18:25:38.460 16638 16638 I art     :   at com.unity3d.player.C com.unity3d.player.D.a(java.lang.Object, int, java.lang.Runnable) (SourceFile:-1)
+03-28 18:25:38.460 16638 16638 I art     :   at void com.unity3d.player.UnityPlayer.<init>(android.content.Context, com.unity3d.player.IUnityPlayerLifecycleEvents) (SourceFile:-1)
+03-28 18:25:38.460 16638 16638 I art     :   at void com.unity3d.player.UnityPlayerActivity.onCreate(android.os.Bundle) (UnityPlayerActivity.java:40)
+03-28 18:25:38.460 16638 16638 I art     :   at void android.app.Activity.performCreate(android.os.Bundle) (Activity.java:6955)
+03-28 18:25:38.460 16638 16638 I art     :   at void android.app.Instrumentation.callActivityOnCreate(android.app.Activity, android.os.Bundle) (Instrumentation.java:1126)
+03-28 18:25:38.460 16638 16638 I art     :   at android.app.Activity android.app.ActivityThread.performLaunchActivity(android.app.ActivityThread$ActivityClientRecord, android.content.Intent) (ActivityThread.java:2927)
+03-28 18:25:38.460 16638 16638 I art     :   at void android.app.ActivityThread.handleLaunchActivity(android.app.ActivityThread$ActivityClientRecord, android.content.Intent, java.lang.String) (ActivityThread.java:3045)
+03-28 18:25:38.460 16638 16638 I art     :   at void android.app.ActivityThread.-wrap14(android.app.ActivityThread, android.app.ActivityThread$ActivityClientRecord, android.content.Intent, java.lang.String) (ActivityThread.java:-1)
+03-28 18:25:38.460 16638 16638 I art     :   at void android.app.ActivityThread$H.handleMessage(android.os.Message) (ActivityThread.java:1642)
+03-28 18:25:38.460 16638 16638 I art     :   at void android.os.Handler.dispatchMessage(android.os.Message) (Handler.java:102)
+03-28 18:25:38.460 16638 16638 I art     :   at void android.os.Looper.loop() (Looper.java:154)
+03-28 18:25:38.460 16638 16638 I art     :   at void android.app.ActivityThread.main(java.lang.String[]) (ActivityThread.java:6776)
+03-28 18:25:38.460 16638 16638 I art     :   at java.lang.Object java.lang.reflect.Method.invoke!(java.lang.Object, java.lang.Object[]) (Method.java:-2)
+03-28 18:25:38.460 16638 16638 I art     :   at void com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run() (ZygoteInit.java:1520)
+03-28 18:25:38.460 16638 16638 I art     :   at void com.android.internal.os.ZygoteInit.main(java.lang.String[]) (ZygoteInit.java:1410)
+03-28 18:25:38.460 16638 16638 I art     : 
+03-28 18:25:38.476 16638 16638 I Unity   : onResume
+03-28 18:25:38.491 16638 16638 D Choreographer: init sf_choreo_doframe   debug_Level : 0x4f4cdebug_game_running : false
+03-28 18:25:38.494 16638 16638 I SemDesktopModeManager: registerListener: android.view.ViewRootImpl$3@538941a
+03-28 18:25:38.500 16638 16638 D InputTransport: Input channel constructed: fd=61
+03-28 18:25:38.501 16638 16638 D ViewRootImpl@c532b4b[UnityPlayerActivity]: setView = DecorView@d9c7928[UnityPlayerActivity] touchMode=true
+03-28 18:25:38.522 16638 16638 W Activity: AppLock checkAppLockState locked:false verifying:false pkgName = com.littlegame.teardown.dev isInMultiWindowMode:false
+03-28 18:25:38.522 16638 16638 V InputMethodManager: Not IME target window, ignoring
+03-28 18:25:38.522 16638 16638 D ViewRootImpl@c532b4b[UnityPlayerActivity]: dispatchAttachedToWindow
+03-28 18:25:38.539 16638 16638 D ViewRootImpl@c532b4b[UnityPlayerActivity]: Relayout returned: oldFrame=[0,0][0,0] newFrame=[0,0][1080,2220] result=0x27 surface={isValid=true 548200097280} surfaceGenerationChanged=true
+03-28 18:25:38.561 16638 16638 D SurfaceView: Relayout returned: oldFrame=[0,0][0,0] newFrame=[0,0][1080,2220] result=0x7 surface={Surface(name=null)/@0xb4bb8c3 isValid=true 548200104448}
+03-28 18:25:38.561 16638 16689 D Unity   : SetWindow 0 0x7fa345c210
+03-28 18:25:38.561 16638 16689 D Unity   : SetWindow 0 0x7fa345c210
+03-28 18:25:38.570 16638 16638 D ViewRootImpl@c532b4b[UnityPlayerActivity]: Relayout returned: oldFrame=[0,0][1080,2220] newFrame=[0,0][1080,2220] result=0x1 surface={isValid=true 548200097280} surfaceGenerationChanged=false
+03-28 18:25:38.577 16638 16638 D SurfaceView: Relayout returned: oldFrame=[0,0][1080,2220] newFrame=[0,0][1080,2220] result=0x1 surface={Surface(name=null)/@0xb4bb8c3 isValid=true 547901693952}
+03-28 18:25:38.606 16638 16638 D ViewRootImpl@c532b4b[UnityPlayerActivity]: MSG_RESIZED_REPORT: frame=Rect(0, 0 - 1080, 2220) ci=Rect(0, 0 - 0, 0) vi=Rect(0, 0 - 0, 0) or=1
+03-28 18:25:38.607 16638 16638 D ViewRootImpl@c532b4b[UnityPlayerActivity]: MSG_WINDOW_FOCUS_CHANGED 1
+03-28 18:25:38.607 16638 16638 I Unity   : windowFocusChanged: true
+03-28 18:25:38.613 16638 16638 V InputMethodManager: Starting input: tba=android.view.inputmethod.EditorInfo@b5b4540 nm : com.littlegame.teardown.dev ic=null
+03-28 18:25:38.613 16638 16638 I InputMethodManager: [IMM] startInputInner - mService.startInputOrWindowGainedFocus
+03-28 18:25:38.616 16638 16689 I Unity   : MemoryManager: Using 'Dynamic Heap' Allocator.
+03-28 18:25:38.616 16638 16689 D Unity   : [UnityMemory] Configuration Parameters - Can be set up in boot.config
+03-28 18:25:38.616 16638 16689 D Unity   :     "memorysetup-allocator-temp-initial-block-size-main=262144"
+03-28 18:25:38.616 16638 16689 D Unity   :     "memorysetup-allocator-temp-initial-block-size-worker=262144"
+03-28 18:25:38.616 16638 16689 D Unity   :     "memorysetup-bucket-allocator-granularity=16"
+03-28 18:25:38.616 16638 16689 D Unity   :     "memorysetup-bucket-allocator-bucket-count=8"
+03-28 18:25:38.616 16638 16689 D Unity   :     "memorysetup-bucket-allocator-block-size=4194304"
+03-28 18:25:38.616 16638 16689 D Unity   :     "memorysetup-bucket-allocator-block-count=1"
+03-28 18:25:38.616 16638 16689 D Unity   :     "memorysetup-main-allocator-block-size=16777216"
+03-28 18:25:38.616 16638 16689 D Unity   :     "memorysetup-thread-allocator-block-size=16777216"
+03-28 18:25:38.616 16638 16689 D Unity   :     "memorysetup-gfx-main-allocator-block-size=16777216"
+03-28 18:25:38.616 16638 16689 D Unity   :     "memorysetup-gfx-thread-allocator-block-size=16777216"
+03-28 18:25:38.616 16638 16689 D Unity   :     "memorysetup-cache-allocator-block-size=4194304"
+03-28 18:25:38.616 16638 16689 D Unity   :     "memorysetup-typetree-allocator-block-size=2097152"
+03-28 18:25:38.616 16638 16689 D Unity   :     "memorysetup-profiler-bucket-allocator-granularity=16"
+03-28 18:25:38.616 16638 16689 D Unity   :     "memorysetup-profiler-bucket-allocator-bucket-count=8"
+03-28 18:25:38.616 16638 16689 D Unity   :     "memorysetup-profiler-bucket-allocator-block-size=4194304"
+03-28 18:25:38.616 16638 16689 D Unity   :     "memorysetup-profiler-bucket-allocator-block-count=1"
+03-28 18:25:38.616 16638 16689 D Unity   :     "memorysetup-profiler-allocator-block-size=16777216"
+03-28 18:25:38.616 16638 16689 D Unity   :     "memorysetup-profiler-editor-allocator-block-size=1048576"
+03-28 18:25:38.616 16638 16689 D Unity   :     "memorysetup-temp-allocator-size-main=4194304"
+03-28 18:25:38.616 16638 16689 D Unity   :     "memorysetup-job-temp-allocator-block-size=2097152"
+03-28 18:25:38.616 16638 16689 D Unity   :     "memorysetup-job-temp-allocator-block-size-background=1048576"
+03-28 18:25:38.616 16638 16689 D Unity   :     "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+03-28 18:25:38.616 16638 16689 D Unity   :     "memorysetup-temp-allocator-size-background-worker=32768"
+03-28 18:25:38.616 16638 16689 D Unity   :     "memorysetup-temp-allocator-size-job-worker=262144"
+03-28 18:25:38.616 16638 16689 D Unity   :     "memorysetup-temp-allocator-size-preload-manager=262144"
+03-28 18:25:38.616 16638 16689 D Unity   :     "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+03-28 18:25:38.616 16638 16689 D Unity   :     "memorysetup-temp-allocator-size-audio-worker=65536"
+03-28 18:25:38.616 16638 16689 D Unity   :     "memorysetup-temp-allocator-size-cloud-worker=32768"
+03-28 18:25:38.616 16638 16689 D Unity   :     "memorysetup-temp-allocator-size-gfx=262144"
+03-28 18:25:38.630 16638 16730 D InputTransport: Input channel constructed: fd=69
+03-28 18:25:38.647 16638 16638 V InputMethodManager: Starting input: tba=android.view.inputmethod.EditorInfo@4762c79 nm : com.littlegame.teardown.dev ic=null
+03-28 18:25:38.662 16638 16689 D Unity   : Enabling Unity systrace
+03-28 18:25:38.684 16638 16689 D Unity   : [VFS] Mount /data/app/com.littlegame.teardown.dev-1/base.apk
+03-28 18:25:38.695 16638 16689 I Unity   : SystemInfo CPU = ARM64 FP ASIMD AES, Cores = 8, Memory = 3363mb
+03-28 18:25:38.695 16638 16689 I Unity   : SystemInfo ARM big.LITTLE configuration: 4 big (mask: 0xf0), 4 little (mask: 0xf)
+03-28 18:25:38.696 16638 16689 I Unity   : ApplicationInfo com.littlegame.teardown.dev version 2.0.0
+03-28 18:25:38.696 16638 16689 I Unity   : Built from 'origin/2022.3/china_unity/release' branch, Version '2022.3.62f3c1 (1623fc0bbb97)', Build type 'Development', Scripting Backend 'il2cpp', CPU 'arm64-v8a', Stripping 'Enabled'
+03-28 18:25:38.698 16638 16689 D Unity   : Determine if il2cpp resources need to extracted:
+03-28 18:25:38.706 16638 16689 D Unity   :     Guid in '/storage/emulated/0/Android/data/com.littlegame.teardown.dev/files/il2cpp/unity.ver' is invalid, expected '982f28f2-fc58-4709-9870-eab9060795a0' was 'f052ca74-8bfb-4d1e-8c4c-6a27528f6960'
+03-28 18:25:38.706 16638 16689 D Unity   :     Extracting il2cpp resources
+03-28 18:25:38.708 16638 16638 D ViewRootImpl@c532b4b[UnityPlayerActivity]: Relayout returned: oldFrame=[0,0][1080,2220] newFrame=[0,0][1080,2220] result=0x1 surface={isValid=true 548200097280} surfaceGenerationChanged=false
+03-28 18:25:38.723 16638 16638 D ViewRootImpl@c532b4b[UnityPlayerActivity]: Relayout returned: oldFrame=[0,0][1080,2220] newFrame=[0,0][1080,2220] result=0x1 surface={isValid=true 548200097280} surfaceGenerationChanged=false
+03-28 18:25:39.051 16638 16689 D Unity   : [EGL] Attaching window :0x7fa345c210
+03-28 18:25:39.051 16638 16689 D Unity   : InitializeScriptEngine OK (0x7f69983fc0)
+03-28 18:25:39.053 16638 16689 D Unity   : Found 1 interfaces on host :
+03-28 18:25:39.053 16638 16689 D Unity   :  0) 192.168.232.54
+03-28 18:25:39.053 16638 16689 D Unity   : 
+03-28 18:25:39.053 16638 16689 D TcpOptimizer: TcpOptimizer-ON
+03-28 18:25:39.055 16638 16689 D Unity   : Player connection [548176381008]  Target information:
+03-28 18:25:39.055 16638 16689 D Unity   : 
+03-28 18:25:39.055 16638 16689 D Unity   : Player connection [548176381008]  * "[IP] 192.168.232.54 [Port] 55000 [Flags] 2 [Guid] 3704220423 [EditorId] 4263885805 [Version] 1048832 [Id] AndroidPlayer(11,samsung_SM-G9550@192.168.232.54) [Debug] 0 [PackageName] AndroidPlayer [ProjectName] 符阵军团" 
+03-28 18:25:39.055 16638 16689 D Unity   : 
+03-28 18:25:39.055 16638 16689 D Unity   : Player connection [548176381008] Started UDP target info broadcast (1) on [225.0.0.222:54997].
+03-28 18:25:39.055 16638 16689 D Unity   : 
+03-28 18:25:39.076 16638 16689 D Unity   : [PhysX] Initialized MultithreadedTaskDispatcher with 5 workers.
+03-28 18:25:39.081 16638 16689 D Unity   : PlayerInitEngineNoGraphics OK
+03-28 18:25:39.081 16638 16689 I Unity   : Company Name: DefaultCompany
+03-28 18:25:39.081 16638 16689 I Unity   : Product Name: 符阵军团
+03-28 18:25:39.081 16638 16689 D Unity   : AndroidGraphics::Startup window =  0x7fa345c210
+03-28 18:25:39.081 16638 16689 D Unity   : [EGL] Attaching window :0x7fa345c210
+03-28 18:25:39.085 16638 16689 E vulkan  : invalid vkGetInstanceProcAddr(VK_NULL_HANDLE, "vkEnumerateInstanceVersion") call
+03-28 18:25:39.180 16638 16689 D vulkan  : searching for layers in '/data/app/com.littlegame.teardown.dev-1/lib/arm64'
+03-28 18:25:39.181 16638 16689 D vulkan  : searching for layers in '/data/app/com.littlegame.teardown.dev-1/base.apk!/lib/arm64-v8a'
+03-28 18:25:39.183 16638 16689 D Unity   : [Vulkan init] extensions: count=4
+03-28 18:25:39.183 16638 16689 D Unity   : [Vulkan init] extensions: name=VK_EXT_debug_report [enabled=1, external=0]
+03-28 18:25:39.183 16638 16689 D Unity   : [Vulkan init] extensions: name=VK_KHR_android_surface [enabled=1, external=0]
+03-28 18:25:39.183 16638 16689 D Unity   : [Vulkan init] extensions: name=VK_KHR_get_physical_device_properties2 [enabled=1, external=0]
+03-28 18:25:39.183 16638 16689 D Unity   : [Vulkan init] extensions: name=VK_KHR_surface [enabled=1, external=0]
+03-28 18:25:39.183 16638 16689 D vulkan  : vulkan api version_1_0 1.0.0
+03-28 18:25:39.183 16638 16689 D vulkan  : vulkan header version 13
+03-28 18:25:39.191 16638 16689 I Adreno  : QUALCOMM build          : c14e124, I87973f90d2
+03-28 18:25:39.191 16638 16689 I Adreno  : Build Date              : 03/30/17
+03-28 18:25:39.191 16638 16689 I Adreno  : Shader Compiler Version : V14.00.00
+03-28 18:25:39.191 16638 16689 I Adreno  : Local Branch            : 
+03-28 18:25:39.191 16638 16689 I Adreno  : Remote Branch           : 
+03-28 18:25:39.191 16638 16689 I Adreno  : Remote Branch           : 
+03-28 18:25:39.191 16638 16689 I Adreno  : Reconstruct Branch      : 
+03-28 18:25:39.195 16638 16689 D Unity   : [Vulkan init] SelectPhysicalDevice requestedDeviceIndex=-1 xrDevice=0x0
+03-28 18:25:39.195 16638 16689 D Unity   : [Vulkan init] Physical Device 0x7f916cb320 [0]: "Adreno (TM) 540" deviceType=1 vendorID=5143 deviceID=5040001
+03-28 18:25:39.195 16638 16689 D Unity   : Incompatible driver detected - Vendor[Qualcomm] DriverVersion[1.0.38] RequestedVersion[1.0.49] (API version)
+03-28 18:25:39.195 16638 16689 D Unity   : Vulkan detection: 1
+03-28 18:25:39.196 16638 16689 I Adreno  : QUALCOMM build                   : dd296bd, I7547f23799
+03-28 18:25:39.196 16638 16689 I Adreno  : Build Date                       : 03/29/17
+03-28 18:25:39.196 16638 16689 I Adreno  : OpenGL ES Shader Compiler Version: XE031.12.00.02
+03-28 18:25:39.196 16638 16689 I Adreno  : Local Branch                     : 
+03-28 18:25:39.196 16638 16689 I Adreno  : Remote Branch                    : refs/tags/AU_LINUX_ANDROID_LA.UM.5.7.C1.07.00.00.278.066
+03-28 18:25:39.196 16638 16689 I Adreno  : Remote Branch                    : NONE
+03-28 18:25:39.196 16638 16689 I Adreno  : Reconstruct Branch               : NOTHING
+03-28 18:25:39.197 16638 16689 I Adreno  : PFP: 0x005ff104, ME: 0x005ff063
+03-28 18:25:39.199 16638 16689 D Unity   : [EGL] Request: ES 3.2 RGB 000 0/0
+03-28 18:25:39.200 16638 16689 D Unity   : [EGL] Checking ES 3.2 support...
+03-28 18:25:39.204 16638 16689 D Unity   : [EGL] ES 3.2 support detected
+03-28 18:25:39.205 16638 16689 D Unity   : [EGL] Found: ID[1] ES 3.2 RGB 565 0/0
+03-28 18:25:39.205 16638 16689 D Unity   : GfxDevice: creating device client; threaded=1; jobified=0
+03-28 18:25:39.207 16638 16689 D Unity   : [EGL] Request: ES 3.2 RGB 000 0/0
+03-28 18:25:39.207 16638 16689 D Unity   : [EGL] Found: ID[1] ES 3.2 RGB 565 0/0
+03-28 18:25:39.207 16638 16689 D Unity   : [EGL] Request: ES 3.0 RGBA 8888 0/0
+03-28 18:25:39.209 16638 16689 D Unity   : [EGL] Found: ID[9] ES 3.0 RGBA 8888 0/0
+03-28 18:25:39.213 16638 16689 D Unity   : ANativeWindow: (1080/2220) RequestedResolution: (0/0) RenderingResolution: (0/0) EGLSurface: (1080/2220)
+03-28 18:25:39.218 16638 16689 D Unity   : Renderer: Adreno (TM) 540
+03-28 18:25:39.218 16638 16689 D Unity   : Vendor:   Qualcomm
+03-28 18:25:39.218 16638 16689 D Unity   : Version:  OpenGL ES 3.2 V@197.0 (GIT@dd296bd, I7547f23799) (Date:03/29/17)
+03-28 18:25:39.218 16638 16689 D Unity   : GLES:     3
+03-28 18:25:39.218 16638 16689 D Unity   :  GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_EGL_sync GL_OES_vertex_half_float GL_OES_framebuffer_object GL_OES_rgb8_rgba8 GL_OES_compressed_ETC1_RGB8_texture GL_AMD_compressed_ATC_texture GL_KHR_texture_compression_astc_ldr GL_KHR_texture_compression_astc_hdr GL_OES_texture_compression_astc GL_OES_texture_npot GL_EXT_texture_filter_anisotropic GL_EXT_texture_format_BGRA8888 GL_OES_texture_3D GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_QCOM_alpha_test GL_OES_depth24 GL_OES_packed_depth_stencil GL_OES_depth_texture GL_OES_depth_texture_cube_map GL_EXT_sRGB GL_OES_texture_float GL_OES_texture_float_linear GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_EXT_texture_type_2_10_10_10_REV GL_EXT_texture_sRGB_decode GL_OES_element_index_uint GL_EXT_copy_image GL_EXT_geometry_shader GL_EXT_tessellation_shader GL_OES_texture_stencil8 GL_EXT_shader_io_blocks GL_OES_shader_image_atomic GL_OES_sample_variables GL_EXT_texture_border_clamp GL_EXT_multisampled_render_to_texture GL_OES_sha
+03-28 18:25:39.218 16638 16689 D Unity   : der_multisample_interpolation GL_EXT_texture_cube_map_array GL_EXT_draw_buffers_indexed GL_EXT_gpu_shader5 GL_EXT_robustness GL_EXT_texture_buffer GL_EXT_shader_framebuffer_fetch GL_ARM_shader_framebuffer_fetch_depth_stencil GL_OES_texture_storage_multisample_2d_array GL_OES_sample_shading GL_OES_get_program_binary GL_EXT_debug_label GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_QCOM_tiled_rendering GL_ANDROID_extension_pack_es31a GL_EXT_primitive_bounding_box GL_OES_standard_derivatives GL_OES_vertex_array_object GL_EXT_disjoint_timer_query GL_KHR_debug GL_EXT_YUV_target GL_EXT_sRGB_write_control GL_EXT_texture_norm16 GL_EXT_discard_framebuffer GL_OES_surfaceless_context GL_OVR_multiview GL_OVR_multiview2 GL_EXT_texture_sRGB_R8 GL_ARB_texture_barrier GL_KHR_no_error GL_EXT_debug_marker GL_OES_EGL_image_external_essl3 GL_OVR_multiview_multisampled_render_to_texture GL_EXT_buffer_storage GL_EXT_blit_framebuffer_params GL_EXT_clip_cull_distance GL_EXT_protected_textures GL_EXT_shade
+03-28 18:25:39.218 16638 16689 D Unity   : r_non_constant_global_initializers
+03-28 18:25:39.226 16638 16689 D Unity   : OPENGL LOG: Creating OpenGL ES 3.2 graphics device ; Context level  <OpenGL ES 3.2> ; Context handle 1716488832
+03-28 18:25:39.227 16638 16689 D Unity   : [EGL] Attaching window :0x7fa345c210
+03-28 18:25:39.228 16638 16689 D Unity   : Requested framebuffer: resolution[1080x2220], rgba[8/8/8/8], depth+stencil[on], samples[4]
+03-28 18:25:39.228 16638 16689 D Unity   : Created framebuffer: resolution[1080x2220], rgba[8/8/8/8], depth+stencil[24/8], samples[4] (MSAA)
+03-28 18:25:39.234 16638 16689 D Unity   : [EGL] Attaching window :0x7fa345c210
+03-28 18:25:39.234 16638 16689 D Unity   : Initialize engine version: 2022.3.62f3c1 (1623fc0bbb97)
+03-28 18:25:39.288 16638 16689 I libOpenSLES: Emulating old channel mask behavior (ignoring positional mask 0x3, using default mask 0x3 based on channel count of 2)
+03-28 18:25:39.288 16638 16689 W AudioTrack: notificationFrames=-10 clamped to the range -1 to -8
+03-28 18:25:39.298 16638 16689 D AudioTrack: Client defaulted notificationFrames to 192 for frameCount 1536
+03-28 18:25:39.299 16638 16689 I AudioTrack: updateAudioTranstionLength FadeIn[0] FadeOut[0] FadeInRing[0]
+03-28 18:25:39.460 16638 16689 D Unity   : PlayerInitEngineGraphics OK
+03-28 18:25:39.464 16638 16689 D Unity   : Found 29 native sensors
+03-28 18:25:39.468 16638 16689 I sensor  : ASensorEventQueue_enableSensor: handle=1, name=LSM6DSL Accelerometer, ret=0
+03-28 18:25:39.468 16638 16689 D Unity   : Sensor :        Accelerometer ( 1) ; 0.002396 / 0.00s ; LSM6DSL Accelerometer / STMicroelectronics 
+03-28 18:25:39.470 16638 16689 I sensor  : ASensorEventQueue_setEventRate: handle=1, name=LSM6DSL Accelerometer, delay=20000, ret=0
+03-28 18:25:39.470 16638 16689 D Unity   : Sensor :        Accelerometer ( 1) ; 0.002396 / 0.00s ; LSM6DSL Accelerometer / STMicroelectronics 
+03-28 18:25:39.470 16638 16689 D Unity   : enabled Accelerometer sensor
+03-28 18:25:39.470 16638 16638 D ViewRootImpl@c532b4b[UnityPlayerActivity]: Relayout returned: oldFrame=[0,0][1080,2220] newFrame=[0,0][1080,2220] result=0x1 surface={isValid=true 548200097280} surfaceGenerationChanged=false
+03-28 18:25:39.478 16638 16689 D Unity   : ANativeWindow: (1080/2220) RequestedResolution: (0/0) RenderingResolution: (0/0) EGLSurface: (1080/2220)
+03-28 18:25:39.481 16638 16689 V MediaRouter: Adding route: RouteInfo{ name=电话, description=null, status=null, category=RouteCategory{ name=null types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+03-28 18:25:39.484 16638 16689 V MediaRouter: Updating audio routes: AudioRoutesInfo{ type=SPEAKER }
+03-28 18:25:39.486 16638 16689 V MediaRouter: Selecting route: RouteInfo{ name=电话, description=null, status=null, category=RouteCategory{ name=null types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+03-28 18:25:39.787 16638 16638 D ViewRootImpl@c532b4b[UnityPlayerActivity]: Relayout returned: oldFrame=[0,0][1080,2220] newFrame=[0,0][1080,2220] result=0x1 surface={isValid=true 548200097280} surfaceGenerationChanged=false
+03-28 18:25:41.575 16638 16689 D Unity   : [PhysX] Initialized MultithreadedTaskDispatcher with 5 workers.
+03-28 18:25:41.575 16638 16689 D Unity   : UnloadTime: 1.256406 ms
+03-28 18:25:41.699 16638 16638 D ViewRootImpl@c532b4b[UnityPlayerActivity]: Relayout returned: oldFrame=[0,0][1080,2220] newFrame=[0,0][1080,2220] result=0x1 surface={isValid=true 548200097280} surfaceGenerationChanged=false
+03-28 18:25:41.702 16638 16689 I sensor  : ASensorEventQueue_enableSensor: handle=1, name=LSM6DSL Accelerometer, ret=0
+03-28 18:25:41.710 16638 16689 I sensor  : ASensorEventQueue_setEventRate: handle=1, name=LSM6DSL Accelerometer, delay=20000, ret=0
+03-28 18:25:41.710 16638 16689 D Unity   : Sensor :        Accelerometer ( 1) ; 0.002396 / 0.00s ; LSM6DSL Accelerometer / STMicroelectronics 
+03-28 18:25:41.710 16638 16689 D Unity   : Choreographer available: Enabling VSYNC timing
+03-28 18:25:41.714 16638 17207 D Choreographer: init sf_choreo_doframe   debug_Level : 0x4f4cdebug_game_running : false
+03-28 18:25:41.753 16638 16689 I Unity   : [ResourceMgr] CdnBase = http://127.0.0.1:8087
+03-28 18:25:41.753 16638 16689 I Unity   : ResourceMgr:ApplyLaunchCdn()
+03-28 18:25:41.753 16638 16689 I Unity   : MyApplication:Start()
+03-28 18:25:41.753 16638 16689 I Unity   : 
+03-28 18:25:41.753 16638 16689 I Unity   : [ResourceMgr] CDN 使用 default http://127.0.0.1:8087
+03-28 18:25:41.753 16638 16689 I Unity   : ResourceMgr:ApplyLaunchCdn()
+03-28 18:25:41.753 16638 16689 I Unity   : MyApplication:Start()
+03-28 18:25:41.753 16638 16689 I Unity   : 
+03-28 18:25:41.756 16638 16689 I Unity   : YooAssets initialize !
+03-28 18:25:41.756 16638 16689 I Unity   : YooAsset.YooAssets:Initialize(ILogger)
+03-28 18:25:41.756 16638 16689 I Unity   : ResourceMgr:InitBuiltInPackage(ResourcePackageName, Action`1)
+03-28 18:25:41.756 16638 16689 I Unity   : 
+03-28 18:25:41.764 16638 16689 I Unity   : Create resource package : LaunchPackage
+03-28 18:25:41.764 16638 16689 I Unity   : YooAsset.YooAssets:CreatePackage(String)
+03-28 18:25:41.764 16638 16689 I Unity   : ResourceMgr:InitOfflinePackage(String, Action`2)
+03-28 18:25:41.764 16638 16689 I Unity   : ResourceMgr:InitBuiltInPackage(ResourcePackageName, Action`1)
+03-28 18:25:41.764 16638 16689 I Unity   : 
+03-28 18:25:41.773 16638 16689 I IL2CPP  : Locale zh-Hans-CN
+03-28 18:25:41.775 16638 16689 I Unity   : The package LaunchPackage create file system : YooAsset.DefaultBuildinFileSystem
+03-28 18:25:41.775 16638 16689 I Unity   : YooAsset.FileSystemParameters:CreateFileSystem(String)
+03-28 18:25:41.775 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:41.775 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:41.775 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:41.775 16638 16689 I Unity   : 
+03-28 18:25:41.784 16638 16689 I Unity   : YooAsset use default settings.
+03-28 18:25:41.784 16638 16689 I Unity   : YooAsset.YooAssetSettingsData:LoadSettingData()
+03-28 18:25:41.784 16638 16689 I Unity   : YooAsset.YooAssetSettingsData:get_Setting()
+03-28 18:25:41.784 16638 16689 I Unity   : YooAsset.YooAssetSettingsData:GetYooDefaultBuildinRoot()
+03-28 18:25:41.784 16638 16689 I Unity   : YooAsset.DefaultBuildinFileSystem:OnCreate(String, String)
+03-28 18:25:41.784 16638 16689 I Unity   : YooAsset.FileSystemParameters:CreateFileSystem(String)
+03-28 18:25:41.784 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:41.784 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:41.784 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:41.784 16638 16689 I Unity   : 
+03-28 18:25:41.804 16638 16689 W Unity   : Delete all manifest files when overwrite install application !
+03-28 18:25:41.804 16638 16689 W Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:41.804 16638 16689 W Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:41.804 16638 16689 W Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:41.804 16638 16689 W Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:41.804 16638 16689 W Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:41.804 16638 16689 W Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:41.804 16638 16689 W Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:41.804 16638 16689 W Unity   : 
+03-28 18:25:41.806 16638 16689 I Unity   : Save application foot print : ee2c110b11d24891a174bb20d5ab1b88
+03-28 18:25:41.806 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:41.806 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:41.806 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:41.806 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:41.806 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:41.806 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:41.806 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:41.806 16638 16689 I Unity   : 
+03-28 18:25:41.809 16638 16689 I Unity   : Search cache files elapsed time 0.0 seconds
+03-28 18:25:41.809 16638 16689 I Unity   : YooAsset.SearchCacheFilesOperation:InternalUpdate()
+03-28 18:25:41.809 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:41.809 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:41.809 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:41.809 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:41.809 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:41.809 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:41.809 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:41.809 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:41.809 16638 16689 I Unity   : 
+03-28 18:25:41.810 16638 16689 I Unity   : Work threads : 200, IO threads : 200
+03-28 18:25:41.810 16638 16689 I Unity   : YooAsset.VerifyCacheFilesOperation:InternalUpdate()
+03-28 18:25:41.810 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:41.810 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:41.810 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:41.810 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:41.810 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:41.810 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:41.810 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:41.810 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:41.810 16638 16689 I Unity   : 
+03-28 18:25:41.810 16638 16689 I Unity   : Verify max concurrency : 200
+03-28 18:25:41.810 16638 16689 I Unity   : YooAsset.VerifyCacheFilesOperation:InternalUpdate()
+03-28 18:25:41.810 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:41.810 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:41.810 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:41.810 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:41.810 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:41.810 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:41.810 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:41.810 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:41.810 16638 16689 I Unity   : 
+03-28 18:25:41.811 16638 16689 I Unity   : Verify cache files elapsed time 0.0 seconds
+03-28 18:25:41.811 16638 16689 I Unity   : YooAsset.VerifyCacheFilesOperation:InternalUpdate()
+03-28 18:25:41.811 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:41.811 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:41.811 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:41.811 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:41.811 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:41.811 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:41.811 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:41.811 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:41.811 16638 16689 I Unity   : 
+03-28 18:25:41.812 16638 16689 I Unity   : Package 'LaunchPackage' 'DefaultUnpackFileSystem' cached files count : 0
+03-28 18:25:41.812 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:41.812 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:41.812 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:41.812 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:41.812 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:41.812 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:41.812 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:41.812 16638 16689 I Unity   : 
+03-28 18:25:42.008 16638 16689 I Unity   : Package 'LaunchPackage' buildin catalog files count : 1
+03-28 18:25:42.008 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:42.008 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:42.008 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:42.008 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:42.008 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:42.008 16638 16689 I Unity   : 
+03-28 18:25:42.217 16638 16689 I Unity   : [ResourceMgr] LaunchPackage 初始化成功
+03-28 18:25:42.217 16638 16689 I Unity   : <>c__DisplayClass24_0:<InitOfflinePackage>b__2(AsyncOperationBase)
+03-28 18:25:42.217 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:42.217 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:42.217 16638 16689 I Unity   : 
+03-28 18:25:42.218 16638 16689 I Unity   : [Launcher] AOT 启动就绪 (LaunchPackage=True, CdnBase=http://127.0.0.1:8087)
+03-28 18:25:42.218 16638 16689 I Unity   : <>c:<Start>b__9_0(Boolean)
+03-28 18:25:42.218 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:42.218 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:42.218 16638 16689 I Unity   : 
+03-28 18:25:42.219 16638 16689 I Unity   : Create resource package : CodePackage
+03-28 18:25:42.219 16638 16689 I Unity   : YooAsset.YooAssets:CreatePackage(String)
+03-28 18:25:42.219 16638 16689 I Unity   : ResourceMgr:InitOfflinePackage(String, Action`2)
+03-28 18:25:42.219 16638 16689 I Unity   : ResourceMgr:InitBuiltInPackage(ResourcePackageName, Action`1)
+03-28 18:25:42.219 16638 16689 I Unity   : <>c:<Start>b__9_0(Boolean)
+03-28 18:25:42.219 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:42.219 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:42.219 16638 16689 I Unity   : 
+03-28 18:25:42.239 16638 16689 I Unity   : The package CodePackage create file system : YooAsset.DefaultBuildinFileSystem
+03-28 18:25:42.239 16638 16689 I Unity   : YooAsset.FileSystemParameters:CreateFileSystem(String)
+03-28 18:25:42.239 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:42.239 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:42.239 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:42.239 16638 16689 I Unity   : 
+03-28 18:25:42.252 16638 16689 W Unity   : Delete all manifest files when overwrite install application !
+03-28 18:25:42.252 16638 16689 W Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:42.252 16638 16689 W Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:42.252 16638 16689 W Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:42.252 16638 16689 W Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:42.252 16638 16689 W Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:42.252 16638 16689 W Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:42.252 16638 16689 W Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:42.252 16638 16689 W Unity   : 
+03-28 18:25:42.254 16638 16689 I Unity   : Save application foot print : ee2c110b11d24891a174bb20d5ab1b88
+03-28 18:25:42.254 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:42.254 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:42.254 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:42.254 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:42.254 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:42.254 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:42.254 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:42.254 16638 16689 I Unity   : 
+03-28 18:25:42.256 16638 16689 I Unity   : Search cache files elapsed time 0.0 seconds
+03-28 18:25:42.256 16638 16689 I Unity   : YooAsset.SearchCacheFilesOperation:InternalUpdate()
+03-28 18:25:42.256 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:42.256 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:42.256 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:42.256 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:42.256 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:42.256 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:42.256 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:42.256 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:42.256 16638 16689 I Unity   : 
+03-28 18:25:42.256 16638 16689 I Unity   : Work threads : 200, IO threads : 200
+03-28 18:25:42.256 16638 16689 I Unity   : YooAsset.VerifyCacheFilesOperation:InternalUpdate()
+03-28 18:25:42.256 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:42.256 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:42.256 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:42.256 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:42.256 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:42.256 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:42.256 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:42.256 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:42.256 16638 16689 I Unity   : 
+03-28 18:25:42.257 16638 16689 I Unity   : Verify max concurrency : 200
+03-28 18:25:42.257 16638 16689 I Unity   : YooAsset.VerifyCacheFilesOperation:InternalUpdate()
+03-28 18:25:42.257 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:42.257 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:42.257 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:42.257 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:42.257 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:42.257 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:42.257 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:42.257 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:42.257 16638 16689 I Unity   : 
+03-28 18:25:42.258 16638 16689 I Unity   : Verify cache files elapsed time 0.0 seconds
+03-28 18:25:42.258 16638 16689 I Unity   : YooAsset.VerifyCacheFilesOperation:InternalUpdate()
+03-28 18:25:42.258 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:42.258 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:42.258 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:42.258 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:42.258 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:42.258 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:42.258 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:42.258 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:42.258 16638 16689 I Unity   : 
+03-28 18:25:42.259 16638 16689 I Unity   : Package 'CodePackage' 'DefaultUnpackFileSystem' cached files count : 0
+03-28 18:25:42.259 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:42.259 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:42.259 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:42.259 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:42.259 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:42.259 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:42.259 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:42.259 16638 16689 I Unity   : 
+03-28 18:25:42.273 16638 16689 I Unity   : Package 'CodePackage' buildin catalog files count : 13
+03-28 18:25:42.273 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:42.273 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:42.273 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:42.273 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:42.273 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:42.273 16638 16689 I Unity   : 
+03-28 18:25:42.474 16638 16689 I Unity   : [ResourceMgr] CodePackage 初始化成功
+03-28 18:25:42.474 16638 16689 I Unity   : <>c__DisplayClass24_0:<InitOfflinePackage>b__2(AsyncOperationBase)
+03-28 18:25:42.474 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:42.474 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:42.474 16638 16689 I Unity   : 
+03-28 18:25:42.697 16638 16689 I Unity   : [HotUpdate] AOT元数据已注入: HotUpdate_Main/AOTMetadata/Newtonsoft.Json.dll
+03-28 18:25:42.697 16638 16689 I Unity   : <LoadAssemblies>d__16:MoveNext()
+03-28 18:25:42.697 16638 16689 I Unity   : UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+03-28 18:25:42.697 16638 16689 I Unity   : 
+03-28 18:25:42.793 16638 16689 I Unity   : [HotUpdate] AOT元数据已注入: HotUpdate_Main/AOTMetadata/System.Core.dll
+03-28 18:25:42.793 16638 16689 I Unity   : <LoadAssemblies>d__16:MoveNext()
+03-28 18:25:42.793 16638 16689 I Unity   : UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+03-28 18:25:42.793 16638 16689 I Unity   : 
+03-28 18:25:42.885 16638 16689 I Unity   : [HotUpdate] AOT元数据已注入: HotUpdate_Main/AOTMetadata/Unity.RenderPipelines.Core.Runtime.dll
+03-28 18:25:42.885 16638 16689 I Unity   : <LoadAssemblies>d__16:MoveNext()
+03-28 18:25:42.885 16638 16689 I Unity   : UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+03-28 18:25:42.885 16638 16689 I Unity   : 
+03-28 18:25:42.999 16638 16689 I Unity   : [HotUpdate] AOT元数据已注入: HotUpdate_Main/AOTMetadata/UnityEngine.CoreModule.dll
+03-28 18:25:42.999 16638 16689 I Unity   : <LoadAssemblies>d__16:MoveNext()
+03-28 18:25:42.999 16638 16689 I Unity   : UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+03-28 18:25:42.999 16638 16689 I Unity   : 
+03-28 18:25:43.076 16638 16689 I Unity   : [HotUpdate] AOT元数据已注入: HotUpdate_Main/AOTMetadata/UnityEngine.JSONSerializeModule.dll
+03-28 18:25:43.076 16638 16689 I Unity   : <LoadAssemblies>d__16:MoveNext()
+03-28 18:25:43.076 16638 16689 I Unity   : UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+03-28 18:25:43.076 16638 16689 I Unity   : 
+03-28 18:25:43.179 16638 16689 I Unity   : [HotUpdate] AOT元数据已注入: HotUpdate_Main/AOTMetadata/YooAsset.dll
+03-28 18:25:43.179 16638 16689 I Unity   : <LoadAssemblies>d__16:MoveNext()
+03-28 18:25:43.179 16638 16689 I Unity   : UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+03-28 18:25:43.179 16638 16689 I Unity   : 
+03-28 18:25:43.312 16638 16689 I Unity   : [HotUpdate] AOT元数据已注入: HotUpdate_Main/AOTMetadata/mscorlib.dll
+03-28 18:25:43.312 16638 16689 I Unity   : <LoadAssemblies>d__16:MoveNext()
+03-28 18:25:43.312 16638 16689 I Unity   : UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+03-28 18:25:43.312 16638 16689 I Unity   : 
+03-28 18:25:43.375 16638 16689 I Unity   : [HotUpdate] DLL 字节长度: 121344, 头部: 0x4D5A
+03-28 18:25:43.375 16638 16689 I Unity   : <LoadAssemblies>d__16:MoveNext()
+03-28 18:25:43.375 16638 16689 I Unity   : UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+03-28 18:25:43.375 16638 16689 I Unity   : 
+03-28 18:25:43.379 16638 16689 I Unity   : [HotUpdate] 程序集已加载: LittleGame.Domain, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+03-28 18:25:43.379 16638 16689 I Unity   : <LoadAssemblies>d__16:MoveNext()
+03-28 18:25:43.379 16638 16689 I Unity   : UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+03-28 18:25:43.379 16638 16689 I Unity   : 
+03-28 18:25:43.476 16638 16689 I Unity   : [HotUpdate] DLL 字节长度: 130560, 头部: 0x4D5A
+03-28 18:25:43.476 16638 16689 I Unity   : <LoadAssemblies>d__16:MoveNext()
+03-28 18:25:43.476 16638 16689 I Unity   : UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+03-28 18:25:43.476 16638 16689 I Unity   : 
+03-28 18:25:43.482 16638 16689 I Unity   : [HotUpdate] 程序集已加载: HotUpdate_UnitCore, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+03-28 18:25:43.482 16638 16689 I Unity   : <LoadAssemblies>d__16:MoveNext()
+03-28 18:25:43.482 16638 16689 I Unity   : UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+03-28 18:25:43.482 16638 16689 I Unity   : 
+03-28 18:25:43.577 16638 16689 I Unity   : [HotUpdate] DLL 字节长度: 72192, 头部: 0x4D5A
+03-28 18:25:43.577 16638 16689 I Unity   : <LoadAssemblies>d__16:MoveNext()
+03-28 18:25:43.577 16638 16689 I Unity   : UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+03-28 18:25:43.577 16638 16689 I Unity   : 
+03-28 18:25:43.587 16638 16689 I Unity   : [HotUpdate] 程序集已加载: HotUpdate_Main, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+03-28 18:25:43.587 16638 16689 I Unity   : <LoadAssemblies>d__16:MoveNext()
+03-28 18:25:43.587 16638 16689 I Unity   : UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+03-28 18:25:43.587 16638 16689 I Unity   : 
+03-28 18:25:43.676 16638 16689 I Unity   : [HotUpdate] DLL 字节长度: 207872, 头部: 0x4D5A
+03-28 18:25:43.676 16638 16689 I Unity   : <LoadAssemblies>d__16:MoveNext()
+03-28 18:25:43.676 16638 16689 I Unity   : UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+03-28 18:25:43.676 16638 16689 I Unity   : 
+03-28 18:25:43.681 16638 16689 I Unity   : [HotUpdate] 程序集已加载: LittleGame.Client, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+03-28 18:25:43.681 16638 16689 I Unity   : <LoadAssemblies>d__16:MoveNext()
+03-28 18:25:43.681 16638 16689 I Unity   : UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+03-28 18:25:43.681 16638 16689 I Unity   : 
+03-28 18:25:43.704 16638 16689 I Unity   : [QualityTier] Tier=Balanced from LocalSave
+03-28 18:25:43.704 16638 16689 I Unity   : QualityTierMgr:Init()
+03-28 18:25:43.704 16638 16689 I Unity   : MainHotUpdate:Launch()
+03-28 18:25:43.704 16638 16689 I Unity   : System.Reflection.RuntimeMethodInfo:Invoke(Object, BindingFlags, Binder, Object[], CultureInfo)
+03-28 18:25:43.704 16638 16689 I Unity   : <LoadReadyPackages>d__11:MoveNext()
+03-28 18:25:43.704 16638 16689 I Unity   : UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+03-28 18:25:43.704 16638 16689 I Unity   : 
+03-28 18:25:43.705 16638 16689 I Unity   : Create resource package : MainPackage
+03-28 18:25:43.705 16638 16689 I Unity   : MainHotUpdate:Launch()
+03-28 18:25:43.705 16638 16689 I Unity   : YooAsset.YooAssets:CreatePackage(String)
+03-28 18:25:43.705 16638 16689 I Unity   : ResourceMgr:InitOfflinePackage(String, Action`2)
+03-28 18:25:43.705 16638 16689 I Unity   : ResourceMgr:InitBuiltInPackage(ResourcePackageName, Action`1)
+03-28 18:25:43.705 16638 16689 I Unity   : System.Reflection.RuntimeMethodInfo:Invoke(Object, BindingFlags, Binder, Object[], CultureInfo)
+03-28 18:25:43.705 16638 16689 I Unity   : <LoadReadyPackages>d__11:MoveNext()
+03-28 18:25:43.705 16638 16689 I Unity   : UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+03-28 18:25:43.705 16638 16689 I Unity   : 
+03-28 18:25:43.706 16638 16689 I Unity   : Create resource package : ModulePackage
+03-28 18:25:43.706 16638 16689 I Unity   : MainHotUpdate:Launch()
+03-28 18:25:43.706 16638 16689 I Unity   : YooAsset.YooAssets:CreatePackage(String)
+03-28 18:25:43.706 16638 16689 I Unity   : ResourceMgr:InitOfflinePackage(String, Action`2)
+03-28 18:25:43.706 16638 16689 I Unity   : ResourceMgr:InitBuiltInPackage(ResourcePackageName, Action`1)
+03-28 18:25:43.706 16638 16689 I Unity   : System.Reflection.RuntimeMethodInfo:Invoke(Object, BindingFlags, Binder, Object[], CultureInfo)
+03-28 18:25:43.706 16638 16689 I Unity   : <LoadReadyPackages>d__11:MoveNext()
+03-28 18:25:43.706 16638 16689 I Unity   : UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+03-28 18:25:43.706 16638 16689 I Unity   : 
+03-28 18:25:43.707 16638 16689 I Unity   : Create resource package : UnitPackage
+03-28 18:25:43.707 16638 16689 I Unity   : MainHotUpdate:Launch()
+03-28 18:25:43.707 16638 16689 I Unity   : YooAsset.YooAssets:CreatePackage(String)
+03-28 18:25:43.707 16638 16689 I Unity   : ResourceMgr:InitOfflinePackage(String, Action`2)
+03-28 18:25:43.707 16638 16689 I Unity   : ResourceMgr:InitBuiltInPackage(ResourcePackageName, Action`1)
+03-28 18:25:43.707 16638 16689 I Unity   : System.Reflection.RuntimeMethodInfo:Invoke(Object, BindingFlags, Binder, Object[], CultureInfo)
+03-28 18:25:43.707 16638 16689 I Unity   : <LoadReadyPackages>d__11:MoveNext()
+03-28 18:25:43.707 16638 16689 I Unity   : UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+03-28 18:25:43.707 16638 16689 I Unity   : 
+03-28 18:25:43.707 16638 16689 I Unity   : Create resource package : EffectPackage
+03-28 18:25:43.707 16638 16689 I Unity   : MainHotUpdate:Launch()
+03-28 18:25:43.707 16638 16689 I Unity   : YooAsset.YooAssets:CreatePackage(String)
+03-28 18:25:43.707 16638 16689 I Unity   : ResourceMgr:InitOfflinePackage(String, Action`2)
+03-28 18:25:43.707 16638 16689 I Unity   : ResourceMgr:InitBuiltInPackage(ResourcePackageName, Action`1)
+03-28 18:25:43.707 16638 16689 I Unity   : System.Reflection.RuntimeMethodInfo:Invoke(Object, BindingFlags, Binder, Object[], CultureInfo)
+03-28 18:25:43.707 16638 16689 I Unity   : <LoadReadyPackages>d__11:MoveNext()
+03-28 18:25:43.707 16638 16689 I Unity   : UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+03-28 18:25:43.707 16638 16689 I Unity   : 
+03-28 18:25:43.711 16638 16689 I Unity   : Create resource package : ScenePackage
+03-28 18:25:43.711 16638 16689 I Unity   : MainHotUpdate:Launch()
+03-28 18:25:43.711 16638 16689 I Unity   : YooAsset.YooAssets:CreatePackage(String)
+03-28 18:25:43.711 16638 16689 I Unity   : ResourceMgr:InitOfflinePackage(String, Action`2)
+03-28 18:25:43.711 16638 16689 I Unity   : ResourceMgr:InitBuiltInPackage(ResourcePackageName, Action`1)
+03-28 18:25:43.711 16638 16689 I Unity   : System.Reflection.RuntimeMethodInfo:Invoke(Object, BindingFlags, Binder, Object[], CultureInfo)
+03-28 18:25:43.711 16638 16689 I Unity   : <LoadReadyPackages>d__11:MoveNext()
+03-28 18:25:43.711 16638 16689 I Unity   : UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+03-28 18:25:43.711 16638 16689 I Unity   : 
+03-28 18:25:43.714 16638 16689 I Unity   : The package MainPackage create file system : YooAsset.DefaultBuildinFileSystem
+03-28 18:25:43.714 16638 16689 I Unity   : YooAsset.FileSystemParameters:CreateFileSystem(String)
+03-28 18:25:43.714 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.714 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.714 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.714 16638 16689 I Unity   : 
+03-28 18:25:43.723 16638 16689 W Unity   : Delete all manifest files when overwrite install application !
+03-28 18:25:43.723 16638 16689 W Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.723 16638 16689 W Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.723 16638 16689 W Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.723 16638 16689 W Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.723 16638 16689 W Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.723 16638 16689 W Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.723 16638 16689 W Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.723 16638 16689 W Unity   : 
+03-28 18:25:43.724 16638 16689 I Unity   : Save application foot print : ee2c110b11d24891a174bb20d5ab1b88
+03-28 18:25:43.724 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.724 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.724 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.724 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.724 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.724 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.724 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.724 16638 16689 I Unity   : 
+03-28 18:25:43.725 16638 16689 I Unity   : Search cache files elapsed time 0.0 seconds
+03-28 18:25:43.725 16638 16689 I Unity   : YooAsset.SearchCacheFilesOperation:InternalUpdate()
+03-28 18:25:43.725 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.725 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.725 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.725 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.725 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.725 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.725 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.725 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.725 16638 16689 I Unity   : 
+03-28 18:25:43.726 16638 16689 I Unity   : Work threads : 200, IO threads : 200
+03-28 18:25:43.726 16638 16689 I Unity   : YooAsset.VerifyCacheFilesOperation:InternalUpdate()
+03-28 18:25:43.726 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.726 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.726 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.726 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.726 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.726 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.726 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.726 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.726 16638 16689 I Unity   : 
+03-28 18:25:43.726 16638 16689 I Unity   : Verify max concurrency : 200
+03-28 18:25:43.726 16638 16689 I Unity   : YooAsset.VerifyCacheFilesOperation:InternalUpdate()
+03-28 18:25:43.726 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.726 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.726 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.726 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.726 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.726 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.726 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.726 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.726 16638 16689 I Unity   : 
+03-28 18:25:43.727 16638 16689 I Unity   : Verify cache files elapsed time 0.0 seconds
+03-28 18:25:43.727 16638 16689 I Unity   : YooAsset.VerifyCacheFilesOperation:InternalUpdate()
+03-28 18:25:43.727 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.727 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.727 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.727 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.727 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.727 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.727 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.727 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.727 16638 16689 I Unity   : 
+03-28 18:25:43.727 16638 16689 I Unity   : Package 'MainPackage' 'DefaultUnpackFileSystem' cached files count : 0
+03-28 18:25:43.727 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.727 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.727 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.727 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.727 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.727 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.727 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.727 16638 16689 I Unity   : 
+03-28 18:25:43.728 16638 16689 I Unity   : The package ModulePackage create file system : YooAsset.DefaultBuildinFileSystem
+03-28 18:25:43.728 16638 16689 I Unity   : YooAsset.FileSystemParameters:CreateFileSystem(String)
+03-28 18:25:43.728 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.728 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.728 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.728 16638 16689 I Unity   : 
+03-28 18:25:43.738 16638 16689 W Unity   : Delete all manifest files when overwrite install application !
+03-28 18:25:43.738 16638 16689 W Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.738 16638 16689 W Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.738 16638 16689 W Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.738 16638 16689 W Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.738 16638 16689 W Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.738 16638 16689 W Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.738 16638 16689 W Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.738 16638 16689 W Unity   : 
+03-28 18:25:43.740 16638 16689 I Unity   : Save application foot print : ee2c110b11d24891a174bb20d5ab1b88
+03-28 18:25:43.740 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.740 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.740 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.740 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.740 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.740 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.740 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.740 16638 16689 I Unity   : 
+03-28 18:25:43.740 16638 16689 I Unity   : Search cache files elapsed time 0.0 seconds
+03-28 18:25:43.740 16638 16689 I Unity   : YooAsset.SearchCacheFilesOperation:InternalUpdate()
+03-28 18:25:43.740 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.740 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.740 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.740 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.740 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.740 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.740 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.740 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.740 16638 16689 I Unity   : 
+03-28 18:25:43.741 16638 16689 I Unity   : Work threads : 200, IO threads : 200
+03-28 18:25:43.741 16638 16689 I Unity   : YooAsset.VerifyCacheFilesOperation:InternalUpdate()
+03-28 18:25:43.741 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.741 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.741 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.741 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.741 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.741 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.741 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.741 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.741 16638 16689 I Unity   : 
+03-28 18:25:43.742 16638 16689 I Unity   : Verify max concurrency : 200
+03-28 18:25:43.742 16638 16689 I Unity   : YooAsset.VerifyCacheFilesOperation:InternalUpdate()
+03-28 18:25:43.742 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.742 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.742 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.742 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.742 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.742 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.742 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.742 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.742 16638 16689 I Unity   : 
+03-28 18:25:43.742 16638 16689 I Unity   : Verify cache files elapsed time 0.0 seconds
+03-28 18:25:43.742 16638 16689 I Unity   : YooAsset.VerifyCacheFilesOperation:InternalUpdate()
+03-28 18:25:43.742 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.742 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.742 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.742 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.742 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.742 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.742 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.742 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.742 16638 16689 I Unity   : 
+03-28 18:25:43.743 16638 16689 I Unity   : Package 'ModulePackage' 'DefaultUnpackFileSystem' cached files count : 0
+03-28 18:25:43.743 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.743 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.743 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.743 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.743 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.743 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.743 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.743 16638 16689 I Unity   : 
+03-28 18:25:43.743 16638 16689 I Unity   : The package UnitPackage create file system : YooAsset.DefaultBuildinFileSystem
+03-28 18:25:43.743 16638 16689 I Unity   : YooAsset.FileSystemParameters:CreateFileSystem(String)
+03-28 18:25:43.743 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.743 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.743 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.743 16638 16689 I Unity   : 
+03-28 18:25:43.752 16638 16689 W Unity   : Delete all manifest files when overwrite install application !
+03-28 18:25:43.752 16638 16689 W Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.752 16638 16689 W Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.752 16638 16689 W Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.752 16638 16689 W Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.752 16638 16689 W Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.752 16638 16689 W Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.752 16638 16689 W Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.752 16638 16689 W Unity   : 
+03-28 18:25:43.753 16638 16689 I Unity   : Save application foot print : ee2c110b11d24891a174bb20d5ab1b88
+03-28 18:25:43.753 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.753 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.753 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.753 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.753 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.753 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.753 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.753 16638 16689 I Unity   : 
+03-28 18:25:43.754 16638 16689 I Unity   : Search cache files elapsed time 0.0 seconds
+03-28 18:25:43.754 16638 16689 I Unity   : YooAsset.SearchCacheFilesOperation:InternalUpdate()
+03-28 18:25:43.754 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.754 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.754 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.754 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.754 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.754 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.754 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.754 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.754 16638 16689 I Unity   : 
+03-28 18:25:43.754 16638 16689 I Unity   : Work threads : 200, IO threads : 200
+03-28 18:25:43.754 16638 16689 I Unity   : YooAsset.VerifyCacheFilesOperation:InternalUpdate()
+03-28 18:25:43.754 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.754 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.754 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.754 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.754 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.754 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.754 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.754 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.754 16638 16689 I Unity   : 
+03-28 18:25:43.755 16638 16689 I Unity   : Verify max concurrency : 200
+03-28 18:25:43.755 16638 16689 I Unity   : YooAsset.VerifyCacheFilesOperation:InternalUpdate()
+03-28 18:25:43.755 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.755 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.755 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.755 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.755 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.755 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.755 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.755 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.755 16638 16689 I Unity   : 
+03-28 18:25:43.756 16638 16689 I Unity   : Verify cache files elapsed time 0.0 seconds
+03-28 18:25:43.756 16638 16689 I Unity   : YooAsset.VerifyCacheFilesOperation:InternalUpdate()
+03-28 18:25:43.756 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.756 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.756 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.756 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.756 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.756 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.756 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.756 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.756 16638 16689 I Unity   : 
+03-28 18:25:43.756 16638 16689 I Unity   : Package 'UnitPackage' 'DefaultUnpackFileSystem' cached files count : 0
+03-28 18:25:43.756 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.756 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.756 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.756 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.756 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.756 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.756 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.756 16638 16689 I Unity   : 
+03-28 18:25:43.757 16638 16689 I Unity   : The package EffectPackage create file system : YooAsset.DefaultBuildinFileSystem
+03-28 18:25:43.757 16638 16689 I Unity   : YooAsset.FileSystemParameters:CreateFileSystem(String)
+03-28 18:25:43.757 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.757 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.757 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.757 16638 16689 I Unity   : 
+03-28 18:25:43.761 16638 16689 W Unity   : Delete all manifest files when overwrite install application !
+03-28 18:25:43.761 16638 16689 W Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.761 16638 16689 W Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.761 16638 16689 W Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.761 16638 16689 W Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.761 16638 16689 W Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.761 16638 16689 W Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.761 16638 16689 W Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.761 16638 16689 W Unity   : 
+03-28 18:25:43.762 16638 16689 I Unity   : Save application foot print : ee2c110b11d24891a174bb20d5ab1b88
+03-28 18:25:43.762 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.762 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.762 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.762 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.762 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.762 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.762 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.762 16638 16689 I Unity   : 
+03-28 18:25:43.763 16638 16689 I Unity   : Search cache files elapsed time 0.0 seconds
+03-28 18:25:43.763 16638 16689 I Unity   : YooAsset.SearchCacheFilesOperation:InternalUpdate()
+03-28 18:25:43.763 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.763 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.763 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.763 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.763 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.763 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.763 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.763 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.763 16638 16689 I Unity   : 
+03-28 18:25:43.764 16638 16689 I Unity   : Work threads : 200, IO threads : 200
+03-28 18:25:43.764 16638 16689 I Unity   : YooAsset.VerifyCacheFilesOperation:InternalUpdate()
+03-28 18:25:43.764 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.764 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.764 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.764 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.764 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.764 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.764 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.764 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.764 16638 16689 I Unity   : 
+03-28 18:25:43.764 16638 16689 I Unity   : Verify max concurrency : 200
+03-28 18:25:43.764 16638 16689 I Unity   : YooAsset.VerifyCacheFilesOperation:InternalUpdate()
+03-28 18:25:43.764 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.764 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.764 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.764 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.764 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.764 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.764 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.764 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.764 16638 16689 I Unity   : 
+03-28 18:25:43.765 16638 16689 I Unity   : Verify cache files elapsed time 0.0 seconds
+03-28 18:25:43.765 16638 16689 I Unity   : YooAsset.VerifyCacheFilesOperation:InternalUpdate()
+03-28 18:25:43.765 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.765 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.765 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.765 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.765 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.765 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.765 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.765 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.765 16638 16689 I Unity   : 
+03-28 18:25:43.765 16638 16689 I Unity   : Package 'EffectPackage' 'DefaultUnpackFileSystem' cached files count : 0
+03-28 18:25:43.765 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.765 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.765 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.765 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.765 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.765 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.765 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.765 16638 16689 I Unity   : 
+03-28 18:25:43.766 16638 16689 I Unity   : The package ScenePackage create file system : YooAsset.DefaultBuildinFileSystem
+03-28 18:25:43.766 16638 16689 I Unity   : YooAsset.FileSystemParameters:CreateFileSystem(String)
+03-28 18:25:43.766 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.766 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.766 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.766 16638 16689 I Unity   : 
+03-28 18:25:43.778 16638 16689 W Unity   : Delete all manifest files when overwrite install application !
+03-28 18:25:43.778 16638 16689 W Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.778 16638 16689 W Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.778 16638 16689 W Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.778 16638 16689 W Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.778 16638 16689 W Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.778 16638 16689 W Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.778 16638 16689 W Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.778 16638 16689 W Unity   : 
+03-28 18:25:43.779 16638 16689 I Unity   : Save application foot print : ee2c110b11d24891a174bb20d5ab1b88
+03-28 18:25:43.779 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.779 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.779 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.779 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.779 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.779 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.779 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.779 16638 16689 I Unity   : 
+03-28 18:25:43.780 16638 16689 I Unity   : Search cache files elapsed time 0.0 seconds
+03-28 18:25:43.780 16638 16689 I Unity   : YooAsset.SearchCacheFilesOperation:InternalUpdate()
+03-28 18:25:43.780 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.780 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.780 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.780 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.780 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.780 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.780 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.780 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.780 16638 16689 I Unity   : 
+03-28 18:25:43.781 16638 16689 I Unity   : Work threads : 200, IO threads : 200
+03-28 18:25:43.781 16638 16689 I Unity   : YooAsset.VerifyCacheFilesOperation:InternalUpdate()
+03-28 18:25:43.781 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.781 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.781 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.781 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.781 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.781 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.781 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.781 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.781 16638 16689 I Unity   : 
+03-28 18:25:43.781 16638 16689 I Unity   : Verify max concurrency : 200
+03-28 18:25:43.781 16638 16689 I Unity   : YooAsset.VerifyCacheFilesOperation:InternalUpdate()
+03-28 18:25:43.781 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.781 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.781 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.781 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.781 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.781 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.781 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.781 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.781 16638 16689 I Unity   : 
+03-28 18:25:43.782 16638 16689 I Unity   : Verify cache files elapsed time 0.0 seconds
+03-28 18:25:43.782 16638 16689 I Unity   : YooAsset.VerifyCacheFilesOperation:InternalUpdate()
+03-28 18:25:43.782 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.782 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.782 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.782 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.782 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.782 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.782 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.782 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.782 16638 16689 I Unity   : 
+03-28 18:25:43.783 16638 16689 I Unity   : Package 'ScenePackage' 'DefaultUnpackFileSystem' cached files count : 0
+03-28 18:25:43.783 16638 16689 I Unity   : YooAsset.DCFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.783 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.783 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.783 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.783 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.783 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.783 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.783 16638 16689 I Unity   : 
+03-28 18:25:43.785 16638 16689 I Unity   : Package 'MainPackage' buildin catalog files count : 1
+03-28 18:25:43.785 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.785 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.785 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.785 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.785 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.785 16638 16689 I Unity   : 
+03-28 18:25:43.785 16638 16689 I Unity   : Package 'ModulePackage' buildin catalog files count : 2
+03-28 18:25:43.785 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.785 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.785 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.785 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.785 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.785 16638 16689 I Unity   : 
+03-28 18:25:43.786 16638 16689 I Unity   : Package 'UnitPackage' buildin catalog files count : 56
+03-28 18:25:43.786 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.786 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.786 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.786 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.786 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.786 16638 16689 I Unity   : 
+03-28 18:25:43.787 16638 16689 I Unity   : Package 'EffectPackage' buildin catalog files count : 46
+03-28 18:25:43.787 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.787 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.787 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.787 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.787 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.787 16638 16689 I Unity   : 
+03-28 18:25:43.787 16638 16689 I Unity   : Package 'ScenePackage' buildin catalog files count : 2
+03-28 18:25:43.787 16638 16689 I Unity   : YooAsset.DBFSInitializeOperation:InternalUpdate()
+03-28 18:25:43.787 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.787 16638 16689 I Unity   : YooAsset.InitializationOperation:InternalUpdate()
+03-28 18:25:43.787 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.787 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.787 16638 16689 I Unity   : 
+03-28 18:25:43.978 16638 16689 I Unity   : [ResourceMgr] MainPackage 初始化成功
+03-28 18:25:43.978 16638 16689 I Unity   : <>c__DisplayClass24_0:<InitOfflinePackage>b__2(AsyncOperationBase)
+03-28 18:25:43.978 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.978 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.978 16638 16689 I Unity   : 
+03-28 18:25:43.982 16638 16689 I Unity   : [ResourceMgr] ModulePackage 初始化成功
+03-28 18:25:43.982 16638 16689 I Unity   : <>c__DisplayClass24_0:<InitOfflinePackage>b__2(AsyncOperationBase)
+03-28 18:25:43.982 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.982 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.982 16638 16689 I Unity   : 
+03-28 18:25:43.985 16638 16689 I Unity   : [ResourceMgr] UnitPackage 初始化成功
+03-28 18:25:43.985 16638 16689 I Unity   : <>c__DisplayClass24_0:<InitOfflinePackage>b__2(AsyncOperationBase)
+03-28 18:25:43.985 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.985 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.985 16638 16689 I Unity   : 
+03-28 18:25:43.988 16638 16689 I Unity   : [ResourceMgr] EffectPackage 初始化成功
+03-28 18:25:43.988 16638 16689 I Unity   : <>c__DisplayClass24_0:<InitOfflinePackage>b__2(AsyncOperationBase)
+03-28 18:25:43.988 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.988 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.988 16638 16689 I Unity   : 
+03-28 18:25:43.989 16638 16689 I Unity   : [ResourceMgr] ScenePackage 初始化成功
+03-28 18:25:43.989 16638 16689 I Unity   : <>c__DisplayClass24_0:<InitOfflinePackage>b__2(AsyncOperationBase)
+03-28 18:25:43.989 16638 16689 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation()
+03-28 18:25:43.989 16638 16689 I Unity   : YooAsset.OperationSystem:Update()
+03-28 18:25:43.989 16638 16689 I Unity   : 
+03-28 18:25:44.086 16638 16689 I Unity   : [GfxQuality] Tier=Balanced(Balanced) QualityLevel=1 TargetFps=60 ShowFps=False
+03-28 18:25:44.086 16638 16689 I Unity   : GfxQualityMgr:LogApplyResult()
+03-28 18:25:44.086 16638 16689 I Unity   : <InitAsync>d__12:MoveNext()
+03-28 18:25:44.086 16638 16689 I Unity   : <GetAsync>d__1`1:MoveNext()
+03-28 18:25:44.086 16638 16689 I Unity   : <LoadAssetAsync>d__8`1:MoveNext()
+03-28 18:25:44.086 16638 16689 I Unity   : System.Threading.ExecutionContext:RunInternal(ExecutionContext, ContextCallback, Object, Boolean)
+03-28 18:25:44.086 16638 16689 I Unity   : System.Runtime.CompilerServices.MoveNextRunner:Run()
+03-28 18:25:44.086 16638 16689 I Unity   : System.Threading.Tasks.AwaitTaskContinuation:RunCallback(ContextCallback, Object, Task&)
+03-28 18:25:44.086 16638 16689 I Unity   : System.Threading.Tasks.Task:FinishContinuations()
+03-28 18:25:44.086 16638 16689 I Unity   : System.Threading.Tasks.Task`1:TrySetResult(TResult)
+03-28 18:25:44.086 16638 16689 I Unity   : System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1:SetResult(TResult)
+03-28 18:25:44.086 16638 16689 I Unity   : System.Threading.ExecutionContext:RunInternal(ExecutionContext, ContextCallback, Object, Boolean)
+03-28 18:25:44.086 16638 16689 I Unity   : System.Runtime.CompilerServices.MoveNextRunner:Run()
+03-28 18:25:44.086 16638 16689 I Unity   : System.Threading.Tasks.AwaitTaskContinuation:RunCallback(ContextCallback, Object, Task&)
+03-28 18:25:44.086 16638 16689 I Unity   : System.Threading.Tasks.Task:FinishContinuations()
+03-28 18:25:44.086 16638 16689 I Unity   : System.Threading.Tasks.Task`1:TrySetResult(TResult)
+03-28 18:25:44.086 16638 16689 I Unity   : System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1:SetRes
+03-28 18:25:44.089 16638 16689 I Unity   : [MainHotUpdate] MVC / Service / Mgr / 内置资源包启动完成
+03-28 18:25:44.089 16638 16689 I Unity   : <<Launch>b__0>d:MoveNext()
+03-28 18:25:44.089 16638 16689 I Unity   : <InitAsync>d__12:MoveNext()
+03-28 18:25:44.089 16638 16689 I Unity   : <GetAsync>d__1`1:MoveNext()
+03-28 18:25:44.089 16638 16689 I Unity   : <LoadAssetAsync>d__8`1:MoveNext()
+03-28 18:25:44.089 16638 16689 I Unity   : System.Threading.ExecutionContext:RunInternal(ExecutionContext, ContextCallback, Object, Boolean)
+03-28 18:25:44.089 16638 16689 I Unity   : System.Runtime.CompilerServices.MoveNextRunner:Run()
+03-28 18:25:44.089 16638 16689 I Unity   : System.Threading.Tasks.AwaitTaskContinuation:RunCallback(ContextCallback, Object, Task&)
+03-28 18:25:44.089 16638 16689 I Unity   : System.Threading.Tasks.Task:FinishContinuations()
+03-28 18:25:44.089 16638 16689 I Unity   : System.Threading.Tasks.Task`1:TrySetResult(TResult)
+03-28 18:25:44.089 16638 16689 I Unity   : System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1:SetResult(TResult)
+03-28 18:25:44.089 16638 16689 I Unity   : System.Threading.ExecutionContext:RunInternal(ExecutionContext, ContextCallback, Object, Boolean)
+03-28 18:25:44.089 16638 16689 I Unity   : System.Runtime.CompilerServices.MoveNextRunner:Run()
+03-28 18:25:44.089 16638 16689 I Unity   : System.Threading.Tasks.AwaitTaskContinuation:RunCallback(ContextCallback, Object, Task&)
+03-28 18:25:44.089 16638 16689 I Unity   : System.Threading.Tasks.Task:FinishContinuations()
+03-28 18:25:44.089 16638 16689 I Unity   : System.Threading.Tasks.Task`1:TrySetResult(TResult)
+03-28 18:25:44.089 16638 16689 I Unity   : System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1:SetResult(TResult)
+03-28 18:25:44.089 16638 16689 I Unity   : Syst
+03-28 18:25:44.713 16638 16689 I Unity   : [Client] 军团客户端启动（AOT→MainHotUpdate→MVC→ModuleMgr→BattleModule→BattleView）；场景=Assets/Scenes/Combat.unity
+03-28 18:25:44.713 16638 16689 I Unity   : LittleGame.Client.ClientBootstrap:Awake()
+03-28 18:25:44.713 16638 16689 I Unity   : LittleGame.Client.ClientBootstrap:Launch()
+03-28 18:25:44.713 16638 16689 I Unity   : <<Launch>b__0>d:MoveNext()
+03-28 18:25:44.713 16638 16689 I Unity   : <InitAsync>d__12:MoveNext()
+03-28 18:25:44.713 16638 16689 I Unity   : <GetAsync>d__1`1:MoveNext()
+03-28 18:25:44.713 16638 16689 I Unity   : <LoadAssetAsync>d__8`1:MoveNext()
+03-28 18:25:44.713 16638 16689 I Unity   : UnityEngine.GameObject:AddComponent()
+03-28 18:25:44.713 16638 16689 I Unity   : System.Reflection.RuntimeMethodInfo:Invoke(Object, BindingFlags, Binder, Object[], CultureInfo)
+03-28 18:25:44.713 16638 16689 I Unity   : System.Threading.ExecutionContext:RunInternal(ExecutionContext, ContextCallback, Object, Boolean)
+03-28 18:25:44.713 16638 16689 I Unity   : System.Runtime.CompilerServices.MoveNextRunner:Run()
+03-28 18:25:44.713 16638 16689 I Unity   : System.Threading.Tasks.AwaitTaskContinuation:RunCallback(ContextCallback, Object, Task&)
+03-28 18:25:44.713 16638 16689 I Unity   : System.Threading.Tasks.Task:FinishContinuations()
+03-28 18:25:44.713 16638 16689 I Unity   : System.Threading.Tasks.Task`1:TrySetResult(TResult)
+03-28 18:25:44.713 16638 16689 I Unity   : System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1:SetResult(TResult)
+03-28 18:25:44.713 16638 16689 I Unity   : System.Threading.ExecutionContext:RunInternal(ExecutionContext, ContextCallback, Object, Boolean)
+03-28 18:25:44.713 16638 16689 I Unity   : System.Runtime.CompilerServices.M
+03-28 18:25:44.718 16638 16689 I Unity   : [StartupFrame] BattleView begin
+03-28 18:25:44.718 16638 16689 I Unity   : LittleGame.Client.Battle.BattleView:LateUpdate()
+03-28 18:25:44.718 16638 16689 I Unity   : 
+03-28 18:25:44.720 16638 16689 I Unity   : [StartupFrame] environment ready
+03-28 18:25:44.720 16638 16689 I Unity   : LittleGame.Client.Battle.BattleView:LateUpdate()
+03-28 18:25:44.720 16638 16689 I Unity   : 
+03-28 18:25:44.893 16638 16689 I Unity   : [StartupFrame] units ready
+03-28 18:25:44.893 16638 16689 I Unity   : LittleGame.Client.Battle.BattleView:LateUpdate()
+03-28 18:25:44.893 16638 16689 I Unity   : 
+03-28 18:25:44.897 16638 16689 I Unity   : [StartupFrame] BattleView complete
+03-28 18:25:44.897 16638 16689 I Unity   : LittleGame.Client.Battle.BattleView:LateUpdate()
+03-28 18:25:44.897 16638 16689 I Unity   : 
+03-28 18:25:44.898 16638 16689 I Unity   : [StartupFrame] diagnostics snapshot begin
+03-28 18:25:44.898 16638 16689 I Unity   : LittleGame.Client.CombatDiagnostics:LateUpdate()
+03-28 18:25:44.898 16638 16689 I Unity   : 
+03-28 18:25:44.908 16638 16689 E CRASH   : *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+03-28 18:25:44.908 16638 16689 E CRASH   : Version '2022.3.62f3c1 (1623fc0bbb97)', Build type 'Development', Scripting Backend 'il2cpp', CPU 'arm64-v8a'
+03-28 18:25:44.908 16638 16689 E CRASH   : Build fingerprint: 'samsung/dream2qltezc/dream2qltechn:7.0/NRD90M/G9550ZCU2ARB3:user/release-keys'
+03-28 18:25:44.908 16638 16689 E CRASH   : Revision: '12'
+03-28 18:25:44.908 16638 16689 E CRASH   : ABI: 'arm64'
+03-28 18:25:44.908 16638 16689 E CRASH   : Timestamp: 2026-03-28 18:25:44.908880680+0800
+03-28 18:25:44.908 16638 16689 E CRASH   : pid: 16638, tid: 16689, name: UnityMain  >>> com.littlegame.teardown.dev <<<
+03-28 18:25:44.908 16638 16689 E CRASH   : uid: 11108
+03-28 18:25:44.908 16638 16689 E CRASH   : signal 11 (SIGSEGV), code 2 (SEGV_ACCERR), fault addr --------
+03-28 18:25:44.908 16638 16689 E CRASH   :     x0  0000007f33b18950  x1  0000007fa1db8ca0  x2  ffffffffffffffc0  x3  0000007f917a6948
+03-28 18:25:44.909 16638 16689 E CRASH   :     x4  0000000000000008  x5  0000007f917a6918  x6  0000007fa1db8d08  x7  0000007f609b1000
+03-28 18:25:44.909 16638 16689 E CRASH   :     x8  0000000000000001  x9  0000000000000000  x10 0000000000000000  x11 0000000000000000
+03-28 18:25:44.909 16638 16689 E CRASH   :     x12 0000007f609b3ab0  x13 0000007f609b3ab0  x14 0000000000000000  x15 0000007fa43f9810
+03-28 18:25:44.909 16638 16689 E CRASH   :     x16 0000007f6fbfdcf0  x17 0000007fa432fec8  x18 00000000000000c7  x19 0000000000000000
+03-28 18:25:44.909 16638 16689 E CRASH   :     x20 0000007fa1db9270  x21 0000000000000000  x22 0000007f64947200  x23 0000007f30875688
+03-28 18:25:44.909 16638 16689 E CRASH   :     x24 0000007f33ce1f68  x25 0000007f6fde8990  x26 0000007f33ce1f58  x27 0000000000000001
+03-28 18:25:44.909 16638 16689 E CRASH   :     x28 0000007fa1dbc4e8  x29 0000007f33ce1f48
+03-28 18:25:44.909 16638 16689 E CRASH   :     lr  0000007f30875688  sp  0000007fa1db8f90  pc  0000007f30875688  pst 0000000080000000
+03-28 18:25:44.909 16638 16689 E CRASH   : 
+03-28 18:25:44.909 16638 16689 E CRASH   : backtrace:
+03-28 18:25:44.909 16638 16689 E CRASH   :       #00 pc 0000000000875688  <anonymous:0000007f30000000>
+03-28 18:25:45.194 16638 16689 E CRASH   : Tombstone written to: /storage/emulated/0/Android/data/com.littlegame.teardown.dev/files/tombstone_00
+03-28 18:25:45.195 16638 16689 E CRASH   : Forwarding signal 11
+--------- beginning of crash
+03-28 18:25:45.195 16638 16689 F libc    : Fatal signal 11 (SIGSEGV), code 2, fault addr 0x7f30875688 in tid 16689 (UnityMain)
+03-28 18:25:46.239 16638 17207 I Choreographer: Skipped 61 frames!  The application may be doing too much work on its main thread.

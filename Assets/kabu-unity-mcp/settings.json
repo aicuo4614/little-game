@@ -119,6 +119,7 @@
     "unity_combat_focus": true,
     "unity_combat_protect": true,
     "unity_combat_pointer": true,
-    "unity_combat_wait_for_event": true
+    "unity_combat_wait_for_event": true,
+    "unity_combat_get_definitions": true
   }
 }

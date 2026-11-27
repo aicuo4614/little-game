@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1f6113d00550904393fa3d87cf90d51, type: 3}
+  m_Name: Skeleton_Rogue
+  m_EditorClassIdentifier: 
+  Source: Assets/LittleGame/Art/UnitSources/KayKit/Skeletons/Skeleton_Rogue.fbx
+  Model: {fileID: 4622635966853327390, guid: aa6da75d66df5d648b52a8d40b425f77, type: 3}
+  AnimatorController: {fileID: 9100000, guid: f623f3aa07d0c554f997429c71d2bd38, type: 2}
+  Idle: {fileID: 7400000, guid: 39ada25c866045a4aaed99bb99e64e37, type: 2}
+  Move: {fileID: 7400000, guid: 6d94a9d86bed8574188a80d9b5bf994b, type: 2}
+  Attack: {fileID: 7400000, guid: 3c1be812b6d300e478a9519db9af982d, type: 2}
+  Hit: {fileID: 7400000, guid: 7ba98017165c4854b8da4474aa73fe47, type: 2}
+  Death: {fileID: 7400000, guid: a657346868c6650438fd8386e17796df, type: 2}
+  Slam: {fileID: 7400000, guid: 06a0389c06b23a443a7a3af9cc998eb5, type: 2}
+  Height: 1.18
+  AttackSpeed: 1.5

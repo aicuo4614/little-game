@@ -10,7 +10,7 @@ namespace KabuUnityMcp.Server.Tools.Unity.Combat;
 public sealed class CombatTools(UnityWebSocketHub hub)
 {
     [McpServerTool(Name = "unity_combat_get_state", ReadOnly = true)]
-    [Description("读取本工程军团战斗状态、敌情、军团、转盘保底、分支、战术、首领预警、胜负和可用操作。先确认工程路径。")]
+    [Description("读取本工程波次、小波出怪、英雄身份、羁绊、单位法力与技能、本波与本局伤害统计、胜负和可用操作。先确认工程路径。")]
     public Task<CallToolResult> State() => Send("get_state", new { }, false);
 
     [McpServerTool(Name = "unity_combat_get_view", ReadOnly = true)]
@@ -53,7 +53,7 @@ public sealed class CombatTools(UnityWebSocketHub hub)
     public Task<CallToolResult> Restart(int seed = 173) => Send("restart", new { seed });
 
     [McpServerTool(Name = "unity_combat_spin")]
-    [Description("正常转盘招募一次，每波3次或援军令4次，横线三同出兵，连续两空后下次保底；暂存未处理会拒绝。")]
+    [Description("正常转盘招募一次，每波3次或援军令4次，十字中线三同后随机发放对应职业英雄，连续两空后下次保底。")]
     public Task<CallToolResult> Spin() => Send("spin", new { });
 
     [McpServerTool(Name = "unity_combat_deploy")]
@@ -61,15 +61,15 @@ public sealed class CombatTools(UnityWebSocketHub hub)
     public Task<CallToolResult> Deploy(int unitId, int lane, int row) => Send("deploy", new { unitId, lane, row });
 
     [McpServerTool(Name = "unity_combat_merge")]
-    [Description("三个同职业同星不同单位合成，unitId为宿主，另外两名消耗；最高三星。二星需选择分支。")]
+    [Description("三个同名同星英雄合成，unitId为宿主，另外两名消耗；最高三星。")]
     public Task<CallToolResult> Merge(int unitId, int otherId, int thirdId) => Send("merge", new { unitId, otherId, thirdId });
 
-    [McpServerTool(Name = "unity_combat_choose_branch")]
-    [Description("二星单位选分支：盾Bastion/WarCry，弓Pierce/Gale，雷StormPool/ChainLightning，冰DeepFreeze/IceArmor；选择后锁定。")]
-    public Task<CallToolResult> Branch(int unitId, string branch) => Send("choose_branch", new { unitId, branch });
+    [McpServerTool(Name = "unity_combat_get_definitions", ReadOnly = true)]
+    [Description("读取当前关卡、英雄和怪物配表定义、招募池与满蓝技能优先级。")]
+    public Task<CallToolResult> Definitions() => Send("get_definitions", new { }, false);
 
     [McpServerTool(Name = "unity_combat_start_wave")]
-    [Description("正常开始当前波，A*自动交战；未使用转盘次数放弃，未处理暂存会拒绝，二星不强制选分支。")]
+    [Description("双方以0法力开战，第一小波立即出怪，后续按配表间隔入场。未使用转盘次数放弃，未处理暂存会拒绝。")]
     public Task<CallToolResult> StartWave() => Send("start_wave", new { });
 
     [McpServerTool(Name = "unity_combat_next_wave")]
@@ -79,18 +79,6 @@ public sealed class CombatTools(UnityWebSocketHub hub)
     [McpServerTool(Name = "unity_combat_choose_reward")]
     [Description("第4/8波后选局内强化：Reinforcements/WideStorm/LongFreeze，不能重复获取。")]
     public Task<CallToolResult> Reward(string reward) => Send("choose_reward", new { reward });
-
-    [McpServerTool(Name = "unity_combat_aim")]
-    [Description("进入Focus集火或Protect保护瞄准，暂停战斗不扣战术点。确认focus/protect才扣，取消使用cancel_aim。")]
-    public Task<CallToolResult> Aim(string kind) => Send("aim", new { kind });
-
-    [McpServerTool(Name = "unity_combat_focus")]
-    [Description("Focus瞄准后确认存活敌人，消耗本波唯一指挥机会；远程仍受实际射程和相邻路线限制。")]
-    public Task<CallToolResult> Focus(int unitId) => Send("focus", new { unitId });
-
-    [McpServerTool(Name = "unity_combat_protect")]
-    [Description("Protect瞄准后保护lane=0到2一路，给予25%生命护盾持续4秒；空路拒绝不消费。")]
-    public Task<CallToolResult> Protect(int lane) => Send("protect", new { lane });
 
     [McpServerTool(Name = "unity_combat_pointer")]
     [Description("玩家共用触屏/鼠标入口，phase为begin/move/end/cancel，x/y为左下原点0到1。包含命中、起拖、取消与松手验证。")]

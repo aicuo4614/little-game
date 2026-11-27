@@ -1,0 +1,38 @@
+[
+  {
+    "role": "Archer",
+    "modelRootReference": true
+  },
+  {
+    "role": "Armored",
+    "modelRootReference": true
+  },
+  {
+    "role": "Frost",
+    "modelRootReference": true
+  },
+  {
+    "role": "Giant",
+    "modelRootReference": true
+  },
+  {
+    "role": "Grunt",
+    "modelRootReference": true
+  },
+  {
+    "role": "Healer",
+    "modelRootReference": true
+  },
+  {
+    "role": "Runner",
+    "modelRootReference": true
+  },
+  {
+    "role": "Shield",
+    "modelRootReference": true
+  },
+  {
+    "role": "Storm",
+    "modelRootReference": true
+  }
+]

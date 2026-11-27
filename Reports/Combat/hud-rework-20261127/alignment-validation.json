@@ -1,0 +1,10 @@
+{
+  "alignment": {
+    "headerBottom": 0.85,
+    "damageTop": 0.85,
+    "synergyTop": 0.85
+  },
+  "preparation": true,
+  "fighting": true,
+  "tabs": true
+}

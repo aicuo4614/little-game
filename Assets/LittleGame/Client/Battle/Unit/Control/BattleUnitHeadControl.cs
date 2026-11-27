@@ -15,6 +15,7 @@ namespace LittleGame.Client.Battle
 
         private Transform healthRoot;
         private Transform healthFill;
+        private Transform manaRoot, manaFill;
         private TextMesh label;
         private int lastStar = 1;
         private float starPopTimer;
@@ -41,14 +42,26 @@ namespace LittleGame.Client.Battle
                 new Vector3(0.68f, 0.05f, 0.03f),
                 owner.IsEnemy ? new Color(0.85f, 0.4f, 0.32f) : new Color(0.39f, 0.8f, 0.59f),
                 owner.GetMaterial);
+
+            manaRoot = new GameObject("Mana").transform;
+            manaRoot.SetParent(healthRoot, false);
+            manaRoot.localPosition = new Vector3(0f, -.068f, 0f);
+            CreateBarCube(manaRoot, Vector3.zero, new Vector3(.7f, .045f, .03f), new Color(.12f, .19f, .28f), owner.GetMaterial);
+            manaFill = new GameObject("ManaFill").transform;
+            manaFill.SetParent(manaRoot, false);
+            manaFill.localPosition = new Vector3(-.34f, 0f, 0f);
+            CreateBarCube(manaFill, new Vector3(.34f, 0f, -.02f), new Vector3(.68f, .033f, .03f),
+                new Color(.25f, .65f, 1f), owner.GetMaterial);
         }
 
-        public void Sync(float hpRatio, string title, int star)
+        public void Sync(float hpRatio, float manaRatio, bool showMana, string title, int star)
         {
             bool visible = !Owner.IsDead;
 
             if (healthRoot != null) healthRoot.gameObject.SetActive(visible);
             if (label != null) label.gameObject.SetActive(visible);
+            if (manaRoot != null) manaRoot.gameObject.SetActive(visible && showMana);
+            if (manaFill != null) manaFill.localScale = new Vector3(Mathf.Clamp01(manaRatio), 1f, 1f);
 
             if (Owner.Camera != null)
             {

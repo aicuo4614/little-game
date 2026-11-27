@@ -1,0 +1,9 @@
+race,job,count,stat,amount,duration
+Human,,2,Attack,0.09,0
+Human,,4,Attack,0.18,0
+Undead,,2,Health,0.11,0
+Undead,,4,Health,0.23,0
+,Warrior,2,Armor,19,0
+,Archer,2,Speed,0.17,0
+,Mage,2,SkillDamage,0.20,0
+,Assassin,2,LandingDamage,0.28,3

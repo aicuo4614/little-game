@@ -1,0 +1,14 @@
+key,value
+BasicMana,20
+DamageManaBase,7
+DamageManaHealthRatio,90
+DamageManaLimit,24
+TwoStarScale,1.75
+ThreeStarScale,2.85
+AssassinDetection,3.10
+AssassinJumpRange,5.10
+AssassinJumpDuration,0.36
+AssassinEarliestJump,0.65
+RecruitGrowthWave,6
+RecruitProfessionBias,80
+RecruitHeroBias,90

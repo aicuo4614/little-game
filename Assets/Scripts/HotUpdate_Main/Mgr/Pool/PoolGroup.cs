@@ -14,6 +14,12 @@ public sealed class PoolGroup : IDisposable
     public int ActiveCount => active.Count;
     public int PoolCount => pools.Count;
     public int IdleCount => System.Linq.Enumerable.Sum(pools.Values, p => p.IdleCount);
+    public int CreatedCount => System.Linq.Enumerable.Sum(pools.Values, p => p.CreatedCount);
+    public int ReusedCount => System.Linq.Enumerable.Sum(pools.Values, p => p.ReusedCount);
+
+    /// <summary>至少保留 count 只休眠实例；重复预热不会无限扩容。</summary>
+    public void Prewarm(string address, ResourcePackageName package, int count = 1)
+        => GetPool(address, package).Prewarm(count);
 
     internal PoolGroup(Transform owner)
     {

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1f6113d00550904393fa3d87cf90d51, type: 3}
+  m_Name: Mage
+  m_EditorClassIdentifier: 
+  Source: Assets/LittleGame/Art/UnitSources/KayKit/Adventurers/Mage.fbx
+  Model: {fileID: 7913397412263125861, guid: 73e56b14d55699b43bfbc6ab911b2a1b, type: 3}
+  AnimatorController: {fileID: 9100000, guid: 0ca0478847981e7488421ba2fd60aaf0, type: 2}
+  Idle: {fileID: 7400000, guid: 7ce49def0e29ce54f8994921266019a4, type: 2}
+  Move: {fileID: 7400000, guid: c3922b91a1b5fce458110c0a25a1d489, type: 2}
+  Attack: {fileID: 7400000, guid: 61d7331493a05a64aac30b975c8fc2b6, type: 2}
+  Hit: {fileID: 7400000, guid: b7b218fb85090684ba08c8d40095956b, type: 2}
+  Death: {fileID: 7400000, guid: cb1b1a57189395047b5032a61c0b7fb9, type: 2}
+  Slam: {fileID: 7400000, guid: 8c1f6fa971f1c0e499ec19cd6d7549ff, type: 2}
+  Height: 1.18
+  AttackSpeed: 1.5

@@ -65,6 +65,7 @@ namespace LittleGame.Client.Battle
             bool isEnemy,
             bool isBoss,
             string visualKey,
+            string roleKey,
             Camera camera,
             Mesh ringMesh,
             Func<string, Color, bool, Material> getMaterial,
@@ -79,9 +80,7 @@ namespace LittleGame.Client.Battle
             RingMesh = ringMesh;
             GetMaterial = getMaterial;
             ColorForTroop = colorForTroop;
-            RoleKey = isEnemy
-                ? new[] { "Grunt", "Runner", "Armored", "Healer", "Giant" }[Mathf.Clamp(kind, 0, 4)]
-                : new[] { "Shield", "Archer", "Storm", "Frost" }[Mathf.Clamp(kind, 0, 3)];
+            RoleKey = roleKey;
 
             try
             {
@@ -140,7 +139,9 @@ namespace LittleGame.Client.Battle
             int star = 1,
             bool forceWalk = false,
             float movementSpeed = -1f,
-            float battleSpeed = 1f)
+            float battleSpeed = 1f,
+            float manaRatio = 0f,
+            bool showMana = false)
         {
             if (ended || Transform == null)
             {
@@ -178,7 +179,7 @@ namespace LittleGame.Client.Battle
 
             bool moving = forceWalk || (movementSpeed > 0.12f);
             StateControl.SyncLocomotion(alive, controlled, moving);
-            HeadControl.Sync(hpRatio, title, star);
+            HeadControl.Sync(hpRatio, manaRatio, showMana, title, star);
             StatusControl.SetStatusActive(statusActive && alive);
             ModelControl.ApplyWalkBob((fightingBob || forceWalk) && alive && !motionPaused && !controlled, Transform.GetInstanceID());
         }

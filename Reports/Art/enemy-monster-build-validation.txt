@@ -1,0 +1,28 @@
+Grunt Idle legacy=False len=1.000 curves=590 missing=0
+Grunt Walk legacy=False len=0.500 curves=590 missing=0
+Grunt Attack legacy=False len=0.833 curves=590 missing=0
+Grunt Hit legacy=False len=0.667 curves=590 missing=0
+Grunt Death legacy=False len=1.667 curves=590 missing=0
+Grunt Slam legacy=False len=0.833 curves=590 missing=0
+Grunt animator=true controller=Grunt avatar=WerewolfAvatar nodes=7 renderers=1 triangles=2178
+Runner Idle legacy=False len=1.000 curves=380 missing=0
+Runner Walk legacy=False len=0.400 curves=380 missing=0
+Runner Attack legacy=False len=0.667 curves=380 missing=0
+Runner Hit legacy=False len=0.667 curves=380 missing=0
+Runner Death legacy=False len=1.667 curves=380 missing=0
+Runner Slam legacy=False len=0.667 curves=380 missing=0
+Runner animator=true controller=Runner avatar=WolfAvatar nodes=7 renderers=1 triangles=1534
+Armored Idle legacy=False len=1.333 curves=640 missing=0
+Armored Walk legacy=False len=1.167 curves=640 missing=0
+Armored Attack legacy=False len=0.833 curves=640 missing=0
+Armored Hit legacy=False len=0.667 curves=640 missing=0
+Armored Death legacy=False len=1.667 curves=640 missing=0
+Armored Slam legacy=False len=0.833 curves=640 missing=0
+Armored animator=true controller=Armored avatar=Hermit KingAvatar nodes=7 renderers=1 triangles=2266
+Healer Idle legacy=False len=1.000 curves=520 missing=0
+Healer Walk legacy=False len=0.667 curves=520 missing=0
+Healer Attack legacy=False len=1.000 curves=520 missing=0
+Healer Hit legacy=False len=0.667 curves=520 missing=0
+Healer Death legacy=False len=1.667 curves=520 missing=0
+Healer Slam legacy=False len=1.000 curves=520 missing=0
+Healer animator=true controller=Healer avatar=Sunflower FairyAvatar nodes=7 renderers=1 triangles=1740

@@ -14,7 +14,7 @@ namespace LittleGame.Client.Battle
             MVC.ResourceService.CopyEntriesSnapshot(entries);
             return new
             {
-                resourceMode = LaunchRuntimeResourceUtil.UseRuntimeResourcePipeline ? "HostPlayMode+OfflineLaunch" : "EditorSimulateMode",
+                resourceMode = LaunchRuntimeResourceUtil.UseRuntimeResourcePipeline ? "OfflineBuiltIn" : "EditorSimulateMode",
                 aotStarted = MyApplication.Instance != null,
                 mainLaunched = MainHotUpdate.IsLaunched,
                 mvcInitialized = MVC.IsInitialized,
@@ -26,7 +26,9 @@ namespace LittleGame.Client.Battle
                     ResourcePackageName.EffectPackage, ResourcePackageName.ScenePackage }
                     .Select(name => new { name = name.ToString(), manifestReady = YooAssets.TryGetPackage(name.ToString())?.PackageValid ?? false }),
                 resourceEntries = entries,
-                pool = new { active = view.PrefabPool.ActiveCount, idle = view.PrefabPool.IdleCount, prefabCount = view.PrefabPool.PoolCount },
+                navigation = view.App.Navigation.Snapshot(),
+                pool = new { active = view.PrefabPool.ActiveCount, idle = view.PrefabPool.IdleCount, prefabCount = view.PrefabPool.PoolCount,
+                    created = view.PrefabPool.CreatedCount, reused = view.PrefabPool.ReusedCount, prewarm = view.Prewarm.Snapshot() },
                 windows = UiMgr.Instance.OpenedWindows.Select(w => new { name = w.Window.GetType().Name, opened = w.Window.IsOpened }),
                 note = "这是当前 Unity 宿主的资源与框架状态；Editor 的 DLL 使用编译程序集，不代表手机 HybridCLR 注入通过"
             };

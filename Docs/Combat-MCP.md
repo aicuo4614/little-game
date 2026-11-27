@@ -4,12 +4,16 @@
 
 端点 `http://127.0.0.1:3833/mcp`，工程 `E:/Project/little-game/Assets`。所有写操作均走 `BattleApplication.Submit → BattleSession.Execute`，与玩家相同，不存在跳波、直接改血或直接获胜的生产工具。
 
+2026-11-27 战斗扩展更新为 **2.0.0**，状态 schema **7**。当前验收入口为 `Tools/Preparation/verify_hero_rework.py`。第一关共十波，第 5、10 波各一只石甲巨像。
+
 ## 发现与入口
 
 1. `unity_get_project_info` 确认工程路径，`unity_get_compilation_status` 确认编译。
 2. 退出 Play 后执行菜单 `Little Game/Combat/Open Combat`，再 `unity_enter_play_mode`。
-3. `tools/list` 应发现 16 个 `unity_combat_*` 工具。`unity_extension_catalog(extensionId="little-game.combat")` 另提供完整 23 项扩展操作及参数。
-4. `unity_combat_get_state` 读取本波、敌情、军团、转盘、可用操作、预警和事件；`unity_combat_get_view` 读取真实屏幕目标。
+3. `tools/list` 查看 `unity_combat_*` 直接工具。`unity_extension_catalog(extensionId="little-game.combat")` 提供完整扩展操作及参数。
+4. `unity_combat_get_state` 读取小波、英雄身份、法力、技能解锁和冷却、羁绊、预警与事件。`unity_combat_get_view` 读取真实屏幕目标。`unity_combat_get_definitions` 读取关卡、英雄、怪物、技能与招募池。
+
+冷启动诊断读取 get_view.presentation.framework。resourceMode 为 OfflineBuiltIn 时从内置资源清单启动，默认编辑器模拟为 EditorSimulateMode。packages 列出七个包的清单状态。
 
 ## 固定朝向机位（战斗扩展 1.9.0）
 
@@ -20,18 +24,17 @@
 | 操作 | 输入 | 条件与结果 |
 | --- | --- | --- |
 | `unity_combat_restart` | seed，可省略为173 | 正常重开，不保留本局军团与奖励；相同种子复现 |
-| `unity_combat_spin` | 无 | 准备阶段、有次数、无暂存；十字中线（中横/中竖）三同出兵。两次空转后的下一次保底 |
+| `unity_combat_spin` | 无 | 准备阶段、有次数、无暂存。十字中线三同后随机发放对应职业英雄，两次空转后的下一次保底 |
 | `unity_combat_deploy` | unitId、lane、row | lane/row均0到2；未满人口时候补可上空格，满人口仅允许与已占格替换或调整已上阵位置 |
-| `unity_combat_merge` | unitId、otherId、thirdId | 三个同职业同星不同单位；保留宿主位置、分支，消耗另外两名 |
-| `unity_combat_choose_branch` | unitId、branch | 二星必须选合法分支，选择后锁定 |
-| `unity_combat_start_wave` | 无 | 暂存清空、分支已选、至少一个上阵；自动战斗，剩余转动放弃 |
+| `unity_combat_merge` | unitId、otherId、thirdId | 三个同名同星英雄，保留宿主位置，消耗另外两名，自动解锁下一技能 |
+| `unity_combat_start_wave` | 无 | 暂存清空，至少一人上阵。敌我从 0 法力开战，第一小波立即出怪，剩余转动放弃 |
 | `unity_combat_aim` | kind=Focus或Protect | 暂停瞄准，不扣次数 |
 | `unity_combat_focus` | unitId为敌人ID | 存活目标；消耗本波唯一战术，射程不改变 |
-| `unity_combat_protect` | lane | 该路有存活友军；4秒25%护盾；空路拒绝不扣次数 |
+| `unity_combat_protect` | lane | 区域内存活友军获得 4 秒、28% 最大生命值的护盾 |
 | `unity_combat_choose_reward` | reward | 第4/8波后，选择未持有的 Reinforcements/WideStorm/LongFreeze |
 | `unity_combat_next_wave` | 无 | 仅波后，无权跳过战斗或奖励；满血、刷新转盘 |
 
-盾分支 Bastion/WarCry；弓 Pierce/Gale；雷 StormPool/ChainLightning；冰 DeepFreeze/IceArmor。
+技能随星级固定解锁，满 100 法力按技能三、二、一的优先级选可用主动技能。波次结束需刷完所有小波并清空敌人。
 
 玩家界面重开使用新的随机种子。MCP显式传入seed用于复现同一局；它只决定随机流，不绕过正常次数、掉落、战斗或培养规则。
 

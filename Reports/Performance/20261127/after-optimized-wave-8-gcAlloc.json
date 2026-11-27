@@ -1,0 +1,1 @@
+读取 Hierarchy 失败：{"code":-32000,"message":"Profiler 尚无录制帧。请 unity_profiler_enable 后在 Play Mode 跑若干帧再取 Hierarchy。"}

@@ -1,3 +1,4 @@
+using Unity.Profiling;
 using System;
 using System.Collections.Generic;
 using LittleGame.Combat;
@@ -11,17 +12,20 @@ namespace LittleGame.Client.Battle
     /// </summary>
     public sealed class BattleView : MonoBehaviour
     {
+        private static readonly ProfilerMarker PerformanceMarker = new ProfilerMarker("LittleGame.View");
         public static readonly Color BattleBackgroundColor = new Color(0.145f, 0.165f, 0.225f, 1f);
         private readonly List<BattleControlBase> controls = new List<BattleControlBase>(12);
         private readonly Dictionary<string, Material> materials = new Dictionary<string, Material>();
         private bool ready;
         private bool tornDown;
         private RunPhase lastPhase = RunPhase.Preparation;
+        private bool startupFrameLogged;
 
         public BattleApplication App { get; private set; }
         public Transform WorldRoot { get; private set; }
         public PoolGroup PrefabPool { get; private set; }
         public Mesh RingMesh { get; private set; }
+        public BattleResourcePrewarm Prewarm { get; } = new BattleResourcePrewarm();
         public bool IsTornDown => tornDown;
 
         public BattleSceneControl SceneControl => GetControl<BattleSceneControl>();
@@ -81,6 +85,7 @@ namespace LittleGame.Client.Battle
 
             // 将共享 Demo TimelineConfig 推导出的精确时序注册进纯规则层
             App.Session.ConfigureSkills(ActionControl.Library.BuildDefinitions());
+            Prewarm.Prepare(this);
             ready = true;
         }
 
@@ -91,7 +96,11 @@ namespace LittleGame.Client.Battle
 
         private void LateUpdate()
         {
+            using var performanceSample = PerformanceMarker.Auto();
             if (!ready || tornDown || App == null) return;
+            bool traceStartup = !startupFrameLogged;
+            startupFrameLogged = true;
+            if (traceStartup) GameDebug.Log("StartupFrame", "BattleView begin");
             var session = App.Session;
 
             if (lastPhase == RunPhase.Fighting && session.Phase != RunPhase.Fighting)
@@ -103,12 +112,14 @@ namespace LittleGame.Client.Battle
             lastPhase = session.Phase;
 
             float dt = Time.unscaledDeltaTime;
-            bool paused = session.Paused || session.Aim != AimKind.None;
+            bool paused = session.Paused;
 
             SpeedControl.Sync(session.Speed);
             float deltaCamX = CameraControl.UpdateCamera(session, paused, dt);
             SceneControl.SyncEnvironment(session, paused, deltaCamX, CameraControl.CameraX, dt, out bool marching);
+            if (traceStartup) GameDebug.Log("StartupFrame", "environment ready");
             UnitsControl.Sync(session, marching, dt);
+            if (traceStartup) GameDebug.Log("StartupFrame", "units ready");
             ActionControl.ProcessEvents(session);
 
             float scaledDt = dt * Math.Max(1, SpeedControl.CurrentSpeed);
@@ -120,6 +131,7 @@ namespace LittleGame.Client.Battle
             {
                 controls[i].Tick(dt);
             }
+            if (traceStartup) GameDebug.Log("StartupFrame", "BattleView complete");
         }
 
         public void SetSelectedUnit(int unitId, bool visible) => FieldOverlayControl.SyncSelectionCursor(unitId, visible);

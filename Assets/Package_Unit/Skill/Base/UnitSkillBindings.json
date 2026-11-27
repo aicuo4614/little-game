@@ -18,22 +18,6 @@
       "Note": "盾卫基础技能"
     },
     {
-      "UnitKind": "Shield",
-      "Trigger": "Skill",
-      "Branch": "Bastion",
-      "MinStar": 2,
-      "TimelineId": "shield_bastion",
-      "Note": "二星堡垒分支"
-    },
-    {
-      "UnitKind": "Shield",
-      "Trigger": "Skill",
-      "Branch": "WarCry",
-      "MinStar": 2,
-      "TimelineId": "shield_warcry",
-      "Note": "二星战吼分支"
-    },
-    {
       "UnitKind": "Archer",
       "Trigger": "BasicAttack",
       "Branch": "",
@@ -50,22 +34,6 @@
       "Note": "风弓手基础技能"
     },
     {
-      "UnitKind": "Archer",
-      "Trigger": "Skill",
-      "Branch": "Pierce",
-      "MinStar": 2,
-      "TimelineId": "archer_pierce",
-      "Note": "二星穿透分支"
-    },
-    {
-      "UnitKind": "Archer",
-      "Trigger": "Skill",
-      "Branch": "Gale",
-      "MinStar": 2,
-      "TimelineId": "archer_gale",
-      "Note": "二星飓风分支"
-    },
-    {
       "UnitKind": "Storm",
       "Trigger": "BasicAttack",
       "Branch": "",
@@ -80,22 +48,6 @@
       "MinStar": 1,
       "TimelineId": "storm_pool",
       "Note": "雷法师基础雷区"
-    },
-    {
-      "UnitKind": "Storm",
-      "Trigger": "Skill",
-      "Branch": "StormPool",
-      "MinStar": 2,
-      "TimelineId": "storm_pool",
-      "Note": "二星强化雷池"
-    },
-    {
-      "UnitKind": "Storm",
-      "Trigger": "Skill",
-      "Branch": "ChainLightning",
-      "MinStar": 2,
-      "TimelineId": "storm_chain",
-      "Note": "二星连锁闪电"
     },
     {
       "UnitKind": "Storm",
@@ -120,22 +72,6 @@
       "MinStar": 1,
       "TimelineId": "frost_freeze",
       "Note": "冰法师基础冻结"
-    },
-    {
-      "UnitKind": "Frost",
-      "Trigger": "Skill",
-      "Branch": "DeepFreeze",
-      "MinStar": 2,
-      "TimelineId": "frost_freeze",
-      "Note": "二星深度冻结"
-    },
-    {
-      "UnitKind": "Frost",
-      "Trigger": "Skill",
-      "Branch": "IceArmor",
-      "MinStar": 2,
-      "TimelineId": "frost_icearmor",
-      "Note": "二星极寒冰甲"
     },
     {
       "UnitKind": "*",
@@ -192,6 +128,22 @@
       "MinStar": 1,
       "TimelineId": "unit_upgrade",
       "Note": "军团合成升星/分支觉醒"
+    },
+    {
+      "UnitKind": "Rogue",
+      "Trigger": "BasicAttack",
+      "Branch": "",
+      "MinStar": 1,
+      "TimelineId": "enemy_melee_basic",
+      "Note": "刺客普攻"
+    },
+    {
+      "UnitKind": "Rogue",
+      "Trigger": "Skill",
+      "Branch": "",
+      "MinStar": 1,
+      "TimelineId": "enemy_melee_basic",
+      "Note": "刺客近身技能"
     }
   ]
 }

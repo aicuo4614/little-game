@@ -37,6 +37,7 @@ namespace LittleGame.Client.Battle
         private Vector3 ghostBaseScale = Vector3.one;
         private Vector2 lastScreenPos;
         private readonly List<BounceAnim> bounces = new List<BounceAnim>();
+        private readonly Dictionary<string, UnitAppearance> appearances = new Dictionary<string, UnitAppearance>();
 
         public Camera DragCamera => dragCamera;
         public bool IsDragging => activeGhost != null;
@@ -224,8 +225,12 @@ namespace LittleGame.Client.Battle
 
         private GameObject CreateDragModel(Troop troop, int layer, bool asSilhouette)
         {
-            string role = new[] { "Shield", "Archer", "Storm", "Frost" }[Mathf.Clamp((int)troop.Kind, 0, 3)];
-            var appearance = Resources.Load<UnitAppearance>("UnitAppearances/" + role);
+            string role = troop.Definition.Role;
+            if (!appearances.TryGetValue(role, out var appearance))
+            {
+                appearance = UnitAppearance.Load(role);
+                appearances.Add(role, appearance);
+            }
 
             var root = new GameObject("DragGhost_" + role);
             root.transform.SetParent(transform, false);
@@ -310,6 +315,8 @@ namespace LittleGame.Client.Battle
             for (int i = bounces.Count - 1; i >= 0; i--)
                 if (bounces[i].Root != null) Destroy(bounces[i].Root);
             bounces.Clear();
+            foreach (var role in appearances.Keys) UnitAppearance.Release(role);
+            appearances.Clear();
         }
     }
 }

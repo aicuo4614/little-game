@@ -26,6 +26,19 @@ namespace LittleGame.Combat
         internal bool HasGoal;
         internal readonly List<NavPoint> Path = new List<NavPoint>();
 
+        public void SetMotion(NavigationStatus status, string reason, float blockedFor)
+        { Status = status; BlockReason = reason; BlockedFor = blockedFor; }
+
+        public void SetNativePath(int targetId, NavPoint goal, IList<NavPoint> corners)
+        {
+            TargetId = targetId; GoalX = goal.X; GoalZ = goal.Z; HasGoal = true; Cursor = 0; Revision++;
+            Path.Clear(); for (int i = 0; i < corners.Count; i++) Path.Add(corners[i]);
+        }
+        public void SetRemainingPath(IList<NavPoint> corners)
+        { Path.Clear(); for (int i = 0; i < corners.Count; i++) Path.Add(corners[i]); Cursor = 0; }
+
+        public void ClearNativePath() { HasGoal = false; Path.Clear(); Cursor = 0; }
+
         internal void Reset()
         {
             Status = NavigationStatus.Holding; BlockReason = ""; BlockedFor = RetryAt = 0;

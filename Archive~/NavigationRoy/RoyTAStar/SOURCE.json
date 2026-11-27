@@ -1,0 +1,11 @@
+{
+  "source": "https://github.com/roy-t/AStar",
+  "commit": "3d57efaa83c8cd217e4973fd4738c57e2f694bd2",
+  "license": "MIT, see LICENSE.txt",
+  "modifications": [
+    "PathFinder增加可选canTraverse过滤器，供纯规则动态通行查询使用",
+    "2026-11-27：导出穷尽搜索后的可达节点集合，供同一单位规划批次内的候选落点复用",
+    "2026-11-27：修复MinHeap.Remove内部节点删除后未从替换位置恢复堆序、删除不存在元素误清空队列的问题；回归见Tools/CombatTests/NavigationTests.cs"
+  ],
+  "scope": "仅核心26个C#文件，不导入WPF、Benchmark、测试工具或其他依赖"
+}

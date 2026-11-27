@@ -16,37 +16,33 @@ namespace LittleGame.Client.Editor
         private static readonly CombatMcp instance = new CombatMcp();
         static CombatMcp() { McpExtensionRegistry.Register(instance); AssemblyReloadEvents.beforeAssemblyReload += () => McpExtensionRegistry.Unregister(instance); }
         public string Id => "little-game.combat";
-        public string Version => "1.9.0";
-        public string Description => "横向无限远征军团（全面对齐 Demo 架构）：AOT/HotUpdate/MVC/ModuleMgr/UGUI ModuleWindowBase、BattleView(9 Controls)+BattleUnit(7 Controls+5态FSM)、原生3D Animator+共享TimelinePlayback技能系统、A*导航与自动三合一升星；所有操作调用玩家共用规则。";
+        public string Version => "2.4.0";
+        public string Description => "符阵军团英雄配表、羁绊、法力技能、NavMeshAgent战斗和第一关十波；所有操作调用玩家共用规则。";
         public string UnavailableReason => !Application.isPlaying || ClientBootstrap.Current == null ? "打开 Little Game/Combat/Open Combat 并进入Play" : null;
         private static JObject Schema(string properties = "", string required = "") => JObject.Parse("{'type':'object','properties':{" + properties + "},'required':[" + required + "],'additionalProperties':false}");
         private const string Unit = "'unitId':{'type':'integer','minimum':1}";
         private const string Lane = "'lane':{'type':'integer','minimum':0,'maximum':2}";
         public McpExtensionOperation[] Operations => new[]
         {
-            new McpExtensionOperation("get_state", "读取横向远征阶段、白色布阵框边界、归队状态、推进里程、存活军团、狂暴状态、人口上限与经验圆环、招募次数/保底/十字中奖线、军团/敌人(含homeX/homeZ/facingYaw/turnSpeed/moveSpeed/canMerge)、技能实例(impactAt/timingMode/projectileSpeed)、冷却、战术、首领预警、胜负与最近事件", true, Schema()),
+            new McpExtensionOperation("get_state", "读取横向远征阶段、白色布阵框边界、归队状态、推进里程、存活军团、狂暴状态、人口上限与经验、招募次数/保底/十字中奖线、军团/敌人(含homeX/homeZ/facingYaw/turnSpeed/moveSpeed/canMerge)、技能实例(impactAt/timingMode/projectileSpeed)、每单位法力/星级技能/独立冷却/状态/属性、羁绊、出怪小波、伤害统计（按英雄归属、本波及整局实际扣血）、首领预警、胜负与事件", true, Schema()),
             new McpExtensionOperation("get_view", "读取UI主题/缺失素材、全局悬浮Tip(红/金)、候补拖回热区、按钮坐标与宽高、单位/阵位坐标、固定朝向机位模式、实际基础偏航(cameraYaw)、相机X及前移边界、道路入口、单位模型与动作/播放时间、技能时间轴统计与active.visualImpactAt、材质Shader支持及无限横向滚动场景状态；坐标左下原点0到1", true, Schema()),
-            new McpExtensionOperation("get_navigation", "只读查询 A* 路径、阻挡原因、FSM目标与实际速度；unitId可选，不推进时间", true, Schema(Unit)),
+            new McpExtensionOperation("get_navigation", "只读查询原生NavMesh路径、阻挡原因、FSM目标、实际速度和导航适配层累计CPU耗时；unitId可选，不推进时间", true, Schema(Unit)),
             new McpExtensionOperation("get_events", "读取sequence之后的实际规则事件；重复轮询不推进时间。缓存保留最近600条，返回oldestSequence供识别缺口", true, Schema("'after':{'type':'integer','minimum':0}")),
-            new McpExtensionOperation("get_definitions", "查看职业射程、攻速、移动速度、转身速率、白色布阵框范围、奖励及规则版本；不改变状态", true, Schema()),
+            new McpExtensionOperation("get_definitions", "查看英雄、怪物、招募池、羁绊、波次表和规则版本；不改变状态", true, Schema()),
             new McpExtensionOperation("restart", "玩家重开同样调用，清空本局；seed为可复现随机种子，默认173", false, Schema("'seed':{'type':'integer'}")),
-            new McpExtensionOperation("spin", "正常转盘：每波3次，援军令后4次，十字中线（中横排与中竖排）三同出兵，十字双连出2兵；两次空转后下次保底；凑齐三同自动合成升星", false, Schema()),
+            new McpExtensionOperation("spin", "正常转盘：每波3次，援军令后4次，十字中线（中横排与中竖排）三同出兵，十字双连出2兵；两次空转后下次保底；从中奖职业随机发放英雄；凑齐三名同名同星英雄自动合成升星", false, Schema()),
             new McpExtensionOperation("deploy", "在整体白色布阵框内自由部署或替换单位；传世界坐标 x/z 时超出白框自动夹紧到最近合法点 A；也支持参考 lane/row(0..2)；准备阶段限定，受人口上限(6→9)约束", false, Schema(Unit + "," + Lane + ",'row':{'type':'integer','minimum':0,'maximum':2},'x':{'type':'number'},'z':{'type':'number'}", "'unitId'")),
             new McpExtensionOperation("recall", "召回候补（玩家通过将场上单位拖入候补区触发）；至少保留一名上阵、候补容量6", false, Schema(Unit, "'unitId'")),
             new McpExtensionOperation("recycle", "遣散候补，不能直接删除上阵兵；仅用于处理容量，无材料收益", false, Schema(Unit, "'unitId'")),
-            new McpExtensionOperation("merge", "兼容手动三兵合成（正常流程已自动三合一升星）；最高3星", false, Schema(Unit + ",'otherId':{'type':'integer','minimum':1},'thirdId':{'type':'integer','minimum':1}", "'unitId','otherId','thirdId'")),
-            new McpExtensionOperation("choose_branch", "保留底层职业分支接口（当前版本升二星不强制选择，UI已隐藏）", false, Schema(Unit + ",'branch':{'type':'string','enum':['Bastion','WarCry','Pierce','Gale','StormPool','ChainLightning','DeepFreeze','IceArmor']}", "'unitId','branch'")),
-            new McpExtensionOperation("start_wave", "正常开战，未用次数放弃；暂存未处理会拒绝（二星不再强制选分支）。全军A*导航、攻击落点预占与阻挡等待，规则状态机驱动交锋", false, Schema()),
+            new McpExtensionOperation("merge", "手动请求合成三个同名同星英雄（正常招募会自动合成）；最高3星", false, Schema(Unit + ",'otherId':{'type':'integer','minimum':1},'thirdId':{'type':'integer','minimum':1}", "'unitId','otherId','thirdId'")),
+            new McpExtensionOperation("start_wave", "正常开战，未用次数放弃；暂存未处理会拒绝。双方以0法力开始，小波按表中时间入场。全军原生NavMeshAgent导航、攻击落点预占与阻挡等待，规则状态机驱动交锋", false, Schema()),
             new McpExtensionOperation("next_wave", "仅波后进入下一波，全员满血恢复推进下一段、刷新次数，不能跳过奖励或战斗", false, Schema()),
             new McpExtensionOperation("choose_reward", "第4/8波后选择尚未持有的局内强化；援军令不可叠加", false, Schema("'reward':{'type':'string','enum':['Reinforcements','WideStorm','LongFreeze']}", "'reward'")),
-            new McpExtensionOperation("aim", "进入集火或护盾保护瞄准，暂停战斗但不扣次数；取消可恢复", false, Schema("'kind':{'type':'string','enum':['Focus','Protect']}", "'kind'")),
-            new McpExtensionOperation("focus", "瞄准Focus后选存活敌人，消耗本波唯一战术；射程内优先转向输出", false, Schema(Unit, "'unitId'")),
-            new McpExtensionOperation("protect", "瞄准Protect后选0到2区域(上/中/下行)，给该区域存活友军4秒28%护盾；空区域拒绝且不扣次数", false, Schema(Lane, "'lane'")),
-            new McpExtensionOperation("cancel_aim", "取消瞄准，不扣战术点", false, Schema()),
             new McpExtensionOperation("pause", "正常暂停或继续，仅战斗阶段", false, Schema("'paused':{'type':'boolean'}", "'paused'")),
             new McpExtensionOperation("set_speed", "玩家同款1/2倍速度；不是调试跳帧或直接结算", false, Schema("'speed':{'type':'integer','enum':[1,2]}", "'speed'")),
             new McpExtensionOperation("pointer", "共用触屏/鼠标入口：begin/move/end/cancel；用于验证tap即选中、点布阵框外空地取消选中、滑空地不改变机位、拖拽吸附最近点A、拖回候补召回、双击候补上场与取消；坐标左下0到1", false, Schema("'phase':{'type':'string','enum':['begin','move','end','cancel']},'x':{'type':'number','minimum':0,'maximum':1},'y':{'type':'number','minimum':0,'maximum':1}", "'phase','x','y'")),
             new McpExtensionOperation("capture_view", "保存实际场景和HUD合成渲染，540x960；编辑器截图不是手机截图", true, Schema()),
+            new McpExtensionOperation("profile_capture", "编辑器诊断：start 解除限帧和垂直同步并记录逐帧 CPU/GC，stop 保存并恢复，status 只读状态；不修改战斗规则", false, Schema("'action':{'type':'string','enum':['start','stop','status']}", "'action'")),
             new McpExtensionOperation("performance", "最近240帧的帧间隔、尺寸和平台；编辑器数据不得作为手机帧率", true, Schema())
         };
         public McpHostResult Execute(string operation, JObject args)
@@ -54,6 +50,8 @@ namespace LittleGame.Client.Editor
             var boot = ClientBootstrap.Current; var session = boot.App.Session;
             switch (operation)
             {
+                case "profile_capture":
+                    return McpHostResult.Success((string)args["action"] == "start" ? CombatPerformanceCapture.Start() : (string)args["action"] == "stop" ? CombatPerformanceCapture.Stop() : CombatPerformanceCapture.Status());
                 case "get_state": return McpHostResult.Success(session.Snapshot());
                 case "get_view": return McpHostResult.Success(boot.Hud.Snapshot());
                 case "get_events": var events = session.EventsAfter(0).ToArray(); return McpHostResult.Success(new { oldestSequence = events.FirstOrDefault()?.Sequence ?? 0, lastSequence = session.LastSequence, events = session.EventsAfter((long?)args["after"] ?? 0) });
@@ -61,29 +59,43 @@ namespace LittleGame.Client.Editor
                 case "get_definitions":
                     return McpHostResult.Success(new
                     {
-                        rulesVersion = "current-20261126-portrait-skills",
+                        rulesVersion = "current-20261127-hero-tables",
                         skillTiming = "弹道按实际施法距离与资源挂点计算到达时间；get_state.skills 返回 timingMode/projectileSpeed/impactAt，get_view.presentation.skillTimeline.active 返回 visualImpactAt。预览仍不结算伤害。",
                         sameRuleEntry = "BattleApplication.Submit -> BattleSession.Execute",
                         deployBox = new { minX = BattleDefinitions.DeployMinX, maxX = BattleDefinitions.DeployMaxX, minZ = BattleDefinitions.DeployMinZ, maxZ = BattleDefinitions.DeployMaxZ },
-                        professions = Enum.GetValues(typeof(TroopKind)).Cast<TroopKind>().Select(k => new
+                        professions = Enum.GetValues(typeof(UnitJob)).Cast<UnitJob>().Select(job => new
                         {
-                            kind = k.ToString(),
-                            name = BattleDefinitions.Name(k),
-                            range = BattleDefinitions.Range(k),
-                            attackInterval = BattleDefinitions.AttackInterval(k),
-                            moveSpeed = BattleDefinitions.MoveSpeed(k),
-                            turnSpeed = BattleDefinitions.TurnSpeed(k)
+                            kind = job.ToString(), name = BattleDefinitions.Name((TroopKind)job), recruits = BattleTables.Current.RecruitPool(job)
+                        }),
+                        units = BattleTables.Current.Units.Select(u => new
+                        {
+                            id = u.Id, name = u.Name, job = u.Job.ToString(), race = u.Race.ToString(), grade = u.Grade.ToString(), role = u.Role,
+                            health = u.Hp, attack = u.Attack, armor = u.Armor, magicResist = u.Resist, attackSpeed = u.AttacksPerSecond, moveSpeed = u.Move, range = u.Range,
+                            skills = u.Skills.Select(s => s == null ? null : new { id = s.Id, name = s.Name, passive = s.Passive, cooldown = s.Cooldown })
+                        }),
+                        stage = Enumerable.Range(1, BattleDefinitions.TotalWaves).Select(w => new
+                        {
+                            wave = w, boss = BattleTables.Current.IsBoss(w), maxDeployedOverride = BattleTables.Current.DeployCap(w),
+                            reward = BattleTables.Current.HasReward(w), enemySynergy = BattleTables.Current.HasEnemySynergy(w),
+                            forecast = BattleTables.Current.Schedule(w, session.Seed).Select(e =>
+                                new { kind = e.MonsterId, e.Batch, e.Star, e.Lane, e.At })
+                        }),
+                        synergies = BattleTables.Current.Synergies.Select(s => new
+                        {
+                            race = s.Race?.ToString(), job = s.Job?.ToString(), s.Count, stat = s.Stat.ToString(), s.Amount, s.Duration
                         }),
                         rules = new
                         {
                             layout = "horizontal_free_white_box_infinite_scroll",
-                            avoidance = "roy_astar_attack_slots_swept_motion",
-                            navigation = "roy_astar_attack_slots_swept_motion",
+                            avoidance = "unity_navmesh_agent_attack_slots",
+                            navigation = "unity_navmesh_agent_attack_slots",
                             rvoActive = false,
                             blockedWait = true,
                             actualDisplacementVelocity = true,
                             autoMerge = true,
-                            mandatoryBranch = false,
+                            manaMax = BattleCombatant.MaxMana,
+                            castPriority = new[] { 3, 2, 1 },
+                            mergeIdentity = "heroId_and_star",
                             clampOutOfBoxDeploy = true,
                             doubleTapReserveDeploy = true,
                             dragToReserveRecall = true,
@@ -104,7 +116,7 @@ namespace LittleGame.Client.Editor
                             pity = 3,
                             mergeCount = 3,
                             reserveCapacity = 6,
-                            waves = 12,
+                            waves = BattleDefinitions.TotalWaves,
                             firstTwoSpins = "explicit_teaching_presets"
                         }
                     });
@@ -126,14 +138,9 @@ namespace LittleGame.Client.Editor
                 case "recall": c.Kind = CommandKind.Recall; break;
                 case "recycle": c.Kind = CommandKind.Recycle; break;
                 case "merge": c.Kind = CommandKind.Merge; break;
-                case "choose_branch": c.Kind = CommandKind.ChooseBranch; c.Branch = (SkillBranch)Enum.Parse(typeof(SkillBranch), (string)args["branch"]); break;
                 case "start_wave": c.Kind = CommandKind.StartWave; break;
                 case "next_wave": c.Kind = CommandKind.NextWave; break;
                 case "choose_reward": c.Kind = CommandKind.ChooseReward; c.Reward = (RewardKind)Enum.Parse(typeof(RewardKind), (string)args["reward"]); break;
-                case "aim": c.Kind = CommandKind.Aim; c.Aim = (AimKind)Enum.Parse(typeof(AimKind), (string)args["kind"]); break;
-                case "focus": c.Kind = CommandKind.Focus; break;
-                case "protect": c.Kind = CommandKind.Protect; break;
-                case "cancel_aim": c.Kind = CommandKind.CancelAim; break;
                 case "pause": c.Kind = CommandKind.Pause; c.Flag = (bool)args["paused"]; break;
                 case "set_speed": c.Kind = CommandKind.SetSpeed; c.Speed = (int)args["speed"]; break;
                 default: return McpHostResult.Fail("未知战斗操作");

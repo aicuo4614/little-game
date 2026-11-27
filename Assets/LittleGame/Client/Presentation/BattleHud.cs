@@ -1,3 +1,4 @@
+using Unity.Profiling;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,7 +34,7 @@ namespace LittleGame.Client
 
     /// <summary>
     /// 横向无限远征战斗 HUD：
-    /// 1. 顶部精简展示波次进度、自走棋人口经验圆环与存活军团数；
+    /// 1. 顶部展示关卡名、波次节点与人口；左右展示羁绊与伤害统计；
     /// 2. 选中场上单位不再弹出任何按钮面板，仅高亮脚底光标；拖回候补区直接召回；
     /// 3. 候补卡片支持拖动上阵与双击自动寻找空位上阵；
     /// 4. 老虎机十字中线滚动 → 闪白流光 → 3格汇聚合成光球 → 抛物线飞入目标：
@@ -42,6 +43,8 @@ namespace LittleGame.Client
     /// </summary>
     public sealed partial class BattleHud : MonoBehaviour, IBattleView
     {
+        private static readonly ProfilerMarker PerformanceMarker = new ProfilerMarker("LittleGame.Hud");
+        private const float HeaderBottom = .85f;
         private static readonly int ShinePosId = Shader.PropertyToID("_ShinePos");
         private static readonly int FlashIntensityId = Shader.PropertyToID("_FlashIntensity");
 
@@ -67,7 +70,7 @@ namespace LittleGame.Client
         private BattleApplication app;
         private BattleView view;
         private Camera uiCamera;
-        private RectTransform root, dynamic, fxLayer;
+        private RectTransform root, dynamic, fxLayer, footer;
         private RectTransform reserveDropZone;
         private Image reserveDropBg;
         private Sprite radialRingSprite;
@@ -140,8 +143,8 @@ namespace LittleGame.Client
             root.anchorMin = new Vector2(safe.xMin / Screen.width, safe.yMin / Screen.height);
             root.anchorMax = new Vector2(safe.xMax / Screen.width, safe.yMax / Screen.height);
 
-            Panel(root, "Header", new Rect(0, .85f, 1, .15f), new Color(.105f, .09f, .16f));
-            var footer = Panel(root, "Footer", new Rect(0, 0, 1, .325f), Color.white);
+            Panel(root, "Header", new Rect(0, HeaderBottom, 1, 1 - HeaderBottom), new Color(.105f, .09f, .16f));
+            footer = Panel(root, "Footer", new Rect(0, 0, 1, .325f), Color.white);
             CombatUiSkin.Decorate(footer, "Panel", Color.white, true, 3);
 
             reserveDropZone = Panel(root, "ReserveDropZone", new Rect(.495f, .105f, .485f, .212f), new Color(0.28f, 0.85f, 0.65f, 0f));
@@ -213,6 +216,7 @@ namespace LittleGame.Client
 
         private void Update()
         {
+            using var performanceSample = PerformanceMarker.Auto();
             if (app == null) return;
             var s = app.Session;
 
@@ -307,7 +311,7 @@ namespace LittleGame.Client
             if (t == null || !t.Deployed)
             {
                 Selected = 0;
-                if (t != null) ShowTip("拖动或双击" + BattleDefinitions.Name(t.Kind) + "上阵", isError: false);
+                if (t != null) ShowTip("拖动或双击" + t.Definition.Name + "上阵", isError: false);
                 Refresh();
                 return;
             }
@@ -362,6 +366,7 @@ namespace LittleGame.Client
             selected = Selected,
             modal = BlocksWorld,
             skin = CombatUiSkin.Snapshot(),
+            panels = statusPanel.Snapshot(),
             tip = new { text = toastText, isError = toastIsError, active = toastTimer > 0f },
             reserveDropArea = reserveDropZone != null ? new { x = 0.7375f, y = 0.211f } : null,
             recruitAnimating = reelSpinTimer > 0f || reelWinFlashTimer > 0f || recruitFlyAnims.Count > 0,
@@ -388,6 +393,8 @@ namespace LittleGame.Client
 
         private void OnDestroy()
         {
+            statusPanel?.DisposeVisuals();
+            CombatUiSkin.ReleasePortraits();
             ClosePanels();
             ClearRecruitFlyAnims(revealAll: false);
             if (slotShineMat != null) Destroy(slotShineMat);

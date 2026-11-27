@@ -1,0 +1,65 @@
+{
+  "timing": {
+    "samples": 198,
+    "p50Ms": 0.0007,
+    "p95Ms": 0.2127,
+    "p99Ms": 16.1882,
+    "maxMs": 18.612,
+    "meanAllocatedBytes": 10783.030303030304
+  },
+  "checks": [
+    "A*\u4F18\u5148\u961F\u5217\u5220\u9664\u5185\u90E8\u8282\u70B9\u540E\u4ECD\u6309\u6700\u5C0F\u4EE3\u4EF7\u51FA\u961F",
+    "\u5220\u9664\u4E0D\u5B58\u5728\u7684\u8282\u70B9\u4E0D\u4F1A\u6E05\u7A7A\u4F18\u5148\u961F\u5217",
+    "\u6267\u884C\u901F\u5EA6\u7B49\u4E8E\u5B9E\u9645\u4F4D\u79FB/\u6B65\u957F",
+    "\u4E09\u4E2A\u7AD9\u5B9A\u53CB\u519B\u6321\u8DEF\uFF1A\u4ECE\u4FA7\u8FB9\u7ED5\u8FC7\u800C\u975E\u9876\u4EBA",
+    "\u7ED5\u884C\u65F6\u7AD9\u5B9A\u53CB\u519B\u4E0D\u88AB\u63A8\u6324",
+    "\u5B8C\u5168\u5835\u6B7B\uFF1A\u7AD9\u5B9A\u7B49\u5F85\uFF0C\u4E0D\u64AD\u653E\u79FB\u52A8\u610F\u56FE",
+    "\u963B\u6321\u79FB\u9664\u540E\u81EA\u52A8\u6062\u590D\u5BFB\u8DEF\u548C\u79FB\u52A8",
+    "U\u5F62\u963B\u6321\uFF1A\u5148\u540E\u9000\u51FA\u5F00\u53E3\u518D\u7ED5\u884C\uFF0C\u975E\u5C40\u90E8\u5DE6\u53F3\u8BD5\u63A2",
+    "\u4E24\u540D\u8FFD\u51FB\u8005\u5747\u80FD\u9884\u8BA2\u653B\u51FB\u843D\u70B9",
+    "\u540C\u76EE\u6807\u653B\u51FB\u843D\u70B9\u4E0D\u91CD\u53E0",
+    "\u8FB9\u754C\u65E0\u5408\u6CD5\u653B\u51FB\u4F4D\uFF1A\u96F6\u5B9E\u9645\u4F4D\u79FB\u5FC5\u5B9A\u96F6\u901F\u5EA6",
+    "\u76F8\u5411\u884C\u8FDB\uFF1A\u53EF\u9519\u8EAB\u901A\u8FC7\u4E14\u626B\u63A0\u8FC7\u7A0B\u4E0D\u4E92\u7A7F",
+    "\u5927\u4F53\u578B\u65E0\u6CD5\u901A\u8FC7\u7A84\u9053\u65F6\u660E\u786E\u65E0\u8DEF\uFF0C\u4E0D\u80FD\u5957\u7528\u666E\u901A\u5175\u901A\u884C\u56FE",
+    "\u540C\u4E00\u7A84\u9053\u666E\u901A\u4F53\u578B\u53EF\u4EE5\u901A\u8FC7"
+  ],
+  "samplesChecked": 502,
+  "scenarios": [
+    {
+      "scenario": "friendly_wall_detour",
+      "crossed": true,
+      "maxAbsZ": 2.5,
+      "state": {
+        "status": "Moving",
+        "blockReason": "",
+        "blockedFor": 0,
+        "goalX": 2.29,
+        "goalZ": -0,
+        "revision": 1,
+        "remainingCorners": 1,
+        "corners": [
+          {
+            "x": 2.29,
+            "z": -0
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "blocked_wait_then_release",
+      "resumed": true
+    },
+    {
+      "scenario": "u_shape",
+      "crossed": true,
+      "minX": -2.5,
+      "maxAbsZ": 2
+    },
+    {
+      "scenario": "opposing_agents",
+      "passedEachOther": true,
+      "minimumGap": 0.82044065
+    }
+  ],
+  "scope": "\u7EAF\u89C4\u5219\u5BFC\u822A\u6D4B\u8BD5\uFF0C\u5305\u542B\u771F\u5B9ERoy A*\u9002\u914D\uFF0C\u4E0D\u662FUnity\u6216\u624B\u673A\u9A8C\u8BC1"
+}

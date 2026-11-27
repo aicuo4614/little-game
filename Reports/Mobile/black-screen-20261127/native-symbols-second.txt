@@ -1,0 +1,64 @@
+std::__ndk1::__wrap_iter<google::sparsegroup<KeyWrapper<Il2CppGenericClass*>, (unsigned short)48, google::libc_allocator_with_realloc<KeyWrapper<Il2CppGenericClass*> > >*>::base() const
+D:/Work\Unity\2022.3.62f3c1\Editor\Data\PlaybackEngines\AndroidPlayer\NDK\toolchains\llvm\prebuilt\windows-x86_64\bin\..\sysroot\usr\include\c++\v1\iterator:1521
+il2cpp::metadata::GenericMetadata::GetGenericClass(Il2CppType const*, Il2CppGenericInst const*)
+E:/Project/little-game/HybridCLRData/LocalIl2CppData-WindowsEditor/il2cpp/libil2cpp/metadata\GenericMetadata.cpp:0
+il2cpp::metadata::GenericMetadata::GetGenericClass(Il2CppType const*, Il2CppGenericInst const*)
+E:/Project/little-game/HybridCLRData/LocalIl2CppData-WindowsEditor/il2cpp/libil2cpp/metadata\GenericMetadata.cpp:202
+std::__ndk1::notify_all_at_thread_exit(std::__ndk1::condition_variable&, std::__ndk1::unique_lock<std::__ndk1::mutex>)
+/buildbot/src/android/ndk-release-r23\toolchain/llvm-project/libcxx/src/condition_variable.cpp:85
+std::terminate()
+/buildbot/src/android/ndk-release-r23\toolchain/llvm-project/libcxx/../../../toolchain/llvm-project/libcxxabi/src/cxa_handlers.cpp:75
+SystemNative_ConvertErrorPalToPlatform
+E:/Project/little-game/HybridCLRData/LocalIl2CppData-WindowsEditor/il2cpp/libil2cpp/os/ClassLibraryPAL\pal_errno.cpp:365
+SystemNative_GetNonCryptographicallySecureRandomBytes
+E:/Project/little-game/HybridCLRData/LocalIl2CppData-WindowsEditor/il2cpp/libil2cpp/os/ClassLibraryPAL\pal_random.cpp:22
+SystemNative_ConvertErrorPlatformToPal
+E:/Project/little-game/HybridCLRData/LocalIl2CppData-WindowsEditor/il2cpp/libil2cpp/os/ClassLibraryPAL\pal_errno.cpp:136
+SystemNative_StrErrorR
+E:/Project/little-game/HybridCLRData/LocalIl2CppData-WindowsEditor/il2cpp/libil2cpp/os/ClassLibraryPAL\pal_errno.cpp:329
+SystemNative_OpenDir
+E:/Project/little-game/HybridCLRData/LocalIl2CppData-WindowsEditor/il2cpp/libil2cpp/os/ClassLibraryPAL\pal_io.cpp:402
+SystemNative_GetReadDirRBufferSize
+E:/Project/little-game/HybridCLRData/LocalIl2CppData-WindowsEditor/il2cpp/libil2cpp/os/ClassLibraryPAL\pal_io.cpp:251
+SystemNative_ReadDirR
+E:/Project/little-game/HybridCLRData/LocalIl2CppData-WindowsEditor/il2cpp/libil2cpp/os/ClassLibraryPAL\pal_io.cpp:278
+SystemNative_CloseDir
+E:/Project/little-game/HybridCLRData/LocalIl2CppData-WindowsEditor/il2cpp/libil2cpp/os/ClassLibraryPAL\pal_io.cpp:429
+SystemNative_ReadLink
+E:/Project/little-game/HybridCLRData/LocalIl2CppData-WindowsEditor/il2cpp/libil2cpp/os/ClassLibraryPAL\pal_io.cpp:478
+SystemNative_Stat2
+E:/Project/little-game/HybridCLRData/LocalIl2CppData-WindowsEditor/il2cpp/libil2cpp/os/ClassLibraryPAL\pal_io.cpp:176
+SystemNative_LStat2
+E:/Project/little-game/HybridCLRData/LocalIl2CppData-WindowsEditor/il2cpp/libil2cpp/os/ClassLibraryPAL\pal_io.cpp:191
+SystemNative_Symlink
+E:/Project/little-game/HybridCLRData/LocalIl2CppData-WindowsEditor/il2cpp/libil2cpp/os/ClassLibraryPAL\pal_io.cpp:474
+SystemNative_ChMod
+E:/Project/little-game/HybridCLRData/LocalIl2CppData-WindowsEditor/il2cpp/libil2cpp/os/ClassLibraryPAL\pal_io.cpp:457
+SystemNative_CopyFile
+E:/Project/little-game/HybridCLRData/LocalIl2CppData-WindowsEditor/il2cpp/libil2cpp/os/ClassLibraryPAL\pal_io.cpp:569
+hybridclr::metadata::Image::ReadMemberRefParentFromToken(Il2CppGenericContainer const*, Il2CppGenericContainer const*, hybridclr::metadata::TableType, unsigned int, hybridclr::metadata::ResolveMemberRefParent&)
+E:/Project/little-game/HybridCLRData/LocalIl2CppData-WindowsEditor/il2cpp/libil2cpp/hybridclr/metadata\Image.cpp:0
+il2cpp::utils::HashUtils::Combine(unsigned long, unsigned long)
+E:/Project/little-game/HybridCLRData/LocalIl2CppData-WindowsEditor/il2cpp/libil2cpp\utils\HashUtils.h:13
+il2cpp::metadata::Il2CppGenericMethodHash::Hash(Il2CppGenericMethod const*)
+E:/Project/little-game/HybridCLRData/LocalIl2CppData-WindowsEditor/il2cpp/libil2cpp/metadata\Il2CppGenericMethodHash.cpp:0
+google::sparse_hashtable<std::__ndk1::pair<KeyWrapper<Il2CppGenericMethod const*> const, MethodInfo*>, KeyWrapper<Il2CppGenericMethod const*>, il2cpp::metadata::Il2CppGenericMethodHash, google::sparse_hash_map<KeyWrapper<Il2CppGenericMethod const*>, MethodInfo*, il2cpp::metadata::Il2CppGenericMethodHash, KeyWrapper<Il2CppGenericMethod const*>::EqualsComparer<il2cpp::metadata::Il2CppGenericMethodCompare>, google::libc_allocator_with_realloc<std::__ndk1::pair<KeyWrapper<Il2CppGenericMethod const*> const, MethodInfo*> > >::SelectKey, google::sparse_hash_map<KeyWrapper<Il2CppGenericMethod const*>, MethodInfo*, il2cpp::metadata::Il2CppGenericMethodHash, KeyWrapper<Il2CppGenericMethod const*>::EqualsComparer<il2cpp::metadata::Il2CppGenericMethodCompare>, google::libc_allocator_with_realloc<std::__ndk1::pair<KeyWrapper<Il2CppGenericMethod const*> const, MethodInfo*> > >::SetKey, KeyWrapper<Il2CppGenericMethod const*>::EqualsComparer<il2cpp::metadata::Il2CppGenericMethodCompare>, google::libc_allocator_with_realloc<std::__ndk1::pair<KeyWrapper<Il2CppGenericMethod const*> const, MethodInfo*> > >::find_position(KeyWrapper<Il2CppGenericMethod const*> const&) const
+E:/Project/little-game/HybridCLRData/LocalIl2CppData-WindowsEditor/il2cpp/libil2cpp\utils/../../external/google/sparsehash/internal\sparsehashtable.h:853
+google::sparse_hashtable<std::__ndk1::pair<KeyWrapper<Il2CppGenericMethod const*> const, MethodInfo*>, KeyWrapper<Il2CppGenericMethod const*>, il2cpp::metadata::Il2CppGenericMethodHash, google::sparse_hash_map<KeyWrapper<Il2CppGenericMethod const*>, MethodInfo*, il2cpp::metadata::Il2CppGenericMethodHash, KeyWrapper<Il2CppGenericMethod const*>::EqualsComparer<il2cpp::metadata::Il2CppGenericMethodCompare>, google::libc_allocator_with_realloc<std::__ndk1::pair<KeyWrapper<Il2CppGenericMethod const*> const, MethodInfo*> > >::SelectKey, google::sparse_hash_map<KeyWrapper<Il2CppGenericMethod const*>, MethodInfo*, il2cpp::metadata::Il2CppGenericMethodHash, KeyWrapper<Il2CppGenericMethod const*>::EqualsComparer<il2cpp::metadata::Il2CppGenericMethodCompare>, google::libc_allocator_with_realloc<std::__ndk1::pair<KeyWrapper<Il2CppGenericMethod const*> const, MethodInfo*> > >::SetKey, KeyWrapper<Il2CppGenericMethod const*>::EqualsComparer<il2cpp::metadata::Il2CppGenericMethodCompare>, google::libc_allocator_with_realloc<std::__ndk1::pair<KeyWrapper<Il2CppGenericMethod const*> const, MethodInfo*> > >::find(KeyWrapper<Il2CppGenericMethod const*> const&)
+E:/Project/little-game/HybridCLRData/LocalIl2CppData-WindowsEditor/il2cpp/libil2cpp\utils/../../external/google/sparsehash/internal\sparsehashtable.h:873
+il2cpp::metadata::Il2CppGenericInstHash::Hash(Il2CppGenericInst const*)
+E:/Project/little-game/HybridCLRData/LocalIl2CppData-WindowsEditor/il2cpp/libil2cpp/metadata\Il2CppGenericInstHash.cpp:21
+UnresolvedVirtualCall_912(Il2CppObject*, Il2CppObject*, MethodInfo const*)
+E:/Project/little-game/Library/Bee/artifacts/Android/il2cppOutput/cpp\Il2CppUnresolvedIndirectCallStubs.cpp:14526
+EqualityComparer_1_IndexOf_m54747CF99BBDF99CE8E3FCFDDEF30594830143F7_gshared
+E:/Project/little-game/Library/Bee/artifacts/Android/il2cppOutput/cpp\Generics__33.cpp:11076
+RuntimeInvoker_TrueInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_RuntimeObject_RuntimeObject_Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C(void (*)(), MethodInfo const*, void*, void**, void*)
+E:/Project/little-game/Library/Bee/artifacts/Android/il2cppOutput/cpp\Il2CppInvokerTable.cpp:36428
+EqualityComparer_1_LastIndexOf_mBF53ACEFCB4CFAC4C5D118285E14891E82A7701A_gshared
+E:/Project/little-game/Library/Bee/artifacts/Android/il2cppOutput/cpp\Generics__33.cpp:11128
+google::sparse_hashtable<KeyWrapper<Il2CppGenericClass*>, KeyWrapper<Il2CppGenericClass*>, il2cpp::metadata::Il2CppGenericClassHash, google::sparse_hash_set<KeyWrapper<Il2CppGenericClass*>, il2cpp::metadata::Il2CppGenericClassHash, KeyWrapper<Il2CppGenericClass*>::EqualsComparer<il2cpp::metadata::Il2CppGenericClassCompare>, google::libc_allocator_with_realloc<KeyWrapper<Il2CppGenericClass*> > >::Identity, google::sparse_hash_set<KeyWrapper<Il2CppGenericClass*>, il2cpp::metadata::Il2CppGenericClassHash, KeyWrapper<Il2CppGenericClass*>::EqualsComparer<il2cpp::metadata::Il2CppGenericClassCompare>, google::libc_allocator_with_realloc<KeyWrapper<Il2CppGenericClass*> > >::SetKey, KeyWrapper<Il2CppGenericClass*>::EqualsComparer<il2cpp::metadata::Il2CppGenericClassCompare>, google::libc_allocator_with_realloc<KeyWrapper<Il2CppGenericClass*> > >::find(KeyWrapper<Il2CppGenericClass*> const&) const
+E:/Project/little-game/HybridCLRData/LocalIl2CppData-WindowsEditor/il2cpp/libil2cpp/utils/../../external/google/sparsehash/internal\sparsehashtable.h:887
+std::__ndk1::__wrap_iter<google::sparsegroup<KeyWrapper<Il2CppGenericClass*>, (unsigned short)48, google::libc_allocator_with_realloc<KeyWrapper<Il2CppGenericClass*> > > const*>::base() const
+D:/Work\Unity\2022.3.62f3c1\Editor\Data\PlaybackEngines\AndroidPlayer\NDK\toolchains\llvm\prebuilt\windows-x86_64\bin\..\sysroot\usr\include\c++\v1\iterator:1521
+il2cpp::metadata::Il2CppGenericInstCompare::AreEqual(Il2CppGenericInst const*, Il2CppGenericInst const*)
+E:/Project/little-game/HybridCLRData/LocalIl2CppData-WindowsEditor/il2cpp/libil2cpp/metadata\Il2CppGenericInstCompare.cpp:38

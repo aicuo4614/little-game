@@ -130,7 +130,7 @@ namespace LittleGame.Client.Battle
                             var enemy = enemies[i];
                             if (!enemy.Alive) continue;
                             enemyMinX = Mathf.Min(enemyMinX, enemy.X);
-                            bossAlive |= enemy.Kind == EnemyKind.Giant;
+                            bossAlive |= enemy.Boss;
                         }
                         float focusX = enemyMinX < float.MaxValue ? Mathf.Lerp(vanguardX, enemyMinX, 0.38f) : vanguardX;
                         // 交战中心在当前构图附近时保持稳定，越出缓冲带才平移。

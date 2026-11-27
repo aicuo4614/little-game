@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1f6113d00550904393fa3d87cf90d51, type: 3}
+  m_Name: Giant
+  m_EditorClassIdentifier: 
+  Source: Assets/LittleGame/Art/UnitSources/Golem/Attack01_Golem_Anim.fbx
+  Model: {fileID: 8120908342227866551, guid: 0e70ba4a45fe2a9499de3a5578dae284, type: 3}
+  AnimatorController: {fileID: 9100000, guid: 40f2b68694e145f418454b1793fde0e7, type: 2}
+  Idle: {fileID: 7400000, guid: a28d0c740c22cfa47a0a6d29bd0e6d80, type: 2}
+  Move: {fileID: 7400000, guid: c3b7d7ed5640c6840aa459c3326f2e71, type: 2}
+  Attack: {fileID: 7400000, guid: c8cca1569b9958541a951bf960b3c1a9, type: 2}
+  Hit: {fileID: 7400000, guid: 762073e4212fe4f4c997a64391d312d9, type: 2}
+  Death: {fileID: 7400000, guid: 5a77b988de4de0444910664adadab588, type: 2}
+  Slam: {fileID: 7400000, guid: ef87aac68ef24ad49a931a5285ff7628, type: 2}
+  Height: 2.45
+  AttackSpeed: 1.5

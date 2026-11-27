@@ -23,7 +23,7 @@ namespace LittleGame.Client
         private readonly List<Transform> farChunks = new List<Transform>();
         private readonly List<Material> materials = new List<Material>();
         private readonly List<Mesh> combinedMeshes = new List<Mesh>();
-        private Material stone, pale, dark, earth, moss, blue, floorA, floorB;
+        private Material stone, pale, dark, earth, moss, blue, floorA, floorB, forest;
         private float currentScrollSpeed;
         private float scrollTotal;
         private int modelInstances, missingModels;
@@ -40,6 +40,8 @@ namespace LittleGame.Client
             blue = Material("Rune inlay", new Color(.28f, .65f, .78f));
             floorA = Material("Paving ash", new Color(.54f, .57f, .58f));
             floorB = Material("Paving variation", new Color(.50f, .53f, .55f));
+            forest = Material("KayKit forest", new Color(.70f, .79f, .72f));
+            forest.SetTexture("_Albedo", Resources.Load<Texture2D>("Courtyard/KayKit/forest_texture"));
 
             // 1. 静态底层路基，覆盖道路与两侧遗迹
             var staticRoot = new GameObject("StaticRoadbedLayer").transform;
@@ -85,7 +87,7 @@ namespace LittleGame.Client
             Place(root, "pillar_bottom", new Vector3(-5.65f, 0f, -3.72f), new Vector3(1.1f, .36f, .58f), stone, true);
             Place(root, "Rock_1", new Vector3(-5.42f, 0f, -4.17f), new Vector3(.66f, .36f, .57f), dark);
             Place(root, "pillar", new Vector3(5.62f, 0f, 3.22f), new Vector3(1.05f, 2.5f, .92f), pale, true);
-            Place(root, "wall_element_tileable_4meters_top", new Vector3(6.95f, 0f, 3.35f), new Vector3(1.82f, 1.15f, .7f), dark, true);
+            Place(root, "KayKit/wall_broken", new Vector3(6.95f, 0f, 3.35f), new Vector3(1.82f, 1.15f, .7f), dark, true);
             Place(root, "Crystal_2", new Vector3(5.62f, 2.5f, 3.22f), new Vector3(.4f, .56f, .4f), blue);
             Place(root, "pillar_bottom", new Vector3(5.62f, 0f, -3.7f), new Vector3(1.1f, .58f, .66f), stone, true);
             Place(root, "Rock_1", new Vector3(6.33f, 0f, -4.04f), new Vector3(.9f, .42f, .74f), dark);
@@ -121,8 +123,8 @@ namespace LittleGame.Client
             }
 
             // 标志性古遗迹拱门（位于道路北侧作为推进参照物，不遮挡角色）
-            Place(parent, "archway", new Vector3(0.4f, 0f, 4.45f), new Vector3(4.2f, 2.85f, .9f), pale, true);
-            Place(parent, "pillar", new Vector3(-4.5f, 0f, 4.35f), new Vector3(.88f, 2.0f, .88f), pale);
+            Place(parent, "KayKit/wall_doorway", new Vector3(0.4f, 0f, 4.45f), new Vector3(3.6f, 2.5f, .7f), pale, true);
+            Place(parent, "KayKit/pillar_decorated", new Vector3(-4.5f, 0f, 4.35f), new Vector3(.88f, 2.0f, .88f), pale, true);
             Place(parent, "Crystal_2", new Vector3(-4.5f, 2.05f, 4.35f), new Vector3(.34f, .62f, .34f), blue);
 
             // 南侧低矮石沿与点缀草丛（严格压低高度，绝不遮挡底行单位）
@@ -141,7 +143,7 @@ namespace LittleGame.Client
             for (int i = 0; i < 3; i++)
             {
                 float fx = -3.4f + i * 3.4f + (variant % 2) * 0.5f;
-                Place(parent, "Tree_04", new Vector3(fx, -.12f, 6.25f + (i % 2) * 0.85f), new Vector3(1.65f, 2.15f, 1.65f), moss);
+                Place(parent, "KayKit/Tree_1_A_Color1", new Vector3(fx, -.12f, 6.25f + (i % 2) * 0.85f), new Vector3(1.65f, 2.15f, 1.65f), forest);
                 Place(parent, "pillar", new Vector3(fx + 1.55f, -.1f, 7.1f), new Vector3(1.05f, 2.6f + (i % 2) * 0.5f, 1.05f), dark);
             }
             Place(parent, "Rock_1", new Vector3(-1.2f, -.08f, 5.75f), new Vector3(1.25f, .75f, 1.0f), dark);
@@ -177,7 +179,7 @@ namespace LittleGame.Client
 
         public object Snapshot() => new
         {
-            theme = "infinite-ruins-road-horizontal",
+            theme = "kaykit-forest-ruins-road-horizontal",
             infiniteScrolling = true,
             entrance = "roadside-ruined-gate",
             chunkCount = roadChunks.Count,

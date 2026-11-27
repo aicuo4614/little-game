@@ -1,0 +1,653 @@
+{
+  "project": "E:/Project/little-game",
+  "seed": 173,
+  "normalWave": 6,
+  "observations": {
+    "Grunt": {
+      "model": "Unit_Grunt",
+      "boneNames": [
+        "Ribcage",
+        "RigSpine2",
+        "RigSpine1",
+        "RigHead",
+        "RigPelvis",
+        "RigRArm1",
+        "RigNeck",
+        "RigJaw",
+        "RigRArm2",
+        "RigRArmPalm",
+        "RigRArmThumb1",
+        "RigRArmFinger1",
+        "RigRArmFinger2",
+        "RigRArmFinger3",
+        "RigRArmThumb2",
+        "RigRArmThumb3",
+        "RigRLeg1",
+        "RigRLeg2",
+        "RigRLegAnkle",
+        "RigRLegToes1",
+        "RigRLegToes2",
+        "RigTail4",
+        "RigTail5",
+        "RigTail3"
+      ],
+      "waves": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "actions": {
+        "Walk": 0.16,
+        "Idle": 0.668,
+        "Attack": 0.667,
+        "Death": 2.934
+      }
+    },
+    "Runner": {
+      "model": "Unit_Runner",
+      "boneNames": [
+        "RigNeck",
+        "RigHead",
+        "RigRibcage",
+        "RigRFLeg1",
+        "RigPelvis",
+        "RigTail1",
+        "RigRBLeg1",
+        "RigSpine2",
+        "RigSpine1",
+        "RigRFLeg2",
+        "RigRBLeg2",
+        "RigRBLegAnkle",
+        "RigRBLegToes1",
+        "RigRFLegAnkle",
+        "RigTail5",
+        "RigTail4",
+        "RigTail3",
+        "RigTail2",
+        "RigRBLegToes2",
+        "RigRFLegToes1",
+        "RigRFLegToes2",
+        "RigJaw",
+        "RigLBLeg1",
+        "RigLFLeg1"
+      ],
+      "waves": [
+        3,
+        4,
+        5
+      ],
+      "actions": {
+        "Walk": 1.767,
+        "Death": 3.064,
+        "Idle": 0.8,
+        "Attack": 0.796
+      }
+    },
+    "Armored": {
+      "model": "Unit_Armored",
+      "boneNames": [
+        "RigTail2",
+        "RigShell",
+        "RigPelvis",
+        "RigRibcage",
+        "RigTail1",
+        "RigHead",
+        "RigRBLeg1",
+        "RigNeck",
+        "RigRArm1",
+        "RigRFLeg1",
+        "RigJaw",
+        "RigRArmFinger1",
+        "RigRArmPalm",
+        "RigRArm2",
+        "RigRArmFinger3",
+        "RigRArmFinger2",
+        "RigRFLeg2",
+        "RigRBLeg2",
+        "RigRBLegAnkle",
+        "RigRFLegAnkle",
+        "RigREye3",
+        "RigLEye3",
+        "RigSpine",
+        "RigLBLeg1"
+      ],
+      "waves": [
+        5
+      ],
+      "actions": {
+        "Walk": 0.5,
+        "Idle": 1.065,
+        "Attack": 1.067
+      }
+    },
+    "Healer": {
+      "model": "Unit_Healer",
+      "boneNames": [
+        "RigFeelerR1",
+        "RigHead 1",
+        "RigFeelerL1",
+        "RigWingR",
+        "RigNeck",
+        "RigRArm1",
+        "RigLArm1",
+        "RigWingL",
+        "RigRibcage",
+        "RigSpine2",
+        "RigRArm2",
+        "RigPelvis",
+        "RigRArmFinger1",
+        "RigRArmPalm",
+        "RigLArm2",
+        "RigLArmPalm",
+        "RigLArmFinger1",
+        "RigRLeg2",
+        "RigRLegAnkle",
+        "RigRLeg1",
+        "RigLLegAnkle",
+        "RigLLeg2",
+        "RigLLeg1",
+        "RigSpine1"
+      ],
+      "waves": [
+        5
+      ],
+      "actions": {
+        "Idle": 0.731,
+        "Attack": 0.867,
+        "Walk": 0.7,
+        "Death": 3.4
+      }
+    },
+    "Giant": {
+      "model": "Unit_Giant",
+      "boneNames": [
+        "Body",
+        "Spine01",
+        "Spine02",
+        "Spine03",
+        "Head",
+        "Jaw01",
+        "Jaw02",
+        "EyeRoot",
+        "Eye01_R",
+        "Eye02_R",
+        "Eye01_L",
+        "Eye02_L",
+        "Shoulder_L",
+        "Shoulder_R",
+        "Notch",
+        "Back",
+        "ArmJoint_L",
+        "UpperArm_L",
+        "LowerArm_L",
+        "Hand_L",
+        "Thumb01_L",
+        "Thumb02_L",
+        "Thumb03_L",
+        "Index01_L"
+      ],
+      "waves": [
+        6
+      ],
+      "actions": {
+        "Walk": 3.563,
+        "Attack": 0.593,
+        "Idle": 0.722
+      }
+    }
+  },
+  "screenshots": {
+    "wave-3-approach": {
+      "path": "Reports\\Art\\enemy-monsters-20261127\\wave-3-approach.png",
+      "time": 1.1,
+      "resolution": [
+        540,
+        960
+      ],
+      "actors": [
+        {
+          "id": 1,
+          "role": "Shield",
+          "action": "Walk",
+          "x": 0.596968,
+          "z": 2.06624651
+        },
+        {
+          "id": 2,
+          "role": "Archer",
+          "action": "Attack",
+          "x": 0.5267116,
+          "z": 0.007420197
+        },
+        {
+          "id": 3,
+          "role": "Storm",
+          "action": "Attack",
+          "x": 1.09045231,
+          "z": -2.13132215
+        },
+        {
+          "id": 13,
+          "role": "Grunt",
+          "action": "Walk",
+          "x": 5.136568,
+          "z": 0.170174
+        },
+        {
+          "id": 12,
+          "role": "Runner",
+          "action": "Walk",
+          "x": 4.31699038,
+          "z": 1.92012846
+        },
+        {
+          "id": 7,
+          "role": "Archer",
+          "action": "Walk",
+          "x": -0.8273796,
+          "z": 0.980586946
+        },
+        {
+          "id": 11,
+          "role": "Frost",
+          "action": "Walk",
+          "x": -0.489470333,
+          "z": -0.794855058
+        },
+        {
+          "id": 14,
+          "role": "Grunt",
+          "action": "Walk",
+          "x": 5.13748646,
+          "z": -1.97406256
+        }
+      ]
+    },
+    "wave-3-clash": {
+      "path": "Reports\\Art\\enemy-monsters-20261127\\wave-3-clash.png",
+      "time": 2.44999886,
+      "resolution": [
+        540,
+        960
+      ],
+      "actors": [
+        {
+          "id": 1,
+          "role": "Shield",
+          "action": "Attack",
+          "x": 3.17086315,
+          "z": 1.54107642
+        },
+        {
+          "id": 2,
+          "role": "Archer",
+          "action": "Attack",
+          "x": 0.529968262,
+          "z": 0.0074491743
+        },
+        {
+          "id": 3,
+          "role": "Storm",
+          "action": "Attack",
+          "x": 1.12983847,
+          "z": -2.13050079
+        },
+        {
+          "id": 13,
+          "role": "Grunt",
+          "action": "Walk",
+          "x": 3.45532417,
+          "z": 0.4835366
+        },
+        {
+          "id": 12,
+          "role": "Runner",
+          "action": "Death",
+          "x": 4.08753443,
+          "z": 1.77052867
+        },
+        {
+          "id": 7,
+          "role": "Archer",
+          "action": "Idle",
+          "x": -0.430653,
+          "z": 1.04210424
+        },
+        {
+          "id": 11,
+          "role": "Frost",
+          "action": "Attack",
+          "x": 0.390688062,
+          "z": -0.9181309
+        },
+        {
+          "id": 14,
+          "role": "Grunt",
+          "action": "Walk",
+          "x": 3.44262838,
+          "z": -1.6866641
+        },
+        {
+          "id": 15,
+          "role": "Runner",
+          "action": "Walk",
+          "x": 5.340691,
+          "z": 1.64338708
+        },
+        {
+          "id": 16,
+          "role": "Grunt",
+          "action": "Walk",
+          "x": 5.85006237,
+          "z": 0.07849151
+        },
+        {
+          "id": 17,
+          "role": "Grunt",
+          "action": "Walk",
+          "x": 5.612526,
+          "z": -1.64096332
+        }
+      ]
+    },
+    "wave-5-approach": {
+      "path": "Reports\\Art\\enemy-monsters-20261127\\wave-5-approach.png",
+      "time": 1.15,
+      "resolution": [
+        540,
+        960
+      ],
+      "actors": [
+        {
+          "id": 1,
+          "role": "Shield",
+          "action": "Walk",
+          "x": 0.716478646,
+          "z": 2.29388046
+        },
+        {
+          "id": 2,
+          "role": "Archer",
+          "action": "Attack",
+          "x": 0.5277553,
+          "z": 0.00742942
+        },
+        {
+          "id": 3,
+          "role": "Storm",
+          "action": "Attack",
+          "x": 0.764310956,
+          "z": -2.12419
+        },
+        {
+          "id": 7,
+          "role": "Archer",
+          "action": "Walk",
+          "x": -0.530278,
+          "z": 1.09913051
+        },
+        {
+          "id": 11,
+          "role": "Frost",
+          "action": "Walk",
+          "x": -0.3730367,
+          "z": -0.842306733
+        },
+        {
+          "id": 30,
+          "role": "Runner",
+          "action": "Walk",
+          "x": 4.199143,
+          "z": -1.96197045
+        },
+        {
+          "id": 28,
+          "role": "Armored",
+          "action": "Idle",
+          "x": 5.57887745,
+          "z": 2.08713937
+        },
+        {
+          "id": 29,
+          "role": "Grunt",
+          "action": "Walk",
+          "x": 5.07300138,
+          "z": 0.17964758
+        }
+      ]
+    },
+    "wave-5-clash": {
+      "path": "Reports\\Art\\enemy-monsters-20261127\\wave-5-clash.png",
+      "time": 2.54999876,
+      "resolution": [
+        540,
+        960
+      ],
+      "actors": [
+        {
+          "id": 1,
+          "role": "Shield",
+          "action": "Attack",
+          "x": 3.622031,
+          "z": 2.1023736
+        },
+        {
+          "id": 2,
+          "role": "Archer",
+          "action": "Idle",
+          "x": 0.529968262,
+          "z": 0.0074491743
+        },
+        {
+          "id": 3,
+          "role": "Storm",
+          "action": "Idle",
+          "x": 0.838456631,
+          "z": -2.05982375
+        },
+        {
+          "id": 7,
+          "role": "Archer",
+          "action": "Idle",
+          "x": -0.07092303,
+          "z": 0.8648618
+        },
+        {
+          "id": 11,
+          "role": "Frost",
+          "action": "Attack",
+          "x": 0.265672058,
+          "z": -1.03685009
+        },
+        {
+          "id": 33,
+          "role": "Runner",
+          "action": "Walk",
+          "x": 4.64072037,
+          "z": -1.60029507
+        },
+        {
+          "id": 32,
+          "role": "Healer",
+          "action": "Attack",
+          "x": 6.251003,
+          "z": 0.0
+        },
+        {
+          "id": 31,
+          "role": "Grunt",
+          "action": "Walk",
+          "x": 5.899571,
+          "z": 1.17981017
+        },
+        {
+          "id": 30,
+          "role": "Runner",
+          "action": "Death",
+          "x": 4.244645,
+          "z": -2.74151778
+        },
+        {
+          "id": 28,
+          "role": "Armored",
+          "action": "Walk",
+          "x": 4.9422884,
+          "z": 1.77684581
+        },
+        {
+          "id": 29,
+          "role": "Grunt",
+          "action": "Idle",
+          "x": 3.828587,
+          "z": 1.03669071
+        }
+      ]
+    },
+    "wave-6-approach": {
+      "path": "Reports\\Art\\enemy-monsters-20261127\\wave-6-approach.png",
+      "time": 1.15,
+      "resolution": [
+        540,
+        960
+      ],
+      "actors": [
+        {
+          "id": 1,
+          "role": "Shield",
+          "action": "Walk",
+          "x": 0.8019111,
+          "z": 2.057151
+        },
+        {
+          "id": 2,
+          "role": "Archer",
+          "action": "Attack",
+          "x": 0.0498250574,
+          "z": 4.09252e-07
+        },
+        {
+          "id": 3,
+          "role": "Storm",
+          "action": "Attack",
+          "x": 0.803420663,
+          "z": -1.583492
+        },
+        {
+          "id": 7,
+          "role": "Archer",
+          "action": "Walk",
+          "x": -2.53648543,
+          "z": 1.06251478
+        },
+        {
+          "id": 11,
+          "role": "Frost",
+          "action": "Walk",
+          "x": -1.01340735,
+          "z": 0.761701763
+        },
+        {
+          "id": 37,
+          "role": "Giant",
+          "action": "Walk",
+          "x": 5.58369732,
+          "z": 2.79382935e-08
+        },
+        {
+          "id": 36,
+          "role": "Shield",
+          "action": "Walk",
+          "x": -3.89010262,
+          "z": 1.47557855
+        },
+        {
+          "id": 35,
+          "role": "Shield",
+          "action": "Walk",
+          "x": -1.58837128,
+          "z": -2.388353
+        }
+      ]
+    },
+    "wave-6-clash": {
+      "path": "Reports\\Art\\enemy-monsters-20261127\\wave-6-clash.png",
+      "time": 2.49999881,
+      "resolution": [
+        540,
+        960
+      ],
+      "actors": [
+        {
+          "id": 1,
+          "role": "Shield",
+          "action": "Attack",
+          "x": 3.216331,
+          "z": 1.78057671
+        },
+        {
+          "id": 2,
+          "role": "Archer",
+          "action": "Idle",
+          "x": 0.0500000678,
+          "z": 4.093216e-07
+        },
+        {
+          "id": 3,
+          "role": "Storm",
+          "action": "Attack",
+          "x": 0.8090688,
+          "z": -1.58176053
+        },
+        {
+          "id": 7,
+          "role": "Archer",
+          "action": "Attack",
+          "x": -1.11371684,
+          "z": -0.312299639
+        },
+        {
+          "id": 11,
+          "role": "Frost",
+          "action": "Attack",
+          "x": 0.0553204156,
+          "z": 1.40411615
+        },
+        {
+          "id": 37,
+          "role": "Giant",
+          "action": "Walk",
+          "x": 4.80644941,
+          "z": 0.323919266
+        },
+        {
+          "id": 36,
+          "role": "Shield",
+          "action": "Walk",
+          "x": -2.40302,
+          "z": 1.6693368
+        },
+        {
+          "id": 35,
+          "role": "Shield",
+          "action": "Walk",
+          "x": 1.38174045,
+          "z": -2.40841317
+        }
+      ]
+    }
+  },
+  "console": {
+    "Error": "Console 日志 0 条：",
+    "Exception": "Console 日志 0 条：",
+    "Assert": "Console 日志 0 条：",
+    "Warning": "Console 日志 0 条："
+  },
+  "portraitConsole": {
+    "Error": "Console 日志 0 条：",
+    "Exception": "Console 日志 0 条：",
+    "Assert": "Console 日志 0 条：",
+    "Warning": "Console 日志 0 条："
+  }
+}

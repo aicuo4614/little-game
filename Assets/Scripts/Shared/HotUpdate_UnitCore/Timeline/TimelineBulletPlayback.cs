@@ -22,13 +22,14 @@ public sealed class TimelineBulletPlayback
         BattleUnitTimelineActor sourceActor,
         BattleUnitTimelineActor target,
         GameObject instance,
-        EffectPointLightData lightData = null)
+        EffectPointLightData lightData = null,
+        bool incrementalEffects = false)
     {
         this.config = config;
         this.sourceActor = sourceActor;
         source = new List<BattleUnitTimelineActor> { sourceActor };
         this.target = new List<BattleUnitTimelineActor> { target };
-        effect = new TimelineEffectPlayback(instance, lightData);
+        effect = new TimelineEffectPlayback(instance, lightData, incrementalEffects);
 
         if (config.FacingType == TimelineBulletFacingType.CameraBillboard && instance.transform.childCount > 0)
         {

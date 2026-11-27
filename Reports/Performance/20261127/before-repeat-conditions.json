@@ -1,0 +1,5941 @@
+{
+  "seed": 173,
+  "speed": 2,
+  "waves": [
+    {
+      "wave": 1,
+      "units": [
+        {
+          "id": 1,
+          "kind": "Warrior",
+          "name": "骑士",
+          "heroId": "Knight",
+          "race": "Human",
+          "job": "Warrior",
+          "star": 1,
+          "lane": 0,
+          "row": 0,
+          "homeX": -1.15,
+          "homeZ": 2.15,
+          "x": -1.15,
+          "z": 2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1080.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 360.0,
+          "maxHp": 360.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 360.0,
+              "attack": 25.07,
+              "armor": 30.0,
+              "magicResist": 15.0,
+              "attackSpeed": 0.92,
+              "moveSpeed": 2.4,
+              "range": 1.2
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Attack",
+                "source": "synergy",
+                "amount": 0.09,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "ShieldStrike",
+                "name": "盾锋",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "Resolve",
+                "name": "坚韧",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Rally",
+                "name": "军旗号令",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 2,
+          "kind": "Archer",
+          "name": "持弩骷髅小兵",
+          "heroId": "Skeleton_Minion",
+          "race": "Undead",
+          "job": "Archer",
+          "star": 1,
+          "lane": 1,
+          "row": 0,
+          "homeX": -1.15,
+          "homeZ": 0.0,
+          "x": -1.15,
+          "z": 0.0,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1260.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 205.0,
+          "maxHp": 205.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 205.0,
+              "attack": 30.0,
+              "armor": 10.0,
+              "magicResist": 11.0,
+              "attackSpeed": 0.95,
+              "moveSpeed": 2.4,
+              "range": 4.45
+            },
+            "statuses": [],
+            "buffs": [],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "Bolt",
+                "name": "穿甲弩矢",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "QuickDraw",
+                "name": "连击",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Volley",
+                "name": "齐射",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 3,
+          "kind": "Mage",
+          "name": "法师",
+          "heroId": "Mage",
+          "race": "Human",
+          "job": "Mage",
+          "star": 1,
+          "lane": 2,
+          "row": 0,
+          "homeX": -1.15,
+          "homeZ": -2.15,
+          "x": -1.15,
+          "z": -2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1140.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 220.0,
+          "maxHp": 220.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 220.0,
+              "attack": 27.25,
+              "armor": 8.0,
+              "magicResist": 22.0,
+              "attackSpeed": 0.9,
+              "moveSpeed": 2.4,
+              "range": 4.2
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Attack",
+                "source": "synergy",
+                "amount": 0.09,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "StormBolt",
+                "name": "雷击",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "FocusMind",
+                "name": "专注",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "StormBurst",
+                "name": "雷暴",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "wave": 2,
+      "units": [
+        {
+          "id": 1,
+          "kind": "Warrior",
+          "name": "骑士",
+          "heroId": "Knight",
+          "race": "Human",
+          "job": "Warrior",
+          "star": 1,
+          "lane": 0,
+          "row": 0,
+          "homeX": -1.15,
+          "homeZ": 2.15,
+          "x": -1.15,
+          "z": 2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1080.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 360.0,
+          "maxHp": 360.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 360.0,
+              "attack": 25.07,
+              "armor": 30.0,
+              "magicResist": 15.0,
+              "attackSpeed": 0.92,
+              "moveSpeed": 2.4,
+              "range": 1.2
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Attack",
+                "source": "synergy",
+                "amount": 0.09,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "ShieldStrike",
+                "name": "盾锋",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "Resolve",
+                "name": "坚韧",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Rally",
+                "name": "军旗号令",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 2,
+          "kind": "Archer",
+          "name": "持弩骷髅小兵",
+          "heroId": "Skeleton_Minion",
+          "race": "Undead",
+          "job": "Archer",
+          "star": 1,
+          "lane": 1,
+          "row": 0,
+          "homeX": -1.15,
+          "homeZ": 0.0,
+          "x": -1.15,
+          "z": 0.0,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1260.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 205.0,
+          "maxHp": 205.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 205.0,
+              "attack": 30.0,
+              "armor": 10.0,
+              "magicResist": 11.0,
+              "attackSpeed": 0.95,
+              "moveSpeed": 2.4,
+              "range": 4.45
+            },
+            "statuses": [],
+            "buffs": [],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "Bolt",
+                "name": "穿甲弩矢",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "QuickDraw",
+                "name": "连击",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Volley",
+                "name": "齐射",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 3,
+          "kind": "Mage",
+          "name": "法师",
+          "heroId": "Mage",
+          "race": "Human",
+          "job": "Mage",
+          "star": 1,
+          "lane": 2,
+          "row": 0,
+          "homeX": -1.15,
+          "homeZ": -2.15,
+          "x": -1.15,
+          "z": -2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1140.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 220.0,
+          "maxHp": 220.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 220.0,
+              "attack": 27.25,
+              "armor": 8.0,
+              "magicResist": 22.0,
+              "attackSpeed": 0.9,
+              "moveSpeed": 2.4,
+              "range": 4.2
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Attack",
+                "source": "synergy",
+                "amount": 0.09,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "StormBolt",
+                "name": "雷击",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "FocusMind",
+                "name": "专注",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "StormBurst",
+                "name": "雷暴",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 6,
+          "kind": "Archer",
+          "name": "持弩骷髅小兵",
+          "heroId": "Skeleton_Minion",
+          "race": "Undead",
+          "job": "Archer",
+          "star": 1,
+          "lane": 0,
+          "row": 1,
+          "homeX": -2.8,
+          "homeZ": 2.15,
+          "x": -2.8,
+          "z": 2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1260.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 205.0,
+          "maxHp": 205.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 205.0,
+              "attack": 30.0,
+              "armor": 10.0,
+              "magicResist": 11.0,
+              "attackSpeed": 0.95,
+              "moveSpeed": 2.4,
+              "range": 4.45
+            },
+            "statuses": [],
+            "buffs": [],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "Bolt",
+                "name": "穿甲弩矢",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "QuickDraw",
+                "name": "连击",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Volley",
+                "name": "齐射",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "wave": 3,
+      "units": [
+        {
+          "id": 1,
+          "kind": "Warrior",
+          "name": "骑士",
+          "heroId": "Knight",
+          "race": "Human",
+          "job": "Warrior",
+          "star": 1,
+          "lane": 0,
+          "row": 0,
+          "homeX": -1.15,
+          "homeZ": 2.15,
+          "x": -1.15,
+          "z": 2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1080.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 360.0,
+          "maxHp": 360.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 360.0,
+              "attack": 25.07,
+              "armor": 30.0,
+              "magicResist": 15.0,
+              "attackSpeed": 0.92,
+              "moveSpeed": 2.4,
+              "range": 1.2
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Attack",
+                "source": "synergy",
+                "amount": 0.09,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "ShieldStrike",
+                "name": "盾锋",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "Resolve",
+                "name": "坚韧",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Rally",
+                "name": "军旗号令",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 2,
+          "kind": "Archer",
+          "name": "持弩骷髅小兵",
+          "heroId": "Skeleton_Minion",
+          "race": "Undead",
+          "job": "Archer",
+          "star": 1,
+          "lane": 1,
+          "row": 0,
+          "homeX": -1.15,
+          "homeZ": 0.0,
+          "x": -1.15,
+          "z": 0.0,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1260.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 205.0,
+          "maxHp": 205.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 205.0,
+              "attack": 30.0,
+              "armor": 10.0,
+              "magicResist": 11.0,
+              "attackSpeed": 0.95,
+              "moveSpeed": 2.4,
+              "range": 4.45
+            },
+            "statuses": [],
+            "buffs": [],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "Bolt",
+                "name": "穿甲弩矢",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "QuickDraw",
+                "name": "连击",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Volley",
+                "name": "齐射",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 3,
+          "kind": "Mage",
+          "name": "法师",
+          "heroId": "Mage",
+          "race": "Human",
+          "job": "Mage",
+          "star": 1,
+          "lane": 2,
+          "row": 0,
+          "homeX": -1.15,
+          "homeZ": -2.15,
+          "x": -1.15,
+          "z": -2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1140.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 220.0,
+          "maxHp": 220.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 220.0,
+              "attack": 27.25,
+              "armor": 8.0,
+              "magicResist": 22.0,
+              "attackSpeed": 0.9,
+              "moveSpeed": 2.4,
+              "range": 4.2
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Attack",
+                "source": "synergy",
+                "amount": 0.09,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "StormBolt",
+                "name": "雷击",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "FocusMind",
+                "name": "专注",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "StormBurst",
+                "name": "雷暴",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 6,
+          "kind": "Archer",
+          "name": "持弩骷髅小兵",
+          "heroId": "Skeleton_Minion",
+          "race": "Undead",
+          "job": "Archer",
+          "star": 1,
+          "lane": 0,
+          "row": 1,
+          "homeX": -2.8,
+          "homeZ": 2.15,
+          "x": -2.8,
+          "z": 2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1260.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 205.0,
+          "maxHp": 205.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 205.0,
+              "attack": 30.0,
+              "armor": 10.0,
+              "magicResist": 11.0,
+              "attackSpeed": 0.95,
+              "moveSpeed": 2.4,
+              "range": 4.45
+            },
+            "statuses": [],
+            "buffs": [],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "Bolt",
+                "name": "穿甲弩矢",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "QuickDraw",
+                "name": "连击",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Volley",
+                "name": "齐射",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 10,
+          "kind": "Assassin",
+          "name": "盗贼",
+          "heroId": "Rogue",
+          "race": "Human",
+          "job": "Assassin",
+          "star": 1,
+          "lane": 1,
+          "row": 1,
+          "homeX": -2.8,
+          "homeZ": 0.0,
+          "x": -2.8,
+          "z": 0.0,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1260.0,
+          "moveSpeed": 2.75,
+          "canMerge": false,
+          "hp": 245.0,
+          "maxHp": 245.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 245.0,
+              "attack": 30.52,
+              "armor": 14.0,
+              "magicResist": 10.0,
+              "attackSpeed": 1.2,
+              "moveSpeed": 2.75,
+              "range": 1.16
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Attack",
+                "source": "synergy",
+                "amount": 0.09,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "Ambush",
+                "name": "伏击",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "QuickDraw",
+                "name": "连击",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Flurry",
+                "name": "乱刃",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "wave": 4,
+      "units": [
+        {
+          "id": 1,
+          "kind": "Warrior",
+          "name": "骑士",
+          "heroId": "Knight",
+          "race": "Human",
+          "job": "Warrior",
+          "star": 1,
+          "lane": 0,
+          "row": 0,
+          "homeX": -1.15,
+          "homeZ": 2.15,
+          "x": -1.15,
+          "z": 2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1080.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 360.0,
+          "maxHp": 360.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 360.0,
+              "attack": 25.07,
+              "armor": 49.0,
+              "magicResist": 15.0,
+              "attackSpeed": 0.92,
+              "moveSpeed": 2.4,
+              "range": 1.2
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Attack",
+                "source": "synergy",
+                "amount": 0.09,
+                "until": null
+              },
+              {
+                "stat": "Armor",
+                "source": "synergy",
+                "amount": 19.0,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "ShieldStrike",
+                "name": "盾锋",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "Resolve",
+                "name": "坚韧",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Rally",
+                "name": "军旗号令",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 2,
+          "kind": "Archer",
+          "name": "持弩骷髅小兵",
+          "heroId": "Skeleton_Minion",
+          "race": "Undead",
+          "job": "Archer",
+          "star": 1,
+          "lane": 1,
+          "row": 0,
+          "homeX": -1.15,
+          "homeZ": 0.0,
+          "x": -1.15,
+          "z": 0.0,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1260.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 227.55,
+          "maxHp": 227.55,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 227.55,
+              "attack": 30.0,
+              "armor": 10.0,
+              "magicResist": 11.0,
+              "attackSpeed": 0.95,
+              "moveSpeed": 2.4,
+              "range": 4.45
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Health",
+                "source": "synergy",
+                "amount": 0.11,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "Bolt",
+                "name": "穿甲弩矢",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "QuickDraw",
+                "name": "连击",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Volley",
+                "name": "齐射",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 3,
+          "kind": "Mage",
+          "name": "法师",
+          "heroId": "Mage",
+          "race": "Human",
+          "job": "Mage",
+          "star": 1,
+          "lane": 2,
+          "row": 0,
+          "homeX": -1.15,
+          "homeZ": -2.15,
+          "x": -1.15,
+          "z": -2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1140.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 220.0,
+          "maxHp": 220.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 220.0,
+              "attack": 27.25,
+              "armor": 8.0,
+              "magicResist": 22.0,
+              "attackSpeed": 0.9,
+              "moveSpeed": 2.4,
+              "range": 4.2
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Attack",
+                "source": "synergy",
+                "amount": 0.09,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "StormBolt",
+                "name": "雷击",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "FocusMind",
+                "name": "专注",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "StormBurst",
+                "name": "雷暴",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 6,
+          "kind": "Archer",
+          "name": "持弩骷髅小兵",
+          "heroId": "Skeleton_Minion",
+          "race": "Undead",
+          "job": "Archer",
+          "star": 1,
+          "lane": 0,
+          "row": 1,
+          "homeX": -2.8,
+          "homeZ": 2.15,
+          "x": -2.8,
+          "z": 2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1260.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 227.55,
+          "maxHp": 227.55,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 227.55,
+              "attack": 30.0,
+              "armor": 10.0,
+              "magicResist": 11.0,
+              "attackSpeed": 0.95,
+              "moveSpeed": 2.4,
+              "range": 4.45
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Health",
+                "source": "synergy",
+                "amount": 0.11,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "Bolt",
+                "name": "穿甲弩矢",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "QuickDraw",
+                "name": "连击",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Volley",
+                "name": "齐射",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 10,
+          "kind": "Assassin",
+          "name": "盗贼",
+          "heroId": "Rogue",
+          "race": "Human",
+          "job": "Assassin",
+          "star": 1,
+          "lane": 1,
+          "row": 1,
+          "homeX": -2.8,
+          "homeZ": 0.0,
+          "x": -2.8,
+          "z": 0.0,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1260.0,
+          "moveSpeed": 2.75,
+          "canMerge": false,
+          "hp": 245.0,
+          "maxHp": 245.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 245.0,
+              "attack": 30.52,
+              "armor": 14.0,
+              "magicResist": 10.0,
+              "attackSpeed": 1.2,
+              "moveSpeed": 2.75,
+              "range": 1.16
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Attack",
+                "source": "synergy",
+                "amount": 0.09,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "Ambush",
+                "name": "伏击",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "QuickDraw",
+                "name": "连击",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Flurry",
+                "name": "乱刃",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 15,
+          "kind": "Warrior",
+          "name": "骷髅战士",
+          "heroId": "Skeleton_Warrior",
+          "race": "Undead",
+          "job": "Warrior",
+          "star": 1,
+          "lane": 2,
+          "row": 1,
+          "homeX": -2.8,
+          "homeZ": -2.15,
+          "x": -2.8,
+          "z": -2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1080.0,
+          "moveSpeed": 2.32,
+          "canMerge": false,
+          "hp": 438.45,
+          "maxHp": 438.45,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 438.45,
+              "attack": 20.0,
+              "armor": 52.0,
+              "magicResist": 13.0,
+              "attackSpeed": 0.85,
+              "moveSpeed": 2.32,
+              "range": 1.23
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Health",
+                "source": "synergy",
+                "amount": 0.11,
+                "until": null
+              },
+              {
+                "stat": "Armor",
+                "source": "synergy",
+                "amount": 19.0,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "BoneStrike",
+                "name": "骨盾重击",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "Resolve",
+                "name": "坚韧",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "BoneGuard",
+                "name": "骨壁",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "wave": 5,
+      "units": [
+        {
+          "id": 1,
+          "kind": "Warrior",
+          "name": "骑士",
+          "heroId": "Knight",
+          "race": "Human",
+          "job": "Warrior",
+          "star": 1,
+          "lane": 0,
+          "row": 0,
+          "homeX": -1.15,
+          "homeZ": 2.15,
+          "x": -1.15,
+          "z": 2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1080.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 360.0,
+          "maxHp": 360.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 360.0,
+              "attack": 25.07,
+              "armor": 49.0,
+              "magicResist": 15.0,
+              "attackSpeed": 0.92,
+              "moveSpeed": 2.4,
+              "range": 1.2
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Attack",
+                "source": "synergy",
+                "amount": 0.09,
+                "until": null
+              },
+              {
+                "stat": "Armor",
+                "source": "synergy",
+                "amount": 19.0,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "ShieldStrike",
+                "name": "盾锋",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "Resolve",
+                "name": "坚韧",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Rally",
+                "name": "军旗号令",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 2,
+          "kind": "Archer",
+          "name": "持弩骷髅小兵",
+          "heroId": "Skeleton_Minion",
+          "race": "Undead",
+          "job": "Archer",
+          "star": 1,
+          "lane": 1,
+          "row": 0,
+          "homeX": -1.15,
+          "homeZ": 0.0,
+          "x": -1.15,
+          "z": 0.0,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1260.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 227.55,
+          "maxHp": 227.55,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 227.55,
+              "attack": 30.0,
+              "armor": 10.0,
+              "magicResist": 11.0,
+              "attackSpeed": 0.95,
+              "moveSpeed": 2.4,
+              "range": 4.45
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Health",
+                "source": "synergy",
+                "amount": 0.11,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "Bolt",
+                "name": "穿甲弩矢",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "QuickDraw",
+                "name": "连击",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Volley",
+                "name": "齐射",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 3,
+          "kind": "Mage",
+          "name": "法师",
+          "heroId": "Mage",
+          "race": "Human",
+          "job": "Mage",
+          "star": 1,
+          "lane": 2,
+          "row": 0,
+          "homeX": -1.15,
+          "homeZ": -2.15,
+          "x": -1.15,
+          "z": -2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1140.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 220.0,
+          "maxHp": 220.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 220.0,
+              "attack": 27.25,
+              "armor": 8.0,
+              "magicResist": 22.0,
+              "attackSpeed": 0.9,
+              "moveSpeed": 2.4,
+              "range": 4.2
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Attack",
+                "source": "synergy",
+                "amount": 0.09,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "StormBolt",
+                "name": "雷击",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "FocusMind",
+                "name": "专注",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "StormBurst",
+                "name": "雷暴",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 6,
+          "kind": "Archer",
+          "name": "持弩骷髅小兵",
+          "heroId": "Skeleton_Minion",
+          "race": "Undead",
+          "job": "Archer",
+          "star": 1,
+          "lane": 0,
+          "row": 1,
+          "homeX": -2.8,
+          "homeZ": 2.15,
+          "x": -2.8,
+          "z": 2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1260.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 227.55,
+          "maxHp": 227.55,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 227.55,
+              "attack": 30.0,
+              "armor": 10.0,
+              "magicResist": 11.0,
+              "attackSpeed": 0.95,
+              "moveSpeed": 2.4,
+              "range": 4.45
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Health",
+                "source": "synergy",
+                "amount": 0.11,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "Bolt",
+                "name": "穿甲弩矢",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "QuickDraw",
+                "name": "连击",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Volley",
+                "name": "齐射",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 10,
+          "kind": "Assassin",
+          "name": "盗贼",
+          "heroId": "Rogue",
+          "race": "Human",
+          "job": "Assassin",
+          "star": 1,
+          "lane": 1,
+          "row": 1,
+          "homeX": -2.8,
+          "homeZ": 0.0,
+          "x": -2.8,
+          "z": 0.0,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1260.0,
+          "moveSpeed": 2.75,
+          "canMerge": false,
+          "hp": 245.0,
+          "maxHp": 245.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 245.0,
+              "attack": 30.52,
+              "armor": 14.0,
+              "magicResist": 10.0,
+              "attackSpeed": 1.2,
+              "moveSpeed": 2.75,
+              "range": 1.16
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Attack",
+                "source": "synergy",
+                "amount": 0.09,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "Ambush",
+                "name": "伏击",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "QuickDraw",
+                "name": "连击",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Flurry",
+                "name": "乱刃",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 15,
+          "kind": "Warrior",
+          "name": "骷髅战士",
+          "heroId": "Skeleton_Warrior",
+          "race": "Undead",
+          "job": "Warrior",
+          "star": 1,
+          "lane": 2,
+          "row": 1,
+          "homeX": -2.8,
+          "homeZ": -2.15,
+          "x": -2.8,
+          "z": -2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1080.0,
+          "moveSpeed": 2.32,
+          "canMerge": false,
+          "hp": 438.45,
+          "maxHp": 438.45,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 438.45,
+              "attack": 20.0,
+              "armor": 52.0,
+              "magicResist": 13.0,
+              "attackSpeed": 0.85,
+              "moveSpeed": 2.32,
+              "range": 1.23
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Health",
+                "source": "synergy",
+                "amount": 0.11,
+                "until": null
+              },
+              {
+                "stat": "Armor",
+                "source": "synergy",
+                "amount": 19.0,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "BoneStrike",
+                "name": "骨盾重击",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "Resolve",
+                "name": "坚韧",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "BoneGuard",
+                "name": "骨壁",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 21,
+          "kind": "Warrior",
+          "name": "骑士",
+          "heroId": "Knight",
+          "race": "Human",
+          "job": "Warrior",
+          "star": 1,
+          "lane": 0,
+          "row": 2,
+          "homeX": -4.45,
+          "homeZ": 2.15,
+          "x": -4.45,
+          "z": 2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1080.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 360.0,
+          "maxHp": 360.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 360.0,
+              "attack": 25.07,
+              "armor": 49.0,
+              "magicResist": 15.0,
+              "attackSpeed": 0.92,
+              "moveSpeed": 2.4,
+              "range": 1.2
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Attack",
+                "source": "synergy",
+                "amount": 0.09,
+                "until": null
+              },
+              {
+                "stat": "Armor",
+                "source": "synergy",
+                "amount": 19.0,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "ShieldStrike",
+                "name": "盾锋",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "Resolve",
+                "name": "坚韧",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Rally",
+                "name": "军旗号令",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "wave": 6,
+      "units": [
+        {
+          "id": 1,
+          "kind": "Warrior",
+          "name": "骑士",
+          "heroId": "Knight",
+          "race": "Human",
+          "job": "Warrior",
+          "star": 2,
+          "lane": 0,
+          "row": 0,
+          "homeX": -1.15,
+          "homeZ": 2.15,
+          "x": -1.15,
+          "z": 2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1080.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 630.0,
+          "maxHp": 630.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 630.0,
+              "attack": 43.8725,
+              "armor": 64.0,
+              "magicResist": 15.0,
+              "attackSpeed": 0.92,
+              "moveSpeed": 2.4,
+              "range": 1.2
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Armor",
+                "source": "Resolve/1",
+                "amount": 15.0,
+                "until": null
+              },
+              {
+                "stat": "Attack",
+                "source": "synergy",
+                "amount": 0.09,
+                "until": null
+              },
+              {
+                "stat": "Armor",
+                "source": "synergy",
+                "amount": 19.0,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "ShieldStrike",
+                "name": "盾锋",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "Resolve",
+                "name": "坚韧",
+                "passive": true,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Rally",
+                "name": "军旗号令",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 2,
+          "kind": "Archer",
+          "name": "持弩骷髅小兵",
+          "heroId": "Skeleton_Minion",
+          "race": "Undead",
+          "job": "Archer",
+          "star": 1,
+          "lane": 1,
+          "row": 0,
+          "homeX": -1.15,
+          "homeZ": 0.0,
+          "x": -1.15,
+          "z": 0.0,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1260.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 227.55,
+          "maxHp": 227.55,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 227.55,
+              "attack": 30.0,
+              "armor": 10.0,
+              "magicResist": 11.0,
+              "attackSpeed": 0.95,
+              "moveSpeed": 2.4,
+              "range": 4.45
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Health",
+                "source": "synergy",
+                "amount": 0.11,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "Bolt",
+                "name": "穿甲弩矢",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "QuickDraw",
+                "name": "连击",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Volley",
+                "name": "齐射",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 3,
+          "kind": "Mage",
+          "name": "法师",
+          "heroId": "Mage",
+          "race": "Human",
+          "job": "Mage",
+          "star": 1,
+          "lane": 2,
+          "row": 0,
+          "homeX": -1.15,
+          "homeZ": -2.15,
+          "x": -1.15,
+          "z": -2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1140.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 220.0,
+          "maxHp": 220.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 220.0,
+              "attack": 27.25,
+              "armor": 8.0,
+              "magicResist": 22.0,
+              "attackSpeed": 0.9,
+              "moveSpeed": 2.4,
+              "range": 4.2
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Attack",
+                "source": "synergy",
+                "amount": 0.09,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "StormBolt",
+                "name": "雷击",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "FocusMind",
+                "name": "专注",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "StormBurst",
+                "name": "雷暴",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 6,
+          "kind": "Archer",
+          "name": "持弩骷髅小兵",
+          "heroId": "Skeleton_Minion",
+          "race": "Undead",
+          "job": "Archer",
+          "star": 1,
+          "lane": 0,
+          "row": 1,
+          "homeX": -2.8,
+          "homeZ": 2.15,
+          "x": -2.8,
+          "z": 2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1260.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 227.55,
+          "maxHp": 227.55,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 227.55,
+              "attack": 30.0,
+              "armor": 10.0,
+              "magicResist": 11.0,
+              "attackSpeed": 0.95,
+              "moveSpeed": 2.4,
+              "range": 4.45
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Health",
+                "source": "synergy",
+                "amount": 0.11,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "Bolt",
+                "name": "穿甲弩矢",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "QuickDraw",
+                "name": "连击",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Volley",
+                "name": "齐射",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 10,
+          "kind": "Assassin",
+          "name": "盗贼",
+          "heroId": "Rogue",
+          "race": "Human",
+          "job": "Assassin",
+          "star": 1,
+          "lane": 1,
+          "row": 1,
+          "homeX": -2.8,
+          "homeZ": 0.0,
+          "x": -2.8,
+          "z": 0.0,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1260.0,
+          "moveSpeed": 2.75,
+          "canMerge": false,
+          "hp": 245.0,
+          "maxHp": 245.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 245.0,
+              "attack": 30.52,
+              "armor": 14.0,
+              "magicResist": 10.0,
+              "attackSpeed": 1.2,
+              "moveSpeed": 2.75,
+              "range": 1.16
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Attack",
+                "source": "synergy",
+                "amount": 0.09,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "Ambush",
+                "name": "伏击",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "QuickDraw",
+                "name": "连击",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Flurry",
+                "name": "乱刃",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 15,
+          "kind": "Warrior",
+          "name": "骷髅战士",
+          "heroId": "Skeleton_Warrior",
+          "race": "Undead",
+          "job": "Warrior",
+          "star": 1,
+          "lane": 2,
+          "row": 1,
+          "homeX": -2.8,
+          "homeZ": -2.15,
+          "x": -2.8,
+          "z": -2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1080.0,
+          "moveSpeed": 2.32,
+          "canMerge": false,
+          "hp": 438.45,
+          "maxHp": 438.45,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 438.45,
+              "attack": 20.0,
+              "armor": 52.0,
+              "magicResist": 13.0,
+              "attackSpeed": 0.85,
+              "moveSpeed": 2.32,
+              "range": 1.23
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Health",
+                "source": "synergy",
+                "amount": 0.11,
+                "until": null
+              },
+              {
+                "stat": "Armor",
+                "source": "synergy",
+                "amount": 19.0,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "BoneStrike",
+                "name": "骨盾重击",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "Resolve",
+                "name": "坚韧",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "BoneGuard",
+                "name": "骨壁",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 24,
+          "kind": "Warrior",
+          "name": "骷髅战士",
+          "heroId": "Skeleton_Warrior",
+          "race": "Undead",
+          "job": "Warrior",
+          "star": 1,
+          "lane": 0,
+          "row": 2,
+          "homeX": -4.45,
+          "homeZ": 2.15,
+          "x": -4.45,
+          "z": 2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1080.0,
+          "moveSpeed": 2.32,
+          "canMerge": false,
+          "hp": 438.45,
+          "maxHp": 438.45,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 438.45,
+              "attack": 20.0,
+              "armor": 52.0,
+              "magicResist": 13.0,
+              "attackSpeed": 0.85,
+              "moveSpeed": 2.32,
+              "range": 1.23
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Health",
+                "source": "synergy",
+                "amount": 0.11,
+                "until": null
+              },
+              {
+                "stat": "Armor",
+                "source": "synergy",
+                "amount": 19.0,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "BoneStrike",
+                "name": "骨盾重击",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "Resolve",
+                "name": "坚韧",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "BoneGuard",
+                "name": "骨壁",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "wave": 7,
+      "units": [
+        {
+          "id": 1,
+          "kind": "Warrior",
+          "name": "骑士",
+          "heroId": "Knight",
+          "race": "Human",
+          "job": "Warrior",
+          "star": 2,
+          "lane": 0,
+          "row": 0,
+          "homeX": -1.15,
+          "homeZ": 2.15,
+          "x": -1.15,
+          "z": 2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1080.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 630.0,
+          "maxHp": 630.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 630.0,
+              "attack": 43.8725,
+              "armor": 64.0,
+              "magicResist": 15.0,
+              "attackSpeed": 0.92,
+              "moveSpeed": 2.4,
+              "range": 1.2
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Armor",
+                "source": "Resolve/1",
+                "amount": 15.0,
+                "until": null
+              },
+              {
+                "stat": "Attack",
+                "source": "synergy",
+                "amount": 0.09,
+                "until": null
+              },
+              {
+                "stat": "Armor",
+                "source": "synergy",
+                "amount": 19.0,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "ShieldStrike",
+                "name": "盾锋",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "Resolve",
+                "name": "坚韧",
+                "passive": true,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Rally",
+                "name": "军旗号令",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 2,
+          "kind": "Archer",
+          "name": "持弩骷髅小兵",
+          "heroId": "Skeleton_Minion",
+          "race": "Undead",
+          "job": "Archer",
+          "star": 1,
+          "lane": 1,
+          "row": 0,
+          "homeX": -1.15,
+          "homeZ": 0.0,
+          "x": -1.15,
+          "z": 0.0,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1260.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 227.55,
+          "maxHp": 227.55,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 227.55,
+              "attack": 30.0,
+              "armor": 10.0,
+              "magicResist": 11.0,
+              "attackSpeed": 0.95,
+              "moveSpeed": 2.4,
+              "range": 4.45
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Health",
+                "source": "synergy",
+                "amount": 0.11,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "Bolt",
+                "name": "穿甲弩矢",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "QuickDraw",
+                "name": "连击",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Volley",
+                "name": "齐射",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 3,
+          "kind": "Mage",
+          "name": "法师",
+          "heroId": "Mage",
+          "race": "Human",
+          "job": "Mage",
+          "star": 1,
+          "lane": 2,
+          "row": 0,
+          "homeX": -1.15,
+          "homeZ": -2.15,
+          "x": -1.15,
+          "z": -2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1140.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 220.0,
+          "maxHp": 220.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 220.0,
+              "attack": 27.25,
+              "armor": 8.0,
+              "magicResist": 22.0,
+              "attackSpeed": 0.9,
+              "moveSpeed": 2.4,
+              "range": 4.2
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Attack",
+                "source": "synergy",
+                "amount": 0.09,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "StormBolt",
+                "name": "雷击",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "FocusMind",
+                "name": "专注",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "StormBurst",
+                "name": "雷暴",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 6,
+          "kind": "Archer",
+          "name": "持弩骷髅小兵",
+          "heroId": "Skeleton_Minion",
+          "race": "Undead",
+          "job": "Archer",
+          "star": 1,
+          "lane": 0,
+          "row": 1,
+          "homeX": -2.8,
+          "homeZ": 2.15,
+          "x": -2.8,
+          "z": 2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1260.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 227.55,
+          "maxHp": 227.55,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 227.55,
+              "attack": 30.0,
+              "armor": 10.0,
+              "magicResist": 11.0,
+              "attackSpeed": 0.95,
+              "moveSpeed": 2.4,
+              "range": 4.45
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Health",
+                "source": "synergy",
+                "amount": 0.11,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "Bolt",
+                "name": "穿甲弩矢",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "QuickDraw",
+                "name": "连击",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Volley",
+                "name": "齐射",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 10,
+          "kind": "Assassin",
+          "name": "盗贼",
+          "heroId": "Rogue",
+          "race": "Human",
+          "job": "Assassin",
+          "star": 1,
+          "lane": 1,
+          "row": 1,
+          "homeX": -2.8,
+          "homeZ": 0.0,
+          "x": -2.8,
+          "z": 0.0,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1260.0,
+          "moveSpeed": 2.75,
+          "canMerge": false,
+          "hp": 245.0,
+          "maxHp": 245.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 245.0,
+              "attack": 30.52,
+              "armor": 14.0,
+              "magicResist": 10.0,
+              "attackSpeed": 1.2,
+              "moveSpeed": 2.75,
+              "range": 1.16
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Attack",
+                "source": "synergy",
+                "amount": 0.09,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "Ambush",
+                "name": "伏击",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "QuickDraw",
+                "name": "连击",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Flurry",
+                "name": "乱刃",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 15,
+          "kind": "Warrior",
+          "name": "骷髅战士",
+          "heroId": "Skeleton_Warrior",
+          "race": "Undead",
+          "job": "Warrior",
+          "star": 1,
+          "lane": 2,
+          "row": 1,
+          "homeX": -2.8,
+          "homeZ": -2.15,
+          "x": -2.8,
+          "z": -2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1080.0,
+          "moveSpeed": 2.32,
+          "canMerge": false,
+          "hp": 438.45,
+          "maxHp": 438.45,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 438.45,
+              "attack": 20.0,
+              "armor": 52.0,
+              "magicResist": 13.0,
+              "attackSpeed": 0.85,
+              "moveSpeed": 2.32,
+              "range": 1.23
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Health",
+                "source": "synergy",
+                "amount": 0.11,
+                "until": null
+              },
+              {
+                "stat": "Armor",
+                "source": "synergy",
+                "amount": 19.0,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "BoneStrike",
+                "name": "骨盾重击",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "Resolve",
+                "name": "坚韧",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "BoneGuard",
+                "name": "骨壁",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 24,
+          "kind": "Warrior",
+          "name": "骷髅战士",
+          "heroId": "Skeleton_Warrior",
+          "race": "Undead",
+          "job": "Warrior",
+          "star": 1,
+          "lane": 0,
+          "row": 2,
+          "homeX": -4.45,
+          "homeZ": 2.15,
+          "x": -4.45,
+          "z": 2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1080.0,
+          "moveSpeed": 2.32,
+          "canMerge": false,
+          "hp": 438.45,
+          "maxHp": 438.45,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 438.45,
+              "attack": 20.0,
+              "armor": 52.0,
+              "magicResist": 13.0,
+              "attackSpeed": 0.85,
+              "moveSpeed": 2.32,
+              "range": 1.23
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Health",
+                "source": "synergy",
+                "amount": 0.11,
+                "until": null
+              },
+              {
+                "stat": "Armor",
+                "source": "synergy",
+                "amount": 19.0,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "BoneStrike",
+                "name": "骨盾重击",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "Resolve",
+                "name": "坚韧",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "BoneGuard",
+                "name": "骨壁",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 31,
+          "kind": "Warrior",
+          "name": "骑士",
+          "heroId": "Knight",
+          "race": "Human",
+          "job": "Warrior",
+          "star": 1,
+          "lane": 1,
+          "row": 2,
+          "homeX": -4.45,
+          "homeZ": 0.0,
+          "x": -4.45,
+          "z": 0.0,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1080.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 360.0,
+          "maxHp": 360.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 360.0,
+              "attack": 25.07,
+              "armor": 49.0,
+              "magicResist": 15.0,
+              "attackSpeed": 0.92,
+              "moveSpeed": 2.4,
+              "range": 1.2
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Attack",
+                "source": "synergy",
+                "amount": 0.09,
+                "until": null
+              },
+              {
+                "stat": "Armor",
+                "source": "synergy",
+                "amount": 19.0,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "ShieldStrike",
+                "name": "盾锋",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "Resolve",
+                "name": "坚韧",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Rally",
+                "name": "军旗号令",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "wave": 8,
+      "units": [
+        {
+          "id": 1,
+          "kind": "Warrior",
+          "name": "骑士",
+          "heroId": "Knight",
+          "race": "Human",
+          "job": "Warrior",
+          "star": 2,
+          "lane": 0,
+          "row": 0,
+          "homeX": -1.15,
+          "homeZ": 2.15,
+          "x": -1.15,
+          "z": 2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1080.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 630.0,
+          "maxHp": 630.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 630.0,
+              "attack": 43.8725,
+              "armor": 64.0,
+              "magicResist": 15.0,
+              "attackSpeed": 0.92,
+              "moveSpeed": 2.4,
+              "range": 1.2
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Armor",
+                "source": "Resolve/1",
+                "amount": 15.0,
+                "until": null
+              },
+              {
+                "stat": "Attack",
+                "source": "synergy",
+                "amount": 0.09,
+                "until": null
+              },
+              {
+                "stat": "Armor",
+                "source": "synergy",
+                "amount": 19.0,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "ShieldStrike",
+                "name": "盾锋",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "Resolve",
+                "name": "坚韧",
+                "passive": true,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Rally",
+                "name": "军旗号令",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 2,
+          "kind": "Archer",
+          "name": "持弩骷髅小兵",
+          "heroId": "Skeleton_Minion",
+          "race": "Undead",
+          "job": "Archer",
+          "star": 1,
+          "lane": 1,
+          "row": 0,
+          "homeX": -1.15,
+          "homeZ": 0.0,
+          "x": -1.15,
+          "z": 0.0,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1260.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 227.55,
+          "maxHp": 227.55,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 227.55,
+              "attack": 30.0,
+              "armor": 10.0,
+              "magicResist": 11.0,
+              "attackSpeed": 0.95,
+              "moveSpeed": 2.4,
+              "range": 4.45
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Health",
+                "source": "synergy",
+                "amount": 0.11,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "Bolt",
+                "name": "穿甲弩矢",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "QuickDraw",
+                "name": "连击",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Volley",
+                "name": "齐射",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 3,
+          "kind": "Mage",
+          "name": "法师",
+          "heroId": "Mage",
+          "race": "Human",
+          "job": "Mage",
+          "star": 1,
+          "lane": 2,
+          "row": 0,
+          "homeX": -1.15,
+          "homeZ": -2.15,
+          "x": -1.15,
+          "z": -2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1140.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 220.0,
+          "maxHp": 220.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 220.0,
+              "attack": 27.25,
+              "armor": 8.0,
+              "magicResist": 22.0,
+              "attackSpeed": 0.9,
+              "moveSpeed": 2.4,
+              "range": 4.2
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Attack",
+                "source": "synergy",
+                "amount": 0.09,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "StormBolt",
+                "name": "雷击",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "FocusMind",
+                "name": "专注",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "StormBurst",
+                "name": "雷暴",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 6,
+          "kind": "Archer",
+          "name": "持弩骷髅小兵",
+          "heroId": "Skeleton_Minion",
+          "race": "Undead",
+          "job": "Archer",
+          "star": 1,
+          "lane": 0,
+          "row": 1,
+          "homeX": -2.8,
+          "homeZ": 2.15,
+          "x": -2.8,
+          "z": 2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1260.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 227.55,
+          "maxHp": 227.55,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 227.55,
+              "attack": 30.0,
+              "armor": 10.0,
+              "magicResist": 11.0,
+              "attackSpeed": 0.95,
+              "moveSpeed": 2.4,
+              "range": 4.45
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Health",
+                "source": "synergy",
+                "amount": 0.11,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "Bolt",
+                "name": "穿甲弩矢",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "QuickDraw",
+                "name": "连击",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Volley",
+                "name": "齐射",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 10,
+          "kind": "Assassin",
+          "name": "盗贼",
+          "heroId": "Rogue",
+          "race": "Human",
+          "job": "Assassin",
+          "star": 1,
+          "lane": 1,
+          "row": 1,
+          "homeX": -2.8,
+          "homeZ": 0.0,
+          "x": -2.8,
+          "z": 0.0,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1260.0,
+          "moveSpeed": 2.75,
+          "canMerge": false,
+          "hp": 245.0,
+          "maxHp": 245.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 245.0,
+              "attack": 30.52,
+              "armor": 14.0,
+              "magicResist": 10.0,
+              "attackSpeed": 1.2,
+              "moveSpeed": 2.75,
+              "range": 1.16
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Attack",
+                "source": "synergy",
+                "amount": 0.09,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "Ambush",
+                "name": "伏击",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "QuickDraw",
+                "name": "连击",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Flurry",
+                "name": "乱刃",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 15,
+          "kind": "Warrior",
+          "name": "骷髅战士",
+          "heroId": "Skeleton_Warrior",
+          "race": "Undead",
+          "job": "Warrior",
+          "star": 1,
+          "lane": 2,
+          "row": 1,
+          "homeX": -2.8,
+          "homeZ": -2.15,
+          "x": -2.8,
+          "z": -2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1080.0,
+          "moveSpeed": 2.32,
+          "canMerge": false,
+          "hp": 438.45,
+          "maxHp": 438.45,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 438.45,
+              "attack": 20.0,
+              "armor": 52.0,
+              "magicResist": 13.0,
+              "attackSpeed": 0.85,
+              "moveSpeed": 2.32,
+              "range": 1.23
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Health",
+                "source": "synergy",
+                "amount": 0.11,
+                "until": null
+              },
+              {
+                "stat": "Armor",
+                "source": "synergy",
+                "amount": 19.0,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "BoneStrike",
+                "name": "骨盾重击",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "Resolve",
+                "name": "坚韧",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "BoneGuard",
+                "name": "骨壁",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 24,
+          "kind": "Warrior",
+          "name": "骷髅战士",
+          "heroId": "Skeleton_Warrior",
+          "race": "Undead",
+          "job": "Warrior",
+          "star": 1,
+          "lane": 0,
+          "row": 2,
+          "homeX": -4.45,
+          "homeZ": 2.15,
+          "x": -4.45,
+          "z": 2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1080.0,
+          "moveSpeed": 2.32,
+          "canMerge": false,
+          "hp": 438.45,
+          "maxHp": 438.45,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 438.45,
+              "attack": 20.0,
+              "armor": 52.0,
+              "magicResist": 13.0,
+              "attackSpeed": 0.85,
+              "moveSpeed": 2.32,
+              "range": 1.23
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Health",
+                "source": "synergy",
+                "amount": 0.11,
+                "until": null
+              },
+              {
+                "stat": "Armor",
+                "source": "synergy",
+                "amount": 19.0,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "BoneStrike",
+                "name": "骨盾重击",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "Resolve",
+                "name": "坚韧",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "BoneGuard",
+                "name": "骨壁",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 31,
+          "kind": "Warrior",
+          "name": "骑士",
+          "heroId": "Knight",
+          "race": "Human",
+          "job": "Warrior",
+          "star": 1,
+          "lane": 1,
+          "row": 2,
+          "homeX": -4.45,
+          "homeZ": 0.0,
+          "x": -4.45,
+          "z": 0.0,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1080.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 360.0,
+          "maxHp": 360.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 360.0,
+              "attack": 25.07,
+              "armor": 49.0,
+              "magicResist": 15.0,
+              "attackSpeed": 0.92,
+              "moveSpeed": 2.4,
+              "range": 1.2
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Attack",
+                "source": "synergy",
+                "amount": 0.09,
+                "until": null
+              },
+              {
+                "stat": "Armor",
+                "source": "synergy",
+                "amount": 19.0,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "ShieldStrike",
+                "name": "盾锋",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "Resolve",
+                "name": "坚韧",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Rally",
+                "name": "军旗号令",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 39,
+          "kind": "Warrior",
+          "name": "骑士",
+          "heroId": "Knight",
+          "race": "Human",
+          "job": "Warrior",
+          "star": 1,
+          "lane": -1,
+          "row": -1,
+          "homeX": 0.0,
+          "homeZ": 0.0,
+          "x": 0.0,
+          "z": 0.0,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1080.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 360.0,
+          "maxHp": 360.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 360.0,
+              "attack": 23.0,
+              "armor": 30.0,
+              "magicResist": 15.0,
+              "attackSpeed": 0.92,
+              "moveSpeed": 2.4,
+              "range": 1.2
+            },
+            "statuses": [],
+            "buffs": [],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "ShieldStrike",
+                "name": "盾锋",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "Resolve",
+                "name": "坚韧",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Rally",
+                "name": "军旗号令",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "wave": 9,
+      "units": [
+        {
+          "id": 1,
+          "kind": "Warrior",
+          "name": "骑士",
+          "heroId": "Knight",
+          "race": "Human",
+          "job": "Warrior",
+          "star": 2,
+          "lane": 0,
+          "row": 0,
+          "homeX": -1.15,
+          "homeZ": 2.15,
+          "x": -1.15,
+          "z": 2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1080.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 630.0,
+          "maxHp": 630.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 630.0,
+              "attack": 43.8725,
+              "armor": 64.0,
+              "magicResist": 15.0,
+              "attackSpeed": 0.92,
+              "moveSpeed": 2.4,
+              "range": 1.2
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Armor",
+                "source": "Resolve/1",
+                "amount": 15.0,
+                "until": null
+              },
+              {
+                "stat": "Attack",
+                "source": "synergy",
+                "amount": 0.09,
+                "until": null
+              },
+              {
+                "stat": "Armor",
+                "source": "synergy",
+                "amount": 19.0,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "ShieldStrike",
+                "name": "盾锋",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "Resolve",
+                "name": "坚韧",
+                "passive": true,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Rally",
+                "name": "军旗号令",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 2,
+          "kind": "Archer",
+          "name": "持弩骷髅小兵",
+          "heroId": "Skeleton_Minion",
+          "race": "Undead",
+          "job": "Archer",
+          "star": 1,
+          "lane": 1,
+          "row": 0,
+          "homeX": -1.15,
+          "homeZ": 0.0,
+          "x": -1.15,
+          "z": 0.0,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1260.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 227.55,
+          "maxHp": 227.55,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 227.55,
+              "attack": 30.0,
+              "armor": 10.0,
+              "magicResist": 11.0,
+              "attackSpeed": 0.95,
+              "moveSpeed": 2.4,
+              "range": 4.45
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Health",
+                "source": "synergy",
+                "amount": 0.11,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "Bolt",
+                "name": "穿甲弩矢",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "QuickDraw",
+                "name": "连击",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Volley",
+                "name": "齐射",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 3,
+          "kind": "Mage",
+          "name": "法师",
+          "heroId": "Mage",
+          "race": "Human",
+          "job": "Mage",
+          "star": 1,
+          "lane": 2,
+          "row": 0,
+          "homeX": -1.15,
+          "homeZ": -2.15,
+          "x": -1.15,
+          "z": -2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1140.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 220.0,
+          "maxHp": 220.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 220.0,
+              "attack": 27.25,
+              "armor": 8.0,
+              "magicResist": 22.0,
+              "attackSpeed": 0.9,
+              "moveSpeed": 2.4,
+              "range": 4.2
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Attack",
+                "source": "synergy",
+                "amount": 0.09,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "StormBolt",
+                "name": "雷击",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "FocusMind",
+                "name": "专注",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "StormBurst",
+                "name": "雷暴",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 6,
+          "kind": "Archer",
+          "name": "持弩骷髅小兵",
+          "heroId": "Skeleton_Minion",
+          "race": "Undead",
+          "job": "Archer",
+          "star": 1,
+          "lane": 0,
+          "row": 1,
+          "homeX": -2.8,
+          "homeZ": 2.15,
+          "x": -2.8,
+          "z": 2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1260.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 227.55,
+          "maxHp": 227.55,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 227.55,
+              "attack": 30.0,
+              "armor": 10.0,
+              "magicResist": 11.0,
+              "attackSpeed": 0.95,
+              "moveSpeed": 2.4,
+              "range": 4.45
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Health",
+                "source": "synergy",
+                "amount": 0.11,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "Bolt",
+                "name": "穿甲弩矢",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "QuickDraw",
+                "name": "连击",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Volley",
+                "name": "齐射",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 10,
+          "kind": "Assassin",
+          "name": "盗贼",
+          "heroId": "Rogue",
+          "race": "Human",
+          "job": "Assassin",
+          "star": 1,
+          "lane": 1,
+          "row": 1,
+          "homeX": -2.8,
+          "homeZ": 0.0,
+          "x": -2.8,
+          "z": 0.0,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1260.0,
+          "moveSpeed": 2.75,
+          "canMerge": false,
+          "hp": 245.0,
+          "maxHp": 245.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 245.0,
+              "attack": 30.52,
+              "armor": 14.0,
+              "magicResist": 10.0,
+              "attackSpeed": 1.2,
+              "moveSpeed": 2.75,
+              "range": 1.16
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Attack",
+                "source": "synergy",
+                "amount": 0.09,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "Ambush",
+                "name": "伏击",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "QuickDraw",
+                "name": "连击",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Flurry",
+                "name": "乱刃",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 15,
+          "kind": "Warrior",
+          "name": "骷髅战士",
+          "heroId": "Skeleton_Warrior",
+          "race": "Undead",
+          "job": "Warrior",
+          "star": 1,
+          "lane": 2,
+          "row": 1,
+          "homeX": -2.8,
+          "homeZ": -2.15,
+          "x": -2.8,
+          "z": -2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1080.0,
+          "moveSpeed": 2.32,
+          "canMerge": false,
+          "hp": 438.45,
+          "maxHp": 438.45,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 438.45,
+              "attack": 20.0,
+              "armor": 52.0,
+              "magicResist": 13.0,
+              "attackSpeed": 0.85,
+              "moveSpeed": 2.32,
+              "range": 1.23
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Health",
+                "source": "synergy",
+                "amount": 0.11,
+                "until": null
+              },
+              {
+                "stat": "Armor",
+                "source": "synergy",
+                "amount": 19.0,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "BoneStrike",
+                "name": "骨盾重击",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "Resolve",
+                "name": "坚韧",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "BoneGuard",
+                "name": "骨壁",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 24,
+          "kind": "Warrior",
+          "name": "骷髅战士",
+          "heroId": "Skeleton_Warrior",
+          "race": "Undead",
+          "job": "Warrior",
+          "star": 1,
+          "lane": 0,
+          "row": 2,
+          "homeX": -4.45,
+          "homeZ": 2.15,
+          "x": -4.45,
+          "z": 2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1080.0,
+          "moveSpeed": 2.32,
+          "canMerge": false,
+          "hp": 438.45,
+          "maxHp": 438.45,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 438.45,
+              "attack": 20.0,
+              "armor": 52.0,
+              "magicResist": 13.0,
+              "attackSpeed": 0.85,
+              "moveSpeed": 2.32,
+              "range": 1.23
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Health",
+                "source": "synergy",
+                "amount": 0.11,
+                "until": null
+              },
+              {
+                "stat": "Armor",
+                "source": "synergy",
+                "amount": 19.0,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "BoneStrike",
+                "name": "骨盾重击",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "Resolve",
+                "name": "坚韧",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "BoneGuard",
+                "name": "骨壁",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 31,
+          "kind": "Warrior",
+          "name": "骑士",
+          "heroId": "Knight",
+          "race": "Human",
+          "job": "Warrior",
+          "star": 2,
+          "lane": 1,
+          "row": 2,
+          "homeX": -4.45,
+          "homeZ": 0.0,
+          "x": -4.45,
+          "z": 0.0,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1080.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 630.0,
+          "maxHp": 630.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 630.0,
+              "attack": 43.8725,
+              "armor": 64.0,
+              "magicResist": 15.0,
+              "attackSpeed": 0.92,
+              "moveSpeed": 2.4,
+              "range": 1.2
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Armor",
+                "source": "Resolve/1",
+                "amount": 15.0,
+                "until": null
+              },
+              {
+                "stat": "Attack",
+                "source": "synergy",
+                "amount": 0.09,
+                "until": null
+              },
+              {
+                "stat": "Armor",
+                "source": "synergy",
+                "amount": 19.0,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "ShieldStrike",
+                "name": "盾锋",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "Resolve",
+                "name": "坚韧",
+                "passive": true,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Rally",
+                "name": "军旗号令",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 49,
+          "kind": "Warrior",
+          "name": "骑士",
+          "heroId": "Knight",
+          "race": "Human",
+          "job": "Warrior",
+          "star": 1,
+          "lane": -1,
+          "row": -1,
+          "homeX": 0.0,
+          "homeZ": 0.0,
+          "x": 0.0,
+          "z": 0.0,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1080.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 360.0,
+          "maxHp": 360.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 360.0,
+              "attack": 23.0,
+              "armor": 30.0,
+              "magicResist": 15.0,
+              "attackSpeed": 0.92,
+              "moveSpeed": 2.4,
+              "range": 1.2
+            },
+            "statuses": [],
+            "buffs": [],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "ShieldStrike",
+                "name": "盾锋",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "Resolve",
+                "name": "坚韧",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Rally",
+                "name": "军旗号令",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "wave": 10,
+      "units": [
+        {
+          "id": 1,
+          "kind": "Warrior",
+          "name": "骑士",
+          "heroId": "Knight",
+          "race": "Human",
+          "job": "Warrior",
+          "star": 2,
+          "lane": 0,
+          "row": 0,
+          "homeX": -1.15,
+          "homeZ": 2.15,
+          "x": -1.15,
+          "z": 2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1080.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 630.0,
+          "maxHp": 630.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 630.0,
+              "attack": 43.8725,
+              "armor": 64.0,
+              "magicResist": 15.0,
+              "attackSpeed": 0.92,
+              "moveSpeed": 2.4,
+              "range": 1.2
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Armor",
+                "source": "Resolve/1",
+                "amount": 15.0,
+                "until": null
+              },
+              {
+                "stat": "Attack",
+                "source": "synergy",
+                "amount": 0.09,
+                "until": null
+              },
+              {
+                "stat": "Armor",
+                "source": "synergy",
+                "amount": 19.0,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "ShieldStrike",
+                "name": "盾锋",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "Resolve",
+                "name": "坚韧",
+                "passive": true,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Rally",
+                "name": "军旗号令",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 2,
+          "kind": "Archer",
+          "name": "持弩骷髅小兵",
+          "heroId": "Skeleton_Minion",
+          "race": "Undead",
+          "job": "Archer",
+          "star": 1,
+          "lane": 1,
+          "row": 0,
+          "homeX": -1.15,
+          "homeZ": 0.0,
+          "x": -1.15,
+          "z": 0.0,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1260.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 227.55,
+          "maxHp": 227.55,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 227.55,
+              "attack": 30.0,
+              "armor": 10.0,
+              "magicResist": 11.0,
+              "attackSpeed": 0.95,
+              "moveSpeed": 2.4,
+              "range": 4.45
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Health",
+                "source": "synergy",
+                "amount": 0.11,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "Bolt",
+                "name": "穿甲弩矢",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "QuickDraw",
+                "name": "连击",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Volley",
+                "name": "齐射",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 3,
+          "kind": "Mage",
+          "name": "法师",
+          "heroId": "Mage",
+          "race": "Human",
+          "job": "Mage",
+          "star": 1,
+          "lane": 2,
+          "row": 0,
+          "homeX": -1.15,
+          "homeZ": -2.15,
+          "x": -1.15,
+          "z": -2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1140.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 220.0,
+          "maxHp": 220.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 220.0,
+              "attack": 27.25,
+              "armor": 8.0,
+              "magicResist": 22.0,
+              "attackSpeed": 0.9,
+              "moveSpeed": 2.4,
+              "range": 4.2
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Attack",
+                "source": "synergy",
+                "amount": 0.09,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "StormBolt",
+                "name": "雷击",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "FocusMind",
+                "name": "专注",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "StormBurst",
+                "name": "雷暴",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 6,
+          "kind": "Archer",
+          "name": "持弩骷髅小兵",
+          "heroId": "Skeleton_Minion",
+          "race": "Undead",
+          "job": "Archer",
+          "star": 1,
+          "lane": 0,
+          "row": 1,
+          "homeX": -2.8,
+          "homeZ": 2.15,
+          "x": -2.8,
+          "z": 2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1260.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 227.55,
+          "maxHp": 227.55,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 227.55,
+              "attack": 30.0,
+              "armor": 10.0,
+              "magicResist": 11.0,
+              "attackSpeed": 0.95,
+              "moveSpeed": 2.4,
+              "range": 4.45
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Health",
+                "source": "synergy",
+                "amount": 0.11,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "Bolt",
+                "name": "穿甲弩矢",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "QuickDraw",
+                "name": "连击",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Volley",
+                "name": "齐射",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 10,
+          "kind": "Assassin",
+          "name": "盗贼",
+          "heroId": "Rogue",
+          "race": "Human",
+          "job": "Assassin",
+          "star": 1,
+          "lane": 1,
+          "row": 1,
+          "homeX": -2.8,
+          "homeZ": 0.0,
+          "x": -2.8,
+          "z": 0.0,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1260.0,
+          "moveSpeed": 2.75,
+          "canMerge": false,
+          "hp": 245.0,
+          "maxHp": 245.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 245.0,
+              "attack": 30.52,
+              "armor": 14.0,
+              "magicResist": 10.0,
+              "attackSpeed": 1.2,
+              "moveSpeed": 2.75,
+              "range": 1.16
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Attack",
+                "source": "synergy",
+                "amount": 0.09,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "Ambush",
+                "name": "伏击",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "QuickDraw",
+                "name": "连击",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Flurry",
+                "name": "乱刃",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 15,
+          "kind": "Warrior",
+          "name": "骷髅战士",
+          "heroId": "Skeleton_Warrior",
+          "race": "Undead",
+          "job": "Warrior",
+          "star": 2,
+          "lane": 2,
+          "row": 1,
+          "homeX": -2.8,
+          "homeZ": -2.15,
+          "x": -2.8,
+          "z": -2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1080.0,
+          "moveSpeed": 2.32,
+          "canMerge": false,
+          "hp": 767.2875,
+          "maxHp": 767.2875,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 767.2875,
+              "attack": 35.0,
+              "armor": 67.0,
+              "magicResist": 13.0,
+              "attackSpeed": 0.85,
+              "moveSpeed": 2.32,
+              "range": 1.23
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Armor",
+                "source": "Resolve/1",
+                "amount": 15.0,
+                "until": null
+              },
+              {
+                "stat": "Health",
+                "source": "synergy",
+                "amount": 0.11,
+                "until": null
+              },
+              {
+                "stat": "Armor",
+                "source": "synergy",
+                "amount": 19.0,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "BoneStrike",
+                "name": "骨盾重击",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "Resolve",
+                "name": "坚韧",
+                "passive": true,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "BoneGuard",
+                "name": "骨壁",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 31,
+          "kind": "Warrior",
+          "name": "骑士",
+          "heroId": "Knight",
+          "race": "Human",
+          "job": "Warrior",
+          "star": 2,
+          "lane": 1,
+          "row": 2,
+          "homeX": -4.45,
+          "homeZ": 0.0,
+          "x": -4.45,
+          "z": 0.0,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1080.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 630.0,
+          "maxHp": 630.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 630.0,
+              "attack": 43.8725,
+              "armor": 64.0,
+              "magicResist": 15.0,
+              "attackSpeed": 0.92,
+              "moveSpeed": 2.4,
+              "range": 1.2
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Armor",
+                "source": "Resolve/1",
+                "amount": 15.0,
+                "until": null
+              },
+              {
+                "stat": "Attack",
+                "source": "synergy",
+                "amount": 0.09,
+                "until": null
+              },
+              {
+                "stat": "Armor",
+                "source": "synergy",
+                "amount": 19.0,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "ShieldStrike",
+                "name": "盾锋",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "Resolve",
+                "name": "坚韧",
+                "passive": true,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Rally",
+                "name": "军旗号令",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "id": 49,
+          "kind": "Warrior",
+          "name": "骑士",
+          "heroId": "Knight",
+          "race": "Human",
+          "job": "Warrior",
+          "star": 1,
+          "lane": 2,
+          "row": 2,
+          "homeX": -4.45,
+          "homeZ": -2.15,
+          "x": -4.45,
+          "z": -2.15,
+          "vx": 0.0,
+          "vz": 0.0,
+          "targetId": 0,
+          "aiState": "Idle",
+          "navigation": {
+            "status": "Holding",
+            "blockReason": "",
+            "blockedFor": 0.0,
+            "goalX": 0.0,
+            "goalZ": 0.0,
+            "revision": 0,
+            "remainingCorners": 0,
+            "corners": []
+          },
+          "facingYaw": 90.0,
+          "turnSpeed": 1080.0,
+          "moveSpeed": 2.4,
+          "canMerge": false,
+          "hp": 360.0,
+          "maxHp": 360.0,
+          "shield": 0.0,
+          "cooldown": 0.25,
+          "combat": {
+            "mana": 0.0,
+            "maxMana": 100.0,
+            "jumped": false,
+            "jumping": false,
+            "properties": {
+              "health": 360.0,
+              "attack": 25.07,
+              "armor": 49.0,
+              "magicResist": 15.0,
+              "attackSpeed": 0.92,
+              "moveSpeed": 2.4,
+              "range": 1.2
+            },
+            "statuses": [],
+            "buffs": [
+              {
+                "stat": "Attack",
+                "source": "synergy",
+                "amount": 0.09,
+                "until": null
+              },
+              {
+                "stat": "Armor",
+                "source": "synergy",
+                "amount": 19.0,
+                "until": null
+              }
+            ],
+            "skills": [
+              {
+                "slot": 1,
+                "id": "ShieldStrike",
+                "name": "盾锋",
+                "passive": false,
+                "unlocked": true,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 2,
+                "id": "Resolve",
+                "name": "坚韧",
+                "passive": true,
+                "unlocked": false,
+                "readyIn": 0.0
+              },
+              {
+                "slot": 3,
+                "id": "Rally",
+                "name": "军旗号令",
+                "passive": false,
+                "unlocked": false,
+                "readyIn": 0.0
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

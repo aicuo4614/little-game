@@ -225,18 +225,6 @@ namespace LittleGame.Client
             lastReserveTapUnitId = 0;
             if (hud.BlocksWorld) return;
             var s = app.Session;
-            if (s.Aim == AimKind.Focus)
-            {
-                int target = view.HitUnit(point, true);
-                if (target > 0) hud.Submit(new BattleCommand { Kind = CommandKind.Focus, UnitId = target });
-                return;
-            }
-            if (s.Aim == AimKind.Protect)
-            {
-                int lane = view.HitLane(point);
-                if (lane >= 0) hud.Submit(new BattleCommand { Kind = CommandKind.Protect, Lane = lane });
-                return;
-            }
             if (s.Phase != RunPhase.Preparation) return;
             if (unit > 0)
             {

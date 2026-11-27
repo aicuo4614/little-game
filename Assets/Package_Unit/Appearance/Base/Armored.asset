@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1f6113d00550904393fa3d87cf90d51, type: 3}
+  m_Name: Armored
+  m_EditorClassIdentifier: 
+  Source: Assets/LittleGame/Art/UnitSources/CuteMonsters/Hermit King/Hermit King.FBX
+  Model: {fileID: 3546755569561924254, guid: 3e463b0a11ea1f64d9c92041cea58309, type: 3}
+  AnimatorController: {fileID: 9100000, guid: 60b85b46b1eef524ca0464781de996df, type: 2}
+  Idle: {fileID: 7400000, guid: d80b91c7ab198c248908de68b79bac9e, type: 2}
+  Move: {fileID: 7400000, guid: 5997b91995f4e6742a9a9efd5a428b58, type: 2}
+  Attack: {fileID: 7400000, guid: 28a81eff4673f924eb2969e73a49a281, type: 2}
+  Hit: {fileID: 7400000, guid: 9403d1e8e0c93f746b5a634f26100d95, type: 2}
+  Death: {fileID: 7400000, guid: c03c88f16bf393f40900e37d95662eb1, type: 2}
+  Slam: {fileID: 7400000, guid: 5b419395510b4914fbac8e22f31f2959, type: 2}
+  Height: 1.25
+  AttackSpeed: 1.5

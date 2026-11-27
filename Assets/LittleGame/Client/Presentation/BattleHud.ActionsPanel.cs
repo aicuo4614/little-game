@@ -41,7 +41,7 @@ namespace LittleGame.Client
                     lastCheckedSelected = hud.Selected;
                     lastCheckedHidden = hud.hiddenReserveIds.Count;
                     string hiddenSig = hud.hiddenReserveIds.Count > 0 ? string.Join(",", hud.hiddenReserveIds.OrderBy(id => id)) : "";
-                    string next = s.Phase + "/" + s.Spins + "/" + hud.Selected + "/" + s.Aim + "/" + s.Paused + "/" + s.Speed + "/" + s.Tactics
+                    string next = s.Phase + "/" + s.Spins + "/" + hud.Selected + "/" + s.Paused + "/" + s.Speed
                     + "/" + s.MaxDeployed + "/" + s.PopExp + "/" + hud.confirmStart + hud.confirmRestart + hud.confirmRecycle
                     + "/" + hiddenSig
                     + "/" + string.Join(",", s.Troops.Select(t => $"{t.Id}:{t.Star}:{t.Lane}:{t.Row}"))

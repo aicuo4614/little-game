@@ -1,0 +1,86 @@
+{
+  "dragCancel": true,
+  "doubleTapDeploy": true,
+  "damageTabs": true,
+  "layout": {
+    "damageScope": "wave",
+    "damageRows": [
+      {
+        "visible": true,
+        "hero": "Skeleton_Minion",
+        "value": "29"
+      },
+      {
+        "visible": true,
+        "hero": "Mage",
+        "value": "26"
+      },
+      {
+        "visible": false,
+        "hero": "Helmet",
+        "value": ""
+      },
+      {
+        "visible": false,
+        "hero": "Helmet",
+        "value": ""
+      },
+      {
+        "visible": false,
+        "hero": "Helmet",
+        "value": ""
+      },
+      {
+        "visible": false,
+        "hero": "Helmet",
+        "value": ""
+      },
+      {
+        "visible": false,
+        "hero": "Helmet",
+        "value": ""
+      },
+      {
+        "visible": false,
+        "hero": "Helmet",
+        "value": ""
+      }
+    ],
+    "synergies": [
+      {
+        "visible": true,
+        "count": "2/4"
+      },
+      {
+        "visible": true,
+        "count": "1/2"
+      },
+      {
+        "visible": true,
+        "count": "1/2"
+      },
+      {
+        "visible": true,
+        "count": "1/2"
+      },
+      {
+        "visible": true,
+        "count": "1/2"
+      },
+      {
+        "visible": false,
+        "count": ""
+      },
+      {
+        "visible": false,
+        "count": ""
+      },
+      {
+        "visible": false,
+        "count": ""
+      }
+    ],
+    "progress": 0.0,
+    "population": "3/6"
+  }
+}

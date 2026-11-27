@@ -1,0 +1,167 @@
+{
+  "cdnListening": false,
+  "checks": [
+    {
+      "mode": "EditorSimulateMode",
+      "framework": {
+        "resourceMode": "EditorSimulateMode",
+        "aotStarted": true,
+        "mainLaunched": true,
+        "mvcInitialized": true,
+        "battleModuleOpen": true,
+        "qualityInitialized": true,
+        "qualityTier": "HighFidelity",
+        "packages": [
+          {
+            "name": "LaunchPackage",
+            "manifestReady": true
+          },
+          {
+            "name": "CodePackage",
+            "manifestReady": true
+          },
+          {
+            "name": "MainPackage",
+            "manifestReady": true
+          },
+          {
+            "name": "ModulePackage",
+            "manifestReady": true
+          },
+          {
+            "name": "UnitPackage",
+            "manifestReady": true
+          },
+          {
+            "name": "EffectPackage",
+            "manifestReady": true
+          },
+          {
+            "name": "ScenePackage",
+            "manifestReady": true
+          }
+        ],
+        "resourceEntries": [
+          {
+            "Key": "ModulePackage|SOConfig/QualitySOConfig",
+            "PackageName": "ModulePackage",
+            "Path": "SOConfig/QualitySOConfig",
+            "RefCount": 1,
+            "HandleValid": true
+          }
+        ],
+        "pool": {
+          "active": 0,
+          "idle": 0,
+          "prefabCount": 0
+        },
+        "windows": [
+          {
+            "name": "BattleWindow",
+            "opened": true
+          }
+        ],
+        "note": "这是当前 Unity 宿主的资源与框架状态；Editor 的 DLL 使用编译程序集，不代表手机 HybridCLR 注入通过"
+      },
+      "wave1": "WaveResult",
+      "console": {
+        "Error": "Console 日志 0 条：",
+        "Exception": "Console 日志 0 条：",
+        "Assert": "Console 日志 0 条：",
+        "Warning": "Console 日志 0 条："
+      }
+    },
+    {
+      "mode": "OfflineBuiltIn",
+      "framework": {
+        "resourceMode": "OfflineBuiltIn",
+        "aotStarted": true,
+        "mainLaunched": true,
+        "mvcInitialized": true,
+        "battleModuleOpen": true,
+        "qualityInitialized": true,
+        "qualityTier": "HighFidelity",
+        "packages": [
+          {
+            "name": "LaunchPackage",
+            "manifestReady": true
+          },
+          {
+            "name": "CodePackage",
+            "manifestReady": true
+          },
+          {
+            "name": "MainPackage",
+            "manifestReady": true
+          },
+          {
+            "name": "ModulePackage",
+            "manifestReady": true
+          },
+          {
+            "name": "UnitPackage",
+            "manifestReady": true
+          },
+          {
+            "name": "EffectPackage",
+            "manifestReady": true
+          },
+          {
+            "name": "ScenePackage",
+            "manifestReady": true
+          }
+        ],
+        "resourceEntries": [
+          {
+            "Key": "ModulePackage|SOConfig/QualitySOConfig",
+            "PackageName": "ModulePackage",
+            "Path": "SOConfig/QualitySOConfig",
+            "RefCount": 1,
+            "HandleValid": true
+          },
+          {
+            "Key": "UnitPackage|Unit/Low/Shield/Shield",
+            "PackageName": "UnitPackage",
+            "Path": "Unit/Low/Shield/Shield",
+            "RefCount": 1,
+            "HandleValid": true
+          },
+          {
+            "Key": "UnitPackage|Unit/Low/Archer/Archer",
+            "PackageName": "UnitPackage",
+            "Path": "Unit/Low/Archer/Archer",
+            "RefCount": 1,
+            "HandleValid": true
+          },
+          {
+            "Key": "UnitPackage|Unit/Low/Storm/Storm",
+            "PackageName": "UnitPackage",
+            "Path": "Unit/Low/Storm/Storm",
+            "RefCount": 1,
+            "HandleValid": true
+          }
+        ],
+        "pool": {
+          "active": 3,
+          "idle": 0,
+          "prefabCount": 3
+        },
+        "windows": [
+          {
+            "name": "BattleWindow",
+            "opened": true
+          }
+        ],
+        "note": "这是当前 Unity 宿主的资源与框架状态；Editor 的 DLL 使用编译程序集，不代表手机 HybridCLR 注入通过"
+      },
+      "wave1": "WaveResult",
+      "console": {
+        "Error": "Console 日志 0 条：",
+        "Exception": "Console 日志 0 条：",
+        "Assert": "Console 日志 0 条：",
+        "Warning": "Console 日志 0 条："
+      }
+    }
+  ],
+  "playModeAfter": "Play Mode：Stopped"
+}

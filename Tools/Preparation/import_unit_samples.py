@@ -1,5 +1,6 @@
 """只读提取已授权单位样品；保留来源 GUID，不修改外部工程。"""
 from pathlib import Path
+import argparse
 import hashlib
 import json
 import re
@@ -9,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[2]
 DEST = ROOT / 'Assets/LittleGame/Art/UnitSources'
 PE = Path('E:/Project/PELibDemo/Assets/Art/3D')
 AUTO = Path('E:/Project/AutoClash_20210125/AutoClash1/Assets/Assets/Characters')
+AUTO_CUTE = AUTO.parent / 'Monsters Ultimate Pack 02 Cute Series'
 records = []
 
 
@@ -28,6 +30,20 @@ def copy(src, dst, rewrite=False):
     records.append({'source': str(src), 'destination': str(dst.relative_to(ROOT)),
                     'sourceSha256': hashlib.sha256(src.read_bytes()).hexdigest(),
                     'destinationSha256': hashlib.sha256(data).hexdigest()})
+
+
+def import_enemy_monsters():
+    monsters = {
+        'Werewolf': ['Idle', 'Run Forward In Place', 'Right Slash Attack', 'Take Damage', 'Die'],
+        'Hermit King': ['Idle', 'Walk Forward In Place', 'Slash Attack', 'Take Damage', 'Die'],
+        'Sunflower Fairy': ['Idle', 'Fly Forward In Place', 'Cast Spell 01', 'Take Damage', 'Die'],
+    }
+    for name, actions in monsters.items():
+        source = AUTO_CUTE / f'{name} Cute Series'
+        target = DEST / 'CuteMonsters' / name
+        for filename in [name] + [f'{name}@{action}' for action in actions]:
+            copy(source / 'FBX' / f'{filename}.FBX', target / f'{filename}.FBX')
+        copy(source / 'Textures' / f'{name}.psd', target / f'{name}.psd')
 
 
 def main():
@@ -51,6 +67,7 @@ def main():
         src = wolf / 'FBX' / (name + '.FBX')
         copy(src, DEST / 'Wolf' / src.name)
     copy(wolf / 'Textures/Wolf.psd', DEST / 'Wolf/Wolf.psd')
+    import_enemy_monsters()
     golem = AUTO / '052_Golem_StoneGolem'
     for name in ['GolemMesh', 'IdleBattle_Golem_Anim', 'Walk_Golem_Anim', 'Attack01_Golem_Anim', 'Attack02_Golem_Anim', 'GetHit_Golem_Anim', 'Die_Golem_Anim']:
         src = golem / (name + '.fbx')
@@ -84,4 +101,12 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--enemy-monsters', action='store_true', help='仅提取本轮新增的三种怪物')
+    if parser.parse_args().enemy_monsters:
+        import_enemy_monsters()
+        output = ROOT / 'Reports/Art/enemy-monster-sources.json'
+        output.write_text(json.dumps({'date': '2026-11-27', 'assets': records}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+        print(f'已提取 {len(records)} 个怪物资源文件。', flush=True)
+    else:
+        main()

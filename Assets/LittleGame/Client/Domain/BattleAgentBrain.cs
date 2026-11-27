@@ -41,72 +41,53 @@ namespace LittleGame.Combat
             }
         }
 
-        public static CombatAiIntent PlanTroop(Troop self, IReadOnlyList<Enemy> enemies, int focusId, float dt)
+        public static CombatAiIntent PlanTroop(Troop self, IReadOnlyList<Enemy> opponents, int focusId, float dt) =>
+            Plan(self, opponents, focusId, 0f);
+
+        public static CombatAiIntent PlanEnemy(Enemy self, IReadOnlyList<Troop> opponents, float time, float speed, float dt) =>
+            Plan(self, opponents, 0, time);
+
+        public static CombatAiIntent Plan(BattleCombatant self, IReadOnlyList<BattleCombatant> opponents, int focusId, float time)
         {
-            Enemy current = null, nearest = null, reachable = null, focused = null;
+            BattleCombatant current = null, nearest = null, reachable = null, focused = null;
             float nearestD = float.MaxValue, reachableD = float.MaxValue;
-            foreach (var e in enemies)
+            foreach (var other in opponents)
             {
-                if (!e.Alive) continue;
-                float d = Distance(self.X, self.Z, e.X, e.Z);
-                if (e.Id == self.TargetId) current = e;
-                if (d < nearestD || (d == nearestD && e.Id < nearest.Id)) { nearest = e; nearestD = d; }
-                if (!BattleDefinitions.CanReach(self, e)) continue;
-                if (e.Id == focusId) focused = e;
-                if (d < reachableD || (d == reachableD && e.Id < reachable.Id)) { reachable = e; reachableD = d; }
+                if (!other.Deployed || !other.Alive || other.Side == self.Side) continue;
+                float distance = Distance(self.X, self.Z, other.X, other.Z);
+                if (other.Id == self.TargetId) current = other;
+                if (distance < nearestD || (distance == nearestD && other.Id < nearest.Id))
+                {
+                    nearest = other;
+                    nearestD = distance;
+                }
+                if (distance > BattleDefinitions.Reach(self, other)) continue;
+                if (other.Id == focusId) focused = other;
+                if (distance < reachableD || (distance == reachableD && other.Id < reachable.Id))
+                {
+                    reachable = other;
+                    reachableD = distance;
+                }
             }
-            Enemy target = focused;
-            if (target == null && current != null && BattleDefinitions.CanReach(self, current)) target = current;
-            if (target == null) target = reachable;
+
+            var target = focused ?? (current != null && BattleDefinitions.CanReach(self, current) ? current : reachable);
             if (target == null)
+                target = current == null || nearestD + RetargetAdvantage < Distance(self.X, self.Z, current.X, current.Z) ? nearest : current;
+
+            float targetX = target?.X ?? self.X;
+            float targetZ = target?.Z ?? self.Z;
+            float reach = target == null ? 0f : BattleDefinitions.Reach(self, target);
+            float distanceToTarget = Distance(self.X, self.Z, targetX, targetZ);
+            var state = Transition(self.AiState, self.Alive, !self.Status.CanMove(time), target != null, distanceToTarget, reach, .04f);
+            return new CombatAiIntent
             {
-                target = current;
-                if (target == null || nearestD + RetargetAdvantage < Distance(self.X, self.Z, target.X, target.Z)) target = nearest;
-            }
-            if (target == null) return Plan(self.AiState, self.Alive, false, 0, self.X, self.Z, self.X, self.Z, 0, .06f);
-            var intent = Plan(self.AiState, self.Alive, false, target.Id, self.X, self.Z, target.X, target.Z,
-                BattleDefinitions.Range(self) + (target.Boss ? 1.25f : .15f), .06f);
-            intent.TargetX = target.X; intent.TargetZ = target.Z;
-            intent.TargetRadius = BattleDefinitions.BodyRadius(target.Kind);
-            intent.AttackReach = BattleDefinitions.Range(self) + (target.Boss ? 1.25f : .15f);
-            return intent;
+                State = state, TargetId = target?.Id ?? 0, LookX = targetX - self.X, LookZ = targetZ - self.Z,
+                TargetX = targetX, TargetZ = targetZ, TargetRadius = target?.Properties.Radius ?? 0f, AttackReach = reach,
+                CanAttack = target != null && self.Status.CanAttack(time) && distanceToTarget <= reach
+            };
         }
 
-        public static CombatAiIntent PlanEnemy(Enemy self, IReadOnlyList<Troop> troops, float time, float speed, float dt)
-        {
-            Troop current = null, nearest = null;
-            float nearestD = float.MaxValue;
-            foreach (var t in troops)
-            {
-                if (!t.Deployed || !t.Alive) continue;
-                if (t.Id == self.TargetId) current = t;
-                float d = Distance(self.X, self.Z, t.X, t.Z);
-                if (d < nearestD || (d == nearestD && t.Id < nearest.Id)) { nearest = t; nearestD = d; }
-            }
-            var target = current;
-            if (target == null || nearestD + RetargetAdvantage < Distance(self.X, self.Z, target.X, target.Z)) target = nearest;
-            float reach = target == null ? 0 : Math.Max(self.Boss ? 2.15f : 1.05f,
-                BattleDefinitions.BodyRadius(self.Kind) + BattleDefinitions.BodyRadius(target.Kind) + .04f);
-            var intent = Plan(self.AiState, self.Alive, self.FrozenUntil > time, target?.Id ?? 0,
-                self.X, self.Z, target?.X ?? self.X, target?.Z ?? self.Z,
-                reach, .02f);
-            intent.TargetX = target?.X ?? self.X; intent.TargetZ = target?.Z ?? self.Z;
-            intent.TargetRadius = target == null ? 0 : BattleDefinitions.BodyRadius(target.Kind);
-            intent.AttackReach = reach;
-            return intent;
-        }
-
-        private static CombatAiIntent Plan(CombatAiState current, bool alive, bool controlled, int targetId,
-            float x, float z, float targetX, float targetZ, float reach, float arrivalMargin)
-        {
-            float distance = Distance(x, z, targetX, targetZ);
-            var state = Transition(current, alive, controlled, targetId != 0, distance, reach, arrivalMargin);
-            return new CombatAiIntent { State = state, TargetId = targetId,
-                LookX = targetX - x, LookZ = targetZ - z,
-                CanAttack = state == CombatAiState.Engaging && distance <= reach };
-        }
-
-        private static float Distance(float ax, float az, float bx, float bz)
-        { float dx = ax - bx, dz = az - bz; return (float)Math.Sqrt(dx * dx + dz * dz); }
+        private static float Distance(float ax, float az, float bx, float bz) =>
+            (float)Math.Sqrt(BattleDefinitions.DistanceSquared(ax, az, bx, bz));
     }
 }

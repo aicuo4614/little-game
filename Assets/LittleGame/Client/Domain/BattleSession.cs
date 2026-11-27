@@ -10,10 +10,11 @@ namespace LittleGame.Combat
         private readonly List<Troop> troops = new List<Troop>();
         private readonly List<Enemy> enemies = new List<Enemy>();
         private readonly List<CombatEvent> events = new List<CombatEvent>();
-        private readonly List<TroopKind> pending = new List<TroopKind>();
+        private readonly List<string> pending = new List<string>();
         private readonly List<RewardKind> rewards = new List<RewardKind>();
         private readonly List<StormZone> zones = new List<StormZone>();
-        private readonly BattleNavigation navigation = new BattleNavigation();
+        private IBattleNavigation navigation;
+        public void AttachNavigation(IBattleNavigation backend) { navigation?.Reset(); navigation = backend ?? throw new ArgumentNullException(nameof(backend)); navigation.Reset(); }
         private readonly List<BattleNavigation.AgentInput> navInputs = new List<BattleNavigation.AgentInput>(32);
         private readonly List<BattleNavigation.AgentOutput> navOutputs = new List<BattleNavigation.AgentOutput>(32);
 
@@ -23,16 +24,24 @@ namespace LittleGame.Combat
         private bool lastWinRowMid, lastWinColMid, enraged;
         private long eventSequence;
         private List<WaveSpawn> spawns;
-        private float accumulator, focusUntil, bossNextSlam, slamAt = -1;
-        private int focusTarget, slamLane = -1;
+        private float accumulator, slamAt = -1;
+        private int slamLane = -1;
 
         public int Seed { get; private set; }
+        public long NavigationCpuTicks { get; private set; }
         public RunPhase Phase { get; private set; }
         public int Wave { get; private set; }
         public float MarchDistance { get; private set; }
         public int Spins { get; private set; }
         public int SpinsPerWave => rewards.Contains(RewardKind.Reinforcements) ? 4 : 3;
-        public int MaxDeployed => maxDeployed;
+        public int MaxDeployed
+        {
+            get
+            {
+                int cap = BattleTables.Current.DeployCap(Wave);
+                return cap > 0 ? Math.Min(maxDeployed, cap) : maxDeployed;
+            }
+        }
         public int DeployedCount => troops.Count(t => t.Deployed);
         public int AliveTroopCount => troops.Count(t => t.Deployed && t.Alive);
         public bool IsRegrouping => Phase != RunPhase.Fighting && troops.Any(t => t.NeedsRegroup);
@@ -41,24 +50,21 @@ namespace LittleGame.Combat
         public bool LastWinRowMid => lastWinRowMid;
         public bool LastWinColMid => lastWinColMid;
         public bool Enraged => enraged;
-        public int Tactics { get; private set; }
-        public AimKind Aim { get; private set; }
         public bool Paused { get; private set; }
         public int Speed { get; private set; } = 1;
         public float BattleTime { get; private set; }
         public int SlamLane => slamLane;
         public float SlamAt => slamAt;
-        public int FocusTarget => focusTarget;
-        public float FocusUntil => focusUntil;
         public long LastSequence => eventSequence;
         public long LastSpinSequence { get; private set; }
         public TroopKind[] Reels { get; private set; } = new TroopKind[9];
         public IReadOnlyList<Troop> Troops => troops;
         public IReadOnlyList<Enemy> Enemies => enemies;
-        public IReadOnlyList<TroopKind> Pending => pending;
+        public IReadOnlyList<string> Pending => pending;
+        public BattleBuffControl Buffs { get; } = new BattleBuffControl();
         public IReadOnlyList<RewardKind> Rewards => rewards;
         public IReadOnlyList<StormZone> Zones => zones;
-        public IReadOnlyList<WaveSpawn> Forecast => BattleDefinitions.Wave(Wave);
+        public IReadOnlyList<WaveSpawn> Forecast => spawns ?? (spawns = BattleTables.Current.Schedule(Wave, Seed));
         public IEnumerable<CombatEvent> EventsAfter(long sequence) => events.Where(e => e.Sequence > sequence).ToArray();
 
         public BattleSession(int seed = 173) { Reset(seed); }
@@ -66,7 +72,7 @@ namespace LittleGame.Combat
         public bool CanMerge(Troop host)
         {
             if (host == null || host.Star >= 3) return false;
-            return troops.Count(t => t.Kind == host.Kind && t.Star == host.Star) >= 3;
+            return troops.Count(t => t.Identity == host.Identity && t.Star == host.Star) >= 3;
         }
 
         /// <summary>
@@ -79,7 +85,7 @@ namespace LittleGame.Combat
             bestZ = BattleDefinitions.CellZ(1);
             if (unit == null) return false;
 
-            int[] preferredRows = unit.Kind == TroopKind.Shield ? new[] { 0, 1, 2 } : new[] { 1, 2, 0 };
+            int[] preferredRows = unit.Properties.AttackRange < 2.3f ? new[] { 0, 1, 2 } : new[] { 1, 2, 0 };
             int[] preferredLanes = { 1, 0, 2 };
 
             float bestScore = -1f;
@@ -144,11 +150,15 @@ namespace LittleGame.Combat
 
         private void Reset(int seed)
         {
+            navigation?.Reset();
             Seed = seed; random = new BattleRandom(seed); nextId = 1; Wave = 1; MarchDistance = 0f; Spins = 3;
             maxDeployed = 6; popExp = 0; lastWinRowMid = lastWinColMid = enraged = false;
-            misses = spinCount = spawnCursor = 0; LastSpinSequence = 0; Phase = RunPhase.Preparation; Aim = AimKind.None; Paused = false; Speed = 1; BattleTime = accumulator = 0;
-            Tactics = 0; focusTarget = 0; focusUntil = 0; slamAt = -1; slamLane = -1;
-            troops.Clear(); enemies.Clear(); pending.Clear(); rewards.Clear(); zones.Clear(); events.Clear();
+            misses = spinCount = spawnCursor = 0; LastSpinSequence = 0; Phase = RunPhase.Preparation; Paused = false; Speed = 1; BattleTime = accumulator = 0;
+            damageStatistics.Clear();
+            slamAt = -1; slamLane = -1;
+            troops.Clear(); enemies.Clear(); pending.Clear(); rewards.Clear(); zones.Clear(); events.Clear(); spawns = null;
+            Buffs.Apply(troops);
+            Buffs.Apply(enemies, BattleSide.Enemy);
             skillInstances.Clear(); nextSkillId = 0; resolvingSkill = null;
             Reels = new[] { TroopKind.Shield, TroopKind.Archer, TroopKind.Storm, TroopKind.Archer, TroopKind.Storm, TroopKind.Frost, TroopKind.Storm, TroopKind.Frost, TroopKind.Shield };
 
@@ -156,9 +166,9 @@ namespace LittleGame.Combat
             Emit("run_started", "军团集结：转动十字法阵招募单位并部署上阵");
         }
 
-        private void AddTroop(TroopKind kind, int lane = -1, int row = -1)
+        private void AddTroop(string heroId, int lane = -1, int row = -1)
         {
-            var t = new Troop { Id = nextId++, Kind = kind, Lane = lane, Row = row };
+            var t = new Troop { Id = nextId++, HeroId = heroId, Kind = (TroopKind)BattleTables.Current.Unit(heroId).Job, Lane = lane, Row = row };
             if (t.Deployed)
             {
                 t.HomeX = BattleDefinitions.CellX(row);
@@ -198,12 +208,8 @@ namespace LittleGame.Combat
             t.TargetId = 0;
             t.AiState = CombatAiState.Idle;
             t.Navigation.Reset();
-            t.TurnSpeed = BattleDefinitions.TurnSpeed(t.Kind);
-            t.MoveSpeed = BattleDefinitions.MoveSpeed(t.Kind);
-            t.Hp = t.MaxHp = BattleDefinitions.Health(t);
+            ResetUnit(t);
             t.Cooldown = .25f;
-            t.SkillCooldown = .8f + ((int)t.Kind * .12f);
-            t.Shield = t.ShieldUntil = 0f;
         }
 
         /// <summary>
@@ -252,12 +258,12 @@ namespace LittleGame.Combat
             if (c == null || !Enum.IsDefined(typeof(CommandKind), c.Kind)) return Reject("未知玩法指令");
             if (c.Kind == CommandKind.NewRun) { Reset(c.Seed); return new CommandResult(true, "已重开"); }
             if (c.Kind == CommandKind.SetSpeed) { if (c.Speed != 1 && c.Speed != 2) return Reject("只支持1倍或2倍"); Speed = c.Speed; return new CommandResult(true, "已切换速度"); }
-            if (c.Kind == CommandKind.CancelAim) { Aim = AimKind.None; return new CommandResult(true, "已取消瞄准"); }
+            if (c.Kind == CommandKind.Aim || c.Kind == CommandKind.CancelAim || c.Kind == CommandKind.Focus || c.Kind == CommandKind.Protect) return Reject("战术指挥已移除");
             if (c.Kind == CommandKind.Pause) { if (Phase != RunPhase.Fighting) return Reject("仅战斗中可暂停"); Paused = c.Flag; return new CommandResult(true, Paused ? "已暂停" : "继续战斗"); }
             if (c.Kind == CommandKind.NextWave)
             {
                 if (Phase != RunPhase.WaveResult) return Reject("请先完成本波与奖励选择");
-                Wave++; Phase = RunPhase.Preparation; Spins = SpinsPerWave; BattleTime = 0; Paused = false; Aim = AimKind.None;
+                Wave++; spawns = null; spawnCursor = 0; Phase = RunPhase.Preparation; Spins = SpinsPerWave; BattleTime = 0; Paused = false;
                 lastWinRowMid = lastWinColMid = enraged = false;
                 MarchDistance += 25f;
                 enemies.Clear(); zones.Clear();
@@ -287,17 +293,13 @@ namespace LittleGame.Combat
                     if (troops.Count(t => t.Deployed) <= 1) return Reject("至少保留一名上阵单位");
                     unit.Lane = unit.Row = -1;
                     unit.HomeX = unit.HomeZ = unit.X = unit.Z = 0f;
-                    Emit("recalled", "已召回" + BattleDefinitions.Name(unit.Kind) + "至候补", unit.Id);
+                    Emit("recalled", "已召回" + unit.Definition.Name + "至候补", unit.Id);
                     break;
                 case CommandKind.Recycle:
                     if (unit.Deployed) return Reject("先拖回候补再遣散，避免误删阵线");
                     troops.Remove(unit); Emit("recycled", "已遣散候补", unit.Id);
                     break;
                 case CommandKind.Merge: return Merge(unit, c.OtherId, c.ThirdId);
-                case CommandKind.ChooseBranch:
-                    if (unit.Star < 2 || unit.Branch != SkillBranch.None || !BattleDefinitions.ValidBranch(unit.Kind, c.Branch)) return Reject("分支不可选择或已经锁定");
-                    unit.Branch = c.Branch; Emit("branch_chosen", BattleDefinitions.Name(c.Branch), unit.Id);
-                    break;
                 default: return Reject("该指令不适用于准备阶段");
             }
             DrainPendingAndAutoMerge();
@@ -334,8 +336,8 @@ namespace LittleGame.Combat
                     .FirstOrDefault()
                 : troops.Find(t => t.Id != unit.Id && t.Deployed && (Distance(t.HomeX, t.HomeZ, tx, tz) <= 0.75f || (t.Lane == targetLane && t.Row == targetRow)));
 
-            if (!unit.Deployed && occupied == null && DeployedCount >= maxDeployed)
-                return Reject($"人口已满（{DeployedCount}/{maxDeployed}），拖至场上单位替换或过波升级");
+            if (!unit.Deployed && occupied == null && DeployedCount >= MaxDeployed)
+                return Reject($"人口已满（{DeployedCount}/{MaxDeployed}），拖至场上单位替换或过波升级");
 
             if (occupied != null)
             {
@@ -362,7 +364,7 @@ namespace LittleGame.Combat
                 ResetTroop(unit, snapToHome: true);
             }
 
-            Emit("deployed", "已部署" + BattleDefinitions.Name(unit.Kind), unit.Id, 0, unit.Lane);
+            Emit("deployed", "已部署" + unit.Definition.Name, unit.Id, 0, unit.Lane);
             DrainPendingAndAutoMerge();
             return new CommandResult(true, "操作成功");
         }
@@ -394,18 +396,23 @@ namespace LittleGame.Combat
         {
             var a = troops.Find(t => t.Id == aId); var b = troops.Find(t => t.Id == bId);
             if (a == null || b == null || a == b || a == host || b == host) return Reject("合成需要三个不同单位");
-            if (host.Star >= 3 || a.Star != host.Star || b.Star != host.Star || a.Kind != host.Kind || b.Kind != host.Kind) return Reject("需要三个同职业同星单位，最高三星");
-            host.Star++;
-            troops.Remove(a);
-            troops.Remove(b);
-            ResetTroop(host, snapToHome: true);
-            Emit("merged", $"{BattleDefinitions.Name(host.Kind)}升为{host.Star}星！", host.Id, 0, host.Lane, host.Star);
+            if (host.Star >= 3 || a.Star != host.Star || b.Star != host.Star || a.Identity != host.Identity || b.Identity != host.Identity) return Reject("需要三个同名同星单位，最高三星");
+            Promote(host, a, b);
             DrainPendingAndAutoMerge();
             return new CommandResult(true, "合成成功");
         }
 
+        private void Promote(Troop host, Troop donor, Troop secondDonor = null)
+        {
+            host.Star++;
+            troops.Remove(donor);
+            if (secondDonor != null) troops.Remove(secondDonor);
+            ResetTroop(host, snapToHome: true);
+            Emit("merged", $"{host.Definition.Name}升为{host.Star}星！", host.Id, 0, host.Lane, host.Star);
+        }
+
         /// <summary>
-        /// 自动三兵合成：凑齐三个同职业同星（最高升至3星）时自动合成，
+        /// 自动三兵合成：凑齐三个同名同星（最高升至3星）时自动合成，
         /// 优先保留已上阵单位的位置作为宿主，并释放候补空间接收暂存单位。
         /// </summary>
         private void TryAutoMerge()
@@ -417,7 +424,7 @@ namespace LittleGame.Combat
                 mergedAny = false;
                 var group = troops
                     .Where(t => t.Star < 3)
-                    .GroupBy(t => new { t.Kind, t.Star })
+                    .GroupBy(t => new { t.Identity, t.Star })
                     .FirstOrDefault(g => g.Count() >= 3);
 
                 if (group != null)
@@ -429,11 +436,7 @@ namespace LittleGame.Combat
                     var host = ordered[0];
                     var donor1 = ordered[1];
                     var donor2 = ordered[2];
-                    host.Star++;
-                    troops.Remove(donor1);
-                    troops.Remove(donor2);
-                    ResetTroop(host, snapToHome: true);
-                    Emit("merged", $"{BattleDefinitions.Name(host.Kind)}自动合成 {host.Star} 星！", host.Id, 0, host.Lane, host.Star);
+                    Promote(host, donor1, donor2);
                     mergedAny = true;
                 }
             }
@@ -446,9 +449,8 @@ namespace LittleGame.Combat
             do
             {
                 changed = false;
-                while (pending.Count > 0 && troops.Count(t => !t.Deployed) < BattleDefinitions.ReserveCapacity)
+                while (pending.Count > 0 && TryAcceptPending())
                 {
-                    AddTroop(pending[0]);
                     pending.RemoveAt(0);
                     changed = true;
                 }
@@ -457,6 +459,24 @@ namespace LittleGame.Combat
                 if (troops.Count != beforeCount) changed = true;
             }
             while (changed);
+            Buffs.Apply(troops);
+            foreach (var troop in troops) troop.Hp = troop.MaxHp = troop.Properties.Health;
+        }
+
+        private bool TryAcceptPending()
+        {
+            string hero = pending[0];
+            if (troops.Count(t => !t.Deployed) < BattleDefinitions.ReserveCapacity)
+            {
+                AddTroop(hero);
+                return true;
+            }
+
+            var pair = troops.Where(t => t.Star == 1 && t.Identity == hero)
+                .OrderByDescending(t => t.Deployed).ThenBy(t => t.Id).Take(2).ToArray();
+            if (pair.Length < 2) return false;
+            Promote(pair[0], pair[1]);
+            return true;
         }
 
         private CommandResult Spin()
@@ -465,6 +485,20 @@ namespace LittleGame.Combat
             if (pending.Count > 0) return Reject("请先处理暂存单位：部署或遣散候补");
             Spins--; spinCount++;
             for (int i = 0; i < 9; i++) Reels[i] = (TroopKind)random.Next(4);
+            var table = BattleTables.Current;
+            // 中后期提高已有升星进度的职业与英雄权重，转数、中奖线和保底条件沿用原规则。
+            var growthCandidates = Wave < table.Tune(BattleTuning.RecruitGrowthWave)
+                ? Array.Empty<Troop>()
+                : troops.GroupBy(t => t.Identity).Select(g => new
+                    {
+                        Unit = g.First(),
+                        Copies = g.Sum(t => t.Star == 3 ? 9 : t.Star == 2 ? 3 : 1)
+                    })
+                    .Where(g => g.Copies >= 3 && g.Copies < 9)
+                    .OrderByDescending(g => g.Copies).ThenBy(g => g.Unit.Id).Select(g => g.Unit).ToArray();
+            var growthRandom = new BattleRandom(unchecked(Seed ^ (spinCount * 0x3f532ea5)));
+            if (growthCandidates.Length > 0 && growthRandom.Next(100) < table.Tune(BattleTuning.RecruitProfessionBias))
+                Reels[4] = growthCandidates[0].Kind;
             bool tutorial = spinCount <= 3;
             if (tutorial)
             {
@@ -482,15 +516,19 @@ namespace LittleGame.Combat
             }
             lastWinRowMid = Reels[3] == Reels[4] && Reels[4] == Reels[5];
             lastWinColMid = Reels[1] == Reels[4] && Reels[4] == Reels[7];
-            int won = 0;
-            if (lastWinRowMid) { pending.Add(Reels[4]); won++; }
-            if (lastWinColMid) { pending.Add(Reels[4]); won++; }
+            var recruited = new List<string>(2);
+            var recruitRandom = new BattleRandom(unchecked(Seed ^ (spinCount * 0x2c9277b5)));
+            string preferred = growthCandidates.FirstOrDefault(t => t.Kind == Reels[4])?.Identity;
+            if (lastWinRowMid) recruited.Add(table.Recruit(Reels[4], recruitRandom, preferred));
+            if (lastWinColMid) recruited.Add(table.Recruit(Reels[4], recruitRandom, preferred));
+            pending.AddRange(recruited);
+            int won = recruited.Count;
             misses = won == 0 ? misses + 1 : 0;
             DrainPendingAndAutoMerge();
             string lineText = lastWinRowMid && lastWinColMid ? "十字双连！" : lastWinRowMid ? "中横三同！" : lastWinColMid ? "中竖三同！" : "";
             Emit("spin", (tutorial ? "教学预设 · " : guarantee ? "保底触发 · " : "随机招募 · ") + lineText + "出兵" + won + "名", 0, 0, -1, won);
             LastSpinSequence = eventSequence;
-            return new CommandResult(true, won > 0 ? lineText + "获得" + won + "名" + BattleDefinitions.Name(Reels[4]) : "未连成十字三同");
+            return new CommandResult(true, won > 0 ? lineText + "获得" + string.Join("、", recruited.Select(id => BattleTables.Current.Unit(id).Name)) : "未连成十字三同");
         }
 
         internal void GrantWavePopExp(int amount)
@@ -514,7 +552,8 @@ namespace LittleGame.Combat
 
         public object NavigationSnapshot(int unitId = 0) => new
         {
-            algorithm = "roy_astar_attack_slots_swept_motion", rvoActive = false, fixedStep = BattleDefinitions.Step,
+            algorithm = navigation?.Backend ?? "unbound", rvoActive = navigation != null, fixedStep = BattleDefinitions.Step,
+            cpuTotalMs = NavigationCpuTicks * 1000.0 / System.Diagnostics.Stopwatch.Frequency,
             units = troops.Where(t => t.Deployed && (unitId == 0 || t.Id == unitId)).Select(t => new
                 { id = t.Id, aiState = t.AiState.ToString(), targetId = t.TargetId, x = t.X, z = t.Z, vx = t.Vx, vz = t.Vz, navigation = t.Navigation.Snapshot() }),
             enemies = enemies.Where(e => unitId == 0 || e.Id == unitId).Select(e => new
@@ -523,8 +562,8 @@ namespace LittleGame.Combat
 
         public object Snapshot() => new
         {
-            schemaVersion = 6,
-            skills = skillInstances.Select(a => new { id = a.Id, source = a.Source, target = a.Target, trigger = a.Trigger, timelineId = a.TimelineId, phase = a.Phase.ToString(), startedAt = a.StartedAt, launchAt = a.LaunchAt, impactAt = a.ImpactAt, endAt = a.EndAt, targetX = a.TargetX, targetZ = a.TargetZ, facingYaw = a.FacingYaw, cancelReason = a.CancelReason,
+            schemaVersion = 8,
+            skills = skillInstances.Select(a => new { id = a.Id, source = a.Source, target = a.Target, skill = a.Skill?.Id, trigger = a.Trigger, timelineId = a.TimelineId, phase = a.Phase.ToString(), startedAt = a.StartedAt, launchAt = a.LaunchAt, impactAt = a.ImpactAt, endAt = a.EndAt, targetX = a.TargetX, targetZ = a.TargetZ, facingYaw = a.FacingYaw, cancelReason = a.CancelReason,
                 timingMode = a.Definition.ProjectileSpeed > 0 ? "distance-at-cast" : "timeline", projectileSpeed = a.Definition.ProjectileSpeed }),
             layout = "horizontal-free-deploy-astar",
             phase = Phase.ToString(),
@@ -541,24 +580,28 @@ namespace LittleGame.Combat
             consecutiveMisses = misses,
             teaching = spinCount < 3,
             deployedCount = DeployedCount,
-            maxDeployed = maxDeployed,
+            maxDeployed = MaxDeployed,
             popExp = popExp,
             popExpNeeded = PopExpNeeded,
             winRowMid = lastWinRowMid,
             winColMid = lastWinColMid,
-            tactics = Tactics,
-            aim = Aim.ToString(),
+            damageStatistics = DamageStatistics.Select(r => new { heroId = r.HeroId, star = r.Star, waveDamage = r.WaveDamage, totalDamage = r.TotalDamage }),
             paused = Paused,
             speed = Speed,
             battleTime = BattleTime,
-            forecast = Forecast.Select(e => new { kind = e.Kind.ToString(), name = BattleDefinitions.Name(e.Kind), lane = e.Lane, at = e.At }),
+            forecast = Forecast.Select(e => new { kind = e.MonsterId, name = BattleTables.Current.Unit(e.MonsterId).Name, batch = e.Batch, star = e.Star, lane = e.Lane, at = e.At }),
+            spawned = spawnCursor,
+            synergies = Buffs.Active.Select(s => new { race = s.Race?.ToString(), job = s.Job?.ToString(), threshold = s.Count, stat = s.Stat.ToString(), amount = s.Amount }),
+            enemySynergies = Buffs.EnemyActive.Select(s => new { race = s.Race?.ToString(), job = s.Job?.ToString(), threshold = s.Count, stat = s.Stat.ToString(), amount = s.Amount }),
             units = troops.Select(t => new
             {
                 id = t.Id,
-                kind = t.Kind.ToString(),
-                name = BattleDefinitions.Name(t.Kind),
+                kind = t.Definition.Job.ToString(),
+                name = t.Definition.Name,
+                heroId = t.Identity,
+                race = t.Definition.Race.ToString(),
+                job = t.Definition.Job.ToString(),
                 star = t.Star,
-                branch = t.Branch.ToString(),
                 lane = t.Lane,
                 row = t.Row,
                 homeX = Math.Round(t.HomeX, 2),
@@ -578,12 +621,12 @@ namespace LittleGame.Combat
                 maxHp = t.MaxHp,
                 shield = t.Shield,
                 cooldown = t.Cooldown,
-                skillCooldown = t.SkillCooldown
+                combat = UnitSnapshot(t)
             }),
             enemies = enemies.Select(e => new
             {
                 id = e.Id,
-                kind = e.Kind.ToString(),
+                kind = e.MonsterId,
                 lane = e.Lane,
                 x = Math.Round(e.X, 2),
                 z = Math.Round(e.Z, 2),
@@ -598,17 +641,33 @@ namespace LittleGame.Combat
                 hp = e.Hp,
                 maxHp = e.MaxHp,
                 alive = e.Alive,
+                grade = e.Definition.Grade.ToString(),
+                star = e.Star,
+                job = e.Definition.Job.ToString(),
+                combat = UnitSnapshot(e),
                 frozenUntil = e.FrozenUntil,
                 slowUntil = e.SlowUntil
             }),
-            pending = pending.Select(k => k.ToString()),
+            pending = pending.Select(id => new { id, name = BattleTables.Current.Unit(id).Name }),
             rewards = rewards.Select(r => r.ToString()),
-            reels = Reels.Select(k => k.ToString()),
+            reels = Reels.Select(k => ((UnitJob)k).ToString()),
             rewardOptions = Phase == RunPhase.Reward ? Enum.GetValues(typeof(RewardKind)).Cast<RewardKind>().Where(r => !rewards.Contains(r)).Select(r => r.ToString()).ToArray() : Array.Empty<string>(),
             bossTelegraph = new { lane = slamLane, impactAt = slamAt },
             lastEventSequence = eventSequence,
             events = events.Skip(Math.Max(0, events.Count - 35)).ToArray(),
             availableActions = AvailableActions()
+        };
+
+        private object UnitSnapshot(BattleCombatant unit) => new
+        {
+            mana = unit.Mana, maxMana = BattleCombatant.MaxMana, jumped = unit.Jumped,
+            jumping = unit.JumpEndsAt > BattleTime, properties = unit.Properties.Snapshot(),
+            statuses = unit.Status.Snapshot(), buffs = unit.Buffs.Snapshot(),
+            skills = unit.Definition.Skills.Select((skill, slot) => new
+            {
+                slot = slot + 1, id = skill?.Id, name = skill?.Name, passive = skill?.Passive,
+                unlocked = slot < unit.Star, readyIn = Math.Max(0f, unit.SkillReadyAt[slot] - BattleTime)
+            })
         };
 
         private string[] AvailableActions()
@@ -619,11 +678,11 @@ namespace LittleGame.Combat
                 if (Spins > 0 && pending.Count == 0) actions.Add("spin");
                 if (troops.Count(t => t.Deployed) > 1 && troops.Count(t => !t.Deployed) < BattleDefinitions.ReserveCapacity) actions.Add("recall");
                 if (troops.Any(t => !t.Deployed)) actions.Add("recycle");
-                if (troops.GroupBy(t => new { t.Kind, t.Star }).Any(g => g.Key.Star < 3 && g.Count() >= 3)) actions.Add("merge");
+                if (troops.GroupBy(t => new { t.Identity, t.Star }).Any(g => g.Key.Star < 3 && g.Count() >= 3)) actions.Add("merge");
                 if (pending.Count == 0 && troops.Any(t => t.Deployed)) actions.Add("start_wave");
                 return actions.ToArray();
             }
-            if (Phase == RunPhase.Fighting) return Tactics > 0 ? new[] { "aim", "focus", "protect", "cancel_aim", "pause", "set_speed", "restart" } : new[] { "pause", "set_speed", "restart" };
+            if (Phase == RunPhase.Fighting) return new[] { "pause", "set_speed", "restart" };
             return Phase == RunPhase.Reward ? new[] { "choose_reward", "restart" } : Phase == RunPhase.WaveResult ? new[] { "next_wave", "restart" } : new[] { "restart" };
         }
     }

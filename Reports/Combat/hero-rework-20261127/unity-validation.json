@@ -1,0 +1,694 @@
+{
+  "platform": "WindowsEditor",
+  "waves": [
+    {
+      "wave": 1,
+      "phase": "WaveResult",
+      "spawned": 2,
+      "duration": 7.3,
+      "events": [
+        "ai_state_changed",
+        "cast_completed",
+        "cast_impact",
+        "cast_launched",
+        "cast_started",
+        "enemy_killed",
+        "enemy_spawned",
+        "hit",
+        "skill",
+        "spawn_batch",
+        "troop_hit",
+        "wave_cleared",
+        "wave_started"
+      ],
+      "heroes": [
+        {
+          "id": "Knight",
+          "star": 1
+        }
+      ],
+      "synergies": []
+    },
+    {
+      "wave": 2,
+      "phase": "WaveResult",
+      "spawned": 3,
+      "duration": 4.25,
+      "events": [
+        "ai_state_changed",
+        "cast_completed",
+        "cast_impact",
+        "cast_launched",
+        "cast_started",
+        "enemy_killed",
+        "enemy_spawned",
+        "hit",
+        "pop_up",
+        "spawn_batch",
+        "troop_hit",
+        "wave_cleared",
+        "wave_started"
+      ],
+      "heroes": [
+        {
+          "id": "Knight",
+          "star": 1
+        },
+        {
+          "id": "Skeleton_Minion",
+          "star": 1
+        },
+        {
+          "id": "Mage",
+          "star": 1
+        }
+      ],
+      "synergies": [
+        {
+          "race": "Human",
+          "job": null,
+          "threshold": 2,
+          "stat": "Attack",
+          "amount": 0.09
+        }
+      ]
+    },
+    {
+      "wave": 3,
+      "phase": "WaveResult",
+      "spawned": 4,
+      "duration": 5.85,
+      "events": [
+        "ai_state_changed",
+        "cast_cancelled",
+        "cast_completed",
+        "cast_impact",
+        "cast_launched",
+        "cast_started",
+        "enemy_killed",
+        "enemy_spawned",
+        "hit",
+        "spawn_batch",
+        "troop_hit",
+        "wave_cleared",
+        "wave_started"
+      ],
+      "heroes": [
+        {
+          "id": "Knight",
+          "star": 1
+        },
+        {
+          "id": "Skeleton_Minion",
+          "star": 1
+        },
+        {
+          "id": "Mage",
+          "star": 1
+        },
+        {
+          "id": "Skeleton_Minion",
+          "star": 1
+        }
+      ],
+      "synergies": [
+        {
+          "race": "Human",
+          "job": null,
+          "threshold": 2,
+          "stat": "Attack",
+          "amount": 0.09
+        }
+      ]
+    },
+    {
+      "wave": 4,
+      "phase": "Reward",
+      "spawned": 5,
+      "duration": 9.25,
+      "events": [
+        "ai_state_changed",
+        "assassin_jump",
+        "assassin_landed",
+        "cast_cancelled",
+        "cast_completed",
+        "cast_impact",
+        "cast_launched",
+        "cast_started",
+        "enemy_killed",
+        "enemy_spawned",
+        "hit",
+        "skill",
+        "spawn_batch",
+        "troop_hit",
+        "wave_cleared",
+        "wave_started"
+      ],
+      "heroes": [
+        {
+          "id": "Knight",
+          "star": 1
+        },
+        {
+          "id": "Skeleton_Minion",
+          "star": 1
+        },
+        {
+          "id": "Mage",
+          "star": 1
+        },
+        {
+          "id": "Skeleton_Minion",
+          "star": 1
+        },
+        {
+          "id": "Rogue",
+          "star": 1
+        }
+      ],
+      "synergies": [
+        {
+          "race": "Human",
+          "job": null,
+          "threshold": 2,
+          "stat": "Attack",
+          "amount": 0.09
+        }
+      ]
+    },
+    {
+      "wave": 5,
+      "phase": "WaveResult",
+      "spawned": 1,
+      "duration": 7.55,
+      "events": [
+        "ai_state_changed",
+        "assassin_jump",
+        "assassin_landed",
+        "boss_slam",
+        "boss_telegraph",
+        "cast_cancelled",
+        "cast_completed",
+        "cast_impact",
+        "cast_launched",
+        "cast_started",
+        "enemy_killed",
+        "enemy_spawned",
+        "hit",
+        "pop_up",
+        "skill",
+        "spawn_batch",
+        "troop_hit",
+        "wave_cleared",
+        "wave_started"
+      ],
+      "heroes": [
+        {
+          "id": "Knight",
+          "star": 1
+        },
+        {
+          "id": "Skeleton_Minion",
+          "star": 1
+        },
+        {
+          "id": "Mage",
+          "star": 1
+        },
+        {
+          "id": "Skeleton_Minion",
+          "star": 1
+        },
+        {
+          "id": "Rogue",
+          "star": 1
+        },
+        {
+          "id": "Skeleton_Warrior",
+          "star": 1
+        },
+        {
+          "id": "Knight",
+          "star": 1
+        }
+      ],
+      "synergies": [
+        {
+          "race": "Human",
+          "job": null,
+          "threshold": 2,
+          "stat": "Attack",
+          "amount": 0.09
+        },
+        {
+          "race": "Undead",
+          "job": null,
+          "threshold": 2,
+          "stat": "Health",
+          "amount": 0.11
+        },
+        {
+          "race": null,
+          "job": "Warrior",
+          "threshold": 2,
+          "stat": "Armor",
+          "amount": 19.0
+        }
+      ]
+    },
+    {
+      "wave": 6,
+      "phase": "WaveResult",
+      "spawned": 6,
+      "duration": 9.1,
+      "events": [
+        "ai_state_changed",
+        "assassin_jump",
+        "assassin_jump_blocked",
+        "assassin_landed",
+        "cast_cancelled",
+        "cast_completed",
+        "cast_impact",
+        "cast_launched",
+        "cast_started",
+        "enemy_killed",
+        "enemy_spawned",
+        "hit",
+        "skill",
+        "spawn_batch",
+        "troop_hit",
+        "wave_cleared",
+        "wave_started"
+      ],
+      "heroes": [
+        {
+          "id": "Knight",
+          "star": 2
+        },
+        {
+          "id": "Skeleton_Minion",
+          "star": 1
+        },
+        {
+          "id": "Mage",
+          "star": 1
+        },
+        {
+          "id": "Skeleton_Minion",
+          "star": 1
+        },
+        {
+          "id": "Rogue",
+          "star": 1
+        },
+        {
+          "id": "Skeleton_Warrior",
+          "star": 1
+        }
+      ],
+      "synergies": [
+        {
+          "race": "Human",
+          "job": null,
+          "threshold": 2,
+          "stat": "Attack",
+          "amount": 0.09
+        },
+        {
+          "race": "Undead",
+          "job": null,
+          "threshold": 2,
+          "stat": "Health",
+          "amount": 0.11
+        },
+        {
+          "race": null,
+          "job": "Warrior",
+          "threshold": 2,
+          "stat": "Armor",
+          "amount": 19.0
+        }
+      ]
+    },
+    {
+      "wave": 7,
+      "phase": "WaveResult",
+      "spawned": 7,
+      "duration": 10.95,
+      "events": [
+        "ai_state_changed",
+        "assassin_jump",
+        "assassin_jump_blocked",
+        "assassin_landed",
+        "cast_cancelled",
+        "cast_completed",
+        "cast_impact",
+        "cast_launched",
+        "cast_started",
+        "enemy_killed",
+        "enemy_spawned",
+        "hit",
+        "skill",
+        "spawn_batch",
+        "troop_hit",
+        "wave_cleared",
+        "wave_started"
+      ],
+      "heroes": [
+        {
+          "id": "Knight",
+          "star": 2
+        },
+        {
+          "id": "Skeleton_Minion",
+          "star": 1
+        },
+        {
+          "id": "Mage",
+          "star": 1
+        },
+        {
+          "id": "Skeleton_Minion",
+          "star": 1
+        },
+        {
+          "id": "Rogue",
+          "star": 1
+        },
+        {
+          "id": "Skeleton_Warrior",
+          "star": 1
+        },
+        {
+          "id": "Skeleton_Warrior",
+          "star": 1
+        }
+      ],
+      "synergies": [
+        {
+          "race": "Human",
+          "job": null,
+          "threshold": 2,
+          "stat": "Attack",
+          "amount": 0.09
+        },
+        {
+          "race": "Undead",
+          "job": null,
+          "threshold": 2,
+          "stat": "Health",
+          "amount": 0.11
+        },
+        {
+          "race": null,
+          "job": "Warrior",
+          "threshold": 2,
+          "stat": "Armor",
+          "amount": 19.0
+        }
+      ]
+    },
+    {
+      "wave": 8,
+      "phase": "Reward",
+      "spawned": 8,
+      "duration": 11.85,
+      "events": [
+        "ai_state_changed",
+        "assassin_jump",
+        "assassin_jump_blocked",
+        "assassin_landed",
+        "cast_cancelled",
+        "cast_completed",
+        "cast_impact",
+        "cast_launched",
+        "cast_started",
+        "enemy_killed",
+        "enemy_spawned",
+        "heal",
+        "hit",
+        "skill",
+        "spawn_batch",
+        "troop_hit",
+        "wave_cleared",
+        "wave_started"
+      ],
+      "heroes": [
+        {
+          "id": "Knight",
+          "star": 2
+        },
+        {
+          "id": "Skeleton_Minion",
+          "star": 1
+        },
+        {
+          "id": "Mage",
+          "star": 1
+        },
+        {
+          "id": "Skeleton_Minion",
+          "star": 1
+        },
+        {
+          "id": "Rogue",
+          "star": 1
+        },
+        {
+          "id": "Skeleton_Warrior",
+          "star": 1
+        },
+        {
+          "id": "Skeleton_Warrior",
+          "star": 1
+        },
+        {
+          "id": "Knight",
+          "star": 1
+        },
+        {
+          "id": "Skeleton_Rogue",
+          "star": 1
+        }
+      ],
+      "synergies": [
+        {
+          "race": "Human",
+          "job": null,
+          "threshold": 2,
+          "stat": "Attack",
+          "amount": 0.09
+        },
+        {
+          "race": "Undead",
+          "job": null,
+          "threshold": 2,
+          "stat": "Health",
+          "amount": 0.11
+        },
+        {
+          "race": null,
+          "job": "Warrior",
+          "threshold": 2,
+          "stat": "Armor",
+          "amount": 19.0
+        }
+      ]
+    },
+    {
+      "wave": 9,
+      "phase": "WaveResult",
+      "spawned": 9,
+      "duration": 16.9,
+      "events": [
+        "ai_state_changed",
+        "assassin_jump",
+        "assassin_jump_blocked",
+        "assassin_landed",
+        "cast_cancelled",
+        "cast_completed",
+        "cast_impact",
+        "cast_launched",
+        "cast_started",
+        "enemy_killed",
+        "enemy_spawned",
+        "hit",
+        "pop_up",
+        "skill",
+        "spawn_batch",
+        "troop_hit",
+        "wave_cleared",
+        "wave_started"
+      ],
+      "heroes": [
+        {
+          "id": "Knight",
+          "star": 2
+        },
+        {
+          "id": "Skeleton_Minion",
+          "star": 2
+        },
+        {
+          "id": "Mage",
+          "star": 1
+        },
+        {
+          "id": "Rogue",
+          "star": 1
+        },
+        {
+          "id": "Skeleton_Warrior",
+          "star": 1
+        },
+        {
+          "id": "Skeleton_Warrior",
+          "star": 1
+        },
+        {
+          "id": "Knight",
+          "star": 1
+        },
+        {
+          "id": "Skeleton_Rogue",
+          "star": 1
+        }
+      ],
+      "synergies": [
+        {
+          "race": "Human",
+          "job": null,
+          "threshold": 2,
+          "stat": "Attack",
+          "amount": 0.09
+        },
+        {
+          "race": "Undead",
+          "job": null,
+          "threshold": 2,
+          "stat": "Health",
+          "amount": 0.11
+        },
+        {
+          "race": null,
+          "job": "Warrior",
+          "threshold": 2,
+          "stat": "Armor",
+          "amount": 19.0
+        },
+        {
+          "race": null,
+          "job": "Assassin",
+          "threshold": 2,
+          "stat": "LandingDamage",
+          "amount": 0.28
+        }
+      ]
+    },
+    {
+      "wave": 10,
+      "phase": "Won",
+      "spawned": 1,
+      "duration": 9.65,
+      "events": [
+        "ai_state_changed",
+        "assassin_jump",
+        "assassin_jump_blocked",
+        "assassin_landed",
+        "boss_slam",
+        "boss_telegraph",
+        "cast_completed",
+        "cast_impact",
+        "cast_launched",
+        "cast_started",
+        "enemy_killed",
+        "enemy_spawned",
+        "hit",
+        "run_won",
+        "skill",
+        "spawn_batch",
+        "troop_hit",
+        "wave_started"
+      ],
+      "heroes": [
+        {
+          "id": "Knight",
+          "star": 2
+        },
+        {
+          "id": "Skeleton_Minion",
+          "star": 2
+        },
+        {
+          "id": "Mage",
+          "star": 1
+        },
+        {
+          "id": "Rogue",
+          "star": 1
+        },
+        {
+          "id": "Skeleton_Warrior",
+          "star": 1
+        },
+        {
+          "id": "Skeleton_Warrior",
+          "star": 1
+        },
+        {
+          "id": "Knight",
+          "star": 1
+        },
+        {
+          "id": "Skeleton_Rogue",
+          "star": 1
+        },
+        {
+          "id": "Rogue",
+          "star": 1
+        },
+        {
+          "id": "Mage",
+          "star": 1
+        }
+      ],
+      "synergies": [
+        {
+          "race": "Human",
+          "job": null,
+          "threshold": 2,
+          "stat": "Attack",
+          "amount": 0.09
+        },
+        {
+          "race": "Undead",
+          "job": null,
+          "threshold": 2,
+          "stat": "Health",
+          "amount": 0.11
+        },
+        {
+          "race": null,
+          "job": "Warrior",
+          "threshold": 2,
+          "stat": "Armor",
+          "amount": 19.0
+        },
+        {
+          "race": null,
+          "job": "Assassin",
+          "threshold": 2,
+          "stat": "LandingDamage",
+          "amount": 0.28
+        }
+      ]
+    }
+  ],
+  "restart": true,
+  "console": {
+    "Error": "Console 日志 0 条：",
+    "Exception": "Console 日志 0 条：",
+    "Assert": "Console 日志 0 条：",
+    "Warning": "Console 日志 0 条："
+  }
+}

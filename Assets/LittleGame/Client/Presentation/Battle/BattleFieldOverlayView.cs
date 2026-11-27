@@ -10,7 +10,7 @@ namespace LittleGame.Client.Battle
     /// <summary>
     /// 横向战场持续态可视化与场景氛围控制器（只读规则状态，无碰撞体）：
     /// 1. 整体白色布阵框（平时隐藏，拖拽场上或候补单位时显现，拖出范围边界变红提示越界）；
-    /// 2. 持续雷池法阵、集火准星、首领横向蓄力预警带；
+    /// 2. 持续雷池法阵、首领横向蓄力预警带；
     /// 3. 选中单位脚底光标；
     /// 4. 技能大招场景压暗（SceneDarken）。
     /// </summary>
@@ -43,9 +43,6 @@ namespace LittleGame.Client.Battle
         private Material telegraphBaseMat;
         private Material telegraphFillMat;
 
-        // 持续集火准星
-        private Transform focusMarkerRoot;
-        private Transform focusInnerRing;
 
         // 选中单位脚底高亮光标双环
         private Transform selectionCursorRoot;
@@ -75,12 +72,7 @@ namespace LittleGame.Client.Battle
             telegraphFillMat = telegraphFill.GetComponent<Renderer>().sharedMaterial;
             telegraphRoot.gameObject.SetActive(false);
 
-            // 3. 持续集火旋转双环准星
-            focusMarkerRoot = new GameObject("FocusReticle").transform;
-            focusMarkerRoot.SetParent(transform, false);
-            CreateRingObject(focusMarkerRoot, "FocusOuter", 1.28f, new Color(1f, 0.25f, 0.22f, 0.92f));
-            focusInnerRing = CreateRingObject(focusMarkerRoot, "FocusInner", 0.86f, new Color(1f, 0.72f, 0.25f, 0.95f)).transform;
-            focusMarkerRoot.gameObject.SetActive(false);
+
 
             // 4. 选中单位脚底高亮光标双环
             selectionCursorRoot = new GameObject("SelectionFootCursor").transform;
@@ -185,25 +177,9 @@ namespace LittleGame.Client.Battle
                 ApplyMatColor(telegraphFillMat, Color.Lerp(new Color(1f, 0.42f, 0.18f, 0.65f), new Color(1f, 0.15f, 0.12f, 0.92f), progress));
             }
 
-            // 2. 持续集火准星
-            bool showFocus = fighting && session.FocusTarget > 0 && session.FocusUntil > session.BattleTime
-                             && registry != null && registry.TryGet(session.FocusTarget, out var focusActor)
-                             && focusActor != null && focusActor.Active;
-            focusMarkerRoot.gameObject.SetActive(showFocus);
-            if (showFocus && registry.TryGet(session.FocusTarget, out var fa))
-            {
-                focusMarkerRoot.position = new Vector3(fa.Transform.position.x, 0.155f, fa.Transform.position.z);
-                float scale = 0.95f + 0.10f * Mathf.Sin(t * 10f);
-                focusMarkerRoot.localScale = Vector3.one * (fa.IsBoss ? 1.95f * scale : scale);
-                focusMarkerRoot.rotation = Quaternion.Euler(0f, t * 90f, 0f);
-                if (focusInnerRing != null) focusInnerRing.localRotation = Quaternion.Euler(0f, -t * 180f, 0f);
-            }
-
             // 3. 持续雷池法阵
             var zones = session.Zones;
             int activeZones = fighting && zones != null ? zones.Count : 0;
-            bool wideStorm = session.Rewards != null && session.Rewards.Contains(RewardKind.WideStorm);
-            float radius = wideStorm ? 1.85f : 1.35f;
 
             while (zoneRings.Count < activeZones)
             {
@@ -222,7 +198,7 @@ namespace LittleGame.Client.Battle
                 var z = zones[i];
                 zoneRings[i].position = new Vector3(z.X, 0.148f, z.Z);
                 float pulse = 0.94f + 0.08f * Mathf.Sin(t * 12f + i);
-                zoneRings[i].localScale = new Vector3(radius * pulse, 1f, radius * pulse);
+                zoneRings[i].localScale = new Vector3(zones[i].Radius * pulse, 1f, zones[i].Radius * pulse);
                 zoneRings[i].rotation = Quaternion.Euler(0f, t * 75f + i * 45f, 0f);
             }
 

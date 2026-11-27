@@ -36,13 +36,13 @@ public static class MainHotUpdate
         MVC.Init();
         QualityTierMgr.Instance.Init();
 
-        // 所有内容包完成版本检查、清单激活与下载后，才允许业务创建对象。
+        // 先激活所有内置内容包的清单，再允许业务创建对象。
         var pending = StartupContentPackages.Length;
         bool failed = false;
         for (var i = 0; i < StartupContentPackages.Length; i++)
         {
             var pkg = StartupContentPackages[i];
-            ResourceMgr.Instance.InitHostPackage(pkg, ok =>
+            ResourceMgr.Instance.InitBuiltInPackage(pkg, async ok =>
             {
                 failed |= !ok;
                 pending--;
@@ -53,23 +53,19 @@ public static class MainHotUpdate
                         GameDebug.LogError("MainHotUpdate", "内容包初始化失败，停止进入战斗。");
                         return;
                     }
-                    var configs = Array.ConvertAll(StartupContentPackages, p => new HotUpdateMgr.PackageFlowConfig(p));
-                    var flow = new HotUpdateMgr.FlowHandle();
-                    flow.OnAllFlowComplete += async success =>
+                    try
                     {
-                        if (!success)
-                        {
-                            GameDebug.LogError("MainHotUpdate", "内容包更新失败，停止进入战斗。");
-                            return;
-                        }
                         await GfxQualityMgr.Instance.InitAsync();
-                        GameDebug.Log("MainHotUpdate", "MVC / Service / Mgr / 资源包启动完成");
+                        GameDebug.Log("MainHotUpdate", "MVC / Service / Mgr / 内置资源包启动完成");
                         var entry = Type.GetType("LittleGame.Client.ClientBootstrap, LittleGame.Client", throwOnError: true);
                         entry.GetMethod("Launch", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static).Invoke(null, null);
-                    };
-                    CoroutineRunner.Start(HotUpdateMgr.Instance.RunFlow(configs, flow));
+                    }
+                    catch (Exception ex)
+                    {
+                        GameDebug.LogError("MainHotUpdate", $"进入战斗失败: {ex}");
+                    }
                 }
-            }, cdnOnly: false);
+            });
         }
     }
 }

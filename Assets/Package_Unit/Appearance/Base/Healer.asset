@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1f6113d00550904393fa3d87cf90d51, type: 3}
+  m_Name: Healer
+  m_EditorClassIdentifier: 
+  Source: Assets/LittleGame/Art/UnitSources/CuteMonsters/Sunflower Fairy/Sunflower
+    Fairy.FBX
+  Model: {fileID: 4161157724945262888, guid: 2d4224ff3f1964041b9de73d7b3a52be, type: 3}
+  AnimatorController: {fileID: 9100000, guid: 942e846c446e15743b58ba96712027fb, type: 2}
+  Idle: {fileID: 7400000, guid: 842d8f52bd399ec4aa9bc0da0be0e15e, type: 2}
+  Move: {fileID: 7400000, guid: 115be5d74d7075344a5b55254ada69d6, type: 2}
+  Attack: {fileID: 7400000, guid: 8014baa0684842249894ddc307d549bc, type: 2}
+  Hit: {fileID: 7400000, guid: d8ded6590f7c85345bcb09a2e358c27e, type: 2}
+  Death: {fileID: 7400000, guid: 423a9c5fa7f09924ca2e059df27a46d4, type: 2}
+  Slam: {fileID: 7400000, guid: feba98ec1a7795b46bae4842797d0c93, type: 2}
+  Height: 1.1
+  AttackSpeed: 1.5

@@ -176,11 +176,24 @@ public class HotUpdateMgr
             cumulativeBytes += pkgBytes;
         }
 
-        // ---- Phase 3: 加载 DLL ----
+        yield return LoadReadyPackages(configs, handle);
+    }
+
+    /// <summary>从已激活清单的资源包加载程序集，可用于无需网络的内置首包启动。</summary>
+    public IEnumerator LoadReadyPackages(PackageFlowConfig[] configs, FlowHandle handle)
+    {
         for (int i = 0; i < configs.Length; i++)
         {
             if (configs[i].DllAssetPaths == null || configs[i].DllAssetPaths.Length == 0)
                 continue;
+
+            var package = YooAssets.TryGetPackage(configs[i].PackageName);
+            if (package == null || !package.PackageValid)
+            {
+                GameDebug.LogError("HotUpdate", $"{configs[i].PackageName} 未激活资源清单，无法加载程序集");
+                handle.InvokeAllFlowComplete(false);
+                yield break;
+            }
 
             bool ok = false;
             yield return LoadAssemblies(configs[i].PackageName, configs[i].DllAssetPaths,

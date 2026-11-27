@@ -144,6 +144,13 @@ public class AddressByBundleAndRelativePath : IAddressRule
             return skillPath;
         }
 
+        if (TryStripTypeCollectLayer(relativePath, "Portrait", out var portraitPath)) return portraitPath;
+
+        if (TryStripTypeCollectLayer(relativePath, "Appearance", out var appearancePath))
+        {
+            return appearancePath;
+        }
+
         if (TryStripTypeCollectLayer(relativePath, "Timeline", out var timelinePath))
         {
             return timelinePath;

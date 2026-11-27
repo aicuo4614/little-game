@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1f6113d00550904393fa3d87cf90d51, type: 3}
+  m_Name: Skeleton_Minion
+  m_EditorClassIdentifier: 
+  Source: Assets/LittleGame/Art/UnitSources/KayKit/Skeletons/Skeleton_Minion.fbx
+  Model: {fileID: 5306321684648612163, guid: 099a9ead046a2f649b4dc83bcb04427f, type: 3}
+  AnimatorController: {fileID: 9100000, guid: 3cef9511bbc4b0d49bcdf81c2c49513a, type: 2}
+  Idle: {fileID: 7400000, guid: f0a6944af31dec74fa863eae9b684ce5, type: 2}
+  Move: {fileID: 7400000, guid: 9363048a769f54948aec4922ff3d6505, type: 2}
+  Attack: {fileID: 7400000, guid: 2088d842d18d26244b6afe7b641634ef, type: 2}
+  Hit: {fileID: 7400000, guid: 4d47941f854a8ef46a4038f29d037719, type: 2}
+  Death: {fileID: 7400000, guid: e1ff4f00cd04f5e40b24005c598eed3c, type: 2}
+  Slam: {fileID: 7400000, guid: 8492ed8c3b5db694fb91f85ad91080c3, type: 2}
+  Height: 1.18
+  AttackSpeed: 1.5

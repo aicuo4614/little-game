@@ -1,9 +1,0 @@
-{
-  "source": "https://github.com/roy-t/AStar",
-  "commit": "3d57efaa83c8cd217e4973fd4738c57e2f694bd2",
-  "license": "MIT, see LICENSE.txt",
-  "modifications": [
-    "PathFinder增加可选canTraverse过滤器，供纯规则动态通行查询使用"
-  ],
-  "scope": "仅核心26个C#文件，不导入WPF、Benchmark、测试工具或其他依赖"
-}

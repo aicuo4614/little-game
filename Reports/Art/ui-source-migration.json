@@ -2,6 +2,34 @@
   "authorization": "2026-11-24用户明确授权使用PELibDemo Art内UI并整体改造",
   "sprites": [
     {
+      "alias": "Human",
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3RD_UI\\GUI PRO Kit\\GUI PRO Kit - Fantasy RPG\\ResourcesData\\Sprites\\Component\\Icon_PictoIcons_(Original)\\btn_icon_human.png",
+      "destination": "Assets\\LittleGame\\Resources\\CombatUI\\Human.png",
+      "sha256": "ec9bb3091c83ffc68ec211e7ce4e6c7f8bdd26b961b2a979e66b3fd420ba0b42",
+      "border": "{x: 0, y: 0, z: 0, w: 0}"
+    },
+    {
+      "alias": "Undead",
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3RD_UI\\GUI PRO Kit\\GUI PRO Kit - Fantasy RPG\\ResourcesData\\Sprites\\Component\\Icon_PictoIcons_(Original)\\btn_icon_skull.png",
+      "destination": "Assets\\LittleGame\\Resources\\CombatUI\\Undead.png",
+      "sha256": "d04be23669d73085fd317765ef73b689c7e88f96521e689f959514991bc34376",
+      "border": "{x: 0, y: 0, z: 0, w: 0}"
+    },
+    {
+      "alias": "Boss",
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3RD_UI\\GUI PRO Kit\\GUI PRO Kit - Fantasy RPG\\ResourcesData\\Sprites\\Component\\Icon_PictoIcons_(Original)\\btn_icon_skull.png",
+      "destination": "Assets\\LittleGame\\Resources\\CombatUI\\Boss.png",
+      "sha256": "d04be23669d73085fd317765ef73b689c7e88f96521e689f959514991bc34376",
+      "border": "{x: 0, y: 0, z: 0, w: 0}"
+    },
+    {
+      "alias": "Population",
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3RD_UI\\GUI PRO Kit\\GUI PRO Kit - Fantasy RPG\\ResourcesData\\Sprites\\Component\\Icon_PictoIcons_(Original)\\btn_icon_user_1.png",
+      "destination": "Assets\\LittleGame\\Resources\\CombatUI\\Population.png",
+      "sha256": "d541763b8d11a2912edc55a68fa689581291e932760b20980463596d12856c4e",
+      "border": "{x: 0, y: 0, z: 0, w: 0}"
+    },
+    {
       "alias": "Panel",
       "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3RD_UI\\GUI PRO Kit\\GUI PRO Kit - Fantasy RPG\\ResourcesData\\Sprites\\Component\\Popup\\popup_00_frame.png",
       "destination": "Assets\\LittleGame\\Resources\\CombatUI\\Panel.png",
@@ -118,6 +146,13 @@
       "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3RD_UI\\GUI PRO Kit\\GUI PRO Kit - Fantasy RPG\\ResourcesData\\Sprites\\Component\\Icon_PictoIcons_(Original)\\btn_icon_snowflake.png",
       "destination": "Assets\\LittleGame\\Resources\\CombatUI\\Frost.png",
       "sha256": "41b7ef878c5345319c5f7904bdad266c911852979887764c80cbffe96c64ee36",
+      "border": "{x: 0, y: 0, z: 0, w: 0}"
+    },
+    {
+      "alias": "Assassin",
+      "source": "E:\\Project\\PELibDemo\\Assets\\Art\\3RD_UI\\GUI PRO Kit\\GUI PRO Kit - Fantasy RPG\\ResourcesData\\Sprites\\Component\\Icon_PictoIcons_(Original)\\btn_icon_dagger.png",
+      "destination": "Assets\\LittleGame\\Resources\\CombatUI\\Assassin.png",
+      "sha256": "d3ff1bfb8e736139a74287f505a6080f257eeed3fdb0615e4fe40f3d215dfb4e",
       "border": "{x: 0, y: 0, z: 0, w: 0}"
     },
     {

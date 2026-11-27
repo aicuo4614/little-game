@@ -1,23 +1,55 @@
 {
     "FileVersion": "1.0.0",
     "PackageName": "CodePackage",
-    "PackageVersion": "2026-11-25-1253",
+    "PackageVersion": "2026-11-27-955",
     "Wrappers": [
         {
-            "BundleGUID": "88762458b40fb7025c99d97347f93a73",
-            "FileName": "codepackage_assets_package_code_hotupdate_domain_littlegame_domain_dll_88762458b40fb7025c99d97347f93a73.bundle"
+            "BundleGUID": "d380cad0ebc73d8693aecfeadbd30dc3",
+            "FileName": "codepackage_assets_package_code_hotupdate_domain_littlegame_domain_dll_d380cad0ebc73d8693aecfeadbd30dc3.bundle"
         },
         {
-            "BundleGUID": "d6c08ade1be4972aaa23e80c6c4114bb",
-            "FileName": "codepackage_assets_package_code_hotupdate_main_hotupdate_main_dll_d6c08ade1be4972aaa23e80c6c4114bb.bundle"
+            "BundleGUID": "2b4790cbe542a017626f734f8a02959a",
+            "FileName": "codepackage_assets_package_code_hotupdate_main_aotmetadata_manifest_2b4790cbe542a017626f734f8a02959a.bundle"
         },
         {
-            "BundleGUID": "b90dd20d4a62d3ea431ed8ea88344f14",
-            "FileName": "codepackage_assets_package_code_hotupdate_unitcore_hotupdate_unitcore_dll_b90dd20d4a62d3ea431ed8ea88344f14.bundle"
+            "BundleGUID": "cf7506fc71fa2a0380cfd01b3d6018a5",
+            "FileName": "codepackage_assets_package_code_hotupdate_main_aotmetadata_mscorlib_dll_cf7506fc71fa2a0380cfd01b3d6018a5.bundle"
         },
         {
-            "BundleGUID": "e4384d9e3e41ab8318497ebb0cbe7b85",
-            "FileName": "codepackage_assets_package_code_littlegame_client_littlegame_client_dll_e4384d9e3e41ab8318497ebb0cbe7b85.bundle"
+            "BundleGUID": "c639d26f59ab29a245ae598ae789ba39",
+            "FileName": "codepackage_assets_package_code_hotupdate_main_aotmetadata_newtonsoft_json_dll_c639d26f59ab29a245ae598ae789ba39.bundle"
+        },
+        {
+            "BundleGUID": "31a569b811a596e02604cd5d75eab4a3",
+            "FileName": "codepackage_assets_package_code_hotupdate_main_aotmetadata_system_core_dll_31a569b811a596e02604cd5d75eab4a3.bundle"
+        },
+        {
+            "BundleGUID": "b82294666514ea94f0080c57fc859c69",
+            "FileName": "codepackage_assets_package_code_hotupdate_main_aotmetadata_unityengine_coremodule_dll_b82294666514ea94f0080c57fc859c69.bundle"
+        },
+        {
+            "BundleGUID": "954eb2d52df505ee6ba35a3aa37e175d",
+            "FileName": "codepackage_assets_package_code_hotupdate_main_aotmetadata_unityengine_jsonserializemodule_dll_954eb2d52df505ee6ba35a3aa37e175d.bundle"
+        },
+        {
+            "BundleGUID": "6c5cbceeab496ca1a220fc61bd2a97e3",
+            "FileName": "codepackage_assets_package_code_hotupdate_main_aotmetadata_unity_renderpipelines_core_runtime_dll_6c5cbceeab496ca1a220fc61bd2a97e3.bundle"
+        },
+        {
+            "BundleGUID": "7433c259d79fc05cd5717eeddbd2ec19",
+            "FileName": "codepackage_assets_package_code_hotupdate_main_aotmetadata_yooasset_dll_7433c259d79fc05cd5717eeddbd2ec19.bundle"
+        },
+        {
+            "BundleGUID": "2664d163a837e6f5d3a34c4d64c5b7df",
+            "FileName": "codepackage_assets_package_code_hotupdate_main_hotupdate_main_dll_2664d163a837e6f5d3a34c4d64c5b7df.bundle"
+        },
+        {
+            "BundleGUID": "4fc55bbe9d141d362eee42598acd9902",
+            "FileName": "codepackage_assets_package_code_hotupdate_unitcore_hotupdate_unitcore_dll_4fc55bbe9d141d362eee42598acd9902.bundle"
+        },
+        {
+            "BundleGUID": "c90232bd7fcc00ff91bba38e978ea996",
+            "FileName": "codepackage_assets_package_code_littlegame_client_littlegame_client_dll_c90232bd7fcc00ff91bba38e978ea996.bundle"
         },
         {
             "BundleGUID": "fa67fef17bc7774ad36d01a892a1c7a3",

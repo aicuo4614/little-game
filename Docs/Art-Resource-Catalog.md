@@ -1,8 +1,15 @@
 # 美术资源来源与单位选型
 
-更新：2026-11-26。用途：供后续对话持续查阅、补充资源入口与选型依据。本目录同时保存初选和后续接入记录；各阶段验证范围以文末记录为准。
+更新：2026-11-27。用途：供后续对话持续查阅、补充资源入口与选型依据。本目录同时保存初选和后续接入记录；各阶段验证范围以对应记录为准。
 
 ## 持续维护约定
+
+### 2026-11-27 Android 黑屏技术依据与资源路径更新
+
+- 来源：HybridCLR 官方 [常见错误](https://www.hybridclr.cn/docs/help/commonerrors)、[MonoBehaviour 支持](https://www.hybridclr.cn/docs/basic/monobehaviour)，2026-11-27 只读核查，未迁入第三方代码或素材。适用对象为热更脚本挂载资源的 Android 打包与加载。
+- 首次新包实测：Samsung SM-G9550 / Android 7.0 / ARM64，七个内置包和四个热更 DLL 已加载；原 Resources 单位外观与 UnitMono 报脚本缺失及序列化布局不一致，主包描边 Feature 同样存在热更程序集启动时序问题，随后捕获 SIGSEGV。证据：Reports/Mobile/black-screen-20261127/new-package-full.txt。
+- 外观迁移至 Assets/Package_Unit/Appearance/Base，运行时地址 Appearance/{Role}；模型以 Package_Unit/Low/Base 为唯一构建产出。旧 Resources 模型移出原生 Resources 至 Art/UnitGenerated/Models，保留 GUID，外观引用已改为包内标准模型。下文旧的双份生成说明由本条覆盖。
+- RocoCharacterOutlineFeature 连同 meta 移至 Assets/Scripts/Shared/Rendering，使主包 URP 配置在热更加载前即可恢复 AOT 脚本。修复后的真机验证结论以本次验收报告为准。
 
 用户后续提供的新路径、网站、资源包、链接或美术参考，必须在当次工作中自动补入本目录和根 AGENTS.md 的来源登记，不等待再次提醒。记录提出日期、准确入口、授权原意、获取状态、用途、风险和验证阶段；重复入口合并，旧判断保留变更原因。参考不等于使用授权；本地存在不等于已导入或运行通过。
 
@@ -20,8 +27,13 @@
 | 玩法与镜头参考 | `E:\Project\bump` | 2026-11-24 用户新增为玩法/横向推进与战斗体验参考工程（只读检查）；未获美术资源或代码使用授权，不搬入素材 |
 | 避障算法参考 | `E:\Project\AnimalBattle` | 2026-11-25 用户新增为避障插件参考工程（只读检查）；`Assets/RVO/RVO/src` 内为 Apache License 2.0 开源 RVO2 Library C#（UNC Chapel Hill），仅适配其开源 ORCA/RVO2 算法至本工程纯规则层，不搬入其他美术资源或业务代码 |
 | 旧横板动作移动/AI参考 | `E:\Project\射雕1.9版本\Client` | 2026-11-25 用户提供旧作参考，要求分析移动、阻挡和 AI 并评估不用 RVO 的方案；仅授权只读分析，未授权迁入代码/美术。目录可访问，ProjectVersion 为 Unity 5.6.6f2，已完成 Character/Move、Character/AI、CharBodyController、Physics2D 碰撞矩阵及角色数据的静态分析；不运行、升级或修改源工程。 |
+| 真机调试工具参考 | F:/Git/kabu_mobile/ClientExpress | 2026-11-26 用户要求只读分析。Unity 2022.3.62f3c1，已定位 Assets/3rd/StompyRobot/SRDebugger 和依赖 SRF，以及 GM 调试入口。源码可读，第三方插件迁入与运行验证均未执行。 |
 | Unity Asset Store | https://assetstore.unity.com | 可自主筛选；付费由用户决定并提供，不代付款；优先查本地是否已有同包 |
 | 作者网站与其他网络来源 | Kay Lousberg、Quaternius、Synty、itch.io 等 | 保留原始作者链接，区分免费、EXTRA、SOURCE，按具体来源核对许可；不从不明转载站获取付费包 |
+
+## ClientExpress 真机调试参考
+
+本地 SRDebugger 的 README 标明 1.13 系列与 Unity 2022.3.62 起的支持基线。StandardConsoleService 监听 Unity 的线程安全日志回调，面板可筛选日志、查看堆栈和复制内容。项目从 HotUpdate_Main 的 GM 调试页打开面板。该入口依赖业务模块已启动，无法用于观察进战斗前的挂起。插件另有早期自动初始化能力，后续如接入应从 AOT 提供开发包入口，原生闪退仍通过 ADB 捕获。SRDebugger 采用商店资产条款，SRF 单独附 MIT 许可。仅核查本地源码与配置，未运行或修改参考工程。
 
 ## 本次玩法的美术需求
 
@@ -85,6 +97,13 @@
 4. 仅提取必要依赖，验证URP14材质、骨架/动作/武器挂点和规则事件时序；检查编译、Play、正常玩法与Console，再按项目流程做最新APK与真机检查。
 
 本任务仅进行选材及规则文档维护，未修改玩法、输入或MCP接口，因此本轮MCP无需修改。未将静态文件检查写成游戏内运行通过。
+
+## 2026-11-27 敌方怪物阵容
+
+- 普通敌人统一使用 `Monsters Ultimate Pack 02 Cute Series`。用户随后确认首领可以沿用 AutoClash 石甲巨像。此条更新前期人形敌人及 Cute Series 龙首领候选。
+- 狼人 `Werewolf`、重甲寄居蟹 `Hermit King` 和向日葵妖精 `Sunflower Fairy` 取自已授权的 AutoClash 同名包。实际迁入的 21 个模型、动作和贴图文件及哈希见 `Reports/Art/enemy-monster-sources.json`。疾行狼沿用已导入的 PELibDemo `T/Wolf Cute Series/FBX/Wolf.FBX`。
+- 狼人、疾行狼、重甲寄居蟹、向日葵妖精和石甲巨像的目标表现高度分别为 1.20、1.00、1.25、1.10 和 2.45 米。疾行狼由 0.75 调至 1.00 米。复用现有 Roco 材质流程、UnitMono 挂点和战斗角色键，预制体同步生成到 `Resources/UnitModels` 和 `Package_Unit/Low/Base`。依靠规则事件结算，动作仍由原战斗流程触发。
+- 动作骨架检查见 `Reports/Art/enemy-monster-build-validation.txt`。正常招募、布阵推进及第 3、5、6 波的 540×960 Unity GameView 截图见 `Reports/Art/enemy-monsters-20261127`。此轮验证范围为 Unity 编辑器。
 
 ## 2026-11-24 单位样品与 Demo 卡通渲染接入
 
@@ -154,3 +173,68 @@
 继续使用既有授权的 PELibDemo/Hovl Studio 本地提取资源，来源工程未改动。当前工程保留的18份源Prefab含粒子，旧40份生成Prefab却只有Transform层级；已修复生成器并重新生成 `Assets/Package_Effect/Low/Base`，逐项核对粒子数量，不再以文件生成成功代替效果验收。缺失原Shader时从序列化属性恢复贴图，适配URP材质并保留生成资产GUID；仅拖尾材质槽按实际启用状态验证。
 
 本项目新增程序生成的刀光弧面、雷击折线、冰晶与集火标记网格粒子（`SkillEffectAccentBuilder`、`SkillEffectAssetBuilder`），用于竖屏可读的主形状；Hovl粒子作为其他效果及辅助层，不新增外部来源或费用。40个运行时Prefab统一由Package_Effect提供；旧Resources副本不作为调效目标。当前逐技能修改、画面、双阵营/画质与实际战斗验证分别见 `Reports/Skills/20261126`，不据此宣称手机效果或性能通过。
+
+
+### 2026-11-27 真机验收补记
+
+外观与模型的 UnitPackage 路径、AOT 描边 Feature 已在 Samsung SM-G9550 / Android 7.0 实际安装运行。普通怪物在第5波战斗中显示，中文界面、技能和伤害数字可见；触屏部署与冷启动恢复通过，实战与重启日志无 Unity Error 或原生 CRASH。启动黑屏另包含完整规则诊断快照导致的原生崩溃，手机改用精简标量诊断。证据见 Reports/Mobile/black-screen-20261127/validation.json。未据此验收首领真机表现、所有技能或全部机型。
+
+
+## 2026-11-27 KayKit 地图与多种族英雄方向
+
+- 用户指定收藏室 KayKit 作为地图和英雄来源，并明确 Adventurers、Skeletons 均可作我方英雄，按种族/职业重新考虑整体角色设定。本次是分析建议，未执行角色替换、地图重做或玩法修改。此前优先 TinyHero 的选型结论在新的我方方向上已更新；敌方怪物基线本次未取消。
+- 来源入口：`E:/Art/material-vault/libraries/kaykit`；只读检查 `downloads` 原包和 `source/download-receipts.json`，不修改收藏室。Adventurers 官方 https://kaylousberg.itch.io/kaykit-adventurers ，Skeletons 官方 https://kaylousberg.itch.io/kaykit-skeletons ，通用动画 https://kaylousberg.itch.io/kaykit-character-animations 。
+- 已获取 `adventurers-free-2.0.zip`：人物 FBX 为 Knight、Barbarian、Mage、Ranger、Rogue、Rogue_Hooded；后两者是盗贼外观版本，不算两个独立职业。`skeletons-free-1.1.zip`：Skeleton_Mage、Skeleton_Minion、Skeleton_Rogue、Skeleton_Warrior。附武器/盾/弩/法杖等；有 `character-animations-free-1.1.zip`。原包回执记录 CC0 与包内许可。EXTRA 的工程师、德鲁伊、大野蛮人、骷髅巨像、死灵法师不在本地免费包内，未购买。
+- 地图缓存包括 `dungeon-remastered-github-1.0.zip`、`forest-nature-free.zip`、`medieval-hexagon-github-1.0.zip`。Dungeon 回执固定提交 `b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07`，为官方 GitHub 1.0 Godot 分发（GLB/OBJ），不能当成 itch.io 1.1 的 Unity FBX 分发。Medieval Hexagon 回执固定提交 `84fa4e91af6a88989be7c99e0891cede11f2ca38`。原始入口 https://github.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0 、https://kaylousberg.itch.io/kaykit-medieval-hexagon 、https://kaylousberg.itch.io/kaykit-forest 。
+- 2026-11-27 官方页面核对：Dungeon Remastered 页面重定向为 https://kaylousberg.itch.io/kaykit-dungeon-pack ，页面说明 Remastered 1.1 更名为 Dungeon Pack 1.1；森林免费版不含 EXTRA 的模块地形。已有石地/墙/门与森林摆件可优先组成遗迹林道；六边形适合作地面或远景模块，不要求改变自由布阵规则。
+- 建议先做两族（人类/亡灵）、四职业（守卫/战士/射手/法师）、八英雄的交叉阵容。该方案及独立英雄ID合成、羁绊计数、转盘中奖后选英雄都只是设计建议，未覆盖当前四职业、同职业合成和二星分支基线。
+- 技术风险与验证：需要重新核对 Unity URP14 材质、人物骨架与通用战斗动作、武器挂点、投射物时序、亡灵细骨在固定竖屏正交镜头的辨识、场景遮挡与手机开销。此次仅原包清单/来源检查与官方页面阅读；未验证新阵容的 Unity/真机效果。未修改运行代码和 MCP 接口；若实施，将同步英雄ID、种族/职业、羁绊、合成预览及正常输入验收。
+
+### KayKit 接入与首关验收
+
+- 首批模型使用同一收藏室的 Adventurers 2.0 和 Skeletons 1.1 免费包。保留无帽 Rogue，持弩小兵使用 Skeleton_Minion 加同包的 Skeleton_Crossbow。通用动作来自 Character Animations Free 1.1 的 Medium 骨架。提取工具为 `Tools/Preparation/import_kaykit_heroes.py`，源包保持只读。
+- 八个英雄已由 Unity 生成 UnitPackage 模型和外观，继续采用 Roco 角色材质。生成记录 `Reports/Art/kaykit-hero-build.txt` 包含骨架、动作绑定、挂点和网格数据。首关沿用已接入的普通怪物与石甲巨像。
+- 遗迹道路接入 Dungeon Remastered GitHub 1.0 的 OBJ 石门、残墙与装饰柱，以及 Forest Nature Free 的 FBX 树和纹理。保存来源许可，复用现有道路布局和正交跟随机位。
+- 刺客图标取自已授权的 PELibDemo Fantasy RPG UI 的 `Component/Icon_PictoIcons_(Original)/btn_icon_dagger.png`，原图及导入记录见 `Tools/Preparation/import_combat_ui.py` 与 `Reports/Art/ui-source-migration.json`。
+- Unity 编辑器正常招募和十波回放见 `Reports/Combat/hero-rework-20261127/final`，包含真实模型、Boss 波、蓝条、拖放和 Console 记录。手机表现和性能仍待真机验收。
+
+### 2026-11-27 英雄头像实模快照
+
+- 按用户指定方式，从八名已接入的 UnitPackage 英雄预制体拍摄，保留原模型与材质。统一略俯视三分之四头肩构图，768×768 离屏渲染后缩为 256×256，并导入为 Sprite。
+- 单张输出为 Assets/Package_Unit/Portrait/Base/<英雄ID>.png，总览为 Reports/Art/HeroPortraits/hero-portraits.png。上排依次为骑士、游侠、法师、盗贼，下排为骷髅战士、持弩骷髅小兵、骷髅法师、骷髅盗贼。
+- 复拍菜单 Little Game/Art/Capture Hero Portraits，代码 HeroPortraitCapture.cs。已修正首轮法师全身取景和帽盔贴边问题，八张完成总览目视检查，Console Error 为零。尚未接入战斗 HUD，手机小尺寸效果待验收。本次仅新增美术资产和编辑器工具，玩法与 MCP 协议无需变更。
+
+### 2026-11-27 战斗 HUD 资源落地
+
+- 沿用已授权的 PELibDemo GUI PRO Kit - Fantasy RPG 的面板、卡片、按钮和职业图标。新增同套件 PictoIcons 的 human、skull、user_1 图标用于种族、首领和人口，具体来源、目标路径、哈希登记在 Reports/Art/ui-source-migration.json，外部资源工程保持只读。
+- 伤害榜和候补卡片使用本项目实模快照 Portrait 资源，统一由 UnitPackage 加载，地址 Portrait/<英雄ID>。没有新增热更脚本 Resources 镜像。
+- 布局与统计验收记录位于 Reports/Combat/hud-rework-20261127，手机状态以该报告为准。
+
+
+
+### 2026-11-27 Demo 对象池与关卡预热复核
+
+- 既有授权来源 F:/Git/kabu_mobile/demo/client-demo/Assets/Scripts/HotUpdate_Main/Mgr/Pool，本次只读比对。现有 PoolMgr/PoolGroup/OnePool 已迁入同源实现，战斗模型和特效沿用该池。
+- 本工程新增每地址至少一只休眠实例的 Prewarm、创建/复用计数；按本关全部波次怪物与招募池英雄的普攻和技能绑定收集模型、特效。特效统一使用 EffectPackage，场景退出释放；未修改外部源工程。
+- 验证记录：Reports/Performance/20261127，Unity Editor 结果不代表手机或 HybridCLR 验证。
+
+
+### 2026-11-27 导航性能与 Burst/Jobs 只读技术依据
+
+- Unity 2022.3 Job System 官方： https://docs.unity3d.com/2022.3/Documentation/Manual/JobSystemNativeContainer.html 、 https://docs.unity3d.com/cn/2022.3/Manual/JobSystemCreatingJobs.html 。研究数据布局、线程读写依赖和 Schedule/Complete 时机，未据此宣称已接入多线程导航。
+- Unity Burst 类型支持： https://docs.unity3d.com/Packages/com.unity.burst@1.8/manual/csharp-type-support.html 。工程现有嵌入包版本1.8.21；现有导航的托管对象图、字典和委托未被Burst编译。
+- HybridCLR 官方 DOTS： https://www.hybridclr.cn/docs/basic/dots 。普通版本热更部分Burst代码以解释方式运行，后续若采用原生Burst计算内核，拟放AOT程序集，热更规则经数据接口调用；本轮仅研究，未购买或接入新版本。
+- 现有Roy-T.AStar来源和MIT许可不变；本轮对同一占位快照复用边检查和穷尽搜索可达集，修复最小堆删除内部节点后堆序错误，修改说明写入Assets/LittleGame/ThirdParty/RoyTAStar/SOURCE.json。
+
+
+## 2026-11-27 导航系统重新选型的新增只读来源
+
+用户要求结合实际需求、网络和GitHub重新选型，不再继续累加局部补丁。来源审查及固定提交保存于 Reports/Combat/navigation-review-20261127/source-audit.json；本轮未安装候选或迁入新运行时代码，研究不等于素材或第三方整体许可授权。
+
+- Unity AI Navigation1.1官方：NavInnerWorkings、AboutObstacles、MixingComponents，链接见该目录README。适用Unity2022系列的原生导航原理、RVO、切洞与组件组合。原生NavMeshAgent是研究首选候选，尚未进行本项目横向实测。
+- https://github.com/snape/RVO2-CS ：Apache-2.0，当前固定5cc83e25da523ef21963f6e925920f2d3eef82fb，csproj目标net10.0，不能直接断言Unity2022兼容；只读源码/依赖审查。
+- https://github.com/Nebukam/com.nebukam.orca ：固定703ec434f4a5a56863991c8954015c3a3150ec37，Burst/Jobs ORCA，Unity2022.1包，附加依赖较多；LICENSE.md为空、API为NOASSERTION，未核实可直接采用，不标成MIT已授权。
+- https://github.com/sarkahn/pathfinding ：固定8d306163e6b8fe94dce21df4b0fcf7d6e2f2a087，MIT、2020年最后提交，Burst/Jobs路径内核参考，不包含完整人群/战斗站位。
+- https://github.com/innocentmiau/MiHordeTraffic ：固定17ba7e847f147e40b2c9351a314b07a645732bb4，MIT，Unity6000.3与Collections2.6.8等依赖不匹配当前工程；仅研究流场分层，不迁包/升级工程，作者五千单位数字不是本项目性能。
+- https://gamma-web.iacs.umd.edu/ORCA/ ：作者研究说明，用于区分局部速度避障和全局寻路；页面旧软件下载条件不替代具体GitHub版本的许可证。
+- 既有 https://github.com/ikpil/DotRecast 本次复核固定6fce4ac0d59f4d4efdf9de0a9e5beae5784bca12，Zlib、netstandard2.1等目标；尚未接入，当前不优先再引入一套C# Recast/Detour栈。

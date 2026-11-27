@@ -39,14 +39,14 @@ static class Tests
 
     static void Main(string[] args)
     {
+        if (args.Contains("--heap")) { NavigationTests.HeapInvariant(); return; }
         if (args.Contains("--navigation")) { NavigationTests.Run(); return; }
         if (args.Contains("--movement")) { MovementTests.Run(); return; }
         var s = new BattleSession(173);
         Check(s.Troops.Count == 0 && s.DeployedCount == 0 && s.Spins == 3 && s.MaxDeployed == 6, "开局不提前放置我方单位，全部通过老虎机招募获得");
         Check(!Do(s, CommandKind.StartWave).Accepted, "场上零单位时禁止开战");
-        Check(BattleDefinitions.MoveSpeed(TroopKind.Archer) == BattleDefinitions.MoveSpeed(TroopKind.Shield)
-            && BattleDefinitions.MoveSpeed(TroopKind.Storm) == BattleDefinitions.FixedTroopMoveSpeed, "我方角色移动速度统一固定");
-        Check(BattleDefinitions.Range(TroopKind.Archer) <= 5.0f && BattleDefinitions.Range(TroopKind.Storm) <= 4.5f, "远程射程已收紧，避免出生即秒杀");
+        Check(BattleTables.Current.Unit("Rogue").Move > BattleTables.Current.Unit("Knight").Move, "职业可以分别配置移动速度");
+        Check(BattleTables.Current.Unit("Ranger").Range <= 5.0f && BattleTables.Current.Unit("Mage").Range <= 4.5f, "远程射程已收紧，避免出生即秒杀");
 
         Do(s, CommandKind.Spin);
         Check(s.LastWinRowMid && s.Troops.Count == 1 && !s.Troops[0].Deployed && s.Troops[0].Kind == TroopKind.Shield, "首转中横三同盾卫正确进入候补");
@@ -71,16 +71,29 @@ static class Tests
         Check(Do(s, CommandKind.StartWave).Accepted, "部署后正常开战");
         Do(restored, CommandKind.StartWave);
         s.Advance(.5f); restored.Advance(.5f);
-        Check(s.Enemies.Select(e => e.Kind).SequenceEqual(restored.Enemies.Select(e => e.Kind)) && s.Enemies.Select(e => e.Hp).SequenceEqual(restored.Enemies.Select(e => e.Hp)), "存档恢复后确定性推进(含RVO2)");
+        Check(s.Enemies.Select(e => e.MonsterId).SequenceEqual(restored.Enemies.Select(e => e.MonsterId)) && s.Enemies.Select(e => e.Hp).SequenceEqual(restored.Enemies.Select(e => e.Hp)), "存档恢复后确定性推进（含 A*）");
         Check(!Do(s, CommandKind.Spin).Accepted && !Do(s, CommandKind.Deploy, first.Id, 1, 0).Accepted, "战中禁止招募和布阵");
 
-        while (s.Phase == RunPhase.Fighting && s.BattleTime < 2.5f) s.Advance(.05f);
-        Check(s.Phase == RunPhase.Fighting && s.Enemies.Any(e => e.Alive), "第1波怪物2.5秒内不会被秒杀，具备正常接敌过渡");
+        Check(s.Forecast.Count == 2 && s.Enemies.Count == 1 && s.Enemies[0].Mana == 0f, "首波立即刷1只怪，下一批等待计时，敌人从0法力开战");
+        Check(s.Forecast[1].At >= 2.2f && s.Forecast[1].At <= 3.2f && s.MaxDeployed == 6, "首波分批及随机间隔符合配表，沿用正常人口");
 
-        s.Execute(new BattleCommand { Kind = CommandKind.Aim, Aim = AimKind.Focus }); float clock = s.BattleTime; s.Advance(1); Check(s.BattleTime == clock && s.Tactics == 1, "瞄准暂停且不消费");
-        Check(!Do(s, CommandKind.Focus, 9999).Accepted && s.Tactics == 1, "失效目标不扣战术"); Do(s, CommandKind.CancelAim); s.Advance(.5f); Check(s.BattleTime > clock, "取消瞄准恢复推进");
-        s.Execute(new BattleCommand { Kind = CommandKind.Aim, Aim = AimKind.Protect }); Check(Do(s, CommandKind.Protect, 0, 1).Accepted && s.Tactics == 0, "护盾保护按正常规则消耗唯一战术");
-        Check(!s.Execute(new BattleCommand { Kind = CommandKind.Aim, Aim = AimKind.Focus }).Accepted, "战术不可超额使用");
+        Check(!Do(s, CommandKind.Aim).Accepted && !Do(s, CommandKind.Protect).Accepted, "旧战术指令拒绝");
+        float clock = s.BattleTime;
+        s.Execute(new BattleCommand { Kind = CommandKind.Pause, Flag = true }); s.Advance(1);
+        Check(s.BattleTime == clock, "暂停停止战斗与统计");
+        s.Execute(new BattleCommand { Kind = CommandKind.Pause, Flag = false });
+        for (int tick = 0; tick < 1000 && s.Phase == RunPhase.Fighting; tick++) s.Advance(.05f);
+        Check(s.DamageStatistics.Sum(r => r.TotalDamage) > 0, "实际扣血累计到英雄统计");
+        Check(Math.Abs(s.DamageStatistics.Sum(r => r.WaveDamage) - s.EventsAfter(0).Where(e => (e.Type == "hit" || e.Type == "skill_tick") && s.Troops.Any(t => t.Id == e.Source)).Sum(e => e.Amount)) < .01f, "伤害统计等于普通攻击与技能实际扣血事件");
+        var statisticsSave = s.Save(); var statisticsRestore = BattleSession.Restore(statisticsSave);
+        Check(statisticsRestore.DamageStatistics.Sum(r => r.TotalDamage) == s.DamageStatistics.Sum(r => r.TotalDamage), "统计保存恢复一致");
+        if (s.Phase == RunPhase.WaveResult)
+        {
+            Do(s, CommandKind.NextWave); Do(s, CommandKind.StartWave);
+            Check(s.DamageStatistics.All(r => r.WaveDamage == 0) && s.DamageStatistics.Sum(r => r.TotalDamage) > 0, "新波清空本波并保留整局统计");
+        }
+        Do(s, CommandKind.NewRun);
+        Check(s.DamageStatistics.Count == 0, "重开清空统计");
 
         var rndA = new BattleSession(900); var rndB = new BattleSession(900);
         for (int i = 0; i < 3; i++) { Do(rndA, CommandKind.Spin); Do(rndB, CommandKind.Spin); }
@@ -92,9 +105,12 @@ static class Tests
         mergeSave.NextId = 3;
         mergeSave.SpinCount = 0;
         var mergeSession = BattleSession.Restore(mergeSave);
+        var mergeHero = BattleTables.Current.Recruit(TroopKind.Shield, new BattleRandom(unchecked(55 ^ 0x2c9277b5)));
+        foreach (var staged in mergeSession.Troops) staged.HeroId = mergeHero;
         Do(mergeSession, CommandKind.Spin);
-        Check(mergeSession.Troops.Count == 1 && mergeSession.Troops[0].Star == 2 && mergeSession.EventsAfter(0).Any(e => e.Type == "merged"), "凑齐3同职业自动合成2星并发出merged事件");
+        Check(mergeSession.Troops.Count == 1 && mergeSession.Troops[0].Star == 2 && mergeSession.EventsAfter(0).Any(e => e.Type == "merged"), "凑齐3名同名英雄自动合成2星并发出merged事件");
         Check(Do(mergeSession, CommandKind.StartWave).Accepted, "升2星无需强制选分支即可直接开战");
+        HeroRules(save);
 
         var pitySave = new BattleSession(77).Save(); pitySave.Misses = 2; pitySave.SpinCount = 3;
         var pity = BattleSession.Restore(pitySave); Do(pity, CommandKind.Spin);
@@ -109,7 +125,7 @@ static class Tests
         frameA.Advance(1); for (int i = 0; i < 100; i++) frameB.Advance(.01f);
         Check(Snapshot(frameA) == Snapshot(frameB), "不同帧间隔按相同固定步数推进(RVO2确定性)");
 
-        var bossSave = BattleSession.Restore(save).Save(); bossSave.Wave = 6; bossSave.Troops[0].Kind = TroopKind.Frost;
+        var bossSave = BattleSession.Restore(save).Save(); bossSave.Wave = 5; bossSave.Troops[0].HeroId = "Skeleton_Mage";
         var boss = BattleSession.Restore(bossSave); Do(boss, CommandKind.StartWave);
         for (int i = 0; i < 120 && !boss.EventsAfter(0).Any(e => e.Type == "boss_control_resisted"); i++) boss.Advance(.1f);
         Check(boss.EventsAfter(0).Any(e => e.Type == "boss_control_resisted") && boss.Enemies.All(e => e.FrozenUntil == 0), "首领免疫冻结并转为减速");
@@ -142,7 +158,7 @@ static class Tests
         for (int i = 0; i < 200 && firstCast == null; i++)
         {
             skillTest.Advance(.05f);
-            firstCast = skillTest.EventsAfter(0).FirstOrDefault(e => e.Type == "cast_started" && e.SkillInstanceId > 0);
+            firstCast = skillTest.EventsAfter(0).FirstOrDefault(e => e.Type == "cast_started" && e.SkillInstanceId > 0 && e.Trigger == "BasicAttack");
         }
         Check(firstCast != null, "开战后技能通过 cast_started 进入规则层实例调度");
         int castId = firstCast.SkillInstanceId;
@@ -204,16 +220,69 @@ static class Tests
             }
             Check(run.Phase == RunPhase.Won || run.Phase == RunPhase.Lost, "正常操作远征可结束 seed=" + seed);
             Check(run.MaxDeployed == 9, "通关波次后人口经验自然升级至上限9 seed=" + seed);
-            results.Add(new { seed, phase = run.Phase.ToString(), wave = run.Wave, wave1Duration = Math.Round(wave1Duration, 2), march = run.MarchDistance, maxDeployed = run.MaxDeployed, alive = run.AliveTroopCount });
-            Check(run.Phase == RunPhase.Won, "从零单位招募起手正常布阵可打通12波 seed=" + seed);
+            results.Add(new { seed, phase = run.Phase.ToString(), wave = run.Wave, wave1Duration = Math.Round(wave1Duration, 2), march = run.MarchDistance, maxDeployed = run.MaxDeployed, alive = run.AliveTroopCount, threeStars = run.Troops.Count(t => t.Star == 3) });
+            Check(run.Phase == RunPhase.Won, "从零单位招募起手正常布阵可打通10波 seed=" + seed);
         }
 
         var output = new { checks = passed, campaigns = results, note = "纯规则测试，不是Unity、触屏或手机验证；自动策略不是平衡结论" };
         Directory.CreateDirectory("Reports/Combat");
         string reportPath = args.Contains("--movement-report") ? "Reports/Combat/domain-tests-movement.json" : "Reports/Combat/domain-tests.json";
+        if (args.Contains("--hero-rework"))
+        {
+            Directory.CreateDirectory("Reports/Combat/hero-rework-20261127");
+            reportPath = "Reports/Combat/hero-rework-20261127/domain-" + DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() + ".json";
+        }
         string reportJson = JsonSerializer.Serialize(output, new JsonSerializerOptions { WriteIndented = true });
         try { File.WriteAllText(reportPath, reportJson); }
-        catch (IOException) { File.WriteAllText(reportPath.Replace(".json", "-latest.json"), reportJson); }
+        catch (IOException) { File.WriteAllText(reportPath.Replace(".json", "-" + DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() + ".json"), reportJson); }
         Console.WriteLine(JsonSerializer.Serialize(output));
+    }
+
+    static void HeroRules(RunSave checkpoint)
+    {
+        var stage = BattleTables.Current;
+        Check(stage.TotalWaves == 10 && Enumerable.Range(1, 10).Where(stage.IsBoss).SequenceEqual(new[] { 5, 10 }) &&
+            stage.Schedule(5, 173).Count == 1 && stage.Schedule(10, 173).Count == 1, "两场 Boss 波各只有一只石甲巨像");
+        var status = new UnitStatusControl();
+        status.Apply(UnitStatus.Frozen, 1, 1f);
+        status.Apply(UnitStatus.Frozen, 2, 2f);
+        status.Apply(UnitStatus.Silenced, 3, 3f);
+        status.Tick(1.2f);
+        Check(!status.CanJump(1.2f), "一个冻结来源到期时保留其他冻结");
+        status.Tick(2.2f);
+        Check(status.CanAttack(2.2f) && !status.CanCast(2.2f), "沉默只阻止施法，控制可独立结束");
+
+        var save = BattleSession.Restore(checkpoint).Save();
+        save.Troops[0].HeroId = "Knight";
+        save.Troops[1].HeroId = "Knight";
+        save.Troops[2].HeroId = "Skeleton_Warrior";
+        var synergy = BattleSession.Restore(save);
+        Check(!synergy.CanMerge(synergy.Troops[0]) && synergy.Buffs.Active.Count == 1 &&
+            synergy.Buffs.Active[0].Job == UnitJob.Warrior, "同职业不同名不能合成，重复英雄不重复计羁绊");
+
+        save.Troops.RemoveRange(1, save.Troops.Count - 1);
+        save.Troops[0].Star = 3;
+        var match = BattleSession.Restore(save);
+        Check(Do(match, CommandKind.StartWave).Accepted, "三星测试正常进入战斗");
+        var hero = match.Troops[0];
+        var monster = match.Enemies[0];
+        hero.X = hero.Z = monster.Z = 0f;
+        monster.X = 1.08f;
+        monster.Hp = 9999f;
+        monster.Cooldown = 0f;
+        hero.Cooldown = 0f;
+        match.Advance(.05f);
+        match.Advance(.3f);
+        Check(hero.Mana > 0f && monster.Mana > 0f, "敌我普攻命中和受到伤害均回蓝");
+        monster.Cooldown = 100f;
+        match.Advance(.5f);
+        hero.Mana = BattleCombatant.MaxMana;
+        match.Advance(.05f);
+        Check(hero.Mana == 0f && match.SkillInstances.Last(c => c.Source == hero.Id).Skill.Id == "Rally", "满蓝优先释放技能三并消耗100法力");
+        hero.Cooldown = 100f;
+        match.Advance(.6f);
+        hero.Mana = BattleCombatant.MaxMana;
+        match.Advance(.05f);
+        Check(hero.Mana == 0f && match.SkillInstances.Last(c => c.Source == hero.Id).Skill.Id == "ShieldStrike", "技能三冷却时跳过被动技能二并释放技能一");
     }
 }

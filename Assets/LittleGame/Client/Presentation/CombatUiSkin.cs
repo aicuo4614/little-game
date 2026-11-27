@@ -16,6 +16,18 @@ namespace LittleGame.Client
             if (!sprites.TryGetValue(name, out var sprite) || sprite == null) sprites[name] = sprite = Resources.Load<Sprite>("CombatUI/" + name);
             return sprite;
         }
+        private static readonly Dictionary<string, Sprite> portraits = new Dictionary<string, Sprite>();
+        public static Sprite Portrait(string heroId)
+        {
+            if (!portraits.TryGetValue(heroId, out var sprite) || sprite == null)
+                portraits[heroId] = sprite = MVC.ResourceService.LoadAsset<Sprite>("Portrait/" + heroId, ResourcePackageName.UnitPackage);
+            return sprite;
+        }
+        public static void ReleasePortraits()
+        {
+            foreach (string id in portraits.Keys) MVC.ResourceService.Release("Portrait/" + id, ResourcePackageName.UnitPackage);
+            portraits.Clear();
+        }
         public static Image Decorate(RectTransform rect, string sprite, Color? tint = null, bool sliced = true, float density = 2)
         {
             var image = rect.GetComponent<Image>() ?? rect.gameObject.AddComponent<Image>();
@@ -23,7 +35,7 @@ namespace LittleGame.Client
             image.type = sliced ? Image.Type.Sliced : Image.Type.Simple; image.pixelsPerUnitMultiplier = density;
             image.preserveAspect = !sliced; return image;
         }
-        public static string TroopIcon(int kind) => new[] { "Shield", "Archer", "Storm", "Frost" }[kind];
+        public static string TroopIcon(int kind) => new[] { "Shield", "Archer", "Storm", "Assassin" }[kind];
         public static object Snapshot() => new { theme = "fantasy-rpg-indigo-gold", loadedSprites = sprites.Count, missingSprites = MissingSprites() };
         private static int MissingSprites() { int count = 0; foreach (var sprite in sprites.Values) if (sprite == null) count++; return count; }
     }

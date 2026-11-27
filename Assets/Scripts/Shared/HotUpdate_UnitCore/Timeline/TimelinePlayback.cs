@@ -280,7 +280,8 @@ public sealed class TimelinePlayback
                     context.DespawnEffect,
                     actor,
                     context.EffectLight,
-                    clip is TimelineClipPlayHitConfig ? (hitSource ?? actor) : actor));
+                    clip is TimelineClipPlayHitConfig ? (hitSource ?? actor) : actor,
+                    context.IncrementalEffects));
             }
 
             animations.Add(clip, players);
@@ -307,7 +308,7 @@ public sealed class TimelinePlayback
                 var go = context.SpawnEffect(clip.EffectPath);
                 if (go != null)
                 {
-                    instances.Add(new TimelineEffectPlayback(go, context.EffectLight?.Invoke(clip.EffectPath)));
+                    instances.Add(new TimelineEffectPlayback(go, context.EffectLight?.Invoke(clip.EffectPath), context.IncrementalEffects));
                 }
             }
         }
@@ -356,7 +357,7 @@ public sealed class TimelinePlayback
                     var go = context.SpawnEffect(clip.Path);
                     if (go != null)
                     {
-                        instances.Add(new TimelineBulletPlayback(clip, sources[0], targets[i], go, context.EffectLight?.Invoke(clip.Path)));
+                        instances.Add(new TimelineBulletPlayback(clip, sources[0], targets[i], go, context.EffectLight?.Invoke(clip.Path), context.IncrementalEffects));
                     }
                 }
             }

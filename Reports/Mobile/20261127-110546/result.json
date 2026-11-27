@@ -1,0 +1,14 @@
+{
+  "packageId": "com.littlegame.teardown.dev",
+  "apk": "E:\\Project\\little-game\\Builds\\Android\\little-game.apk",
+  "pid": "10314",
+  "foreground": [
+    "    mResumedActivity: ActivityRecord{227099fd0 u0 com.littlegame.teardown.dev/com.unity3d.player.UnityPlayerActivity t25}"
+  ],
+  "launched": true,
+  "runtimeErrors": [
+    "03-28 17:58:34.265 10314 10353 E Unity   : A scripted object (probably RocoCharacterOutlineFeature?) has a different serialization layout when loading. (Read 48 bytes but expected 64 bytes)",
+    "03-28 17:58:34.265 10314 10353 E Unity   : Did you #ifdef UNITY_EDITOR a section of your serialized properties in any of your scripts?"
+  ],
+  "screenshot": "E:\\Project\\little-game\\Reports\\Mobile\\20261127-110546\\screen.png"
+}

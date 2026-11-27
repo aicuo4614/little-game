@@ -14,7 +14,7 @@ namespace LittleGame.Client.Editor
     /// 1. 使用 Generic 骨架导入（彻底淘汰 Legacy Animation）；
     /// 2. 为每个角色生成带 Idle / Walk / Attack / Hit / Death / Slam 状态的 AnimatorController；
     /// 3. 挂接 HotUpdate_UnitCore 的 UnitMono 与标准挂点（Root / BodyCenter / Head / LeftHand / RightHand / Spine / Custom1）；
-    /// 4. 同步产出至 Assets/Package_Unit/Low/Base/{Role}/{Role}.prefab 与 Resources/UnitModels/{Role}.prefab。
+    /// 4. 模型与外观统一产出至 Package_Unit，避免主包资源引用热更脚本。
     /// </summary>
     public static class UnitAssetBuilder
     {
@@ -23,7 +23,85 @@ namespace LittleGame.Client.Editor
         public const string PackageUnitRoot = "Assets/Package_Unit/Low/Base";
 
         [MenuItem("Little Game/Combat/Build Unit Assets")]
-        public static void Build()
+        public static void Build() => Build(enemyMonstersOnly: false);
+
+        [MenuItem("Little Game/Combat/Build Enemy Monster Assets")]
+        public static void BuildEnemyMonsters() => Build(enemyMonstersOnly: true);
+
+        [MenuItem("Little Game/Combat/Build KayKit Heroes")]
+        public static void BuildKayKitHeroes()
+        {
+            if (EditorApplication.isPlayingOrWillChangePlaymode) throw new InvalidOperationException("先退出 Play");
+            var rows = new System.Text.StringBuilder();
+            foreach (var folder in new[] { Generated + "/Materials", Generated + "/Clips", Generated + "/Controllers", "Assets/Package_Unit/Appearance/Base" })
+                Directory.CreateDirectory(folder);
+            BuildKayKitSet(rows);
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
+            Directory.CreateDirectory("Reports/Art");
+            File.WriteAllText("Reports/Art/kaykit-hero-build.txt", rows.ToString());
+        }
+
+        private static void BuildKayKitSet(System.Text.StringBuilder rows)
+        {
+            BuildKayKit("Knight", "Melee_1H_Attack_Slice_Horizontal", false, rows);
+            BuildKayKit("Ranger", "Ranged_Bow_Release", true, rows);
+            BuildKayKit("Mage", "Ranged_Magic_Shoot", true, rows);
+            BuildKayKit("Rogue", "Melee_1H_Attack_Slice_Diagonal", false, rows);
+            BuildKayKit("Skeleton_Warrior", "Melee_1H_Attack_Slice_Horizontal", false, rows);
+            BuildKayKit("Skeleton_Minion", "Ranged_2H_Shoot", true, rows);
+            BuildKayKit("Skeleton_Mage", "Ranged_Magic_Shoot", true, rows);
+            BuildKayKit("Skeleton_Rogue", "Melee_1H_Attack_Slice_Diagonal", false, rows);
+        }
+
+        private static void BuildKayKit(string role, string attack, bool ranged, System.Text.StringBuilder report)
+        {
+            bool skeleton = role.StartsWith("Skeleton_", StringComparison.Ordinal);
+            string folder = Source + "/KayKit/" + (skeleton ? "Skeletons" : "Adventurers");
+            string modelPath = folder + "/" + role + ".fbx";
+            var prefab = AssetDatabase.LoadAssetAtPath<GameObject>(modelPath);
+            if (prefab == null) throw new InvalidOperationException("缺 KayKit 模型：" + modelPath);
+            var go = UnityEngine.Object.Instantiate(prefab);
+            go.name = role;
+            try
+            {
+                var avatar = AssetDatabase.LoadAllAssetsAtPath(modelPath).OfType<Avatar>().FirstOrDefault();
+                string texture = skeleton ? "skeleton_texture.png" : role.ToLowerInvariant() + "_texture.png";
+                var material = ToonMaterial(role, AssetDatabase.LoadAssetAtPath<Texture2D>(folder + "/" + texture), Color.white);
+                foreach (var renderer in go.GetComponentsInChildren<Renderer>(true))
+                    renderer.sharedMaterials = Enumerable.Repeat(material, renderer.sharedMaterials.Length).ToArray();
+
+                if (role == "Skeleton_Minion")
+                {
+                    var hand = go.GetComponentsInChildren<Transform>(true).FirstOrDefault(t =>
+                        t.name.Equals("hand_r", StringComparison.OrdinalIgnoreCase) ||
+                        t.name.IndexOf("right_hand", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                        t.name.IndexOf("hand.R", StringComparison.OrdinalIgnoreCase) >= 0);
+                    if (hand == null) throw new InvalidOperationException("骷髅小兵缺右手武器挂点");
+                    var crossbow = UnityEngine.Object.Instantiate(AssetDatabase.LoadAssetAtPath<GameObject>(folder + "/Skeleton_Crossbow.fbx"), hand);
+                    crossbow.name = "EquippedCrossbow";
+                    crossbow.transform.localPosition = Vector3.zero;
+                    crossbow.transform.localRotation = Quaternion.identity;
+                    foreach (var renderer in crossbow.GetComponentsInChildren<Renderer>(true))
+                        renderer.sharedMaterials = Enumerable.Repeat(material, renderer.sharedMaterials.Length).ToArray();
+                    report.AppendLine(role + " weapon=" + hand.name + "/EquippedCrossbow");
+                }
+
+                var profile = PrepareProfile(role, go, modelPath, 1.18f);
+                string prefix = "KayKit/Animation/Rig_Medium_";
+                string action = prefix + (ranged ? "CombatRanged" : "CombatMelee") + ".fbx";
+                string general = prefix + "General.fbx";
+                AssignClips(profile, go, new[] { general, prefix + "MovementBasic.fbx", action, general, general, action }, report,
+                    new[] { "Idle_A", "Running_A", attack, "Hit_A", "Death_A", attack });
+                Finish(profile, go, avatar, report);
+            }
+            finally
+            {
+                if (go != null) UnityEngine.Object.DestroyImmediate(go);
+            }
+        }
+
+        private static void Build(bool enemyMonstersOnly)
         {
             if (EditorApplication.isPlayingOrWillChangePlaymode) throw new InvalidOperationException("先退出Play");
 
@@ -32,8 +110,7 @@ namespace LittleGame.Client.Editor
                 Generated + "/Materials",
                 Generated + "/Clips",
                 Generated + "/Controllers",
-                "Assets/LittleGame/Resources/UnitAppearances",
-                "Assets/LittleGame/Resources/UnitModels",
+                "Assets/Package_Unit/Appearance/Base",
                 PackageUnitRoot
             })
             {
@@ -48,17 +125,17 @@ namespace LittleGame.Client.Editor
             if (shader == null || !shader.isSupported) throw new InvalidOperationException("Demo卡通Shader尚未就绪");
 
             var rows = new System.Text.StringBuilder();
-            BuildHero("Shield", 19, "SwordAndShield", new Color(.4f, .7f, 1), rows);
-            BuildHero("Archer", 11, "BowAndArrow", new Color(.08f, .28f, .12f), rows);
-            BuildHero("Storm", 7, "MagicWand", new Color(.2f, .07f, .35f), rows);
-            BuildHero("Frost", 7, "MagicWand", new Color(.4f, .68f, .8f), rows);
-            BuildHero("Grunt", 2, "SwordAndShield", new Color(.8f, .35f, .24f), rows);
-            BuildHero("Armored", 20, "SwordAndShield", new Color(.7f, .24f, .2f), rows);
-            BuildHero("Healer", 14, "MagicWand", new Color(.9f, .4f, .3f), rows);
-            BuildCreature("Runner", "Wolf/Wolf.FBX", "Wolf/Wolf.psd", .75f,
-                new[] { "Wolf/Wolf@Idle.FBX", "Wolf/Wolf@Run Forward In Place.FBX", "Wolf/Wolf@Bite Attack.FBX", "Wolf/Wolf@Take Damage.FBX", "Wolf/Wolf@Die.FBX", "Wolf/Wolf@Bite Attack.FBX" }, rows);
-            BuildCreature("Giant", "Golem/Attack01_Golem_Anim.fbx", "Golem/PolyartDefaultTex.png", 2.45f,
-                new[] { "Golem/IdleBattle_Golem_Anim.fbx", "Golem/Walk_Golem_Anim.fbx", "Golem/Attack01_Golem_Anim.fbx", "Golem/GetHit_Golem_Anim.fbx", "Golem/Die_Golem_Anim.fbx", "Golem/Attack02_Golem_Anim.fbx" }, rows);
+            BuildEnemyMonsters(rows);
+            if (!enemyMonstersOnly)
+            {
+                BuildKayKitSet(rows);
+                BuildHero("Shield", 19, "SwordAndShield", new Color(.4f, .7f, 1), rows);
+                BuildHero("Archer", 11, "BowAndArrow", new Color(.08f, .28f, .12f), rows);
+                BuildHero("Storm", 7, "MagicWand", new Color(.2f, .07f, .35f), rows);
+                BuildHero("Frost", 7, "MagicWand", new Color(.4f, .68f, .8f), rows);
+                BuildCreature("Giant", "Golem/Attack01_Golem_Anim.fbx", "Golem/PolyartDefaultTex.png", 2.45f,
+                    new[] { "Golem/IdleBattle_Golem_Anim.fbx", "Golem/Walk_Golem_Anim.fbx", "Golem/Attack01_Golem_Anim.fbx", "Golem/GetHit_Golem_Anim.fbx", "Golem/Die_Golem_Anim.fbx", "Golem/Attack02_Golem_Anim.fbx" }, rows);
+            }
 
             var renderer = AssetDatabase.LoadAssetAtPath<UniversalRendererData>("Assets/LittleGame/Rendering/MobileRenderer.asset");
             if (renderer != null)
@@ -85,15 +162,34 @@ namespace LittleGame.Client.Editor
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
             Directory.CreateDirectory("Reports/Art");
-            File.WriteAllText("Reports/Art/unit-build-validation.txt", rows.ToString());
+            string report = enemyMonstersOnly ? "enemy-monster-build-validation.txt" : "unit-build-validation.txt";
+            File.WriteAllText("Reports/Art/" + report, rows.ToString());
         }
+
+        private static void BuildEnemyMonsters(System.Text.StringBuilder rows)
+        {
+            BuildCuteMonster("Grunt", "CuteMonsters/Werewolf/Werewolf", 1.20f, "Run Forward In Place", "Right Slash Attack", rows);
+            BuildCuteMonster("Runner", "Wolf/Wolf", 1.00f, "Run Forward In Place", "Bite Attack", rows);
+            BuildCuteMonster("Armored", "CuteMonsters/Hermit King/Hermit King", 1.25f, "Walk Forward In Place", "Slash Attack", rows);
+            BuildCuteMonster("Healer", "CuteMonsters/Sunflower Fairy/Sunflower Fairy", 1.10f, "Fly Forward In Place", "Cast Spell 01", rows);
+        }
+
+        private static void BuildCuteMonster(string role, string source, float height, string move, string attack, System.Text.StringBuilder rows)
+        {
+            string[] actions = { "Idle", move, attack, "Take Damage", "Die", attack };
+            BuildCreature(role, source + ".FBX", source + ".psd", height,
+                actions.Select(action => source + "@" + action + ".FBX").ToArray(), rows);
+        }
+
+        internal static bool HasUnitAnimations(string path) => path.Contains("/Animation/")
+            || path.Contains("/Wolf/") || path.Contains("/Golem/") || path.Contains("/CuteMonsters/");
 
         private static void ReimportUnitSourcesAsGeneric()
         {
             if (!Directory.Exists(Source)) return;
             var fbxs = Directory.GetFiles(Source, "*.fbx", SearchOption.AllDirectories)
                 .Select(p => p.Replace('\\', '/'))
-                .Where(p => p.Contains("/Animation/") || p.Contains("/Wolf/") || p.Contains("/Golem/"))
+                .Where(HasUnitAnimations)
                 .ToArray();
             var dirty = new List<string>();
             for (int i = 0; i < fbxs.Length; i++)
@@ -101,7 +197,7 @@ namespace LittleGame.Client.Editor
                 var importer = AssetImporter.GetAtPath(fbxs[i]) as ModelImporter;
                 if (importer == null) continue;
                 bool needImport = importer.animationType != ModelImporterAnimationType.Generic
-                    || importer.avatarSetup == ModelImporterAvatarSetup.NoAvatar;
+                    || importer.avatarSetup == ModelImporterAvatarSetup.NoAvatar || !importer.importAnimation;
                 if (needImport)
                 {
                     importer.animationType = ModelImporterAnimationType.Generic;
@@ -219,7 +315,7 @@ namespace LittleGame.Client.Editor
                 if (t != null && t != go.transform && !t.gameObject.activeSelf)
                     UnityEngine.Object.DestroyImmediate(t.gameObject);
 
-            string path = "Assets/LittleGame/Resources/UnitAppearances/" + role + ".asset";
+            string path = "Assets/Package_Unit/Appearance/Base/" + role + ".asset";
             var profile = AssetDatabase.LoadAssetAtPath<UnitAppearance>(path);
             if (profile == null)
             {
@@ -232,7 +328,7 @@ namespace LittleGame.Client.Editor
             return profile;
         }
 
-        private static void AssignClips(UnitAppearance profile, GameObject go, string[] files, System.Text.StringBuilder report)
+        private static void AssignClips(UnitAppearance profile, GameObject go, string[] files, System.Text.StringBuilder report, string[] clipNames = null)
         {
             var clips = new AnimationClip[files.Length];
             string[] labels = { "Idle", "Walk", "Attack", "Hit", "Death", "Slam" };
@@ -242,8 +338,9 @@ namespace LittleGame.Client.Editor
             {
                 var sourceClip = AssetDatabase.LoadAllAssetsAtPath(Source + "/" + files[i])
                     .OfType<AnimationClip>()
-                    .FirstOrDefault(c => !c.name.StartsWith("__preview", StringComparison.Ordinal));
-                if (sourceClip == null) throw new InvalidOperationException("缺动作 " + files[i]);
+                    .FirstOrDefault(c => !c.name.StartsWith("__preview", StringComparison.Ordinal) &&
+                        (clipNames == null || c.name == clipNames[i]));
+                if (sourceClip == null) throw new InvalidOperationException("缺动作 " + files[i] + (clipNames == null ? "" : "/" + clipNames[i]));
 
                 var clip = UnityEngine.Object.Instantiate(sourceClip);
                 clip.legacy = false;
@@ -356,13 +453,10 @@ namespace LittleGame.Client.Editor
             int triangles = renderers.Sum(r => TriangleCount(r is SkinnedMeshRenderer skin ? skin.sharedMesh : r.GetComponent<MeshFilter>()?.sharedMesh));
             report.AppendLine($"{profile.name} animator=true controller={controller.name} avatar={(avatar != null ? avatar.name : "none")} nodes={unitMono.UnitNodeDatas.Count} renderers={renderers.Length} triangles={triangles}");
 
-            string resPrefabPath = "Assets/LittleGame/Resources/UnitModels/" + profile.name + ".prefab";
-            profile.Model = PrefabUtility.SaveAsPrefabAsset(go, resPrefabPath);
-
-            // 同步保存一份到 Demo 约定的 Package_Unit 路径，供技能编辑器与 YooAsset UnitPackage 统一读取。
+            // 技能编辑器与实战使用同一份预制体，禁止生成 Resources 镜像。
             string pkgDir = PackageUnitRoot + "/" + profile.name;
             Directory.CreateDirectory(pkgDir);
-            PrefabUtility.SaveAsPrefabAsset(go, pkgDir + "/" + profile.name + ".prefab");
+            profile.Model = PrefabUtility.SaveAsPrefabAsset(go, pkgDir + "/" + profile.name + ".prefab");
 
             EditorUtility.SetDirty(profile);
             UnityEngine.Object.DestroyImmediate(go);
@@ -419,7 +513,7 @@ namespace LittleGame.Client.Editor
             var model = (ModelImporter)assetImporter;
             model.animationType = ModelImporterAnimationType.Generic;
             model.avatarSetup = ModelImporterAvatarSetup.CreateFromThisModel;
-            model.importAnimation = assetPath.Contains("/Animation/") || assetPath.Contains("/Wolf/") || assetPath.Contains("/Golem/");
+            model.importAnimation = UnitAssetBuilder.HasUnitAnimations(assetPath);
             model.materialImportMode = ModelImporterMaterialImportMode.None;
             model.importCameras = model.importLights = false;
             model.isReadable = false;

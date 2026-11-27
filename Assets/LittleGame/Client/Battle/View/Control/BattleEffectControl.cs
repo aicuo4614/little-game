@@ -77,6 +77,12 @@ namespace LittleGame.Client.Battle
             UnityEngine.Object.Destroy(instance);
         }
 
+        public void Prewarm(string logicalName)
+        {
+            LoadEffectPrefab(logicalName);
+            Owner.PrefabPool.Prewarm("Effect/Low/" + logicalName, ResourcePackageName.EffectPackage);
+        }
+
         public void SpawnFloatingText(Vector3 worldPos, string text, Color color, float scale = 1f, float duration = 0.6f)
         {
             floatingText?.Spawn(worldPos, text, color, scale, duration);
@@ -155,23 +161,7 @@ namespace LittleGame.Client.Battle
             if (string.IsNullOrEmpty(logicalName)) return null;
             if (effectPrefabCache.TryGetValue(logicalName, out var cached)) return cached;
 
-            GameObject prefab = null;
-#if UNITY_EDITOR
-            var candidates = new[]
-            {
-                "Assets/Package_Effect/Low/Base/" + logicalName + ".prefab",
-                "Assets/Package_Effect/Low/OnDemand/" + logicalName + ".prefab",
-                "Assets/LittleGame/Resources/SkillEffects/" + logicalName + ".prefab",
-            };
-            for (int i = 0; i < candidates.Length && prefab == null; i++)
-            {
-                prefab = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>(candidates[i]);
-            }
-#endif
-            if (prefab == null)
-            {
-                prefab = Resources.Load<GameObject>("SkillEffects/" + logicalName);
-            }
+            var prefab = MVC.ResourceService.LoadAsset<GameObject>("Effect/Low/" + logicalName, ResourcePackageName.EffectPackage);
 
             effectPrefabCache[logicalName] = prefab;
             return prefab;
@@ -210,6 +200,8 @@ namespace LittleGame.Client.Battle
         public override void ReleaseResources()
         {
             ClearTransient();
+            foreach (var entry in effectPrefabCache)
+                if (entry.Value != null) MVC.ResourceService.Release("Effect/Low/" + entry.Key, ResourcePackageName.EffectPackage);
             instanceToPrefab.Clear();
             effectPrefabCache.Clear();
             if (floatingText != null) UnityEngine.Object.Destroy(floatingText.gameObject);

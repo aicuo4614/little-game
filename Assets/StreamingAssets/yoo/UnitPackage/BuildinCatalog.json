@@ -1,139 +1,303 @@
 {
     "FileVersion": "1.0.0",
     "PackageName": "UnitPackage",
-    "PackageVersion": "2026-11-25-1254",
+    "PackageVersion": "2026-11-27-956",
     "Wrappers": [
         {
-            "BundleGUID": "e015d2cf409241cf0bde71d6e88b1411",
-            "FileName": "unitpackage_assets_package_unit_low_base_archer_archer_e015d2cf409241cf0bde71d6e88b1411.bundle"
+            "BundleGUID": "3eab4ac082bc1a487eefbf09026fd876",
+            "FileName": "unitpackage_assets_package_unit_appearance_base_archer_3eab4ac082bc1a487eefbf09026fd876.bundle"
         },
         {
-            "BundleGUID": "2ace62a432560d40e0b07e32580db22b",
-            "FileName": "unitpackage_assets_package_unit_low_base_armored_armored_2ace62a432560d40e0b07e32580db22b.bundle"
+            "BundleGUID": "bbd84ed9ca5580dbef7f4a14ed633008",
+            "FileName": "unitpackage_assets_package_unit_appearance_base_armored_bbd84ed9ca5580dbef7f4a14ed633008.bundle"
         },
         {
-            "BundleGUID": "ffc7b3b09fd4b605ac09e16c608b3456",
-            "FileName": "unitpackage_assets_package_unit_low_base_frost_frost_ffc7b3b09fd4b605ac09e16c608b3456.bundle"
+            "BundleGUID": "613b718c2dd3c2af35e8de30c852fdfa",
+            "FileName": "unitpackage_assets_package_unit_appearance_base_frost_613b718c2dd3c2af35e8de30c852fdfa.bundle"
         },
         {
-            "BundleGUID": "2a79468d2fc1ca7320d3fa6c5fcf1e94",
-            "FileName": "unitpackage_assets_package_unit_low_base_giant_giant_2a79468d2fc1ca7320d3fa6c5fcf1e94.bundle"
+            "BundleGUID": "4d6a40290fdcef6264ba0403a7d85bd5",
+            "FileName": "unitpackage_assets_package_unit_appearance_base_giant_4d6a40290fdcef6264ba0403a7d85bd5.bundle"
         },
         {
-            "BundleGUID": "5c065835bb2528d081ffc3d18b7e34bc",
-            "FileName": "unitpackage_assets_package_unit_low_base_grunt_grunt_5c065835bb2528d081ffc3d18b7e34bc.bundle"
+            "BundleGUID": "383cbc01ec8d904b6d2bb2aeba0fec2b",
+            "FileName": "unitpackage_assets_package_unit_appearance_base_grunt_383cbc01ec8d904b6d2bb2aeba0fec2b.bundle"
         },
         {
-            "BundleGUID": "616d9583c29d341c0610659c3d40699a",
-            "FileName": "unitpackage_assets_package_unit_low_base_healer_healer_616d9583c29d341c0610659c3d40699a.bundle"
+            "BundleGUID": "b9ca5dcc89bbf2d56980efddb4bc1b95",
+            "FileName": "unitpackage_assets_package_unit_appearance_base_healer_b9ca5dcc89bbf2d56980efddb4bc1b95.bundle"
         },
         {
-            "BundleGUID": "9cb8feca418c21923c650b0a35d62ab5",
-            "FileName": "unitpackage_assets_package_unit_low_base_runner_runner_9cb8feca418c21923c650b0a35d62ab5.bundle"
+            "BundleGUID": "18c3800b578a1d01ae9238f75176fc2e",
+            "FileName": "unitpackage_assets_package_unit_appearance_base_knight_18c3800b578a1d01ae9238f75176fc2e.bundle"
         },
         {
-            "BundleGUID": "575dfc6eb2e677b138bff953c78de00b",
-            "FileName": "unitpackage_assets_package_unit_low_base_shield_shield_575dfc6eb2e677b138bff953c78de00b.bundle"
+            "BundleGUID": "1508d4e7f3b80480469eab95fbf898b1",
+            "FileName": "unitpackage_assets_package_unit_appearance_base_mage_1508d4e7f3b80480469eab95fbf898b1.bundle"
         },
         {
-            "BundleGUID": "ad5f045de38caad0bff7df3f6078b2f7",
-            "FileName": "unitpackage_assets_package_unit_low_base_storm_storm_ad5f045de38caad0bff7df3f6078b2f7.bundle"
+            "BundleGUID": "b46434993bc50ee01300159abd897623",
+            "FileName": "unitpackage_assets_package_unit_appearance_base_ranger_b46434993bc50ee01300159abd897623.bundle"
         },
         {
-            "BundleGUID": "c1750c33c6b9add316f9181b596da56c",
-            "FileName": "unitpackage_assets_package_unit_skill_base_unitskillbindings_c1750c33c6b9add316f9181b596da56c.bundle"
+            "BundleGUID": "dd5f16e53e86350fc71d1bbcbfc443b5",
+            "FileName": "unitpackage_assets_package_unit_appearance_base_rogue_dd5f16e53e86350fc71d1bbcbfc443b5.bundle"
         },
         {
-            "BundleGUID": "211bc95a0d9f00a14ff5afc65b163038",
-            "FileName": "unitpackage_assets_package_unit_timeline_base_archer_basic_211bc95a0d9f00a14ff5afc65b163038.bundle"
+            "BundleGUID": "96b29a22b7f153faab0e581b0a361921",
+            "FileName": "unitpackage_assets_package_unit_appearance_base_runner_96b29a22b7f153faab0e581b0a361921.bundle"
         },
         {
-            "BundleGUID": "d62f2cccdf54cb593b32541f7110f355",
-            "FileName": "unitpackage_assets_package_unit_timeline_base_archer_gale_d62f2cccdf54cb593b32541f7110f355.bundle"
+            "BundleGUID": "489f0decb28a28871a17cf02036e9f93",
+            "FileName": "unitpackage_assets_package_unit_appearance_base_shield_489f0decb28a28871a17cf02036e9f93.bundle"
         },
         {
-            "BundleGUID": "8597b377508ee3209ccc098af8841a48",
-            "FileName": "unitpackage_assets_package_unit_timeline_base_archer_pierce_8597b377508ee3209ccc098af8841a48.bundle"
+            "BundleGUID": "980dfb45c4a977355a869af5b6ddd4d0",
+            "FileName": "unitpackage_assets_package_unit_appearance_base_skeleton_mage_980dfb45c4a977355a869af5b6ddd4d0.bundle"
         },
         {
-            "BundleGUID": "77083a452153416dbceeda1600eb3c88",
-            "FileName": "unitpackage_assets_package_unit_timeline_base_archer_skill_77083a452153416dbceeda1600eb3c88.bundle"
+            "BundleGUID": "afcd721b7dd38d71c9287ab9f0d03751",
+            "FileName": "unitpackage_assets_package_unit_appearance_base_skeleton_minion_afcd721b7dd38d71c9287ab9f0d03751.bundle"
         },
         {
-            "BundleGUID": "e79a1210c23049cf6f821354fddfc895",
-            "FileName": "unitpackage_assets_package_unit_timeline_base_enemy_melee_basic_e79a1210c23049cf6f821354fddfc895.bundle"
+            "BundleGUID": "d6062fb0cb3cddd824ef8024ec6844d2",
+            "FileName": "unitpackage_assets_package_unit_appearance_base_skeleton_rogue_d6062fb0cb3cddd824ef8024ec6844d2.bundle"
         },
         {
-            "BundleGUID": "abbd85500dedb111e7ad11ba9885eb09",
-            "FileName": "unitpackage_assets_package_unit_timeline_base_frost_basic_abbd85500dedb111e7ad11ba9885eb09.bundle"
+            "BundleGUID": "92b893711ab50896a024c3eefbdc28b1",
+            "FileName": "unitpackage_assets_package_unit_appearance_base_skeleton_warrior_92b893711ab50896a024c3eefbdc28b1.bundle"
         },
         {
-            "BundleGUID": "6d9718be689f384fc5922b9b43fdcc08",
-            "FileName": "unitpackage_assets_package_unit_timeline_base_frost_freeze_6d9718be689f384fc5922b9b43fdcc08.bundle"
+            "BundleGUID": "d927b5f3868469730146b61047bbe2b5",
+            "FileName": "unitpackage_assets_package_unit_appearance_base_storm_d927b5f3868469730146b61047bbe2b5.bundle"
         },
         {
-            "BundleGUID": "a33b71fe62c63433b73abd8548715e8c",
-            "FileName": "unitpackage_assets_package_unit_timeline_base_frost_icearmor_a33b71fe62c63433b73abd8548715e8c.bundle"
+            "BundleGUID": "0249bf691cbd43353bfad3c5a6b8673a",
+            "FileName": "unitpackage_assets_package_unit_low_base_archer_archer_0249bf691cbd43353bfad3c5a6b8673a.bundle"
         },
         {
-            "BundleGUID": "059e71d6b222ff39e9a27d9af55d57b3",
-            "FileName": "unitpackage_assets_package_unit_timeline_base_giant_slam_059e71d6b222ff39e9a27d9af55d57b3.bundle"
+            "BundleGUID": "0a6059e145f522a9452f66976c1eec0c",
+            "FileName": "unitpackage_assets_package_unit_low_base_armored_armored_0a6059e145f522a9452f66976c1eec0c.bundle"
         },
         {
-            "BundleGUID": "00d9ac75576bb5dc32ce506661f15955",
-            "FileName": "unitpackage_assets_package_unit_timeline_base_giant_telegraph_00d9ac75576bb5dc32ce506661f15955.bundle"
+            "BundleGUID": "8d75aaeb2f6c4f328505a30b8d21e766",
+            "FileName": "unitpackage_assets_package_unit_low_base_frost_frost_8d75aaeb2f6c4f328505a30b8d21e766.bundle"
         },
         {
-            "BundleGUID": "e9702fecef6ce313304149a7f72a1b83",
-            "FileName": "unitpackage_assets_package_unit_timeline_base_healer_heal_e9702fecef6ce313304149a7f72a1b83.bundle"
+            "BundleGUID": "93bec2f93cd894309d4849270ccc0577",
+            "FileName": "unitpackage_assets_package_unit_low_base_giant_giant_93bec2f93cd894309d4849270ccc0577.bundle"
         },
         {
-            "BundleGUID": "777c5b1666ea91810d3b0acfc0861a70",
-            "FileName": "unitpackage_assets_package_unit_timeline_base_shield_basic_777c5b1666ea91810d3b0acfc0861a70.bundle"
+            "BundleGUID": "a57af20cd13b86fcd6b67e7373baeab6",
+            "FileName": "unitpackage_assets_package_unit_low_base_grunt_grunt_a57af20cd13b86fcd6b67e7373baeab6.bundle"
         },
         {
-            "BundleGUID": "8269916a9e7a8526017a7c620ce86f51",
-            "FileName": "unitpackage_assets_package_unit_timeline_base_shield_bastion_8269916a9e7a8526017a7c620ce86f51.bundle"
+            "BundleGUID": "685f5f27c5df7a968e168001c7a8fab0",
+            "FileName": "unitpackage_assets_package_unit_low_base_healer_healer_685f5f27c5df7a968e168001c7a8fab0.bundle"
         },
         {
-            "BundleGUID": "8238488c8b1fcd4894c7f218a662a590",
-            "FileName": "unitpackage_assets_package_unit_timeline_base_shield_skill_8238488c8b1fcd4894c7f218a662a590.bundle"
+            "BundleGUID": "4328f95c29896f3139f98a261494348a",
+            "FileName": "unitpackage_assets_package_unit_low_base_knight_knight_4328f95c29896f3139f98a261494348a.bundle"
         },
         {
-            "BundleGUID": "625749ad160971cd71b7537c99c28739",
-            "FileName": "unitpackage_assets_package_unit_timeline_base_shield_warcry_625749ad160971cd71b7537c99c28739.bundle"
+            "BundleGUID": "a185fde3264668eb0e8bf26db1cd9719",
+            "FileName": "unitpackage_assets_package_unit_low_base_mage_mage_a185fde3264668eb0e8bf26db1cd9719.bundle"
         },
         {
-            "BundleGUID": "5c015a92def056455ff477888aba9c32",
-            "FileName": "unitpackage_assets_package_unit_timeline_base_storm_basic_5c015a92def056455ff477888aba9c32.bundle"
+            "BundleGUID": "e347aed212f8606135d36c6f62ab919e",
+            "FileName": "unitpackage_assets_package_unit_low_base_ranger_ranger_e347aed212f8606135d36c6f62ab919e.bundle"
         },
         {
-            "BundleGUID": "2d98b076852714462976b494e5f80d93",
-            "FileName": "unitpackage_assets_package_unit_timeline_base_storm_chain_2d98b076852714462976b494e5f80d93.bundle"
+            "BundleGUID": "096afc20a420b2cc2047204bac5ce23c",
+            "FileName": "unitpackage_assets_package_unit_low_base_rogue_rogue_096afc20a420b2cc2047204bac5ce23c.bundle"
         },
         {
-            "BundleGUID": "ce20326590e466bd0955becd4eee8026",
-            "FileName": "unitpackage_assets_package_unit_timeline_base_storm_pool_ce20326590e466bd0955becd4eee8026.bundle"
+            "BundleGUID": "20ca4feed4184fb0591a870c27f4261c",
+            "FileName": "unitpackage_assets_package_unit_low_base_runner_runner_20ca4feed4184fb0591a870c27f4261c.bundle"
         },
         {
-            "BundleGUID": "4a80050cc1713cd8b805d4d3532896a9",
-            "FileName": "unitpackage_assets_package_unit_timeline_base_storm_tick_4a80050cc1713cd8b805d4d3532896a9.bundle"
+            "BundleGUID": "32dd15275f2bcda7ea2b31a76f33ae98",
+            "FileName": "unitpackage_assets_package_unit_low_base_shield_shield_32dd15275f2bcda7ea2b31a76f33ae98.bundle"
         },
         {
-            "BundleGUID": "725bf76908529b164bb3ef60f26bdaa7",
-            "FileName": "unitpackage_assets_package_unit_timeline_base_tactic_focus_725bf76908529b164bb3ef60f26bdaa7.bundle"
+            "BundleGUID": "62389689df4eaba45735b0cdef7a1fb1",
+            "FileName": "unitpackage_assets_package_unit_low_base_skeleton_mage_skeleton_mage_62389689df4eaba45735b0cdef7a1fb1.bundle"
         },
         {
-            "BundleGUID": "279b90b6248dbb27f0ed4c0027772f1f",
-            "FileName": "unitpackage_assets_package_unit_timeline_base_tactic_protect_279b90b6248dbb27f0ed4c0027772f1f.bundle"
+            "BundleGUID": "fa819dae74218db67128097803074a79",
+            "FileName": "unitpackage_assets_package_unit_low_base_skeleton_minion_skeleton_minion_fa819dae74218db67128097803074a79.bundle"
         },
         {
-            "BundleGUID": "176a073d619310e8893cc1e3fc486c9b",
-            "FileName": "unitpackage_assets_package_unit_timeline_base_unit_upgrade_176a073d619310e8893cc1e3fc486c9b.bundle"
+            "BundleGUID": "5a742b1cf37ed31da4ac93371d6f752a",
+            "FileName": "unitpackage_assets_package_unit_low_base_skeleton_rogue_skeleton_rogue_5a742b1cf37ed31da4ac93371d6f752a.bundle"
         },
         {
-            "BundleGUID": "4c0beaee7a7d05a2fd9a8b5c7db9841a",
-            "FileName": "unitpackage_share_assets_littlegame_art_unitgenerated_materials_4c0beaee7a7d05a2fd9a8b5c7db9841a.bundle"
+            "BundleGUID": "c437bd70c9f1e0379572226bd6fd4f51",
+            "FileName": "unitpackage_assets_package_unit_low_base_skeleton_warrior_skeleton_warrior_c437bd70c9f1e0379572226bd6fd4f51.bundle"
+        },
+        {
+            "BundleGUID": "7d63531ba65c7acb52dc3d8c63836a25",
+            "FileName": "unitpackage_assets_package_unit_low_base_storm_storm_7d63531ba65c7acb52dc3d8c63836a25.bundle"
+        },
+        {
+            "BundleGUID": "83056eb036dc7e01f8e7f31cf64d5a61",
+            "FileName": "unitpackage_assets_package_unit_portrait_base_knight_83056eb036dc7e01f8e7f31cf64d5a61.bundle"
+        },
+        {
+            "BundleGUID": "4d4c6a96d920c9b9fb159c5945802839",
+            "FileName": "unitpackage_assets_package_unit_portrait_base_mage_4d4c6a96d920c9b9fb159c5945802839.bundle"
+        },
+        {
+            "BundleGUID": "a7c5147331035167f224f33908052958",
+            "FileName": "unitpackage_assets_package_unit_portrait_base_ranger_a7c5147331035167f224f33908052958.bundle"
+        },
+        {
+            "BundleGUID": "5438caed31ed2b5a44964e02061998bd",
+            "FileName": "unitpackage_assets_package_unit_portrait_base_rogue_5438caed31ed2b5a44964e02061998bd.bundle"
+        },
+        {
+            "BundleGUID": "247a0b8d1f681854f7dc6307abc4d592",
+            "FileName": "unitpackage_assets_package_unit_portrait_base_skeleton_mage_247a0b8d1f681854f7dc6307abc4d592.bundle"
+        },
+        {
+            "BundleGUID": "3b6a063188e39bb2a77c8b7979126eca",
+            "FileName": "unitpackage_assets_package_unit_portrait_base_skeleton_minion_3b6a063188e39bb2a77c8b7979126eca.bundle"
+        },
+        {
+            "BundleGUID": "06412abefc31c59bd4e81fe321442ee4",
+            "FileName": "unitpackage_assets_package_unit_portrait_base_skeleton_rogue_06412abefc31c59bd4e81fe321442ee4.bundle"
+        },
+        {
+            "BundleGUID": "5a0cd578e7bd21e06557a41f0a74b588",
+            "FileName": "unitpackage_assets_package_unit_portrait_base_skeleton_warrior_5a0cd578e7bd21e06557a41f0a74b588.bundle"
+        },
+        {
+            "BundleGUID": "dc1183091c586738a98df5ad0a37f537",
+            "FileName": "unitpackage_assets_package_unit_skill_base_unitskillbindings_dc1183091c586738a98df5ad0a37f537.bundle"
+        },
+        {
+            "BundleGUID": "c79b77971176b8e2abaa541bb19d26f4",
+            "FileName": "unitpackage_assets_package_unit_timeline_base_archer_basic_c79b77971176b8e2abaa541bb19d26f4.bundle"
+        },
+        {
+            "BundleGUID": "7ae9905aafdcf94ed64b4ef811b54b08",
+            "FileName": "unitpackage_assets_package_unit_timeline_base_archer_gale_7ae9905aafdcf94ed64b4ef811b54b08.bundle"
+        },
+        {
+            "BundleGUID": "67be8ff37b9ed86849e97d2b0683f243",
+            "FileName": "unitpackage_assets_package_unit_timeline_base_archer_pierce_67be8ff37b9ed86849e97d2b0683f243.bundle"
+        },
+        {
+            "BundleGUID": "c11d087e1b7d7d30742e2c357985ce9f",
+            "FileName": "unitpackage_assets_package_unit_timeline_base_archer_skill_c11d087e1b7d7d30742e2c357985ce9f.bundle"
+        },
+        {
+            "BundleGUID": "c3975b729c9dd16b0fa874117704a67b",
+            "FileName": "unitpackage_assets_package_unit_timeline_base_enemy_melee_basic_c3975b729c9dd16b0fa874117704a67b.bundle"
+        },
+        {
+            "BundleGUID": "f0ced7e22484eea4574a888a972ba141",
+            "FileName": "unitpackage_assets_package_unit_timeline_base_frost_basic_f0ced7e22484eea4574a888a972ba141.bundle"
+        },
+        {
+            "BundleGUID": "32d11165293c2f2585deef6cbc557fac",
+            "FileName": "unitpackage_assets_package_unit_timeline_base_frost_freeze_32d11165293c2f2585deef6cbc557fac.bundle"
+        },
+        {
+            "BundleGUID": "9f503547c93018d9607dbed8d03bc6eb",
+            "FileName": "unitpackage_assets_package_unit_timeline_base_frost_icearmor_9f503547c93018d9607dbed8d03bc6eb.bundle"
+        },
+        {
+            "BundleGUID": "b8adab3b6b0d7046b82bdce78d57f896",
+            "FileName": "unitpackage_assets_package_unit_timeline_base_giant_slam_b8adab3b6b0d7046b82bdce78d57f896.bundle"
+        },
+        {
+            "BundleGUID": "2797177755dda8aa118846016886e785",
+            "FileName": "unitpackage_assets_package_unit_timeline_base_giant_telegraph_2797177755dda8aa118846016886e785.bundle"
+        },
+        {
+            "BundleGUID": "2a46bb3fd37ffd359bd7cb962c0a55b1",
+            "FileName": "unitpackage_assets_package_unit_timeline_base_healer_heal_2a46bb3fd37ffd359bd7cb962c0a55b1.bundle"
+        },
+        {
+            "BundleGUID": "ca4e9ceda1c30a8c9c3d4facd677aaeb",
+            "FileName": "unitpackage_assets_package_unit_timeline_base_shield_basic_ca4e9ceda1c30a8c9c3d4facd677aaeb.bundle"
+        },
+        {
+            "BundleGUID": "60d0261b24e27f94bc5524ca69be1b1a",
+            "FileName": "unitpackage_assets_package_unit_timeline_base_shield_bastion_60d0261b24e27f94bc5524ca69be1b1a.bundle"
+        },
+        {
+            "BundleGUID": "ed4295bba15ad706bf3f50558e286fde",
+            "FileName": "unitpackage_assets_package_unit_timeline_base_shield_skill_ed4295bba15ad706bf3f50558e286fde.bundle"
+        },
+        {
+            "BundleGUID": "4b2aadeb748e5c3a87a92302c9785ee0",
+            "FileName": "unitpackage_assets_package_unit_timeline_base_shield_warcry_4b2aadeb748e5c3a87a92302c9785ee0.bundle"
+        },
+        {
+            "BundleGUID": "b4e1b0118306a75cddd427f903009208",
+            "FileName": "unitpackage_assets_package_unit_timeline_base_storm_basic_b4e1b0118306a75cddd427f903009208.bundle"
+        },
+        {
+            "BundleGUID": "7780af0f4dcb1e9c3580fa44daa7e6cd",
+            "FileName": "unitpackage_assets_package_unit_timeline_base_storm_chain_7780af0f4dcb1e9c3580fa44daa7e6cd.bundle"
+        },
+        {
+            "BundleGUID": "d7bd9d9613ee016cd07b047d47e270f7",
+            "FileName": "unitpackage_assets_package_unit_timeline_base_storm_pool_d7bd9d9613ee016cd07b047d47e270f7.bundle"
+        },
+        {
+            "BundleGUID": "6a1879bcbb9e8262a32544c81b396c38",
+            "FileName": "unitpackage_assets_package_unit_timeline_base_storm_tick_6a1879bcbb9e8262a32544c81b396c38.bundle"
+        },
+        {
+            "BundleGUID": "0d0bb80de1a20266fe4081b768530ae9",
+            "FileName": "unitpackage_assets_package_unit_timeline_base_tactic_focus_0d0bb80de1a20266fe4081b768530ae9.bundle"
+        },
+        {
+            "BundleGUID": "d6b9edaaf6157329639ed704c4eb9fc0",
+            "FileName": "unitpackage_assets_package_unit_timeline_base_tactic_protect_d6b9edaaf6157329639ed704c4eb9fc0.bundle"
+        },
+        {
+            "BundleGUID": "92f569c3c11c35796a4335a7e5575cfe",
+            "FileName": "unitpackage_assets_package_unit_timeline_base_unit_upgrade_92f569c3c11c35796a4335a7e5575cfe.bundle"
+        },
+        {
+            "BundleGUID": "b23f2d819707c7653b3856ca0c1b7484",
+            "FileName": "unitpackage_share_assets_littlegame_art_unitgenerated_clips_b23f2d819707c7653b3856ca0c1b7484.bundle"
+        },
+        {
+            "BundleGUID": "0d035151ed335f859755280e5303d21e",
+            "FileName": "unitpackage_share_assets_littlegame_art_unitgenerated_controllers_0d035151ed335f859755280e5303d21e.bundle"
+        },
+        {
+            "BundleGUID": "f63f600fbd059f13e50de317b0918a7c",
+            "FileName": "unitpackage_share_assets_littlegame_art_unitgenerated_materials_f63f600fbd059f13e50de317b0918a7c.bundle"
+        },
+        {
+            "BundleGUID": "f589e90f40e24fe9bb28fd69a28d2d34",
+            "FileName": "unitpackage_share_assets_littlegame_art_unitsources_cutemonsters_hermit_king_f589e90f40e24fe9bb28fd69a28d2d34.bundle"
+        },
+        {
+            "BundleGUID": "dba690862b4d56fdfc1a6bdc12040d02",
+            "FileName": "unitpackage_share_assets_littlegame_art_unitsources_cutemonsters_sunflower_fairy_dba690862b4d56fdfc1a6bdc12040d02.bundle"
+        },
+        {
+            "BundleGUID": "4bf62954ccb8a6ef01175b4a3f291807",
+            "FileName": "unitpackage_share_assets_littlegame_art_unitsources_cutemonsters_werewolf_4bf62954ccb8a6ef01175b4a3f291807.bundle"
+        },
+        {
+            "BundleGUID": "fbf6a0b7b16ce44bbab7e89f1ec108ee",
+            "FileName": "unitpackage_share_assets_littlegame_art_unitsources_golem_fbf6a0b7b16ce44bbab7e89f1ec108ee.bundle"
+        },
+        {
+            "BundleGUID": "4e1f901fca31fd9ebecb025b52a383fe",
+            "FileName": "unitpackage_share_assets_littlegame_art_unitsources_kaykit_adventurers_4e1f901fca31fd9ebecb025b52a383fe.bundle"
+        },
+        {
+            "BundleGUID": "3cedbc5af5e2ab8d3e67b45ba45e3eea",
+            "FileName": "unitpackage_share_assets_littlegame_art_unitsources_kaykit_skeletons_3cedbc5af5e2ab8d3e67b45ba45e3eea.bundle"
         },
         {
             "BundleGUID": "d9b3f5f0b3c2ace371378699b234c17a",
@@ -144,20 +308,28 @@
             "FileName": "unitpackage_share_assets_littlegame_art_unitsources_tinyhero_mesh_a86025aa8b5f4e1bb07af31877309742.bundle"
         },
         {
-            "BundleGUID": "741d1e923d1ccdc09f815c5772f22f2b",
-            "FileName": "unitpackage_share_assets_littlegame_art_unitsources_tinyhero_mesh_headparts_741d1e923d1ccdc09f815c5772f22f2b.bundle"
+            "BundleGUID": "dcf8e55db32aac7fc47bf32453d84511",
+            "FileName": "unitpackage_share_assets_littlegame_art_unitsources_tinyhero_mesh_headparts_dcf8e55db32aac7fc47bf32453d84511.bundle"
+        },
+        {
+            "BundleGUID": "d2b6ad205581384b710d5ca511b5a129",
+            "FileName": "unitpackage_share_assets_littlegame_art_unitsources_tinyhero_mesh_weapons_d2b6ad205581384b710d5ca511b5a129.bundle"
         },
         {
             "BundleGUID": "f79d0ee268f6f11ce7c2df1da6e80e71",
             "FileName": "unitpackage_share_assets_littlegame_art_unitsources_tinyhero_texture_defaultpbr_f79d0ee268f6f11ce7c2df1da6e80e71.bundle"
         },
         {
+            "BundleGUID": "e4540566e1e79838cc13044325bda176",
+            "FileName": "unitpackage_share_assets_littlegame_art_unitsources_wolf_e4540566e1e79838cc13044325bda176.bundle"
+        },
+        {
             "BundleGUID": "04bf28917c07f227576470b3e595272b",
             "FileName": "unitpackage_share_packages_com_unity_render-pipelines_universal_runtime_materials_04bf28917c07f227576470b3e595272b.bundle"
         },
         {
-            "BundleGUID": "077789c484d44c984607001fc41e4e7d",
-            "FileName": "unitpackage_unityshaders_077789c484d44c984607001fc41e4e7d.bundle"
+            "BundleGUID": "36a1dbe23e8e10f2c8535f7b130a29b4",
+            "FileName": "unitpackage_unityshaders_36a1dbe23e8e10f2c8535f7b130a29b4.bundle"
         }
     ]
 }

@@ -18,6 +18,20 @@ internal sealed class OnePool : IDisposable
     Task<GameObject> pendingLoad;
     bool disposed;
     internal int IdleCount => idle.Count;
+    internal int CreatedCount { get; private set; }
+    internal int ReusedCount { get; private set; }
+
+    internal void Prewarm(int count)
+    {
+        var source = Load();
+        if (!source) throw new InvalidOperationException("缺少对象池预热资源：" + address);
+        while (idle.Count < Math.Min(MaxIdle, count))
+        {
+            var instance = ResourceService.InstantiateInactivePrefab(source, idleRoot);
+            CreatedCount++;
+            Return(instance);
+        }
+    }
 
     internal OnePool(string address, ResourcePackageName package, Transform idleRoot)
     {
@@ -76,6 +90,7 @@ internal sealed class OnePool : IDisposable
             var instance = idle.Pop();
             if (instance)
             {
+                ReusedCount++;
                 var template = source.transform;
                 var target = instance.transform;
                 target.SetLocalPositionAndRotation(template.localPosition, template.localRotation);
@@ -83,6 +98,7 @@ internal sealed class OnePool : IDisposable
                 return instance;
             }
         }
+        CreatedCount++;
         return ResourceService.InstantiateInactivePrefab(source, idleRoot);
     }
 

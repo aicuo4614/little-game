@@ -29,7 +29,7 @@ namespace LittleGame.Client.Battle
             if (session == null) return;
             activeIds.Clear();
             bool fighting = session.Phase == RunPhase.Fighting;
-            bool paused = session.Paused || session.Aim != AimKind.None;
+            bool paused = session.Paused;
             float battleSpeed = Math.Max(1, session.Speed);
 
             var troops = session.Troops;
@@ -38,10 +38,10 @@ namespace LittleGame.Client.Battle
                 var t = troops[i];
                 if (!t.Deployed) continue;
                 activeIds.Add(t.Id);
-                var unit = GetOrCreate(t.Id, (int)t.Kind, false, false);
+                var unit = GetOrCreate(t.Id, (int)t.Kind, false, false, t.Definition.Role);
                 float scale = t.Star == 3 ? 1.18f : t.Star == 2 ? 1.08f : 1f;
                 unit.SyncFromRule(
-                    new Vector3(t.X, 0.11f, t.Z),
+                    new Vector3(t.X, 0.11f + JumpHeight(t, session.BattleTime), t.Z),
                     t.FacingYaw,
                     t.Hp / Mathf.Max(1f, t.MaxHp),
                     t.Star == 1 ? "★" : t.Star == 2 ? "★★" : "★★★",
@@ -51,11 +51,13 @@ namespace LittleGame.Client.Battle
                     !fighting,
                     fighting,
                     paused,
-                    controlled: false,
+                    controlled: fighting && !t.Status.CanAttack(session.BattleTime),
                     star: t.Star,
                     forceWalk: !fighting && (marching || t.NeedsRegroup) && !paused,
                     movementSpeed: fighting ? Mathf.Sqrt(t.Vx * t.Vx + t.Vz * t.Vz) : -1f,
-                    battleSpeed: battleSpeed);
+                    battleSpeed: battleSpeed,
+                    manaRatio: t.Mana / BattleCombatant.MaxMana,
+                    showMana: fighting);
             }
 
             if (fighting)
@@ -65,13 +67,13 @@ namespace LittleGame.Client.Battle
                 {
                     var e = enemies[i];
                     activeIds.Add(e.Id);
-                    var unit = GetOrCreate(e.Id, (int)e.Kind, true, e.Boss);
+                    var unit = GetOrCreate(e.Id, (int)e.Definition.Job, true, e.Boss, e.Definition.Role);
                     bool frozen = e.Alive && e.FrozenUntil > session.BattleTime;
                     unit.SyncFromRule(
-                        new Vector3(e.X, 0.11f, e.Z),
+                        new Vector3(e.X, 0.11f + JumpHeight(e, session.BattleTime), e.Z),
                         e.FacingYaw,
                         e.Hp / Mathf.Max(1f, e.MaxHp),
-                        e.Boss ? BattleDefinitions.Name(e.Kind) : "",
+                        e.Boss ? e.Definition.Name : e.Definition.Grade == UnitGrade.Elite ? "精英 " + new string('★', e.Star) : "",
                         frozen,
                         1f,
                         e.Alive,
@@ -79,10 +81,12 @@ namespace LittleGame.Client.Battle
                         e.Alive && !frozen,
                         paused,
                         controlled: frozen,
-                        star: 1,
+                        star: e.Star,
                         forceWalk: false,
                         movementSpeed: Mathf.Sqrt(e.Vx * e.Vx + e.Vz * e.Vz),
-                        battleSpeed: battleSpeed);
+                        battleSpeed: battleSpeed,
+                        manaRatio: e.Mana / BattleCombatant.MaxMana,
+                        showMana: true);
                 }
             }
 
@@ -145,12 +149,18 @@ namespace LittleGame.Client.Battle
 
         public IEnumerable<object> SnapshotActors() => units.Values.Select(u => u.Snapshot());
 
-        private BattleUnit GetOrCreate(int id, int kind, bool isEnemy, bool isBoss)
+        private static float JumpHeight(BattleCombatant unit, float time)
         {
-            string visualKey = kind + "/" + isEnemy + "/" + isBoss;
+            if (unit.JumpEndsAt <= time) return 0f;
+            float progress = Mathf.InverseLerp(unit.JumpStartedAt, unit.JumpEndsAt, time);
+            return Mathf.Sin(progress * Mathf.PI) * .78f;
+        }
+
+        private BattleUnit GetOrCreate(int id, int kind, bool isEnemy, bool isBoss, string role)
+        {
             if (units.TryGetValue(id, out var existing))
             {
-                if (existing != null && !existing.IsEnded && existing.VisualKey == visualKey)
+                if (existing != null && !existing.IsEnded && existing.RoleKey == role && existing.IsEnemy == isEnemy && existing.IsBoss == isBoss)
                 {
                     return existing;
                 }
@@ -165,7 +175,8 @@ namespace LittleGame.Client.Battle
                 kind,
                 isEnemy,
                 isBoss,
-                visualKey,
+                role + "/" + isEnemy + "/" + isBoss,
+                role,
                 Owner.CameraControl.Camera,
                 Owner.RingMesh,
                 Owner.GetSharedMaterial,

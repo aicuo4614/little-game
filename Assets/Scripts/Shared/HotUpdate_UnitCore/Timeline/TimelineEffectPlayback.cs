@@ -11,10 +11,13 @@ public sealed class TimelineEffectPlayback
     private readonly List<float> animatorSpeeds = new List<float>();
     private readonly EffectPointLightData lightData;
     private readonly Light pointLight;
+    private readonly bool incremental;
+    private float previousTime = -1f;
 
-    public TimelineEffectPlayback(GameObject instance, EffectPointLightData lightData = null)
+    public TimelineEffectPlayback(GameObject instance, EffectPointLightData lightData = null, bool incremental = false)
     {
         Instance = instance;
+        this.incremental = incremental;
         this.lightData = lightData;
         pointLight = EffectPointLightUtil.FindPointLight(instance.transform);
         var systems = instance.GetComponentsInChildren<ParticleSystem>(true);
@@ -66,10 +69,13 @@ public sealed class TimelineEffectPlayback
     public void Sample(float time, float duration)
     {
         time = Mathf.Max(0f, time);
+        bool restart = !incremental || previousTime < 0f || time < previousTime;
+        float delta = restart ? time : time - previousTime;
         for (var i = 0; i < roots.Count; i++)
         {
-            roots[i].Simulate(time, true, true, true);
+            if (restart || delta > 0f) roots[i].Simulate(delta, true, restart, !incremental);
         }
+        previousTime = time;
 
         for (var i = 0; i < animators.Length; i++)
         {

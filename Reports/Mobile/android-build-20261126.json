@@ -1,0 +1,28 @@
+{
+  "sourceCommit": "116595d77a886db773555f62affe912bbb66e4a1",
+  "unityVersion": "2022.3.62f3c1",
+  "build": {
+    "id": "fdbf5adde4c642c88d2ff91a776bbee3",
+    "state": "succeeded",
+    "packageId": "com.littlegame.teardown.dev",
+    "apk": "E:\\Project\\little-game\\Builds\\Android\\little-game.apk",
+    "message": "手机测试包已构建",
+    "bytes": 69236055
+  },
+  "sha256": "1f3fb577e28de9880efb6296255d5bdc9ebf846e8af633bacf3e69cc8671c781",
+  "abi": "arm64-v8a",
+  "backend": "IL2CPP",
+  "orientation": "Portrait",
+  "applicationLabel": "符阵军团",
+  "signed": true,
+  "builtInPackages": {
+    "LaunchPackage": "2026-11-26-981",
+    "CodePackage": "2026-11-26-981",
+    "MainPackage": "2026-11-26-981",
+    "ModulePackage": "2026-11-26-982",
+    "UnitPackage": "2026-11-26-982",
+    "EffectPackage": "2026-11-26-982",
+    "ScenePackage": "2026-11-26-982"
+  },
+  "deviceRun": false
+}

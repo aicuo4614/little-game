@@ -1,0 +1,91 @@
+{
+  "platform": "WindowsEditor",
+  "initialPool": {
+    "active": 0,
+    "idle": 40,
+    "prefabCount": 40,
+    "created": 40,
+    "reused": 0,
+    "prewarm": {
+      "ready": true,
+      "elapsedMs": 32.5202,
+      "models": [
+        "Grunt",
+        "Runner",
+        "Armored",
+        "Giant",
+        "Healer",
+        "Knight",
+        "Skeleton_Warrior",
+        "Ranger",
+        "Skeleton_Minion",
+        "Mage",
+        "Skeleton_Mage",
+        "Rogue",
+        "Skeleton_Rogue"
+      ],
+      "timelines": [
+        "enemy_melee_basic",
+        "shield_skill",
+        "giant_slam",
+        "giant_telegraph",
+        "healer_heal",
+        "frost_freeze",
+        "shield_basic",
+        "archer_basic",
+        "archer_skill",
+        "storm_basic",
+        "storm_pool",
+        "frost_basic",
+        "unit_upgrade"
+      ],
+      "effects": [
+        "fx_enemy_hit",
+        "fx_hit_enemy",
+        "fx_shield_bash",
+        "fx_hit_heavy",
+        "fx_boss_slam_wave",
+        "fx_boss_slam_burst",
+        "fx_boss_charge",
+        "fx_heal_ring",
+        "fx_heal_orb",
+        "fx_freeze_ring",
+        "fx_ice_lance",
+        "fx_hit_ice",
+        "fx_shield_slash",
+        "fx_hit_physical",
+        "fx_pierce_flash",
+        "fx_arrow_basic",
+        "fx_hit_arrow",
+        "fx_wind_burst",
+        "fx_arrow_wind",
+        "fx_hit_wind",
+        "fx_lightning_orb",
+        "fx_hit_lightning",
+        "fx_storm_zone",
+        "fx_lightning_strike",
+        "fx_freeze_aura",
+        "fx_ice_shard",
+        "fx_level_up"
+      ],
+      "instancesPerPrefab": 1
+    }
+  },
+  "finalLayout": {
+    "headerBottom": 0.85,
+    "damageTop": 0.85,
+    "damageWidth": 0.311126977,
+    "damageAreaRatio": 0.49999997,
+    "synergyTop": 0.85
+  },
+  "result": "WaveResult",
+  "scopeButtonsViaPointer": true,
+  "pauseViaPointer": true,
+  "restartCleared": true,
+  "console": {
+    "Error": "Console 日志 0 条：",
+    "Exception": "Console 日志 0 条：",
+    "Assert": "Console 日志 0 条：",
+    "Warning": "Console 日志 0 条："
+  }
+}

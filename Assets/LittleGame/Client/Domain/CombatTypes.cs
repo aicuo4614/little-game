@@ -5,11 +5,10 @@ namespace LittleGame.Combat
 {
     public enum RunPhase { Preparation, Fighting, Reward, WaveResult, Won, Lost }
     public enum TroopKind { Shield, Archer, Storm, Frost }
-    public enum EnemyKind { Grunt, Runner, Armored, Healer, Giant }
     public enum SkillBranch { None, Bastion, WarCry, Pierce, Gale, StormPool, ChainLightning, DeepFreeze, IceArmor }
     public enum RewardKind { Reinforcements, WideStorm, LongFreeze }
     public enum AimKind { None, Focus, Protect }
-    public enum CommandKind { NewRun, Spin, Deploy, Recall, Recycle, Merge, ChooseBranch, StartWave, NextWave, ChooseReward, Aim, CancelAim, Focus, Protect, Pause, SetSpeed }
+    public enum CommandKind { NewRun, Spin, Deploy, Recall, Recycle, Merge, StartWave, NextWave, ChooseReward, Aim, CancelAim, Focus, Protect, Pause, SetSpeed }
 
     public sealed class BattleCommand
     {
@@ -18,7 +17,6 @@ namespace LittleGame.Combat
         /// <summary>自由拖拽落位：启用时直接按世界坐标 (TargetX, TargetZ) 校验是否处于白色布阵框内。</summary>
         public bool UseWorldPos;
         public float TargetX, TargetZ;
-        public SkillBranch Branch;
         public RewardKind Reward;
         public AimKind Aim;
         public bool Flag;
@@ -32,66 +30,90 @@ namespace LittleGame.Combat
         public CommandResult(bool accepted, string reason) { Accepted = accepted; Reason = reason; }
     }
 
-    public sealed class Troop
+    public enum BattleSide { Ally, Enemy }
+
+    public abstract class BattleCombatant
     {
+        public const float MaxMana = 100f;
         public int Id { get; internal set; }
-        public TroopKind Kind { get; internal set; }
         public int Star { get; internal set; } = 1;
-        public SkillBranch Branch { get; internal set; }
         public int Lane { get; internal set; } = -1;
-        public int Row { get; internal set; } = -1;
-        /// <summary>白色布阵框内的归队目标坐标。</summary>
-        public float HomeX { get; internal set; }
-        public float HomeZ { get; internal set; }
         public float X { get; internal set; }
         public float Z { get; internal set; }
-        /// <summary>执行移动并处理碰撞/边界后的实际速度（米/秒）。</summary>
         public float Vx { get; internal set; }
         public float Vz { get; internal set; }
-        /// <summary>当前追击/攻击目标；避免新怪出现时每帧抢换最近目标。</summary>
         public int TargetId { get; internal set; }
         public CombatAiState AiState { get; internal set; }
         public BattleNavigationState Navigation { get; } = new BattleNavigationState();
-        /// <summary>当前朝向角（度，0=+Z，90=+X 向右推进，-90=-X 向左）。</summary>
-        public float FacingYaw { get; internal set; } = 90f;
-        /// <summary>转身速率（度/秒）。</summary>
+        public abstract BattleSide Side { get; }
+        public abstract UnitDefinition Definition { get; }
+        public virtual bool Deployed => true;
+        public bool Alive => Hp > 0f;
+        public bool Boss => Definition.Grade == UnitGrade.Boss;
+        public float FacingYaw { get; internal set; }
         public float TurnSpeed { get; internal set; } = 360f;
-        /// <summary>移动速度（米/秒），不同职业速度不同。</summary>
         public float MoveSpeed { get; internal set; } = 2.4f;
         public float Hp { get; internal set; }
         public float MaxHp { get; internal set; }
         public float Cooldown { get; internal set; }
-        public float SkillCooldown { get; internal set; }
-        public float Shield { get; internal set; }
-        public float ShieldUntil { get; internal set; }
-        public bool Deployed => Lane >= 0;
-        public bool Alive => Hp > 0;
-        public bool NeedsRegroup => Deployed && ((X - HomeX) * (X - HomeX) + (Z - HomeZ) * (Z - HomeZ) > 0.0025f);
+        public float Mana { get; internal set; }
+        public float[] SkillReadyAt { get; } = new float[3];
+        public UnitBuffControl Buffs { get; } = new UnitBuffControl();
+        public UnitStatusControl Status { get; } = new UnitStatusControl();
+        public UnitPropertyControl Properties { get; }
+
+        public float Shield => Buffs.Total(UnitModifier.Shield);
+        public float FrozenUntil => Status.Until(UnitStatus.Frozen);
+        public float SlowUntil => Status.Until(UnitStatus.Slowed);
+        public bool Jumped { get; internal set; }
+        public float JumpStartedAt { get; internal set; }
+        public float JumpEndsAt { get; internal set; }
+        public float JumpStartX { get; internal set; }
+        public float JumpStartZ { get; internal set; }
+        public float JumpX { get; internal set; }
+        public float JumpZ { get; internal set; }
+
+        protected BattleCombatant() { Properties = new UnitPropertyControl(this); }
+
+        internal void ResetCombat()
+        {
+            Mana = 0f;
+            Array.Clear(SkillReadyAt, 0, SkillReadyAt.Length);
+            Buffs.Clear();
+            Status.Clear();
+            Jumped = false;
+            JumpStartedAt = JumpEndsAt = 0f;
+        }
     }
 
-    public sealed class Enemy
+    public sealed class Troop : BattleCombatant
     {
-        public int Id { get; internal set; }
-        public EnemyKind Kind { get; internal set; }
-        public int Lane { get; internal set; }
-        public float X { get; internal set; }
-        public float Z { get; internal set; }
-        /// <summary>执行移动并处理碰撞/边界后的实际速度（米/秒）。</summary>
-        public float Vx { get; internal set; }
-        public float Vz { get; internal set; }
-        public int TargetId { get; internal set; }
-        public CombatAiState AiState { get; internal set; }
-        public BattleNavigationState Navigation { get; } = new BattleNavigationState();
-        public float FacingYaw { get; internal set; } = -90f;
-        public float TurnSpeed { get; internal set; } = 360f;
-        public float MoveSpeed { get; internal set; } = 1.15f;
-        public float Hp { get; internal set; }
-        public float MaxHp { get; internal set; }
-        public float Cooldown { get; internal set; }
-        public float FrozenUntil { get; internal set; }
-        public float SlowUntil { get; internal set; }
-        public bool Alive => Hp > 0;
-        public bool Boss => Kind == EnemyKind.Giant;
+        private UnitDefinition definition;
+        private TroopKind kind;
+        private string heroId;
+        public TroopKind Kind { get => kind; internal set { kind = value; definition = null; } }
+        public string HeroId { get => heroId; internal set { heroId = value; definition = null; } }
+        public string Identity => HeroId ?? BattleTables.Current.LegacyHero(Kind);
+        public override UnitDefinition Definition => definition ?? (definition = BattleTables.Current.Unit(Identity));
+        public override BattleSide Side => BattleSide.Ally;
+        public int Row { get; internal set; } = -1;
+        public float HomeX { get; internal set; }
+        public float HomeZ { get; internal set; }
+        public override bool Deployed => Lane >= 0;
+        public bool NeedsRegroup => Deployed && ((X - HomeX) * (X - HomeX) + (Z - HomeZ) * (Z - HomeZ) > 0.0025f);
+
+        public Troop() { FacingYaw = 90f; }
+    }
+
+    public sealed class Enemy : BattleCombatant
+    {
+        private UnitDefinition definition;
+        private string monsterId;
+        public string MonsterId { get => monsterId; internal set { monsterId = value; definition = null; } }
+        public override UnitDefinition Definition => definition ?? (definition = BattleTables.Current.Unit(MonsterId));
+        public override BattleSide Side => BattleSide.Enemy;
+
+        public Enemy() { FacingYaw = -90f; }
     }
 
     public sealed class CombatEvent
@@ -105,13 +127,14 @@ namespace LittleGame.Combat
         public float CasterX, CasterZ, TargetX, TargetZ, FacingYaw;
     }
 
-    public sealed class WaveSpawn { public EnemyKind Kind; public int Lane; public float At; }
-    public sealed class StormZone { public int Source, Lane; public float X, Z, Remaining, UntilTick; public float Damage; }
-    public sealed class SaveTroop { public int Id, Star, Lane, Row; public float HomeX, HomeZ; public bool HasHomePos; public TroopKind Kind; public SkillBranch Branch; }
+    public sealed class WaveSpawn { public string MonsterId; public int Lane, Batch, Star = 1; public float At; }
+    public sealed class StormZone { public int Source, Lane; public float X, Z, Remaining, UntilTick, Damage, Radius; }
+    public sealed class SaveTroop { public int Id, Star, Lane, Row; public float HomeX, HomeZ; public bool HasHomePos; public TroopKind Kind; public SkillBranch Branch; public string HeroId; }
 
     public sealed class RunSave
     {
-        public int Version = 4, Seed, Wave, Spins, Misses, SpinCount, NextId, Speed;
+        public List<HeroDamageRecord> DamageStatistics = new List<HeroDamageRecord>();
+        public int Version = 5, Seed, Wave, Spins, Misses, SpinCount, NextId, Speed;
         public int MaxDeployed = 6, PopExp;
         public float MarchDistance;
         public uint RandomState;
@@ -119,6 +142,7 @@ namespace LittleGame.Combat
         public List<SaveTroop> Troops = new List<SaveTroop>();
         public List<RewardKind> Rewards = new List<RewardKind>();
         public List<TroopKind> Pending = new List<TroopKind>();
+        public List<string> PendingHeroes = new List<string>();
         public TroopKind[] Reels = new TroopKind[9];
     }
 

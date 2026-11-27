@@ -1,0 +1,71 @@
+{
+  "date": "2026-11-27",
+  "device": {
+    "serial": "988b1a364838324c41",
+    "model": "Samsung SM-G9550",
+    "android": "7.0",
+    "abi": "arm64-v8a",
+    "resolution": [
+      1080,
+      2220
+    ]
+  },
+  "build": {
+    "id": "fc3e75d84f1a48ff9038443a0b0b5c39",
+    "state": "succeeded",
+    "packageId": "com.littlegame.teardown.dev",
+    "apk": "E:\\Project\\little-game\\Builds\\Android\\little-game.apk",
+    "message": "手机测试包已构建",
+    "bytes": 68874310
+  },
+  "sha256": "23b3c279bd696d7f77b0d56873b20817a9aaeed3f1e0053e0f9127df2fd42fc5",
+  "rootCauseEvidence": [
+    "原生 Resources 内热更脚本资源及主包热更 RendererFeature 产生脚本缺失、序列化布局不一致",
+    "修复资源后仍原生崩溃；首帧分段日志将剩余崩溃定位到 CombatDiagnostics 调用 BattleSession.Snapshot()，尚未进入 JSON 序列化",
+    "改为逐项写入手机诊断 JSON 后首次启动、持续采样、实战与重启不再崩溃；未证明完整快照中具体哪一个表达式或底层泛型桥有缺陷"
+  ],
+  "validation": {
+    "install": "Success; adb install -r, no uninstall/clear",
+    "initialPhase": "Reward",
+    "initialWave": 4,
+    "normalTouchActions": [
+      "choose Reinforcements reward",
+      "next_wave",
+      "spin once",
+      "start_wave confirmation",
+      "wave5 naturally cleared",
+      "next_wave",
+      "drag shield to new deployment location"
+    ],
+    "coldRelaunch": true,
+    "restoredDeployment": {
+      "id": 1,
+      "kind": "Shield",
+      "star": 2,
+      "lane": 1,
+      "x": -0.35,
+      "z": 0.8899746,
+      "hp": 663.0
+    },
+    "finalPhase": "Preparation",
+    "finalWave": 6,
+    "runtimeErrors": 0,
+    "initialEvidence": "Reports/Mobile/20261127-114220/result.json",
+    "fightingScreenshot": "Reports\\Mobile\\black-screen-20261127\\fighting-wave5.png",
+    "finalScreenshot": "Reports\\Mobile\\black-screen-20261127\\relaunch.png",
+    "logcat": "Reports\\Mobile\\black-screen-20261127\\final-runtime-logcat.txt",
+    "relaunchLogcat": "Reports\\Mobile\\black-screen-20261127\\relaunch-logcat.txt"
+  },
+  "mcp": {
+    "gameplayRulesChanged": false,
+    "editorSchema": 6,
+    "interfaceChangeRequired": false,
+    "mobileObservationSchema": "little-game.mobile-observation/v2",
+    "note": "手机精简诊断文件单独标识格式；完整 Editor MCP 工具与规则保持原契约"
+  },
+  "limits": [
+    "本轮真机验收到第5波正常战斗及第6波准备，未验收整局12波与首领",
+    "没有验收在线远程热更下载、IAP或其他手机机型",
+    "帧间隔只是开发包诊断采样，不作完整性能结论"
+  ]
+}

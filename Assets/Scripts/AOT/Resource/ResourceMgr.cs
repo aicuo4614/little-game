@@ -30,7 +30,7 @@ public static class ResourcePackageNameExtensions
 
 /// <summary>
 /// 单工程 YooAsset 包初始化与生命周期管理器（对齐 Demo ResourceMgr）。
-/// Editor 默认全部包走 EditorSimulateMode，勾选 LaunchSOConfig.EditorSimulateDevice 或真机走 Offline + HostPlayMode。
+/// 默认加载随安装包发布的资源，Editor 可使用 EditorSimulateMode 直接读源资源。
 /// </summary>
 public class ResourceMgr
 {
@@ -105,16 +105,19 @@ public class ResourceMgr
     public ResourcePackage GetPackage(ResourcePackageName name)
         => GetPackage(name.ToPackageString());
 
-    public void Init(Action<bool> callback)
+    public void Init(Action<bool> callback) => InitBuiltInPackage(ResourcePackageName.LaunchPackage, callback);
+
+    public void InitBuiltInPackage(ResourcePackageName packageName, Action<bool> callback)
     {
         if (!YooAssets.Initialized)
         {
             YooAssets.Initialize();
         }
 
-        string pkgName = ResourcePackageName.LaunchPackage.ToPackageString();
-        if (TryReuseHostPackage(pkgName, callback))
+        string pkgName = packageName.ToPackageString();
+        if (_packages.TryGetValue(pkgName, out var cached) && cached.PackageValid)
         {
+            callback?.Invoke(true);
             return;
         }
 

@@ -1,0 +1,880 @@
+{
+  "waves": [
+    {
+      "wave": 1,
+      "actualDamage": 138.0,
+      "waveDamage": 138.0,
+      "totalDamage": 138.0,
+      "view": {
+        "damageScope": "wave",
+        "damageRows": [
+          {
+            "visible": true,
+            "hero": "Skeleton_Minion",
+            "value": "58"
+          },
+          {
+            "visible": true,
+            "hero": "Knight",
+            "value": "44"
+          },
+          {
+            "visible": true,
+            "hero": "Mage",
+            "value": "36"
+          },
+          {
+            "visible": false,
+            "hero": "Rogue",
+            "value": "211"
+          },
+          {
+            "visible": false,
+            "hero": "Skeleton_Warrior",
+            "value": "177"
+          },
+          {
+            "visible": false,
+            "hero": "Helmet",
+            "value": ""
+          },
+          {
+            "visible": false,
+            "hero": "Helmet",
+            "value": ""
+          },
+          {
+            "visible": false,
+            "hero": "Helmet",
+            "value": ""
+          }
+        ],
+        "synergies": [
+          {
+            "visible": true,
+            "count": "2/4"
+          },
+          {
+            "visible": true,
+            "count": "1/2"
+          },
+          {
+            "visible": true,
+            "count": "1/2"
+          },
+          {
+            "visible": true,
+            "count": "1/2"
+          },
+          {
+            "visible": true,
+            "count": "1/2"
+          },
+          {
+            "visible": false,
+            "count": "1/2"
+          },
+          {
+            "visible": false,
+            "count": ""
+          },
+          {
+            "visible": false,
+            "count": ""
+          }
+        ],
+        "progress": 0.0,
+        "population": "3/6"
+      }
+    },
+    {
+      "wave": 2,
+      "actualDamage": 213.0,
+      "waveDamage": 213.0,
+      "totalDamage": 351.0,
+      "view": {
+        "damageScope": "wave",
+        "damageRows": [
+          {
+            "visible": true,
+            "hero": "Skeleton_Minion",
+            "value": "139"
+          },
+          {
+            "visible": true,
+            "hero": "Knight",
+            "value": "48"
+          },
+          {
+            "visible": true,
+            "hero": "Mage",
+            "value": "26"
+          },
+          {
+            "visible": false,
+            "hero": "Rogue",
+            "value": "211"
+          },
+          {
+            "visible": false,
+            "hero": "Skeleton_Warrior",
+            "value": "177"
+          },
+          {
+            "visible": false,
+            "hero": "Helmet",
+            "value": ""
+          },
+          {
+            "visible": false,
+            "hero": "Helmet",
+            "value": ""
+          },
+          {
+            "visible": false,
+            "hero": "Helmet",
+            "value": ""
+          }
+        ],
+        "synergies": [
+          {
+            "visible": true,
+            "count": "2/4"
+          },
+          {
+            "visible": true,
+            "count": "1/2"
+          },
+          {
+            "visible": true,
+            "count": "1/2"
+          },
+          {
+            "visible": true,
+            "count": "1/2"
+          },
+          {
+            "visible": true,
+            "count": "1/2"
+          },
+          {
+            "visible": false,
+            "count": "1/2"
+          },
+          {
+            "visible": false,
+            "count": ""
+          },
+          {
+            "visible": false,
+            "count": ""
+          }
+        ],
+        "progress": 0.111111112,
+        "population": "4/7"
+      }
+    },
+    {
+      "wave": 3,
+      "actualDamage": 276.0,
+      "waveDamage": 276.0,
+      "totalDamage": 627.0,
+      "view": {
+        "damageScope": "wave",
+        "damageRows": [
+          {
+            "visible": true,
+            "hero": "Skeleton_Minion",
+            "value": "146"
+          },
+          {
+            "visible": true,
+            "hero": "Rogue",
+            "value": "80"
+          },
+          {
+            "visible": true,
+            "hero": "Mage",
+            "value": "26"
+          },
+          {
+            "visible": true,
+            "hero": "Knight",
+            "value": "24"
+          },
+          {
+            "visible": false,
+            "hero": "Skeleton_Warrior",
+            "value": "177"
+          },
+          {
+            "visible": false,
+            "hero": "Helmet",
+            "value": ""
+          },
+          {
+            "visible": false,
+            "hero": "Helmet",
+            "value": ""
+          },
+          {
+            "visible": false,
+            "hero": "Helmet",
+            "value": ""
+          }
+        ],
+        "synergies": [
+          {
+            "visible": true,
+            "count": "3/4"
+          },
+          {
+            "visible": true,
+            "count": "1/2"
+          },
+          {
+            "visible": true,
+            "count": "1/2"
+          },
+          {
+            "visible": true,
+            "count": "1/2"
+          },
+          {
+            "visible": true,
+            "count": "1/2"
+          },
+          {
+            "visible": true,
+            "count": "1/2"
+          },
+          {
+            "visible": false,
+            "count": ""
+          },
+          {
+            "visible": false,
+            "count": ""
+          }
+        ],
+        "progress": 0.222222224,
+        "population": "5/7"
+      }
+    },
+    {
+      "wave": 4,
+      "actualDamage": 512.25,
+      "waveDamage": 512.25,
+      "totalDamage": 1139.25,
+      "view": {
+        "damageScope": "wave",
+        "damageRows": [
+          {
+            "visible": true,
+            "hero": "Skeleton_Minion",
+            "value": "237"
+          },
+          {
+            "visible": true,
+            "hero": "Mage",
+            "value": "120"
+          },
+          {
+            "visible": true,
+            "hero": "Knight",
+            "value": "86"
+          },
+          {
+            "visible": true,
+            "hero": "Rogue",
+            "value": "36"
+          },
+          {
+            "visible": true,
+            "hero": "Skeleton_Warrior",
+            "value": "32"
+          },
+          {
+            "visible": false,
+            "hero": "Helmet",
+            "value": ""
+          },
+          {
+            "visible": false,
+            "hero": "Helmet",
+            "value": ""
+          },
+          {
+            "visible": false,
+            "hero": "Helmet",
+            "value": ""
+          }
+        ],
+        "synergies": [
+          {
+            "visible": true,
+            "count": "3/4"
+          },
+          {
+            "visible": true,
+            "count": "2/4"
+          },
+          {
+            "visible": true,
+            "count": "2/2"
+          },
+          {
+            "visible": true,
+            "count": "1/2"
+          },
+          {
+            "visible": true,
+            "count": "1/2"
+          },
+          {
+            "visible": true,
+            "count": "1/2"
+          },
+          {
+            "visible": false,
+            "count": ""
+          },
+          {
+            "visible": false,
+            "count": ""
+          }
+        ],
+        "progress": 0.333333343,
+        "population": "6/7"
+      }
+    },
+    {
+      "wave": 5,
+      "actualDamage": 900.0,
+      "waveDamage": 900.0,
+      "totalDamage": 2039.25,
+      "view": {
+        "damageScope": "wave",
+        "damageRows": [
+          {
+            "visible": true,
+            "hero": "Skeleton_Minion",
+            "value": "348"
+          },
+          {
+            "visible": true,
+            "hero": "Mage",
+            "value": "186"
+          },
+          {
+            "visible": true,
+            "hero": "Knight",
+            "value": "161"
+          },
+          {
+            "visible": true,
+            "hero": "Rogue",
+            "value": "153"
+          },
+          {
+            "visible": true,
+            "hero": "Skeleton_Warrior",
+            "value": "52"
+          },
+          {
+            "visible": false,
+            "hero": "Helmet",
+            "value": ""
+          },
+          {
+            "visible": false,
+            "hero": "Helmet",
+            "value": ""
+          },
+          {
+            "visible": false,
+            "hero": "Helmet",
+            "value": ""
+          }
+        ],
+        "synergies": [
+          {
+            "visible": true,
+            "count": "3/4"
+          },
+          {
+            "visible": true,
+            "count": "2/4"
+          },
+          {
+            "visible": true,
+            "count": "2/2"
+          },
+          {
+            "visible": true,
+            "count": "1/2"
+          },
+          {
+            "visible": true,
+            "count": "1/2"
+          },
+          {
+            "visible": true,
+            "count": "1/2"
+          },
+          {
+            "visible": false,
+            "count": ""
+          },
+          {
+            "visible": false,
+            "count": ""
+          }
+        ],
+        "progress": 0.444444448,
+        "population": "7/8"
+      }
+    },
+    {
+      "wave": 6,
+      "actualDamage": 587.25000003,
+      "waveDamage": 587.25,
+      "totalDamage": 2626.50002,
+      "view": {
+        "damageScope": "wave",
+        "damageRows": [
+          {
+            "visible": true,
+            "hero": "Skeleton_Minion",
+            "value": "316"
+          },
+          {
+            "visible": true,
+            "hero": "Knight",
+            "value": "158"
+          },
+          {
+            "visible": true,
+            "hero": "Mage",
+            "value": "76"
+          },
+          {
+            "visible": true,
+            "hero": "Skeleton_Warrior",
+            "value": "36"
+          },
+          {
+            "visible": false,
+            "hero": "Skeleton_Warrior",
+            "value": "120"
+          },
+          {
+            "visible": false,
+            "hero": "Helmet",
+            "value": ""
+          },
+          {
+            "visible": false,
+            "hero": "Helmet",
+            "value": ""
+          },
+          {
+            "visible": false,
+            "hero": "Helmet",
+            "value": ""
+          }
+        ],
+        "synergies": [
+          {
+            "visible": true,
+            "count": "3/4"
+          },
+          {
+            "visible": true,
+            "count": "2/4"
+          },
+          {
+            "visible": true,
+            "count": "2/2"
+          },
+          {
+            "visible": true,
+            "count": "1/2"
+          },
+          {
+            "visible": true,
+            "count": "1/2"
+          },
+          {
+            "visible": true,
+            "count": "1/2"
+          },
+          {
+            "visible": false,
+            "count": ""
+          },
+          {
+            "visible": false,
+            "count": ""
+          }
+        ],
+        "progress": 0.5555556,
+        "population": "7/8"
+      }
+    },
+    {
+      "wave": 7,
+      "actualDamage": 750.00000153,
+      "waveDamage": 750.0,
+      "totalDamage": 3376.50002,
+      "view": {
+        "damageScope": "wave",
+        "damageRows": [
+          {
+            "visible": true,
+            "hero": "Skeleton_Minion",
+            "value": "297"
+          },
+          {
+            "visible": true,
+            "hero": "Mage",
+            "value": "156"
+          },
+          {
+            "visible": true,
+            "hero": "Knight",
+            "value": "142"
+          },
+          {
+            "visible": true,
+            "hero": "Rogue",
+            "value": "78"
+          },
+          {
+            "visible": true,
+            "hero": "Skeleton_Warrior",
+            "value": "75"
+          },
+          {
+            "visible": false,
+            "hero": "Helmet",
+            "value": ""
+          },
+          {
+            "visible": false,
+            "hero": "Helmet",
+            "value": ""
+          },
+          {
+            "visible": false,
+            "hero": "Helmet",
+            "value": ""
+          }
+        ],
+        "synergies": [
+          {
+            "visible": true,
+            "count": "3/4"
+          },
+          {
+            "visible": true,
+            "count": "2/4"
+          },
+          {
+            "visible": true,
+            "count": "2/2"
+          },
+          {
+            "visible": true,
+            "count": "1/2"
+          },
+          {
+            "visible": true,
+            "count": "1/2"
+          },
+          {
+            "visible": true,
+            "count": "1/2"
+          },
+          {
+            "visible": false,
+            "count": ""
+          },
+          {
+            "visible": false,
+            "count": ""
+          }
+        ],
+        "progress": 0.6666667,
+        "population": "8/8"
+      }
+    },
+    {
+      "wave": 8,
+      "actualDamage": 812.99999997,
+      "waveDamage": 813.0,
+      "totalDamage": 4189.499971,
+      "view": {
+        "damageScope": "wave",
+        "damageRows": [
+          {
+            "visible": true,
+            "hero": "Skeleton_Minion",
+            "value": "306"
+          },
+          {
+            "visible": true,
+            "hero": "Mage",
+            "value": "164"
+          },
+          {
+            "visible": true,
+            "hero": "Knight",
+            "value": "140"
+          },
+          {
+            "visible": true,
+            "hero": "Rogue",
+            "value": "137"
+          },
+          {
+            "visible": true,
+            "hero": "Skeleton_Warrior",
+            "value": "65"
+          },
+          {
+            "visible": false,
+            "hero": "Helmet",
+            "value": ""
+          },
+          {
+            "visible": false,
+            "hero": "Helmet",
+            "value": ""
+          },
+          {
+            "visible": false,
+            "hero": "Helmet",
+            "value": ""
+          }
+        ],
+        "synergies": [
+          {
+            "visible": true,
+            "count": "3/4"
+          },
+          {
+            "visible": true,
+            "count": "2/4"
+          },
+          {
+            "visible": true,
+            "count": "2/2"
+          },
+          {
+            "visible": true,
+            "count": "1/2"
+          },
+          {
+            "visible": true,
+            "count": "1/2"
+          },
+          {
+            "visible": true,
+            "count": "1/2"
+          },
+          {
+            "visible": false,
+            "count": ""
+          },
+          {
+            "visible": false,
+            "count": ""
+          }
+        ],
+        "progress": 0.7777778,
+        "population": "8/8"
+      }
+    },
+    {
+      "wave": 9,
+      "actualDamage": 1346.24999969,
+      "waveDamage": 1346.25,
+      "totalDamage": 5535.75008,
+      "view": {
+        "damageScope": "wave",
+        "damageRows": [
+          {
+            "visible": true,
+            "hero": "Skeleton_Minion",
+            "value": "513"
+          },
+          {
+            "visible": true,
+            "hero": "Mage",
+            "value": "268"
+          },
+          {
+            "visible": true,
+            "hero": "Knight",
+            "value": "263"
+          },
+          {
+            "visible": true,
+            "hero": "Skeleton_Warrior",
+            "value": "168"
+          },
+          {
+            "visible": true,
+            "hero": "Rogue",
+            "value": "133"
+          },
+          {
+            "visible": false,
+            "hero": "Helmet",
+            "value": ""
+          },
+          {
+            "visible": false,
+            "hero": "Helmet",
+            "value": ""
+          },
+          {
+            "visible": false,
+            "hero": "Helmet",
+            "value": ""
+          }
+        ],
+        "synergies": [
+          {
+            "visible": true,
+            "count": "3/4"
+          },
+          {
+            "visible": true,
+            "count": "2/4"
+          },
+          {
+            "visible": true,
+            "count": "2/2"
+          },
+          {
+            "visible": true,
+            "count": "1/2"
+          },
+          {
+            "visible": true,
+            "count": "1/2"
+          },
+          {
+            "visible": true,
+            "count": "1/2"
+          },
+          {
+            "visible": false,
+            "count": ""
+          },
+          {
+            "visible": false,
+            "count": ""
+          }
+        ],
+        "progress": 0.8888889,
+        "population": "8/9"
+      }
+    },
+    {
+      "wave": 10,
+      "actualDamage": 1575.0,
+      "waveDamage": 1575.0,
+      "totalDamage": 7110.75008,
+      "view": {
+        "damageScope": "wave",
+        "damageRows": [
+          {
+            "visible": true,
+            "hero": "Knight",
+            "value": "488"
+          },
+          {
+            "visible": true,
+            "hero": "Skeleton_Minion",
+            "value": "444"
+          },
+          {
+            "visible": true,
+            "hero": "Mage",
+            "value": "255"
+          },
+          {
+            "visible": true,
+            "hero": "Rogue",
+            "value": "211"
+          },
+          {
+            "visible": true,
+            "hero": "Skeleton_Warrior",
+            "value": "177"
+          },
+          {
+            "visible": false,
+            "hero": "Helmet",
+            "value": ""
+          },
+          {
+            "visible": false,
+            "hero": "Helmet",
+            "value": ""
+          },
+          {
+            "visible": false,
+            "hero": "Helmet",
+            "value": ""
+          }
+        ],
+        "synergies": [
+          {
+            "visible": true,
+            "count": "3/4"
+          },
+          {
+            "visible": true,
+            "count": "2/4"
+          },
+          {
+            "visible": true,
+            "count": "2/2"
+          },
+          {
+            "visible": true,
+            "count": "1/2"
+          },
+          {
+            "visible": true,
+            "count": "1/2"
+          },
+          {
+            "visible": true,
+            "count": "1/2"
+          },
+          {
+            "visible": false,
+            "count": ""
+          },
+          {
+            "visible": false,
+            "count": ""
+          }
+        ],
+        "progress": 1.0,
+        "population": "8/9"
+      }
+    }
+  ],
+  "restartCleared": true,
+  "console": {
+    "Error": "Console 日志 0 条：",
+    "Exception": "Console 日志 0 条：",
+    "Assert": "Console 日志 0 条："
+  }
+}

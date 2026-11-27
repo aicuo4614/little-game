@@ -3,7 +3,5 @@
   "rootNamespace": "LittleGame.Combat",
   "noEngineReferences": true,
   "autoReferenced": true,
-  "references": [
-    "LittleGame.RoyTAStar"
-  ]
+  "references": []
 }

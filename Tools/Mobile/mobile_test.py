@@ -114,12 +114,17 @@ def build_apk(timeout):
     last_state = None
     while time.monotonic() < deadline:
         current = read_status()
+        # 文件替换期间路径可能短暂不可见，等待本次状态重新出现。
+        if not current.get("id"):
+            time.sleep(.2)
+            continue
         if current.get("id") != job:
             raise RuntimeError("构建任务被另一次请求替换")
         state = current.get("state")
-        if state != last_state:
+        progress = (state, current.get("message"))
+        if progress != last_state:
             print(current.get("message", state), flush=True)
-            last_state = state
+            last_state = progress
         if state == "failed":
             raise RuntimeError(current["message"])
         if state == "succeeded":
@@ -151,13 +156,17 @@ def deploy(adb, serial, apk):
     (report_dir / "launch.txt").write_text(started, encoding="utf-8")
     if "Status: ok" not in started:
         raise RuntimeError(f"游戏启动失败：{started}")
-    time.sleep(5)
+    launch_pid = run(command + ["shell", "pidof", PACKAGE], check=False).strip()
+    time.sleep(12)
     pid = run(command + ["shell", "pidof", PACKAGE], check=False).strip()
     if not pid:
-        logs = run(command + ["logcat", "-d", "-t", "300"])
+        log_command = ["logcat", "-d"]
+        if launch_pid:
+            log_command.append("--pid=" + launch_pid.split()[0])
+        logs = run(command + log_command)
         (report_dir / "launch-failure.txt").write_text(logs, encoding="utf-8")
         raise RuntimeError(f"启动后游戏进程已退出，日志位于 {report_dir}")
-    logs = run(command + ["logcat", "-d", "--pid=" + pid.split()[0], "-t", "500"])
+    logs = run(command + ["logcat", "-d", "--pid=" + pid.split()[0]])
     (report_dir / "logcat.txt").write_text(logs, encoding="utf-8")
     screen = run(command + ["exec-out", "screencap", "-p"], binary=True)
     if not screen.startswith(b"\x89PNG\r\n\x1a\n"):
@@ -168,6 +177,7 @@ def deploy(adb, serial, apk):
     runtime_errors = [
         line for line in logs.splitlines()
         if "E Unity" in line or "FATAL EXCEPTION" in line or "Fatal signal" in line
+        or "E CRASH" in line or "signal 11 (SIGSEGV)" in line
     ]
     evidence = {
         "packageId": PACKAGE, "apk": str(apk), "pid": pid,

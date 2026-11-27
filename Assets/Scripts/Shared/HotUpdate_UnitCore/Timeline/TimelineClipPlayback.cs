@@ -19,6 +19,7 @@ public sealed class TimelineClipPlayback
     private readonly BattleUnitTimelineActor hitActor;
     private readonly BattleUnitTimelineActor effectSource;
     private readonly Func<string, EffectPointLightData> effectLight;
+    private readonly bool incrementalEffects;
 
     public TimelineClipPlayback(
         Animator caster,
@@ -28,13 +29,15 @@ public sealed class TimelineClipPlayback
         Action<GameObject> recycleEffect,
         BattleUnitTimelineActor hitActor = null,
         Func<string, EffectPointLightData> effectLight = null,
-        BattleUnitTimelineActor effectSource = null)
+        BattleUnitTimelineActor effectSource = null,
+        bool incrementalEffects = false)
     {
         this.caster = caster;
         this.target = target;
         this.hitAnchor = hitAnchor;
         this.hitActor = hitActor;
         this.effectSource = effectSource;
+        this.incrementalEffects = incrementalEffects;
         this.effectLight = effectLight;
         this.spawnEffect = spawnEffect ?? throw new ArgumentNullException(nameof(spawnEffect));
         this.recycleEffect = recycleEffect ?? throw new ArgumentNullException(nameof(recycleEffect));
@@ -134,7 +137,7 @@ public sealed class TimelineClipPlayback
                 effect.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
             }
 
-            effectPlayers.Add(hit, new TimelineEffectPlayback(effect, effectLight?.Invoke(hit.EffectPath)));
+            effectPlayers.Add(hit, new TimelineEffectPlayback(effect, effectLight?.Invoke(hit.EffectPath), incrementalEffects));
         }
 
         if (!effect)

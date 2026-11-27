@@ -1,0 +1,15 @@
+{
+  "state": "failed",
+  "scenario": "blocked_then_release",
+  "results": [
+    {
+      "scenario": "stationary_wall_detour",
+      "passed": true,
+      "x": 2.29992676,
+      "maxAbsZ": 2.3774786
+    }
+  ],
+  "error": "System.InvalidOperationException: blocked_then_release: 撤销阻挡后恢复 x=-0.7255859 z=0.5999837 nav={\"backend\":\"unity_navmesh_agent_attack_slots\",\"agents\":5,\"pooled\":1,\"pathRequests\":1,\"failedPaths\":0,\"buildMs\":4.8316,\"nativeAvoidance\":\"HighQualityRVO\",\"meshTypes\":5,\"actors\":[{\"id\":1,\"bound\":true,\"carving\":false,\"holding\":false,\"hasGoal\":true,\"x\":-0.725585938,\"z\":0.5999837,\"goalX\":2.30004883,\"goalZ\":-2.38418579E-07,\"pathStatus\":\"PathPartial\",\"blockedFor\":0.0},{\"id\":18,\"bound\":false,\"carving\":true,\"holding\":true,\"hasGoal\":false,\"x\":0.0,\"z\":-2.4,\"goalX\":-1050.0,\"goalZ\":0.0,\"pathStatus\":\"unbound\",\"blockedFor\":0.0},{\"id\":19,\"bound\":false,\"carving\":true,\"holding\":true,\"hasGoal\":false,\"x\":0.0,\"z\":-1.2,\"goalX\":-1050.0,\"goalZ\":0.0,\"pathStatus\":\"unbound\",\"blockedFor\":0.0},{\"id\":21,\"bound\":false,\"carving\":true,\"holding\":true,\"hasGoal\":false,\"x\":0.0,\"z\":1.2,\"goalX\":-1050.0,\"goalZ\":0.0,\"pathStatus\":\"unbound\",\"blockedFor\":0.0},{\"id\":22,\"bound\":false,\"carving\":true,\"holding\":true,\"hasGoal\":false,\"x\":0.0,\"z\":2.4,\"goalX\":-1050.0,\"goalZ\":0.0,\"pathStatus\":\"unbound\",\"blockedFor\":0.0}]}\r\n  at LittleGame.Client.Editor.NavMeshValidation.Require (System.Boolean pass, System.String message) [0x00019] in E:\\Project\\little-game\\Assets\\LittleGame\\Client\\Editor\\NavMeshValidation.cs:142 \r\n  at LittleGame.Client.Editor.NavMeshValidation.Run () [0x00553] in E:\\Project\\little-game\\Assets\\LittleGame\\Client\\Editor\\NavMeshValidation.cs:53 ",
+  "platform": "WindowsEditor",
+  "note": "隔离几何/状态验证，不是正常玩法或手机验证"
+}

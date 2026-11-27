@@ -1,0 +1,19 @@
+{
+  "platform": "WindowsEditor",
+  "checks": [
+    "重复预热只创建一只：Unit/Low/Grunt/Grunt",
+    "可在激活前准备实例：Unit/Low/Grunt/Grunt",
+    "归池后复用原实例：Unit/Low/Grunt/Grunt",
+    "复用时恢复预制体缩放：Unit/Low/Grunt/Grunt",
+    "重复预热只创建一只：Effect/Low/fx_arrow_basic",
+    "可在激活前准备实例：Effect/Low/fx_arrow_basic",
+    "归池后复用原实例：Effect/Low/fx_arrow_basic",
+    "复用时恢复预制体缩放：Effect/Low/fx_arrow_basic",
+    "复用粒子已清空：Projectile 1",
+    "复用粒子已清空：SubSparks",
+    "复用粒子已清空：Glow",
+    "复用粒子已清空：Waves",
+    "借出归还计数正确",
+    "池销毁后资源引用计数恢复"
+  ]
+}

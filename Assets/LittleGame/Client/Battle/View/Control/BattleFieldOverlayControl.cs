@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace LittleGame.Client.Battle
 {
-    /// <summary>战场布阵白框、集火准星、雷池法阵、选中光标与场景压暗子系统。</summary>
+    /// <summary>战场布阵白框、雷池法阵、选中光标与场景压暗子系统。</summary>
     public sealed class BattleFieldOverlayControl : BattleControlBase
     {
         private BattleFieldOverlayView overlay;

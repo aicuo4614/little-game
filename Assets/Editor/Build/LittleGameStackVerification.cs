@@ -8,6 +8,16 @@ using UnityEngine;
 /// <summary>真实调用迁入的构建管线，记录完成结果，供 MCP 等待而不重复触发。</summary>
 public static class LittleGameStackVerification
 {
+    // MobileTestBuild 位于 asmdef；通过反射调用默认 Editor 程序集中的构建管线。
+    public static void PrepareMobileContent()
+    {
+        if (EditorUserBuildSettings.activeBuildTarget != BuildTarget.Android)
+            throw new InvalidOperationException("手机内容包必须使用 Android 构建目标");
+        CompileHotDlls();
+        if (!KabuYooAssetBatchBuilder.TryBuildAllPackages(out var package, out var error, out _))
+            throw new InvalidOperationException($"手机内置资源构建失败 {package}: {error}");
+    }
+
     [MenuItem("Little Game/Framework/Compile Hot DLLs")]
     public static void CompileHotDlls()
     {
@@ -16,7 +26,7 @@ public static class LittleGameStackVerification
         CompileDllCommand.CompileDll(target);
         HybridCLRBuilder.SyncOnly();
         Directory.CreateDirectory("Reports/Framework");
-        File.WriteAllText("Reports/Framework/hot-dlls.json", JsonUtility.ToJson(new CompileResult
+        WriteReport("Reports/Framework/hot-dlls.json", JsonUtility.ToJson(new CompileResult
         {
             target = target.ToString(),
             completed = true,
@@ -24,6 +34,15 @@ public static class LittleGameStackVerification
             output = SettingsUtil.GetHotUpdateDllsOutputDirByTarget(target),
             note = "仅编译和同步 DLL；没有构建 APK，也不代表 HybridCLR 原生运行验收。完整发布需 HybridCLRBuilder.CompileAndSync 生成元数据。"
         }, true));
+    }
+
+    private static void WriteReport(string path, string json)
+    {
+        // 编辑器或索引器可能映射旧报告；替换文件而非原位截断。
+        string temporary = path + ".tmp";
+        File.WriteAllText(temporary, json);
+        if (File.Exists(path)) File.Replace(temporary, path, null);
+        else File.Move(temporary, path);
     }
 
     [MenuItem("Little Game/Framework/Build Resource Packages")]

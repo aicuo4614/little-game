@@ -1,0 +1,131 @@
+{
+  "date": "2026-11-27",
+  "assets": [
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Assets\\Monsters Ultimate Pack 02 Cute Series\\Werewolf Cute Series\\FBX\\Werewolf.FBX",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\CuteMonsters\\Werewolf\\Werewolf.FBX",
+      "sourceSha256": "28b93cc260ee94f1afe0983e6a65b234ff67b29053eb17b39dd5d78940f59d49",
+      "destinationSha256": "28b93cc260ee94f1afe0983e6a65b234ff67b29053eb17b39dd5d78940f59d49"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Assets\\Monsters Ultimate Pack 02 Cute Series\\Werewolf Cute Series\\FBX\\Werewolf@Idle.FBX",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\CuteMonsters\\Werewolf\\Werewolf@Idle.FBX",
+      "sourceSha256": "32d2244f4cafaf00cfe6b61d9d74933b6d04e6ff9da17d68b60f5f00f0af83a0",
+      "destinationSha256": "32d2244f4cafaf00cfe6b61d9d74933b6d04e6ff9da17d68b60f5f00f0af83a0"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Assets\\Monsters Ultimate Pack 02 Cute Series\\Werewolf Cute Series\\FBX\\Werewolf@Run Forward In Place.FBX",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\CuteMonsters\\Werewolf\\Werewolf@Run Forward In Place.FBX",
+      "sourceSha256": "ab12ab286a2f3872c8bba93e9f1fe26415932dd6ca9b6411d5ac94e340bdfd6f",
+      "destinationSha256": "ab12ab286a2f3872c8bba93e9f1fe26415932dd6ca9b6411d5ac94e340bdfd6f"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Assets\\Monsters Ultimate Pack 02 Cute Series\\Werewolf Cute Series\\FBX\\Werewolf@Right Slash Attack.FBX",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\CuteMonsters\\Werewolf\\Werewolf@Right Slash Attack.FBX",
+      "sourceSha256": "a67b195558edee91e1cdc73ea156e0e2738d145964398df151f560e0e0df3f6f",
+      "destinationSha256": "a67b195558edee91e1cdc73ea156e0e2738d145964398df151f560e0e0df3f6f"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Assets\\Monsters Ultimate Pack 02 Cute Series\\Werewolf Cute Series\\FBX\\Werewolf@Take Damage.FBX",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\CuteMonsters\\Werewolf\\Werewolf@Take Damage.FBX",
+      "sourceSha256": "4d7009e9db74fcc0738308bde679dd98f22afbd6e774dae16880e7e3a6af4a91",
+      "destinationSha256": "4d7009e9db74fcc0738308bde679dd98f22afbd6e774dae16880e7e3a6af4a91"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Assets\\Monsters Ultimate Pack 02 Cute Series\\Werewolf Cute Series\\FBX\\Werewolf@Die.FBX",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\CuteMonsters\\Werewolf\\Werewolf@Die.FBX",
+      "sourceSha256": "1ac544ce87e7ae78c52c0b6e58fb37898db5a399e4a7b2cdb9624dee761a099f",
+      "destinationSha256": "1ac544ce87e7ae78c52c0b6e58fb37898db5a399e4a7b2cdb9624dee761a099f"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Assets\\Monsters Ultimate Pack 02 Cute Series\\Werewolf Cute Series\\Textures\\Werewolf.psd",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\CuteMonsters\\Werewolf\\Werewolf.psd",
+      "sourceSha256": "c2f650455064fd3e8d26d40fc1751d6a9c118299fb3027ff152caf1248d5ccc7",
+      "destinationSha256": "c2f650455064fd3e8d26d40fc1751d6a9c118299fb3027ff152caf1248d5ccc7"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Assets\\Monsters Ultimate Pack 02 Cute Series\\Hermit King Cute Series\\FBX\\Hermit King.FBX",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\CuteMonsters\\Hermit King\\Hermit King.FBX",
+      "sourceSha256": "3c1750fc8a0e5a0cba54068f964f7e2961f735886b71cf3e96bc48cb2611b854",
+      "destinationSha256": "3c1750fc8a0e5a0cba54068f964f7e2961f735886b71cf3e96bc48cb2611b854"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Assets\\Monsters Ultimate Pack 02 Cute Series\\Hermit King Cute Series\\FBX\\Hermit King@Idle.FBX",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\CuteMonsters\\Hermit King\\Hermit King@Idle.FBX",
+      "sourceSha256": "495c763a687af9c04b7079f9bf7b36cdddbae9bed2b7631db60bed74865be25a",
+      "destinationSha256": "495c763a687af9c04b7079f9bf7b36cdddbae9bed2b7631db60bed74865be25a"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Assets\\Monsters Ultimate Pack 02 Cute Series\\Hermit King Cute Series\\FBX\\Hermit King@Walk Forward In Place.FBX",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\CuteMonsters\\Hermit King\\Hermit King@Walk Forward In Place.FBX",
+      "sourceSha256": "79f0de3c8511a193ce35c0d3ca38bd0622269c47f029c19bf0a246df26954169",
+      "destinationSha256": "79f0de3c8511a193ce35c0d3ca38bd0622269c47f029c19bf0a246df26954169"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Assets\\Monsters Ultimate Pack 02 Cute Series\\Hermit King Cute Series\\FBX\\Hermit King@Slash Attack.FBX",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\CuteMonsters\\Hermit King\\Hermit King@Slash Attack.FBX",
+      "sourceSha256": "b9fa66316fcaa4e0e112e6f75691c3f8c6a3fa4b09582ca5cb770eb2f92411f6",
+      "destinationSha256": "b9fa66316fcaa4e0e112e6f75691c3f8c6a3fa4b09582ca5cb770eb2f92411f6"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Assets\\Monsters Ultimate Pack 02 Cute Series\\Hermit King Cute Series\\FBX\\Hermit King@Take Damage.FBX",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\CuteMonsters\\Hermit King\\Hermit King@Take Damage.FBX",
+      "sourceSha256": "83295275d52d4c2a5b81b5b52cbf3152b6c91c3c6a157f723f842ed26adb8dfb",
+      "destinationSha256": "83295275d52d4c2a5b81b5b52cbf3152b6c91c3c6a157f723f842ed26adb8dfb"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Assets\\Monsters Ultimate Pack 02 Cute Series\\Hermit King Cute Series\\FBX\\Hermit King@Die.FBX",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\CuteMonsters\\Hermit King\\Hermit King@Die.FBX",
+      "sourceSha256": "77d5bcc512128078c6afec0a144a157a62ddb79cfaa9ff31c55bc27071b18d74",
+      "destinationSha256": "77d5bcc512128078c6afec0a144a157a62ddb79cfaa9ff31c55bc27071b18d74"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Assets\\Monsters Ultimate Pack 02 Cute Series\\Hermit King Cute Series\\Textures\\Hermit King.psd",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\CuteMonsters\\Hermit King\\Hermit King.psd",
+      "sourceSha256": "704dd26dc7965b174e6745f8b0faa8f1a0b4dd26eb48f0e8bf712a1fb110ac8f",
+      "destinationSha256": "704dd26dc7965b174e6745f8b0faa8f1a0b4dd26eb48f0e8bf712a1fb110ac8f"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Assets\\Monsters Ultimate Pack 02 Cute Series\\Sunflower Fairy Cute Series\\FBX\\Sunflower Fairy.FBX",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\CuteMonsters\\Sunflower Fairy\\Sunflower Fairy.FBX",
+      "sourceSha256": "2c46e4644c4cd2983eec1a29e896e1b7eadfbccb678d88c56716f62d4eed12dc",
+      "destinationSha256": "2c46e4644c4cd2983eec1a29e896e1b7eadfbccb678d88c56716f62d4eed12dc"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Assets\\Monsters Ultimate Pack 02 Cute Series\\Sunflower Fairy Cute Series\\FBX\\Sunflower Fairy@Idle.FBX",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\CuteMonsters\\Sunflower Fairy\\Sunflower Fairy@Idle.FBX",
+      "sourceSha256": "1c0e32013dc7c59f63926a84c7b693d2ad744ef94241d612ea2a7b2c92685214",
+      "destinationSha256": "1c0e32013dc7c59f63926a84c7b693d2ad744ef94241d612ea2a7b2c92685214"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Assets\\Monsters Ultimate Pack 02 Cute Series\\Sunflower Fairy Cute Series\\FBX\\Sunflower Fairy@Fly Forward In Place.FBX",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\CuteMonsters\\Sunflower Fairy\\Sunflower Fairy@Fly Forward In Place.FBX",
+      "sourceSha256": "8921ec76d62c252ff59d469e0e854b78820cfca0cf16dd2ecab5a3a8f713b374",
+      "destinationSha256": "8921ec76d62c252ff59d469e0e854b78820cfca0cf16dd2ecab5a3a8f713b374"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Assets\\Monsters Ultimate Pack 02 Cute Series\\Sunflower Fairy Cute Series\\FBX\\Sunflower Fairy@Cast Spell 01.FBX",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\CuteMonsters\\Sunflower Fairy\\Sunflower Fairy@Cast Spell 01.FBX",
+      "sourceSha256": "612e74e940d756c7c5ce418965ede1638fe68c7f446debf2c4c141f5f1be63f7",
+      "destinationSha256": "612e74e940d756c7c5ce418965ede1638fe68c7f446debf2c4c141f5f1be63f7"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Assets\\Monsters Ultimate Pack 02 Cute Series\\Sunflower Fairy Cute Series\\FBX\\Sunflower Fairy@Take Damage.FBX",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\CuteMonsters\\Sunflower Fairy\\Sunflower Fairy@Take Damage.FBX",
+      "sourceSha256": "e9f57ea84367090c975a15b46a1cdfc88ceac69213b0ede25504eb590c9d57ff",
+      "destinationSha256": "e9f57ea84367090c975a15b46a1cdfc88ceac69213b0ede25504eb590c9d57ff"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Assets\\Monsters Ultimate Pack 02 Cute Series\\Sunflower Fairy Cute Series\\FBX\\Sunflower Fairy@Die.FBX",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\CuteMonsters\\Sunflower Fairy\\Sunflower Fairy@Die.FBX",
+      "sourceSha256": "51b35e275d02d5a071194362e1d41e323fe25a5963fbbaca01fb6d11e5bdc535",
+      "destinationSha256": "51b35e275d02d5a071194362e1d41e323fe25a5963fbbaca01fb6d11e5bdc535"
+    },
+    {
+      "source": "E:\\Project\\AutoClash_20210125\\AutoClash1\\Assets\\Assets\\Monsters Ultimate Pack 02 Cute Series\\Sunflower Fairy Cute Series\\Textures\\Sunflower Fairy.psd",
+      "destination": "Assets\\LittleGame\\Art\\UnitSources\\CuteMonsters\\Sunflower Fairy\\Sunflower Fairy.psd",
+      "sourceSha256": "be13afa4e9b5ea1c1ca7787cdd2d215a1c47dd25e50b7a03b7aef1021220fbb8",
+      "destinationSha256": "be13afa4e9b5ea1c1ca7787cdd2d215a1c47dd25e50b7a03b7aef1021220fbb8"
+    }
+  ]
+}

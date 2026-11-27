@@ -1,0 +1,85 @@
+{
+  "Version": 4,
+  "Seed": -1629508744,
+  "Wave": 4,
+  "Spins": 0,
+  "Misses": 1,
+  "SpinCount": 6,
+  "NextId": 30,
+  "Speed": 1,
+  "MaxDeployed": 7,
+  "PopExp": 4,
+  "MarchDistance": 75.0,
+  "RandomState": 898768648,
+  "Phase": 2,
+  "Troops": [
+    {
+      "Id": 1,
+      "Star": 2,
+      "Lane": 0,
+      "Row": 0,
+      "HomeX": -1.15,
+      "HomeZ": 2.15,
+      "HasHomePos": true,
+      "Kind": 0,
+      "Branch": 0
+    },
+    {
+      "Id": 3,
+      "Star": 2,
+      "Lane": 0,
+      "Row": 1,
+      "HomeX": -2.8,
+      "HomeZ": 2.15,
+      "HasHomePos": true,
+      "Kind": 1,
+      "Branch": 0
+    },
+    {
+      "Id": 4,
+      "Star": 1,
+      "Lane": 1,
+      "Row": 1,
+      "HomeX": -2.8,
+      "HomeZ": 0.0,
+      "HasHomePos": true,
+      "Kind": 2,
+      "Branch": 0
+    },
+    {
+      "Id": 6,
+      "Star": 1,
+      "Lane": 1,
+      "Row": 2,
+      "HomeX": -4.45,
+      "HomeZ": 0.0,
+      "HasHomePos": true,
+      "Kind": 3,
+      "Branch": 0
+    },
+    {
+      "Id": 22,
+      "Star": 1,
+      "Lane": 2,
+      "Row": 1,
+      "HomeX": -2.8,
+      "HomeZ": -2.15,
+      "HasHomePos": true,
+      "Kind": 1,
+      "Branch": 0
+    }
+  ],
+  "Rewards": [],
+  "Pending": [],
+  "Reels": [
+    3,
+    3,
+    3,
+    2,
+    1,
+    1,
+    2,
+    0,
+    0
+  ]
+}

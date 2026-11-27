@@ -4,7 +4,7 @@ using System.Reflection;
 using UnityEngine;
 
 /// <summary>
-/// AOT 启动阶段：初始化并热更 CodePackage（DLL + AOT 补充元数据），完成后反射进入 <c>MainHotUpdate.Launch</c>。
+/// AOT 启动阶段：从内置 CodePackage 加载 DLL 及 AOT 补充元数据，再反射进入 MainHotUpdate.Launch。
 /// Editor 默认走 asmdef 直编，直接进入热更入口，保证点 Play 秒进。
 /// </summary>
 public sealed class CodePackageHotUpdateFlow
@@ -35,32 +35,23 @@ public sealed class CodePackageHotUpdateFlow
 
     public void Start()
     {
-
-
-        ResourceMgr.Instance.InitHostPackage(ResourcePackageName.CodePackage, ok =>
+        onProgress?.Invoke(0f);
+        onInfo?.Invoke("正在读取内置启动资源...");
+        ResourceMgr.Instance.InitBuiltInPackage(ResourcePackageName.CodePackage, ok =>
         {
             if (!ok || ResourceMgr.Instance.GetPackage(ResourcePackageName.CodePackage) == null)
             {
-                GameDebug.LogError("Launcher", "CodePackage 初始化失败，停止启动，禁止绕过热更加载业务。");
+                GameDebug.LogError("Launcher", "内置 CodePackage 初始化失败，停止启动。");
                 return;
             }
 
             var handle = new HotUpdateMgr.FlowHandle();
-            handle.OnPackageCheckStart += _ =>
-            {
-                onProgress?.Invoke(0f);
-                onInfo?.Invoke("正在检查热更版本...");
-            };
-            handle.OnPackageDownloadProgress += (_, __, ap, ab, tb) =>
-            {
-                onProgress?.Invoke(ap);
-                onInfo?.Invoke($"正在下载更新 {ab / 1024f:F1}KB / {tb / 1024f:F1}KB");
-            };
+            handle.OnPackageAssemblyLoadStart += _ => onInfo?.Invoke("正在加载游戏代码...");
             handle.OnAllFlowComplete += success =>
             {
                 if (!success)
                 {
-                    GameDebug.LogError("Launcher", "CodePackage 热更失败");
+                    GameDebug.LogError("Launcher", "内置 CodePackage 加载程序集失败");
                     return;
                 }
 
@@ -68,8 +59,8 @@ public sealed class CodePackageHotUpdateFlow
                 TryLaunch(HotUpdateMgr.Instance.AllAssemblies, "MainHotUpdate", "Launch", "HotUpdate_Main");
             };
 
-            CoroutineRunner.Start(HotUpdateMgr.Instance.RunFlow(HotUpdateConfigs, handle));
-        }, cdnOnly: true);
+            CoroutineRunner.Start(HotUpdateMgr.Instance.LoadReadyPackages(HotUpdateConfigs, handle));
+        });
     }
 
     private void TryLaunch(

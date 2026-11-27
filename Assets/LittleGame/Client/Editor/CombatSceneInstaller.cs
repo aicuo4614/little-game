@@ -53,7 +53,8 @@ namespace LittleGame.Client.Editor
                 AssetDatabase.ImportAsset(path.Replace('\\','/'), ImportAssetOptions.ForceUpdate);
             AssetDatabase.SaveAssets();
         }
-        private static void SetPortrait()
+        [MenuItem("Little Game/Combat/Set Portrait Preview")]
+        public static void SetPortrait()
         {
             var assembly = typeof(EditorWindow).Assembly;
             var sizesType = assembly.GetType("UnityEditor.GameViewSizes");

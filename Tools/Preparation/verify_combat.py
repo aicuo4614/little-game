@@ -119,6 +119,7 @@ def main():
     assert framework['aotStarted'] and framework['mainLaunched'] and framework['mvcInitialized'] and framework['battleModuleOpen']
     assert framework['qualityInitialized'] and all(p['manifestReady'] for p in framework['packages']), framework
     definitions = call('get_definitions')
+    boss_waves = {wave['wave'] for wave in definitions['stage'] if wave['boss']}
     assert definitions['rules']['rvoActive'] is False and definitions['rules']['blockedWait'] is True, definitions
     assert call('get_navigation')['algorithm'] == 'roy_astar_attack_slots_swept_motion'
     action('restart', seed=173)
@@ -216,27 +217,20 @@ def main():
     action('set_speed', speed=1)
     action('start_wave')
     wait(lambda s: len(s['enemies']) > 0)
-    # 等首批敌人进入清晰可见的战场，再走真实按钮与瞄准输入。
+    # 等首批敌人进入清晰可见的战场，再走真实暂停按钮输入。
     deadline = time.monotonic() + 8
     while not any(.67 < p['x'] < .96 and .32 < p['y'] < .81 for p in view()['enemies']):
         assert time.monotonic() < deadline, '未观察到右侧敌人入场'
         time.sleep(.05)
-    click(button('aim_focus'))
-    assert state()['aim'] == 'Focus'
-    aiming = view()
-    assert min(t['x'] for t in aiming['troops']) >= .04, '前移镜头挤到左侧友军'
-    a = state()['battleTime']
-    time.sleep(.3)
-    assert state()['battleTime'] == a
-    assert view()['presentation']['cameraX'] == aiming['presentation']['cameraX']
+    click(button('pause'))
+    assert state()['paused']
+    paused_view = view()
+    a = state()['battleTime']; time.sleep(.3); assert state()['battleTime'] == a
+    assert view()['presentation']['cameraX'] == paused_view['presentation']['cameraX']
     assert view()['presentation']['cameraYaw'] == 0
     capture('combat-enemy-entrance')
-    action('cancel_aim')
-    action('aim', kind='Protect')
-    a = state()['battleTime']; time.sleep(.3); assert state()['battleTime'] == a
-    checks.append('右侧敌军入场可见，集火瞄准锁住相机平移与朝向通过')
-    action('cancel_aim'); action('aim', kind='Protect'); action('protect', lane=1)
-    assert state()['tactics'] == 0 and not call('aim', kind='Focus')['accepted']
+    action('pause', paused=False)
+    checks.append('右侧敌军入场可见，暂停锁住相机平移与朝向通过')
     time.sleep(2.0)
     action('pause', paused=True); a = state()['battleTime']; time.sleep(.2); assert state()['battleTime'] == a
     capture('combat-fighting')
@@ -246,12 +240,11 @@ def main():
     time.sleep(1.3)
     returned = view()['presentation']
     assert abs(returned['cameraX'] - returned['cameraBaseX']) < .015, returned['cameraX']
-    checks.append('真实战斗、固定移速A*导航、暂停/瞄准/护盾及战中拒绝布阵通过')
+    checks.append('真实战斗、固定移速A*导航、暂停/伤害统计及战中拒绝布阵通过')
 
-    # 完整 12 波远征（从开局 0 单位全靠老虎机打通 12 波）
+    # 从开局 0 单位正常招募，打通配置中的全部波次。
     action('restart', seed=173); action('set_speed', speed=2)
     seen_boss = False; seen_reward = False; captures = set()
-    focused_with_pointer = False
     end = time.monotonic() + 300
     while True:
         assert time.monotonic() < end, '远征超时'
@@ -263,7 +256,7 @@ def main():
                 if state()['pending']: arrange()
                 action('spin'); arrange()
             arrange(); s = state()
-            if s['wave'] in (6, 12):
+            if s['wave'] in boss_waves:
                 seen_boss = True
                 capture('combat-boss-preparation-' + str(s['wave']))
             action('start_wave')
@@ -275,28 +268,17 @@ def main():
             action('next_wave')
             if 'Reinforcements' in state()['rewards']: assert state()['spins'] == 4
         else:
-            if s['wave'] == 2 and not focused_with_pointer:
-                targets = [t for t in view()['enemies'] if .60 < t['x'] < .9 and .37 < t['y'] < .65]
-                if targets:
-                    target_id = targets[0]['id']
-                    click(button('aim_focus'))
-                    target = next(t for t in view()['enemies'] if t['id'] == target_id)
-                    click(target)
-                    assert state()['aim'] == 'None' and state()['tactics'] == 0
-                    focused_with_pointer = True
-            if s['wave'] in (6, 12) and s['bossTelegraph']['lane'] >= 0 and s['wave'] not in captures:
+            if s['wave'] in boss_waves and s['bossTelegraph']['lane'] >= 0 and s['wave'] not in captures:
                 action('pause', paused=True)
                 assert view()['presentation']['cameraX'] <= .85, 'boss telegraph leaves the 540x960 frame'
                 capture('combat-boss-warning-' + str(s['wave'])); captures.add(s['wave'])
                 action('pause', paused=False)
-                if s['tactics'] > 0: action('aim', kind='Protect'); action('protect', lane=s['bossTelegraph']['lane'])
             time.sleep(.15)
     assert s['phase'] == 'Won' and s['maxDeployed'] == 9, s
     assert seen_boss and seen_reward
-    assert focused_with_pointer, '第二波未验证集火目标点击'
-    assert 6 in captures, '第6波未采集到首领预警'
+    assert captures & boss_waves, '未采集到首领预警'
     capture('combat-victory')
-    checks.append('从零单位起手完整12波横向远征获胜通过')
+    checks.append(f'从零单位起手完整{s["totalWaves"]}波横向远征获胜通过')
 
     # 单兵团灭判负与重开
     action('restart', seed=173)

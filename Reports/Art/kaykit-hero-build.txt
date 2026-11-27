@@ -1,0 +1,57 @@
+Knight Idle legacy=False len=1.067 curves=240 missing=0
+Knight Walk legacy=False len=0.800 curves=240 missing=0
+Knight Attack legacy=False len=1.367 curves=240 missing=0
+Knight Hit legacy=False len=0.667 curves=240 missing=0
+Knight Death legacy=False len=0.800 curves=240 missing=0
+Knight Slam legacy=False len=1.367 curves=240 missing=0
+Knight animator=true controller=Knight avatar=KnightAvatar nodes=7 renderers=9 triangles=5800
+Ranger Idle legacy=False len=1.067 curves=240 missing=0
+Ranger Walk legacy=False len=0.800 curves=240 missing=0
+Ranger Attack legacy=False len=1.333 curves=240 missing=0
+Ranger Hit legacy=False len=0.667 curves=240 missing=0
+Ranger Death legacy=False len=0.800 curves=240 missing=0
+Ranger Slam legacy=False len=1.333 curves=240 missing=0
+Ranger animator=true controller=Ranger avatar=RangerAvatar nodes=7 renderers=8 triangles=8900
+Mage Idle legacy=False len=1.067 curves=240 missing=0
+Mage Walk legacy=False len=0.800 curves=240 missing=0
+Mage Attack legacy=False len=0.933 curves=240 missing=0
+Mage Hit legacy=False len=0.667 curves=240 missing=0
+Mage Death legacy=False len=0.800 curves=240 missing=0
+Mage Slam legacy=False len=0.933 curves=240 missing=0
+Mage animator=true controller=Mage avatar=MageAvatar nodes=7 renderers=8 triangles=6668
+Rogue Idle legacy=False len=1.067 curves=240 missing=0
+Rogue Walk legacy=False len=0.800 curves=240 missing=0
+Rogue Attack legacy=False len=1.000 curves=240 missing=0
+Rogue Hit legacy=False len=0.667 curves=240 missing=0
+Rogue Death legacy=False len=0.800 curves=240 missing=0
+Rogue Slam legacy=False len=1.000 curves=240 missing=0
+Rogue animator=true controller=Rogue avatar=RogueAvatar nodes=7 renderers=7 triangles=7562
+Skeleton_Warrior Idle legacy=False len=1.067 curves=240 missing=0
+Skeleton_Warrior Walk legacy=False len=0.800 curves=240 missing=0
+Skeleton_Warrior Attack legacy=False len=1.367 curves=240 missing=0
+Skeleton_Warrior Hit legacy=False len=0.667 curves=240 missing=0
+Skeleton_Warrior Death legacy=False len=0.800 curves=240 missing=0
+Skeleton_Warrior Slam legacy=False len=1.367 curves=240 missing=0
+Skeleton_Warrior animator=true controller=Skeleton_Warrior avatar=Skeleton_WarriorAvatar nodes=7 renderers=10 triangles=5934
+Skeleton_Minion weapon=hand.r/EquippedCrossbow
+Skeleton_Minion Idle legacy=False len=1.067 curves=240 missing=0
+Skeleton_Minion Walk legacy=False len=0.800 curves=240 missing=0
+Skeleton_Minion Attack legacy=False len=1.067 curves=240 missing=0
+Skeleton_Minion Hit legacy=False len=0.667 curves=240 missing=0
+Skeleton_Minion Death legacy=False len=0.800 curves=240 missing=0
+Skeleton_Minion Slam legacy=False len=1.067 curves=240 missing=0
+Skeleton_Minion animator=true controller=Skeleton_Minion avatar=Skeleton_MinionAvatar nodes=7 renderers=10 triangles=5872
+Skeleton_Mage Idle legacy=False len=1.067 curves=240 missing=0
+Skeleton_Mage Walk legacy=False len=0.800 curves=240 missing=0
+Skeleton_Mage Attack legacy=False len=0.933 curves=240 missing=0
+Skeleton_Mage Hit legacy=False len=0.667 curves=240 missing=0
+Skeleton_Mage Death legacy=False len=0.800 curves=240 missing=0
+Skeleton_Mage Slam legacy=False len=0.933 curves=240 missing=0
+Skeleton_Mage animator=true controller=Skeleton_Mage avatar=Skeleton_MageAvatar nodes=7 renderers=9 triangles=4588
+Skeleton_Rogue Idle legacy=False len=1.067 curves=240 missing=0
+Skeleton_Rogue Walk legacy=False len=0.800 curves=240 missing=0
+Skeleton_Rogue Attack legacy=False len=1.000 curves=240 missing=0
+Skeleton_Rogue Hit legacy=False len=0.667 curves=240 missing=0
+Skeleton_Rogue Death legacy=False len=0.800 curves=240 missing=0
+Skeleton_Rogue Slam legacy=False len=1.000 curves=240 missing=0
+Skeleton_Rogue animator=true controller=Skeleton_Rogue avatar=Skeleton_RogueAvatar nodes=7 renderers=10 triangles=5278

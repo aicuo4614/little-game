@@ -1,0 +1,14 @@
+id,name,race,job,grade,role,hp,attack,armor,resist,attacksPerSecond,move,range,radius,turn,magic,basicTiming,skill1,skill2,skill3
+Knight,骑士,Human,Warrior,Hero,Knight,360,23,30,15,0.92,2.40,1.20,0.50,1080,0,Shield,ShieldStrike,Resolve,Rally
+Ranger,游侠,Human,Archer,Hero,Ranger,235,25,10,12,1.1,2.40,4.65,0.41,1260,0,Archer,PowerShot,QuickDraw,Volley
+Mage,法师,Human,Mage,Hero,Mage,220,25,8,22,0.9,2.40,4.20,0.41,1140,1,Storm,StormBolt,FocusMind,StormBurst
+Rogue,盗贼,Human,Assassin,Hero,Rogue,245,28,14,10,1.2,2.75,1.16,0.40,1260,0,Rogue,Ambush,QuickDraw,Flurry
+Skeleton_Warrior,骷髅战士,Undead,Warrior,Hero,Skeleton_Warrior,395,20,33,13,0.85,2.32,1.23,0.48,1080,0,Shield,BoneStrike,Resolve,BoneGuard
+Skeleton_Minion,持弩骷髅小兵,Undead,Archer,Hero,Skeleton_Minion,205,30,10,11,0.95,2.40,4.45,0.40,1260,0,Archer,Bolt,QuickDraw,Volley
+Skeleton_Mage,骷髅法师,Undead,Mage,Hero,Skeleton_Mage,225,22,8,25,0.94,2.40,4.15,0.42,1140,1,Frost,FrostBolt,FocusMind,FrostBurst
+Skeleton_Rogue,骷髅盗贼,Undead,Assassin,Hero,Skeleton_Rogue,235,29,11,12,1.22,2.78,1.16,0.40,1260,0,Rogue,Ambush,QuickDraw,Flurry
+Grunt,狼人,Monster,Warrior,Normal,Grunt,75,10,3,3,0.8,1.42,1.04,0.48,1080,0,Grunt,Claw,Resolve,ClawBurst
+Runner,疾行狼,Monster,Warrior,Normal,Runner,63,11,3,3,0.92,2.12,1.04,0.48,1200,0,Runner,Claw,QuickDraw,ClawBurst
+Armored,重甲寄居蟹,Monster,Warrior,Elite,Armored,135,17,42,10,0.76,1.12,1.16,0.62,960,0,Armored,BoneStrike,Resolve,BoneGuard
+Healer,向日葵妖精,Monster,Mage,Elite,Healer,93,12,9,18,0.9,1.32,3.15,0.48,1080,1,Healer,Heal,FocusMind,FrostBurst
+Giant,石甲巨像,Monster,Warrior,Boss,Giant,900,30,45,15,0.67,0.78,2.25,1.15,600,0,Giant,Slam,Resolve,

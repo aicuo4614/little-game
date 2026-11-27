@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1f6113d00550904393fa3d87cf90d51, type: 3}
+  m_Name: Frost
+  m_EditorClassIdentifier: 
+  Source: Assets/LittleGame/Art/UnitSources/TinyHero/Prefab/ModularCharacters/MC07.prefab
+  Model: {fileID: 4940208741844005217, guid: a6d4eae77c26d174fb539f47399205d4, type: 3}
+  AnimatorController: {fileID: 9100000, guid: 987d9611b596a0a4eaa8d3c7829fa766, type: 2}
+  Idle: {fileID: 7400000, guid: 0d869e566a6a3c742bd1795071ddf974, type: 2}
+  Move: {fileID: 7400000, guid: a3acf16617288824db76573e232a7a3a, type: 2}
+  Attack: {fileID: 7400000, guid: 7884f930acefb8145bbdee742402d73f, type: 2}
+  Hit: {fileID: 7400000, guid: 2c3e66e8c7eca184b8b33c01717d6867, type: 2}
+  Death: {fileID: 7400000, guid: c473354367f9f9a4385395634c2abdea, type: 2}
+  Slam: {fileID: 7400000, guid: c9d412a0bf19b6a4e848c28e11c4dd15, type: 2}
+  Height: 1.1
+  AttackSpeed: 1.5

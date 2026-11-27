@@ -51,6 +51,7 @@ namespace LittleGame.Client.Battle
                 ClearAll();
             }
 
+            if (session.LastSequence == lastSequence) return;
             var batch = session.EventsAfter(lastSequence).ToArray();
             if (batch.Length == 0) return;
 
@@ -168,7 +169,7 @@ namespace LittleGame.Client.Battle
 
         private sealed class CastStartedActionHandler : ActionHandlerBase
         {
-            public override bool CanHandle(CombatEvent ev) => ev.Type == "cast_started";
+            public override bool CanHandle(CombatEvent ev) => ev.Type == "cast_started" && ev.Trigger != "BossSlam";
 
             public override void Handle(BattleSession session, CombatEvent ev)
             {
@@ -264,7 +265,7 @@ namespace LittleGame.Client.Battle
         {
             public override bool CanHandle(CombatEvent ev) =>
                 ev.Type == "merged" || ev.Type == "branch_chosen" || ev.Type == "protect"
-                || ev.Type == "focus" || ev.Type == "boss_telegraph" || ev.Type == "boss_slam";
+                || ev.Type == "boss_telegraph" || ev.Type == "boss_slam";
 
             public override void Handle(BattleSession session, CombatEvent ev)
             {
@@ -289,13 +290,6 @@ namespace LittleGame.Client.Battle
                     }
                     case "branch_chosen":
                         Control.PlayTimeline("unit_upgrade", 0, ev.Source, ev.Source, laneCenter);
-                        break;
-                    case "protect":
-                        View.EffectControl.SpawnFloatingText(laneCenter + Vector3.up * 1.1f, "护盾保护", new Color(0.45f, 0.88f, 1f), 1.15f, 0.8f);
-                        Control.PlayTimeline("tactic_protect", 0, 0, 0, laneCenter);
-                        break;
-                    case "focus":
-                        Control.PlayTimeline("tactic_focus", 0, 0, ev.Target, laneCenter);
                         break;
                     case "boss_telegraph":
                         Control.PlayTimeline("giant_telegraph", 0, ev.Source, 0, laneCenter);

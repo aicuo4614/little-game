@@ -79,6 +79,7 @@ namespace LittleGame.Client.Battle
 
             var context = new TimelinePlaybackContext
             {
+                IncrementalEffects = true,
                 Resolve = (clip, subject, bindingKey) =>
                 {
                     return subject switch

@@ -1,0 +1,11 @@
+{
+  "packageId": "com.littlegame.teardown.dev",
+  "apk": "E:\\Project\\little-game\\Builds\\Android\\little-game.apk",
+  "pid": "19409",
+  "foreground": [
+    "    mResumedActivity: ActivityRecord{db57b10d0 u0 com.littlegame.teardown.dev/com.unity3d.player.UnityPlayerActivity t30}"
+  ],
+  "launched": true,
+  "runtimeErrors": [],
+  "screenshot": "E:\\Project\\little-game\\Reports\\Mobile\\20261127-114220\\screen.png"
+}

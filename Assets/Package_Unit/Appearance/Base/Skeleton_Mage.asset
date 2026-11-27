@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1f6113d00550904393fa3d87cf90d51, type: 3}
+  m_Name: Skeleton_Mage
+  m_EditorClassIdentifier: 
+  Source: Assets/LittleGame/Art/UnitSources/KayKit/Skeletons/Skeleton_Mage.fbx
+  Model: {fileID: 2703494071543091192, guid: 60d62b26a58957249bb01491320fd305, type: 3}
+  AnimatorController: {fileID: 9100000, guid: cc513c2a7f3225e47921a0347b4c10a6, type: 2}
+  Idle: {fileID: 7400000, guid: 61fa51ebfb3f587488621595f607108c, type: 2}
+  Move: {fileID: 7400000, guid: e0c84d677dac26c4fb842404636ba36c, type: 2}
+  Attack: {fileID: 7400000, guid: 0fb3ba985e48c7c4d81137aa74bcdc61, type: 2}
+  Hit: {fileID: 7400000, guid: 2c2fad8cc18856a41b8148f1a5d3d11c, type: 2}
+  Death: {fileID: 7400000, guid: 1f307deac9ea78b4eb91311efa239ca3, type: 2}
+  Slam: {fileID: 7400000, guid: 6b71bc5d015d44b4b913854eb996b7a6, type: 2}
+  Height: 1.18
+  AttackSpeed: 1.5

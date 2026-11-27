@@ -1,183 +1,191 @@
 {
     "FileVersion": "1.0.0",
     "PackageName": "EffectPackage",
-    "PackageVersion": "2026-11-25-1254",
+    "PackageVersion": "2026-11-27-956",
     "Wrappers": [
         {
-            "BundleGUID": "d3019517b0d3ae028e09ae9cd06d4fb8",
-            "FileName": "effectpackage_assets_package_effect_low_base_fx_arrow_basic_d3019517b0d3ae028e09ae9cd06d4fb8.bundle"
+            "BundleGUID": "85e0d78cd25b1ce83d4e4b4fc9e1cff6",
+            "FileName": "effectpackage_assets_package_effect_low_base_fx_arrow_basic_85e0d78cd25b1ce83d4e4b4fc9e1cff6.bundle"
         },
         {
-            "BundleGUID": "53e309a0ce4533c63cdd16c6679809f5",
-            "FileName": "effectpackage_assets_package_effect_low_base_fx_arrow_gale_53e309a0ce4533c63cdd16c6679809f5.bundle"
+            "BundleGUID": "7632e97ab52932847ee697a2ba8bec38",
+            "FileName": "effectpackage_assets_package_effect_low_base_fx_arrow_gale_7632e97ab52932847ee697a2ba8bec38.bundle"
         },
         {
-            "BundleGUID": "06f73aec218b0f97c6b91fd2dfdfbe56",
-            "FileName": "effectpackage_assets_package_effect_low_base_fx_arrow_pierce_06f73aec218b0f97c6b91fd2dfdfbe56.bundle"
+            "BundleGUID": "bea7c2152d30797d33ed401c8ac75f0d",
+            "FileName": "effectpackage_assets_package_effect_low_base_fx_arrow_pierce_bea7c2152d30797d33ed401c8ac75f0d.bundle"
         },
         {
-            "BundleGUID": "8c0a74941d51724ccd40406770709c5d",
-            "FileName": "effectpackage_assets_package_effect_low_base_fx_arrow_wind_8c0a74941d51724ccd40406770709c5d.bundle"
+            "BundleGUID": "2228df9b9b5fc6f439f8c65a4dd323cf",
+            "FileName": "effectpackage_assets_package_effect_low_base_fx_arrow_wind_2228df9b9b5fc6f439f8c65a4dd323cf.bundle"
         },
         {
-            "BundleGUID": "23a71559a0d1d42fe89fdac2fbe295f9",
-            "FileName": "effectpackage_assets_package_effect_low_base_fx_boss_charge_23a71559a0d1d42fe89fdac2fbe295f9.bundle"
+            "BundleGUID": "00aaa1574d86456840349162e4f41f8b",
+            "FileName": "effectpackage_assets_package_effect_low_base_fx_boss_charge_00aaa1574d86456840349162e4f41f8b.bundle"
         },
         {
-            "BundleGUID": "b1b1c9004752f9069fc421d7041140ad",
-            "FileName": "effectpackage_assets_package_effect_low_base_fx_boss_slam_burst_b1b1c9004752f9069fc421d7041140ad.bundle"
+            "BundleGUID": "7bc74a1e88de5d0e3ba5a80c3e3570cc",
+            "FileName": "effectpackage_assets_package_effect_low_base_fx_boss_slam_burst_7bc74a1e88de5d0e3ba5a80c3e3570cc.bundle"
         },
         {
-            "BundleGUID": "bc1c7fcccae5c7ce96f2834b5feac31c",
-            "FileName": "effectpackage_assets_package_effect_low_base_fx_boss_slam_wave_bc1c7fcccae5c7ce96f2834b5feac31c.bundle"
+            "BundleGUID": "0f6c36c9cd47c95b3a0626f9d31b4208",
+            "FileName": "effectpackage_assets_package_effect_low_base_fx_boss_slam_wave_0f6c36c9cd47c95b3a0626f9d31b4208.bundle"
         },
         {
-            "BundleGUID": "0f03f6be271c97ea157464be0d5647c8",
-            "FileName": "effectpackage_assets_package_effect_low_base_fx_chain_lightning_0f03f6be271c97ea157464be0d5647c8.bundle"
+            "BundleGUID": "1d55a7569895a1a06761590e60ed01a3",
+            "FileName": "effectpackage_assets_package_effect_low_base_fx_chain_lightning_1d55a7569895a1a06761590e60ed01a3.bundle"
         },
         {
-            "BundleGUID": "34c473ae05964583412663aa07efb9e7",
-            "FileName": "effectpackage_assets_package_effect_low_base_fx_enemy_hit_34c473ae05964583412663aa07efb9e7.bundle"
+            "BundleGUID": "f3e6bc3c2cf2b8e496153e9bdf86ff4b",
+            "FileName": "effectpackage_assets_package_effect_low_base_fx_enemy_hit_f3e6bc3c2cf2b8e496153e9bdf86ff4b.bundle"
         },
         {
-            "BundleGUID": "2772406ed3e1b7d686becee352ee7ca7",
-            "FileName": "effectpackage_assets_package_effect_low_base_fx_freeze_aura_2772406ed3e1b7d686becee352ee7ca7.bundle"
+            "BundleGUID": "d3e7ee5a6bee7be721ff48ec638cdfb4",
+            "FileName": "effectpackage_assets_package_effect_low_base_fx_freeze_aura_d3e7ee5a6bee7be721ff48ec638cdfb4.bundle"
         },
         {
-            "BundleGUID": "ccfb95fc448abbb5f084ada1dca76453",
-            "FileName": "effectpackage_assets_package_effect_low_base_fx_freeze_ring_ccfb95fc448abbb5f084ada1dca76453.bundle"
+            "BundleGUID": "63f6c9069fda76dfc804feaa623877c5",
+            "FileName": "effectpackage_assets_package_effect_low_base_fx_freeze_ring_63f6c9069fda76dfc804feaa623877c5.bundle"
         },
         {
-            "BundleGUID": "32faf594bcba63a716573958da62918c",
-            "FileName": "effectpackage_assets_package_effect_low_base_fx_gale_ring_32faf594bcba63a716573958da62918c.bundle"
+            "BundleGUID": "373b3341eb3634266c9ae0b81c20a56e",
+            "FileName": "effectpackage_assets_package_effect_low_base_fx_gale_ring_373b3341eb3634266c9ae0b81c20a56e.bundle"
         },
         {
-            "BundleGUID": "891b0577b41d761778dd84e4bced5f54",
-            "FileName": "effectpackage_assets_package_effect_low_base_fx_heal_orb_891b0577b41d761778dd84e4bced5f54.bundle"
+            "BundleGUID": "d3cab48a2f5cf4e4feb0d1222b6f3876",
+            "FileName": "effectpackage_assets_package_effect_low_base_fx_heal_orb_d3cab48a2f5cf4e4feb0d1222b6f3876.bundle"
         },
         {
-            "BundleGUID": "835a339400f4c2960da781721ee49e1a",
-            "FileName": "effectpackage_assets_package_effect_low_base_fx_heal_ring_835a339400f4c2960da781721ee49e1a.bundle"
+            "BundleGUID": "b95f994dc498226cd145192571ec678c",
+            "FileName": "effectpackage_assets_package_effect_low_base_fx_heal_ring_b95f994dc498226cd145192571ec678c.bundle"
         },
         {
-            "BundleGUID": "c3720cb5db40dd0f29832b65068142b1",
-            "FileName": "effectpackage_assets_package_effect_low_base_fx_hit_arrow_c3720cb5db40dd0f29832b65068142b1.bundle"
+            "BundleGUID": "6402d1fe0b0520d7a2e09b6d965ce69f",
+            "FileName": "effectpackage_assets_package_effect_low_base_fx_hit_arrow_6402d1fe0b0520d7a2e09b6d965ce69f.bundle"
         },
         {
-            "BundleGUID": "b6ca43ff0c34ebdf1e456c6af569b974",
-            "FileName": "effectpackage_assets_package_effect_low_base_fx_hit_enemy_b6ca43ff0c34ebdf1e456c6af569b974.bundle"
+            "BundleGUID": "89df25a0c7728f0ac97670890d0ca75c",
+            "FileName": "effectpackage_assets_package_effect_low_base_fx_hit_enemy_89df25a0c7728f0ac97670890d0ca75c.bundle"
         },
         {
-            "BundleGUID": "4484cde2813ba9e1a0f912d1299fac1d",
-            "FileName": "effectpackage_assets_package_effect_low_base_fx_hit_heavy_4484cde2813ba9e1a0f912d1299fac1d.bundle"
+            "BundleGUID": "fe068c63eb1438c07c2ad9488924c977",
+            "FileName": "effectpackage_assets_package_effect_low_base_fx_hit_heavy_fe068c63eb1438c07c2ad9488924c977.bundle"
         },
         {
-            "BundleGUID": "af53cb0ee4d0b99c5028b814ff0febd7",
-            "FileName": "effectpackage_assets_package_effect_low_base_fx_hit_ice_af53cb0ee4d0b99c5028b814ff0febd7.bundle"
+            "BundleGUID": "f25a3f1865a922550f538e642c2c42f9",
+            "FileName": "effectpackage_assets_package_effect_low_base_fx_hit_ice_f25a3f1865a922550f538e642c2c42f9.bundle"
         },
         {
-            "BundleGUID": "12dd99d7925f4519b245b3846ae6fdbb",
-            "FileName": "effectpackage_assets_package_effect_low_base_fx_hit_lightning_12dd99d7925f4519b245b3846ae6fdbb.bundle"
+            "BundleGUID": "66b94a3d8bc95d93549a25cedecdde09",
+            "FileName": "effectpackage_assets_package_effect_low_base_fx_hit_lightning_66b94a3d8bc95d93549a25cedecdde09.bundle"
         },
         {
-            "BundleGUID": "8dce8b9dd7ffa9c3cb796f27aac9eac9",
-            "FileName": "effectpackage_assets_package_effect_low_base_fx_hit_physical_8dce8b9dd7ffa9c3cb796f27aac9eac9.bundle"
+            "BundleGUID": "d93d3f3bb7b5d7ee393d394d2ccac1ea",
+            "FileName": "effectpackage_assets_package_effect_low_base_fx_hit_physical_d93d3f3bb7b5d7ee393d394d2ccac1ea.bundle"
         },
         {
-            "BundleGUID": "4408ff4e56c92d29bfdf26e0f1ef7b5e",
-            "FileName": "effectpackage_assets_package_effect_low_base_fx_hit_pierce_4408ff4e56c92d29bfdf26e0f1ef7b5e.bundle"
+            "BundleGUID": "fdd7e9c803e6e24ef024c3888cf2c74d",
+            "FileName": "effectpackage_assets_package_effect_low_base_fx_hit_pierce_fdd7e9c803e6e24ef024c3888cf2c74d.bundle"
         },
         {
-            "BundleGUID": "56a5ac8410011316398ff80c57398dc0",
-            "FileName": "effectpackage_assets_package_effect_low_base_fx_hit_wind_56a5ac8410011316398ff80c57398dc0.bundle"
+            "BundleGUID": "ce130b209f60f0714ac1d505c5984d36",
+            "FileName": "effectpackage_assets_package_effect_low_base_fx_hit_wind_ce130b209f60f0714ac1d505c5984d36.bundle"
         },
         {
-            "BundleGUID": "bf56d422a18b03a30bd899a3f4a2d779",
-            "FileName": "effectpackage_assets_package_effect_low_base_fx_ice_armor_bf56d422a18b03a30bd899a3f4a2d779.bundle"
+            "BundleGUID": "eb3eafb6d41e93dfe2debe25d3cdfa8c",
+            "FileName": "effectpackage_assets_package_effect_low_base_fx_ice_armor_eb3eafb6d41e93dfe2debe25d3cdfa8c.bundle"
         },
         {
-            "BundleGUID": "9a04d63c2a89fa98f46d3d0ee39ffb6c",
-            "FileName": "effectpackage_assets_package_effect_low_base_fx_ice_lance_9a04d63c2a89fa98f46d3d0ee39ffb6c.bundle"
+            "BundleGUID": "89fcbfc344bfe0efcd2b8aa509ab335c",
+            "FileName": "effectpackage_assets_package_effect_low_base_fx_ice_lance_89fcbfc344bfe0efcd2b8aa509ab335c.bundle"
         },
         {
-            "BundleGUID": "6fa7c938fc037ee63a468d51a4a372d4",
-            "FileName": "effectpackage_assets_package_effect_low_base_fx_ice_shard_6fa7c938fc037ee63a468d51a4a372d4.bundle"
+            "BundleGUID": "52d6a3c2f4e570a9608c302209360939",
+            "FileName": "effectpackage_assets_package_effect_low_base_fx_ice_shard_52d6a3c2f4e570a9608c302209360939.bundle"
         },
         {
-            "BundleGUID": "6be081d20ce398423b7959c57b755e72",
-            "FileName": "effectpackage_assets_package_effect_low_base_fx_level_up_6be081d20ce398423b7959c57b755e72.bundle"
+            "BundleGUID": "6d4b6f4436b0d9f447e991fc1ce68476",
+            "FileName": "effectpackage_assets_package_effect_low_base_fx_level_up_6d4b6f4436b0d9f447e991fc1ce68476.bundle"
         },
         {
-            "BundleGUID": "c4a5a65421babd3ba31ebcb3ffb62645",
-            "FileName": "effectpackage_assets_package_effect_low_base_fx_lightning_orb_c4a5a65421babd3ba31ebcb3ffb62645.bundle"
+            "BundleGUID": "1cbcc214c51ba819376a0e998babd757",
+            "FileName": "effectpackage_assets_package_effect_low_base_fx_lightning_orb_1cbcc214c51ba819376a0e998babd757.bundle"
         },
         {
-            "BundleGUID": "d252475abe937b503027710ec2f4db72",
-            "FileName": "effectpackage_assets_package_effect_low_base_fx_lightning_strike_d252475abe937b503027710ec2f4db72.bundle"
+            "BundleGUID": "4a5ffb4f174f9bbd064a5fa1672f3f4b",
+            "FileName": "effectpackage_assets_package_effect_low_base_fx_lightning_strike_4a5ffb4f174f9bbd064a5fa1672f3f4b.bundle"
         },
         {
-            "BundleGUID": "2438ec28da39d80819258c4708886db1",
-            "FileName": "effectpackage_assets_package_effect_low_base_fx_pierce_flash_2438ec28da39d80819258c4708886db1.bundle"
+            "BundleGUID": "cb40ade929b83518c35154a6b8c9cabd",
+            "FileName": "effectpackage_assets_package_effect_low_base_fx_pierce_flash_cb40ade929b83518c35154a6b8c9cabd.bundle"
         },
         {
-            "BundleGUID": "1688f5b0518477aa300b59a296a840e2",
-            "FileName": "effectpackage_assets_package_effect_low_base_fx_shield_bash_1688f5b0518477aa300b59a296a840e2.bundle"
+            "BundleGUID": "fd31776cd29bdb0d917b03b2d152dc77",
+            "FileName": "effectpackage_assets_package_effect_low_base_fx_shield_bash_fd31776cd29bdb0d917b03b2d152dc77.bundle"
         },
         {
-            "BundleGUID": "bc92f389c0021716e9ceabdac598da62",
-            "FileName": "effectpackage_assets_package_effect_low_base_fx_shield_bastion_bc92f389c0021716e9ceabdac598da62.bundle"
+            "BundleGUID": "965a6a0db1e185e3d213d082e2ca5a96",
+            "FileName": "effectpackage_assets_package_effect_low_base_fx_shield_bastion_965a6a0db1e185e3d213d082e2ca5a96.bundle"
         },
         {
-            "BundleGUID": "f2fb97af91d13c177f5b775806f04d04",
-            "FileName": "effectpackage_assets_package_effect_low_base_fx_shield_dome_f2fb97af91d13c177f5b775806f04d04.bundle"
+            "BundleGUID": "250316a340e5c97451ef9efedc550494",
+            "FileName": "effectpackage_assets_package_effect_low_base_fx_shield_dome_250316a340e5c97451ef9efedc550494.bundle"
         },
         {
-            "BundleGUID": "b23a9469ebae0576e9961b738efd7583",
-            "FileName": "effectpackage_assets_package_effect_low_base_fx_shield_guard_b23a9469ebae0576e9961b738efd7583.bundle"
+            "BundleGUID": "30b62820e1b05a462f032ef8253489b9",
+            "FileName": "effectpackage_assets_package_effect_low_base_fx_shield_guard_30b62820e1b05a462f032ef8253489b9.bundle"
         },
         {
-            "BundleGUID": "835a88bb320e84660dfbeb5d723b0369",
-            "FileName": "effectpackage_assets_package_effect_low_base_fx_shield_slash_835a88bb320e84660dfbeb5d723b0369.bundle"
+            "BundleGUID": "3398cbf35b0f304efb33514e2ea02572",
+            "FileName": "effectpackage_assets_package_effect_low_base_fx_shield_slash_3398cbf35b0f304efb33514e2ea02572.bundle"
         },
         {
-            "BundleGUID": "d013681b6605a891a15138c6e44a01c9",
-            "FileName": "effectpackage_assets_package_effect_low_base_fx_storm_tick_d013681b6605a891a15138c6e44a01c9.bundle"
+            "BundleGUID": "00440869ce49f8b26339b50836492088",
+            "FileName": "effectpackage_assets_package_effect_low_base_fx_storm_tick_00440869ce49f8b26339b50836492088.bundle"
         },
         {
-            "BundleGUID": "9bc1f4f65e0c2feb4df81d0cdbab8679",
-            "FileName": "effectpackage_assets_package_effect_low_base_fx_storm_zone_9bc1f4f65e0c2feb4df81d0cdbab8679.bundle"
+            "BundleGUID": "e3266a0e9ee788b2df237f19e790fcdf",
+            "FileName": "effectpackage_assets_package_effect_low_base_fx_storm_zone_e3266a0e9ee788b2df237f19e790fcdf.bundle"
         },
         {
-            "BundleGUID": "79198e34184b5a808c12419632608d78",
-            "FileName": "effectpackage_assets_package_effect_low_base_fx_tactic_focus_79198e34184b5a808c12419632608d78.bundle"
+            "BundleGUID": "ba83f859463bd38dc7caf923a365438f",
+            "FileName": "effectpackage_assets_package_effect_low_base_fx_tactic_focus_ba83f859463bd38dc7caf923a365438f.bundle"
         },
         {
-            "BundleGUID": "eb91f4c992489b4d625406ad50fed701",
-            "FileName": "effectpackage_assets_package_effect_low_base_fx_tactic_protect_eb91f4c992489b4d625406ad50fed701.bundle"
+            "BundleGUID": "ab581974b3cec6b2bef1b5befb0d5f8c",
+            "FileName": "effectpackage_assets_package_effect_low_base_fx_tactic_protect_ab581974b3cec6b2bef1b5befb0d5f8c.bundle"
         },
         {
-            "BundleGUID": "d43eb34e7e0a79564e32ffe72b9a43e4",
-            "FileName": "effectpackage_assets_package_effect_low_base_fx_warcry_wave_d43eb34e7e0a79564e32ffe72b9a43e4.bundle"
+            "BundleGUID": "80ac0bd8e306bdb6e590401f176ebe95",
+            "FileName": "effectpackage_assets_package_effect_low_base_fx_warcry_wave_80ac0bd8e306bdb6e590401f176ebe95.bundle"
         },
         {
-            "BundleGUID": "125248d2920d9dad90dfb232ebda826f",
-            "FileName": "effectpackage_assets_package_effect_low_base_fx_wind_burst_125248d2920d9dad90dfb232ebda826f.bundle"
+            "BundleGUID": "464a45aa52eb6bd0359d58de812acea5",
+            "FileName": "effectpackage_assets_package_effect_low_base_fx_wind_burst_464a45aa52eb6bd0359d58de812acea5.bundle"
         },
         {
-            "BundleGUID": "10e30ea090cc205fdaba0b4c3b0300c5",
-            "FileName": "effectpackage_share_assets_littlegame_art_skilleffectsgenerated_materials_10e30ea090cc205fdaba0b4c3b0300c5.bundle"
+            "BundleGUID": "0642288cc14ca6263759ed32354bfbdc",
+            "FileName": "effectpackage_share_assets_littlegame_art_skilleffectsgenerated_0642288cc14ca6263759ed32354bfbdc.bundle"
         },
         {
-            "BundleGUID": "49c112a836b616f9885ddae18a9b0d29",
-            "FileName": "effectpackage_share_assets_littlegame_art_skilleffectssources_hovlstudio_resources_models_49c112a836b616f9885ddae18a9b0d29.bundle"
+            "BundleGUID": "48d0b54eb98259f48f633fc2c9c9b182",
+            "FileName": "effectpackage_share_assets_littlegame_art_skilleffectsgenerated_materials_48d0b54eb98259f48f633fc2c9c9b182.bundle"
+        },
+        {
+            "BundleGUID": "4c585f1e599b7774d063b789d4d8b32c",
+            "FileName": "effectpackage_share_assets_littlegame_art_skilleffectssources_hovlstudio_resources_models_4c585f1e599b7774d063b789d4d8b32c.bundle"
+        },
+        {
+            "BundleGUID": "76ef7508e37941443fc953a51bc7cd67",
+            "FileName": "effectpackage_share_assets_littlegame_art_skilleffectssources_hovlstudio_resources_textures_76ef7508e37941443fc953a51bc7cd67.bundle"
         },
         {
             "BundleGUID": "931bc4528ac9d3d47e3552e6ca825062",
             "FileName": "effectpackage_share_packages_com_unity_render-pipelines_universal_runtime_materials_931bc4528ac9d3d47e3552e6ca825062.bundle"
         },
         {
-            "BundleGUID": "d2ad08faf57f92e1bb7cbe88321b67b3",
-            "FileName": "effectpackage_unityshaders_d2ad08faf57f92e1bb7cbe88321b67b3.bundle"
+            "BundleGUID": "ce06c1321aacf96ddcf01481741d1e7a",
+            "FileName": "effectpackage_unityshaders_ce06c1321aacf96ddcf01481741d1e7a.bundle"
         }
     ]
 }

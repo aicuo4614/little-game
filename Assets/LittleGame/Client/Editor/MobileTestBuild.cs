@@ -62,11 +62,17 @@ namespace LittleGame.Editor
                 EditorUserBuildSettings.exportAsGoogleAndroidProject = false;
 
                 RenderSetup.Configure();
+                status.message = "正在编译最新热更代码并构建内置资源包";
+                SaveStatus();
+                var contentBuilder = Type.GetType("LittleGameStackVerification, Assembly-CSharp-Editor", true);
+                contentBuilder.GetMethod("PrepareMobileContent").Invoke(null, null);
                 EnsureMaterial("KeepUrpUnlit", "Universal Render Pipeline/Unlit");
                 EnsureMaterial("KeepUrpLit", "Universal Render Pipeline/Lit");
                 EnsureMaterial("KeepUrpParticlesUnlit", "Universal Render Pipeline/Particles/Unlit");
                 EnsureMaterial("KeepUiSlotShine", "LittleGame/UI/SlotShine");
                 AssetDatabase.SaveAssets();
+                status.message = "内置资源已更新，正在构建 Android 测试包";
+                SaveStatus();
                 var directory = Path.GetFullPath("Builds/Android");
                 Directory.CreateDirectory(directory);
                 var staging = Path.Combine(directory, status.id + ".apk");
