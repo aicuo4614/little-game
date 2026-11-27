@@ -1,15 +1,100 @@
 {
-  "state": "failed",
-  "scenario": "blocked_then_release",
+  "state": "passed",
+  "scenario": "benchmark_18_and_50",
   "results": [
     {
       "scenario": "stationary_wall_detour",
       "passed": true,
-      "x": 2.29992676,
-      "maxAbsZ": 2.3774786
+      "x": 1.23101807,
+      "maxAbsZ": 2.3290236
+    },
+    {
+      "scenario": "blocked_then_release",
+      "passed": true,
+      "waitingX": -1.56311035,
+      "finalX": 1.05419922,
+      "blockReason": ""
+    },
+    {
+      "scenario": "u_shape_detour",
+      "passed": true,
+      "finalX": 1.26098633,
+      "maxAbsZ": 2.01935744
+    },
+    {
+      "scenario": "opposing",
+      "passed": true,
+      "minimumGap": 0.8440189
+    },
+    {
+      "scenario": "freeze_pause_resume",
+      "passed": true,
+      "heldX": -1.54748535,
+      "resumedX": -0.05456543
+    },
+    {
+      "scenario": "body_size",
+      "passed": true
+    },
+    {
+      "scenario": "boss_surround",
+      "passed": true,
+      "agents": 7
+    },
+    {
+      "scenario": "attack_slots_full",
+      "passed": true,
+      "extraStatus": "Waiting",
+      "reason": "attack_slot_unavailable"
+    },
+    {
+      "scenario": "benchmark_18_and_50",
+      "passed": true,
+      "scale18": {
+        "agents": 18,
+        "steps": 50,
+        "frames": 486,
+        "buildMs": 4.911,
+        "pathRequests": 107,
+        "failedPaths": 0,
+        "nativeRecorderValid": true,
+        "bridgeStepP50Ms": 0.0767,
+        "bridgeStepP95Ms": 0.6466,
+        "bridgeStepP99Ms": 0.7924,
+        "bridgeStepMaxMs": 1.425,
+        "nativeFrameP99Ms": 0.2354,
+        "nativeFrameMaxMs": 1.03,
+        "totalFrameP50Ms": 0.1191,
+        "totalFrameP95Ms": 0.2515,
+        "totalFrameP99Ms": 0.7166,
+        "totalFrameMaxMs": 1.4276,
+        "lastFrameGcBytes": 20135,
+        "steadyMonoUsedDeltaBytes": 2392064
+      },
+      "scale50": {
+        "agents": 50,
+        "steps": 50,
+        "frames": 488,
+        "buildMs": 4.235,
+        "pathRequests": 379,
+        "failedPaths": 339,
+        "nativeRecorderValid": true,
+        "bridgeStepP50Ms": 0.3066,
+        "bridgeStepP95Ms": 3.0596,
+        "bridgeStepP99Ms": 3.5608,
+        "bridgeStepMaxMs": 6.4025,
+        "nativeFrameP99Ms": 0.2847,
+        "nativeFrameMaxMs": 0.4718,
+        "totalFrameP50Ms": 0.1586,
+        "totalFrameP95Ms": 0.444,
+        "totalFrameP99Ms": 3.0456,
+        "totalFrameMaxMs": 6.4058,
+        "lastFrameGcBytes": 20135,
+        "steadyMonoUsedDeltaBytes": 3993600
+      }
     }
   ],
-  "error": "System.InvalidOperationException: blocked_then_release: 撤销阻挡后恢复 x=-0.7255859 z=0.5999837 nav={\"backend\":\"unity_navmesh_agent_attack_slots\",\"agents\":5,\"pooled\":1,\"pathRequests\":1,\"failedPaths\":0,\"buildMs\":4.8316,\"nativeAvoidance\":\"HighQualityRVO\",\"meshTypes\":5,\"actors\":[{\"id\":1,\"bound\":true,\"carving\":false,\"holding\":false,\"hasGoal\":true,\"x\":-0.725585938,\"z\":0.5999837,\"goalX\":2.30004883,\"goalZ\":-2.38418579E-07,\"pathStatus\":\"PathPartial\",\"blockedFor\":0.0},{\"id\":18,\"bound\":false,\"carving\":true,\"holding\":true,\"hasGoal\":false,\"x\":0.0,\"z\":-2.4,\"goalX\":-1050.0,\"goalZ\":0.0,\"pathStatus\":\"unbound\",\"blockedFor\":0.0},{\"id\":19,\"bound\":false,\"carving\":true,\"holding\":true,\"hasGoal\":false,\"x\":0.0,\"z\":-1.2,\"goalX\":-1050.0,\"goalZ\":0.0,\"pathStatus\":\"unbound\",\"blockedFor\":0.0},{\"id\":21,\"bound\":false,\"carving\":true,\"holding\":true,\"hasGoal\":false,\"x\":0.0,\"z\":1.2,\"goalX\":-1050.0,\"goalZ\":0.0,\"pathStatus\":\"unbound\",\"blockedFor\":0.0},{\"id\":22,\"bound\":false,\"carving\":true,\"holding\":true,\"hasGoal\":false,\"x\":0.0,\"z\":2.4,\"goalX\":-1050.0,\"goalZ\":0.0,\"pathStatus\":\"unbound\",\"blockedFor\":0.0}]}\r\n  at LittleGame.Client.Editor.NavMeshValidation.Require (System.Boolean pass, System.String message) [0x00019] in E:\\Project\\little-game\\Assets\\LittleGame\\Client\\Editor\\NavMeshValidation.cs:142 \r\n  at LittleGame.Client.Editor.NavMeshValidation.Run () [0x00553] in E:\\Project\\little-game\\Assets\\LittleGame\\Client\\Editor\\NavMeshValidation.cs:53 ",
+  "error": null,
   "platform": "WindowsEditor",
-  "note": "隔离几何/状态验证，不是正常玩法或手机验证"
+  "note": "隔离几何/状态/压力验证，不是正常玩法或手机验证"
 }

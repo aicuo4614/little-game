@@ -4,7 +4,7 @@ import time
 from pathlib import Path
 import verify_combat as combat
 
-OUT = Path(__file__).resolve().parents[2] / 'Reports/Combat/astar-navigation-20261125'
+OUT = Path(__file__).resolve().parents[2] / 'Reports/Combat/navmesh-20261127'
 samples = []
 original_call = combat.call
 last_sample_at = 0.0

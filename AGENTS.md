@@ -2,6 +2,8 @@
 
 ## 最新已确认方向与规则 2026-11-23
 
+- 2026-11-27 用户确认采用 Unity 原生 `NavMeshAgent` 作为唯一实战导航后端，保留规则层战斗状态机与攻击位预约，旧 Roy-T.AStar 归档于 `Archive~/NavigationRoy`。已完成接入、9 项隔离几何/状态/18&50 单位压测、完整 10 波正常玩法与移动动画一致性回归、以及同条件十波解除限帧采样（规则峰值由 19.254 ms 降至 0.794 ms，导航全流程 P99 0.292 ms、第 2~10 波 Max 0.677 ms，第 1 波首次切洞初始化 2.882 ms，稳态导航 0 B GC）。MCP 战斗扩展同步至 2.4.0 / schema 8（`rvoActive=true`、`get_navigation` 新增 `native` 诊断）。完整验收见 `Reports/Combat/navmesh-20261127/README.md`；本轮仍仅 Unity Editor 验证，未构建/安装手机包，编辑器数据不得写作真机性能。
+
 - 2026-11-27 用户要求导航不再整体修修补补，而是结合实际玩法、网上官方资料和GitHub重新选择最适合、性能够用的方案。研究建议与候选固定提交见 Reports/Combat/navigation-review-20261127，尚未确认迁入新后端。新增参考仅只读研究：Unity AI Navigation1.1官方、snape/RVO2-CS、Nebukam/com.nebukam.orca、sarkahn/pathfinding、MiHordeTraffic；沿用DotRecast等既有参考。许可、依赖与获取状态登记于 Docs/Art-Resource-Catalog.md；不得把候选或作者基准写成本项目已接入/已测最优。
 
 - 2026-11-27 导航性能分析新增只读技术依据：Unity 2022.3 Job System/NativeContainer、Burst 1.8类型支持与 HybridCLR DOTS 官方文档，具体链接和边界登记于 Docs/Art-Resource-Catalog.md。工程已含Burst1.8.21，不等于导航已使用Burst/Jobs；普通HybridCLR版本的热更Burst不能写作原生加速已通过。

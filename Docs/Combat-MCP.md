@@ -131,10 +131,18 @@
   - `validate_all` 补充校验特效资源（`Resources/SkillEffects/*`）、动作名合法性及 `Execution` 规则节点时序。
 
 
-## A*导航与阻挡等待（扩展1.6.0，快照schemaVersion 6，当前实现）
+## A*导航与阻挡等待（扩展1.6.0，快照schemaVersion 6，历史实现）
 
-本节覆盖前述版本的移动执行描述。`get_state.layout`为`horizontal-free-deploy-astar`，单位和敌人新增`navigation`，含`status`（Holding/Moving/Waiting/NoPath/Arrived）、`blockReason`、`blockedFor`、`goalX/goalZ`、`revision`、`remainingCorners`和`corners`。FSM增加Waiting；`vx/vz`均为碰撞/边界处理后的实际位移速度。
+> 2026-11-27 更新：Roy-T.AStar 已归档至 `Archive~/NavigationRoy`，由下方原生 `NavMeshAgent` 章节覆盖。
 
-新增只读扩展操作`get_navigation(unitId?)`：返回当前算法、固定步长、单位/敌人的路径与状态；不推进时间、不设置坐标、不刷兵。`get_definitions.rules`返回`navigation=roy_astar_attack_slots_swept_motion`、`rvoActive=false`、`blockedWait=true`、`actualDisplacementVelocity=true`。当前RVO未启用是本轮实现选择，不是用户永久禁止RVO。
+`get_state.layout`曾为`horizontal-free-deploy-astar`，单位和敌人新增`navigation`，含`status`（Holding/Moving/Waiting/NoPath/Arrived）、`blockReason`、`blockedFor`、`goalX/goalZ`、`revision`、`remainingCorners`和`corners`。FSM增加Waiting；`vx/vz`均为碰撞/边界处理后的实际位移速度。
 
-正常招募、部署、开战、战术与共用pointer参数不变。`get_state`原字段保留，schema变更用于识别导航行为。验证观察应把Waiting/NoPath与实际零速度、模型Idle/Attack/受控状态对应，并观察阻挡解除后的Moving恢复。纯规则测试不可代替Unity完整流程，编辑器数据不可当手机表现。
+## Unity 原生 NavMeshAgent 导航（扩展 2.4.0，快照 schemaVersion 8，当前实现）
+
+本节覆盖前述 A* 导航描述。实战采用唯一导航后端 `unity_navmesh_agent_attack_slots`（Unity 原生 `NavMeshAgent` + `HighQualityObstacleAvoidance` 局部避障 + 规则层攻击位预约与站定切洞）：
+
+- `get_state.layout` 为 `horizontal-free-deploy-navmesh`，`schemaVersion = 8`；单位/敌人沿用 `navigation` 结构，明确区分 `Waiting`（`attack_slot_unavailable` / `native_avoidance_wait` / `navmesh_rebinding`）与 `NoPath`（`path_blocked`）。
+- `get_definitions.rules` 返回 `navigation = "unity_navmesh_agent_attack_slots"`、`avoidance = "unity_navmesh_agent_attack_slots"`、`rvoActive = true`、`blockedWait = true`、`actualDisplacementVelocity = true`。
+- `get_navigation(unitId?)` 保留原有 `algorithm`、`rvoActive`、`fixedStep`、`cpuTotalMs`、`units`、`enemies` 字段，并新增 `native` 诊断对象（返回原生代理数、对象池数、`pathRequests`、`failedPaths`、`buildMs`、`nativeAvoidance`、`meshTypes` 及各代理绑定/切洞/路径状态）。
+- 原生 `unity_combat_*` 直接工具当前共 13 项（旧战术指挥 `aim/focus/protect` 及 `choose_branch` 已随玩法改造移除）。
+- 隔离几何/状态/18&50 单位压测菜单：`Little Game/Combat/Verify Native Navigation`（输出 `Reports/Combat/navmesh-20261127/validation-latest.json`）；正常玩法及动画一致性回归：`python -X utf8 Tools/Preparation/verify_combat_movement.py`；十波无限帧率采样：`python -X utf8 Tools/Preparation/profile_combat.py <label>`。验收报告见 `Reports/Combat/navmesh-20261127/README.md`；编辑器数据不可写成真机表现。

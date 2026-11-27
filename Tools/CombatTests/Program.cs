@@ -6,6 +6,8 @@ static class Tests
     static readonly List<string> passed = new();
     static void Check(bool condition, string label) { if (!condition) throw new Exception(label); passed.Add(label); }
     static CommandResult Do(BattleSession s, CommandKind kind, int id = 0, int lane = 0, int row = 0) => s.Execute(new BattleCommand { Kind = kind, UnitId = id, Lane = lane, Row = row });
+    static BattleSession NewSession(int seed = 173) => NavigationTests.AttachStub(new BattleSession(seed));
+    static BattleSession RestoreSession(RunSave save) => NavigationTests.AttachStub(BattleSession.Restore(save));
     static string Snapshot(BattleSession s) => JsonSerializer.Serialize(s.Snapshot(), new JsonSerializerOptions { IncludeFields = true });
 
     static void Build(BattleSession s)
@@ -42,7 +44,7 @@ static class Tests
         if (args.Contains("--heap")) { NavigationTests.HeapInvariant(); return; }
         if (args.Contains("--navigation")) { NavigationTests.Run(); return; }
         if (args.Contains("--movement")) { MovementTests.Run(); return; }
-        var s = new BattleSession(173);
+        var s = NewSession(173);
         Check(s.Troops.Count == 0 && s.DeployedCount == 0 && s.Spins == 3 && s.MaxDeployed == 6, "开局不提前放置我方单位，全部通过老虎机招募获得");
         Check(!Do(s, CommandKind.StartWave).Accepted, "场上零单位时禁止开战");
         Check(BattleTables.Current.Unit("Rogue").Move > BattleTables.Current.Unit("Knight").Move, "职业可以分别配置移动速度");
@@ -67,11 +69,11 @@ static class Tests
         Build(s);
         Check(s.DeployedCount == 3, "全部起手单位成功上阵");
 
-        var save = s.Save(); var restored = BattleSession.Restore(save);
+        var save = s.Save(); var restored = RestoreSession(save);
         Check(Do(s, CommandKind.StartWave).Accepted, "部署后正常开战");
         Do(restored, CommandKind.StartWave);
         s.Advance(.5f); restored.Advance(.5f);
-        Check(s.Enemies.Select(e => e.MonsterId).SequenceEqual(restored.Enemies.Select(e => e.MonsterId)) && s.Enemies.Select(e => e.Hp).SequenceEqual(restored.Enemies.Select(e => e.Hp)), "存档恢复后确定性推进（含 A*）");
+        Check(s.Enemies.Select(e => e.MonsterId).SequenceEqual(restored.Enemies.Select(e => e.MonsterId)) && s.Enemies.Select(e => e.Hp).SequenceEqual(restored.Enemies.Select(e => e.Hp)), "存档恢复后确定性推进（纯规则桩）");
         Check(!Do(s, CommandKind.Spin).Accepted && !Do(s, CommandKind.Deploy, first.Id, 1, 0).Accepted, "战中禁止招募和布阵");
 
         Check(s.Forecast.Count == 2 && s.Enemies.Count == 1 && s.Enemies[0].Mana == 0f, "首波立即刷1只怪，下一批等待计时，敌人从0法力开战");
@@ -104,7 +106,7 @@ static class Tests
         mergeSave.Troops.Add(new SaveTroop { Id = 2, Kind = TroopKind.Shield, Star = 1, Lane = -1, Row = -1 });
         mergeSave.NextId = 3;
         mergeSave.SpinCount = 0;
-        var mergeSession = BattleSession.Restore(mergeSave);
+        var mergeSession = RestoreSession(mergeSave);
         var mergeHero = BattleTables.Current.Recruit(TroopKind.Shield, new BattleRandom(unchecked(55 ^ 0x2c9277b5)));
         foreach (var staged in mergeSession.Troops) staged.HeroId = mergeHero;
         Do(mergeSession, CommandKind.Spin);
@@ -113,25 +115,25 @@ static class Tests
         HeroRules(save);
 
         var pitySave = new BattleSession(77).Save(); pitySave.Misses = 2; pitySave.SpinCount = 3;
-        var pity = BattleSession.Restore(pitySave); Do(pity, CommandKind.Spin);
+        var pity = RestoreSession(pitySave); Do(pity, CommandKind.Spin);
         Check(pity.LastWinRowMid || pity.LastWinColMid, "连续两空后十字中线必出兵");
 
         var broken = BattleSession.Restore(save).Save(); broken.Troops.Add(broken.Troops[0]); bool rejected = false;
         try { BattleSession.Restore(broken); } catch (ArgumentException) { rejected = true; }
         Check(rejected, "损坏存档拒绝");
 
-        var frameA = BattleSession.Restore(save); var frameB = BattleSession.Restore(save);
+        var frameA = RestoreSession(save); var frameB = RestoreSession(save);
         Do(frameA, CommandKind.StartWave); Do(frameB, CommandKind.StartWave);
         frameA.Advance(1); for (int i = 0; i < 100; i++) frameB.Advance(.01f);
-        Check(Snapshot(frameA) == Snapshot(frameB), "不同帧间隔按相同固定步数推进(RVO2确定性)");
+        Check(Snapshot(frameA) == Snapshot(frameB), "不同帧间隔按相同固定步数推进（纯规则确定性）");
 
         var bossSave = BattleSession.Restore(save).Save(); bossSave.Wave = 5; bossSave.Troops[0].HeroId = "Skeleton_Mage";
-        var boss = BattleSession.Restore(bossSave); Do(boss, CommandKind.StartWave);
+        var boss = RestoreSession(bossSave); Do(boss, CommandKind.StartWave);
         for (int i = 0; i < 120 && !boss.EventsAfter(0).Any(e => e.Type == "boss_control_resisted"); i++) boss.Advance(.1f);
         Check(boss.EventsAfter(0).Any(e => e.Type == "boss_control_resisted") && boss.Enemies.All(e => e.FrozenUntil == 0), "首领免疫冻结并转为减速");
 
         // 技能规则时序：前摇/发射/命中/后摇严格按配置推进，命中前不提前扣血
-        var skillTest = BattleSession.Restore(save);
+        var skillTest = RestoreSession(save);
         bool badDefRejected = false;
         var projectileDefinition = new BattleSkillDefinition { UnitKind = "Archer", Trigger = "BasicAttack", LaunchAt = .14f,
             ImpactAt = .3f, RecoveryEnd = .5f, ProjectileSpeed = 18f, ProjectileSourceY = 1f, ProjectileSourceZ = .4f,
@@ -179,7 +181,7 @@ static class Tests
             Check(evComplete != null && evComplete.Time + 0.001f >= evStart.Time + 0.70f, "后摇结束事件按 RecoveryEnd 触发");
         }
 
-        var lost = new BattleSession(173);
+        var lost = NewSession(173);
         Do(lost, CommandKind.Spin);
         Do(lost, CommandKind.Spin);
         var soloArcher = lost.Troops.First(t => t.Kind == TroopKind.Archer);
@@ -197,7 +199,7 @@ static class Tests
         var results = new List<object>();
         foreach (int seed in new[] { 173, 7, 91 })
         {
-            var run = new BattleSession(seed); int limit = 0;
+            var run = NewSession(seed); int limit = 0;
             float wave1Duration = 0f;
             while (run.Phase != RunPhase.Won && run.Phase != RunPhase.Lost && limit++ < 30000)
             {
@@ -224,7 +226,7 @@ static class Tests
             Check(run.Phase == RunPhase.Won, "从零单位招募起手正常布阵可打通10波 seed=" + seed);
         }
 
-        var output = new { checks = passed, campaigns = results, note = "纯规则测试，不是Unity、触屏或手机验证；自动策略不是平衡结论" };
+        var output = new { checks = passed, campaigns = results, note = "纯规则测试（使用测试位移桩，不替代Unity原生NavMesh验证）；自动策略不是平衡结论" };
         Directory.CreateDirectory("Reports/Combat");
         string reportPath = args.Contains("--movement-report") ? "Reports/Combat/domain-tests-movement.json" : "Reports/Combat/domain-tests.json";
         if (args.Contains("--hero-rework"))
@@ -256,13 +258,13 @@ static class Tests
         save.Troops[0].HeroId = "Knight";
         save.Troops[1].HeroId = "Knight";
         save.Troops[2].HeroId = "Skeleton_Warrior";
-        var synergy = BattleSession.Restore(save);
+        var synergy = RestoreSession(save);
         Check(!synergy.CanMerge(synergy.Troops[0]) && synergy.Buffs.Active.Count == 1 &&
             synergy.Buffs.Active[0].Job == UnitJob.Warrior, "同职业不同名不能合成，重复英雄不重复计羁绊");
 
         save.Troops.RemoveRange(1, save.Troops.Count - 1);
         save.Troops[0].Star = 3;
-        var match = BattleSession.Restore(save);
+        var match = RestoreSession(save);
         Check(Do(match, CommandKind.StartWave).Accepted, "三星测试正常进入战斗");
         var hero = match.Troops[0];
         var monster = match.Enemies[0];

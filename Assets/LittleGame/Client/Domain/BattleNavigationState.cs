@@ -21,8 +21,7 @@ namespace LittleGame.Combat
         public float GoalX { get; internal set; }
         public float GoalZ { get; internal set; }
         public int Revision { get; internal set; }
-        internal int TargetId, Cursor, GoalAttempt;
-        internal float PlannedTargetX, PlannedTargetZ, RetryAt;
+        internal int TargetId, Cursor;
         internal bool HasGoal;
         internal readonly List<NavPoint> Path = new List<NavPoint>();
 
@@ -41,8 +40,8 @@ namespace LittleGame.Combat
 
         internal void Reset()
         {
-            Status = NavigationStatus.Holding; BlockReason = ""; BlockedFor = RetryAt = 0;
-            TargetId = Cursor = Revision = GoalAttempt = 0; HasGoal = false; Path.Clear(); GoalX = GoalZ = 0;
+            Status = NavigationStatus.Holding; BlockReason = ""; BlockedFor = 0;
+            TargetId = Cursor = Revision = 0; HasGoal = false; Path.Clear(); GoalX = GoalZ = 0;
         }
 
         public object Snapshot() => new

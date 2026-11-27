@@ -55,7 +55,22 @@ namespace LittleGame.Client.Editor
                 case "get_state": return McpHostResult.Success(session.Snapshot());
                 case "get_view": return McpHostResult.Success(boot.Hud.Snapshot());
                 case "get_events": var events = session.EventsAfter(0).ToArray(); return McpHostResult.Success(new { oldestSequence = events.FirstOrDefault()?.Sequence ?? 0, lastSequence = session.LastSequence, events = session.EventsAfter((long?)args["after"] ?? 0) });
-                case "get_navigation": return McpHostResult.Success(session.NavigationSnapshot((int?)args["unitId"] ?? 0));
+                case "get_navigation":
+                {
+                    int filterId = (int?)args["unitId"] ?? 0;
+                    return McpHostResult.Success(new
+                    {
+                        algorithm = boot.App.Navigation?.Backend ?? "unbound",
+                        rvoActive = boot.App.Navigation != null,
+                        fixedStep = BattleDefinitions.Step,
+                        cpuTotalMs = session.NavigationCpuTicks * 1000.0 / System.Diagnostics.Stopwatch.Frequency,
+                        units = session.Troops.Where(t => t.Deployed && (filterId == 0 || t.Id == filterId)).Select(t => new
+                            { id = t.Id, aiState = t.AiState.ToString(), targetId = t.TargetId, x = t.X, z = t.Z, vx = t.Vx, vz = t.Vz, navigation = t.Navigation.Snapshot() }),
+                        enemies = session.Enemies.Where(e => filterId == 0 || e.Id == filterId).Select(e => new
+                            { id = e.Id, aiState = e.AiState.ToString(), targetId = e.TargetId, x = e.X, z = e.Z, vx = e.Vx, vz = e.Vz, navigation = e.Navigation.Snapshot() }),
+                        native = boot.App.Navigation?.Snapshot()
+                    });
+                }
                 case "get_definitions":
                     return McpHostResult.Success(new
                     {
@@ -89,7 +104,7 @@ namespace LittleGame.Client.Editor
                             layout = "horizontal_free_white_box_infinite_scroll",
                             avoidance = "unity_navmesh_agent_attack_slots",
                             navigation = "unity_navmesh_agent_attack_slots",
-                            rvoActive = false,
+                            rvoActive = true,
                             blockedWait = true,
                             actualDisplacementVelocity = true,
                             autoMerge = true,

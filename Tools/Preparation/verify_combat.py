@@ -101,10 +101,12 @@ def main():
     m = mobile.mcp
     assert '最近编译成功' in m.tool('unity_get_compilation_status')
     tool_names = [t['name'] for t in m.rpc('tools/list')['tools'] if t['name'].startswith('unity_combat_')]
-    assert len(tool_names) == 16, tool_names
+    assert len(tool_names) == 13, tool_names
     m.tool('unity_exit_play_mode')
     m.tool('unity_run_menu_item', menuPath='Little Game/Combat/Open Combat')
     m.tool('unity_enter_play_mode')
+    m.tool('unity_run_menu_item', menuPath='Little Game/Combat/Set Portrait Preview')
+    time.sleep(.2)
     deadline = time.monotonic() + 30
     while True:
         catalog = json.loads(m.tool('unity_extension_catalog'))
@@ -120,8 +122,8 @@ def main():
     assert framework['qualityInitialized'] and all(p['manifestReady'] for p in framework['packages']), framework
     definitions = call('get_definitions')
     boss_waves = {wave['wave'] for wave in definitions['stage'] if wave['boss']}
-    assert definitions['rules']['rvoActive'] is False and definitions['rules']['blockedWait'] is True, definitions
-    assert call('get_navigation')['algorithm'] == 'roy_astar_attack_slots_swept_motion'
+    assert definitions['rules']['rvoActive'] is True and definitions['rules']['blockedWait'] is True, definitions
+    assert call('get_navigation')['algorithm'] == 'unity_navmesh_agent_attack_slots'
     action('restart', seed=173)
     direct = json.loads(m.tool('unity_combat_get_state'))
     assert direct['wave'] == 1 and direct['phase'] == 'Preparation' and direct['deployedCount'] == 0 and len(direct['units']) == 0, direct
@@ -166,7 +168,7 @@ def main():
 
     # 2. 双击候补军团卡片 -> 自动寻找合适空位上场
     p_res = button('unit_' + str(u1_id))
-    click(p_res); click(p_res); time.sleep(.12)
+    pointer('begin', p_res); pointer('end', p_res); pointer('begin', p_res); pointer('end', p_res); time.sleep(.12)
     u1_state = next(u for u in state()['units'] if u['id'] == u1_id)
     assert u1_state['lane'] >= 0, ('双击候补卡片应自动上场', u1_state)
     checks.append('双击候补军团卡片自动寻位上场通过')

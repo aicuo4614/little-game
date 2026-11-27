@@ -1,0 +1,100 @@
+{
+  "state": "passed",
+  "scenario": "benchmark_18_and_50",
+  "results": [
+    {
+      "scenario": "stationary_wall_detour",
+      "passed": true,
+      "x": 1.23101807,
+      "maxAbsZ": 2.3290236
+    },
+    {
+      "scenario": "blocked_then_release",
+      "passed": true,
+      "waitingX": -1.56311035,
+      "finalX": 1.05419922,
+      "blockReason": ""
+    },
+    {
+      "scenario": "u_shape_detour",
+      "passed": true,
+      "finalX": 1.26098633,
+      "maxAbsZ": 2.01935744
+    },
+    {
+      "scenario": "opposing",
+      "passed": true,
+      "minimumGap": 0.8440189
+    },
+    {
+      "scenario": "freeze_pause_resume",
+      "passed": true,
+      "heldX": -1.54748535,
+      "resumedX": -0.05456543
+    },
+    {
+      "scenario": "body_size",
+      "passed": true
+    },
+    {
+      "scenario": "boss_surround",
+      "passed": true,
+      "agents": 7
+    },
+    {
+      "scenario": "attack_slots_full",
+      "passed": true,
+      "extraStatus": "Waiting",
+      "reason": "attack_slot_unavailable"
+    },
+    {
+      "scenario": "benchmark_18_and_50",
+      "passed": true,
+      "scale18": {
+        "agents": 18,
+        "steps": 50,
+        "frames": 486,
+        "buildMs": 4.911,
+        "pathRequests": 107,
+        "failedPaths": 0,
+        "nativeRecorderValid": true,
+        "bridgeStepP50Ms": 0.0767,
+        "bridgeStepP95Ms": 0.6466,
+        "bridgeStepP99Ms": 0.7924,
+        "bridgeStepMaxMs": 1.425,
+        "nativeFrameP99Ms": 0.2354,
+        "nativeFrameMaxMs": 1.03,
+        "totalFrameP50Ms": 0.1191,
+        "totalFrameP95Ms": 0.2515,
+        "totalFrameP99Ms": 0.7166,
+        "totalFrameMaxMs": 1.4276,
+        "lastFrameGcBytes": 20135,
+        "steadyMonoUsedDeltaBytes": 2392064
+      },
+      "scale50": {
+        "agents": 50,
+        "steps": 50,
+        "frames": 488,
+        "buildMs": 4.235,
+        "pathRequests": 379,
+        "failedPaths": 339,
+        "nativeRecorderValid": true,
+        "bridgeStepP50Ms": 0.3066,
+        "bridgeStepP95Ms": 3.0596,
+        "bridgeStepP99Ms": 3.5608,
+        "bridgeStepMaxMs": 6.4025,
+        "nativeFrameP99Ms": 0.2847,
+        "nativeFrameMaxMs": 0.4718,
+        "totalFrameP50Ms": 0.1586,
+        "totalFrameP95Ms": 0.444,
+        "totalFrameP99Ms": 3.0456,
+        "totalFrameMaxMs": 6.4058,
+        "lastFrameGcBytes": 20135,
+        "steadyMonoUsedDeltaBytes": 3993600
+      }
+    }
+  ],
+  "error": null,
+  "platform": "WindowsEditor",
+  "note": "隔离几何/状态/压力验证，不是正常玩法或手机验证"
+}

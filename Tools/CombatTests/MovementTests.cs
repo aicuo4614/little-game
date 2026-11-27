@@ -21,9 +21,8 @@ static class MovementTests
         State(CombatAiState.Engaging, true, false, false, 0, CombatAiState.Idle);
         State(CombatAiState.Engaging, false, false, true, 1, CombatAiState.Dead);
         State(CombatAiState.Dead, true, false, false, 0, CombatAiState.Idle);
-        NavigationTests.Run();
 
-        var s = new BattleSession(173);
+        var s = NavigationTests.AttachStub(new BattleSession(173));
         s.Execute(new BattleCommand { Kind = CommandKind.Spin });
         var troop = s.Troops[0];
         s.Execute(new BattleCommand { Kind = CommandKind.Deploy, UnitId = troop.Id, Lane = 1, Row = 0 });
@@ -50,7 +49,7 @@ static class MovementTests
             turnYaw = BattleDefinitions.MoveTowardsAngle(turnYaw, 0f, troop.Properties.TurnSpeed * 1.4f * BattleDefinitions.Step);
         if (Math.Abs(BattleDefinitions.DeltaAngle(turnYaw, 0f)) > 0.01f)
             throw new Exception($"盾卫移动 90° 转向过慢：剩余偏差 {BattleDefinitions.DeltaAngle(turnYaw, 0f):F1}°");
-        Console.WriteLine("通过：A*导航/新怪出现目标稳定/目标死亡重选/快速转身收敛");
+        Console.WriteLine("通过：FSM状态边界/新怪出现目标稳定/目标死亡重选/快速转身收敛（原生NavMesh需在Unity验收）");
         Console.WriteLine("通过：11项FSM状态边界/冻结输出零移动零攻击意图");
     }
 }
