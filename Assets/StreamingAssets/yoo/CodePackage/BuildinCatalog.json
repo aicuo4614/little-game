@@ -1,11 +1,11 @@
 {
     "FileVersion": "1.0.0",
     "PackageName": "CodePackage",
-    "PackageVersion": "2026-11-27-955",
+    "PackageVersion": "2026-11-27-1077",
     "Wrappers": [
         {
-            "BundleGUID": "d380cad0ebc73d8693aecfeadbd30dc3",
-            "FileName": "codepackage_assets_package_code_hotupdate_domain_littlegame_domain_dll_d380cad0ebc73d8693aecfeadbd30dc3.bundle"
+            "BundleGUID": "319e8ca19cc8f946e4e6597a1de70aca",
+            "FileName": "codepackage_assets_package_code_hotupdate_domain_littlegame_domain_dll_319e8ca19cc8f946e4e6597a1de70aca.bundle"
         },
         {
             "BundleGUID": "2b4790cbe542a017626f734f8a02959a",
@@ -40,16 +40,16 @@
             "FileName": "codepackage_assets_package_code_hotupdate_main_aotmetadata_yooasset_dll_7433c259d79fc05cd5717eeddbd2ec19.bundle"
         },
         {
-            "BundleGUID": "2664d163a837e6f5d3a34c4d64c5b7df",
-            "FileName": "codepackage_assets_package_code_hotupdate_main_hotupdate_main_dll_2664d163a837e6f5d3a34c4d64c5b7df.bundle"
+            "BundleGUID": "6307387474dafb35e8862edbf22d80d1",
+            "FileName": "codepackage_assets_package_code_hotupdate_main_hotupdate_main_dll_6307387474dafb35e8862edbf22d80d1.bundle"
         },
         {
-            "BundleGUID": "4fc55bbe9d141d362eee42598acd9902",
-            "FileName": "codepackage_assets_package_code_hotupdate_unitcore_hotupdate_unitcore_dll_4fc55bbe9d141d362eee42598acd9902.bundle"
+            "BundleGUID": "e8e439e083d2c9c3319bc10a7b107af2",
+            "FileName": "codepackage_assets_package_code_hotupdate_unitcore_hotupdate_unitcore_dll_e8e439e083d2c9c3319bc10a7b107af2.bundle"
         },
         {
-            "BundleGUID": "c90232bd7fcc00ff91bba38e978ea996",
-            "FileName": "codepackage_assets_package_code_littlegame_client_littlegame_client_dll_c90232bd7fcc00ff91bba38e978ea996.bundle"
+            "BundleGUID": "df025619f3d5bfbec78e92b6c8d37268",
+            "FileName": "codepackage_assets_package_code_littlegame_client_littlegame_client_dll_df025619f3d5bfbec78e92b6c8d37268.bundle"
         },
         {
             "BundleGUID": "fa67fef17bc7774ad36d01a892a1c7a3",

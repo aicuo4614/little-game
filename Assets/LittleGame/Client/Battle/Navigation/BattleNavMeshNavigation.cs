@@ -42,6 +42,7 @@ namespace LittleGame.Client.Battle
         private float time;
         private int speed = 1;
         private bool paused, wasFighting, disposed;
+        private readonly float previousAvoidancePredictionTime;
         public string Backend => "unity_navmesh_agent_attack_slots";
         public int AgentCount => agents.Count;
         public int PathRequests { get; private set; }
@@ -50,6 +51,8 @@ namespace LittleGame.Client.Battle
 
         public BattleNavMeshNavigation(IList<BattleNavObstacleData> obstacles = null, Vector3 offset = default)
         {
+            previousAvoidancePredictionTime = NavMesh.avoidancePredictionTime;
+            NavMesh.avoidancePredictionTime = .45f;
             root = new GameObject("BattleNavMeshWorld");
             root.transform.position = offset;
             sources = new List<NavMeshBuildSource> {
@@ -58,9 +61,13 @@ namespace LittleGame.Client.Battle
                     size = new Vector3(BattleDefinitions.FieldMaxX - BattleDefinitions.FieldMinX + 2.5f, .2f, BattleDefinitions.FieldMaxZ - BattleDefinitions.FieldMinZ + 2.5f), area = 0 }
             };
             if (obstacles != null)
-                foreach (var o in obstacles) sources.Add(new NavMeshBuildSource { shape = NavMeshBuildSourceShape.ModifierBox,
+                foreach (var o in obstacles) sources.Add(new NavMeshBuildSource
+                {
+                    shape = NavMeshBuildSourceShape.ModifierBox,
                     transform = Matrix4x4.TRS(offset + new Vector3((o.MinX + o.MaxX) * .5f, .5f, (o.MinZ + o.MaxZ) * .5f), Quaternion.identity, Vector3.one),
-                    size = new Vector3(o.MaxX-o.MinX, 2f, o.MaxZ-o.MinZ), area = 1 });
+                    size = new Vector3(o.MaxX - o.MinX, 2f, o.MaxZ - o.MinZ),
+                    area = 1
+                });
             var timer = System.Diagnostics.Stopwatch.StartNew();
             Build(.25f, offset); Build(.4f, offset); Build(.5f, offset); Build(.65f, offset); Build(1.15f, offset);
             BuildMs = timer.Elapsed.TotalMilliseconds;
@@ -86,6 +93,8 @@ namespace LittleGame.Client.Battle
         {
             if (wasFighting && !fighting) Reset();
             wasFighting = fighting; paused = isPaused || !fighting; speed = Math.Max(1, battleSpeed);
+            // 保持逻辑时间约 0.45s 的近距局部避让视野，避免默认 2s 预测在 2x 倍速下跨越整个战场提前急刹车。
+            NavMesh.avoidancePredictionTime = paused ? .45f : .45f / speed;
             foreach (var p in agents.Values)
             {
                 if (!p.Agent.enabled || !p.Agent.isOnNavMesh) continue;
@@ -144,9 +153,12 @@ namespace LittleGame.Client.Battle
             p.Agent.radius = input.Radius;
             p.Agent.height = 2f; p.Agent.baseOffset = 0f;
             p.Agent.updatePosition = false; p.Agent.updateRotation = false; p.Agent.updateUpAxis = false;
-            p.Agent.autoRepath = false; p.Agent.autoBraking = true; p.Agent.stoppingDistance = .035f;
+            // 关闭 autoBraking：否则 Detour Crowd 在 2*radius（Boss 高达 2.3m）内线性减速蠕动；到达射程由 FSM 切站定。
+            p.Agent.autoRepath = false; p.Agent.autoBraking = false; p.Agent.stoppingDistance = .035f;
+            p.Agent.angularSpeed = 1080f;
             p.Agent.obstacleAvoidanceType = ObstacleAvoidanceType.HighQualityObstacleAvoidance;
-            p.Agent.avoidancePriority = 30 + input.Id % 30;
+            // 敌我常规单位使用同等避让优先级（避免按递增 ID 导致敌方单方面向我方让行减速），大型首领优先级更高。
+            p.Agent.avoidancePriority = input.Radius >= 1.0f ? 35 : 50;
             p.Agent.speed = input.MaxSpeed * speed; p.Agent.acceleration = 60f * speed * speed;
             p.Root.SetActive(true); p.Agent.enabled = true;
             if (!p.Agent.Warp(startPos))
@@ -293,9 +305,11 @@ namespace LittleGame.Client.Battle
             }
 
             var target = World(a.TargetX, a.TargetZ);
-            bool need = !p.HasGoal || p.Target != a.TargetId || (target - p.PlannedTarget).sqrMagnitude > .2025f
+            float distToTarget = Vector3.Distance(position, target);
+            float replanDist = Mathf.Clamp(distToTarget * .25f, .45f, 1.8f);
+            bool need = !p.HasGoal || p.Target != a.TargetId || (target - p.PlannedTarget).sqrMagnitude > replanDist * replanDist
                 || p.Agent.isPathStale || p.Agent.pathStatus != NavMeshPathStatus.PathComplete || p.BlockedFor > .65f
-                || ((position - p.Goal).sqrMagnitude < .0225f && p.BlockedFor > .2f);
+                || ((position - p.Goal).sqrMagnitude < .04f && (p.BlockedFor > .2f || distToTarget > a.AttackReach - .03f));
             if (need && time >= p.RetryAt)
             {
                 p.RetryAt = time + .3f;
@@ -376,6 +390,12 @@ namespace LittleGame.Client.Battle
                     var ts = p.CandidateScores[attempt]; p.CandidateScores[attempt] = p.CandidateScores[bestIdx]; p.CandidateScores[bestIdx] = ts;
                 }
                 var candidate = p.CandidatePoints[attempt];
+                if (attempt == 0 && p.HasGoal && p.Target == a.TargetId && p.Agent.pathStatus == NavMeshPathStatus.PathComplete
+                    && !p.Agent.isPathStale && (candidate - p.Goal).sqrMagnitude < .0625f)
+                {
+                    p.PlannedTarget = target;
+                    return true;
+                }
                 PathRequests++;
                 if (p.Agent.CalculatePath(candidate, p.Path) && p.Path.status == NavMeshPathStatus.PathComplete && p.Agent.SetPath(p.Path))
                 {
@@ -405,8 +425,13 @@ namespace LittleGame.Client.Battle
             var point = world - root.transform.position; var a = p.Input;
             output.Add(new BattleNavigation.AgentOutput
             {
-                Id = a.Id, IsTroop = a.IsTroop, Waiting = waiting,
-                NewX = point.x, NewZ = point.z, NewVx = (point.x - a.X) / dt, NewVz = (point.z - a.Z) / dt
+                Id = a.Id,
+                IsTroop = a.IsTroop,
+                Waiting = waiting,
+                NewX = point.x,
+                NewZ = point.z,
+                NewVx = (point.x - a.X) / dt,
+                NewVz = (point.z - a.Z) / dt
             });
             p.LastRule = world;
         }
@@ -425,21 +450,37 @@ namespace LittleGame.Client.Battle
                 var position = (bound ? p.Agent.nextPosition : p.Root.transform.position) - root.transform.position;
                 actors.Add(new
                 {
-                    id = pair.Key, bound, carving = p.Obstacle.enabled, holding = p.Holding, hasGoal = p.HasGoal,
-                    x = position.x, z = position.z, goalX = p.Goal.x - root.transform.position.x, goalZ = p.Goal.z - root.transform.position.z,
-                    pathStatus = bound ? p.Agent.pathStatus.ToString() : "unbound", blockedFor = p.BlockedFor
+                    id = pair.Key,
+                    bound,
+                    carving = p.Obstacle.enabled,
+                    holding = p.Holding,
+                    hasGoal = p.HasGoal,
+                    x = position.x,
+                    z = position.z,
+                    goalX = p.Goal.x - root.transform.position.x,
+                    goalZ = p.Goal.z - root.transform.position.z,
+                    pathStatus = bound ? p.Agent.pathStatus.ToString() : "unbound",
+                    blockedFor = p.BlockedFor
                 });
             }
             return new
             {
-                backend = Backend, agents = agents.Count, pooled = pool.Count, pathRequests = PathRequests, failedPaths = FailedPaths,
-                buildMs = BuildMs, nativeAvoidance = "HighQualityRVO", meshTypes = types.Count, actors
+                backend = Backend,
+                agents = agents.Count,
+                pooled = pool.Count,
+                pathRequests = PathRequests,
+                failedPaths = FailedPaths,
+                buildMs = BuildMs,
+                nativeAvoidance = "HighQualityRVO",
+                meshTypes = types.Count,
+                actors
             };
         }
 
         public void Dispose()
         {
             if (disposed) return; disposed = true; Reset();
+            NavMesh.avoidancePredictionTime = previousAvoidancePredictionTime;
             foreach (var p in pool) p.Path.ClearCorners();
             pool.Clear(); foreach (var instance in instances) instance.Remove();
             foreach (var mesh in meshes) UnityEngine.Object.Destroy(mesh);

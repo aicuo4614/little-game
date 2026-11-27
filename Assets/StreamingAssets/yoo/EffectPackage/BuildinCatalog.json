@@ -1,7 +1,7 @@
 {
     "FileVersion": "1.0.0",
     "PackageName": "EffectPackage",
-    "PackageVersion": "2026-11-27-956",
+    "PackageVersion": "2026-11-27-1078",
     "Wrappers": [
         {
             "BundleGUID": "85e0d78cd25b1ce83d4e4b4fc9e1cff6",

@@ -26,8 +26,19 @@ namespace LittleGame.Client.Editor
 
         private static BattleNavigation.AgentInput Agent(int id, float x, float z, float radius, bool hold = false) => new BattleNavigation.AgentInput
         {
-            Id = id, IsTroop = true, X = x, Z = z, Radius = radius, MaxSpeed = 2.4f, TargetId = hold ? 0 : 99,
-            TargetX = 3.5f, TargetZ = 0, TargetRadius = .4f, AttackReach = 1.3f, HoldPosition = hold, State = new BattleNavigationState()
+            Id = id,
+            IsTroop = true,
+            X = x,
+            Z = z,
+            Radius = radius,
+            MaxSpeed = 2.4f,
+            TargetId = hold ? 0 : 99,
+            TargetX = 3.5f,
+            TargetZ = 0,
+            TargetRadius = .4f,
+            AttackReach = 1.3f,
+            HoldPosition = hold,
+            State = new BattleNavigationState()
         };
 
         [MenuItem("Little Game/Combat/Verify Native Navigation")]
@@ -188,7 +199,47 @@ namespace LittleGame.Client.Editor
                     Result(new { scenario = current, passed = true, extraStatus = extraState.Status.ToString(), reason = extraState.BlockReason });
                 }
 
-                // 9. 18 单位实际规模 & 50 单位压力性能基准（隔离场景，Editor 无限帧率）
+                // 9. 敌方迎面追击与临近射程速度一致性（2x 倍速防回归：不因优先级不对称/预测视野/autoBraking 变慢蠕动）
+                current = "enemy_chase_speed";
+                units = new List<BattleNavigation.AgentInput>
+                {
+                    new BattleNavigation.AgentInput { Id = 1, IsTroop = true, X = -1.15f, Z = 2.15f, Radius = .50f, MaxSpeed = 2.40f, TargetId = 10, TargetX = 6.15f, TargetZ = 0f, TargetRadius = .48f, AttackReach = 1.30f, State = new BattleNavigationState() },
+                    new BattleNavigation.AgentInput { Id = 2, IsTroop = true, X = -1.15f, Z = 0f, Radius = .41f, MaxSpeed = 2.40f, TargetId = 10, TargetX = 6.15f, TargetZ = 0f, TargetRadius = .48f, AttackReach = 4.55f, State = new BattleNavigationState() },
+                    new BattleNavigation.AgentInput { Id = 3, IsTroop = true, X = -1.15f, Z = -2.15f, Radius = .41f, MaxSpeed = 2.40f, TargetId = 10, TargetX = 6.15f, TargetZ = 0f, TargetRadius = .48f, AttackReach = 4.20f, State = new BattleNavigationState() },
+                    new BattleNavigation.AgentInput { Id = 10, IsTroop = false, X = 6.15f, Z = 0f, Radius = .48f, MaxSpeed = 1.42f, TargetId = 2, TargetX = -1.15f, TargetZ = 0f, TargetRadius = .41f, AttackReach = 1.14f, State = new BattleNavigationState() }
+                };
+                using (var nav = Create())
+                {
+                    var gruntSpeeds = new List<float>();
+                    await SimulateSpeed(nav, units, 1.8f, 2, () =>
+                    {
+                        var e = units[3];
+                        for (int i = 0; i < 3; i++)
+                        {
+                            var u = units[i];
+                            u.TargetX = e.X; u.TargetZ = e.Z;
+                            u.HoldPosition = Distance(u, e) <= u.AttackReach - .04f;
+                            units[i] = u;
+                        }
+                        var t = units[1];
+                        e.TargetX = t.X; e.TargetZ = t.Z;
+                        e.HoldPosition = Distance(e, t) <= e.AttackReach - .04f;
+                        units[3] = e;
+                    }, (idx, o) =>
+                    {
+                        if (idx == 3 && !units[3].HoldPosition)
+                            gruntSpeeds.Add(Mathf.Sqrt(o.NewVx * o.NewVx + o.NewVz * o.NewVz));
+                    });
+                    // 跳过首步(建立路径)，核验前段与后段均维持高速度（无提前急刹与临近蠕动）
+                    var steady = gruntSpeeds.Skip(2).ToArray();
+                    float avgGrunt = steady.Length > 0 ? steady.Average() : 0f;
+                    float tailGrunt = steady.Length >= 6 ? steady.Skip(steady.Length - 6).Average() : avgGrunt;
+                    Require(avgGrunt >= 1.42f * .80f && tailGrunt >= 1.42f * .80f,
+                        $"2x倍速敌方追击速度异常 avg={avgGrunt:F2} tail={tailGrunt:F2} target=1.42 samples={steady.Length}");
+                    Result(new { scenario = current, passed = true, gruntAvgSpeed = Math.Round(avgGrunt, 3), gruntTailSpeed = Math.Round(tailGrunt, 3), configured = 1.42 });
+                }
+
+                // 10. 18 单位实际规模 & 50 单位压力性能基准（隔离场景，Editor 无限帧率）
                 current = "benchmark_18_and_50";
                 var bench18 = await RunStressBenchmark(18, 2.5f);
                 var bench50 = await RunStressBenchmark(50, 2.5f);
@@ -345,14 +396,20 @@ namespace LittleGame.Client.Editor
         private static async Task Simulate(BattleNavMeshNavigation nav, List<BattleNavigation.AgentInput> units, float duration,
             Action inspect = null, Func<bool> stopWhen = null)
         {
+            await SimulateSpeed(nav, units, duration, 1, inspect, null, stopWhen);
+        }
+
+        private static async Task SimulateSpeed(BattleNavMeshNavigation nav, List<BattleNavigation.AgentInput> units, float duration, int battleSpeed,
+            Action inspect = null, Action<int, BattleNavigation.AgentOutput> onOutput = null, Func<bool> stopWhen = null)
+        {
             var output = new List<BattleNavigation.AgentOutput>(64);
             float elapsed = 0, accumulator = 0; int last = Time.frameCount;
             while (elapsed < duration)
             {
                 await NextFrame();
                 if (last == Time.frameCount) continue; last = Time.frameCount;
-                float dt = Mathf.Min(Time.unscaledDeltaTime, .1f); elapsed += dt; accumulator += dt;
-                nav.PrepareFrame(true, false, 1);
+                float dt = Mathf.Min(Time.unscaledDeltaTime, .1f) * battleSpeed; elapsed += dt; accumulator += dt;
+                nav.PrepareFrame(true, false, battleSpeed);
                 while (accumulator >= .05f)
                 {
                     accumulator -= .05f; nav.Step(units, .05f, output);
@@ -361,6 +418,7 @@ namespace LittleGame.Client.Editor
                         var a = units[i]; var o = output[i];
                         Require(Mathf.Abs(o.NewVx * .05f - (o.NewX - a.X)) < .0001f, "速度等于实际位移/步长");
                         a.X = o.NewX; a.Z = o.NewZ; units[i] = a;
+                        onOutput?.Invoke(i, o);
                     }
                     inspect?.Invoke();
                     if (stopWhen != null && stopWhen()) return;
@@ -386,7 +444,11 @@ namespace LittleGame.Client.Editor
             Directory.CreateDirectory(Path.GetDirectoryName(Output));
             string json = JsonConvert.SerializeObject(new
             {
-                state, scenario = current, results, error, platform = "WindowsEditor",
+                state,
+                scenario = current,
+                results,
+                error,
+                platform = "WindowsEditor",
                 note = "隔离几何/状态/压力验证，不是正常玩法或手机验证"
             }, Formatting.Indented);
             string tmp = Output + ".tmp";
